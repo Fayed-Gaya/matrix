@@ -1,6 +1,8 @@
 import pygame
 from sys import exit
 
+from pygame import mouse
+
 pygame.init()
 
 width = 800
@@ -26,6 +28,12 @@ while True:
         if event.type == pygame.QUIT:
             pygame.quit()
             exit()
+        if event.type == pygame.MOUSEBUTTONDOWN:
+            print(event.pos)
+        # if event.type == pygame.MOUSEMOTION:
+        #     if player_rect.collidepoint(event.pos): print('collision')
+
+
 
     screen.blit(sky_surface, (0, 0))
     screen.blit(ground_surface, (0, 300))
@@ -34,8 +42,14 @@ while True:
     snail_rect.left -= 4
     if snail_rect.left <= -100: snail_rect.left = 800
     screen.blit(snail_surface, snail_rect)
-
     screen.blit(player_surf, player_rect)
+
+    # if player_rect.colliderect(snail_rect):
+    #     print('collision')
+
+    # mouse_pos = pygame.mouse.get_pos()
+    # if player_rect.collidepoint(mouse_pos):
+    #     print(pygame.mouse.get_pressed())
 
     pygame.display.update()
     clock.tick(60)
