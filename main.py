@@ -84,12 +84,21 @@ class Obstacle(pygame.sprite.Sprite):
             self.rect.x -= 2
         self.destroy()
 
-def display_score():
-    current_time = int(pygame.time.get_ticks() / 1000) - start_time
-    score_surf = test_font.render(f'Score: {current_time}', False, (64, 64, 64))
-    score_rect = score_surf.get_rect(center = (400, 50))
-    screen.blit(score_surf, score_rect)
-    return current_time
+class Scoreboard:
+    def __init__(self):
+        board_x = 400
+        board_y = 50
+        font = pygame.font.Font('font/Pixeltype.ttf', 50)
+
+        self.start_time = int(pygame.time.get_ticks() / 1000)
+        self.score = 0
+        self.image = font.render(f'Score: {self.score}', False, (64, 64, 64))
+        self.rect = self.image.get_rect(center = (board_x, board_y))
+
+    def display_score(self):
+        current_time = int(pygame.time.get_ticks() / 1000) - self.start_time
+        self.score = self.start_time - current_time
+        screen.blit(self.image, self.rect)
 
 def obstacle_movement(obstacle_list):
     if obstacle_list:
@@ -121,7 +130,7 @@ pygame.init()
 screen = pygame.display.set_mode((800, 400))
 pygame.display.set_caption('Matrix')
 clock = pygame.time.Clock()
-test_font = pygame.font.Font('font/Pixeltype.ttf', 50)
+
 game_active = False
 start_time = 0
 score = 0
@@ -152,16 +161,6 @@ fly_surf = fly_frames[fly_frame_index]
 
 obstacle_rect_list = []
 
-player_walk_1 = pygame.image.load('graphics/player/player_walk_1.png').convert_alpha()
-player_walk_2 = pygame.image.load('graphics/player/player_walk_2.png').convert_alpha()
-player_walk = [player_walk_1, player_walk_2]
-player_index = 0
-player_jump = pygame.image.load('graphics/player/jump.png').convert_alpha()
-
-player_surf = player_walk[player_index]
-player_rect = player_walk_1.get_rect(midbottom = (80, 300))
-player_gravity = 0
-
 # Intro Screen
 game_name = test_font.render('Jump', False, (111, 196, 169))
 game_name_rect = game_name.get_rect(center = (400, 80))
@@ -189,15 +188,7 @@ while True:
         if event.type == pygame.QUIT:
             pygame.quit()
             exit()
-        if game_active:
-            if event.type == pygame.MOUSEBUTTONDOWN:
-                if player_rect.collidepoint(event.pos) and player_rect.bottom >= 300:
-                    player_gravity = -20
-
-            if event.type == pygame.KEYDOWN:
-                if event.key == pygame.K_SPACE and player_rect.bottom >= 300:
-                    player_gravity = -20
-        else:
+        if not game_active:
             if event.type == pygame.KEYDOWN and event.key == pygame.K_SPACE:
                 start_time = int(pygame.time.get_ticks() / 1000)
                 game_active = True
@@ -234,8 +225,6 @@ while True:
         screen.fill((94, 129, 162))
         screen.blit(player_stand, player_stand_rect)
         obstacle_rect_list.clear()
-        player_rect.midbottom = (80, 300)
-        player_gravity = 0
 
         score_message = test_font.render(f'Your score: {score}', False, (111, 196, 169))
         score_rect = score_message.get_rect(center = (400, 340))
