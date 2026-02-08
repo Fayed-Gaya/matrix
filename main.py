@@ -84,8 +84,6 @@ class Obstacle(pygame.sprite.Sprite):
             self.rect.x -= 2
         self.destroy()
 
-
-
 def display_score():
     current_time = int(pygame.time.get_ticks() / 1000) - start_time
     score_surf = test_font.render(f'Score: {current_time}', False, (64, 64, 64))
@@ -119,20 +117,6 @@ def collision_sprite():
     else:
         return True
 
-def player_animation():
-    global player_surf, player_index
-
-    if player_rect.bottom < 300:
-        player_surf = player_jump
-    else:
-        player_index += 0.1
-        if player_index >= len(player_walk): player_index = 0
-        player_surf = player_walk[int(player_index)]
-        # walk
-    # play walking animation if the player is on floor
-    # display the jump surface when player is not on floor
-
-
 pygame.init()
 screen = pygame.display.set_mode((800, 400))
 pygame.display.set_caption('Matrix')
@@ -151,9 +135,6 @@ obstacle_group = pygame.sprite.Group()
 
 sky_surface = pygame.image.load('graphics/Sky.png').convert()
 ground_surface = pygame.image.load('graphics/ground.png').convert()
-
-# score_surf = test_font.render('Matrix', False, (64, 64, 64)).convert()
-# score_rect = score_surf.get_rect(center = (400, 50))
 
 # Snail
 snail_frame_1 = pygame.image.load('graphics/snail/snail1.png').convert_alpha()
@@ -226,11 +207,6 @@ while True:
             if event.type == obstacle_timer and game_active:
                 obstacle_group.add(Obstacle(choice(['fly', 'snail', 'snail', 'snail'])))
 
-                # if randint(0, 2):
-                #     obstacle_rect_list.append(snail_frame_1.get_rect(bottomright = (randint(900, 1100), 300)))
-                # else:
-                #     obstacle_rect_list.append(fly_frame_1.get_rect(bottomright=(randint(900, 1100), 210)))
-
             if event.type == snail_animation_timer:
                 snail_frame_index = 0 if snail_frame_index else 1
                 snail_surf = snail_frames[snail_frame_index]
@@ -243,34 +219,16 @@ while True:
     if game_active:
         screen.blit(sky_surface, (0, 0))
         screen.blit(ground_surface, (0, 300))
-        # pygame.draw.rect(screen, '#c0e8ec', score_rect, 10)
-        # pygame.draw.rect(screen, '#c0e8ec', score_rect)
-        # screen.blit(score_surf, score_rect)
 
         score = display_score()
 
-        # snail_rect.left -= 4
-        # if snail_rect.left <= -100: snail_rect.left = 800
-        # screen.blit(snail_surface, snail_rect)
-
-        # Player
-        # player_gravity += 1
-        # player_rect.y += player_gravity
-        # if player_rect.bottom >= 300: player_rect.bottom = 300
-        # player_animation()
-        # screen.blit(player_surf, player_rect)
         player.draw(screen)
         player.update()
 
         obstacle_group.draw(screen)
         obstacle_group.update()
 
-        # Obstacle movement
-        # obstacle_rect_list = obstacle_movement(obstacle_rect_list)
-
-        # collision
         game_active = collision_sprite()
-        # game_active = collisions(player_rect, obstacle_rect_list)
 
     else:
         screen.fill((94, 129, 162))
