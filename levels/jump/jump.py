@@ -33,7 +33,7 @@ class Player(pygame.sprite.Sprite):
     def player_input(self):
         keys = pygame.key.get_pressed()
         if keys[pygame.K_SPACE] and self.rect.bottom >= 300:
-            self.gravity = -20
+            self.gravity = -25
             self.jump_sound.play()
 
     def apply_gravity(self):
@@ -95,7 +95,7 @@ class Obstacle(pygame.sprite.Sprite):
         if self.obstacle_type == 'fly':
             self.rect.x -= 5
         else:
-            self.rect.x -= 2
+            self.rect.x -= 3
         self.destroy()
 
 
