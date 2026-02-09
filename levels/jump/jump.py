@@ -239,9 +239,9 @@ class Game:
             self.clock.tick(60)
 
 
-def level1():
+def jump():
     Game().run()
 
 
 if __name__ == '__main__':
-    level1()
+    jump()

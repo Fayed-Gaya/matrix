@@ -1,5 +1,5 @@
-from levels.level1.level1 import level1
+from levels.jump.jump import jump
 
 
 if __name__ == '__main__':
-    level1()
+    jump()
