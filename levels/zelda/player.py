@@ -3,12 +3,13 @@ import pygame
 from settings import *
 from support import import_folder
 
+
 class Player(pygame.sprite.Sprite):
     def __init__(self, pos, groups, obstacle_sprites, create_attack, destroy_attack):
         super().__init__(groups)
         image_path = Path(__file__).resolve().parent / "graphics" / "test" / "player.png"
         self.image = pygame.image.load(image_path).convert_alpha()
-        self.rect = self.image.get_rect(topleft = pos)
+        self.rect = self.image.get_rect(topleft=pos)
         self.hitbox = self.rect.inflate(0, -26)
 
         # graphics setup
@@ -17,11 +18,8 @@ class Player(pygame.sprite.Sprite):
         self.frame_index = 0
         self.animation_speed = 0.15
 
-
-
         # movement
         self.direction = pygame.math.Vector2()
-        self.speed = 5
         self.attacking = False
         self.attack_cooldown = 400
         self.attack_time = None
@@ -37,10 +35,17 @@ class Player(pygame.sprite.Sprite):
         self.weapon_switch_time = None
         self.switch_duration_cooldown = 200
 
+        # stats
+        self.stats = {'health': 100, 'energy': 60, 'attack': 10, 'magic': 4, 'speed': 6}
+        self.health = self.stats['health']
+        self.energy = self.stats['energy']
+        self.exp = 123
+        self.speed = self.stats['speed']
+
     def import_player_assets(self):
         character_path = Path(__file__).resolve().parent / "graphics" / "player"
         self.animations = {
-            'up': [], 'down' : [], 'left': [], 'right' : [],
+            'up': [], 'down': [], 'left': [], 'right': [],
             'right_idle': [], 'left_idle': [], 'up_idle': [], 'down_idle': [],
             'right_attack': [], 'left_attack': [], 'up_attack': [], 'down_attack': []
         }
@@ -126,9 +131,9 @@ class Player(pygame.sprite.Sprite):
         if direction == 'horizontal':
             for sprite in self.obstacle_sprites:
                 if sprite.hitbox.colliderect(self.hitbox):
-                    if self.direction.x > 0: # moving right
+                    if self.direction.x > 0:  # moving right
                         self.hitbox.right = sprite.hitbox.left
-                    if self.direction.x < 0: # moving left
+                    if self.direction.x < 0:  # moving left
                         self.hitbox.left = sprite.hitbox.right
 
         if direction == 'vertical':
@@ -161,7 +166,7 @@ class Player(pygame.sprite.Sprite):
 
         # set the image
         self.image = animation[int(self.frame_index)]
-        self.rect = self.image.get_rect(center = self.hitbox.center)
+        self.rect = self.image.get_rect(center=self.hitbox.center)
 
     def update(self):
         self.input()
