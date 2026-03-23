@@ -39,3 +39,8 @@ weapon_data = {
     'rapier': {'cooldown': 50, 'damage': 8, 'graphic': Path(__file__).resolve().parent / 'graphics' / 'weapons' / 'rapier' / 'full.png'},
     'sai': {'cooldown': 80, 'damage': 10, 'graphic': Path(__file__).resolve().parent / 'graphics' / 'weapons' / 'sai' / 'full.png'}
 }
+
+# magic
+magic_data = {
+    'flame': {'strength': 5, 'cost': 20, 'graphic': Path(__file__).resolve().parent / 'graphics' / 'particles' / 'flame' / 'fire.png'},
+    'heal' : {'strength': 20, 'cost': 10, 'graphic': Path(__file__).resolve().parent / 'graphics' / 'particles' / 'heal' / 'heal.png'}}
