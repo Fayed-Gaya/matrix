@@ -1,46 +1,9 @@
 from pathlib import Path
+import sys
 
-# game setup
-WIDTH    = 1280	
-HEIGTH   = 720
-FPS      = 60
-TILESIZE = 64
 
-# ui
-BAR_HEIGHT = 20
-HEALTH_BAR_WIDTH = 200
-ENERGY_BAR_WIDTH = 140
-ITEM_BOX_SIZE = 80
-UI_FONT = Path(__file__).resolve().parent / 'graphics' / 'font' / 'joystix.ttf'
-UI_FONT_SIZE = 18
+CODE_DIR = Path(__file__).resolve().parent / "code"
+if str(CODE_DIR) not in sys.path:
+	sys.path.insert(0, str(CODE_DIR))
 
-# general colors
-WATER_COLOR = '#71ddee'
-UI_BG_COLOR = '#222222'
-UI_BORDER_COLOR = '#111111'
-TEXT_COLOR = '#EEEEEE'
-
-# ui colors
-HEALTH_COLOR = 'red'
-ENERGY_COLOR = 'blue'
-UI_BORDER_COLOR_ACTIVE = 'gold'
-
-# upgrade menu
-TEXT_COLOR_SELECTED = '#111111'
-BAR_COLOR = '#EEEEEE'
-BAR_COLOR_SELECTED = '#111111'
-UPGRADE_BG_COLOR_SELECTED = '#EEEEEE'
-
-# weapons
-weapon_data = {
-    'sword': {'cooldown': 100, 'damage': 15, 'graphic': Path(__file__).resolve().parent / 'graphics' / 'weapons' / 'sword' / 'full.png'},
-    'lance': {'cooldown': 400, 'damage': 30, 'graphic': Path(__file__).resolve().parent / 'graphics' / 'weapons' / 'lance' / 'full.png'},
-    'axe': {'cooldown': 300, 'damage': 20, 'graphic': Path(__file__).resolve().parent / 'graphics' / 'weapons' / 'axe' / 'full.png'},
-    'rapier': {'cooldown': 50, 'damage': 8, 'graphic': Path(__file__).resolve().parent / 'graphics' / 'weapons' / 'rapier' / 'full.png'},
-    'sai': {'cooldown': 80, 'damage': 10, 'graphic': Path(__file__).resolve().parent / 'graphics' / 'weapons' / 'sai' / 'full.png'}
-}
-
-# magic
-magic_data = {
-    'flame': {'strength': 5, 'cost': 20, 'graphic': Path(__file__).resolve().parent / 'graphics' / 'particles' / 'flame' / 'fire.png'},
-    'heal' : {'strength': 20, 'cost': 10, 'graphic': Path(__file__).resolve().parent / 'graphics' / 'particles' / 'heal' / 'heal.png'}}
+from settings import *  # noqa: F401,F403

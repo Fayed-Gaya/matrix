@@ -1,30 +1,13 @@
-import pygame, sys
-from settings import *
-from level import Level
+from pathlib import Path
+import sys
 
-class Game:
-	def __init__(self):
-		  
-		# general setup
-		pygame.init()
-		self.screen = pygame.display.set_mode((WIDTH,HEIGTH))
-		pygame.display.set_caption('Zelda')
-		self.clock = pygame.time.Clock()
 
-		self.level = Level()
-	
-	def run(self):
-		while True:
-			for event in pygame.event.get():
-				if event.type == pygame.QUIT:
-					pygame.quit()
-					sys.exit()
+CODE_DIR = Path(__file__).resolve().parent / "code"
+if str(CODE_DIR) not in sys.path:
+	sys.path.insert(0, str(CODE_DIR))
 
-			self.screen.fill('black')
-			self.level.run()
-			pygame.display.update()
-			self.clock.tick(FPS)
+from main import Game
 
-if __name__ == '__main__':
-	game = Game()
-	game.run()
+
+if __name__ == "__main__":
+	Game().run()

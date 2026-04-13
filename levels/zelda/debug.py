@@ -1,10 +1,9 @@
-import pygame
-pygame.init()
-font = pygame.font.Font(None,30)
+from pathlib import Path
+import sys
 
-def debug(info,y = 10, x = 10):
-	display_surface = pygame.display.get_surface()
-	debug_surf = font.render(str(info),True,'White')
-	debug_rect = debug_surf.get_rect(topleft = (x,y))
-	pygame.draw.rect(display_surface,'Black',debug_rect)
-	display_surface.blit(debug_surf,debug_rect)
+
+CODE_DIR = Path(__file__).resolve().parent / "code"
+if str(CODE_DIR) not in sys.path:
+	sys.path.insert(0, str(CODE_DIR))
+
+from debug import *  # noqa: F401,F403
