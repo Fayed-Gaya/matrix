@@ -2,12 +2,12 @@
 
 ## Project Overview
 
-This repository is a Python/Pygame sandbox named `matrix`. It contains several
-separate mini-games and game experiments under `levels/`. Treat each level
-directory as its own small project unless a task explicitly asks for a shared
-launcher or cross-level refactor.
+This repository is a Python/Pygame sandbox named `matrix`. It contains a
+top-level Matrix hub plus several separate mini-games and game experiments under
+`levels/`. Treat each level directory as its own small project unless a task
+explicitly asks for a shared launcher or cross-level refactor.
 
-The current root entry point is `main.py`, which imports and runs the Jump game:
+The root entry point is `main.py`, which imports and runs the Matrix hub:
 
 ```bash
 python3 main.py
@@ -24,10 +24,11 @@ python3 -m levels.<level_name>
 
 ## Repository Layout
 
-- `main.py`: root launcher; currently starts `levels.jump.jump.jump()`.
+- `main.py`: root launcher; starts the Matrix hub.
+- `matrix/`: top-level hub world, terminal input, and level registry.
 - `requirements.txt`: Python dependencies.
 - `levels/`: collection of independent Pygame levels and experiments.
-- `levels/jump/`: endless-runner style game; currently the default root game.
+- `levels/jump/`: endless-runner style game.
 - `levels/mario/`: larger platformer project with code, maps, audio, and sprite
   assets.
 - `levels/zelda/`: larger top-down RPG project with maps, combat, UI, enemies,
@@ -45,6 +46,8 @@ python3 -m levels.<level_name>
   standardized across levels.
 - Keep changes scoped to the requested level or feature. Do not refactor other
   games unless needed for the task.
+- The Matrix hub should depend on each level's package-level `run()` function
+  rather than importing level internals.
 - Use `pathlib.Path` for new asset paths when practical; several newer files
   already follow that pattern.
 - Some older tutorial files use relative paths that assume they are run from
@@ -77,7 +80,13 @@ Run the default game:
 python3 main.py
 ```
 
-Run the Jump game directly:
+Run the Matrix hub directly:
+
+```bash
+python3 -m matrix
+```
+
+Run the Jump level directly:
 
 ```bash
 python3 -m levels.jump
@@ -86,12 +95,10 @@ python3 -m levels.jump
 Run a syntax check for Python files:
 
 ```bash
-python3 -m compileall main.py levels
+python3 -m compileall main.py matrix levels
 ```
 
 ## Current Direction
 
-The repo is currently a collection of separate Pygame experiments. Future work
-may turn it into a more coherent project, likely by adding a launcher/menu,
-improving documentation, and gradually making individual levels easier to run
-from the repository root.
+The repo now has a first-pass Matrix hub with a terminal launcher. Returning to
+Matrix after a launched level exits is not implemented yet.

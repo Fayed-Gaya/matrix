@@ -1,9 +1,8 @@
 # Matrix
 
-Matrix is a Python/Pygame sandbox containing small games, demos, and
-tutorial-style projects. The repo is currently organized as a collection of
-independent levels under `levels/`, with a root launcher that starts the Jump
-game.
+Matrix is a Python/Pygame sandbox containing a top-level hub world plus small
+games, demos, and tutorial-style projects. The player starts in Matrix, walks to
+a terminal, enters a level code, and launches a level from `levels/`.
 
 ## Setup
 
@@ -20,13 +19,19 @@ The project uses `pygame-ce`.
 
 ## Run
 
-Run the current default game from the repository root:
+Run Matrix from the repository root:
 
 ```bash
 python3 main.py
 ```
 
-At the moment, `main.py` launches `levels.jump.jump.jump()`.
+`main.py` launches the Matrix hub.
+
+You can also run the hub package directly:
+
+```bash
+python3 -m matrix
+```
 
 ## Levels
 
@@ -44,6 +49,12 @@ At the moment, `main.py` launches `levels.jump.jump.jump()`.
 See `levels/README.md` and each level's own `README.md` for run commands,
 controls, and notes.
 
+The Matrix terminal currently recognizes these level codes:
+
+```text
+JUMP  MARIO  ZELDA  PONG  BALLS  BOUNCE  BUG  YOU
+```
+
 Each launchable level can also be run directly from the repository root:
 
 ```bash
@@ -54,7 +65,8 @@ python3 -m levels.zelda
 
 ## Project Structure
 
-- `main.py`: root entry point; currently starts the Jump game.
+- `main.py`: root entry point; starts the Matrix hub.
+- `matrix/`: hub world, terminal UI, and level registry.
 - `requirements.txt`: Python dependency list.
 - `levels/`: independent Pygame games and experiments.
 - `Tiled/`: Tiled map editor files.
@@ -73,5 +85,5 @@ python3 -m levels.zelda
 
 ## Current Direction
 
-Matrix is currently a collection of Pygame experiments. A likely next step is a
-proper launcher/menu that can start each level from one place.
+Matrix now has a first-pass hub and terminal launcher. Returning to Matrix after
+a launched level exits is not implemented yet.
