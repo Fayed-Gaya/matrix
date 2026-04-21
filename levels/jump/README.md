@@ -12,13 +12,13 @@ This is the current default game launched by the root `main.py`.
 From the repository root:
 
 ```bash
-python main.py
+python3 main.py
 ```
 
 Or run the level directly:
 
 ```bash
-python -m levels.jump.jump
+python3 -m levels.jump
 ```
 
 ## Controls

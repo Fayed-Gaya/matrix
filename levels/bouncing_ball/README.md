@@ -7,12 +7,10 @@ around the window, bouncing when it reaches the screen edges.
 
 ## Run
 
-This level currently loads `intro_ball.gif` from the current working directory,
-so run it from the level directory:
+From the repository root:
 
 ```bash
-cd levels/bouncing_ball
-python bouncing_ball.py
+python3 -m levels.bouncing_ball
 ```
 
 ## Controls
@@ -26,4 +24,5 @@ python bouncing_ball.py
 
 ## Notes
 
-This is a minimal demo rather than a complete game.
+This is a minimal demo rather than a complete game. It uses paths based on the
+location of `bouncing_ball.py`, so it can run from the repository root.

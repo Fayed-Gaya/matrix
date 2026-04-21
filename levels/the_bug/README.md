@@ -7,12 +7,10 @@ mouse position and mouse button state using the local debug helper.
 
 ## Run
 
-This level currently uses local relative imports and asset paths, so run it from
-the level directory:
+From the repository root:
 
 ```bash
-cd levels/the_bug
-python the_bug.py
+python3 -m levels.the_bug
 ```
 
 ## Controls
@@ -29,4 +27,5 @@ python the_bug.py
 
 ## Notes
 
-This level has not yet been adapted to run from the repository root.
+This level uses paths based on the location of `the_bug.py`, so it can run from
+the repository root.

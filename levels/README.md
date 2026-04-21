@@ -19,13 +19,19 @@ experiments. Each level owns its own code and assets unless noted otherwise.
 ## Running Levels
 
 Some levels can be run as Python modules from the repository root. Others still
-use relative paths from their original tutorial layout and should be run from
-their own directory. Check each level's README before running it.
+have legacy internals, but every launchable level now exposes the same package
+entrypoint. Check each level's README for controls and notes.
 
 The default root command is:
 
 ```bash
-python main.py
+python3 main.py
+```
+
+Run a specific level with:
+
+```bash
+python3 -m levels.<level_name>
 ```
 
 ## Documentation Standard

@@ -8,12 +8,10 @@ animations.
 
 ## Run
 
-This level currently uses tutorial-style relative paths, so run it from the code
-directory:
+From the repository root:
 
 ```bash
-cd levels/mario/code
-python main.py
+python3 -m levels.mario
 ```
 
 ## Controls
@@ -46,6 +44,5 @@ Level:
 
 ## Notes
 
-This level has not yet been adapted to run from the repository root. A future
-cleanup should convert asset and map paths to be based on file locations instead
-of the current working directory.
+This level uses paths based on the location of its code files, so it can run
+from the repository root.

@@ -11,9 +11,9 @@ Create and activate a virtual environment, then install the project
 dependencies:
 
 ```bash
-python -m venv .venv
+python3 -m venv .venv
 source .venv/bin/activate
-python -m pip install -r requirements.txt
+python3 -m pip install -r requirements.txt
 ```
 
 The project uses `pygame-ce`.
@@ -23,7 +23,7 @@ The project uses `pygame-ce`.
 Run the current default game from the repository root:
 
 ```bash
-python main.py
+python3 main.py
 ```
 
 At the moment, `main.py` launches `levels.jump.jump.jump()`.
@@ -44,6 +44,14 @@ At the moment, `main.py` launches `levels.jump.jump.jump()`.
 See `levels/README.md` and each level's own `README.md` for run commands,
 controls, and notes.
 
+Each launchable level can also be run directly from the repository root:
+
+```bash
+python3 -m levels.jump
+python3 -m levels.mario
+python3 -m levels.zelda
+```
+
 ## Project Structure
 
 - `main.py`: root entry point; currently starts the Jump game.
@@ -56,8 +64,8 @@ controls, and notes.
 
 - Treat each level as mostly independent unless a task explicitly asks for a
   shared launcher or cross-level refactor.
-- Some older tutorial files use relative asset paths and need to be run from a
-  specific directory. The per-level README should say when that is true.
+- Levels should use file-relative asset paths and expose a package-level
+  `run()` function so they can be launched from the repository root.
 - Asset files such as images, audio, fonts, CSV maps, TMX maps, and TSX tilesets
   are part of the project when they belong to a level.
 - Do not commit `.DS_Store`, `__pycache__/`, `.pyc`, virtual environments, or
@@ -66,6 +74,4 @@ controls, and notes.
 ## Current Direction
 
 Matrix is currently a collection of Pygame experiments. A likely next step is a
-proper launcher/menu that can start each level from one place, followed by
-cleaning up path handling so every level can run reliably from the repository
-root.
+proper launcher/menu that can start each level from one place.

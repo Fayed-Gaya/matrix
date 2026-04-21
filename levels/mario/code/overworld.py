@@ -2,6 +2,7 @@ import pygame
 from game_data import levels
 from support import import_folder
 from decoration import Sky
+from paths import GRAPHICS_DIR
 
 class Node(pygame.sprite.Sprite):
 	def __init__(self,pos,status,icon_speed,path):
@@ -35,7 +36,7 @@ class Icon(pygame.sprite.Sprite):
 	def __init__(self,pos):
 		super().__init__()
 		self.pos = pos
-		self.image = pygame.image.load('../graphics/overworld/hat.png').convert_alpha()
+		self.image = pygame.image.load(str(GRAPHICS_DIR / 'overworld' / 'hat.png')).convert_alpha()
 		self.rect = self.image.get_rect(center = pos)
 
 	def update(self):

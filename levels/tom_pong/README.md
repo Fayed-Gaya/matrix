@@ -7,12 +7,10 @@ project. It uses bat and ball sprites with simple collision physics.
 
 ## Run
 
-This level currently loads assets from a relative `data/` path, so run it from
-the level directory:
+From the repository root:
 
 ```bash
-cd levels/tom_pong
-python tom_pong.py
+python3 -m levels.tom_pong
 ```
 
 ## Controls
@@ -30,4 +28,5 @@ python tom_pong.py
 
 ## Notes
 
-This level has not yet been adapted to run from the repository root.
+This level uses paths based on the location of `tom_pong.py`, so it can run from
+the repository root.

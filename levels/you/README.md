@@ -10,7 +10,7 @@ from the first detected camera.
 From the repository root:
 
 ```bash
-python -m levels.you.you
+python3 -m levels.you
 ```
 
 ## Controls

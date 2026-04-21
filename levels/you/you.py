@@ -2,11 +2,11 @@ import pygame
 import pygame.camera
 from pygame.locals import *
 
-pygame.init()
-pygame.camera.init()
-
 class Capture:
     def __init__(self):
+        pygame.init()
+        pygame.camera.init()
+
         self.size = (640, 480)
         self.display = pygame.display.set_mode(self.size, 0)
 
@@ -34,6 +34,15 @@ class Capture:
                     going = False
             self.get_and_flip()
 
-if __name__ == "__main__":
+
+def run():
     Capture().main()
     pygame.quit()
+
+
+def main():
+    run()
+
+
+if __name__ == "__main__":
+    run()

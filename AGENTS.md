@@ -10,10 +10,17 @@ launcher or cross-level refactor.
 The current root entry point is `main.py`, which imports and runs the Jump game:
 
 ```bash
-python main.py
+python3 main.py
 ```
 
 Dependencies are listed in `requirements.txt`. The project uses `pygame-ce`.
+
+Every launchable level package should expose `run()` from its `__init__.py` and
+include a `__main__.py`, so levels can be started from the repository root with:
+
+```bash
+python3 -m levels.<level_name>
+```
 
 ## Repository Layout
 
@@ -41,8 +48,8 @@ Dependencies are listed in `requirements.txt`. The project uses `pygame-ce`.
 - Use `pathlib.Path` for new asset paths when practical; several newer files
   already follow that pattern.
 - Some older tutorial files use relative paths that assume they are run from
-  their own code directory. Be careful before changing working-directory
-  behavior.
+  their own code directory. When touching a level, prefer file-relative paths
+  based on `Path(__file__).resolve()` so it can run from the repository root.
 - Pygame windows and audio may not work in headless environments. If runtime
   verification is not possible, at least run syntax checks for edited Python
   files.
@@ -61,25 +68,25 @@ Dependencies are listed in `requirements.txt`. The project uses `pygame-ce`.
 Install dependencies:
 
 ```bash
-python -m pip install -r requirements.txt
+python3 -m pip install -r requirements.txt
 ```
 
 Run the default game:
 
 ```bash
-python main.py
+python3 main.py
 ```
 
 Run the Jump game directly:
 
 ```bash
-python -m levels.jump.jump
+python3 -m levels.jump
 ```
 
 Run a syntax check for Python files:
 
 ```bash
-python -m compileall main.py levels
+python3 -m compileall main.py levels
 ```
 
 ## Current Direction

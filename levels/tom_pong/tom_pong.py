@@ -7,23 +7,23 @@
 
 VERSION = "0.4"
 
-try:
-    import sys
-    import random
-    import math
-    import os
-    import getopt
-    import pygame
-    from socket import *
-    from pygame.locals import *
-except ImportError as err:
-    print(f"couldn't load module. {err}")
-    sys.exit(2)
+import math
+import os
+import getopt
+import random
+import sys
+from socket import *
+
+import pygame
+from pygame.locals import *
+
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
 
 def load_png(name, max_size=None):
     """Load image and return image object.
     max_size is a (width, height) tuple used to scale the image to fit."""
-    fullname = os.path.join("data", name)
+    fullname = os.path.join(BASE_DIR, "data", name)
     try:
         image = pygame.image.load(fullname)
         if image.get_alpha() is None:
@@ -144,7 +144,7 @@ class Bat(pygame.sprite.Sprite):
         self.state = "movedown"
 
 
-def main():
+def run():
     # Initialise screen
     pygame.init()
     screen = pygame.display.set_mode((640, 480))
@@ -212,5 +212,9 @@ def main():
         pygame.display.flip()
 
 
+def main():
+    run()
+
+
 if __name__ == "__main__":
-    main()
+    run()

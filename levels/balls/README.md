@@ -10,7 +10,7 @@ keyboard input, and wraps them around the screen edges.
 From the repository root:
 
 ```bash
-python -m levels.balls.balls
+python3 -m levels.balls
 ```
 
 ## Controls

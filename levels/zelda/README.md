@@ -10,7 +10,7 @@ combat, enemies, weapons, magic, particles, UI, audio, and an upgrade menu.
 From the repository root:
 
 ```bash
-python -m levels.zelda.code.main
+python3 -m levels.zelda
 ```
 
 ## Controls
