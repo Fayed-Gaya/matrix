@@ -9,6 +9,7 @@ experiments. Each level owns its own code and assets unless noted otherwise.
 | --- | --- | --- |
 | `jump` | Endless runner | Current default game launched by `python main.py`. |
 | `mario` | Platformer | Larger project with overworld, levels, enemies, coins, audio, and UI. |
+| `monsters` | Monster RPG | Larger project with overworld, dialogs, encounters, battles, and evolution. |
 | `zelda` | Top-down RPG | Larger project with combat, enemies, weapons, magic, upgrades, audio, and UI. |
 | `tom_pong` | Pong clone | Two-player paddle game. |
 | `balls` | Movement demo | WASD movement with screen wrapping. |

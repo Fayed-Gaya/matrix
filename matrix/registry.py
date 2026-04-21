@@ -30,6 +30,12 @@ LEVELS = {
         module="levels.mario",
         description="Platformer",
     ),
+    "MONSTERS": LevelEntry(
+        code="MONSTERS",
+        name="Monsters",
+        module="levels.monsters",
+        description="Monster RPG",
+    ),
     "ZELDA": LevelEntry(
         code="ZELDA",
         name="Zelda",

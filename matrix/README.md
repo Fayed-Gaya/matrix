@@ -33,6 +33,7 @@ python3 -m matrix
 | --- | --- |
 | `JUMP` | Jump |
 | `MARIO` | Mario |
+| `MONSTERS` | Monsters |
 | `ZELDA` | Zelda |
 | `PONG` | Tom Pong |
 | `BALLS` | Balls |

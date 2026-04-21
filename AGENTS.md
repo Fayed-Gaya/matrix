@@ -31,6 +31,8 @@ python3 -m levels.<level_name>
 - `levels/jump/`: endless-runner style game.
 - `levels/mario/`: larger platformer project with code, maps, audio, and sprite
   assets.
+- `levels/monsters/`: larger monster-catching RPG project with maps, battles,
+  audio, and sprite assets.
 - `levels/zelda/`: larger top-down RPG project with maps, combat, UI, enemies,
   particles, audio, and sprite assets.
 - `levels/tom_pong/`: Pong implementation.

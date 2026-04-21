@@ -39,6 +39,7 @@ python3 -m matrix
 | --- | --- |
 | `jump` | Endless runner where the player jumps over incoming obstacles. |
 | `mario` | Platformer project with an overworld, levels, enemies, coins, health, and UI. |
+| `monsters` | Monster-catching RPG with an overworld, trainer dialogs, battles, and evolution. |
 | `zelda` | Top-down RPG project with movement, combat, enemies, weapons, magic, upgrades, and UI. |
 | `tom_pong` | Two-player Pong implementation. |
 | `balls` | Movement and screen-wrap experiment. |
@@ -52,7 +53,7 @@ controls, and notes.
 The Matrix terminal currently recognizes these level codes:
 
 ```text
-JUMP  MARIO  ZELDA  PONG  BALLS  BOUNCE  BUG  YOU
+JUMP  MARIO  MONSTERS  ZELDA  PONG  BALLS  BOUNCE  BUG  YOU
 ```
 
 Each launchable level can also be run directly from the repository root:
@@ -60,6 +61,7 @@ Each launchable level can also be run directly from the repository root:
 ```bash
 python3 -m levels.jump
 python3 -m levels.mario
+python3 -m levels.monsters
 python3 -m levels.zelda
 ```
 
