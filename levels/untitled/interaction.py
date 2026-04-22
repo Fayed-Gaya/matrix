@@ -19,10 +19,10 @@ from .settings import (
 
 
 class NPC:
-    def __init__(self, position: tuple[int, int]) -> None:
+    def __init__(self, position: tuple[int, int], dialogue: str = DIALOGUE_TEXT) -> None:
         self.rect = pygame.Rect((0, 0), NPC_SIZE)
         self.rect.center = position
-        self.dialogue = DIALOGUE_TEXT
+        self.dialogue = dialogue
 
     def is_player_near(self, player_rect: pygame.Rect) -> bool:
         return self.rect.inflate(INTERACTION_DISTANCE, INTERACTION_DISTANCE).colliderect(

@@ -31,13 +31,30 @@ UNTITLED
 - `main.py`: level entrypoint.
 - `game.py`: main Pygame loop.
 - `player.py`: player movement and collision.
-- `world.py`: placeholder map geometry and collision objects.
+- `world.py`: Tiled map loading, tile drawing, collision objects, spawns, and NPCs.
 - `camera.py`: camera follow logic.
 - `interaction.py`: placeholder NPC and dialogue box.
 - `settings.py`: display, color, movement, and dialogue constants.
+- `paths.py`: file-relative asset paths.
+- `assets/maps/area_earth.tmx`: first placeholder Tiled map.
+- `assets/tilesets/placeholder_tiles.tsx`: placeholder Tiled tileset.
+- `assets/backgrounds/environment_forestbackground.png`: opening background image.
+- `assets/audio/forest_ambience.mp3`: looping forest ambience for the level.
 
-## Notes
+## Tiled Map Conventions
 
-The level currently uses drawn placeholder geometry instead of external sprite
-or Tiled assets. Tiled map loading should be added after the first playable
-prototype is stable.
+The game currently loads `assets/maps/area_earth.tmx` with `pytmx`.
+
+Use these Tiled layers:
+
+- `Ground`: base tile layer.
+- `Details`: normal decorative tile layer.
+- `Above`: tile layer drawn after the player, for treetops or overhead art.
+- `Collision`: object layer with rectangles that block player movement.
+- `Spawn`: object layer with a point named `player`.
+- `NPCs`: object layer with NPC points. Add a custom `dialogue` property for
+  each NPC's text.
+
+The placeholder tileset is intentionally rough. Replace the placeholder `.tmx`,
+`.tsx`, and `.png` files with the real map and tilesets once the first Tiled map
+is ready.

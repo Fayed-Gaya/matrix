@@ -6,8 +6,7 @@ WIDTH: int = 960
 HEIGHT: int = 540
 FPS: int = 60
 
-WORLD_WIDTH: int = 1600
-WORLD_HEIGHT: int = 1100
+TILE_SIZE: int = 32
 
 PLAYER_SPEED: int = 260
 PLAYER_SIZE: tuple[int, int] = (30, 38)
@@ -29,6 +28,7 @@ MUTED_TEXT_COLOR: Color = (172, 184, 166)
 DIALOG_BG_COLOR: Color = (14, 22, 20)
 DIALOG_BORDER_COLOR: Color = (112, 188, 150)
 SHADOW_COLOR: Color = (8, 12, 10)
+OVERLAY_COLOR: Color = (0, 0, 0)
 
 DIALOGUE_TEXT: str = (
     "The truth is I got on that bus a boy, and I never got off the bus. I still haven't."
