@@ -46,6 +46,7 @@ python3 -m matrix
 | `bouncing_ball` | Minimal bouncing-ball demo. |
 | `the_bug` | Mouse/debug overlay experiment. |
 | `you` | Camera capture experiment. |
+| `untitled` | 2D action RPG prototype with movement, collision, camera, and NPC dialogue. |
 
 See `levels/README.md` and each level's own `README.md` for run commands,
 controls, and notes.
@@ -53,7 +54,7 @@ controls, and notes.
 The Matrix terminal currently recognizes these level codes:
 
 ```text
-JUMP  MARIO  MONSTERS  ZELDA  PONG  BALLS  BOUNCE  BUG  YOU
+JUMP  MARIO  MONSTERS  ZELDA  PONG  BALLS  BOUNCE  BUG  YOU  UNTITLED
 ```
 
 Each launchable level can also be run directly from the repository root:
@@ -63,6 +64,7 @@ python3 -m levels.jump
 python3 -m levels.mario
 python3 -m levels.monsters
 python3 -m levels.zelda
+python3 -m levels.untitled
 ```
 
 ## Project Structure

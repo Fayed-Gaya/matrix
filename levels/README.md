@@ -16,6 +16,7 @@ experiments. Each level owns its own code and assets unless noted otherwise.
 | `bouncing_ball` | Minimal demo | Image bounces around the window. |
 | `the_bug` | Debug demo | Mouse position and button state overlay. |
 | `you` | Camera demo | Displays camera input in a Pygame window. |
+| `untitled` | 2D action RPG prototype | Top-down movement, collision, camera follow, and NPC dialogue. |
 
 ## Running Levels
 

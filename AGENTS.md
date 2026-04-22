@@ -40,6 +40,8 @@ python3 -m levels.<level_name>
 - `levels/bouncing_ball/`: small bouncing-ball demo.
 - `levels/the_bug/`: mouse/debug display experiment.
 - `levels/you/`: camera capture experiment.
+- `levels/untitled/`: typed 2D action RPG prototype for the new collaborative
+  game project.
 - `Tiled/`: Tiled map editor files.
 
 ## Development Notes

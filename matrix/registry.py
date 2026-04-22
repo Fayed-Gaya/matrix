@@ -77,6 +77,12 @@ LEVELS: dict[str, LevelEntry] = {
         module="levels.you",
         description="Camera capture demo",
     ),
+    "UNTITLED": LevelEntry(
+        code="UNTITLED",
+        name="Untitled Game",
+        module="levels.untitled",
+        description="2D action RPG prototype",
+    ),
 }
 
 
