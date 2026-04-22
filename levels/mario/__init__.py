@@ -7,4 +7,4 @@ if str(CODE_DIR) not in sys.path:
 
 from .code.main import run
 
-__all__ = ["run"]
+__all__: list[str] = ["run"]

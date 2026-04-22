@@ -1,3 +1,8 @@
 from . import run
 
-run()
+
+def main() -> None:
+    run()
+
+
+main()

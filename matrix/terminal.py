@@ -1,6 +1,8 @@
+from __future__ import annotations
+
 import pygame
 
-from .registry import codes, get_level
+from .registry import LevelEntry, codes, get_level
 from .settings import (
     ERROR_COLOR,
     HEIGHT,
@@ -14,7 +16,7 @@ from .settings import (
 
 
 class Terminal:
-    def __init__(self, rect):
+    def __init__(self, rect: tuple[int, int, int, int]) -> None:
         self.rect = pygame.Rect(rect)
         self.active = False
         self.input_text = ""
@@ -24,19 +26,19 @@ class Terminal:
         self.small_font = pygame.font.Font(None, 22)
         self.title_font = pygame.font.Font(None, 34)
 
-    def is_player_near(self, player_rect):
+    def is_player_near(self, player_rect: pygame.Rect) -> bool:
         return self.rect.inflate(44, 44).colliderect(player_rect)
 
-    def open(self):
+    def open(self) -> None:
         self.active = True
         self.input_text = ""
         self.message = "Enter a level code."
         self.message_color = MUTED_TEXT_COLOR
 
-    def close(self):
+    def close(self) -> None:
         self.active = False
 
-    def handle_event(self, event):
+    def handle_event(self, event: pygame.event.Event) -> LevelEntry | None:
         if not self.active or event.type != pygame.KEYDOWN:
             return None
 
@@ -54,7 +56,7 @@ class Terminal:
                 self.input_text += event.unicode.upper()
         return None
 
-    def submit(self):
+    def submit(self) -> LevelEntry | None:
         level = get_level(self.input_text)
         if level is None:
             self.message = f"Unknown code: {self.input_text or '<empty>'}"
@@ -66,7 +68,7 @@ class Terminal:
         self.message_color = SUCCESS_COLOR
         return level
 
-    def draw_terminal_object(self, surface, player_near):
+    def draw_terminal_object(self, surface: pygame.Surface, player_near: bool) -> None:
         color = TERMINAL_ACTIVE_COLOR if player_near else TERMINAL_COLOR
         pygame.draw.rect(surface, color, self.rect, border_radius=5)
         screen_rect = self.rect.inflate(-18, -18)
@@ -81,12 +83,12 @@ class Terminal:
                 2,
             )
 
-    def draw_hint(self, surface):
+    def draw_hint(self, surface: pygame.Surface) -> None:
         text = self.small_font.render("Press E to access terminal", True, TEXT_COLOR)
         rect = text.get_rect(midbottom=(WIDTH // 2, HEIGHT - 22))
         surface.blit(text, rect)
 
-    def draw_overlay(self, surface):
+    def draw_overlay(self, surface: pygame.Surface) -> None:
         shade = pygame.Surface((WIDTH, HEIGHT), pygame.SRCALPHA)
         shade.fill((0, 0, 0, 150))
         surface.blit(shade, (0, 0))

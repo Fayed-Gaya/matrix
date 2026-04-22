@@ -1,5 +1,9 @@
+from __future__ import annotations
+
 import importlib
+from collections.abc import Callable
 from dataclasses import dataclass
+from typing import cast
 
 
 @dataclass(frozen=True)
@@ -9,15 +13,16 @@ class LevelEntry:
     module: str
     description: str
 
-    def launch(self):
+    def launch(self) -> None:
         level_module = importlib.import_module(self.module)
         run = getattr(level_module, "run", None)
         if not callable(run):
             raise RuntimeError(f"{self.module} does not expose a callable run()")
+        run = cast(Callable[[], None], run)
         run()
 
 
-LEVELS = {
+LEVELS: dict[str, LevelEntry] = {
     "JUMP": LevelEntry(
         code="JUMP",
         name="Jump",
@@ -75,9 +80,9 @@ LEVELS = {
 }
 
 
-def codes():
+def codes() -> tuple[str, ...]:
     return tuple(LEVELS.keys())
 
 
-def get_level(code):
+def get_level(code: str) -> LevelEntry | None:
     return LEVELS.get(code.strip().upper())
