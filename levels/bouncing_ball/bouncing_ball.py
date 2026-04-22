@@ -1,5 +1,6 @@
-from pathlib import Path
 import sys
+from pathlib import Path
+
 import pygame
 
 BASE_DIR = Path(__file__).resolve().parent
@@ -14,7 +15,7 @@ def run():
 
     screen = pygame.display.set_mode(size)
 
-    ball = pygame.image.load(str(BASE_DIR / 'intro_ball.gif'))
+    ball = pygame.image.load(str(BASE_DIR / "intro_ball.gif"))
     ballrect = ball.get_rect()
 
     while True:
@@ -38,5 +39,5 @@ def main():
     run()
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     run()

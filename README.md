@@ -85,6 +85,26 @@ python3 -m levels.zelda
 - Do not commit `.DS_Store`, `__pycache__/`, `.pyc`, virtual environments, or
   IDE metadata.
 
+## Quality Checks
+
+Run the local check pipeline before committing:
+
+```bash
+make check
+```
+
+Format and auto-fix lint issues where Ruff can do so safely:
+
+```bash
+make format
+```
+
+By default, the `Makefile` uses `.venv/bin/python`. Use `make check
+PYTHON=python3` if you want to run checks with another interpreter.
+
+The same lint, format, and syntax checks run in GitHub Actions on push and pull
+request.
+
 ## Current Direction
 
 Matrix now has a first-pass hub and terminal launcher. Returning to Matrix after

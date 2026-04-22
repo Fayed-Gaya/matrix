@@ -46,10 +46,10 @@ def run():
             if event.type == pygame.QUIT:
                 running = False
 
-        screen.fill('purple')
+        screen.fill("purple")
 
-        draw_wrapped_circle(screen, 'red', player_pos_1, 40)
-        draw_wrapped_circle(screen, 'red', player_pos_2, 40)
+        draw_wrapped_circle(screen, "red", player_pos_1, 40)
+        draw_wrapped_circle(screen, "red", player_pos_2, 40)
 
         keys = pygame.key.get_pressed()
         if keys[pygame.K_w]:
@@ -81,5 +81,5 @@ def main():
     run()
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     run()

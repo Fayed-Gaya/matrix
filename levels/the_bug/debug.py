@@ -3,13 +3,13 @@ import pygame
 font = None
 
 
-def debug(info, y = 10, x = 10):
+def debug(info, y=10, x=10):
     global font
     if font is None:
         font = pygame.font.Font(None, 30)
 
     display_surf = pygame.display.get_surface()
-    debug_surf = font.render(str(info),True, 'white')
-    debug_rect = debug_surf.get_rect(topleft = (x, y))
-    pygame.draw.rect(display_surf, 'Black', debug_rect)
+    debug_surf = font.render(str(info), True, "white")
+    debug_rect = debug_surf.get_rect(topleft=(x, y))
+    pygame.draw.rect(display_surf, "Black", debug_rect)
     display_surf.blit(debug_surf, debug_rect)

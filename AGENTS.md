@@ -100,6 +100,22 @@ Run a syntax check for Python files:
 python3 -m compileall main.py matrix levels
 ```
 
+Run the local quality pipeline:
+
+```bash
+make check
+```
+
+Format and auto-fix lint issues:
+
+```bash
+make format
+```
+
+The `Makefile` uses `.venv/bin/python` by default. Override it with
+`PYTHON=python3` only when intentionally running checks outside the project
+virtual environment.
+
 ## Current Direction
 
 The repo now has a first-pass Matrix hub with a terminal launcher. Returning to

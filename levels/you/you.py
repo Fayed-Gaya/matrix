@@ -2,6 +2,7 @@ import pygame
 import pygame.camera
 from pygame.locals import *
 
+
 class Capture:
     def __init__(self):
         pygame.init()

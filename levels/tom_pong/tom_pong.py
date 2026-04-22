@@ -9,9 +9,6 @@ VERSION = "0.4"
 
 import math
 import os
-import getopt
-import random
-import sys
 from socket import *
 
 import pygame
@@ -40,8 +37,9 @@ def load_png(name, max_size=None):
                     image = pygame.transform.smoothscale(image, new_size)
     except FileNotFoundError:
         print(f"Cannot load image: {fullname}")
-        raise SystemExit
+        raise SystemExit from None
     return image, image.get_rect()
+
 
 class Ball(pygame.sprite.Sprite):
     """A ball that will move across the screen
@@ -61,9 +59,9 @@ class Ball(pygame.sprite.Sprite):
         self.rect.center = (x, y)
 
     def update(self):
-        newpos = self.calcnewpos(self.rect,self.vector)
+        newpos = self.calcnewpos(self.rect, self.vector)
         self.rect = newpos
-        (angle,z) = self.vector
+        (angle, z) = self.vector
 
         if not self.area.contains(newpos):
             tl = not self.area.collidepoint(newpos.topleft)
@@ -73,11 +71,11 @@ class Ball(pygame.sprite.Sprite):
             if tr and tl or (br and bl):
                 angle = -angle
             if tl and bl:
-                #self.offcourt()
+                # self.offcourt()
                 angle = math.pi - angle
             if tr and br:
                 angle = math.pi - angle
-                #self.offcourt()
+                # self.offcourt()
         else:
             # Deflate the rectangles so you can't catch a ball behind the bat
             p1_rect = player1.rect.inflate(-3, -3)
@@ -96,12 +94,13 @@ class Ball(pygame.sprite.Sprite):
                 self.hit = not self.hit
             elif self.hit:
                 self.hit = not self.hit
-        self.vector = (angle,z)
+        self.vector = (angle, z)
 
-    def calcnewpos(self,rect,vector):
-        (angle,z) = vector
-        (dx,dy) = (z*math.cos(angle),z*math.sin(angle))
-        return rect.move(dx,dy)
+    def calcnewpos(self, rect, vector):
+        (angle, z) = vector
+        (dx, dy) = (z * math.cos(angle), z * math.sin(angle))
+        return rect.move(dx, dy)
+
 
 class Bat(pygame.sprite.Sprite):
     """Movable tennis 'bat' with which one hits the ball
@@ -123,7 +122,7 @@ class Bat(pygame.sprite.Sprite):
 
     def reinit(self):
         self.state = "still"
-        self.movepos = [0,0]
+        self.movepos = [0, 0]
         if self.side == "left":
             self.rect.midleft = self.area.midleft
         elif self.side == "right":
@@ -163,7 +162,6 @@ def run():
 
     # Initialise ball
     speed = 13
-    rand = ((0.1 * (random.randint(5,8))))
     ball = Ball((screen.get_width() // 2, screen.get_height() // 2), (0.47, speed))
 
     # Initialise sprites
@@ -196,10 +194,10 @@ def run():
                     player2.movedown()
             elif event.type == KEYUP:
                 if event.key == K_a or event.key == K_z:
-                    player1.movepos = [0,0]
+                    player1.movepos = [0, 0]
                     player1.state = "still"
                 if event.key == K_UP or event.key == K_DOWN:
-                    player2.movepos = [0,0]
+                    player2.movepos = [0, 0]
                     player2.state = "still"
 
         screen.blit(background, ball.rect, ball.rect)
