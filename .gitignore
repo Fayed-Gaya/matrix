@@ -5,3 +5,4 @@ __pycache__/
 *.py[cod]
 .env
 docs/notion-mcp.md
+*.tiled-session
