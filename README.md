@@ -107,6 +107,9 @@ PYTHON=python3` if you want to run checks with another interpreter.
 The same lint, format, and syntax checks run in GitHub Actions on push and pull
 request.
 
+The repo also includes a manual Windows packaging workflow for
+`levels/untitled` in `.github/workflows/build-untitled-windows.yml`.
+
 ## Current Direction
 
 Matrix now has a first-pass hub and terminal launcher. Returning to Matrix after

@@ -1,0 +1,33 @@
+name: Build Untitled Windows
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build-windows:
+    runs-on: windows-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install runtime dependencies
+        run: python -m pip install -r requirements.txt
+
+      - name: Install PyInstaller
+        run: python -m pip install pyinstaller
+
+      - name: Build Windows package
+        run: python scripts/build_untitled_windows.py
+
+      - name: Upload Windows artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: untitled-windows
+          path: dist/untitled-windows.zip
+          if-no-files-found: error

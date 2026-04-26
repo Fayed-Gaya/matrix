@@ -6,3 +6,5 @@ __pycache__/
 .env
 docs/notion-mcp.md
 *.tiled-session
+build/
+dist/

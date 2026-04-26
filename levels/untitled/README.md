@@ -63,3 +63,16 @@ Use these Tiled layers:
 - `Transitions`: optional object layer for map exits and spawn-targeted travel.
 
 `Tiled/` is the current source of truth for authored maps and tilesets.
+
+## Packaging
+
+The Windows build packages `untitled` as a standalone app that launches
+directly into this level rather than through Matrix.
+
+Packaging files:
+
+- `../../packaging/untitled_main.py`: standalone packaging entrypoint.
+- `../../packaging/untitled_windows.spec`: PyInstaller build definition.
+- `../../scripts/build_untitled_windows.py`: local/CI build script.
+- `../../.github/workflows/build-untitled-windows.yml`: manual GitHub Actions
+  workflow that builds and uploads `untitled-windows.zip`.
