@@ -42,7 +42,8 @@ python3 -m levels.<level_name>
 - `levels/you/`: camera capture experiment.
 - `levels/untitled/`: typed 2D action RPG prototype for the new collaborative
   game project.
-- `Tiled/`: Tiled map editor files.
+- `Tiled/`: repo-wide Tiled workspace and current source of truth for authored
+  untitled maps and tilesets.
 
 ## Development Notes
 
@@ -57,6 +58,9 @@ python3 -m levels.<level_name>
 - Some older tutorial files use relative paths that assume they are run from
   their own code directory. When touching a level, prefer file-relative paths
   based on `Path(__file__).resolve()` so it can run from the repository root.
+- `levels/untitled` now resolves runtime asset paths through
+  `levels/untitled/paths.py` so the level can run both from source and from a
+  PyInstaller bundle.
 - Pygame windows and audio may not work in headless environments. If runtime
   verification is not possible, at least run syntax checks for edited Python
   files.
@@ -67,6 +71,7 @@ python3 -m levels.<level_name>
 - Do not commit virtual environments or IDE metadata.
 - Asset files such as `.png`, `.wav`, `.ogg`, `.ttf`, `.csv`, `.tmx`, and `.tsx`
   are project files and may be committed when they belong to a level.
+- Generated packaging output in `build/` and `dist/` should not be committed.
 - Before committing, check `git status --short` and make sure staged files match
   the requested change.
 
@@ -114,6 +119,13 @@ Format and auto-fix lint issues:
 make format
 ```
 
+Build the standalone Windows package for `untitled` locally on a Windows
+machine:
+
+```bash
+python3 scripts/build_untitled_windows.py
+```
+
 The `Makefile` uses `.venv/bin/python` by default. Override it with
 `PYTHON=python3` only when intentionally running checks outside the project
 virtual environment.
@@ -122,3 +134,7 @@ virtual environment.
 
 The repo now has a first-pass Matrix hub with a terminal launcher. Returning to
 Matrix after a launched level exits is not implemented yet.
+
+`levels/untitled` also has a manual GitHub Actions workflow in
+`.github/workflows/build-untitled-windows.yml` that builds a one-folder Windows
+distribution and uploads `untitled-windows.zip` as an artifact.

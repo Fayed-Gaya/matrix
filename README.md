@@ -1,116 +1,41 @@
 # Matrix
 
-Matrix is a Python/Pygame sandbox containing a top-level hub world plus small
-games, demos, and tutorial-style projects. The player starts in Matrix, walks to
-a terminal, enters a level code, and launches a level from `levels/`.
+Matrix is a growing collection of small worlds, experiments, borrowed forms,
+and original game ideas held together by a shared frame. Some levels are
+ playful sketches. Some are studies in movement or space. Some are fuller game
+ projects that carry their own mood, logic, and visual language. Matrix is the
+ place they all pass through.
 
-## Setup
-
-Create and activate a virtual environment, then install the project
-dependencies:
-
-```bash
-python3 -m venv .venv
-source .venv/bin/activate
-python3 -m pip install -r requirements.txt
-```
-
-The project uses `pygame-ce`.
-
-## Run
-
-Run Matrix from the repository root:
-
-```bash
-python3 main.py
-```
-
-`main.py` launches the Matrix hub.
-
-You can also run the hub package directly:
-
-```bash
-python3 -m matrix
-```
+At the center of the repository is the Matrix hub itself: a quiet starting
+place where a player can walk to a terminal, enter a level code, and slip into
+another game.
 
 ## Levels
 
-| Level | Description |
+| Level | Spirit |
 | --- | --- |
-| `jump` | Endless runner where the player jumps over incoming obstacles. |
-| `mario` | Platformer project with an overworld, levels, enemies, coins, health, and UI. |
-| `monsters` | Monster-catching RPG with an overworld, trainer dialogs, battles, and evolution. |
-| `zelda` | Top-down RPG project with movement, combat, enemies, weapons, magic, upgrades, and UI. |
-| `tom_pong` | Two-player Pong implementation. |
-| `balls` | Movement and screen-wrap experiment. |
-| `bouncing_ball` | Minimal bouncing-ball demo. |
-| `the_bug` | Mouse/debug overlay experiment. |
-| `you` | Camera capture experiment. |
-| `untitled` | 2D action RPG prototype with movement, collision, camera, and NPC dialogue. |
+| `jump` | A light, quick rhythm piece about timing and pressure. |
+| `mario` | A bright platforming journey built around momentum, danger, and playful movement. |
+| `monsters` | A creature-driven RPG space shaped by travel, encounters, and gradual discovery. |
+| `zelda` | A classic adventure frame: wandering, fighting, collecting, and pushing deeper into a living map. |
+| `tom_pong` | A stripped-down competitive toy built around clean motion and reaction. |
+| `balls` | A minimal motion study about drift, repetition, and wraparound space. |
+| `bouncing_ball` | A tiny physics sketch reduced to a single gesture. |
+| `the_bug` | A debugging oddity that feels more like a specimen than a game. |
+| `you` | A camera-based experiment that turns the player back toward the machine. |
+| `untitled` | A young top-down RPG world now taking shape through maps, atmosphere, and character. |
 
-See `levels/README.md` and each level's own `README.md` for run commands,
-controls, and notes.
+## Project Shape
 
-The Matrix terminal currently recognizes these level codes:
+- `main.py`: the main entrance into Matrix.
+- `matrix/`: the hub world, terminal, and launch registry.
+- `levels/`: the individual games, sketches, and experiments.
+- `Tiled/`: the shared map-authoring workspace.
+- `AGENTS.md`: the technical operating notes for coding agents and automation.
 
-```text
-JUMP  MARIO  MONSTERS  ZELDA  PONG  BALLS  BOUNCE  BUG  YOU  UNTITLED
-```
+## Notes
 
-Each launchable level can also be run directly from the repository root:
-
-```bash
-python3 -m levels.jump
-python3 -m levels.mario
-python3 -m levels.monsters
-python3 -m levels.zelda
-python3 -m levels.untitled
-```
-
-## Project Structure
-
-- `main.py`: root entry point; starts the Matrix hub.
-- `matrix/`: hub world, terminal UI, and level registry.
-- `requirements.txt`: Python dependency list.
-- `levels/`: independent Pygame games and experiments.
-- `Tiled/`: Tiled map editor files.
-- `AGENTS.md`: repo guide for Codex and other coding agents.
-
-## Development Notes
-
-- Treat each level as mostly independent unless a task explicitly asks for a
-  shared launcher or cross-level refactor.
-- Levels should use file-relative asset paths and expose a package-level
-  `run()` function so they can be launched from the repository root.
-- Asset files such as images, audio, fonts, CSV maps, TMX maps, and TSX tilesets
-  are part of the project when they belong to a level.
-- Do not commit `.DS_Store`, `__pycache__/`, `.pyc`, virtual environments, or
-  IDE metadata.
-
-## Quality Checks
-
-Run the local check pipeline before committing:
-
-```bash
-make check
-```
-
-Format and auto-fix lint issues where Ruff can do so safely:
-
-```bash
-make format
-```
-
-By default, the `Makefile` uses `.venv/bin/python`. Use `make check
-PYTHON=python3` if you want to run checks with another interpreter.
-
-The same lint, format, and syntax checks run in GitHub Actions on push and pull
-request.
-
-The repo also includes a manual Windows packaging workflow for
-`levels/untitled` in `.github/workflows/build-untitled-windows.yml`.
-
-## Current Direction
-
-Matrix now has a first-pass hub and terminal launcher. Returning to Matrix after
-a launched level exits is not implemented yet.
+Matrix is both archive and workshop. Some parts are polished, some are in
+motion, and some are still closer to notes than to finished games. The
+repository is meant to hold all of that without forcing every project into the
+same shape too early.
