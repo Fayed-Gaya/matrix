@@ -3,8 +3,7 @@ from __future__ import annotations
 from pathlib import Path
 
 
-SPEC_PATH = Path(__file__).resolve()
-PROJECT_ROOT = SPEC_PATH.parent.parent
+PROJECT_ROOT = Path.cwd()
 ENTRYPOINT = PROJECT_ROOT / "packaging" / "untitled_main.py"
 
 datas = [
