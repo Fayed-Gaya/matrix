@@ -3,7 +3,9 @@ from __future__ import annotations
 from pathlib import Path
 
 
-PROJECT_ROOT = Path.cwd()
+SPEC_PATH = Path(__file__).resolve()
+PROJECT_ROOT = SPEC_PATH.parent.parent
+ENTRYPOINT = PROJECT_ROOT / "packaging" / "untitled_main.py"
 
 datas = [
     (str(PROJECT_ROOT / "Tiled"), "Tiled"),
@@ -12,7 +14,7 @@ datas = [
 
 
 a = Analysis(
-    ["packaging/untitled_main.py"],
+    [str(ENTRYPOINT)],
     pathex=[str(PROJECT_ROOT)],
     binaries=[],
     datas=datas,
