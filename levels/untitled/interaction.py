@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import pygame
 
+from .paths import SPRITES_DIR
 from .settings import (
     DIALOG_BG_COLOR,
     DIALOG_BORDER_COLOR,
@@ -9,13 +10,11 @@ from .settings import (
     HEIGHT,
     INTERACTION_DISTANCE,
     MUTED_TEXT_COLOR,
-    NPC_ACCENT_COLOR,
-    NPC_COLOR,
     NPC_SIZE,
-    SHADOW_COLOR,
     TEXT_COLOR,
     WIDTH,
 )
+from .sprites import load_idle_frame
 
 
 class NPC:
@@ -23,6 +22,7 @@ class NPC:
         self.rect = pygame.Rect((0, 0), NPC_SIZE)
         self.rect.center = position
         self.dialogue = dialogue
+        self.sprite = load_idle_frame(SPRITES_DIR / "npc_snoblin_blue.png")
 
     def is_player_near(self, player_rect: pygame.Rect) -> bool:
         return self.rect.inflate(INTERACTION_DISTANCE, INTERACTION_DISTANCE).colliderect(
@@ -31,11 +31,11 @@ class NPC:
 
     def draw(self, surface: pygame.Surface, camera_offset: pygame.Vector2) -> None:
         draw_rect = self.rect.move(-round(camera_offset.x), -round(camera_offset.y))
-        shadow = pygame.Rect(draw_rect.x + 3, draw_rect.bottom - 7, draw_rect.width - 6, 8)
-        pygame.draw.ellipse(surface, SHADOW_COLOR, shadow)
-        pygame.draw.rect(surface, NPC_COLOR, draw_rect, border_radius=5)
-        face = pygame.Rect(draw_rect.x + 8, draw_rect.y + 8, draw_rect.width - 16, 10)
-        pygame.draw.rect(surface, NPC_ACCENT_COLOR, face, border_radius=3)
+        sprite_rect = self.sprite.get_rect(midbottom=(draw_rect.centerx, draw_rect.bottom + 4))
+        shadow_rect = pygame.Rect(0, 0, 16, 8)
+        shadow_rect.midbottom = (draw_rect.centerx, draw_rect.bottom + 2)
+        pygame.draw.ellipse(surface, (8, 12, 10, 180), shadow_rect)
+        surface.blit(self.sprite, sprite_rect)
 
 
 class DialogueBox:

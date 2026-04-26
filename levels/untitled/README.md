@@ -36,14 +36,18 @@ UNTITLED
 - `interaction.py`: placeholder NPC and dialogue box.
 - `settings.py`: display, color, movement, and dialogue constants.
 - `paths.py`: file-relative asset paths.
-- `assets/maps/area_earth.tmx`: first placeholder Tiled map.
-- `assets/tilesets/placeholder_tiles.tsx`: placeholder Tiled tileset.
+- `sprites.py`: character sheet slicing for player and NPC sprites.
+- `../../Tiled/untitled-intro.tmx`: current intro map authored in Tiled.
+- `../../Tiled/intro_forest.tsx`: current intro tileset definition.
+- `../../Tiled/16x16.png`: current intro tileset image.
+- `assets/sprites/player_snoblin.png`: player prototype sprite sheet.
+- `assets/sprites/npc_snoblin_blue.png`: placeholder NPC sprite sheet.
 - `assets/backgrounds/environment_forestbackground.png`: opening background image.
 - `assets/audio/forest_ambience.mp3`: looping forest ambience for the level.
 
 ## Tiled Map Conventions
 
-The game currently loads `assets/maps/area_earth.tmx` with `pytmx`.
+The game currently loads `Tiled/untitled-intro.tmx` with `pytmx`.
 
 Use these Tiled layers:
 
@@ -54,7 +58,8 @@ Use these Tiled layers:
 - `Spawn`: object layer with a point named `player`.
 - `NPCs`: object layer with NPC points. Add a custom `dialogue` property for
   each NPC's text.
+- `Interactions`: optional object layer for signs, campfires, inspect points,
+  and other non-NPC triggers.
+- `Transitions`: optional object layer for map exits and spawn-targeted travel.
 
-The placeholder tileset is intentionally rough. Replace the placeholder `.tmx`,
-`.tsx`, and `.png` files with the real map and tilesets once the first Tiled map
-is ready.
+`Tiled/` is the current source of truth for authored maps and tilesets.
