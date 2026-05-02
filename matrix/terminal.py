@@ -2,16 +2,13 @@ from __future__ import annotations
 
 import pygame
 
-from .registry import LevelEntry, codes, get_level
+from .registry import LevelEntry, get_level
 from .settings import (
     ERROR_COLOR,
-    HEIGHT,
     MUTED_TEXT_COLOR,
     SUCCESS_COLOR,
-    TERMINAL_ACTIVE_COLOR,
     TERMINAL_COLOR,
     TEXT_COLOR,
-    WIDTH,
 )
 
 
@@ -24,7 +21,6 @@ class Terminal:
         self.message_color = MUTED_TEXT_COLOR
         self.font = pygame.font.Font(None, 28)
         self.small_font = pygame.font.Font(None, 22)
-        self.title_font = pygame.font.Font(None, 34)
 
     def is_player_near(self, player_rect: pygame.Rect) -> bool:
         return self.rect.colliderect(player_rect)
@@ -32,7 +28,7 @@ class Terminal:
     def open(self) -> None:
         self.active = True
         self.input_text = ""
-        self.message = "Enter a level code."
+        self.message = ""
         self.message_color = MUTED_TEXT_COLOR
 
     def close(self) -> None:
@@ -69,7 +65,7 @@ class Terminal:
         return level
 
     def draw_terminal_object(self, surface: pygame.Surface, player_near: bool) -> None:
-        color = TERMINAL_ACTIVE_COLOR if player_near else TERMINAL_COLOR
+        color = TEXT_COLOR if player_near else TERMINAL_COLOR
         pygame.draw.rect(surface, color, self.rect, border_radius=5)
         screen_rect = self.rect.inflate(-18, -18)
         pygame.draw.rect(surface, (4, 16, 20), screen_rect, border_radius=3)
@@ -85,34 +81,21 @@ class Terminal:
 
     def draw_hint(self, surface: pygame.Surface) -> None:
         text = self.small_font.render("Press E to access terminal", True, TEXT_COLOR)
-        rect = text.get_rect(midbottom=(WIDTH // 2, HEIGHT - 22))
+        width, height = surface.get_size()
+        rect = text.get_rect(midbottom=(width // 2, height - 22))
         surface.blit(text, rect)
 
     def draw_overlay(self, surface: pygame.Surface) -> None:
-        shade = pygame.Surface((WIDTH, HEIGHT), pygame.SRCALPHA)
-        shade.fill((0, 0, 0, 150))
-        surface.blit(shade, (0, 0))
+        width, height = surface.get_size()
+        surface.fill((2, 8, 10))
 
-        panel = pygame.Rect(120, 86, WIDTH - 240, HEIGHT - 172)
-        pygame.draw.rect(surface, (8, 18, 22), panel, border_radius=6)
-        pygame.draw.rect(surface, TERMINAL_COLOR, panel, width=2, border_radius=6)
+        prompt_rect = pygame.Rect(28, height - 76, width - 56, 46)
+        pygame.draw.rect(surface, (0, 18, 16), prompt_rect)
+        pygame.draw.rect(surface, TERMINAL_COLOR, prompt_rect, width=1)
 
-        title = self.title_font.render("MATRIX TERMINAL", True, TEXT_COLOR)
-        surface.blit(title, (panel.x + 26, panel.y + 24))
-
-        available = "AVAILABLE: " + "  ".join(codes())
-        available_surf = self.small_font.render(available, True, MUTED_TEXT_COLOR)
-        surface.blit(available_surf, (panel.x + 26, panel.y + 68))
-
-        prompt_rect = pygame.Rect(panel.x + 26, panel.y + 120, panel.width - 52, 44)
-        pygame.draw.rect(surface, (2, 10, 12), prompt_rect, border_radius=4)
-        pygame.draw.rect(surface, (40, 80, 88), prompt_rect, width=1, border_radius=4)
         prompt = self.font.render(f"> {self.input_text}", True, SUCCESS_COLOR)
         surface.blit(prompt, (prompt_rect.x + 14, prompt_rect.y + 11))
 
-        message = self.small_font.render(self.message, True, self.message_color)
-        surface.blit(message, (panel.x + 26, panel.y + 184))
-
-        help_text = "Enter launches. Backspace edits. Escape closes."
-        help_surf = self.small_font.render(help_text, True, MUTED_TEXT_COLOR)
-        surface.blit(help_surf, (panel.x + 26, panel.bottom - 42))
+        if self.message:
+            message = self.small_font.render(self.message, True, self.message_color)
+            surface.blit(message, (prompt_rect.x + 2, prompt_rect.y - 30))
