@@ -90,6 +90,6 @@ class World:
                 continue
             if obj.width and obj.height:
                 return pygame.Rect(round(obj.x), round(obj.y), round(obj.width), round(obj.height))
-            return pygame.Rect(round(obj.x) - 24, round(obj.y) - 24, 48, 48)
+            return pygame.Rect(round(obj.x) - 12, round(obj.y) - 12, 24, 24)
 
         return fallback

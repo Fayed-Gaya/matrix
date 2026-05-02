@@ -27,7 +27,7 @@ class Terminal:
         self.title_font = pygame.font.Font(None, 34)
 
     def is_player_near(self, player_rect: pygame.Rect) -> bool:
-        return self.rect.inflate(44, 44).colliderect(player_rect)
+        return self.rect.colliderect(player_rect)
 
     def open(self) -> None:
         self.active = True
