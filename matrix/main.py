@@ -8,7 +8,7 @@ from .camera import Camera
 from .paths import BACKGROUNDS_DIR
 from .player import Player
 from .registry import LevelEntry
-from .settings import BG_COLOR, FPS, HEIGHT, MUTED_TEXT_COLOR, TEXT_COLOR, WIDTH
+from .settings import BG_COLOR, FPS, HEIGHT, MUTED_TEXT_COLOR, RENDER_SCALE, TEXT_COLOR, WIDTH
 from .terminal import Terminal
 from .world import World
 
@@ -18,6 +18,7 @@ class MatrixGame:
         pygame.init()
         pygame.display.set_caption("Matrix")
         self.screen = pygame.display.set_mode((WIDTH, HEIGHT), pygame.RESIZABLE)
+        self.render_surface = self._create_render_surface()
         self.clock = pygame.time.Clock()
         self.font = pygame.font.Font(None, 28)
         self.title_font = pygame.font.Font(None, 46)
@@ -27,7 +28,7 @@ class MatrixGame:
         ).convert()
         self.show_opening = True
         self.world = World()
-        self.camera = Camera((WIDTH, HEIGHT), self.world.bounds.size)
+        self.camera = Camera(self.render_surface.get_size(), self.world.bounds.size)
         self.player = Player(self.world.player_spawn)
         self.terminal = Terminal(self.world.terminal_rect)
         self.running = True
@@ -72,19 +73,20 @@ class MatrixGame:
         if self.show_opening:
             return
 
+        self._sync_render_surface()
         if not self.terminal.active:
             self.player.update(dt, self.world.collision_rects, self.world.bounds)
         self.camera.update(self.player.rect)
 
     def draw_room(self) -> None:
-        self.screen.fill(BG_COLOR)
-        self.world.draw(self.screen, self.camera.offset)
+        self.render_surface.fill(BG_COLOR)
+        self.world.draw(self.render_surface, self.camera.offset)
 
         title = self.title_font.render("MATRIX", True, TEXT_COLOR)
-        self.screen.blit(title, (34, 30))
+        self.render_surface.blit(title, (34, 30))
 
         subtitle = self.font.render("Find the terminal. Enter a level code.", True, TEXT_COLOR)
-        self.screen.blit(subtitle, (36, 76))
+        self.render_surface.blit(subtitle, (36, 76))
 
     def draw(self) -> None:
         if self.show_opening:
@@ -94,8 +96,9 @@ class MatrixGame:
 
         player_near_terminal = self.terminal.is_player_near(self.player.rect)
         self.draw_room()
-        self.player.draw(self.screen, self.camera.offset)
-        self.world.draw(self.screen, self.camera.offset, above=True)
+        self.player.draw(self.render_surface, self.camera.offset)
+        self.world.draw(self.render_surface, self.camera.offset, above=True)
+        self._blit_render_surface()
 
         if player_near_terminal and not self.terminal.active:
             self.terminal.draw_hint(self.screen)
@@ -103,6 +106,27 @@ class MatrixGame:
             self.terminal.draw_overlay(self.screen)
 
         pygame.display.flip()
+
+    def _create_render_surface(self) -> pygame.Surface:
+        width, height = self.screen.get_size()
+        return pygame.Surface(
+            (
+                max(1, width // RENDER_SCALE),
+                max(1, height // RENDER_SCALE),
+            )
+        )
+
+    def _sync_render_surface(self) -> None:
+        target_size = self._create_render_surface().get_size()
+        if self.render_surface.get_size() == target_size:
+            return
+
+        self.render_surface = pygame.Surface(target_size)
+        self.camera.set_viewport(target_size)
+
+    def _blit_render_surface(self) -> None:
+        scaled = pygame.transform.scale(self.render_surface, self.screen.get_size())
+        self.screen.blit(scaled, (0, 0))
 
     def draw_opening(self) -> None:
         window_width, window_height = self.screen.get_size()

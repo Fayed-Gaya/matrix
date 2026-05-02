@@ -3,6 +3,7 @@ Color = tuple[int, int, int]
 WIDTH: int = 1280
 HEIGHT: int = 720
 FPS: int = 60
+RENDER_SCALE: int = 2
 
 BG_COLOR: Color = (10, 14, 18)
 GRID_COLOR: Color = (22, 32, 40)

@@ -9,6 +9,9 @@ class Camera:
         self.world = pygame.Rect((0, 0), world_size)
         self.offset = pygame.Vector2()
 
+    def set_viewport(self, viewport_size: tuple[int, int]) -> None:
+        self.viewport.size = viewport_size
+
     def update(self, target: pygame.Rect) -> None:
         self.offset.x = target.centerx - self.viewport.width / 2
         self.offset.y = target.centery - self.viewport.height / 2
