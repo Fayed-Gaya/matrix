@@ -27,6 +27,10 @@ python3 -m levels.<level_name>
 - `main.py`: root launcher; starts the Matrix hub.
 - `matrix/`: top-level hub world, terminal input, level registry, and
   Matrix-owned assets.
+  - `matrix/assets/maps/`: Matrix-owned Tiled maps.
+  - `matrix/assets/tilesets/`: Matrix-owned tileset definitions/images.
+  - `matrix/assets/backgrounds/`: Matrix opening/title imagery.
+  - `matrix/assets/sprites/`: Matrix-specific sprite sheets.
 - `requirements.txt`: Python dependencies.
 - `levels/`: collection of independent Pygame levels and experiments.
 - `levels/jump/`: endless-runner style game.
@@ -68,6 +72,16 @@ python3 -m levels.<level_name>
   for example `matrix/assets/maps/` or `levels/<level>/assets/maps/`. Keep the
   `.tiled-project` file in `Tiled/` so the whole repo remains editable from one
   Tiled workspace.
+- Tiled tileset paths should stay relative and portable. A map in
+  `matrix/assets/maps/` should reference Matrix-owned tilesets with
+  `../tilesets/...` and shared tilesets with `../../../shared_assets/...`.
+- Matrix currently opens at `1280x720`, is resizable, and renders hub gameplay
+  to an internal surface scaled by `RENDER_SCALE = 2`. Use the internal render
+  surface and camera viewport for world drawing; use the display surface for
+  full-window overlays like the opening screen and terminal.
+- If adding shared runtime assets, update packaging specs/workflows that bundle
+  affected levels. `untitled` currently includes `shared_assets/` in its
+  PyInstaller spec because its map references a shared tileset.
 - Pygame windows and audio may not work in headless environments. If runtime
   verification is not possible, at least run syntax checks for edited Python
   files.
