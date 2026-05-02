@@ -17,12 +17,14 @@ class MatrixGame:
     def __init__(self) -> None:
         pygame.init()
         pygame.display.set_caption("Matrix")
-        self.screen = pygame.display.set_mode((WIDTH, HEIGHT))
+        self.screen = pygame.display.set_mode((WIDTH, HEIGHT), pygame.RESIZABLE)
         self.clock = pygame.time.Clock()
         self.font = pygame.font.Font(None, 28)
         self.title_font = pygame.font.Font(None, 46)
         self.start_font = pygame.font.Font(None, 34)
-        self.opening_background = self._load_opening_background()
+        self.opening_background = pygame.image.load(
+            BACKGROUNDS_DIR / "matrix-opening.jpg"
+        ).convert()
         self.show_opening = True
         self.world = World()
         self.camera = Camera((WIDTH, HEIGHT), self.world.bounds.size)
@@ -103,26 +105,29 @@ class MatrixGame:
         pygame.display.flip()
 
     def draw_opening(self) -> None:
-        self.screen.blit(self.opening_background, (0, 0))
+        window_width, window_height = self.screen.get_size()
+        background = self._scale_opening_background((window_width, window_height))
+        self.screen.blit(background, (0, 0))
 
         prompt = self.start_font.render("Press start (any key) to begin", True, TEXT_COLOR)
-        prompt_rect = prompt.get_rect(midtop=(WIDTH // 2, HEIGHT - 82))
+        prompt_rect = prompt.get_rect(midtop=(window_width // 2, window_height - 82))
 
         shadow = self.start_font.render("Press start (any key) to begin", True, (0, 0, 0))
         self.screen.blit(shadow, prompt_rect.move(2, 2))
         self.screen.blit(prompt, prompt_rect)
 
         hint = self.font.render("MATRIX", True, MUTED_TEXT_COLOR)
-        hint_rect = hint.get_rect(midtop=(WIDTH // 2, prompt_rect.bottom + 10))
+        hint_rect = hint.get_rect(midtop=(window_width // 2, prompt_rect.bottom + 10))
         self.screen.blit(hint, hint_rect)
 
-    def _load_opening_background(self) -> pygame.Surface:
-        image = pygame.image.load(BACKGROUNDS_DIR / "matrix-opening.jpg").convert()
+    def _scale_opening_background(self, size: tuple[int, int]) -> pygame.Surface:
+        width, height = size
+        image = self.opening_background
         image_rect = image.get_rect()
-        scale = max(WIDTH / image_rect.width, HEIGHT / image_rect.height)
+        scale = max(width / image_rect.width, height / image_rect.height)
         scaled_size = (round(image_rect.width * scale), round(image_rect.height * scale))
         image = pygame.transform.smoothscale(image, scaled_size)
-        crop_rect = pygame.Rect(0, 0, WIDTH, HEIGHT)
+        crop_rect = pygame.Rect(0, 0, width, height)
         crop_rect.center = image.get_rect().center
         return image.subsurface(crop_rect).copy()
 

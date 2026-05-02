@@ -1,7 +1,7 @@
 Color = tuple[int, int, int]
 
-WIDTH: int = 960
-HEIGHT: int = 540
+WIDTH: int = 1280
+HEIGHT: int = 720
 FPS: int = 60
 
 BG_COLOR: Color = (10, 14, 18)
