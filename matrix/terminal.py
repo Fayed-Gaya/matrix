@@ -16,7 +16,7 @@ from .settings import (
 
 
 class Terminal:
-    def __init__(self, rect: tuple[int, int, int, int]) -> None:
+    def __init__(self, rect: pygame.Rect | tuple[int, int, int, int]) -> None:
         self.rect = pygame.Rect(rect)
         self.active = False
         self.input_text = ""

@@ -4,10 +4,13 @@ import sys
 
 import pygame
 
+from .camera import Camera
+from .paths import BACKGROUNDS_DIR
 from .player import Player
 from .registry import LevelEntry
-from .settings import BG_COLOR, FPS, GRID_COLOR, HEIGHT, TEXT_COLOR, WALL_COLOR, WIDTH
+from .settings import BG_COLOR, FPS, HEIGHT, MUTED_TEXT_COLOR, TEXT_COLOR, WIDTH
 from .terminal import Terminal
+from .world import World
 
 
 class MatrixGame:
@@ -18,8 +21,13 @@ class MatrixGame:
         self.clock = pygame.time.Clock()
         self.font = pygame.font.Font(None, 28)
         self.title_font = pygame.font.Font(None, 46)
-        self.player = Player((150, HEIGHT // 2))
-        self.terminal = Terminal((WIDTH - 180, HEIGHT // 2 - 52, 86, 104))
+        self.start_font = pygame.font.Font(None, 34)
+        self.opening_background = self._load_opening_background()
+        self.show_opening = True
+        self.world = World()
+        self.camera = Camera((WIDTH, HEIGHT), self.world.bounds.size)
+        self.player = Player(self.world.player_spawn)
+        self.terminal = Terminal(self.world.terminal_rect)
         self.running = True
         self.level_to_launch: LevelEntry | None = None
 
@@ -41,6 +49,11 @@ class MatrixGame:
                 self.running = False
                 return
 
+            if self.show_opening:
+                if event.type == pygame.KEYDOWN:
+                    self.show_opening = False
+                continue
+
             if self.terminal.active:
                 level = self.terminal.handle_event(event)
                 if level is not None:
@@ -54,19 +67,16 @@ class MatrixGame:
                     self.terminal.open()
 
     def update(self, dt: float) -> None:
-        if not self.terminal.active:
-            self.player.update(dt)
+        if self.show_opening:
+            return
 
-    def draw_grid(self) -> None:
-        for x in range(0, WIDTH, 48):
-            pygame.draw.line(self.screen, GRID_COLOR, (x, 0), (x, HEIGHT))
-        for y in range(0, HEIGHT, 48):
-            pygame.draw.line(self.screen, GRID_COLOR, (0, y), (WIDTH, y))
+        if not self.terminal.active:
+            self.player.update(dt, self.world.collision_rects, self.world.bounds)
+        self.camera.update(self.player.rect)
 
     def draw_room(self) -> None:
         self.screen.fill(BG_COLOR)
-        self.draw_grid()
-        pygame.draw.rect(self.screen, WALL_COLOR, (18, 18, WIDTH - 36, HEIGHT - 36), width=3)
+        self.world.draw(self.screen, self.camera.offset)
 
         title = self.title_font.render("MATRIX", True, TEXT_COLOR)
         self.screen.blit(title, (34, 30))
@@ -75,10 +85,15 @@ class MatrixGame:
         self.screen.blit(subtitle, (36, 76))
 
     def draw(self) -> None:
+        if self.show_opening:
+            self.draw_opening()
+            pygame.display.flip()
+            return
+
         player_near_terminal = self.terminal.is_player_near(self.player.rect)
         self.draw_room()
-        self.terminal.draw_terminal_object(self.screen, player_near_terminal)
-        self.player.draw(self.screen)
+        self.player.draw(self.screen, self.camera.offset)
+        self.world.draw(self.screen, self.camera.offset, above=True)
 
         if player_near_terminal and not self.terminal.active:
             self.terminal.draw_hint(self.screen)
@@ -86,6 +101,30 @@ class MatrixGame:
             self.terminal.draw_overlay(self.screen)
 
         pygame.display.flip()
+
+    def draw_opening(self) -> None:
+        self.screen.blit(self.opening_background, (0, 0))
+
+        prompt = self.start_font.render("Press start (any key) to begin", True, TEXT_COLOR)
+        prompt_rect = prompt.get_rect(midtop=(WIDTH // 2, HEIGHT - 82))
+
+        shadow = self.start_font.render("Press start (any key) to begin", True, (0, 0, 0))
+        self.screen.blit(shadow, prompt_rect.move(2, 2))
+        self.screen.blit(prompt, prompt_rect)
+
+        hint = self.font.render("MATRIX", True, MUTED_TEXT_COLOR)
+        hint_rect = hint.get_rect(midtop=(WIDTH // 2, prompt_rect.bottom + 10))
+        self.screen.blit(hint, hint_rect)
+
+    def _load_opening_background(self) -> pygame.Surface:
+        image = pygame.image.load(BACKGROUNDS_DIR / "matrix-opening.jpg").convert()
+        image_rect = image.get_rect()
+        scale = max(WIDTH / image_rect.width, HEIGHT / image_rect.height)
+        scaled_size = (round(image_rect.width * scale), round(image_rect.height * scale))
+        image = pygame.transform.smoothscale(image, scaled_size)
+        crop_rect = pygame.Rect(0, 0, WIDTH, HEIGHT)
+        crop_rect.center = image.get_rect().center
+        return image.subsurface(crop_rect).copy()
 
     def launch_level(self, level: LevelEntry) -> None:
         pygame.quit()

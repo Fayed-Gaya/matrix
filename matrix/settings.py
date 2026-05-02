@@ -16,3 +16,6 @@ ERROR_COLOR: Color = (255, 112, 112)
 SUCCESS_COLOR: Color = (111, 232, 158)
 
 PLAYER_SPEED: int = 260
+PLAYER_SIZE: tuple[int, int] = (16, 16)
+CHARACTER_FRAME_SIZE: tuple[int, int] = (32, 32)
+ANIMATION_FPS: int = 10
