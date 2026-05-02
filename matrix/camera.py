@@ -11,11 +11,14 @@ class Camera:
 
     def set_viewport(self, viewport_size: tuple[int, int]) -> None:
         self.viewport.size = viewport_size
+        self._clamp_offset()
 
     def update(self, target: pygame.Rect) -> None:
         self.offset.x = target.centerx - self.viewport.width / 2
         self.offset.y = target.centery - self.viewport.height / 2
+        self._clamp_offset()
 
+    def _clamp_offset(self) -> None:
         max_x = max(0, self.world.width - self.viewport.width)
         max_y = max(0, self.world.height - self.viewport.height)
         self.offset.x = max(0, min(self.offset.x, max_x))

@@ -108,13 +108,24 @@ class MatrixGame:
         pygame.display.flip()
 
     def _create_render_surface(self) -> pygame.Surface:
-        width, height = self.screen.get_size()
+        width, height = self._render_size()
         return pygame.Surface(
             (
-                max(1, width // RENDER_SCALE),
-                max(1, height // RENDER_SCALE),
+                width,
+                height,
             )
         )
+
+    def _render_size(self) -> tuple[int, int]:
+        window_width, window_height = self.screen.get_size()
+        width = max(1, window_width // RENDER_SCALE)
+        height = max(1, window_height // RENDER_SCALE)
+
+        if hasattr(self, "world"):
+            width = min(width, self.world.bounds.width)
+            height = min(height, self.world.bounds.height)
+
+        return (width, height)
 
     def _sync_render_surface(self) -> None:
         target_size = self._create_render_surface().get_size()
@@ -125,8 +136,22 @@ class MatrixGame:
         self.camera.set_viewport(target_size)
 
     def _blit_render_surface(self) -> None:
-        scaled = pygame.transform.scale(self.render_surface, self.screen.get_size())
-        self.screen.blit(scaled, (0, 0))
+        window_size = self.screen.get_size()
+        scaled = pygame.transform.scale(
+            self.render_surface,
+            (
+                self.render_surface.get_width() * RENDER_SCALE,
+                self.render_surface.get_height() * RENDER_SCALE,
+            ),
+        )
+        self.screen.fill(BG_COLOR)
+        self.screen.blit(
+            scaled,
+            (
+                (window_size[0] - scaled.get_width()) // 2,
+                (window_size[1] - scaled.get_height()) // 2,
+            ),
+        )
 
     def draw_opening(self) -> None:
         window_width, window_height = self.screen.get_size()
