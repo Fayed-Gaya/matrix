@@ -30,6 +30,7 @@ another game.
 - `main.py`: the main entrance into Matrix.
 - `matrix/`: the hub world, terminal, and launch registry.
 - `levels/`: the individual games, sketches, and experiments.
+- `shared_assets/`: assets intentionally reused across worlds.
 - `Tiled/`: the shared map-authoring workspace.
 - `AGENTS.md`: the technical operating notes for coding agents and automation.
 

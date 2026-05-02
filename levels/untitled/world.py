@@ -7,7 +7,7 @@ from pytmx import TiledObjectGroup, TiledTileLayer
 from pytmx.util_pygame import load_pygame
 
 from .interaction import NPC
-from .paths import TILED_DIR
+from .paths import MAPS_DIR
 from .settings import (
     DIALOGUE_TEXT,
     TILE_SIZE,
@@ -15,7 +15,7 @@ from .settings import (
 
 
 class World:
-    def __init__(self, map_path: Path = TILED_DIR / "untitled-intro.tmx") -> None:
+    def __init__(self, map_path: Path = MAPS_DIR / "untitled-intro.tmx") -> None:
         self.map_path = map_path
         self.tmx = load_pygame(str(map_path))
         self.bounds = pygame.Rect(

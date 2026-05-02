@@ -37,9 +37,9 @@ UNTITLED
 - `settings.py`: display, color, movement, and dialogue constants.
 - `paths.py`: file-relative asset paths.
 - `sprites.py`: character sheet slicing for player and NPC sprites.
-- `../../Tiled/untitled-intro.tmx`: current intro map authored in Tiled.
-- `../../Tiled/intro_forest.tsx`: current intro tileset definition.
-- `../../Tiled/16x16.png`: current intro tileset image.
+- `assets/maps/untitled-intro.tmx`: current intro map authored in Tiled.
+- `../../shared_assets/tilesets/intro_forest.tsx`: shared intro tileset definition.
+- `../../shared_assets/tilesets/16x16.png`: shared intro tileset image.
 - `assets/sprites/player_snoblin.png`: player prototype sprite sheet.
 - `assets/sprites/npc_snoblin_blue.png`: placeholder NPC sprite sheet.
 - `assets/backgrounds/environment_forestbackground.png`: opening background image.
@@ -47,7 +47,7 @@ UNTITLED
 
 ## Tiled Map Conventions
 
-The game currently loads `Tiled/untitled-intro.tmx` with `pytmx`.
+The game currently loads `assets/maps/untitled-intro.tmx` with `pytmx`.
 
 Use these Tiled layers:
 
@@ -62,7 +62,8 @@ Use these Tiled layers:
   and other non-NPC triggers.
 - `Transitions`: optional object layer for map exits and spawn-targeted travel.
 
-`Tiled/` is the current source of truth for authored maps and tilesets.
+`Tiled/` is the repo-wide Tiled workspace. Runtime maps live with the level that
+owns them, and reused tilesets live in `shared_assets/`.
 
 ## Packaging
 

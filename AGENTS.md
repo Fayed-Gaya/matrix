@@ -25,7 +25,8 @@ python3 -m levels.<level_name>
 ## Repository Layout
 
 - `main.py`: root launcher; starts the Matrix hub.
-- `matrix/`: top-level hub world, terminal input, and level registry.
+- `matrix/`: top-level hub world, terminal input, level registry, and
+  Matrix-owned assets.
 - `requirements.txt`: Python dependencies.
 - `levels/`: collection of independent Pygame levels and experiments.
 - `levels/jump/`: endless-runner style game.
@@ -42,8 +43,10 @@ python3 -m levels.<level_name>
 - `levels/you/`: camera capture experiment.
 - `levels/untitled/`: typed 2D action RPG prototype for the new collaborative
   game project.
-- `Tiled/`: repo-wide Tiled workspace and current source of truth for authored
-  untitled maps and tilesets.
+- `shared_assets/`: runtime assets intentionally reused by multiple levels.
+- `Tiled/`: repo-wide Tiled workspace. Keep Tiled project/session metadata here;
+  runtime maps and tilesets should live with their owning level or in
+  `shared_assets/`.
 
 ## Development Notes
 
@@ -61,6 +64,10 @@ python3 -m levels.<level_name>
 - `levels/untitled` now resolves runtime asset paths through
   `levels/untitled/paths.py` so the level can run both from source and from a
   PyInstaller bundle.
+- New Tiled maps should be stored as runtime content under the owning level,
+  for example `matrix/assets/maps/` or `levels/<level>/assets/maps/`. Keep the
+  `.tiled-project` file in `Tiled/` so the whole repo remains editable from one
+  Tiled workspace.
 - Pygame windows and audio may not work in headless environments. If runtime
   verification is not possible, at least run syntax checks for edited Python
   files.

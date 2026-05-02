@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.10" tiledversion="1.12.1" orientation="orthogonal" renderorder="right-down" width="50" height="50" tilewidth="16" tileheight="16" infinite="0" nextlayerid="8" nextobjectid="16">
- <tileset firstgid="1" source="intro_forest.tsx"/>
- <tileset firstgid="391" source="Basic Interior.tsx"/>
+ <tileset firstgid="1" source="../../../shared_assets/tilesets/intro_forest.tsx"/>
+ <tileset firstgid="391" source="../tilesets/basic-interior.tsx"/>
  <layer id="1" name="Ground" width="50" height="50">
   <data encoding="csv">
 35,35,35,35,35,35,35,35,35,35,35,35,35,35,35,35,35,35,35,35,35,35,35,35,35,35,35,35,35,35,35,35,35,35,35,35,35,35,35,35,35,35,35,35,35,35,35,35,35,35,

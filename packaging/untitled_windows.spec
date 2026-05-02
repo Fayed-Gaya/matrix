@@ -7,8 +7,8 @@ PROJECT_ROOT = Path.cwd()
 ENTRYPOINT = PROJECT_ROOT / "packaging" / "untitled_main.py"
 
 datas = [
-    (str(PROJECT_ROOT / "Tiled"), "Tiled"),
     (str(PROJECT_ROOT / "levels" / "untitled" / "assets"), "levels/untitled/assets"),
+    (str(PROJECT_ROOT / "shared_assets"), "shared_assets"),
 ]
 
 
