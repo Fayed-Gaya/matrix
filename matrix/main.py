@@ -21,7 +21,6 @@ class MatrixGame:
         self.render_surface = self._create_render_surface()
         self.clock = pygame.time.Clock()
         self.font = pygame.font.Font(None, 28)
-        self.title_font = pygame.font.Font(None, 46)
         self.start_font = pygame.font.Font(None, 34)
         self.opening_background = pygame.image.load(
             BACKGROUNDS_DIR / "matrix-opening.jpg"
@@ -81,12 +80,6 @@ class MatrixGame:
     def draw_room(self) -> None:
         self.render_surface.fill(BG_COLOR)
         self.world.draw(self.render_surface, self.camera.offset)
-
-        title = self.title_font.render("MATRIX", True, TEXT_COLOR)
-        self.render_surface.blit(title, (34, 30))
-
-        subtitle = self.font.render("Find the terminal. Enter a level code.", True, TEXT_COLOR)
-        self.render_surface.blit(subtitle, (36, 76))
 
     def draw(self) -> None:
         if self.show_opening:
