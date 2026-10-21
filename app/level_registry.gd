@@ -8,7 +8,7 @@ const ENTRIES: Dictionary = {
 	"MONSTERS": {"name": "Monsters", "scene": ""},
 	"ZELDA": {"name": "Zelda", "scene": ""},
 	"PONG": {"name": "Tom Pong", "scene": ""},
-	"BALLS": {"name": "Balls", "scene": ""},
+	"BALLS": {"name": "Balls", "scene": "res://levels/balls/balls.tscn"},
 	"BOUNCE": {"name": "Bouncing Ball", "scene": "res://levels/bouncing_ball/bouncing_ball.tscn"},
 	"BUG": {"name": "The Bug", "scene": ""},
 	"YOU": {"name": "You", "scene": ""},

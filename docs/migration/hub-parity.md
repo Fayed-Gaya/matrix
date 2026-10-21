@@ -1,8 +1,8 @@
 # Stage 3 hub parity
 
 This document records the Stage 3 hub checkpoint. Stage 4 progress is recorded
-in the migration log and individual level READMEs; BOUNCE now runs its actual
-port, while the other nine codes retain pending screens with return controls.
+in the migration log and individual level READMEs; BOUNCE and BALLS now run their
+actual ports, while the other eight codes retain pending screens with return controls.
 Stage 2 commit `2f67df7` was pushed at the user's request before this work.
 
 | Original behavior | Godot implementation / evidence |

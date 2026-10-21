@@ -1,7 +1,8 @@
 # Matrix migration guide
 
 The repository is migrating from Pygame CE to Godot 4.7.2 with GDScript and
-Compatibility rendering. The hub and Bouncing Ball (`BOUNCE`) are migrated; nine level ports are pending.
+Compatibility rendering. The hub, Bouncing Ball (`BOUNCE`), and Balls (`BALLS`) are migrated; eight level
+ports are pending.
 
 - Keep `project.godot` at the repository root. Use typed GDScript for gameplay.
 - `app/` owns startup/routing, `hub/` the spaceship/terminal, `levels/` the
@@ -10,7 +11,7 @@ Compatibility rendering. The hub and Bouncing Ball (`BOUNCE`) are migrated; nine
   assets into their Godot module; keep the archive independent and intact.
 - Commit Godot `.uid` sidecars; ignore `.godot/` and generated exports.
 - `make check` validates exact engine version, imports, resource loads and startup.
-  It also verifies converted map data, terminal behavior, routing/return, and Bouncing Ball source-trace parity.
+  It also verifies converted map data, terminal behavior, routing/return, and both movement demos against source traces.
   `make hub-map` regenerates the native hub map from its copied TMX source.
   `make editor` opens the project; `make run` launches it. Override `GODOT`
   with the executable path on other machines. Python 3 runs validation tooling

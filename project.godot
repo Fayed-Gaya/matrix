@@ -47,5 +47,22 @@ return_to_hub={
 "events": [Object(InputEventKey,"physical_keycode":4194305)]
 }
 
+balls_left={
+"deadzone": 0.2,
+"events": [Object(InputEventKey,"physical_keycode":65)]
+}
+balls_right={
+"deadzone": 0.2,
+"events": [Object(InputEventKey,"physical_keycode":68)]
+}
+balls_up={
+"deadzone": 0.2,
+"events": [Object(InputEventKey,"physical_keycode":87)]
+}
+balls_down={
+"deadzone": 0.2,
+"events": [Object(InputEventKey,"physical_keycode":83)]
+}
+
 [physics]
 common/physics_ticks_per_second=60

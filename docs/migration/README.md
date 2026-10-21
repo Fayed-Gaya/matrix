@@ -208,3 +208,29 @@ The source GIF copy is identical and the converted PNG's rendered RGBA pixels
 were compared successfully. Manual pacing/visual review and cross-platform
 exports remain pending; full wall-clock timing parity is not claimed.
 The next level is Balls (`BALLS`); pause for review before starting it.
+
+
+## Stage 4b — Balls
+
+Bouncing Ball commit `a21c423` was pushed at the user's request before this
+checkpoint. `BALLS` now loads an independent GDScript scene under `levels/balls/`.
+It retains the experiment's two different movement models, original circle
+sizes/positions/colors, unnormalized controls, modulo and edge/corner copies,
+previous-delta sampling, and draw-before-update order. The level temporarily
+sets the 60 FPS cap and restores the prior value on exit. The original logical
+field fits the shared window; Escape and the return hint are additions.
+
+See [controls, parity and validation](../../levels/balls/README.md).
+Eight level ports remain pending. The next checkpoint is The Bug (`BUG`).
+
+
+Validation passed: full `make check` (resource imports, hub routing/return,
+Bouncing Ball regressions, Balls trace/input/lifecycle/resize checks, startup),
+a real Compatibility-window suite with inspected center/corner screenshots,
+Python tooling lint/format, and `git diff --check`. The frame-based circle
+matched all source results exactly; the elapsed-time circle's maximum toroidal
+position error was 0.0001931 logical pixels, within the 0.001-pixel check.
+The original drawing cases include all four corners. The center view was
+compared with a fresh Pygame render; letterbox clipping was checked visually
+and by sampling a margin pixel. All 771 archived files remain byte-identical.
+Manual timing/appearance review and other-platform exports remain pending.
