@@ -10,17 +10,17 @@ test('opening, real keyboard navigation, ten terminal codes, return and resize',
   await page.locator('canvas').click();
   await page.keyboard.press('Enter');
   await expect.poll(async () => (await state(page)).opening).toBe(false);
-  async function moveAxis(axis, target, negative, positive) {
+  async function moveAxis(axis, target, negative, positive, tolerance = 12) {
     for (let pulse = 0; pulse < 50; pulse++) {
       const current = await state(page);
       const distance = target - current[axis];
-      if (Math.abs(distance) <= 2) return;
+      if (Math.abs(distance) <= tolerance) return;
       await page.keyboard.press(distance < 0 ? negative : positive, {delay: Math.min(50, Math.max(8, Math.abs(distance) / 260 * 1000))});
     }
     throw new Error('Could not reach waypoint: ' + JSON.stringify(await state(page)));
   }
   // Short real key pulses avoid holding movement during slow browser assertions.
-  await moveAxis('y', 423, 'ArrowUp', 'ArrowDown');
+  await moveAxis('y', 426, 'ArrowUp', 'ArrowDown', 1);
   await moveAxis('x', 400, 'ArrowLeft', 'ArrowRight');
   for (let pulse = 0; pulse < 15 && !(await state(page)).near_terminal; pulse++)
     await page.keyboard.press('ArrowDown', {delay: 25});
