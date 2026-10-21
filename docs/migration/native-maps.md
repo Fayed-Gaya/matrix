@@ -30,7 +30,7 @@ Do not flatten artwork or replace source art. Keep manifests for non-map frame/a
 - [x] Untitled: same, including NPC/dialogue; validation, commit/push.
 - [x] Mario: three native maps, runtime adapter, parity/edit validation, commit/push.
 - [x] Zelda: native map and runtime adapter, parity/edit validation, commit/push.
-- [ ] Monsters: eight native maps/objects/regions, parity/edit validation, commit/push.
+- [x] Monsters: eight native maps/objects/regions, parity/edit validation, commit/push.
 - [ ] Retire conversion scripts/commands and redundant copied authoring inputs; update docs.
 - [ ] Final make check, make runtime-check, archive integrity and editor/resource verification.
 
@@ -66,3 +66,11 @@ and was visually inspected. Ground preserves the previous precomposed image as
 paintable 64px regions; no new flattening. Previously unused source CSV layers
 remain regression/reference evidence, not new runtime overlays. Manifest map
 grids removed; gameplay/stat/frame data retained. Full-map playtesting remains.
+
+Monsters milestone: all eight native maps reproduce every baseline terrain cell,
+object position/size/image and property dictionary. All named spawns/transitions,
+trainer/encounter/nurse and battle/evolution checks pass. Native region edits and
+terrain painting/extension survive save/reload. Deterministic Compatibility world
+PNG is byte-identical. Manifest maps removed; 792-image atlas, animation, audio,
+trainer and battle data retained. Region nodes are editable Control rectangles;
+previews use static frames while runtime retains animation and depth sorting.

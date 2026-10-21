@@ -34,14 +34,8 @@ func draw_world() -> void:
 	draw_rect(Rect2(0,0,1280,720),Color.BLACK)
 	draw_set_transform(-camera)
 	var world: Dictionary = game.world
-	var width: int = int(world.width)
-	var height: int = int(world.height)
 	for layer: Dictionary in world.layers:
-		for y: int in range(maxi(0,floori(camera.y/64)),mini(height,ceili((camera.y+720)/64))):
-			for x: int in range(maxi(0,floori(camera.x/64)),mini(width,ceili((camera.x+1280)/64))):
-				var id: int = int(layer.cells[y*width+x])-1
-				if id >= 0:
-					draw_texture(game.tile(id),Vector2(x*64,y*64))
+		game.native_maps[game.map_name].paint_layer(self,layer.name,Rect2(camera,Vector2(1280,720)))
 	var water: Array = game.frames("tilesets/water")
 	var water_texture: Texture2D = water[int(game.age*6)%water.size()]
 	for obj: Dictionary in world.groups.get("Water",[]):

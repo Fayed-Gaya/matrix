@@ -4,6 +4,7 @@ extends MatrixLevel
 const FIELD_SIZE: Vector2 = Vector2(1280,720)
 var data: Dictionary = JSON.parse_string(FileAccess.get_file_as_string("res://levels/monsters/assets/manifest.json"))
 var cache: Dictionary = {}
+var native_maps: Dictionary = {}
 var party: Array[MonsterState] = []
 var battle: MonsterBattle
 var world: Dictionary
@@ -100,6 +101,12 @@ func music(name: String,loop: bool = true) -> void:
 
 
 func _ready() -> void:
+	# Resource registry only; all cell and region placements live in these scenes.
+	data.maps = {}
+	for name: String in ["arena","fire","hospital","hospital2","house","plant","water","world"]:
+		var map: MatrixNativeMap = MatrixNativeMap.open("res://levels/monsters/maps/"+name+".tscn")
+		native_maps[name] = map
+		data.maps[name] = map.read_monsters()
 	for spec: Array in [["Ivieron",32],["Atrox",15],["Cindrill",16],["Atrox",10],["Sparchu",11],["Gulfin",9],["Jacana",10]]:
 		var monster: MonsterState = new_monster(spec[0],spec[1])
 		monster.xp = randi_range(0,monster.level*100)
@@ -111,6 +118,9 @@ func _ready() -> void:
 
 
 func _exit_tree() -> void:
+	for map: MatrixNativeMap in native_maps.values():
+		map.free()
+	native_maps.clear()
 	for child: Node in get_children():
 		if child is AudioStreamPlayer:
 			child.stop()
@@ -132,7 +142,8 @@ func entity_box(position: Vector2,graphic: String = "player") -> Rect2:
 
 func setup_map(name: String,spawn: String) -> void:
 	map_name = name
-	world = data.maps[name]
+	world = native_maps[name].read_monsters()
+	data.maps[name] = world
 	npcs.clear()
 	obstacles.clear()
 	noticed = false

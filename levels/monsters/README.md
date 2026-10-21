@@ -13,11 +13,31 @@ capture, reserves, XP/leveling, evolution, music and effects. Source stat tables
 abilities, trainers, initial positions and controls are retained. Capture uses
 the source's strict below-90%-health rule, without invented random odds.
 
-Runtime GDScript reads its own manifest and assets. Rebuild with
-`.venv/bin/python scripts/build_monsters_manifest.py` using the archived Pygame
-requirements. The converter reads all TMX layers/object properties and packs
+## Native map editing
+
+Open any of the eight `maps/*.tscn` scenes directly in Godot. Paint Terrain and
+Terrain Top with the shared external `maps/terrain.tres` palette. All existing
+atlas cutouts remain available, including source transformations already baked
+into their preserved image cutouts. Native cell painting/erasing immediately
+controls runtime terrain; no manifest regeneration or Tiled is involved.
+
+Expand Groups to edit Objects, Collisions, Entities, Monsters encounter regions,
+Transition rectangles, Water and Coast. Select/move/duplicate a native rectangle;
+resize with the 2D handles or object_size. Inspect object_name, image_id and
+properties for behavior. Entities use Player + pos/direction for named spawns;
+trainers retain character_id/graphic/radius. Transitions use target/pos. Coast
+retains terrain/side and encounters retain biome/monster levels/species.
+Positions and sizes come from the scene; never edit a JSON map grid.
+
+Editor previews show static sprite/water/coast frames with region outlines.
+Runtime keeps the existing animation, depth sorting, special top-object order,
+entity hitboxes, trainer behavior and battles. No shapes were simplified.
+Paint beyond the old grid to extend terrain, including negative coordinates.
+World.grid_size preserves empty map extent. Save normally.
+
+The manifest now contains non-map image/frame/audio/stat/trainer/battle data.
 792 deduplicated images (including transformed tiles and source color-keyed
-cutouts) into five atlas pages. Original graphics/audio/map sources are copied.
+cutouts) remain in five preserved atlas pages alongside original source art.
 Godot rejects the source ADPCM explosion WAV; a PCM16 runtime conversion is used,
 with the untouched original retained in `source/audio/`. Original project notes
 credit Scarloxy for artwork and OpenGameArt sources for sounds; the original
