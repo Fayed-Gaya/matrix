@@ -1,8 +1,23 @@
 # Matrix migration guide
 
-The repository is migrating from Pygame CE to Godot 4.7.2 with GDScript and
-Compatibility rendering. The hub and all ten registered levels have Godot modules. You uses native camera
-feeds with platform/hardware limitations; full gameplay parity is not certified.
+Matrix uses Godot 4.7.2, typed GDScript and Compatibility rendering. The
+migration and native map authoring are merged. The owner manually tested the
+hub and all ten levels locally; browser readiness is a separate milestone.
+YOU retains native camera behavior with platform/hardware limitations.
+
+## GitHub Flow
+
+- `main` is integrated, validated code; no permanent dev branch.
+- Use short-lived feature/fix branches and PRs targeting main for substantial work.
+- Codex may commit and push meaningful feature checkpoints autonomously.
+- Never merge into main without explicit authorization for that merge.
+- Published releases use immutable version tags; do not create/move release tags
+  or deploy/publish without authorization. See `docs/development.md`.
+- Current milestone: Alpha 0.1 browser release preparation on
+  `feature/alpha-0.1-release-pipeline`. Keep `docs/releases/alpha-0.1-status.md`
+  current across handoffs. Do not publish, tag, merge, remove levels or the archive.
+
+## Project conventions
 
 - Keep `project.godot` at the repository root. Use typed GDScript for gameplay.
 - `app/` owns startup/routing, `hub/` the spaceship/terminal, `levels/` the
@@ -41,12 +56,11 @@ feeds with platform/hardware limitations; full gameplay parity is not certified.
   `docs/migration/parity-checklist.md` records verified behavior and manual gaps.
 - `make archive-check` verifies all 771 archived baseline checksums.
   `make runtime-check` validates fresh imports/routes without the archive/cache.
-- Exports are not configured/certified yet. Include runtime `*.json` manifests
-  and camera permissions when creating platform packaging.
-- Commit and push validated milestones to `migration/native-godot-maps`, as
-  authorized by the user. Do not merge.
-- Continue level by level without review pauses, as authorized by the user.
-  Record limitations and blockers; never claim unchecked parity.
+- Web exports must include runtime JSON manifests and all ten levels, exclude
+  the archive/development sources, and provide a clear YOU fallback with hub return.
+- Record limitations and blockers; never claim unchecked browser/platform parity.
+- Preserve third-party notices; unresolved licensing remains a release blocker.
+  Do not remove affected levels silently.
 - Keep generated cache data, build output, credentials, and local tools out of Git.
   Track `.import` sidecars that define asset import settings; ignore `.godot/`.
 
