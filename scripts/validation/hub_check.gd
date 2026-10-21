@@ -8,6 +8,7 @@ var capture_dir: String = ""
 
 
 func _initialize() -> void:
+	root.set_meta("matrix_test_mode",true)
 	run.call_deferred()
 
 
@@ -127,11 +128,7 @@ func run() -> void:
 			check(app.active_level.scene_file_path == LevelRegistry.lookup(code).scene,
 				"Registered scene loaded for " + code)
 		var previous: WeakRef = weakref(app.active_level)
-		if code == "YOU":
-			await capture("pending")
-			app.active_level.get_node("Return").pressed.emit()
-		else:
-			key(KEY_ESCAPE)
+		key(KEY_ESCAPE)
 		await settle()
 		check(app.active_level == null and previous.get_ref() == null, "Level freed on return")
 		check(hub.visible and hub.can_process(), "Hub resumes for " + code)

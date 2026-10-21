@@ -1,8 +1,8 @@
 # Matrix migration guide
 
 The repository is migrating from Pygame CE to Godot 4.7.2 with GDScript and
-Compatibility rendering. The hub and nine levels are migrated, including Mario, Zelda and Monsters.
-You camera capture remains.
+Compatibility rendering. The hub and all ten registered levels have Godot modules. You uses native camera
+feeds with platform/hardware limitations; full gameplay parity is not certified.
 
 - Keep `project.godot` at the repository root. Use typed GDScript for gameplay.
 - `app/` owns startup/routing, `hub/` the spaceship/terminal, `levels/` the
@@ -22,6 +22,9 @@ You camera capture remains.
   Add completed scene paths to `app/level_registry.gd`. Empty paths deliberately
   show pending status, and must never be described as migrated gameplay.
 - Preserve terminal codes and distinguishing mechanics; track parity explicitly.
+- Automated scenes that launch YOU must set root metadata `matrix_test_mode` to
+  true before launch, to avoid activating physical cameras. Test with synthetic
+  CameraFeeds; real hardware/permission checks remain manual.
 - Do not add persistence, accounts, cloud services, or downloadable content.
 - `legacy/pygame/` is the preserved runnable reference. Do not delete it until
   the user authorizes removal after manual gameplay testing, in its own commit.

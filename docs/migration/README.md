@@ -361,3 +361,22 @@ unavailable content. Timing/menu/evolution presentation, empty-menu handling and
 loss return differences are recorded in `levels/monsters/README.md`. Extended
 play, all battle combinations, audible playback and exports remain unverified.
 No full parity claim. Next: You, with native camera platform/hardware limitations.
+
+
+## Stage 4j — You
+
+Monsters (`c1f227e`) was committed and pushed first. YOU now routes to its native
+CameraServer preview, closest/default capture format, 640×480 logical display,
+RGB and combined/separate YCbCr shader, feed orientation and lifecycle cleanup.
+Unavailable/denied/disconnected feeds report a status rather than crashing.
+
+Synthetic feed checks passed in headless and Compatibility-window runs, including
+actual RGB/orientation/neutral-YCbCr output pixels and release on return. Tests
+skip real-camera startup; no physical feed was activated. CameraTexture enables
+monitoring internally; the level restores prior monitoring on exit.
+
+Full camera parity remains limited: stock Windows/web backends are absent,
+external-texture preview is unsupported, and real permissions/capture/colors/
+orientation/shutdown and mobile packaging remain manual work. See
+`levels/you/README.md` for API references and limitations. All ten codes now have
+module scenes; Stage 5 consolidates validation and the manual parity checklist.
