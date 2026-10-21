@@ -95,6 +95,7 @@ def main() -> None:
                 ["--script", "res://scripts/validation/you_check.gd"],
                 "You camera validation passed",
             ),
+            ("native_maps", ["--script", "res://scripts/validation/native_maps_check.gd", "--", "mario"], "Native map authoring validation passed"),
             ("startup", ["--quit-after", "5"], "Matrix hub ready"),
         ]:
             result = subprocess.run(

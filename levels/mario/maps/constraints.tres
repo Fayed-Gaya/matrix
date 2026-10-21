@@ -1,0 +1,16 @@
+[gd_resource type="TileSet" format=3]
+
+[ext_resource type="Texture2D" path="res://levels/mario/assets/graphics/terrain/crate.png" id="1_36cvk"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yqp0e"]
+texture = ExtResource("1_36cvk")
+texture_region_size = Vector2i(58, 42)
+0:0/0 = 0
+0:0/0/texture_origin = Vector2i(3, 11)
+0:0/0/custom_data_0 = 1
+
+[resource]
+tile_size = Vector2i(64, 64)
+custom_data_layer_0/name = "value"
+custom_data_layer_0/type = 2
+sources/1 = SubResource("TileSetAtlasSource_yqp0e")

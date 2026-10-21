@@ -28,7 +28,7 @@ Do not flatten artwork or replace source art. Keep manifests for non-map frame/a
 - [x] Audit implementations and existing parity checklist.
 - [x] Hub: native authority, editable TileSet/shapes/markers, validation, commit/push.
 - [x] Untitled: same, including NPC/dialogue; validation, commit/push.
-- [ ] Mario: three native maps, runtime adapter, parity/edit validation, commit/push.
+- [x] Mario: three native maps, runtime adapter, parity/edit validation, commit/push.
 - [ ] Zelda: native map and runtime adapter, parity/edit validation, commit/push.
 - [ ] Monsters: eight native maps/objects/regions, parity/edit validation, commit/push.
 - [ ] Retire conversion scripts/commands and redundant copied authoring inputs; update docs.
@@ -52,3 +52,9 @@ collision feel, dialogue, routes, combat, timing and audible playback remain man
 Untitled milestone: `make check` passed on 2026-10-21, including every cell,
 all 11 collision rectangles, spawn/NPC, dialogue, ambience and all ten routes.
 The scene and external TileSet are authoritative; shapes and markers feed runtime.
+
+Mario milestone: all three native scene grids equal the frozen baseline, all six
+node entries and gameplay checks pass, and native paint/erase/positive and negative
+extension survives resource save/reload. Deterministic stage_0 Compatibility PNG
+is byte-identical before/after. Manifest map grids removed; frame paths retained.
+Manual platforming and other camera positions remain unverified in this milestone.
