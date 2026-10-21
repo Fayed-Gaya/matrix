@@ -297,3 +297,25 @@ waits for mixer release and rejects leaked-instance warnings. No warnings remain
 The runtime stops audio explicitly on exit. Original assets/source remain intact.
 See `levels/untitled/README.md` for movement/font/scaling differences and manual
 checks. Next: Mario's platformer/overworld systems.
+
+
+## Stage 4g — Mario
+
+Untitled (`cc9a744`) was committed/pushed first. Mario now has its own native
+platformer/overworld model, renderer and source-data manifest. Six nodes/three
+map datasets, platform collision/jump/scrolling, enemy patrol/stomp/damage,
+coins, health/immunity/reset, goals/unlocks, particles, decoration, music/SFX
+and source UI are present. Every CSV cell matches the archive. A rebuild tool
+keeps explicit frame paths and map data reviewable.
+
+All regression stages passed. Dedicated checks cover all six entries, movement,
+landing/jump, coins, damage cooldown, stomp bounce, actual goal unlock, scrolling,
+fall-return, game-over reset and cleanup. Compatibility-window renders were
+compared with new archived Pygame renders. Visual review caught uncached static
+textures being released before rendering; the texture cache fixed the scenery,
+crates, hat and HUD. Final window checks passed without shutdown warnings.
+
+This is not a claim of full parity. Fixed physics, camera/world-coordinate
+scrolling, exact icon arrival, deterministic frame order, synchronized rendering,
+particles/random scenery and fonts/audio can differ. Full routes and audible
+mixing still need playtesting. See `levels/mario/README.md`. Next: Zelda.

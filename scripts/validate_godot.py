@@ -83,6 +83,11 @@ def main() -> None:
                 ],
                 "Untitled validation passed",
             ),
+            (
+                "mario",
+                ["--script", "res://scripts/validation/mario_check.gd"],
+                "Mario validation passed",
+            ),
             ("startup", ["--quit-after", "5"], "Matrix hub ready"),
         ]:
             result = subprocess.run(
