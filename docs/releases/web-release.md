@@ -60,7 +60,10 @@ and browser versions are recorded by the test runner. CI uses Xvfb/Mesa on Linux
 Cold Monsters loading exceeded 20 seconds on some software-rendered runs; the
 smoke allows 60 seconds per launch and four minutes for all ten. These are test
 time budgets, not performance promises. Measure startup responsiveness on real
-desktop hardware before release; loading/performance is not certified.
+desktop hardware before release; loading/performance is not certified. Linux Chrome/Firefox/Edge smoke passed;
+Mac Chrome with its default GPU passed. A local Mac Firefox run timed out
+during a Monsters screenshot under concurrent rendering load, so isolated Mac
+Firefox performance/gameplay remains an explicit acceptance gap.
 Local Chrome/Edge use the default GPU backend; only CI forces SwiftShader.
 An installed Chrome/Edge channel is required; Firefox is Playwright's pinned build.
 

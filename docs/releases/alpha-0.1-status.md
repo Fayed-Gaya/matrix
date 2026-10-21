@@ -11,7 +11,7 @@ No Pages publication, release tag or archive removal is authorized.
   browser YOU explanation/return and preserved native camera implementation.
 - [x] Web/source artifacts and manual-main-only Pages preparation; not deployed.
 - [x] Preliminary licensing audit, inventory, notices and explicit blockers.
-- [ ] Final corrected Edge smoke, final CI/artifact links and PR handoff.
+- [x] Final Chrome/Firefox/Edge smoke, CI/artifact links and PR handoff.
 
 ## Verification and evidence
 
@@ -21,17 +21,28 @@ New Python tooling passes Ruff and licensing inventory freshness checks.
 Local Chrome/default GPU passed opening, real keyboard walk/terminal entry,
 all ten codes/scenes, Escape return, resize and error assertions (2.3 minutes).
 Local forced-SwiftShader cold Monsters loading stalled; default local tests now
-use the normal GPU backend. Local Firefox/Edge acceptance is not certified.
+use the normal GPU backend. Local Firefox timed out during a Monsters screenshot at four minutes under
+concurrent browser/software-rendering load. It needs an isolated Mac Firefox
+performance/gameplay check; local Edge acceptance is not certified.
 
-CI run https://github.com/Fayed-Gaya/matrix/actions/runs/39694656251 on `84458b6`:
-Godot validation, export/PCK and archived Checks passed; Chrome and Firefox
-passed all ten routes (about 1.4 minutes each). Edge failed the test's terminal
-approach: horizontal tolerance could leave the player beside an obstruction.
-Corrected range keeps the player inside the clear corridor; the terminal
-assertion remains. Earlier held-key polling overshot waypoints; short real key
-pulses fixed that. Cold scene loading exceeded 20 seconds on some runs; tests
-allow 60 seconds per launch/four minutes overall. Performance is not certified.
-See the PR checks for the latest revision; record final results before handoff.
+Final code CI: https://github.com/Fayed-Gaya/matrix/actions/runs/39695420048
+on branch commit `08e1dab` / tested PR merge revision `c542ba7`.
+Godot validation, export/PCK, archived Checks and all three browser smokes passed.
+Chrome 156, Firefox 142 and Edge 155 completed all ten routes/returns and resize
+(about 1.3, 1.2 and 1.5 minutes respectively); no asserted script/runtime/HTTP
+errors. Earlier navigation tolerances and cold-load time budgets were corrected;
+no test assertions or gameplay were weakened. Cold Monsters loading remains a
+performance acceptance concern. Final follow-up changes only document evidence;
+GitHub automatically reruns checks for that documentation commit.
+
+- [Web build (26.8 MB ZIP)](https://github.com/Fayed-Gaya/matrix/actions/runs/39695420048/artifacts/12391275083)
+- [Matching source (76.6 MB ZIP)](https://github.com/Fayed-Gaya/matrix/actions/runs/39695420048/artifacts/12390820838)
+- [Browser evidence](https://github.com/Fayed-Gaya/matrix/actions/runs/39695420048/artifacts/12390294951)
+
+Artifacts contain the tested merge revision, not an authorized release tag.
+They expire under repository retention (currently 2027-01-19). The PR checks are
+canonical for its latest head. The final local export records `08e1dab`, clean
+working tree and the exact engine; its isolated PCK passed again.
 
 Artifacts are uploaded after export/PCK validation, before browser tests, so
 failed smoke runs still retain a diagnosable build. Tests remain required for a
