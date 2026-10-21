@@ -57,6 +57,11 @@ def main() -> None:
                 ["--script", "res://scripts/validation/bug_check.gd"],
                 "The Bug validation passed",
             ),
+            (
+                "pong",
+                ["--script", "res://scripts/validation/pong_check.gd"],
+                "Pong validation passed",
+            ),
             ("startup", ["--quit-after", "5"], "Matrix hub ready"),
         ]:
             result = subprocess.run(
@@ -83,9 +88,7 @@ def main() -> None:
                 or (marker is not None and marker not in output)
             ):
                 raise SystemExit(f"Godot {name} validation failed")
-    print(
-        f"Godot {version}: import, resources, hub integration, Bouncing Ball, Balls, and startup passed"
-    )
+    print(f"Godot {version}: all validation stages passed")
 
 
 if __name__ == "__main__":

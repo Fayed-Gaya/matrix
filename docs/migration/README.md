@@ -249,3 +249,19 @@ Mouse motion and left/middle/right events and cleanup were checked headlessly
 and in a real Compatibility window; the capture was inspected. A fractional
 pixel-boundary assumption in the test was corrected to target a pixel interior.
 Original source/assets remain unchanged; no full font/pixel parity is claimed.
+
+
+## Stage 4d — Tom Pong
+
+The Bug (`5e8480a`) was committed and pushed before this port. PONG now uses
+an independent GDScript scene, preserving the source's square scaled bats,
+integer ball motion, hit suppression, border reflections, key press/release
+semantics, black field and sprites. There is no source scoring or AI to port.
+Original Tom Chance/GNU GPL attribution is retained with copied original and
+source-scaled PNGs. Fixed 60-tick physics replaces the capped frame loop;
+shared-window fit and Escape return are documented differences.
+
+The 1,600-tick source trace matched ball/paddle rectangles, angles and hit state.
+The complete validation pipeline and real Compatibility-window checks passed.
+Manual simultaneous-key/feel and other-platform export review remain pending.
+See `levels/tom_pong/README.md`. Next: Jump.
