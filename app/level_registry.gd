@@ -3,7 +3,7 @@ extends RefCounted
 ## Empty scene paths explicitly identify levels awaiting migration.
 
 const ENTRIES: Dictionary = {
-	"JUMP": {"name": "Jump", "scene": ""},
+	"JUMP": {"name": "Jump", "scene": "res://levels/jump/jump.tscn"},
 	"MARIO": {"name": "Mario", "scene": ""},
 	"MONSTERS": {"name": "Monsters", "scene": ""},
 	"ZELDA": {"name": "Zelda", "scene": ""},

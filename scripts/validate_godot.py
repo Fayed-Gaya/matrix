@@ -62,6 +62,11 @@ def main() -> None:
                 ["--script", "res://scripts/validation/pong_check.gd"],
                 "Pong validation passed",
             ),
+            (
+                "jump",
+                ["--script", "res://scripts/validation/jump_check.gd"],
+                "Jump validation passed",
+            ),
             ("startup", ["--quit-after", "5"], "Matrix hub ready"),
         ]:
             result = subprocess.run(

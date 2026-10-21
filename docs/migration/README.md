@@ -265,3 +265,18 @@ The 1,600-tick source trace matched ball/paddle rectangles, angles and hit state
 The complete validation pipeline and real Compatibility-window checks passed.
 Manual simultaneous-key/feel and other-platform export review remain pending.
 See `levels/tom_pong/README.md`. Next: Jump.
+
+
+## Stage 4e — Jump
+
+Pong (`0d4fdfe`) was committed/pushed before Jump. The port preserves the intro,
+runner, held-Space jumping, original animation/assets/font, obstacle types and
+weights, timer phase, collision loss/restart, score and audio. Fixed 60-tick
+updates replace the capped loop; window scaling/return and font/audio-rendering
+differences are recorded in `levels/jump/README.md`.
+
+Gameplay checks, all prior regressions and Compatibility-window validation
+passed. A shutdown audio resource leak was caught and fixed with explicit stream
+stops and settling audio cleanup before the test exits. The intro capture was
+inspected. Audible playback, extended play and exports remain manual checks.
+Next: Untitled, before the larger Mario/Zelda/Monsters systems.
