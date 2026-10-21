@@ -8,6 +8,10 @@ jobs:
   python:
     runs-on: ubuntu-latest
 
+    defaults:
+      run:
+        working-directory: legacy/pygame
+
     steps:
       - uses: actions/checkout@v4
 

@@ -1,161 +1,26 @@
-# Matrix Repo Guide
+# Matrix migration guide
 
-## Project Overview
+The repository is migrating from Pygame CE to Godot 4.7.2 with GDScript and
+Compatibility rendering. Stage 1 is complete; no Godot project exists yet.
 
-This repository is a Python/Pygame sandbox named `matrix`. It contains a
-top-level Matrix hub plus several separate mini-games and game experiments under
-`levels/`. Treat each level directory as its own small project unless a task
-explicitly asks for a shared launcher or cross-level refactor.
+- Keep the Godot project at the repository root when Stage 2 begins.
+- Use independent level modules inside one application, with a small hub/router.
+- Preserve terminal codes and distinguishing mechanics; track parity explicitly.
+- Do not add persistence, accounts, cloud services, or downloadable content.
+- `legacy/pygame/` is the preserved runnable reference. Do not delete it until
+  the user authorizes removal after manual gameplay testing, in its own commit.
+- Read `legacy/pygame/AGENTS.md` for archived Python development instructions.
+- Use `docs/migration/README.md` for inventory, risks, and milestone status.
+- Commit meaningful milestones; do not push or merge automatically.
+- Pause for review between migration milestones. Never claim unchecked parity.
+- Keep generated imports, build output, credentials, and local tools out of Git.
 
-The root entry point is `main.py`, which imports and runs the Matrix hub:
+To run the archive from the repository root:
 
-```bash
-python3 main.py
+```sh
+(cd legacy/pygame && ../../.venv/bin/python main.py)
+make -C legacy/pygame PYTHON=../../.venv/bin/python check
 ```
 
-Dependencies are listed in `requirements.txt`. The project uses `pygame-ce`.
-
-Every launchable level package should expose `run()` from its `__init__.py` and
-include a `__main__.py`, so levels can be started from the repository root with:
-
-```bash
-python3 -m levels.<level_name>
-```
-
-## Repository Layout
-
-- `main.py`: root launcher; starts the Matrix hub.
-- `matrix/`: top-level hub world, terminal input, level registry, and
-  Matrix-owned assets.
-  - `matrix/assets/maps/`: Matrix-owned Tiled maps.
-  - `matrix/assets/tilesets/`: Matrix-owned tileset definitions/images.
-  - `matrix/assets/backgrounds/`: Matrix opening/title imagery.
-  - `matrix/assets/sprites/`: Matrix-specific sprite sheets.
-- `requirements.txt`: Python dependencies.
-- `levels/`: collection of independent Pygame levels and experiments.
-- `levels/jump/`: endless-runner style game.
-- `levels/mario/`: larger platformer project with code, maps, audio, and sprite
-  assets.
-- `levels/monsters/`: larger monster-catching RPG project with maps, battles,
-  audio, and sprite assets.
-- `levels/zelda/`: larger top-down RPG project with maps, combat, UI, enemies,
-  particles, audio, and sprite assets.
-- `levels/tom_pong/`: Pong implementation.
-- `levels/balls/`: movement and screen-wrap experiment.
-- `levels/bouncing_ball/`: small bouncing-ball demo.
-- `levels/the_bug/`: mouse/debug display experiment.
-- `levels/you/`: camera capture experiment.
-- `levels/untitled/`: typed 2D action RPG prototype for the new collaborative
-  game project.
-- `shared_assets/`: runtime assets intentionally reused by multiple levels.
-- `Tiled/`: repo-wide Tiled workspace. Keep Tiled project/session metadata here;
-  runtime maps and tilesets should live with their owning level or in
-  `shared_assets/`.
-
-## Development Notes
-
-- Prefer the existing style of the level being edited. The code is not fully
-  standardized across levels.
-- Keep changes scoped to the requested level or feature. Do not refactor other
-  games unless needed for the task.
-- The Matrix hub should depend on each level's package-level `run()` function
-  rather than importing level internals.
-- Use `pathlib.Path` for new asset paths when practical; several newer files
-  already follow that pattern.
-- Some older tutorial files use relative paths that assume they are run from
-  their own code directory. When touching a level, prefer file-relative paths
-  based on `Path(__file__).resolve()` so it can run from the repository root.
-- `levels/untitled` now resolves runtime asset paths through
-  `levels/untitled/paths.py` so the level can run both from source and from a
-  PyInstaller bundle.
-- New Tiled maps should be stored as runtime content under the owning level,
-  for example `matrix/assets/maps/` or `levels/<level>/assets/maps/`. Keep the
-  `.tiled-project` file in `Tiled/` so the whole repo remains editable from one
-  Tiled workspace.
-- Tiled tileset paths should stay relative and portable. A map in
-  `matrix/assets/maps/` should reference Matrix-owned tilesets with
-  `../tilesets/...` and shared tilesets with `../../../shared_assets/...`.
-- Matrix currently opens at `1280x720`, is resizable, and renders hub gameplay
-  to an internal surface scaled by `RENDER_SCALE = 2`. Use the internal render
-  surface and camera viewport for world drawing; use the display surface for
-  full-window overlays like the opening screen and terminal.
-- If adding shared runtime assets, update packaging specs/workflows that bundle
-  affected levels. `untitled` currently includes `shared_assets/` in its
-  PyInstaller spec because its map references a shared tileset.
-- Pygame windows and audio may not work in headless environments. If runtime
-  verification is not possible, at least run syntax checks for edited Python
-  files.
-
-## Git Hygiene
-
-- Do not commit `.DS_Store`, `__pycache__/`, or `*.pyc` files.
-- Do not commit virtual environments or IDE metadata.
-- Asset files such as `.png`, `.wav`, `.ogg`, `.ttf`, `.csv`, `.tmx`, and `.tsx`
-  are project files and may be committed when they belong to a level.
-- Generated packaging output in `build/` and `dist/` should not be committed.
-- Before committing, check `git status --short` and make sure staged files match
-  the requested change.
-
-## Useful Commands
-
-Install dependencies:
-
-```bash
-python3 -m pip install -r requirements.txt
-```
-
-Run the default game:
-
-```bash
-python3 main.py
-```
-
-Run the Matrix hub directly:
-
-```bash
-python3 -m matrix
-```
-
-Run the Jump level directly:
-
-```bash
-python3 -m levels.jump
-```
-
-Run a syntax check for Python files:
-
-```bash
-python3 -m compileall main.py matrix levels
-```
-
-Run the local quality pipeline:
-
-```bash
-make check
-```
-
-Format and auto-fix lint issues:
-
-```bash
-make format
-```
-
-Build the standalone Windows package for `untitled` locally on a Windows
-machine:
-
-```bash
-python3 scripts/build_untitled_windows.py
-```
-
-The `Makefile` uses `.venv/bin/python` by default. Override it with
-`PYTHON=python3` only when intentionally running checks outside the project
-virtual environment.
-
-## Current Direction
-
-The repo now has a first-pass Matrix hub with a terminal launcher. Returning to
-Matrix after a launched level exits is not implemented yet.
-
-`levels/untitled` also has a manual GitHub Actions workflow in
-`.github/workflows/build-untitled-windows.yml` that builds a one-folder Windows
-distribution and uploads `untitled-windows.zip` as an artifact.
+The root virtual environment is local and is not moved or committed. Its
+availability is machine-specific; install archived requirements if needed.
