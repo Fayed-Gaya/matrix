@@ -93,6 +93,11 @@ def main() -> None:
                 ["--script", "res://scripts/validation/zelda_check.gd"],
                 "Zelda validation passed",
             ),
+            (
+                "monsters",
+                ["--script", "res://scripts/validation/monsters_check.gd"],
+                "Monsters validation passed",
+            ),
             ("startup", ["--quit-after", "5"], "Matrix hub ready"),
         ]:
             result = subprocess.run(

@@ -5,7 +5,7 @@ extends RefCounted
 const ENTRIES: Dictionary = {
 	"JUMP": {"name": "Jump", "scene": "res://levels/jump/jump.tscn"},
 	"MARIO": {"name": "Mario", "scene": "res://levels/mario/mario.tscn"},
-	"MONSTERS": {"name": "Monsters", "scene": ""},
+	"MONSTERS": {"name": "Monsters", "scene": "res://levels/monsters/monsters.tscn"},
 	"ZELDA": {"name": "Zelda", "scene": "res://levels/zelda/zelda.tscn"},
 	"PONG": {"name": "Tom Pong", "scene": "res://levels/tom_pong/pong.tscn"},
 	"BALLS": {"name": "Balls", "scene": "res://levels/balls/balls.tscn"},

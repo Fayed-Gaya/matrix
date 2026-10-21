@@ -1,8 +1,8 @@
 # Matrix migration guide
 
 The repository is migrating from Pygame CE to Godot 4.7.2 with GDScript and
-Compatibility rendering. The hub and eight levels are migrated, including Mario and Zelda.
-Monsters and You remain.
+Compatibility rendering. The hub and nine levels are migrated, including Mario, Zelda and Monsters.
+You camera capture remains.
 
 - Keep `project.godot` at the repository root. Use typed GDScript for gameplay.
 - `app/` owns startup/routing, `hub/` the spaceship/terminal, `levels/` the

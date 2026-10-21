@@ -1,9 +1,8 @@
 # Matrix
 
 Matrix is migrating to **Godot 4.7.2, GDScript, Compatibility renderer** in this
-existing repository. The root Godot project now runs the opening screen and Matrix hub. `BOUNCE`, `BALLS`, `BUG`, `PONG`, `JUMP`, `UNTITLED`, `MARIO`, and `ZELDA` are migrated. The other two registered games
-are pending migration; their codes open explicit status screens with a return
-to the hub.
+existing repository. The root Godot project now runs the opening screen and Matrix hub. `BOUNCE`, `BALLS`, `BUG`, `PONG`, `JUMP`, `UNTITLED`, `MARIO`, `ZELDA`, and `MONSTERS` are migrated. `YOU` camera capture remains
+pending; its code opens an explicit status screen with a return to the hub.
 
 ```sh
 make editor  # Open the Godot project

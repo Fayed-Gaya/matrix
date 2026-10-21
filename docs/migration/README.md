@@ -338,3 +338,26 @@ cleanup checks passed. Source absence of a player death/reset routine is retaine
 Known timing, rendering, pause-edge and attack-audio differences plus manual
 combat/audio/export gaps are documented in `levels/zelda/README.md`. This is
 not a full-parity certification. Next: Monsters, then camera support for You.
+
+
+## Stage 4i — Monsters
+
+Zelda (`1e2f4fa`) was committed/pushed first. Monsters now has an independent
+world/battle/party model and renderer, all eight maps, transitions, NPCs/trainers,
+nurses, grass encounters, initiative combat, switching/capture, XP, evolution,
+original art and audio. The manifest preserves map data and source tables; source
+color-key cutouts are packed into native atlases. One ADPCM WAV needed PCM16
+conversion; its original is retained beside the port as well as in the archive.
+
+The full pipeline and Compatibility-window suite passed. Checks cover map
+spawns/transitions, sight/approach, encounter timing, healing, party order, attack
+cost/formulas, initiative, defend/switch/capture, reserves/XP and evolution.
+World/battle captures were compared with archived renders. Visual review caught
+and corrected overlapping battle labels. Source captures required a transient
+pygame binding because the archived launcher fails without it.
+
+The unused arena references undefined trainers; native NPCs explicitly report
+unavailable content. Timing/menu/evolution presentation, empty-menu handling and
+loss return differences are recorded in `levels/monsters/README.md`. Extended
+play, all battle combinations, audible playback and exports remain unverified.
+No full parity claim. Next: You, with native camera platform/hardware limitations.
