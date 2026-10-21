@@ -1,9 +1,12 @@
 # Matrix Alpha 0.1 implementation status
 
 Branch: `feature/alpha-0.1-release-pipeline`, based on merged main `eb091f5`.
-PR: https://github.com/Fayed-Gaya/matrix/pull/4 (no merge authorized).
+PR: https://github.com/Fayed-Gaya/matrix/pull/4 merged with merge commit `34dda87`.
 Owner reports native hub/all ten levels manually tested locally and working.
-No Pages publication, release tag or archive removal is authorized.
+On 2026-10-21 the owner explicitly authorized merge, tag and technical-preview
+publication with documented licensing issues still unresolved. This is owner risk
+acceptance, not third-party permission or licensing clearance. Archive removal
+is not authorized. A follow-up PR adds an accurately named deployment input.
 
 - [x] GitHub Flow and agent/development documentation; no permanent dev branch.
 - [x] Pinned Godot 4.7.2 CI; preserved archived Python checks.
@@ -55,8 +58,10 @@ DOM state, not gameplay controls. No automated physical camera activation.
 
 Read [web-release.md](web-release.md) for local commands, manual gameplay/audio,
 focus/scaling/performance/native-camera checks and GitHub Pages settings.
-Pages is suitable for the ~57 MB static single-threaded build. It remains
-unconfigured/unpublished; dispatch defaults to build-only and only runs on main.
+Pages is suitable for the ~57 MB static single-threaded build. Publication is
+in progress; dispatch defaults to build-only and only runs on main. For this
+authorized preview, use deploy=true, licensing_cleared=false and
+technical_preview_acknowledged=true. Preserve the unresolved findings in notices.
 
 Read [licensing-audit.md](licensing-audit.md): Pong GPL version/combined-work scope,
 non-commercial Pixeltype, conflicting Snoblin redistribution grants and missing

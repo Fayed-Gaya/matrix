@@ -15,7 +15,10 @@ YOU retains native camera behavior with platform/hardware limitations.
   or deploy/publish without authorization. See `docs/development.md`.
 - Current milestone: Alpha 0.1 browser release preparation on
   `feature/alpha-0.1-release-pipeline`. Keep `docs/releases/alpha-0.1-status.md`
-  current across handoffs. Do not publish, tag, merge, remove levels or the archive.
+  current across handoffs. On 2026-10-21 the owner explicitly authorized merging,
+  tagging and publishing Alpha 0.1 as a technical preview with documented licensing
+  issues unresolved. Use the explicit preview acknowledgement; never claim legal
+  clearance. Keep all ten levels and the archive. Future releases need authorization.
 
 ## Project conventions
 
@@ -59,7 +62,7 @@ YOU retains native camera behavior with platform/hardware limitations.
 - Web exports must include runtime JSON manifests and all ten levels, exclude
   the archive/development sources, and provide a clear YOU fallback with hub return.
 - Record limitations and blockers; never claim unchecked browser/platform parity.
-- Preserve third-party notices; unresolved licensing remains a release blocker.
+- Preserve third-party notices; unresolved licensing remains a clearance blocker.
   Do not remove affected levels silently.
 - Keep generated cache data, build output, credentials, and local tools out of Git.
   Track `.import` sidecars that define asset import settings; ignore `.godot/`.

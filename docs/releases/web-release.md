@@ -88,24 +88,32 @@ extract the web ZIP and serve its root. Artifacts expire per repository policy;
 they are not immutable published releases. Do not confuse a PR's tested merge SHA
 with a later approved main release SHA.
 
-## Prepare GitHub Pages (not published by this work)
+## GitHub Pages deployment
 
-After merging is explicitly authorized and completed:
+The owner authorized Alpha 0.1 technical-preview publication on 2026-10-21,
+explicitly accepting the documented unresolved licensing issues. That does not
+establish permission or clear those findings. Normal release clearance and the
+explicit preview acknowledgement are separate deployment inputs.
+
+For an authorized release:
 
 1. In Settings → Pages, choose GitHub Actions as the build/deployment source.
 2. Configure the `github-pages` environment for main only and add a required
    owner approval if desired. Set branch protection/checks per development.md.
-3. Resolve all licensing blockers in licensing-audit.md. Do not assert clearance
-   based only on passing CI or free asset downloads.
+3. Review licensing-audit.md. Set licensing_cleared only if those findings are
+   actually resolved. For an explicitly owner-authorized technical preview with
+   unresolved issues, use technical_preview_acknowledged instead and retain all
+   notices. Neither tests nor owner risk acceptance grant third-party rights.
 4. Actions → Manual browser deployment → Run workflow, select main. With both
    inputs false, it validates/builds artifacts without publishing. Other branches
    are skipped. No workflow publishes every commit.
-5. After explicit release approval, run on approved main with `deploy` and
-   `licensing_cleared` true; approve the environment if configured. The deployment
+5. After explicit release approval, run on approved main with `deploy` true and
+   either actual `licensing_cleared` or `technical_preview_acknowledged` true; approve the environment if configured. The deployment
    job alone gets pages:write/id-token:write. Expected project URL is
    https://fayed-gaya.github.io/matrix/ unless repository/domain settings differ.
 6. Tag the approved tested revision under the immutable version policy only
-   when separately authorized. No tags/releases were created during preparation.
+   when authorized. Alpha 0.1 uses `v0.1.0-alpha.1` and a GitHub prerelease with
+   the matching web/source packages and explicit unresolved-license notices.
 
 Pages supports this static single-threaded build. If policy/storage/size constraints
 later prevent Pages, a static HTTPS host such as itch.io can use the same build;
