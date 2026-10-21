@@ -1,13 +1,14 @@
 # Matrix
 
 Matrix is migrating to **Godot 4.7.2, GDScript, Compatibility renderer** in this
-existing repository. The root Godot project currently shows a foundation screen;
-the spaceship hub and ten games are pending migration.
+existing repository. The root Godot project now runs the opening screen and Matrix hub. The ten
+registered games are pending migration; their codes open explicit status screens
+with a return to the hub.
 
 ```sh
 make editor  # Open the Godot project
-make run     # Launch the foundation scene
-make check   # Headless import, resource, configuration and startup validation
+make run     # Launch the Matrix hub
+make check   # Headless import, resource, hub behavior and startup validation
 ```
 
 On this Mac the default executable is
@@ -16,8 +17,8 @@ On this Mac the default executable is
 requires Python 3 as development tooling and rejects engines other than
 4.7.2 stable. The game itself uses GDScript only.
 
-- `app/`: application startup; routing follows with the hub.
-- `hub/`: spaceship hub module (Stage 3).
+- `app/`: application startup, registry and level routing.
+- `hub/`: opening, room, player, camera and terminal.
 - `levels/`: independent Godot level modules (Stage 4).
 - `shared/`: intentionally reused Godot resources.
 - `scripts/`: development tools and validation.
@@ -42,4 +43,6 @@ archive with the local environment. Its Windows workflow still builds archived
 Untitled; Godot export presets and platform packaging are not established yet.
 
 The archive remains tracked until manual Godot playtesting and explicit
-approval to remove it. No Godot gameplay parity is claimed at this stage.
+approval to remove it. See [hub parity and manual checks](docs/migration/hub-parity.md) for verification
+and known differences. Move with WASD/arrows; E opens the nearby terminal.
+Escape closes the terminal, returns from a level, or quits from the room.

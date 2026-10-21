@@ -1,9 +1,12 @@
 """Validate with the pinned engine; Python is development tooling only."""
 
 import argparse
-from pathlib import Path
+import json
 import subprocess
 import tempfile
+from pathlib import Path
+
+from convert_hub_map import describe_map
 
 
 def main() -> None:
@@ -15,6 +18,8 @@ def main() -> None:
     if not version.startswith("4.7.2.stable."):
         raise SystemExit(f"Expected Godot 4.7.2 stable; got {version}")
     with tempfile.TemporaryDirectory(prefix="matrix-godot-") as logs:
+        descriptor = Path(logs) / "hub.json"
+        descriptor.write_text(json.dumps(describe_map()))
         for name, options, marker in [
             ("import", ["--editor", "--import"], None),
             (
@@ -22,7 +27,12 @@ def main() -> None:
                 ["--script", "res://scripts/validation/project_check.gd"],
                 "Matrix project validation passed",
             ),
-            ("startup", ["--quit-after", "5"], "Matrix foundation ready"),
+            (
+                "hub",
+                ["--script", "res://scripts/validation/hub_check.gd", "--", str(descriptor)],
+                "Matrix hub integration passed",
+            ),
+            ("startup", ["--quit-after", "5"], "Matrix hub ready"),
         ]:
             result = subprocess.run(
                 [
@@ -48,7 +58,7 @@ def main() -> None:
                 or (marker is not None and marker not in output)
             ):
                 raise SystemExit(f"Godot {name} validation failed")
-    print(f"Godot {version}: import, resources, and startup passed")
+    print(f"Godot {version}: import, resources, hub integration, and startup passed")
 
 
 if __name__ == "__main__":

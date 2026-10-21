@@ -1,7 +1,7 @@
 # Matrix migration guide
 
 The repository is migrating from Pygame CE to Godot 4.7.2 with GDScript and
-Compatibility rendering. Stage 2 establishes the root Godot project; gameplay migration is pending.
+Compatibility rendering. Stage 3 implements the hub; the ten level ports are pending.
 
 - Keep `project.godot` at the repository root. Use typed GDScript for gameplay.
 - `app/` owns startup/routing, `hub/` the spaceship/terminal, `levels/` the
@@ -10,10 +10,16 @@ Compatibility rendering. Stage 2 establishes the root Godot project; gameplay mi
   assets into their Godot module; keep the archive independent and intact.
 - Commit Godot `.uid` sidecars; ignore `.godot/` and generated exports.
 - `make check` validates exact engine version, imports, resource loads and startup.
+  It also verifies converted map data, terminal behavior and routing/return.
+  `make hub-map` regenerates the native hub map from its copied TMX source.
   `make editor` opens the project; `make run` launches it. Override `GODOT`
   with the executable path on other machines. Python 3 runs validation tooling
   only; the Godot game must not depend on Python or the archived environment.
 - Use independent level modules inside one application, with a small hub/router.
+  Level roots extend `MatrixLevel` and emit `return_requested`; the router
+  frees the level tree and resumes the hub. Consume Escape for local menus.
+  Add completed scene paths to `app/level_registry.gd`. Empty paths deliberately
+  show pending status, and must never be described as migrated gameplay.
 - Preserve terminal codes and distinguishing mechanics; track parity explicitly.
 - Do not add persistence, accounts, cloud services, or downloadable content.
 - `legacy/pygame/` is the preserved runnable reference. Do not delete it until
@@ -22,7 +28,8 @@ Compatibility rendering. Stage 2 establishes the root Godot project; gameplay mi
 - Use `docs/migration/README.md` for inventory, risks, and milestone status.
 - Commit meaningful milestones; do not push or merge automatically.
 - Pause for review between migration milestones. Never claim unchecked parity.
-- Keep generated imports, build output, credentials, and local tools out of Git.
+- Keep generated cache data, build output, credentials, and local tools out of Git.
+  Track `.import` sidecars that define asset import settings; ignore `.godot/`.
 
 To run the archive from the repository root:
 

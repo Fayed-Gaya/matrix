@@ -174,3 +174,13 @@ and [ProjectSettings reference](https://docs.godotengine.org/en/stable/classes/c
 The installed engine was used to validate the actual commands and settings.
 
 Next checkpoint: Stage 3, hub migration with explicit scene routing and return.
+
+## Stage 3 — hub implementation
+
+The root app now runs the migrated opening, native tiled room, player,
+collision/camera, terminal and ten-code registry. A small scene router keeps the
+hub in memory and frees independent levels on return. Actual level ports remain
+Stage 4 work; pending-code screens explicitly say they are not migrated yet.
+
+See [hub parity, verification and manual checks](hub-parity.md). The original
+archive remains intact. This checkpoint pauses before the first level port.
