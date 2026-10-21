@@ -280,3 +280,20 @@ passed. A shutdown audio resource leak was caught and fixed with explicit stream
 stops and settling audio cleanup before the test exits. The intro capture was
 inspected. Audible playback, extended play and exports remain manual checks.
 Next: Untitled, before the larger Mario/Zelda/Monsters systems.
+
+
+## Stage 4f — Untitled
+
+Jump (`33fd955`) was committed/pushed before Untitled. The source forest map is
+converted to native TileMapLayers with all cells/collision rectangles compared
+to TMX. Opening, player/NPC animation/art, camera, proximity dialogue and ambience
+are implemented. The optional transition/interaction layers were not runtime
+features in the original and remain authoring conventions.
+
+Complete regressions and real Compatibility-window checks passed. Opening and
+dialogue captures were inspected. A headless shutdown MP3 warning was traced to
+the mixer thread retaining stopped decoder instances briefly; validation now
+waits for mixer release and rejects leaked-instance warnings. No warnings remain.
+The runtime stops audio explicitly on exit. Original assets/source remain intact.
+See `levels/untitled/README.md` for movement/font/scaling differences and manual
+checks. Next: Mario's platformer/overworld systems.

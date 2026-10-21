@@ -20,6 +20,12 @@ def main() -> None:
     with tempfile.TemporaryDirectory(prefix="matrix-godot-") as logs:
         descriptor = Path(logs) / "hub.json"
         descriptor.write_text(json.dumps(describe_map()))
+        untitled_descriptor = Path(logs) / "untitled.json"
+        untitled_descriptor.write_text(
+            json.dumps(
+                describe_map(root / "levels/untitled/assets/maps/untitled-intro.tmx", "player")
+            )
+        )
         for name, options, marker in [
             ("import", ["--editor", "--import"], None),
             (
@@ -67,6 +73,16 @@ def main() -> None:
                 ["--script", "res://scripts/validation/jump_check.gd"],
                 "Jump validation passed",
             ),
+            (
+                "untitled",
+                [
+                    "--script",
+                    "res://scripts/validation/untitled_check.gd",
+                    "--",
+                    str(untitled_descriptor),
+                ],
+                "Untitled validation passed",
+            ),
             ("startup", ["--quit-after", "5"], "Matrix hub ready"),
         ]:
             result = subprocess.run(
@@ -90,6 +106,7 @@ def main() -> None:
                 result.returncode
                 or "SCRIPT ERROR:" in output
                 or "ERROR:" in output
+                or "were leaked at exit" in output
                 or (marker is not None and marker not in output)
             ):
                 raise SystemExit(f"Godot {name} validation failed")

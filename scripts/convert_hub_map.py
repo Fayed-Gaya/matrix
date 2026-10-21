@@ -11,8 +11,8 @@ ROOT = Path(__file__).resolve().parent.parent
 MAP = ROOT / "hub/assets/maps/matrix.tmx"
 
 
-def describe_map() -> dict:
-    source = ET.parse(MAP).getroot()
+def describe_map(map_path: Path = MAP, spawn_name: str = "player_spawn") -> dict:
+    source = ET.parse(map_path).getroot()
     if source.get("orientation") != "orthogonal" or source.get("infinite") != "0":
         raise ValueError("Only finite orthogonal hub maps are supported")
     width, height = int(source.attrib["width"]), int(source.attrib["height"])
@@ -24,9 +24,10 @@ def describe_map() -> dict:
         "tilesets": [],
         "layers": [],
         "collision": [],
+        "npcs": [],
     }
     for entry in source.findall("tileset"):
-        path = (MAP.parent / entry.attrib["source"]).resolve()
+        path = (map_path.parent / entry.attrib["source"]).resolve()
         tileset = ET.parse(path).getroot()
         image = tileset.find("image")
         assert image is not None
@@ -64,24 +65,38 @@ def describe_map() -> dict:
                 assert not obj.findall("polygon") and not obj.findall("ellipse")
                 assert float(obj.get("rotation", "0")) == 0
                 result["collision"].append([x, y, w, h])
-            elif obj.get("name") == "player_spawn":
+            elif obj.get("name") == spawn_name:
                 result["spawn"] = [x, y]
+            elif group.get("name") == "NPCs":
+                properties = {
+                    p.get("name"): p.get("value", p.text or "")
+                    for p in obj.findall("properties/property")
+                }
+                result["npcs"].append(
+                    {"position": [x, y], "dialogue": properties.get("dialogue", "")}
+                )
             elif obj.get("name") == "level_terminal":
                 result["terminal"] = [x, y, w, h] if w and h else [x - 12, y - 12, 24, 24]
-    assert "spawn" in result and "terminal" in result
+    assert "spawn" in result
+    if spawn_name == "player_spawn":
+        assert "terminal" in result
     return result
 
 
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--godot", default="godot")
+    parser.add_argument("--map", type=Path, default=MAP)
+    parser.add_argument("--spawn", default="player_spawn")
+    parser.add_argument("--output", default="res://hub/world.tscn")
+    parser.add_argument("--world-script", default="res://hub/world.gd")
     args = parser.parse_args()
     version = subprocess.check_output([args.godot, "--version"], text=True).strip()
     if not version.startswith("4.7.2.stable."):
         raise SystemExit("Use Godot 4.7.2 stable")
     with tempfile.TemporaryDirectory(prefix="matrix-map-") as temporary:
         data = Path(temporary) / "hub.json"
-        data.write_text(json.dumps(describe_map()))
+        data.write_text(json.dumps(describe_map(args.map, args.spawn)))
         result = subprocess.run(
             [
                 args.godot,
@@ -94,6 +109,8 @@ def main() -> None:
                 "res://scripts/tools/build_hub_map.gd",
                 "--",
                 str(data),
+                args.output,
+                args.world_script,
             ],
             capture_output=True,
             text=True,
@@ -101,7 +118,7 @@ def main() -> None:
         )
         output = result.stdout + result.stderr
         print(output, end="")
-        if result.returncode or "ERROR:" in output or "Hub map saved" not in output:
+        if result.returncode or "ERROR:" in output or "Map saved" not in output:
             raise SystemExit("Hub map conversion failed")
 
 

@@ -47,5 +47,7 @@ func run() -> void:
 	app.free()
 	await process_frame
 	await process_frame
+	# AudioServer releases stopped decoder instances on its mixer thread.
+	await create_timer(0.15).timeout
 	print("Jump validation passed")
 	quit()

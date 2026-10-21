@@ -4,17 +4,23 @@ extends SceneTree
 
 func _initialize() -> void:
 	var args: PackedStringArray = OS.get_cmdline_user_args()
-	if args.size() != 1:
+	if args.size() not in [1, 3]:
 		push_error("Expected map descriptor path")
 		quit(1)
 		return
 	var data: Dictionary = JSON.parse_string(FileAccess.get_file_as_string(args[0]))
 	var world: Node2D = Node2D.new()
-	world.set_script(load("res://hub/world.gd"))
+	world.set_script(load(args[2] if args.size() == 3 else "res://hub/world.gd"))
 	world.name = "World"
 	world.bounds = Vector2(data.bounds[0], data.bounds[1])
 	world.player_spawn = Vector2(data.spawn[0], data.spawn[1])
-	world.terminal_rect = Rect2(data.terminal[0], data.terminal[1], data.terminal[2], data.terminal[3])
+	if data.has("terminal"):
+		world.terminal_rect = Rect2(data.terminal[0], data.terminal[1], data.terminal[2], data.terminal[3])
+	if args.size() == 3 and args[2] != "res://hub/world.gd":
+		var npcs: Array[Dictionary] = []
+		for npc: Dictionary in data.npcs:
+			npcs.append(npc)
+		world.npc_data = npcs
 	var rectangles: Array[Rect2] = []
 	for rect: Array in data.collision:
 		rectangles.append(Rect2(rect[0], rect[1], rect[2], rect[3]))
@@ -52,10 +58,10 @@ func _initialize() -> void:
 	var scene: PackedScene = PackedScene.new()
 	var result: Error = scene.pack(world)
 	if result == OK:
-		result = ResourceSaver.save(scene, "res://hub/world.tscn")
+		result = ResourceSaver.save(scene, args[1] if args.size() == 3 else "res://hub/world.tscn")
 	world.free()
 	if result != OK:
 		push_error("Could not save hub map: " + str(result))
 	else:
-		print("Hub map saved")
+		print("Map saved")
 	quit(0 if result == OK else 1)

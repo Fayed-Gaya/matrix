@@ -1,8 +1,8 @@
 # Matrix migration guide
 
 The repository is migrating from Pygame CE to Godot 4.7.2 with GDScript and
-Compatibility rendering. The hub, Bouncing Ball, Balls, The Bug, Pong, and Jump are migrated; five level ports
-are pending.
+Compatibility rendering. The hub and six levels are migrated: BOUNCE, BALLS, BUG, PONG, JUMP, UNTITLED.
+Mario, Zelda, Monsters and You remain.
 
 - Keep `project.godot` at the repository root. Use typed GDScript for gameplay.
 - `app/` owns startup/routing, `hub/` the spaceship/terminal, `levels/` the

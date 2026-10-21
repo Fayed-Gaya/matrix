@@ -167,6 +167,8 @@ func run() -> void:
 		check_map(args[0])
 	app.free()
 	await settle()
+	# AudioServer releases stopped decoder instances on its mixer thread.
+	await create_timer(0.15).timeout
 	if failures == 0:
 		print("Matrix hub integration passed")
 	quit(0 if failures == 0 else 1)
