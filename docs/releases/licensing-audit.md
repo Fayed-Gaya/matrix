@@ -3,7 +3,9 @@
 Reviewed 2026-10-21. **Distribution clearance is not established.** This records
 known evidence and open questions, not a new license grant or a decision that
 all components can legally be combined. No level/asset was removed or replaced.
-The owner must resolve the blockers before approving public release/Pages.
+The owner explicitly authorized technical-preview publication on 2026-10-21
+with these issues unresolved. This acknowledges the risks; it does not resolve
+permissions, establish licensing clearance or change the obligations below.
 
 `third-party-inventory.json` records every active GDScript/shader, scene/TileSet,
 manifest and media file with SHA-256, size, module, exact archived matches and

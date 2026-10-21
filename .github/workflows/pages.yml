@@ -10,6 +10,10 @@ on:
         description: 'All documented licensing blockers resolved and release approved'
         type: boolean
         default: false
+      technical_preview_acknowledged:
+        description: 'Owner authorizes technical preview with documented licensing issues unresolved'
+        type: boolean
+        default: false
 permissions:
   contents: read
 concurrency:
@@ -20,7 +24,7 @@ jobs:
     if: github.ref == 'refs/heads/main'
     uses: ./.github/workflows/godot.yml
   deploy:
-    if: github.ref == 'refs/heads/main' && inputs.deploy && inputs.licensing_cleared
+    if: github.ref == 'refs/heads/main' && inputs.deploy && (inputs.licensing_cleared || inputs.technical_preview_acknowledged)
     needs: build
     runs-on: ubuntu-24.04
     permissions:
