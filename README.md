@@ -1,9 +1,11 @@
 # Matrix
 
-Matrix is migrating to **Godot 4.7.2, GDScript, Compatibility renderer** in this
-existing repository. The root Godot project now runs the opening screen and Matrix hub. `BOUNCE`, `BALLS`, `BUG`, `PONG`, `JUMP`, `UNTITLED`, `MARIO`, `ZELDA`, `MONSTERS`, and `YOU` have Godot modules. You uses native
-camera feeds; live hardware remains untested and stock Godot has no Windows/web
-camera backend. Each level documents parity differences and manual checks.
+Matrix uses **Godot 4.7.2, GDScript, Compatibility renderer** in this
+existing repository. The root Godot project runs the opening screen and Matrix hub. `BOUNCE`, `BALLS`, `BUG`, `PONG`, `JUMP`, `UNTITLED`, `MARIO`, `ZELDA`, `MONSTERS`, and `YOU` have Godot modules. You uses native
+camera feeds with platform/hardware limitations; the web build explains its
+unavailable camera capture and supports returning to the hub. The owner has
+manually tested the native hub and all ten levels. Browser gameplay/audio and
+platform-specific behavior still need acceptance testing.
 
 ```sh
 make editor  # Open the Godot project
@@ -51,9 +53,18 @@ Or install `legacy/pygame/requirements.txt` into a Python environment and run
 `python3 main.py` from that directory. Individual levels still support
 `python3 -m levels.<level_name>` there. `make legacy-check` at root checks the
 archive with the local environment. Its Windows workflow still builds archived
-Untitled; Godot export presets and platform packaging are not established yet.
+Untitled. A reproducible single-threaded Godot Web preset is configured;
+other platform packaging is not configured or certified.
 
 The archive remains tracked until manual Godot playtesting and explicit
 approval to remove it. See [hub parity and manual checks](docs/migration/hub-parity.md) for verification
 and known differences. Move with WASD/arrows; E opens the nearby terminal.
 Escape closes the terminal, returns from a level, or quits from the room.
+
+## Alpha 0.1 web preparation
+
+See [development workflow](docs/development.md), [web build/hosting/CI](docs/releases/web-release.md),
+[preliminary licensing blockers](docs/releases/licensing-audit.md), and
+[implementation status](docs/releases/alpha-0.1-status.md). Build with
+`make web-templates && make web-export`, then `make web-serve`. All ten levels
+remain included. Publication, tags and merges require explicit authorization.

@@ -27,3 +27,13 @@ runtime-check:
 .PHONY: editor-map-check
 editor-map-check:
 	python3 scripts/validate_native_editor.py --godot "$(GODOT)"
+
+.PHONY: web-templates web-export web-serve
+web-templates:
+	python3 scripts/setup_godot.py --templates
+
+web-export:
+	python3 scripts/web_export.py --godot "$(GODOT)"
+
+web-serve:
+	python3 -m http.server 8060 --bind 127.0.0.1 --directory exports/web

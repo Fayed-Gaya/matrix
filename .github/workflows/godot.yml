@@ -1,0 +1,101 @@
+name: Godot and Web
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+  workflow_dispatch:
+  workflow_call:
+permissions:
+  contents: read
+concurrency:
+  group: godot-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  godot:
+    name: Godot validation
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - uses: actions/cache@v4
+        id: toolchain
+        with:
+          path: build/toolchain/godot
+          key: godot-${{ runner.os }}-${{ hashFiles('scripts/release/godot-toolchain.json', 'scripts/setup_godot.py') }}
+      - name: Install verified Godot 4.7.2 and templates
+        if: steps.toolchain.outputs.cache-hit != 'true'
+        run: python3 scripts/setup_godot.py --editor --templates
+      - name: Verify licensing inventory freshness
+        run: python3 scripts/audit_licenses.py --check
+      - name: Validate active project and fresh runtime
+        shell: bash
+        run: |
+          set -o pipefail
+          make check GODOT="$PWD/build/toolchain/godot/godot" 2>&1 | tee godot-check.log
+          make runtime-check GODOT="$PWD/build/toolchain/godot/godot" 2>&1 | tee godot-runtime.log
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: godot-validation-logs
+          path: godot-*.log
+  web:
+    name: Web export
+    needs: godot
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    env:
+      LIBGL_ALWAYS_SOFTWARE: '1'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - uses: actions/cache@v4
+        id: toolchain
+        with:
+          path: build/toolchain/godot
+          key: godot-${{ runner.os }}-${{ hashFiles('scripts/release/godot-toolchain.json', 'scripts/setup_godot.py') }}
+      - if: steps.toolchain.outputs.cache-hit != 'true'
+        run: python3 scripts/setup_godot.py --editor --templates
+      - name: Build browser preview and validate packed resources
+        shell: bash
+        run: |
+          set -o pipefail
+          make web-export GODOT="$PWD/build/toolchain/godot/godot" 2>&1 | tee web-export.log
+          python3 scripts/check_web_pack.py --godot "$PWD/build/toolchain/godot/godot" 2>&1 | tee web-pack.log
+      - name: Package corresponding source snapshot
+        run: git archive --format=zip --output=exports/matrix-source-${{ github.sha }}.zip HEAD
+      - uses: actions/upload-artifact@v4
+        with:
+          name: matrix-web-${{ github.sha }}
+          path: exports/web/
+          if-no-files-found: error
+      - uses: actions/upload-artifact@v4
+        with:
+          name: matrix-source-${{ github.sha }}
+          path: exports/matrix-source-*.zip
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install browser test dependencies
+        working-directory: tests/web
+        run: |
+          npm ci
+          npx playwright install --with-deps chrome firefox msedge
+          sudo apt-get update
+          sudo apt-get install -y xvfb libgl1-mesa-dri
+      - name: Smoke test Chrome, Firefox and Edge
+        working-directory: tests/web
+        run: xvfb-run -a npm test
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: web-validation-evidence
+          path: |
+            web-*.log
+            tests/web/test-results/
+            tests/web/playwright-report/

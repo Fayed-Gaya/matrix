@@ -13,3 +13,10 @@ dist/
 .godot/
 exports/
 export_credentials.cfg
+
+# Browser validation outputs and dependencies.
+node_modules/
+tests/web/test-results/
+tests/web/playwright-report/
+godot-*.log
+web-*.log

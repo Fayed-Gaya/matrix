@@ -15,6 +15,8 @@ func _ready() -> void:
 	add_child(hub)
 	hub.level_requested.connect(launch_level)
 	print("Matrix hub ready")
+	if OS.has_feature("web"):
+		add_child(preload("res://app/web_diagnostics.gd").new())
 
 
 func launch_level(code: String) -> void:
