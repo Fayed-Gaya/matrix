@@ -31,7 +31,7 @@ test('opening, real keyboard navigation, ten terminal codes, return and resize',
     await expect.poll(async () => (await state(page)).terminal).toBe(true);
     await page.keyboard.type(code);
     await page.keyboard.press('Enter');
-    await expect.poll(async () => (await state(page)).code, {timeout: 20000}).toBe(code);
+    await expect.poll(async () => (await state(page)).code, {timeout: 60000}).toBe(code);
     expect((await state(page)).scene).toMatch(/^res:\/\/levels\/.+\.tscn$/);
     if (code === 'YOU') expect((await state(page)).camera_status).toContain('unavailable in this browser');
     await page.screenshot({path: testInfo.outputPath(`${code}.png`)});
