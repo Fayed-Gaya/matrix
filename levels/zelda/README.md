@@ -1,53 +1,37 @@
-# Zelda
+# Zelda — ZELDA
 
-## Overview
+Arrows move; Space attacks; Ctrl casts; Q/E cycle weapons/magic. M toggles the
+upgrade menu; arrows select a stat and Space purchases an affordable upgrade.
+Escape closes upgrades first, then returns to Matrix. Progress is memory-only.
 
-Zelda is a larger top-down RPG project. It includes a tile map, player movement,
-combat, enemies, weapons, magic, particles, UI, audio, and an upgrade menu.
+The port contains the source floor/map layers, sorted character/object drawing,
+player and four enemy types, five weapons, flame/heal magic, destructible grass,
+particles, damage/attack/switch cooldowns, contact AI, hit reaction, XP, five-stat
+upgrade costs/caps, regeneration, HUD, original sprites/font/music/effects.
+The source's initial half health, 80% energy, 5000 XP and stat tables are retained.
+The source has **no player death/reset routine**; this port does not invent one.
 
-## Run
+Assets/maps copied under `assets/` from `legacy/pygame/levels/zelda/`. The manifest
+retains every CSV cell, source stat table and explicit sorted frame paths.
+Rebuild with `python3 scripts/build_zelda_manifest.py` (reads archived settings).
+No new artwork or attribution/licensing claim is introduced. Runtime uses only
+this module's GDScript/data/assets, not Python or hub gameplay code.
 
-From the repository root:
+The archived launcher currently fails: `level.py` requests MAP_DIR from settings,
+which does not expose it, and fallback imports then report a missing `level`.
+The archive is untouched. Reference captures were rendered using only a transient
+in-memory MAP_DIR binding, without editing the archived files.
 
-```bash
-python3 -m levels.zelda
-```
+Differences: fixed 60-tick updates, shared-window fitting and Escape return;
+spatial buckets accelerate the same rectangular obstacles. Rendering uses current
+model positions instead of the source's draw-before-update lag. Enemy attack
+sound triggers on entering attack rather than restarting every frame. Pause-edge
+cooldown expiry, particle/timer phasing, UI text/rasterization, randomness and
+audio loops can differ. No full gameplay or pixel parity is claimed.
 
-## Controls
-
-- `Up Arrow`: move up.
-- `Down Arrow`: move down.
-- `Left Arrow`: move left.
-- `Right Arrow`: move right.
-- `Space`: attack with the selected weapon.
-- `Left Ctrl`: use the selected magic.
-- `Q`: switch weapon.
-- `E`: switch magic.
-- `M`: toggle the upgrade menu.
-
-Upgrade menu:
-
-- `Left Arrow`: move selection left.
-- `Right Arrow`: move selection right.
-- `Space`: upgrade the selected attribute if enough experience is available.
-
-Close the window to quit.
-
-## Files
-
-- `code/main.py`: main game loop and top-level event handling.
-- `code/level.py`: map loading, sprite groups, collisions, attacks, enemies, and
-  level rendering.
-- `code/player.py`: movement, attacks, magic, stats, and input handling.
-- `code/settings.py`: dimensions, colors, weapons, magic, and enemy data.
-- `code/resources.py`: asset and map paths.
-- `map/`: CSV map layers.
-- `graphics/`: player, monster, weapon, object, tilemap, particle, and font
-  assets.
-- `audio/`: music and sound effects.
-
-## Notes
-
-The `levels/zelda/code/` package is the newer path-safe version of this level.
-There are also legacy files directly under `levels/zelda/`; prefer the `code/`
-package for new work unless a task specifically targets the legacy files.
+Checks cover map/population, collision, weapon damage and immunity, contact
+immunity, healing/costs, five-flame casting, insufficient energy, grass clearing,
+XP on defeat, upgrade scaling/caps, pause/Escape, cleanup and all earlier ports.
+World and upgrade-menu captures were inspected and compared with the reference.
+Manual full-map combat, every weapon/magic combination, audible effects and
+other-platform exports remain necessary.

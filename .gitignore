@@ -8,3 +8,8 @@ docs/notion-mcp.md
 *.tiled-session
 build/
 dist/
+
+# Godot-generated caches and export output (keep .uid sidecars tracked).
+.godot/
+exports/
+export_credentials.cfg

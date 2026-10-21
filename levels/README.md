@@ -1,47 +1,16 @@
-# Levels
+# Godot levels
 
-The `levels/` directory contains independent Pygame games, demos, and
-experiments. Each level owns its own code and assets unless noted otherwise.
+Each port gets its own directory with scenes, GDScript, assets, and a controls
+and parity note. Preserve its mechanics and existing terminal code. Levels run
+inside one application and return through the application router in `app/main.gd`.
+Do not import Python levels or depend on assets under the removable archive.
 
-## Catalog
+A migrated level scene root must extend `MatrixLevel` (`shared/level.gd`).
+Keep its nodes, audio and timers under that root. Emit `return_requested` to
+return; the router removes/frees the root and resumes the existing hub.
+The base class handles unconsumed Escape. A level may consume Escape to close
+its own menu first. Never quit the application merely to leave a level.
 
-| Level | Type | Notes |
-| --- | --- | --- |
-| `jump` | Endless runner | Current default game launched by `python main.py`. |
-| `mario` | Platformer | Larger project with overworld, levels, enemies, coins, audio, and UI. |
-| `monsters` | Monster RPG | Larger project with overworld, dialogs, encounters, battles, and evolution. |
-| `zelda` | Top-down RPG | Larger project with combat, enemies, weapons, magic, upgrades, audio, and UI. |
-| `tom_pong` | Pong clone | Two-player paddle game. |
-| `balls` | Movement demo | WASD movement with screen wrapping. |
-| `bouncing_ball` | Minimal demo | Image bounces around the window. |
-| `the_bug` | Debug demo | Mouse position and button state overlay. |
-| `you` | Camera demo | Displays camera input in a Pygame window. |
-| `untitled` | 2D action RPG prototype | Top-down movement, collision, camera follow, and NPC dialogue. |
-
-## Running Levels
-
-Some levels can be run as Python modules from the repository root. Others still
-have legacy internals, but every launchable level now exposes the same package
-entrypoint. Check each level's README for controls and notes.
-
-The default root command is:
-
-```bash
-python3 main.py
-```
-
-Run a specific level with:
-
-```bash
-python3 -m levels.<level_name>
-```
-
-## Documentation Standard
-
-Each level README should include:
-
-- A short overview.
-- A run command.
-- Controls.
-- Important files and assets.
-- Known path assumptions or other quirks.
+Set the existing code's `scene` path in `app/level_registry.gd` when that port is
+ready. Empty paths show the explicit pending screen until then. Do not create
+another application/window or add global gameplay autoloads for each level.

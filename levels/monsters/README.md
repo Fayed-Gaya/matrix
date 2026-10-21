@@ -1,47 +1,51 @@
-# Monsters
+# Monsters — MONSTERS
 
-## Overview
+Arrows move; Space talks/advances dialogue and selects battle choices. Enter
+opens/closes the party index; Space marks a monster, then swaps it with the
+selected entry. Battle menus use arrows, Space and Escape to go back. Escape
+closes overlays first, then returns to Matrix. No progress is saved.
 
-Monsters is an RPG inspired by Pokemon and older Final Fantasy games. It
-includes an overworld, trainer dialogs, random monster encounters, turn-based
-battles, monster stats, evolution, maps, audio, and sprite assets.
+The independent module includes eight maps, six world transitions, animated
+water/coasts, rectangular collision and Y sorting, trainer sight/approach and
+dialogue, nurses, grass encounters, seven starting party members, party ordering,
+three-versus-three initiative battles, attacks/elements/defense, switching,
+capture, reserves, XP/leveling, evolution, music and effects. Source stat tables,
+abilities, trainers, initial positions and controls are retained. Capture uses
+the source's strict below-90%-health rule, without invented random odds.
 
-## Run
+Runtime GDScript reads its own manifest and assets. Rebuild with
+`.venv/bin/python scripts/build_monsters_manifest.py` using the archived Pygame
+requirements. The converter reads all TMX layers/object properties and packs
+792 deduplicated images (including transformed tiles and source color-keyed
+cutouts) into five atlas pages. Original graphics/audio/map sources are copied.
+Godot rejects the source ADPCM explosion WAV; a PCM16 runtime conversion is used,
+with the untouched original retained in `source/audio/`. Original project notes
+credit Scarloxy for artwork and OpenGameArt sources for sounds; the original
+README and attribution context remain in `legacy/pygame/levels/monsters/`.
 
-From the repository root:
+Source limitations: the archived package fails to import because its settings
+no longer export `pygame`. Reference captures used a temporary in-memory binding,
+without editing the archive. The unused arena map references undefined trainers
+`t3`, `t4`, `t6`; its seven affected NPC instances show an unavailable-content
+dialogue, rather than inventing teams. No world transition leads to that arena.
+The source hospital2 nurse lacks direction/radius properties; native loading uses
+the existing Nurse defaults.
 
-```bash
-python3 -m levels.monsters
-```
+Differences: fixed 60-tick updates and shared-window fitting; menu layout/font
+metrics and effect/timer phasing differ. Multiple ready monsters receive turns
+in order rather than overwriting the active source selection. Empty attack or
+switch lists are handled safely. Loss leaves a message with Escape return rather
+than terminating the application. Multiple evolutions play sequentially instead
+of overwriting the source animation; the visual transition uses a crossfade and
+the original stars rather than the source white-mask effect. Source exact-level
+evolution thresholds, replacement stat reset and single-level XP award behavior
+are retained. No full gameplay/pixel/audio parity is claimed.
 
-Or launch it from Matrix with the terminal code:
-
-```text
-MONSTERS
-```
-
-## Controls
-
-- Arrow keys: move.
-- `Space`: interact with characters and advance dialog.
-- `Return`: open or close the monster index.
-- Battle menus use arrow keys, `Space`, and `Escape`.
-- Close the window to quit.
-
-## Files
-
-- `code/`: game logic, battles, entities, data, UI, and support helpers.
-- `audio/`: music and sound effects.
-- `data/maps/`: Tiled maps.
-- `data/tilesets/`: Tiled tileset definitions.
-- `graphics/`: characters, monsters, backgrounds, attacks, UI, fonts, objects,
-  and tilesets.
-
-## Notes
-
-The imported code is based on the finished version of the external
-`Python-Monsters-main` project. It has been adapted to use file-relative paths
-and the Matrix level launch convention.
-
-Original project notes credit Scarloxy for the artwork and list several
-OpenGameArt sources for sounds.
+Checks cover every map/spawn/transition target, real transition fading, collision
+and trainer visibility/approach, grass encounter timing, nurse healing, party
+swaps, strict ability costs, elemental/defense formulas, initiative, defense,
+switch/capture, reserve replacement, XP, victory/evolution and hub cleanup.
+The full regression pipeline passed. Compatibility-window world, battle, index
+and evolution captures were inspected; world/battle were compared with archived
+renders. Long playthroughs, all species/attacks/trainers, audible mixing and
+other-platform exports still require manual testing.

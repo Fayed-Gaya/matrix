@@ -1,0 +1,33 @@
+[gd_scene load_steps=6 format=3]
+[ext_resource type="Script" path="res://levels/untitled/untitled.gd" id="1"]
+[ext_resource type="PackedScene" path="res://levels/untitled/world.tscn" id="2"]
+[ext_resource type="Script" path="res://levels/untitled/overlay.gd" id="3"]
+[ext_resource type="AudioStream" path="res://levels/untitled/assets/audio/forest_ambience.mp3" id="4"]
+[sub_resource type="World2D" id="World"]
+[node name="Untitled" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1")
+[node name="Viewport" type="SubViewport" parent="."]
+disable_3d = true
+world_2d = SubResource("World")
+transparent_bg = true
+size = Vector2i(960, 540)
+render_target_update_mode = 4
+[node name="World" parent="Viewport" instance=ExtResource("2")]
+[node name="Display" type="TextureRect" parent="."]
+visible = false
+expand_mode = 1
+mouse_filter = 2
+[node name="Overlay" type="Control" parent="."]
+offset_right = 960.0
+offset_bottom = 540.0
+mouse_filter = 2
+script = ExtResource("3")
+[node name="Ambience" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4")
+volume_db = -9.1186

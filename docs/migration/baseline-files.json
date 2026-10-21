@@ -1,0 +1,3880 @@
+{
+  "commit": "9f89816",
+  "files": [
+    {
+      "path": ".github/workflows/build-untitled-windows.yml",
+      "size": 778,
+      "sha256": "09a93fc7ba241bc1eed86be655fe7fe3d23dd7048bc651ec5b017cab8f3399ac"
+    },
+    {
+      "path": ".github/workflows/checks.yml",
+      "size": 540,
+      "sha256": "5cd28a762494a9414e47c22dd6e7b90c432fb311c9a48c02bba4bee6ac4a86c6"
+    },
+    {
+      "path": ".gitignore",
+      "size": 100,
+      "sha256": "bb119179c78fc78de1283dcccf93b452af98c257e1762bf939fb1590fe6cff54"
+    },
+    {
+      "path": "AGENTS.md",
+      "size": 5840,
+      "sha256": "b4952e2b6ab39cf804f98bafe6fc6353adc3b4a864e3195926ec72a2eb734af4"
+    },
+    {
+      "path": "Makefile",
+      "size": 276,
+      "sha256": "8d0cd21a81eae25b50263657252ef26434a55dc1f65204359cab7b2b2c577e07"
+    },
+    {
+      "path": "README.md",
+      "size": 2080,
+      "sha256": "3537fcd73e86ee72d7487881dc6f81ba0ca1c07f36c025de9330750a86d6b536"
+    },
+    {
+      "path": "Tiled/matrix.tiled-project",
+      "size": 303,
+      "sha256": "a2f79e182b0bf4d5625ec284b07cc9ea6e2c468c1217206d1fefdb3cef36b55e"
+    },
+    {
+      "path": "levels/README.md",
+      "size": 1597,
+      "sha256": "b80e497b767b52350c39739ffd39b364549ff26bea0f006581d2a9c03d54ab0a"
+    },
+    {
+      "path": "levels/__init__.py",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "levels/balls/README.md",
+      "size": 499,
+      "sha256": "9f0dbbcd5e08912bab4513d274b711b990a5e453b394e0b7eaf387170e526e9b"
+    },
+    {
+      "path": "levels/balls/__init__.py",
+      "size": 53,
+      "sha256": "ceb96b9d3db46959a92d3d579cda2dabb22cd37f09343376cc940069342aaaa0"
+    },
+    {
+      "path": "levels/balls/__main__.py",
+      "size": 59,
+      "sha256": "463608676f5f9e97dfbed823794a82b3738a5864ec2f61a698607173be27a7fb"
+    },
+    {
+      "path": "levels/balls/balls.py",
+      "size": 2549,
+      "sha256": "c57c7fd5afe673d753c3cc4d9ba0cbe8e97be506b5a219329ad823ae98dbdd8e"
+    },
+    {
+      "path": "levels/bouncing_ball/README.md",
+      "size": 563,
+      "sha256": "e42af2304eb1f1d433dd85d97c2b8e9bf6f05cdbd8d1877f476306a5dfe08a1b"
+    },
+    {
+      "path": "levels/bouncing_ball/__init__.py",
+      "size": 61,
+      "sha256": "dc62f447ee5dc1d177362acd53a48e0a31e8b965b59eb8089bb09388905b780a"
+    },
+    {
+      "path": "levels/bouncing_ball/__main__.py",
+      "size": 59,
+      "sha256": "463608676f5f9e97dfbed823794a82b3738a5864ec2f61a698607173be27a7fb"
+    },
+    {
+      "path": "levels/bouncing_ball/bouncing_ball.py",
+      "size": 877,
+      "sha256": "c0272872c3634ed0d82ed9a4e36d84338a4453c1530c342f2813f5ff096b91cc"
+    },
+    {
+      "path": "levels/bouncing_ball/intro_ball.gif",
+      "size": 5015,
+      "sha256": "bc4b34f8e1bf8f9e4964930be3c217847b0de193085abaa54bb75fc5df7e8717"
+    },
+    {
+      "path": "levels/jump/README.md",
+      "size": 831,
+      "sha256": "eb7ef30c9f68606eb17757829b664eddace6f175c6bfa044285abac66d31c0b5"
+    },
+    {
+      "path": "levels/jump/__init__.py",
+      "size": 52,
+      "sha256": "dac142017d2157b7d77bb7e3f0c6a764f27329c9b6183cf4fb2fbd1eed3fd816"
+    },
+    {
+      "path": "levels/jump/__main__.py",
+      "size": 59,
+      "sha256": "463608676f5f9e97dfbed823794a82b3738a5864ec2f61a698607173be27a7fb"
+    },
+    {
+      "path": "levels/jump/audio/jump.mp3",
+      "size": 8811,
+      "sha256": "ffba8dfaae60432af4835ee17c1d0f356d593ed301da736513bdf83916c6fceb"
+    },
+    {
+      "path": "levels/jump/audio/music.wav",
+      "size": 13098822,
+      "sha256": "6f79ae4c6f2b59baa62c46bcd264c9d157f5dca2c30845fabc3c5be4e2b64a43"
+    },
+    {
+      "path": "levels/jump/font/Pixeltype.ttf",
+      "size": 13700,
+      "sha256": "7feec061c113e1f83787f6ff77564c3dc5bc0245e85b2b13b4f9d4a39e0872d5"
+    },
+    {
+      "path": "levels/jump/graphics/Sky.png",
+      "size": 2078,
+      "sha256": "4ec0d98409c68791ee7d555c6700ed97046e850a3dbb05a0008398a6932b245c"
+    },
+    {
+      "path": "levels/jump/graphics/fly/Fly1.png",
+      "size": 366,
+      "sha256": "4f5927ee86e04725f9242abbd07b30df4d4613b1af2bc6428c6d2b7552c0155e"
+    },
+    {
+      "path": "levels/jump/graphics/fly/Fly2.png",
+      "size": 329,
+      "sha256": "d06a90f0897acd90c0b65a62e773de07c629f6d08c55efd9fdd6fb7f06948d13"
+    },
+    {
+      "path": "levels/jump/graphics/ground.png",
+      "size": 1720,
+      "sha256": "094edc0e8e0ca3a28c9203847c3f0ef9ea616675620920750700a71ac9078974"
+    },
+    {
+      "path": "levels/jump/graphics/player/jump.png",
+      "size": 537,
+      "sha256": "37e7aaff430420094c5d7309b445334110fe9ff5b42d0db25f356bda48e26a1a"
+    },
+    {
+      "path": "levels/jump/graphics/player/player_stand.png",
+      "size": 519,
+      "sha256": "6933db1cb1b2bb4d903141021e907719e6059b1c5c884374b44e54c646b94e0a"
+    },
+    {
+      "path": "levels/jump/graphics/player/player_walk_1.png",
+      "size": 545,
+      "sha256": "395b7a5f00fe911d80fe5049d8693e8706693b5132a94fd1e1d2524966d9feda"
+    },
+    {
+      "path": "levels/jump/graphics/player/player_walk_2.png",
+      "size": 543,
+      "sha256": "f97e3c829fa5ec2d020cef31218b35c3343a49728fc94ed0e0003e02b7edd8bf"
+    },
+    {
+      "path": "levels/jump/graphics/snail/snail1.png",
+      "size": 318,
+      "sha256": "0630aa91a71969ef791a54911dcc9a8f5725011ec81a70b763848a70eb1d025c"
+    },
+    {
+      "path": "levels/jump/graphics/snail/snail2.png",
+      "size": 314,
+      "sha256": "529b6873e98e3d31bbca127cfab57ee238d3a438727f6b07212d7c4d88ef79df"
+    },
+    {
+      "path": "levels/jump/jump.py",
+      "size": 8418,
+      "sha256": "d0a5e8e3520fed651ba2882d8a5caa341f4d4bc097e68f031eb1cad2fcc9acdd"
+    },
+    {
+      "path": "levels/mario/README.md",
+      "size": 1197,
+      "sha256": "a726584a2198d4e6377fcb59f035f66432e795a36b400c2fe14a7e20399698a6"
+    },
+    {
+      "path": "levels/mario/__init__.py",
+      "size": 219,
+      "sha256": "c0987b5de69710b55dfa9608434eb218eb5a7c8457f77a03712141a51c0c449d"
+    },
+    {
+      "path": "levels/mario/__main__.py",
+      "size": 59,
+      "sha256": "463608676f5f9e97dfbed823794a82b3738a5864ec2f61a698607173be27a7fb"
+    },
+    {
+      "path": "levels/mario/audio/effects/coin.wav",
+      "size": 36098,
+      "sha256": "e3a34d2b8f6b10b20891bdb5503758f652228d38a3e252b7bd9a8201e94e30e5"
+    },
+    {
+      "path": "levels/mario/audio/effects/hit.wav",
+      "size": 9340,
+      "sha256": "4fe8e0e5c987a954bf7de33173fb4a48022f7f23e9a45dc349ebdb385534bf99"
+    },
+    {
+      "path": "levels/mario/audio/effects/jump.wav",
+      "size": 24456,
+      "sha256": "0392076687997fe3affb92218e2b64507673ef729c72accb882f96de4340b5fd"
+    },
+    {
+      "path": "levels/mario/audio/effects/stomp.wav",
+      "size": 55440,
+      "sha256": "70b161d9cc84863d490f4bd10bf5f87c3b495fc13a88d43a383089f8647ea73b"
+    },
+    {
+      "path": "levels/mario/audio/level_music.wav",
+      "size": 9898326,
+      "sha256": "777f8d5e3c80a120ee71058048420d99a587ae9db11b446fc698b969010ec34e"
+    },
+    {
+      "path": "levels/mario/audio/overworld_music.wav",
+      "size": 3764808,
+      "sha256": "b2dc6df237dcb503e735368609dda980f77c129a10b6a162ef80a8e4551e2d86"
+    },
+    {
+      "path": "levels/mario/code/decoration.py",
+      "size": 3829,
+      "sha256": "b0bc496739a7d73e5e673eecfb3b5c78843909f17fe80670439a049f997a96b1"
+    },
+    {
+      "path": "levels/mario/code/enemy.py",
+      "size": 692,
+      "sha256": "d4c9ed7d07e485864dce7d05fe0468ab478de7e46431b3429e7c8a573e7ca21c"
+    },
+    {
+      "path": "levels/mario/code/game_data.py",
+      "size": 3890,
+      "sha256": "4d10869480fbbb519931669d7afd277707eac679310507b7753931646d723634"
+    },
+    {
+      "path": "levels/mario/code/level.py",
+      "size": 13377,
+      "sha256": "10ec722e62f1571567b48657b40987a5d573f97cd861ba54a433482ef014c313"
+    },
+    {
+      "path": "levels/mario/code/main.py",
+      "size": 2694,
+      "sha256": "5f55c69278beed7e10f545434c959211f19b22ec802f10d57aa6f55aa4868142"
+    },
+    {
+      "path": "levels/mario/code/overworld.py",
+      "size": 5328,
+      "sha256": "b62ac2862140a061093ba244ce3d66baf341276dc0b059272630bb0b7c6ac0d0"
+    },
+    {
+      "path": "levels/mario/code/particles.py",
+      "size": 1016,
+      "sha256": "4e6056d283128e0201d99488bb1ecfacaf2ea1058dd0c34bec0fb9a568d9ecdb"
+    },
+    {
+      "path": "levels/mario/code/paths.py",
+      "size": 201,
+      "sha256": "e5bffd7f30f914cfcae3c40bb4206c655d5fdba16a39c084ebb5951c0e0610cb"
+    },
+    {
+      "path": "levels/mario/code/player.py",
+      "size": 5436,
+      "sha256": "df0ad2367dcbafd437fe9c65abc0ac86355e05238d7026acf4b77c4d199ba6e2"
+    },
+    {
+      "path": "levels/mario/code/settings.py",
+      "size": 116,
+      "sha256": "d100a0cafa4eec7b28df997ca9e2214ab7485a15baaf008d8a6688cb6627ca30"
+    },
+    {
+      "path": "levels/mario/code/support.py",
+      "size": 1263,
+      "sha256": "1fee25b022d81d902852b34fab993a8fd2f43d56baae206d896829a57a5174c6"
+    },
+    {
+      "path": "levels/mario/code/tiles.py",
+      "size": 1802,
+      "sha256": "234251f1177aa4b46604a0463e5cbcae08e1f39a66db786b91aaa4d38eeeb4a7"
+    },
+    {
+      "path": "levels/mario/code/ui.py",
+      "size": 1422,
+      "sha256": "571e4d9f05b043826e52403f5d48992027d9237c73a4f2e9f361e7a81a581c3a"
+    },
+    {
+      "path": "levels/mario/graphics/character/dust_particles/jump/jump_1.png",
+      "size": 157,
+      "sha256": "4b7e8bfcb885e7fc0e8825cb3823cf244e030fcc54d4d042f0bc438656907c99"
+    },
+    {
+      "path": "levels/mario/graphics/character/dust_particles/jump/jump_2.png",
+      "size": 182,
+      "sha256": "6e635ff5171854f957a1f1deda673d6478623999607a0137d404739bbbcc0f10"
+    },
+    {
+      "path": "levels/mario/graphics/character/dust_particles/jump/jump_3.png",
+      "size": 194,
+      "sha256": "d90ec782c91fc3393aa45fd061bb1f0cdacf5f9394ad48ccf2969ef69e11a439"
+    },
+    {
+      "path": "levels/mario/graphics/character/dust_particles/jump/jump_4.png",
+      "size": 186,
+      "sha256": "2537cdb9f0d500806d17e58cee024e953a0fa19f6cefb809181fc21a13c47aa5"
+    },
+    {
+      "path": "levels/mario/graphics/character/dust_particles/jump/jump_5.png",
+      "size": 162,
+      "sha256": "28be65c67137893a81f924398f4a91ff8c8f3a52b549b9f24a498616903d0b14"
+    },
+    {
+      "path": "levels/mario/graphics/character/dust_particles/jump/jump_6.png",
+      "size": 106,
+      "sha256": "50097db05ebd35f7b0521483d060d811e230f5c35069795503266d3d55c77dca"
+    },
+    {
+      "path": "levels/mario/graphics/character/dust_particles/land/land_1.png",
+      "size": 160,
+      "sha256": "40ba2e177a3b387ad1eb4755d6aed239fa4384d8c0e8c9a535008cdaa0a04414"
+    },
+    {
+      "path": "levels/mario/graphics/character/dust_particles/land/land_2.png",
+      "size": 187,
+      "sha256": "c1ef60016f070528d1d8b03c7db362966989469fc834841400fa4ac8ffd33572"
+    },
+    {
+      "path": "levels/mario/graphics/character/dust_particles/land/land_3.png",
+      "size": 173,
+      "sha256": "6a4730d261b7389452d165a71941953bbd2fe2051e353f5dbc2dd3e1089b407e"
+    },
+    {
+      "path": "levels/mario/graphics/character/dust_particles/land/land_4.png",
+      "size": 168,
+      "sha256": "fc97a1bdf223b3b9b3cf17a7155389221472cf71051f823b9fa2343c4df646e2"
+    },
+    {
+      "path": "levels/mario/graphics/character/dust_particles/land/land_5.png",
+      "size": 155,
+      "sha256": "dcf11d7ddd245662326b16e98c65321b001f10ce104098f95776461a460d27b5"
+    },
+    {
+      "path": "levels/mario/graphics/character/dust_particles/run/run_1.png",
+      "size": 98,
+      "sha256": "0b7a5a8803ad508f0681aef5ea37328b3ebe008d90d4acce819e25979e2617ca"
+    },
+    {
+      "path": "levels/mario/graphics/character/dust_particles/run/run_2.png",
+      "size": 110,
+      "sha256": "bffacc0cf83aeb68dd35d73ab6efbb6475df422c31326f7541e0ee5c6d487c1f"
+    },
+    {
+      "path": "levels/mario/graphics/character/dust_particles/run/run_3.png",
+      "size": 121,
+      "sha256": "69136a6893bf22e4275b35723f83a9b591c83631281c29c24fb63e7a3cfd7ecb"
+    },
+    {
+      "path": "levels/mario/graphics/character/dust_particles/run/run_4.png",
+      "size": 115,
+      "sha256": "fac527e862a76c9cd57ac59d2ac740fad176bc038e61c1d6a00eba07d625b335"
+    },
+    {
+      "path": "levels/mario/graphics/character/dust_particles/run/run_5.png",
+      "size": 92,
+      "sha256": "5389e613d0ed21c8831c49c913c54e069af03c0cf9e31f2686aa88176f2f3c66"
+    },
+    {
+      "path": "levels/mario/graphics/character/fall/fall.png",
+      "size": 560,
+      "sha256": "7135271c201a4362e030af9fd2836a8366c169f38b0e595a00030b85dfeb51ad"
+    },
+    {
+      "path": "levels/mario/graphics/character/hat.png",
+      "size": 216,
+      "sha256": "91cd5d38c527ad8503ccc67b3ddb21fd65b13c566b649ac5b21629b2c49f764a"
+    },
+    {
+      "path": "levels/mario/graphics/character/idle/1.png",
+      "size": 525,
+      "sha256": "8688f06f71cf9327b8a9399f66ea19d36f8d6e8c8e9f4fcffdfdb8abfa667bc0"
+    },
+    {
+      "path": "levels/mario/graphics/character/idle/2.png",
+      "size": 522,
+      "sha256": "cc023de99d70aa1528bd9640f7c28083473e7196bab416a0a2b46272f38f5393"
+    },
+    {
+      "path": "levels/mario/graphics/character/idle/3.png",
+      "size": 501,
+      "sha256": "02a4007615be8fcaf144b703b2ff15e1605dae17a6f55e46e4d70145af6961c3"
+    },
+    {
+      "path": "levels/mario/graphics/character/idle/4.png",
+      "size": 521,
+      "sha256": "4ac7d17c0df7f32a4df43583ebc87b740655b05519b7718f9174db4ff674b58f"
+    },
+    {
+      "path": "levels/mario/graphics/character/idle/5.png",
+      "size": 530,
+      "sha256": "7e21d45432bb005419df73b977982b7149761b6ad38bd2b4ac0512b9aba1de1c"
+    },
+    {
+      "path": "levels/mario/graphics/character/jump/1.png",
+      "size": 501,
+      "sha256": "fec8aacb8bd54e75ff05c921853dd18f202b339d0236c3afe35f9eff2329b189"
+    },
+    {
+      "path": "levels/mario/graphics/character/jump/2.png",
+      "size": 522,
+      "sha256": "febeeb0a57d8c951d20461c2a7a43f8d4b12fb62a3ab3d3ab8a8f28504420cd8"
+    },
+    {
+      "path": "levels/mario/graphics/character/jump/3.png",
+      "size": 514,
+      "sha256": "2e64c43566f1d99a9f660883057e0411372a394f3f8ad4f622b5f25b6c44e3fb"
+    },
+    {
+      "path": "levels/mario/graphics/character/run/1.png",
+      "size": 510,
+      "sha256": "773193a7245720b43720cc10a93ff0c7d1de0866affb3ce07cd5cced86bef1ac"
+    },
+    {
+      "path": "levels/mario/graphics/character/run/2.png",
+      "size": 530,
+      "sha256": "cd542508e9fcdd927c9112b9224fe61ffe53679d80ae28ca43a907546417247a"
+    },
+    {
+      "path": "levels/mario/graphics/character/run/3.png",
+      "size": 513,
+      "sha256": "d7dcadf8752b702e3f3bca5ee88a2a1f56fb329c9403159363d3fc46f00a6c8b"
+    },
+    {
+      "path": "levels/mario/graphics/character/run/4.png",
+      "size": 538,
+      "sha256": "9bf613abad648f0c4d234553061ec155f47612caab10e65ef22a0400ce45139f"
+    },
+    {
+      "path": "levels/mario/graphics/character/run/5.png",
+      "size": 544,
+      "sha256": "029184a6d677242f5bb9bd7ab119c5b3d61b56dc21c0f2aa87edabdba660ae33"
+    },
+    {
+      "path": "levels/mario/graphics/character/run/6.png",
+      "size": 523,
+      "sha256": "212bd9f8045b7d7654a2a8626d6f3cc6b9a9bfd96249aba448243d95439490c5"
+    },
+    {
+      "path": "levels/mario/graphics/character/setup_tiles.png",
+      "size": 1290,
+      "sha256": "e39c3b71562dda650834a63171cfb1aa632bffbfe032a0e14d9a5eed4a385593"
+    },
+    {
+      "path": "levels/mario/graphics/coins/coin_tiles.png",
+      "size": 547,
+      "sha256": "6379d0de64562e6df4185582ad18349f17bcfeadaa5d76390b98160bbde16862"
+    },
+    {
+      "path": "levels/mario/graphics/coins/gold/0.png",
+      "size": 205,
+      "sha256": "e315ad68db7b9af0852eff23560c9637c34816a67ae9db208a7be6aa01a59a69"
+    },
+    {
+      "path": "levels/mario/graphics/coins/gold/1.png",
+      "size": 179,
+      "sha256": "d60931f0e2f6a193717519013037f0a8f34b59f001ba7100774defab99232753"
+    },
+    {
+      "path": "levels/mario/graphics/coins/gold/2.png",
+      "size": 164,
+      "sha256": "54bc2e54e31b94e87c39f7ab38585b65c1d692b84797bc1c6c67db86f255c7c4"
+    },
+    {
+      "path": "levels/mario/graphics/coins/gold/3.png",
+      "size": 179,
+      "sha256": "9ca02e2ffbef8260d3fd736d94752fdf3c8f903bb51a9af2b3e7e4554ee9be86"
+    },
+    {
+      "path": "levels/mario/graphics/coins/silver/0.png",
+      "size": 183,
+      "sha256": "149a037d006ebd11ad49a8a1a80b67dc2c514e2dc2345dcd5a390e2d6eb4a227"
+    },
+    {
+      "path": "levels/mario/graphics/coins/silver/1.png",
+      "size": 193,
+      "sha256": "107a63152c297f72bec4ee93f94ccb844c35d4878e1cdbabf631c5f9cbd8190c"
+    },
+    {
+      "path": "levels/mario/graphics/coins/silver/2.png",
+      "size": 164,
+      "sha256": "0c411d93dd48133ecf8b8b717ae86243a82329235809d99dd8b58d98e75cd7b8"
+    },
+    {
+      "path": "levels/mario/graphics/coins/silver/3.png",
+      "size": 169,
+      "sha256": "f5f7fc4922a33eb6f4bdfc28b998845d21d9ad297ca4f99cc242fc5f14c31788"
+    },
+    {
+      "path": "levels/mario/graphics/decoration/clouds/1.png",
+      "size": 1088,
+      "sha256": "48ca2e4868140ece276100d55b4d63d0ee0302af39c81e3a9b788bf3ee507fec"
+    },
+    {
+      "path": "levels/mario/graphics/decoration/clouds/2.png",
+      "size": 1771,
+      "sha256": "35bcbb2d7d979d3ae29c5e883d6b8ec1bcd1098b9a40f7f07f067d3727adc70c"
+    },
+    {
+      "path": "levels/mario/graphics/decoration/clouds/3.png",
+      "size": 2116,
+      "sha256": "5f6a900d012b9cfd8e98abbbbaf764f2a0447ad67b29a800406460927d34b44a"
+    },
+    {
+      "path": "levels/mario/graphics/decoration/grass/grass.png",
+      "size": 444,
+      "sha256": "dc5bcef56219906f01d27aac4cbbda8472266511dc082a8d6653428d628ff040"
+    },
+    {
+      "path": "levels/mario/graphics/decoration/sky/sky_bottom.png",
+      "size": 160,
+      "sha256": "b609d6d3a9f0582b3d5024f3244486e49a78aa5781cb0f456e8e814626340f79"
+    },
+    {
+      "path": "levels/mario/graphics/decoration/sky/sky_middle.png",
+      "size": 171,
+      "sha256": "07a64f5ce0092b673d502bfe9d9b6f2c2ca9ed84920048bd8da995c99f151383"
+    },
+    {
+      "path": "levels/mario/graphics/decoration/sky/sky_top.png",
+      "size": 160,
+      "sha256": "b25101d3b8846ca1f6e306a836d45c6cabe77957fe9dd597be9055b34bcd3e8c"
+    },
+    {
+      "path": "levels/mario/graphics/decoration/water/1.png",
+      "size": 269,
+      "sha256": "946d1a8d7a940be7726a12e5c9d9b5c394e0ba87dbdb767cd324cb775f6b9f75"
+    },
+    {
+      "path": "levels/mario/graphics/decoration/water/2.png",
+      "size": 218,
+      "sha256": "f5232f9eee10bed73da7cf8dd90b55746522162791d68c1c5790ba3200946afd"
+    },
+    {
+      "path": "levels/mario/graphics/decoration/water/3.png",
+      "size": 274,
+      "sha256": "1ea7fbb4c259fd62c17244d0c7c075e134e68dc7d27c17c24dc19c24f640c4c5"
+    },
+    {
+      "path": "levels/mario/graphics/decoration/water/4.png",
+      "size": 218,
+      "sha256": "f5232f9eee10bed73da7cf8dd90b55746522162791d68c1c5790ba3200946afd"
+    },
+    {
+      "path": "levels/mario/graphics/enemy/explosion/1.png",
+      "size": 3404,
+      "sha256": "2975d4f3b457f485fe7a493e434c3c3f8d78e0724373e073468cf25293674948"
+    },
+    {
+      "path": "levels/mario/graphics/enemy/explosion/2.png",
+      "size": 4730,
+      "sha256": "8c0d40ff8a0f53e9357ddf29b6b375df42c167899b7ee6fc0ac8cb44b8152d04"
+    },
+    {
+      "path": "levels/mario/graphics/enemy/explosion/3.png",
+      "size": 4976,
+      "sha256": "f711a0a48c49db9591c07de49b68e8fdc36921b75e7390297708b5fd888111f3"
+    },
+    {
+      "path": "levels/mario/graphics/enemy/explosion/4.png",
+      "size": 5113,
+      "sha256": "0b05892df122fe17273c0fa4423a9d46eae883af88127b955461a8c4c1d4ceed"
+    },
+    {
+      "path": "levels/mario/graphics/enemy/explosion/5.png",
+      "size": 2166,
+      "sha256": "c22bdf59a9c1f39cd65d4dd2c7d066c4a0dd54aadc06af1403a7565d2a5f089b"
+    },
+    {
+      "path": "levels/mario/graphics/enemy/explosion/6.png",
+      "size": 2135,
+      "sha256": "b5b55f5ea33bc1fa56bb8e773ab44e88dbe9ea7c156cc0130e21f3105837e26d"
+    },
+    {
+      "path": "levels/mario/graphics/enemy/explosion/7.png",
+      "size": 2135,
+      "sha256": "b5b55f5ea33bc1fa56bb8e773ab44e88dbe9ea7c156cc0130e21f3105837e26d"
+    },
+    {
+      "path": "levels/mario/graphics/enemy/run/1.png",
+      "size": 547,
+      "sha256": "18faff93051cd8830d08fbcbb5c57af30fb01eb79e86e5039b5e63494cb1b6c4"
+    },
+    {
+      "path": "levels/mario/graphics/enemy/run/2.png",
+      "size": 528,
+      "sha256": "e1704c7202f66d072c4535720d4eb5ea1943c609a8466e4734ce7723deed0b20"
+    },
+    {
+      "path": "levels/mario/graphics/enemy/run/3.png",
+      "size": 565,
+      "sha256": "7f4e698e65f261384c0f731b93efe9452601c6c3f22185284d5389a66f22af15"
+    },
+    {
+      "path": "levels/mario/graphics/enemy/run/4.png",
+      "size": 555,
+      "sha256": "a11ef14a7e20e80f08373f33f121d7af08b7adc6efd76b698406b2c40ce5341b"
+    },
+    {
+      "path": "levels/mario/graphics/enemy/run/5.png",
+      "size": 556,
+      "sha256": "7ca1971d66054b2e9b4dd167acd57e32eeded7d2de3754930d6291f3ecfc71e0"
+    },
+    {
+      "path": "levels/mario/graphics/enemy/run/6.png",
+      "size": 551,
+      "sha256": "64a6f9c30b54d343bbf095db1233ad437017159975174c39a47dab25b3cfc738"
+    },
+    {
+      "path": "levels/mario/graphics/enemy/setup_tile.png",
+      "size": 763,
+      "sha256": "96321e6e0f3c8f2a71b12a645dc4c7c6a559af74431728a6290d86833208db6e"
+    },
+    {
+      "path": "levels/mario/graphics/overworld/0/1.png",
+      "size": 3782,
+      "sha256": "3e403e851ae077e7f960a948918cb6352ce2526a818a4438c2f194ac3959c11c"
+    },
+    {
+      "path": "levels/mario/graphics/overworld/0/2.png",
+      "size": 3783,
+      "sha256": "5b30d19d3e9e0fd1ddfcabae11b73429f9268243db63a631bbe0977b247b4f2d"
+    },
+    {
+      "path": "levels/mario/graphics/overworld/0/3.png",
+      "size": 3771,
+      "sha256": "a7e4f1e3ed9bcbc1ea44403bc82c9189bdae71f89da6aa4dadd5d280b216d390"
+    },
+    {
+      "path": "levels/mario/graphics/overworld/0/4.png",
+      "size": 3794,
+      "sha256": "43f04a53d180cbf5b25ee129fd8a15342cf60d1603d9fc1aff2bf3b1aac06fa2"
+    },
+    {
+      "path": "levels/mario/graphics/overworld/1/1.png",
+      "size": 4096,
+      "sha256": "db207b7cb640af0aa2ad1ac49480cc4a3db58857547fb809642410b3a936299f"
+    },
+    {
+      "path": "levels/mario/graphics/overworld/1/2.png",
+      "size": 4068,
+      "sha256": "93d3e9ad6e25ed88acc24961c880782f18488408666414f8be2234485c9ca2b2"
+    },
+    {
+      "path": "levels/mario/graphics/overworld/1/3.png",
+      "size": 4059,
+      "sha256": "3803c7cdd6d40be587a82f44bcc548af098e933f40c18d1f4196f7f55ad13d0c"
+    },
+    {
+      "path": "levels/mario/graphics/overworld/1/4.png",
+      "size": 4074,
+      "sha256": "db013338948452dd5946c1a89f4eecebb56dde5272c7617a6c00f38fe161fc79"
+    },
+    {
+      "path": "levels/mario/graphics/overworld/2/1.png",
+      "size": 4533,
+      "sha256": "1670f17f0c4f68e390e5cb01bab03bd144d8420ffb8b88d728fd3eb2c7090337"
+    },
+    {
+      "path": "levels/mario/graphics/overworld/2/2.png",
+      "size": 4494,
+      "sha256": "a7f7aee323182e10c5c100728ea749269044f30f1788135908ae8a86ba8dd26c"
+    },
+    {
+      "path": "levels/mario/graphics/overworld/2/3.png",
+      "size": 4415,
+      "sha256": "c7e9d30da1aa93552fd16800448b4ed9baf788394d907e25c2cca22577aa4587"
+    },
+    {
+      "path": "levels/mario/graphics/overworld/2/4.png",
+      "size": 4511,
+      "sha256": "49206ccb560152809b66edffdfdad17ea0df35a841956ed8198a9b48ed8aea36"
+    },
+    {
+      "path": "levels/mario/graphics/overworld/3/1.png",
+      "size": 4012,
+      "sha256": "12bab23f51b5b6c46c3ab381ab2227423094394de16397069a429ea71877bc46"
+    },
+    {
+      "path": "levels/mario/graphics/overworld/3/2.png",
+      "size": 3951,
+      "sha256": "171bb75b731271ef310f9927191a509dc1fd303c8b21cb9eab688a76c35705b5"
+    },
+    {
+      "path": "levels/mario/graphics/overworld/3/3.png",
+      "size": 3910,
+      "sha256": "2aa350b0056cc625dbc87065da0fa96da5852da1c7189f2b74c92dec0665aec0"
+    },
+    {
+      "path": "levels/mario/graphics/overworld/3/4.png",
+      "size": 3977,
+      "sha256": "c7d9bfc512d7fe9ae6e7d27afdeedc2fa16072c95312ed0fbd849ee6de7cf68c"
+    },
+    {
+      "path": "levels/mario/graphics/overworld/4/1.png",
+      "size": 4267,
+      "sha256": "20059446f3182ddef339d82ca05343a513e811f6bc3b209fe83c8d8b7d548ba3"
+    },
+    {
+      "path": "levels/mario/graphics/overworld/4/2.png",
+      "size": 4252,
+      "sha256": "9a142b4a7fe63fb46a7565981568d515a267161aca6e27d1720043280d60d5cc"
+    },
+    {
+      "path": "levels/mario/graphics/overworld/4/3.png",
+      "size": 4227,
+      "sha256": "ff78ce21001fb343a6204aa548a073a554234c6d1b95db508aca72d3a9bff037"
+    },
+    {
+      "path": "levels/mario/graphics/overworld/4/4.png",
+      "size": 4252,
+      "sha256": "9a142b4a7fe63fb46a7565981568d515a267161aca6e27d1720043280d60d5cc"
+    },
+    {
+      "path": "levels/mario/graphics/overworld/5/1.png",
+      "size": 3446,
+      "sha256": "16d1d3d9773a0225b06814a0803bc0c69c222b8b6c180a5af8bca9216ec2c1c4"
+    },
+    {
+      "path": "levels/mario/graphics/overworld/5/2.png",
+      "size": 3389,
+      "sha256": "a375099a5d34812462a2e31ab04618730a71b1a1976323ed98975e7bca05c871"
+    },
+    {
+      "path": "levels/mario/graphics/overworld/5/3.png",
+      "size": 3335,
+      "sha256": "d828127f853e2775f8c690979cb00de4963608390c945d87fda240e76bf0ed03"
+    },
+    {
+      "path": "levels/mario/graphics/overworld/5/4.png",
+      "size": 3386,
+      "sha256": "67a90f3dae4aab0ee31d5548291a44851282f9c6b71cb9bc95b98013301cb705"
+    },
+    {
+      "path": "levels/mario/graphics/overworld/clouds/1.png",
+      "size": 832,
+      "sha256": "3742e22b7f2c4429ec3baad08468163ef0f32db54f10377472209ef1729dc4c7"
+    },
+    {
+      "path": "levels/mario/graphics/overworld/clouds/2.png",
+      "size": 1481,
+      "sha256": "ae33ee27be79608d5350c9c901423f6e599095bf967c4cce7e1bb751f781865f"
+    },
+    {
+      "path": "levels/mario/graphics/overworld/clouds/3.png",
+      "size": 1601,
+      "sha256": "1c42467233d4c67da80d4e65648ec9d3c91a5e94a4c7a8130bc05c70b1a0b59d"
+    },
+    {
+      "path": "levels/mario/graphics/overworld/hat.png",
+      "size": 216,
+      "sha256": "91cd5d38c527ad8503ccc67b3ddb21fd65b13c566b649ac5b21629b2c49f764a"
+    },
+    {
+      "path": "levels/mario/graphics/overworld/palms/1.png",
+      "size": 3669,
+      "sha256": "9c4ff2af44499117a800990959823cb5f83ab1d0c01df19ef0ede2a4014b35c3"
+    },
+    {
+      "path": "levels/mario/graphics/overworld/palms/2.png",
+      "size": 606,
+      "sha256": "2959c8ef3abce504826e23f20df4a53e2107712779c3af852ff8554ff740af53"
+    },
+    {
+      "path": "levels/mario/graphics/overworld/palms/3.png",
+      "size": 614,
+      "sha256": "2c20979a548df4eb33c37e7d2ff13c4eee3a7a53aca922335ab391b993d0a973"
+    },
+    {
+      "path": "levels/mario/graphics/overworld/palms/4.png",
+      "size": 612,
+      "sha256": "a2a96b7febcf33ca90bcb0636acf342fe08da76d16f5e8caf7be68c00a125442"
+    },
+    {
+      "path": "levels/mario/graphics/overworld/palms/5.png",
+      "size": 559,
+      "sha256": "dec9189e812e87ebac3c8746267506d9cdd4cc04bb7a6a2a78e7fe04ee1e96d6"
+    },
+    {
+      "path": "levels/mario/graphics/overworld/palms/6.png",
+      "size": 531,
+      "sha256": "82147bc51cd0a83c8e63405d9d71e607ef3f494d30b18951074b0d5cc38df5bd"
+    },
+    {
+      "path": "levels/mario/graphics/overworld/palms/7.png",
+      "size": 534,
+      "sha256": "e2f88fb362dfc84dfee6a1fd28b547e57ac112bb4ba73e9a466517c449acaad6"
+    },
+    {
+      "path": "levels/mario/graphics/overworld/palms/8.png",
+      "size": 544,
+      "sha256": "56a843be6eb2950e33cc30c63ecbaeb6ee5b34d410c75d26bbbbc9abe9f4ddda"
+    },
+    {
+      "path": "levels/mario/graphics/terrain/crate.png",
+      "size": 680,
+      "sha256": "20d55fea8c47ab281752386db9504041d00b617d1c67ff050cc30a9e62e5208d"
+    },
+    {
+      "path": "levels/mario/graphics/terrain/palm_bg/bg_palm_1.png",
+      "size": 933,
+      "sha256": "ba507730562d4cd5232174573369f7a061ea821b999b0f2bef45815ff37bc199"
+    },
+    {
+      "path": "levels/mario/graphics/terrain/palm_bg/bg_palm_2.png",
+      "size": 959,
+      "sha256": "4b0cf0387500ee85280bbbb00b52b389f7d5284a61649b5908c3b9feb3dc0090"
+    },
+    {
+      "path": "levels/mario/graphics/terrain/palm_bg/bg_palm_3.png",
+      "size": 992,
+      "sha256": "0b5e2e0d6828d7ebf78d0c23736914d2e63aeb3d7676ad856efd00aaee06ea23"
+    },
+    {
+      "path": "levels/mario/graphics/terrain/palm_bg/bg_palm_4.png",
+      "size": 997,
+      "sha256": "a4a19fdb1f30a9d8e0bb850779b21500e89745bd2a0613559b9b3b6583193276"
+    },
+    {
+      "path": "levels/mario/graphics/terrain/palm_large/large_1.png",
+      "size": 1195,
+      "sha256": "b2c50f3b1c24e1df436a3c63a4e6ca3ab5adbce79a7a70858393d61416b6087f"
+    },
+    {
+      "path": "levels/mario/graphics/terrain/palm_large/large_2.png",
+      "size": 1200,
+      "sha256": "174526ac291de2920f1424be78c67d41d8762cc427ca485bd795d3a0f39ad0c6"
+    },
+    {
+      "path": "levels/mario/graphics/terrain/palm_large/large_3.png",
+      "size": 1203,
+      "sha256": "583041ceb9c5a587ee992d490dcc8909277d84186782c7bb2a7244a63d4046c7"
+    },
+    {
+      "path": "levels/mario/graphics/terrain/palm_large/large_4.png",
+      "size": 1194,
+      "sha256": "03d573a35d246d9dbcecd39ef95aa6e9a0282f31dabad6a6dd4ca16ceb35edc6"
+    },
+    {
+      "path": "levels/mario/graphics/terrain/palm_small/small_1.png",
+      "size": 1006,
+      "sha256": "219ff5349e3cb7c201029eb1ab24f6c8353b603bbe80978f5d2e856d4c9cd201"
+    },
+    {
+      "path": "levels/mario/graphics/terrain/palm_small/small_2.png",
+      "size": 1026,
+      "sha256": "175a23145135a42222c7ae77db42a7b9afd79da60f1ad77dc43c0830f852d249"
+    },
+    {
+      "path": "levels/mario/graphics/terrain/palm_small/small_3.png",
+      "size": 1004,
+      "sha256": "513c2f6600e928fd95ecdc9fd1acaa900100bdae003876789a12331ac3ce87ed"
+    },
+    {
+      "path": "levels/mario/graphics/terrain/palm_small/small_4.png",
+      "size": 1009,
+      "sha256": "ac0aa397216a0e244b2e513b8ae92fa82de40ea0539bf081f05a4c6d18f91ff4"
+    },
+    {
+      "path": "levels/mario/graphics/terrain/terrain_tiles.png",
+      "size": 5959,
+      "sha256": "29ce2e21468ec6818ca8d005787b5199e164f589110bb1e0ba6e89a376cad247"
+    },
+    {
+      "path": "levels/mario/graphics/ui/ARCADEPI.TTF",
+      "size": 22460,
+      "sha256": "f5dc750c4e50fe03dbfacb50043d5e6bd2cb03ad625ea795a6e80f060b312ec7"
+    },
+    {
+      "path": "levels/mario/graphics/ui/coin.png",
+      "size": 203,
+      "sha256": "9901c1fef7da918c8bd9c2d35daab475692979f0f47a41c4fa50239efc63efb8"
+    },
+    {
+      "path": "levels/mario/graphics/ui/health_bar.png",
+      "size": 793,
+      "sha256": "841d2c0d59b45e9c84f3009cf9554931862092cd6fd1b72f833a56a7b5795aaa"
+    },
+    {
+      "path": "levels/mario/levels/0/level_0_bg_palms.csv",
+      "size": 1972,
+      "sha256": "d0ed79842558215eeef3388a8ed63939f69e7417813b21b0526012b714780dec"
+    },
+    {
+      "path": "levels/mario/levels/0/level_0_coins.csv",
+      "size": 1973,
+      "sha256": "6e5464f0019f0f9d5beb7e801c67b1f75d946ba968d44585febed449af23f9ad"
+    },
+    {
+      "path": "levels/mario/levels/0/level_0_constraints.csv",
+      "size": 1981,
+      "sha256": "ef806c633836bb870a57340798bbf1ff659211c8757b58ce2f33e2d7f3dc67fe"
+    },
+    {
+      "path": "levels/mario/levels/0/level_0_crates.csv",
+      "size": 1981,
+      "sha256": "bbb330b1df2a56807d7a4d0ea0896bf92d3889258e0ca29741becb97579bad96"
+    },
+    {
+      "path": "levels/mario/levels/0/level_0_enemies.csv",
+      "size": 1984,
+      "sha256": "4dc3cfbe7782a122f7ee010e17285491c6ccd3dcae52e4faba756fa77ab97a39"
+    },
+    {
+      "path": "levels/mario/levels/0/level_0_fg_palms.csv",
+      "size": 1963,
+      "sha256": "82b2ce8ef8c297ad4a33ca44b03e3bd72a978ebd9347ef803bd6e9b98dd9cabb"
+    },
+    {
+      "path": "levels/mario/levels/0/level_0_grass.csv",
+      "size": 1946,
+      "sha256": "636a3b01713fb1999b40a3ba445e86db588afcbb668155e93cd03cad0b54c5f3"
+    },
+    {
+      "path": "levels/mario/levels/0/level_0_player.csv",
+      "size": 1989,
+      "sha256": "1a6f5ae52646c28e8eb5faf5a0fb2a39188fe9b360ad7b7d03424b01335e909d"
+    },
+    {
+      "path": "levels/mario/levels/0/level_0_terrain.csv",
+      "size": 1859,
+      "sha256": "6e111ab6e8088a949845b44921cf9e9a39d21fa80912ed6c2bfc4581d2c079bf"
+    },
+    {
+      "path": "levels/mario/levels/1/level_1_bg_palms.csv",
+      "size": 1969,
+      "sha256": "37f4651c721f2571cd6af6fe1f962720b5c3a68f075f33ecc33c0dbc2adfbdcb"
+    },
+    {
+      "path": "levels/mario/levels/1/level_1_coins.csv",
+      "size": 1968,
+      "sha256": "1a762610debde573094be9760ed37a4750db4577c22c76c22ce0b6dcc05c8f44"
+    },
+    {
+      "path": "levels/mario/levels/1/level_1_constraints.csv",
+      "size": 1979,
+      "sha256": "f63ce0befb73bd99688daa0415ac5632540d5d23a99cad39473c430a50af41cc"
+    },
+    {
+      "path": "levels/mario/levels/1/level_1_crates.csv",
+      "size": 1977,
+      "sha256": "a89d6747afb2866576b5e022f01d65d932e91bc340124b5747f425b65822b180"
+    },
+    {
+      "path": "levels/mario/levels/1/level_1_enemies.csv",
+      "size": 1982,
+      "sha256": "a43358d46781c10c0977b21ab74b29762b50999b977251681539b0e5f475ed0b"
+    },
+    {
+      "path": "levels/mario/levels/1/level_1_fg_palms.csv",
+      "size": 1968,
+      "sha256": "b8d2ffbcb63ecc10a185f1c66fb034d8fb3827d16a7b8f1bf2200463b8e726c5"
+    },
+    {
+      "path": "levels/mario/levels/1/level_1_grass.csv",
+      "size": 1959,
+      "sha256": "1b387c22e65253413fb01019cdc740cf00eecb8a219a2343cf494ff3aac7725d"
+    },
+    {
+      "path": "levels/mario/levels/1/level_1_player.csv",
+      "size": 1989,
+      "sha256": "47c9be4e195175089d42ba37ebfe6970788cdc3e4e6f64274d600a758fb9426f"
+    },
+    {
+      "path": "levels/mario/levels/1/level_1_terrain.csv",
+      "size": 1878,
+      "sha256": "483eca6af2178bdbc80a95f2b4c6fb62fc73c142547b38fe03ae0dd5104a0f10"
+    },
+    {
+      "path": "levels/mario/levels/2/level_2_bg_palms.csv",
+      "size": 1977,
+      "sha256": "509cc2d16560856f001bc2472c17bc84eaae84c11109736baec573f5222c8a98"
+    },
+    {
+      "path": "levels/mario/levels/2/level_2_coins.csv",
+      "size": 1977,
+      "sha256": "b02b06f3101541532f985f92c303b33982d6dde27359edc2062339f686f13901"
+    },
+    {
+      "path": "levels/mario/levels/2/level_2_constraints.csv",
+      "size": 1981,
+      "sha256": "7073c2842acb7896129be83f42fdc949c18eb4b6bb2043d3eff8df74d8b955be"
+    },
+    {
+      "path": "levels/mario/levels/2/level_2_crates.csv",
+      "size": 1978,
+      "sha256": "531ff9b3791335436d85304ae7e32a719f56c473159e5a3e4796aa2bac74b441"
+    },
+    {
+      "path": "levels/mario/levels/2/level_2_enemies.csv",
+      "size": 1984,
+      "sha256": "f020d1a895a49642b0da93ed4815cad1b54be5a5f52317077e156bed5bd7748c"
+    },
+    {
+      "path": "levels/mario/levels/2/level_2_fg_palms.csv",
+      "size": 1971,
+      "sha256": "521ad47c83f1f25ca60466e710563fa58bb695b49d2ec3521de6c3a3c2f3620b"
+    },
+    {
+      "path": "levels/mario/levels/2/level_2_grass.csv",
+      "size": 1952,
+      "sha256": "66d152977301ae7898371035bce9296c1814a8c6bbfbf7bdd451cccc8220fe0a"
+    },
+    {
+      "path": "levels/mario/levels/2/level_2_player.csv",
+      "size": 1989,
+      "sha256": "46d3bb06b20ecf765fd6c7fc1d5581d25480e34a5cde528f4d2a71744481a263"
+    },
+    {
+      "path": "levels/mario/levels/2/level_2_terrain.csv",
+      "size": 1886,
+      "sha256": "2fcc6f440688e4018f237eec01077708273cbbfc56c1294d20cefe8ef8de871e"
+    },
+    {
+      "path": "levels/mario/levels/level_data/level_0.tmx",
+      "size": 13890,
+      "sha256": "9a18ebd44918f5dd99963842cc2efd0b03691120804378c28a4e795a02885ee2"
+    },
+    {
+      "path": "levels/mario/levels/tilesets/coin_tiles.tsx",
+      "size": 253,
+      "sha256": "1493fe2c59bdfd679c3953a06362ef1e5a02929c06cbc83055050ae58f9d7285"
+    },
+    {
+      "path": "levels/mario/levels/tilesets/crates.tsx",
+      "size": 328,
+      "sha256": "a535cb391eacd07947f9ba824ce53f1f5dbce762fa2140f9496016960148b8b0"
+    },
+    {
+      "path": "levels/mario/levels/tilesets/enemy_tiles.tsx",
+      "size": 253,
+      "sha256": "2c9399a584ebc7124f225c04cb2862d78f8828a3623ece67bf6e3a8998d0516d"
+    },
+    {
+      "path": "levels/mario/levels/tilesets/grass_tiles.tsx",
+      "size": 260,
+      "sha256": "f84c2ffd1c335f80ca5a9a81261fd7874e10669aed13ff2b7ee8b8bd4157a282"
+    },
+    {
+      "path": "levels/mario/levels/tilesets/palms.tsx",
+      "size": 577,
+      "sha256": "d0434f253cb42fc05a97ac66b4d29d03695f2c0804dce208907925009eec2a6c"
+    },
+    {
+      "path": "levels/mario/levels/tilesets/player_tiles.tsx",
+      "size": 259,
+      "sha256": "37ce63b3e4800d957b29e6dbd4b41bbe7606182342e528170dffd0ed3df12c4a"
+    },
+    {
+      "path": "levels/mario/levels/tilesets/terrain_tiles.tsx",
+      "size": 263,
+      "sha256": "ec4f22b16d387781ccbd1bd576b4f92bd096fe708e2d9e2eda0161ef0fd9adf6"
+    },
+    {
+      "path": "levels/monsters/README.md",
+      "size": 1200,
+      "sha256": "a2be1103cd525caca0755ff32c344fd528396c599432240ec4f62dbbb5ff29f3"
+    },
+    {
+      "path": "levels/monsters/__init__.py",
+      "size": 57,
+      "sha256": "87d0136a6c95428d5fcfb873ebcefcae8d67cae8c7413493f34c42bdb1231a43"
+    },
+    {
+      "path": "levels/monsters/__main__.py",
+      "size": 59,
+      "sha256": "463608676f5f9e97dfbed823794a82b3738a5864ec2f61a698607173be27a7fb"
+    },
+    {
+      "path": "levels/monsters/audio/battle.ogg",
+      "size": 1248183,
+      "sha256": "fcbcc8fd1ee29c4e98eb6db64f880e5034cc26e44b99d74b9db2f21dd375e317"
+    },
+    {
+      "path": "levels/monsters/audio/evolution.mp3",
+      "size": 1647874,
+      "sha256": "452c68b20e55fe2b09fbe5847a4a19919c2f55ff77dcc8142f2ce61769c6c68d"
+    },
+    {
+      "path": "levels/monsters/audio/explosion.wav",
+      "size": 44604,
+      "sha256": "da7c965a7256e0d289dd0e8e2f1261b9c19e207ca41ce300aae2fb1d30d66f81"
+    },
+    {
+      "path": "levels/monsters/audio/fire.wav",
+      "size": 304940,
+      "sha256": "8accb7cb099c14273527759cbf6812e00a918ca5fc91ca6b21698133642daa60"
+    },
+    {
+      "path": "levels/monsters/audio/green.wav",
+      "size": 62210,
+      "sha256": "ecca2965069fa96babf2f8e5124855976843f0275e652adbb9cea3cf3ecb0a55"
+    },
+    {
+      "path": "levels/monsters/audio/ice.mp3",
+      "size": 29642,
+      "sha256": "974e32f78c31cfd92a06d877ea663db62f184e9bbcf0709d2e361bd24258760e"
+    },
+    {
+      "path": "levels/monsters/audio/notice.wav",
+      "size": 31392,
+      "sha256": "240e2c6f6979d628859f0bc67e92b3868c40bf09a50bcec530d552b3a2bf8ece"
+    },
+    {
+      "path": "levels/monsters/audio/overworld.ogg",
+      "size": 2140130,
+      "sha256": "a04fa2ca091bd4398ca8c14d898842d08d89261c4ed1096b2e03bf5ec6420f2d"
+    },
+    {
+      "path": "levels/monsters/audio/scratch.mp3",
+      "size": 21528,
+      "sha256": "04e7ed1ccb1f157a55de6a7dc3fd50bf3046e88331d70a4efe22cc72b1cae93e"
+    },
+    {
+      "path": "levels/monsters/audio/splash.wav",
+      "size": 57414,
+      "sha256": "2ba62ce5fb779f8e7d1fd24d48f5fbc7ae4ccbe808625dbfa66042230986ed54"
+    },
+    {
+      "path": "levels/monsters/code/__init__.py",
+      "size": 45,
+      "sha256": "85668f863c5617219c8cf8e82481cfb5b0b3011e929abbfbfd6a9ee3e1f85f9a"
+    },
+    {
+      "path": "levels/monsters/code/battle.py",
+      "size": 21172,
+      "sha256": "086758b7e2a57f3382c3fac52cd4dcb1b16c524a066a5e1746e13b8d45ca9a1c"
+    },
+    {
+      "path": "levels/monsters/code/debug.py",
+      "size": 405,
+      "sha256": "2a9e1bbf10ac0f42399737879c4d20d87993438389a49b522d992b112a6f1977"
+    },
+    {
+      "path": "levels/monsters/code/dialog.py",
+      "size": 2037,
+      "sha256": "0a3e5563f702f720a6207fc3c8110199e1c908394abf982cb427a1f0254aa62f"
+    },
+    {
+      "path": "levels/monsters/code/entities.py",
+      "size": 7022,
+      "sha256": "adbfdeceda13bd0c6215d7e2144e6597fe388255b1f2a87cd1851fa9642b1468"
+    },
+    {
+      "path": "levels/monsters/code/evolution.py",
+      "size": 3295,
+      "sha256": "fcd419e0d41dcc3678f9b3cf7d77dd5147f5946747c5bb5dd3d6377f3b624028"
+    },
+    {
+      "path": "levels/monsters/code/game_data.py",
+      "size": 17662,
+      "sha256": "908ffe7e96231118939b81774d660ac7f9e4a2b20feeb6b41c11645a083b5835"
+    },
+    {
+      "path": "levels/monsters/code/groups.py",
+      "size": 2769,
+      "sha256": "5a2b60428bc9ef86f940e9bb9fb070a0d0850aeed9ca428216ca1ea6c2d5817e"
+    },
+    {
+      "path": "levels/monsters/code/main.py",
+      "size": 14705,
+      "sha256": "a04f7997e1f385c9666625879934259628cb7bb8b7ae82dd64fcbed8e591d7a0"
+    },
+    {
+      "path": "levels/monsters/code/monster.py",
+      "size": 2548,
+      "sha256": "7af60f6ddb552dfddb8778a3b1738a75d7808c188fa969c905c480a78746318c"
+    },
+    {
+      "path": "levels/monsters/code/monster_index.py",
+      "size": 11435,
+      "sha256": "b1b76e67827caeb7096d48ee074d2ddb6daf9a62a4248016d4f184f1d2966316"
+    },
+    {
+      "path": "levels/monsters/code/paths.py",
+      "size": 209,
+      "sha256": "27c27a5648c20c68be8cd7063a2bcb6320b5141aa05ab9eb8a2ebe05cd37003a"
+    },
+    {
+      "path": "levels/monsters/code/settings.py",
+      "size": 1399,
+      "sha256": "f0e92fbdb9abf9f54ad40e820c7ed6d42c4ca3ee3e80d02b944d544308d85646"
+    },
+    {
+      "path": "levels/monsters/code/sprites.py",
+      "size": 9177,
+      "sha256": "87d955825111b0efa517544e024d6e92ceb1af51162f9488a956439d6a3dd077"
+    },
+    {
+      "path": "levels/monsters/code/support.py",
+      "size": 6934,
+      "sha256": "0cdd5599b5ab362bc4878d259b67d25379ae9de88328155f684b9f07d54797ca"
+    },
+    {
+      "path": "levels/monsters/code/timer.py",
+      "size": 819,
+      "sha256": "3b11c2daaab2af1981ff14b5fc9eaca918263855a1790311b7ef8addd05aa432"
+    },
+    {
+      "path": "levels/monsters/data/maps/arena.tmx",
+      "size": 12970,
+      "sha256": "4728a01cc80d5794615dc9fa2c865fea8c6357bbed77a07441211a90e5747d7d"
+    },
+    {
+      "path": "levels/monsters/data/maps/fire.tmx",
+      "size": 11197,
+      "sha256": "cf957e02a6f0165a4fa6f76e0d26e285d75f3997776f121b70c1d70b8a00aee9"
+    },
+    {
+      "path": "levels/monsters/data/maps/hospital.tmx",
+      "size": 2860,
+      "sha256": "857e2746695dfa4f4540907e9a55f18b1561be5f027aa5a6a30a58c2c0bbfcc1"
+    },
+    {
+      "path": "levels/monsters/data/maps/hospital2.tmx",
+      "size": 2767,
+      "sha256": "042278a637d283df136903af11be7b8fd0d71c596f7fdbe69b71b7edbdf24fb1"
+    },
+    {
+      "path": "levels/monsters/data/maps/house.tmx",
+      "size": 2754,
+      "sha256": "8493eec1b22cb77cb19854c5be7e028679cae949cdc28a8cacebc5d21639f310"
+    },
+    {
+      "path": "levels/monsters/data/maps/plant.tmx",
+      "size": 17045,
+      "sha256": "11bfd270f49fee9c3a98bf081c93ceba2ba1cd02491601456b001ae1bbfdb6cb"
+    },
+    {
+      "path": "levels/monsters/data/maps/water.tmx",
+      "size": 10003,
+      "sha256": "4961002f3eabd5d7a939b5dd7de0cc767ddcd9aa780cef04d103038dfc20a2d7"
+    },
+    {
+      "path": "levels/monsters/data/maps/world.tmx",
+      "size": 213009,
+      "sha256": "0c44e6cd6a950d807285f7beb534da7a895cdae916ca38c8b8b74f376a9c7813"
+    },
+    {
+      "path": "levels/monsters/data/tilesets/Grass.tsx",
+      "size": 538,
+      "sha256": "b4a5f43bdd6aab494477fb869495a7c8fb3e6c1e5b2a799c9d60f1e13f35367c"
+    },
+    {
+      "path": "levels/monsters/data/tilesets/indoor.tsx",
+      "size": 253,
+      "sha256": "d3b6796d86a629c60fabec5da93bb15bfb144c3fc5307afac1b6f5e423d80482"
+    },
+    {
+      "path": "levels/monsters/data/tilesets/objects.tsx",
+      "size": 3456,
+      "sha256": "92a9b18aa152c03d6ef5753f9b9920b2a8f046fe8403dc8f6cdc3e944f951993"
+    },
+    {
+      "path": "levels/monsters/data/tilesets/world.tsx",
+      "size": 253,
+      "sha256": "a201c381ee1eebe93ca54173e44aeac9536069588cca93eb48530ca637d2a3d3"
+    },
+    {
+      "path": "levels/monsters/graphics/attacks/explosion.png",
+      "size": 6098,
+      "sha256": "fbb4069470df89d4756f24f5024ff4647b5603b1aec6255799cb45fc8446e56a"
+    },
+    {
+      "path": "levels/monsters/graphics/attacks/fire.png",
+      "size": 5269,
+      "sha256": "5cc42ad78fe3ae3ff7518dcf4126f341000322bc8acc51d2af3b0045b9703344"
+    },
+    {
+      "path": "levels/monsters/graphics/attacks/green.png",
+      "size": 4538,
+      "sha256": "ec4393666a410c1103cc3696fc821c434f67e04093e1f664da1b0aa56823eae7"
+    },
+    {
+      "path": "levels/monsters/graphics/attacks/ice.png",
+      "size": 5323,
+      "sha256": "ea3b88cb9b8e93b4f1c416a32254aab83347c80ac5138e3470d1ae6d7ef52c69"
+    },
+    {
+      "path": "levels/monsters/graphics/attacks/scratch.png",
+      "size": 5533,
+      "sha256": "54a8954484ee5a015d15b2a954db1f6970be90f99e069f6ffa636f20812b6af5"
+    },
+    {
+      "path": "levels/monsters/graphics/attacks/splash.png",
+      "size": 6530,
+      "sha256": "626943a6c99e6086c1fc87419b6df79373313934010e8a5aeea9c9f38b77e7f1"
+    },
+    {
+      "path": "levels/monsters/graphics/backgrounds/forest.png",
+      "size": 31522,
+      "sha256": "3e90d0ba4c092bce467ea975d1cdc3cf72bed838028d3cf4ade383a2b02f2c8d"
+    },
+    {
+      "path": "levels/monsters/graphics/backgrounds/ice.png",
+      "size": 17836,
+      "sha256": "910bc8055492ab1dff0527a07addfd840ddd41d3705556ba8857e2a152dee50a"
+    },
+    {
+      "path": "levels/monsters/graphics/backgrounds/sand.png",
+      "size": 24062,
+      "sha256": "72925e460f6c8ce9dfe8b2619950a1a0ce3ae3e5316272b3054fde6568c98950"
+    },
+    {
+      "path": "levels/monsters/graphics/characters/blond.png",
+      "size": 11914,
+      "sha256": "83fa8e2d93a9b8f6c12193460efe99408afe98485ec8e02db35e6355f51d84eb"
+    },
+    {
+      "path": "levels/monsters/graphics/characters/fire_boss.png",
+      "size": 11443,
+      "sha256": "870d7466b11e89090777f150d671958d6188396951e43459e6e68fe498c43410"
+    },
+    {
+      "path": "levels/monsters/graphics/characters/grass_boss.png",
+      "size": 11605,
+      "sha256": "05a8fce7ab8b724b5fb75722e5d93b0b4d68183d2ad53faa3da5993bab4b9649"
+    },
+    {
+      "path": "levels/monsters/graphics/characters/hat_girl.png",
+      "size": 10361,
+      "sha256": "126c83adf2564c2b304582fc4c2548f191a664c239cfef0d929486505252cae3"
+    },
+    {
+      "path": "levels/monsters/graphics/characters/player.png",
+      "size": 10957,
+      "sha256": "3347221ca727d5b3cc3237bf759e68b1fc6a97cc136557cce39629bf6cdafacf"
+    },
+    {
+      "path": "levels/monsters/graphics/characters/purple_girl.png",
+      "size": 10515,
+      "sha256": "96a7cfe453fdf2e34900b4980d03aa8107dd4157e7b03306fa04434b19ce24ad"
+    },
+    {
+      "path": "levels/monsters/graphics/characters/straw.png",
+      "size": 10058,
+      "sha256": "fd9131d246f624ef3811e9afbc4a44f45a1e7afc99ff0e19af7308e8b9536def"
+    },
+    {
+      "path": "levels/monsters/graphics/characters/water_boss.png",
+      "size": 11896,
+      "sha256": "be769d33182b68957da7e7dbc1512a08df0ca09d5a522127fb21f572db389c45"
+    },
+    {
+      "path": "levels/monsters/graphics/characters/young_girl.png",
+      "size": 11459,
+      "sha256": "b590309c788a368d0a3e2ead331ce3963197ab799c53d0362229facc827552ee"
+    },
+    {
+      "path": "levels/monsters/graphics/characters/young_guy.png",
+      "size": 9957,
+      "sha256": "a48ea0d6afcf6dbb81d720f8722ef4c5b44532245d35868ae91ade179f7c2624"
+    },
+    {
+      "path": "levels/monsters/graphics/fonts/PixeloidSans.ttf",
+      "size": 106676,
+      "sha256": "9afa72c564fd027e826b23375847a25f17fc8e214dd52d10c9fcf3d173e252e9"
+    },
+    {
+      "path": "levels/monsters/graphics/fonts/dogicapixel.otf",
+      "size": 34160,
+      "sha256": "41209b3fb5be11f6a40c9c74c3b769f6089bee5f3047d1f475a7d40281fab5e0"
+    },
+    {
+      "path": "levels/monsters/graphics/fonts/dogicapixelbold.otf",
+      "size": 31064,
+      "sha256": "abbdb8e28c3128ca6b8eef772b6dc61434659916c05656b6fb6a2f4e230c2708"
+    },
+    {
+      "path": "levels/monsters/graphics/icons/Atrox.png",
+      "size": 843,
+      "sha256": "45c6b6aa6cbf20f3babb79925eff2892bb5c0075a823045405af5a49df6095d1"
+    },
+    {
+      "path": "levels/monsters/graphics/icons/Charmadillo.png",
+      "size": 1472,
+      "sha256": "22df9e7b841dae08fb2cf91e2b51f1268e4a619b326d1caeb353f8cffe6daa08"
+    },
+    {
+      "path": "levels/monsters/graphics/icons/Cindrill.png",
+      "size": 1014,
+      "sha256": "ea8f56a9ad85e888abbd4ef6bf9427a3d9b010f49627397f78087d25400df31f"
+    },
+    {
+      "path": "levels/monsters/graphics/icons/Cleaf.png",
+      "size": 1218,
+      "sha256": "fa217eac1fee8dd764754262911641aa9cbf0b8fb53aae74076b0e462fccd4d1"
+    },
+    {
+      "path": "levels/monsters/graphics/icons/Draem.png",
+      "size": 737,
+      "sha256": "902f8cadfa3d6c60600cae93d8aa6af2c20d12fa33dca6bec33b7e4eceb9a73f"
+    },
+    {
+      "path": "levels/monsters/graphics/icons/Finiette.png",
+      "size": 1100,
+      "sha256": "cd28b7cf9b31d6136f6285cb2cb882ce73904597a8f305a35e1ca9ad39bcbc90"
+    },
+    {
+      "path": "levels/monsters/graphics/icons/Finsta.png",
+      "size": 635,
+      "sha256": "6ef04685f4b66d3f6fb53d315841fc4eaa89474e05ae93c3ee4ee6f42edda405"
+    },
+    {
+      "path": "levels/monsters/graphics/icons/Friolera.png",
+      "size": 953,
+      "sha256": "4dff4fbd151d6e719745f817b68b441aa8100a8898784e0e06bb59cbf4d3a729"
+    },
+    {
+      "path": "levels/monsters/graphics/icons/Gulfin.png",
+      "size": 833,
+      "sha256": "17cba36dd9e6c65174a5bc8a1841c9892222199741d754c0b6bf15dcb8213e3c"
+    },
+    {
+      "path": "levels/monsters/graphics/icons/Ivieron.png",
+      "size": 990,
+      "sha256": "b1ea18dbd6e85067b77c46283e1c65675a8bf65a1a5e896b35560993239590f6"
+    },
+    {
+      "path": "levels/monsters/graphics/icons/Jacana.png",
+      "size": 592,
+      "sha256": "ae77dbcc8edb14fe9cd2711ba592f0cec372c708f0fa0d31361231b2dc784a47"
+    },
+    {
+      "path": "levels/monsters/graphics/icons/Larvea.png",
+      "size": 1977,
+      "sha256": "e5f732a84f2c2f17f7fe7e995fda324fb3aef49cb39e0ceda6c3c7d0a5567d50"
+    },
+    {
+      "path": "levels/monsters/graphics/icons/Pluma.png",
+      "size": 1165,
+      "sha256": "ed406d3c787aa65b932c59c6f004ca99ecbf86e12b7a3016c37018e47117e01d"
+    },
+    {
+      "path": "levels/monsters/graphics/icons/Plumette.png",
+      "size": 883,
+      "sha256": "e4155e3b557063180f36f1303fa7868a6b3202c6b5fa9ba6b4edbb767d0922cd"
+    },
+    {
+      "path": "levels/monsters/graphics/icons/Pouch.png",
+      "size": 775,
+      "sha256": "dec4c45ab0e9c22a31ec1641408ce8a4e8e0800c17398e77da85727cc03a7b81"
+    },
+    {
+      "path": "levels/monsters/graphics/icons/Sparchu.png",
+      "size": 2131,
+      "sha256": "da93cb6ab650409384ef81cde6eb514bf0d85a0274a38208c97526f8a86f9467"
+    },
+    {
+      "path": "levels/monsters/graphics/monsters/Atrox.png",
+      "size": 12342,
+      "sha256": "8706d4636da32b903efc9493f48ec50196570a5fd91b2dd2e72ef3fbe0274683"
+    },
+    {
+      "path": "levels/monsters/graphics/monsters/Charmadillo.png",
+      "size": 28856,
+      "sha256": "bcbdac324d668cd472ca0229c5a743ccb12927a46cfa7b44a35c241fa2e21bc1"
+    },
+    {
+      "path": "levels/monsters/graphics/monsters/Cindrill.png",
+      "size": 15021,
+      "sha256": "f513c76c385d6ec52bf057e3af37899a9accd5be8d55a9bc8b3437c2c137922a"
+    },
+    {
+      "path": "levels/monsters/graphics/monsters/Cleaf.png",
+      "size": 13364,
+      "sha256": "d16b305663f2e9d4e707e1924370e68386e0c96ec8969ed131ec0fac4504db72"
+    },
+    {
+      "path": "levels/monsters/graphics/monsters/Draem.png",
+      "size": 8669,
+      "sha256": "6baf9a80d423ff76b05497fb4959375a35ce36495ab79f7d13bc32852b9e7957"
+    },
+    {
+      "path": "levels/monsters/graphics/monsters/Finiette.png",
+      "size": 15030,
+      "sha256": "3d846d6a2cb726cf8eee0bc8ec10432368387dc0b9b783a85145d6b405f00e88"
+    },
+    {
+      "path": "levels/monsters/graphics/monsters/Finsta.png",
+      "size": 6353,
+      "sha256": "9c58b2b75eefcb26a23f111a0fafeec18a104db494384e54c284e4fe254d408e"
+    },
+    {
+      "path": "levels/monsters/graphics/monsters/Friolera.png",
+      "size": 12031,
+      "sha256": "33effb83084a8200ecfb8b2aacbd35c6d382fd778f48b78c937e4044a10de7d7"
+    },
+    {
+      "path": "levels/monsters/graphics/monsters/Gulfin.png",
+      "size": 10149,
+      "sha256": "f06463b41e083281173b5c079d2822c86e16d33ff334a56a82dbf3772266313d"
+    },
+    {
+      "path": "levels/monsters/graphics/monsters/Ivieron.png",
+      "size": 13941,
+      "sha256": "779ce2c58a7075794c2e957901452330ad4e5bd7e51492de7ec4f6fbce5eea3a"
+    },
+    {
+      "path": "levels/monsters/graphics/monsters/Jacana.png",
+      "size": 9445,
+      "sha256": "093565a1e89a0db54fcf698b6771e79ea1176c0c879cc91faa8ee756c76eb863"
+    },
+    {
+      "path": "levels/monsters/graphics/monsters/Larvea.png",
+      "size": 6952,
+      "sha256": "bb61f3e226d77ae7c7ecfa91cc030a9863bf599fdc0c1fa2b5c679534896e386"
+    },
+    {
+      "path": "levels/monsters/graphics/monsters/Pluma.png",
+      "size": 20297,
+      "sha256": "453eebbcd1b6f89cdaf96de5a950638196250368e8c4eea748b92d3d913b00cd"
+    },
+    {
+      "path": "levels/monsters/graphics/monsters/Plumette.png",
+      "size": 10678,
+      "sha256": "d2549dd7dd3f5cd910ff965573ef53bb5a43561169a40924a8789e10a9f1c2ee"
+    },
+    {
+      "path": "levels/monsters/graphics/monsters/Pouch.png",
+      "size": 8147,
+      "sha256": "5f6e066a6d3a6d99f8835943539af6535dc4c1a8269e205e3db8288c7a641964"
+    },
+    {
+      "path": "levels/monsters/graphics/monsters/Sparchu.png",
+      "size": 9504,
+      "sha256": "93df327cfa94e76fb5f3d77aae3444aabb0f36838598bdabf5026b37d2c2b692"
+    },
+    {
+      "path": "levels/monsters/graphics/objects/arean_fire.png",
+      "size": 6089,
+      "sha256": "9f21ae2ba32e93e0163c081ec6ea90b60ff96abed7e85913c6179c8f915a48dd"
+    },
+    {
+      "path": "levels/monsters/graphics/objects/arena_plant.png",
+      "size": 6100,
+      "sha256": "e6008b9d22e9180efb51f92d48b720a8ffe1ad928fdff45685002006467e209f"
+    },
+    {
+      "path": "levels/monsters/graphics/objects/arena_water.png",
+      "size": 6104,
+      "sha256": "83679707618f714dbd95bc1ae57ecaa85a4ee97c44e8e509b9f33738a04bf922"
+    },
+    {
+      "path": "levels/monsters/graphics/objects/gate_pillar.png",
+      "size": 735,
+      "sha256": "93caac333101ab02456f6c1162a940269d17bf47c2ca5eb67a2ed93236f823ed"
+    },
+    {
+      "path": "levels/monsters/graphics/objects/gate_top.png",
+      "size": 868,
+      "sha256": "089c105cc27c48797a6146169e9cec60f05e12faf58fc215f7b9410773b67565"
+    },
+    {
+      "path": "levels/monsters/graphics/objects/grass.png",
+      "size": 619,
+      "sha256": "d89ffc19f4261687b81a99a10b09c047129d199d58fe7a002f030ee6c6e32564"
+    },
+    {
+      "path": "levels/monsters/graphics/objects/grass_ice.png",
+      "size": 625,
+      "sha256": "cb0aa4d93b204e1ebabeb30b7d7041d83b7255afd507832063b82a21b5c72013"
+    },
+    {
+      "path": "levels/monsters/graphics/objects/grassrock1.png",
+      "size": 519,
+      "sha256": "649246796b5e9e11077e528d66e8c840c3f9f3d4467a6e0705a7fe5e147a0d65"
+    },
+    {
+      "path": "levels/monsters/graphics/objects/grassrock2.png",
+      "size": 508,
+      "sha256": "d7d46a857c6c9d39087d551310f0e9054dcbedc1f4e2eb0b7af76d1cc3e1d39d"
+    },
+    {
+      "path": "levels/monsters/graphics/objects/green_tree.png",
+      "size": 3114,
+      "sha256": "906257ce4deaf04ebda1d955f1def534de5a83679d494a0c66d2678d4b176c36"
+    },
+    {
+      "path": "levels/monsters/graphics/objects/green_tree_bushy.png",
+      "size": 3124,
+      "sha256": "cb0d02c4a33c57a138d0c001632ed69d685fa5aae7ef2add3af3338da584b164"
+    },
+    {
+      "path": "levels/monsters/graphics/objects/green_tree_small.png",
+      "size": 2317,
+      "sha256": "259b6bc268d551b41476714c0096d22c287a35dc9f653b5d4ac4e2f7444d8806"
+    },
+    {
+      "path": "levels/monsters/graphics/objects/hospital.png",
+      "size": 5535,
+      "sha256": "4688bf9e881fe276a81d700b709bf0208273b0db162d41f6872d56fefdf56e3a"
+    },
+    {
+      "path": "levels/monsters/graphics/objects/house_large.png",
+      "size": 6654,
+      "sha256": "0a50dd7046b6e4815b0ad433efd615a533acc3f8aa25b9880facd07168514189"
+    },
+    {
+      "path": "levels/monsters/graphics/objects/house_large_alt.png",
+      "size": 6679,
+      "sha256": "dcc595638d15b62cb93d0f3438ceeef84d167095bc89011a3542648d78725770"
+    },
+    {
+      "path": "levels/monsters/graphics/objects/house_small.png",
+      "size": 4039,
+      "sha256": "8293017965b61fd78b49fbb1b59412bcca9bb60fac67454b1bd7de3b9fba68fc"
+    },
+    {
+      "path": "levels/monsters/graphics/objects/house_small_alt.png",
+      "size": 4056,
+      "sha256": "c16fba4ca9b577d584e173718045810f47b5fb495e46afa92505ed048085edc1"
+    },
+    {
+      "path": "levels/monsters/graphics/objects/ice_tree.png",
+      "size": 3164,
+      "sha256": "dcfdc993e81d20daacfed6907e86442f1a4c0116e2b455375b5c09b4a381b026"
+    },
+    {
+      "path": "levels/monsters/graphics/objects/icerock1.png",
+      "size": 522,
+      "sha256": "4c592ea2f2779ce7de98374748789261ab9b569dcf3c536fc824c6d3264d0cef"
+    },
+    {
+      "path": "levels/monsters/graphics/objects/icerock2.png",
+      "size": 508,
+      "sha256": "c468cb045738ae2a10816b2dd80b334d24cb7473aa8749855ffe52db6abe164c"
+    },
+    {
+      "path": "levels/monsters/graphics/objects/palm.png",
+      "size": 3190,
+      "sha256": "884722bcee86dc1187b231a76106405ba1f62e8ae28ba6d46e43f90bc2a73fde"
+    },
+    {
+      "path": "levels/monsters/graphics/objects/palm_alt.png",
+      "size": 3091,
+      "sha256": "7726f8a672fd8331f8fafe4ae30011e240f46ac0f6f6d3b842d9cf5a3ccd5eab"
+    },
+    {
+      "path": "levels/monsters/graphics/objects/palm_small.png",
+      "size": 2346,
+      "sha256": "3305cce98e4ddf71f6cf7deb49437771f190b356028526d919ac3e50a3515c63"
+    },
+    {
+      "path": "levels/monsters/graphics/objects/ruin_gate.png",
+      "size": 2737,
+      "sha256": "f9d6ebc80758721e56b183db41a3de38a6a653f0dfcd894110fe96372bdf79a4"
+    },
+    {
+      "path": "levels/monsters/graphics/objects/ruin_pillar.png",
+      "size": 2268,
+      "sha256": "77848098e3ea7ad4d0fb49ef0713cffefa685352258736b9ff630bcf81d05929"
+    },
+    {
+      "path": "levels/monsters/graphics/objects/ruin_pillar_broke.png",
+      "size": 1982,
+      "sha256": "4126756674cc81b62fd864fe92e700d56230c3a56ec5d11ba1119d85b68f07de"
+    },
+    {
+      "path": "levels/monsters/graphics/objects/ruin_pillar_broke_alt.png",
+      "size": 2022,
+      "sha256": "1ca92ce196f3df5c546d03e5d7c8875a8108688dc1d99affb7de699ee1ecb3dd"
+    },
+    {
+      "path": "levels/monsters/graphics/objects/sand.png",
+      "size": 484,
+      "sha256": "9c00ade4d5a0d050e3b177d33159ce10fcbec8b761da9b3d3dedf69544129e94"
+    },
+    {
+      "path": "levels/monsters/graphics/objects/sandrock1.png",
+      "size": 518,
+      "sha256": "f845635dcb8b58403e2ad4b1d34ea5afe8cfbcd4c2f616edc450d747691b315f"
+    },
+    {
+      "path": "levels/monsters/graphics/objects/sandrock2.png",
+      "size": 506,
+      "sha256": "0ac23b150faa6d6f0228d23cf81d52349fbf2a058801c74641f26888fc546a3c"
+    },
+    {
+      "path": "levels/monsters/graphics/objects/teal_tree.png",
+      "size": 3136,
+      "sha256": "a6ecb3b62e2b5aa8bc5d7230601c2ea3be49f07645e2e7d4151dd41affb2d134"
+    },
+    {
+      "path": "levels/monsters/graphics/objects/teal_tree_bushy.png",
+      "size": 3117,
+      "sha256": "517dd7dcbafb29149c518369218092131cd6ad617791f08308e49edb56c87ffd"
+    },
+    {
+      "path": "levels/monsters/graphics/objects/teal_tree_small.png",
+      "size": 2324,
+      "sha256": "d19044afdd5b76e9d000e96b68515236e0c503534a7865b9f58ff1ac2f8fe27b"
+    },
+    {
+      "path": "levels/monsters/graphics/other/shadow.png",
+      "size": 168,
+      "sha256": "60d608e505e98312f4d39fd6738cb7154ed3f91e2c4302d741830feec3d5a615"
+    },
+    {
+      "path": "levels/monsters/graphics/other/star animation/00002.png",
+      "size": 1113,
+      "sha256": "4ac09cafb9edc8c890a5c97fbf3a844a553f49301ff1ce8428d988d06592bc34"
+    },
+    {
+      "path": "levels/monsters/graphics/other/star animation/00003.png",
+      "size": 1179,
+      "sha256": "e8632824e290eba062bdac338faffd4a75633a5a65c7adfdb0ab54e5275a00ed"
+    },
+    {
+      "path": "levels/monsters/graphics/other/star animation/00004.png",
+      "size": 1253,
+      "sha256": "d45ca3f44338db5ae1dac7e6f6719483ac38aa530065abde3bdf6b288acd2a6a"
+    },
+    {
+      "path": "levels/monsters/graphics/other/star animation/00005.png",
+      "size": 1364,
+      "sha256": "5c2a9d398b162c6005a595b74c2f35d43a421ed162499b7eb8b11e7daed7105b"
+    },
+    {
+      "path": "levels/monsters/graphics/other/star animation/00006.png",
+      "size": 1413,
+      "sha256": "99d8cefe44afefe5108088a5ac9508119950275ce3750146ec9ea01aeb067701"
+    },
+    {
+      "path": "levels/monsters/graphics/other/star animation/00007.png",
+      "size": 1538,
+      "sha256": "00c75233221d3936d7e0318db35f05885734aa9ff5d772d6459398c3a98b599d"
+    },
+    {
+      "path": "levels/monsters/graphics/other/star animation/00008.png",
+      "size": 1673,
+      "sha256": "5d5f41e1e2a3f40af63cc502d743e923a9c1a5eb95f67663c372556e64a8c5eb"
+    },
+    {
+      "path": "levels/monsters/graphics/other/star animation/00009.png",
+      "size": 1870,
+      "sha256": "bf561533cebc1a3a5b542a035c0ccbb696133277985cb9b0d4eb8e7a4fe3ede6"
+    },
+    {
+      "path": "levels/monsters/graphics/other/star animation/00010.png",
+      "size": 2071,
+      "sha256": "af0c9d59e9a8c4af81e7a85ed9eb0ad0d9f3e443794a942266d4a4a47772cf9d"
+    },
+    {
+      "path": "levels/monsters/graphics/other/star animation/00011.png",
+      "size": 2244,
+      "sha256": "be4233b8890cc366996706a605b1fa1957a297b1031769ba213eb4a7f124093e"
+    },
+    {
+      "path": "levels/monsters/graphics/other/star animation/00012.png",
+      "size": 2546,
+      "sha256": "a9abf0b369b78df2bba7834b0e61909b8344e2100ec5abfcb48ecc2bd83b990c"
+    },
+    {
+      "path": "levels/monsters/graphics/other/star animation/00013.png",
+      "size": 2795,
+      "sha256": "325d51f29060b5e758f5cac5624e626ff92e5bd6ab7f8965c26a2978919a1fa0"
+    },
+    {
+      "path": "levels/monsters/graphics/other/star animation/00014.png",
+      "size": 2803,
+      "sha256": "92ea7a11b6f7812c4aabcfea7bf0a6dedfc30b20dee07d13584ba5c6cfdcf03e"
+    },
+    {
+      "path": "levels/monsters/graphics/other/star animation/00015.png",
+      "size": 3235,
+      "sha256": "85452edafd880aa2143d73aba645bbfe10e3b759050324afa98d47b2015d52a2"
+    },
+    {
+      "path": "levels/monsters/graphics/other/star animation/00016.png",
+      "size": 3587,
+      "sha256": "5b8dc912979273da038e30d0baffe7e383c732d0f5313ebd8ba1a3e86dd22531"
+    },
+    {
+      "path": "levels/monsters/graphics/other/star animation/00017.png",
+      "size": 3727,
+      "sha256": "61970a76d119e1b6349627088192921572214630514a06447423825dfe63708d"
+    },
+    {
+      "path": "levels/monsters/graphics/other/star animation/00018.png",
+      "size": 3930,
+      "sha256": "1ba34b519db62262304c416b0e765b6ae2f4338ce199a7040045fe1102935a37"
+    },
+    {
+      "path": "levels/monsters/graphics/other/star animation/00019.png",
+      "size": 4145,
+      "sha256": "df94a206cdb489282ec53af5cbf15a3f2ea57f53bf452db70b789bb3bbef752e"
+    },
+    {
+      "path": "levels/monsters/graphics/other/star animation/00020.png",
+      "size": 4385,
+      "sha256": "c55ddd134d7a91baaa58f7ac36089b20242b7cdf44597c612479d99db1c8fe54"
+    },
+    {
+      "path": "levels/monsters/graphics/other/star animation/00021.png",
+      "size": 4381,
+      "sha256": "8b3da9f35589b805dfc53640c0f655e1717ff6e760b4d150c39fe34df7bcf96f"
+    },
+    {
+      "path": "levels/monsters/graphics/other/star animation/00022.png",
+      "size": 4653,
+      "sha256": "d902c1f54a0c7e82452551b62e04ad2f2f78e10fbe9b9c0b7db4738b778210a9"
+    },
+    {
+      "path": "levels/monsters/graphics/other/star animation/00023.png",
+      "size": 4616,
+      "sha256": "01bd82bdf691703d8d44fc881ec9c7973f6674541c5001bff0a84ea5b8059411"
+    },
+    {
+      "path": "levels/monsters/graphics/other/star animation/00024.png",
+      "size": 4817,
+      "sha256": "77d0eaccfb6536515340646374d4a75b0b9086dad3419d0a08c2f68fe3d28a16"
+    },
+    {
+      "path": "levels/monsters/graphics/other/star animation/00025.png",
+      "size": 4823,
+      "sha256": "cbf56ffc704d324ec00d200666183f2ee71a7dca642fca548c9b0df4d0d3cd00"
+    },
+    {
+      "path": "levels/monsters/graphics/other/star animation/00026.png",
+      "size": 5014,
+      "sha256": "48830a6253b51d6bd79f10d44cd80f184d471c0cbf4955c148f84b6a8c909d16"
+    },
+    {
+      "path": "levels/monsters/graphics/other/star animation/00027.png",
+      "size": 4718,
+      "sha256": "e21a871dfe026295106e69a7e10fb6b5f1ce76f0afc82880bc04ebda9f5f0933"
+    },
+    {
+      "path": "levels/monsters/graphics/other/star animation/00028.png",
+      "size": 3719,
+      "sha256": "9ed668a513fdc1609e582d4690bbd423520770cd355ae2437b0747710712d2f3"
+    },
+    {
+      "path": "levels/monsters/graphics/other/star animation/00029.png",
+      "size": 2589,
+      "sha256": "e4095c5288aded5e92a1b16084c1f5be7b6960128745177782a3f00f488cc5c6"
+    },
+    {
+      "path": "levels/monsters/graphics/tilesets/coast.png",
+      "size": 53527,
+      "sha256": "2a5ec3df9dd8c2d5334377de3884170040e5090ea4a211ad634ecd9b32147afb"
+    },
+    {
+      "path": "levels/monsters/graphics/tilesets/indoor.png",
+      "size": 7026,
+      "sha256": "643a920a354e45adb566c22c1bb9be1c68af0b64994ded6dcdf63ac7a8e5f98d"
+    },
+    {
+      "path": "levels/monsters/graphics/tilesets/water/0.png",
+      "size": 581,
+      "sha256": "bc04e80a7e2003577e6e93a41d1a7487f9c12939b87823f82b25d2802a680e68"
+    },
+    {
+      "path": "levels/monsters/graphics/tilesets/water/1.png",
+      "size": 591,
+      "sha256": "dac2ab4be688104a27f274e696bed63db4602c78b1683a4ba056e555534678fb"
+    },
+    {
+      "path": "levels/monsters/graphics/tilesets/water/2.png",
+      "size": 580,
+      "sha256": "bed16cea635c12f2c7aef35b0fe8762a6ba8836e6dc780b83195a26f036988d1"
+    },
+    {
+      "path": "levels/monsters/graphics/tilesets/water/3.png",
+      "size": 583,
+      "sha256": "82738a09e2ac23cc3e30ecd249da31de56889c84d5a659cedd852f7fd6b80ad2"
+    },
+    {
+      "path": "levels/monsters/graphics/tilesets/world.png",
+      "size": 45708,
+      "sha256": "9feed22e3fa5b16add22abe35be2242b78f0b214e650332577c33201b00caad8"
+    },
+    {
+      "path": "levels/monsters/graphics/ui/arrows.png",
+      "size": 1668,
+      "sha256": "1f4f61360d6feeffa2f8efbe2e44c779e5a857885b8e4d3f6a490ff0ab5de56b"
+    },
+    {
+      "path": "levels/monsters/graphics/ui/arrows_highlight.png",
+      "size": 1627,
+      "sha256": "ed288b02009a8c0bfb9278a60d69ac51f231ed806206b4628c785cbbd12db924"
+    },
+    {
+      "path": "levels/monsters/graphics/ui/attack.png",
+      "size": 193,
+      "sha256": "8e2c18155b7fa061c86185fe83fd651369eab3b4dd42fdbb9bf5b562ea05fff4"
+    },
+    {
+      "path": "levels/monsters/graphics/ui/cross.png",
+      "size": 649,
+      "sha256": "fc9299997882df3f2da2fd8bc4e058c7819c0dd287534d65e3967364dcf0273b"
+    },
+    {
+      "path": "levels/monsters/graphics/ui/defense.png",
+      "size": 1887,
+      "sha256": "d5fac1439c209e1ca395ba10b951b1d2411a41f474cda0c04575edd44640d915"
+    },
+    {
+      "path": "levels/monsters/graphics/ui/energy.png",
+      "size": 233,
+      "sha256": "9eaf74b9bb89e410dbe4645f471493a6a9ae4d82f576a52111e8f36812791214"
+    },
+    {
+      "path": "levels/monsters/graphics/ui/hand.png",
+      "size": 1656,
+      "sha256": "8008211712eaa5d3a982f301ec0b4fbf117af11247d2dd64c2aa6aad779819d7"
+    },
+    {
+      "path": "levels/monsters/graphics/ui/hand_highlight.png",
+      "size": 1627,
+      "sha256": "b639dca7dfdb4039db12011f3395a85d473611d1120f4c05365c456548a0b64b"
+    },
+    {
+      "path": "levels/monsters/graphics/ui/health.png",
+      "size": 231,
+      "sha256": "fe7fc5d38ec43663a963e39dfe9c237c7dc0e00f8fc10c0e82b7f174ab2ab0b6"
+    },
+    {
+      "path": "levels/monsters/graphics/ui/notice.png",
+      "size": 1688,
+      "sha256": "36b5eedeff38a8e243eaae314f0c3058cb673c71a41865946eb874d422de07c6"
+    },
+    {
+      "path": "levels/monsters/graphics/ui/recovery.png",
+      "size": 219,
+      "sha256": "f69e4b4bcc6dee256b4d846b4ae69d900e6de1f5573c39cb914cf8465e6b2345"
+    },
+    {
+      "path": "levels/monsters/graphics/ui/shield.png",
+      "size": 1810,
+      "sha256": "97e09d416a778c055acdad4803ee33ecbf2b3da4d24fb6a1caa9500e585ea5c9"
+    },
+    {
+      "path": "levels/monsters/graphics/ui/shield_highlight.png",
+      "size": 1587,
+      "sha256": "0b8e3856611519c8cada63bfbd85b5cf1c58ce3650cae0583cb32eff6dae9bf5"
+    },
+    {
+      "path": "levels/monsters/graphics/ui/speed.png",
+      "size": 152,
+      "sha256": "c5e85a2e2e3e0276083d23954ac3cc33472d78218916a2a550eeb8dddc59192f"
+    },
+    {
+      "path": "levels/monsters/graphics/ui/star.png",
+      "size": 212,
+      "sha256": "f2cf9d84b21f639d8196ba8e5e05ba4fddbe1cb071d2afcefa5c762d0a05eb41"
+    },
+    {
+      "path": "levels/monsters/graphics/ui/sword.png",
+      "size": 1635,
+      "sha256": "211fd423de85ea50eebefed1f2b73d7e6b3ccafc4926053053ed3a9500cf81f1"
+    },
+    {
+      "path": "levels/monsters/graphics/ui/sword_highlight.png",
+      "size": 1589,
+      "sha256": "db42c723f7080581750ee19858fee146dbf7eac546455dc038b2b64564ac2fce"
+    },
+    {
+      "path": "levels/the_bug/README.md",
+      "size": 638,
+      "sha256": "5476b59c996fafa3c23950b2f01781eec7a19377c2e8ccacbd222ea80ab83109"
+    },
+    {
+      "path": "levels/the_bug/__init__.py",
+      "size": 55,
+      "sha256": "70b9dadb1cad06e220478e476961d09c25db905cb8cd5b419c3d122e03c49a61"
+    },
+    {
+      "path": "levels/the_bug/__main__.py",
+      "size": 59,
+      "sha256": "463608676f5f9e97dfbed823794a82b3738a5864ec2f61a698607173be27a7fb"
+    },
+    {
+      "path": "levels/the_bug/cat.png",
+      "size": 291408,
+      "sha256": "e42dbc430c91b23ba58a11d379acc9b5c8b720007449eb5dabcc74fcb63f5fde"
+    },
+    {
+      "path": "levels/the_bug/debug.py",
+      "size": 396,
+      "sha256": "c8beb5c654afccd2c8630dad5d0b0ba3082af3d656295567210751519cefea94"
+    },
+    {
+      "path": "levels/the_bug/the_bug.py",
+      "size": 873,
+      "sha256": "fcf223f60ec68d68e2b86099843e1371cfc0e57fc9b79c92057abdf6d6cc724f"
+    },
+    {
+      "path": "levels/tom_pong/README.md",
+      "size": 678,
+      "sha256": "ab8c14158a2b712d4afdc46231de8164afad4f93e1d79f1516589657dac7374a"
+    },
+    {
+      "path": "levels/tom_pong/__init__.py",
+      "size": 56,
+      "sha256": "974bc447a99cd967b5dc6781ac592fe6dbcdd3377fba8eab8392d8d2872728e5"
+    },
+    {
+      "path": "levels/tom_pong/__main__.py",
+      "size": 59,
+      "sha256": "463608676f5f9e97dfbed823794a82b3738a5864ec2f61a698607173be27a7fb"
+    },
+    {
+      "path": "levels/tom_pong/data/ball.png",
+      "size": 5015,
+      "sha256": "bc4b34f8e1bf8f9e4964930be3c217847b0de193085abaa54bb75fc5df7e8717"
+    },
+    {
+      "path": "levels/tom_pong/data/bat.png",
+      "size": 87740,
+      "sha256": "cd13a5cee7a04da1114924626226da246c13c32357466e18cb1b33518c097fb7"
+    },
+    {
+      "path": "levels/tom_pong/tom_pong.py",
+      "size": 7130,
+      "sha256": "436b4d29d4697d446e3e58c07335e838e20a8a2268d26528d69bc1fc50fe192c"
+    },
+    {
+      "path": "levels/untitled/README.md",
+      "size": 2842,
+      "sha256": "ed12bfd7428ad6f532a8ce48a46ace097653aeef755ef0339751183fed2e8adc"
+    },
+    {
+      "path": "levels/untitled/__init__.py",
+      "size": 52,
+      "sha256": "88fcdd1927ea3bfbf13ce3060749ede0d9bbaf8e972c281bd1b2f76903d8eb1a"
+    },
+    {
+      "path": "levels/untitled/__main__.py",
+      "size": 59,
+      "sha256": "463608676f5f9e97dfbed823794a82b3738a5864ec2f61a698607173be27a7fb"
+    },
+    {
+      "path": "levels/untitled/assets/README.md",
+      "size": 650,
+      "sha256": "484651f8296086cbd1c24444a7281bcbb7fa1d598d17f433b6d02af80919da79"
+    },
+    {
+      "path": "levels/untitled/assets/audio/forest_ambience.mp3",
+      "size": 716670,
+      "sha256": "9850aa1d0d5d66bd9c5daf8bb77c6d852e01f2f4de22f283bd5621e8bed13b75"
+    },
+    {
+      "path": "levels/untitled/assets/backgrounds/environment_forestbackground.png",
+      "size": 1228912,
+      "sha256": "8b93f4f164532cc36652b055db14fc5a719459df69cbd4cc05500b9483f286f3"
+    },
+    {
+      "path": "levels/untitled/assets/maps/untitled-intro.tmx",
+      "size": 19825,
+      "sha256": "75a8bb32e0fff5f78e4fea9b9358dd1dd5a6753292868ba9c243cfe245c42044"
+    },
+    {
+      "path": "levels/untitled/assets/sprites/npc_snoblin_blue.png",
+      "size": 3345,
+      "sha256": "26df25396415b34028086bb67096afd2cd4eaeee483e7edc922bada3d0af0540"
+    },
+    {
+      "path": "levels/untitled/assets/sprites/player_snoblin.png",
+      "size": 3266,
+      "sha256": "776760ec65248dfde3fceb0a7ae4ca460bb2df784565453f49d42483285f4a97"
+    },
+    {
+      "path": "levels/untitled/assets/sprites/static_shadow.png",
+      "size": 5123,
+      "sha256": "5aa1cf738f544328316fcbd9d5b444679efbed48ae37355963fcbf8a97f0fa1b"
+    },
+    {
+      "path": "levels/untitled/camera.py",
+      "size": 865,
+      "sha256": "a25dee026104096bad50487611554986bae4406007b315ba4e21b6d78cdaaaa5"
+    },
+    {
+      "path": "levels/untitled/game.py",
+      "size": 5203,
+      "sha256": "9031cc390699f86841d61772c860f809bd4d88d2a3cb506b0eee4fba0c4fd263"
+    },
+    {
+      "path": "levels/untitled/interaction.py",
+      "size": 2955,
+      "sha256": "e8df8139acde7b48c85c7d7fff42b5d215889564a23426d2e6a851d2ebd20b50"
+    },
+    {
+      "path": "levels/untitled/main.py",
+      "size": 169,
+      "sha256": "064d04c87591f65a465eabb88925483413b9fdde0653828d201fb174223ff862"
+    },
+    {
+      "path": "levels/untitled/paths.py",
+      "size": 657,
+      "sha256": "84b92b6a2b7dcba1a4e544e3517b23cd389e3c0c0ca75890231d775577424980"
+    },
+    {
+      "path": "levels/untitled/player.py",
+      "size": 3285,
+      "sha256": "3bbd733f6c9f69fb51efa743e3dc4825564be901511b4262e1d60c787b42ea22"
+    },
+    {
+      "path": "levels/untitled/settings.py",
+      "size": 927,
+      "sha256": "e24486be384c65325533ffcfc7671dc89126d7f8558c317222bd3934f653222c"
+    },
+    {
+      "path": "levels/untitled/sprites.py",
+      "size": 1431,
+      "sha256": "b02f031861c41297b20739e1fe41d2d11eb09d2631de2b28069920a0692805a9"
+    },
+    {
+      "path": "levels/untitled/world.py",
+      "size": 2771,
+      "sha256": "ed84a9c8137cc0dc219ff5ca7705169506f7c86591eaa1582114a1e7340043f2"
+    },
+    {
+      "path": "levels/you/README.md",
+      "size": 480,
+      "sha256": "edc1a88ea9a56dce5cd58fd4f97242bf4a1522863342cdb3de48c44535b19541"
+    },
+    {
+      "path": "levels/you/__init__.py",
+      "size": 51,
+      "sha256": "73ed7fd6e0c699177dae9b7ff18bce7ebb581e8871234d2d18f07cff6726f48b"
+    },
+    {
+      "path": "levels/you/__main__.py",
+      "size": 59,
+      "sha256": "463608676f5f9e97dfbed823794a82b3738a5864ec2f61a698607173be27a7fb"
+    },
+    {
+      "path": "levels/you/you.py",
+      "size": 1152,
+      "sha256": "04cc07344f38ba0b1ce1c2c253a648f2ca53da81bf1704e8b04f667b6fbcb9c3"
+    },
+    {
+      "path": "levels/zelda/README.md",
+      "size": 1482,
+      "sha256": "ae801866ccb4c070f441fa1c5fb79de53d6b3dd72bef17eb6f902921b8b62aaa"
+    },
+    {
+      "path": "levels/zelda/__init__.py",
+      "size": 85,
+      "sha256": "baf1997ef3c1971eecb0b654bdb68f54ab78dfde3c12bde402db8815676ee667"
+    },
+    {
+      "path": "levels/zelda/__main__.py",
+      "size": 59,
+      "sha256": "463608676f5f9e97dfbed823794a82b3738a5864ec2f61a698607173be27a7fb"
+    },
+    {
+      "path": "levels/zelda/audio/Fire.wav",
+      "size": 78764,
+      "sha256": "2456ded91a95605ad6ab648a50abb6e248b14761477c8bc53cb4d7a02326f41e"
+    },
+    {
+      "path": "levels/zelda/audio/attack/claw.wav",
+      "size": 214008,
+      "sha256": "8164c2ac2ce595c8a9ebd1cb2148a157c7e2fdf90bb4bfa6e9cdcffeb8d4445e"
+    },
+    {
+      "path": "levels/zelda/audio/attack/fireball.wav",
+      "size": 30334,
+      "sha256": "fefb05f2dcb2a5f508306d9186011cb53c9777a1c8f12e5b4ab9f02cff27e229"
+    },
+    {
+      "path": "levels/zelda/audio/attack/slash.wav",
+      "size": 127020,
+      "sha256": "4062c5ce61f59805db552d6bb771fb095ec99c38a1f899223cb4955c8199e868"
+    },
+    {
+      "path": "levels/zelda/audio/death.wav",
+      "size": 29400,
+      "sha256": "1d728376744140e5232e25ab40ab49f95b56a449e3e237d7397d0291d53c84db"
+    },
+    {
+      "path": "levels/zelda/audio/heal.wav",
+      "size": 70444,
+      "sha256": "ad400c990aa5e13b7cf0de126aa073aa0c1d460337f89eed4c27ca30e93f3a1f"
+    },
+    {
+      "path": "levels/zelda/audio/hit.wav",
+      "size": 32866,
+      "sha256": "4894f412c68656927252ae8295043b0e75a59592fd814469a443471763672a0b"
+    },
+    {
+      "path": "levels/zelda/audio/main.ogg",
+      "size": 1750046,
+      "sha256": "5d226045574a6a281b1579d825dae13da412d83333ec1b7fd04a61e3b03fd4be"
+    },
+    {
+      "path": "levels/zelda/audio/sword.wav",
+      "size": 18826,
+      "sha256": "73d9c873cb87b159d8f740eedb138823f92b2609959df77ce6b5acf5b228317d"
+    },
+    {
+      "path": "levels/zelda/code/__init__.py",
+      "size": 37,
+      "sha256": "becacf7479918e93d7b7b33aaa1410565080d3610df9a352253ccd92a18e7cb2"
+    },
+    {
+      "path": "levels/zelda/code/debug.py",
+      "size": 405,
+      "sha256": "2a9e1bbf10ac0f42399737879c4d20d87993438389a49b522d992b112a6f1977"
+    },
+    {
+      "path": "levels/zelda/code/enemy.py",
+      "size": 5709,
+      "sha256": "d37f881e8bcc2c4eab300f265400938da95e825ac0dabdad204504d0913ef4b9"
+    },
+    {
+      "path": "levels/zelda/code/entity.py",
+      "size": 1615,
+      "sha256": "ab25141a0e06f8d99592121f438349a5a2d24033359e1af709b5ee61e114a1ef"
+    },
+    {
+      "path": "levels/zelda/code/level.py",
+      "size": 8838,
+      "sha256": "839c7d9bdfb62ce9282038a39db8b1713203dabaf101765478e83019014bc11b"
+    },
+    {
+      "path": "levels/zelda/code/magic.py",
+      "size": 2246,
+      "sha256": "4567fff0bb8a9c4ee3efdfa97803e4b3db2db873db8cfd4bcf222b6390bcb9f2"
+    },
+    {
+      "path": "levels/zelda/code/main.py",
+      "size": 1255,
+      "sha256": "cc745911a5126006eab2dfc1842bc215a5aed98e8e487b2804723e36a0da0d85"
+    },
+    {
+      "path": "levels/zelda/code/particles.py",
+      "size": 3531,
+      "sha256": "4cc2e517dd3d9b117e588f125e7464b1192c7a1b6e47a31af5ce2c4976909f57"
+    },
+    {
+      "path": "levels/zelda/code/player.py",
+      "size": 8294,
+      "sha256": "0a685324745b4e8cbf6100c4e979cc9cdeef28ddbe32b12d75cce3398b920d09"
+    },
+    {
+      "path": "levels/zelda/code/resources.py",
+      "size": 195,
+      "sha256": "605dcad09ba7c2fee7dcf34c02bc1778524cf97d892dd8127a8ab50d4de5812a"
+    },
+    {
+      "path": "levels/zelda/code/settings.py",
+      "size": 3010,
+      "sha256": "17a2a9fe99f5bba5e47d730f39f40f845541dcec2a2cccb0946836c5e751fa3b"
+    },
+    {
+      "path": "levels/zelda/code/support.py",
+      "size": 666,
+      "sha256": "2ce5a8aad83fc6b15d2cf1b9ad76aeb248328ba8abc9a18f75183e1378131d16"
+    },
+    {
+      "path": "levels/zelda/code/tile.py",
+      "size": 659,
+      "sha256": "e79d0da9adc1f49ced61cf1c1e7f71c33eb29d47a3e6844cb055aeef8ad2c56c"
+    },
+    {
+      "path": "levels/zelda/code/ui.py",
+      "size": 4048,
+      "sha256": "7c64f1ac23e5f4d9016e181054da87b93c3900f7f3e416c0c8d4572b72156fc1"
+    },
+    {
+      "path": "levels/zelda/code/upgrade.py",
+      "size": 5766,
+      "sha256": "e12be027ad55a94cf2a26a6cbb6855e43b187d338cec32ace7ff77da0f665031"
+    },
+    {
+      "path": "levels/zelda/code/weapon.py",
+      "size": 1154,
+      "sha256": "13c593cdc4234a18efc3025d2cf97fb68dbe274602185074a298f69b201fd7fb"
+    },
+    {
+      "path": "levels/zelda/debug.py",
+      "size": 201,
+      "sha256": "28b26fa8e532c6510285cde087f3b489db618bba8011f4c858a6c2d105c782d8"
+    },
+    {
+      "path": "levels/zelda/graphics/font/joystix.ttf",
+      "size": 47604,
+      "sha256": "a84a42691cfb7b1ad3fccef6ffa166ca429452d7a27927d2b4281c2d24e672b8"
+    },
+    {
+      "path": "levels/zelda/graphics/grass/grass_1.png",
+      "size": 494,
+      "sha256": "4a14dae915486ccfcf27cda905eef7c8f51a137ce201ab29ad073e8b75ba7c07"
+    },
+    {
+      "path": "levels/zelda/graphics/grass/grass_2.png",
+      "size": 500,
+      "sha256": "f80ebaa38016a43e6c280287c2c8336e94aeda0fa127eb6ff7631957269e274a"
+    },
+    {
+      "path": "levels/zelda/graphics/grass/grass_3.png",
+      "size": 575,
+      "sha256": "a02c522d3d07c6fd7df930daf48e72e79c2005be23a37e7d1db34958968efd16"
+    },
+    {
+      "path": "levels/zelda/graphics/monsters/bamboo/attack/0.png",
+      "size": 487,
+      "sha256": "5c196050c8f2f3b81f959205b95c3b7aa21828ddce8739721af55c252dd2f399"
+    },
+    {
+      "path": "levels/zelda/graphics/monsters/bamboo/idle/0.png",
+      "size": 487,
+      "sha256": "5c196050c8f2f3b81f959205b95c3b7aa21828ddce8739721af55c252dd2f399"
+    },
+    {
+      "path": "levels/zelda/graphics/monsters/bamboo/idle/1.png",
+      "size": 517,
+      "sha256": "9ff206a31fff441e34d9944cd6f8671f840bf86130f1cec0031c1174f2762ac0"
+    },
+    {
+      "path": "levels/zelda/graphics/monsters/bamboo/idle/2.png",
+      "size": 487,
+      "sha256": "5c196050c8f2f3b81f959205b95c3b7aa21828ddce8739721af55c252dd2f399"
+    },
+    {
+      "path": "levels/zelda/graphics/monsters/bamboo/idle/3.png",
+      "size": 504,
+      "sha256": "62555fff2a307caf9c256c9850ad5af799e5d53faa1073e9385aea41d9e75e69"
+    },
+    {
+      "path": "levels/zelda/graphics/monsters/bamboo/move/0.png",
+      "size": 487,
+      "sha256": "5c196050c8f2f3b81f959205b95c3b7aa21828ddce8739721af55c252dd2f399"
+    },
+    {
+      "path": "levels/zelda/graphics/monsters/bamboo/move/1.png",
+      "size": 517,
+      "sha256": "9ff206a31fff441e34d9944cd6f8671f840bf86130f1cec0031c1174f2762ac0"
+    },
+    {
+      "path": "levels/zelda/graphics/monsters/bamboo/move/2.png",
+      "size": 487,
+      "sha256": "5c196050c8f2f3b81f959205b95c3b7aa21828ddce8739721af55c252dd2f399"
+    },
+    {
+      "path": "levels/zelda/graphics/monsters/bamboo/move/3.png",
+      "size": 504,
+      "sha256": "62555fff2a307caf9c256c9850ad5af799e5d53faa1073e9385aea41d9e75e69"
+    },
+    {
+      "path": "levels/zelda/graphics/monsters/raccoon/attack/0.png",
+      "size": 2019,
+      "sha256": "ece571a0275dd5b13cfb703a6416d154d805255464bbd544e745f833e43b4b83"
+    },
+    {
+      "path": "levels/zelda/graphics/monsters/raccoon/attack/1.png",
+      "size": 1860,
+      "sha256": "a219c18e08d4f8a560c6836200336a80f0d2a15fa543c16947c69c09d620cd77"
+    },
+    {
+      "path": "levels/zelda/graphics/monsters/raccoon/attack/2.png",
+      "size": 1762,
+      "sha256": "5b7db884e39ee5005d5d4eced50a1c982a14604e4bcbf2632e4994535a678020"
+    },
+    {
+      "path": "levels/zelda/graphics/monsters/raccoon/attack/3.png",
+      "size": 1780,
+      "sha256": "70e421b540bf2499db1f48053c08153fe945c1104103c8df0625e59f85228764"
+    },
+    {
+      "path": "levels/zelda/graphics/monsters/raccoon/idle/0.png",
+      "size": 1769,
+      "sha256": "378f8d2ba3116061c1db0d54fd42fd8b51704de45e6a5fed01a84f575e510094"
+    },
+    {
+      "path": "levels/zelda/graphics/monsters/raccoon/idle/1.png",
+      "size": 1769,
+      "sha256": "378f8d2ba3116061c1db0d54fd42fd8b51704de45e6a5fed01a84f575e510094"
+    },
+    {
+      "path": "levels/zelda/graphics/monsters/raccoon/idle/2.png",
+      "size": 2129,
+      "sha256": "98e9093fdbedf24e26ccf615cef6ed6f046e983b1a74b9b0aa129e94b727b412"
+    },
+    {
+      "path": "levels/zelda/graphics/monsters/raccoon/idle/3.png",
+      "size": 2129,
+      "sha256": "aeee6cabcc63eb15dd2747792c0964cfd5bdcc2f673e17426676348456204bfa"
+    },
+    {
+      "path": "levels/zelda/graphics/monsters/raccoon/idle/4.png",
+      "size": 2124,
+      "sha256": "abd2c5c611b224fb7ba4addffa051dd0f06e3c179f0136d43232ca2df4e366b9"
+    },
+    {
+      "path": "levels/zelda/graphics/monsters/raccoon/idle/5.png",
+      "size": 2115,
+      "sha256": "2d541852933b06a9b89ccbdc11d0b93e26108411a5b951cc40f59ddb7a4534d3"
+    },
+    {
+      "path": "levels/zelda/graphics/monsters/raccoon/move/0.png",
+      "size": 1651,
+      "sha256": "a237b50ecbc44367d186e00bdc2e449ad02e55561109487472c50bc76f858518"
+    },
+    {
+      "path": "levels/zelda/graphics/monsters/raccoon/move/1.png",
+      "size": 1605,
+      "sha256": "4c237d224fb19a0c7c4d9fa394190e5019b90a0a9d89ef25a0ad798467c76ed1"
+    },
+    {
+      "path": "levels/zelda/graphics/monsters/raccoon/move/2.png",
+      "size": 1547,
+      "sha256": "e8cb27dd86b1fcd9c0dbd1037ccb9c9e124fe80e095fc3f89c5d3faab4ba639c"
+    },
+    {
+      "path": "levels/zelda/graphics/monsters/raccoon/move/3.png",
+      "size": 1579,
+      "sha256": "62e27eb9fddf34782868100bae7f68e9319bbb9f0d92592b2e5f52a15c9b2669"
+    },
+    {
+      "path": "levels/zelda/graphics/monsters/raccoon/move/4.png",
+      "size": 1660,
+      "sha256": "d40c0374f2fac976bde4007a9b23bf51cee43170e2247a4ab9ae38ce04fbfec1"
+    },
+    {
+      "path": "levels/zelda/graphics/monsters/spirit/attack/0.png",
+      "size": 426,
+      "sha256": "6f7c5136db278c612ed3613dca17f29cb0c516ed5bfe53059413bb49ad4fad05"
+    },
+    {
+      "path": "levels/zelda/graphics/monsters/spirit/idle/0.png",
+      "size": 420,
+      "sha256": "9c7138d7243416c6956c25138452bfa8c4ab48549ee5c97176da64b1f1ba254a"
+    },
+    {
+      "path": "levels/zelda/graphics/monsters/spirit/idle/1.png",
+      "size": 417,
+      "sha256": "4d5af167cdbae3ce1dae260da75bf0be0244c91b2dd706727e2e0b92fa1c1df8"
+    },
+    {
+      "path": "levels/zelda/graphics/monsters/spirit/idle/2.png",
+      "size": 406,
+      "sha256": "650f6d01c34f9774c7e370ba689deaaf6892f7742e182a4da8d3119801b489d2"
+    },
+    {
+      "path": "levels/zelda/graphics/monsters/spirit/idle/3.png",
+      "size": 418,
+      "sha256": "d5297535db33d7899d4136c0e3ef01f498d31496d938c068094f42b51471a834"
+    },
+    {
+      "path": "levels/zelda/graphics/monsters/spirit/move/0.png",
+      "size": 426,
+      "sha256": "6f7c5136db278c612ed3613dca17f29cb0c516ed5bfe53059413bb49ad4fad05"
+    },
+    {
+      "path": "levels/zelda/graphics/monsters/spirit/move/1.png",
+      "size": 425,
+      "sha256": "f868f608c9c1250be9eaa00493775578e5eadd5dffdf2f12061e409cf24aa543"
+    },
+    {
+      "path": "levels/zelda/graphics/monsters/spirit/move/2.png",
+      "size": 414,
+      "sha256": "213e3fc22d81dba40ba944dd2bfe718b52e1f3bb1297921061de0fba16fbecb3"
+    },
+    {
+      "path": "levels/zelda/graphics/monsters/spirit/move/3.png",
+      "size": 413,
+      "sha256": "3f3221897a2471441f42d9e29ebaa81c29a4e82d53833168f6a4f6d6afed4988"
+    },
+    {
+      "path": "levels/zelda/graphics/monsters/squid/attack/0 - Copy (2).png",
+      "size": 463,
+      "sha256": "811ba45e9f089615d65d67339505eee8ce708b836475df1b843b3f78c3bf1cf4"
+    },
+    {
+      "path": "levels/zelda/graphics/monsters/squid/attack/0 - Copy (3).png",
+      "size": 463,
+      "sha256": "811ba45e9f089615d65d67339505eee8ce708b836475df1b843b3f78c3bf1cf4"
+    },
+    {
+      "path": "levels/zelda/graphics/monsters/squid/attack/0 - Copy.png",
+      "size": 463,
+      "sha256": "811ba45e9f089615d65d67339505eee8ce708b836475df1b843b3f78c3bf1cf4"
+    },
+    {
+      "path": "levels/zelda/graphics/monsters/squid/attack/0.png",
+      "size": 463,
+      "sha256": "811ba45e9f089615d65d67339505eee8ce708b836475df1b843b3f78c3bf1cf4"
+    },
+    {
+      "path": "levels/zelda/graphics/monsters/squid/idle/0.png",
+      "size": 463,
+      "sha256": "307ee546b6183e95feb78c5e9b670b81ebe361068c7787eba80f3be85cd2a652"
+    },
+    {
+      "path": "levels/zelda/graphics/monsters/squid/idle/1.png",
+      "size": 461,
+      "sha256": "023727a379475f94eab4e35de0cf24966c3d94edb09edb5e8cae85dc86fb85cd"
+    },
+    {
+      "path": "levels/zelda/graphics/monsters/squid/idle/2.png",
+      "size": 463,
+      "sha256": "307ee546b6183e95feb78c5e9b670b81ebe361068c7787eba80f3be85cd2a652"
+    },
+    {
+      "path": "levels/zelda/graphics/monsters/squid/idle/3.png",
+      "size": 475,
+      "sha256": "c0d10e096583f4b5ffffac1cb677d680e25c48f10fad78db22ea950be580586d"
+    },
+    {
+      "path": "levels/zelda/graphics/monsters/squid/idle/4.png",
+      "size": 475,
+      "sha256": "c0d10e096583f4b5ffffac1cb677d680e25c48f10fad78db22ea950be580586d"
+    },
+    {
+      "path": "levels/zelda/graphics/monsters/squid/move/0.png",
+      "size": 463,
+      "sha256": "307ee546b6183e95feb78c5e9b670b81ebe361068c7787eba80f3be85cd2a652"
+    },
+    {
+      "path": "levels/zelda/graphics/monsters/squid/move/1.png",
+      "size": 461,
+      "sha256": "023727a379475f94eab4e35de0cf24966c3d94edb09edb5e8cae85dc86fb85cd"
+    },
+    {
+      "path": "levels/zelda/graphics/monsters/squid/move/2.png",
+      "size": 475,
+      "sha256": "c0d10e096583f4b5ffffac1cb677d680e25c48f10fad78db22ea950be580586d"
+    },
+    {
+      "path": "levels/zelda/graphics/monsters/squid/move/3.png",
+      "size": 475,
+      "sha256": "c0d10e096583f4b5ffffac1cb677d680e25c48f10fad78db22ea950be580586d"
+    },
+    {
+      "path": "levels/zelda/graphics/objects/0.png",
+      "size": 867,
+      "sha256": "0c3f5475fb93a6b39f804597c09f99b8fa276c6472cea4a661205d24dbb13ccd"
+    },
+    {
+      "path": "levels/zelda/graphics/objects/01.png",
+      "size": 845,
+      "sha256": "6ab35bef2b36cc35258e3d12c43bdb72392b0e4e9ca31d6df86484094832b587"
+    },
+    {
+      "path": "levels/zelda/graphics/objects/02.png",
+      "size": 961,
+      "sha256": "3c9c81d7e07dbec0b7aa3d2c9b81dcbe6a26ff22fe55a9439e0e7f2c46b05619"
+    },
+    {
+      "path": "levels/zelda/graphics/objects/03.png",
+      "size": 1064,
+      "sha256": "7f88946ebcd1466a464f8008839bf578898e5ffaa6bf3c9e0537c246c3592c71"
+    },
+    {
+      "path": "levels/zelda/graphics/objects/04.png",
+      "size": 1188,
+      "sha256": "982760fc002b7b34835ceae58976ab0fa5980a3e32a978a3f1affb0b1c65f55b"
+    },
+    {
+      "path": "levels/zelda/graphics/objects/05.png",
+      "size": 1025,
+      "sha256": "cb1ac437bb86fe41ecef8b9fb53fe90b6715f0eec08c4222130b1d84d8675e35"
+    },
+    {
+      "path": "levels/zelda/graphics/objects/06.png",
+      "size": 982,
+      "sha256": "e1cd7b90d3c5d4961cdd247935856fd0455e0f3bed06ed7f9fb152be1b1fa601"
+    },
+    {
+      "path": "levels/zelda/graphics/objects/07.png",
+      "size": 863,
+      "sha256": "cdbea1290ddc171190dbda5bdeafa273f43df4376e2ee632082972873c5c5cdc"
+    },
+    {
+      "path": "levels/zelda/graphics/objects/08.png",
+      "size": 866,
+      "sha256": "f0e0c0d9ead219fc25851e3b8b1fee05b2c99b8261445e1e5364ca9b7df2bf39"
+    },
+    {
+      "path": "levels/zelda/graphics/objects/09.png",
+      "size": 919,
+      "sha256": "b4c0bf7e447711d2243f01f8933172a80ac7eba448c5385261111b1649e2cb53"
+    },
+    {
+      "path": "levels/zelda/graphics/objects/10.png",
+      "size": 1006,
+      "sha256": "917e77314bd8d9db501d6a1ebfc0ac2b65235fea732c660cad53f1e4ff6935a6"
+    },
+    {
+      "path": "levels/zelda/graphics/objects/11.png",
+      "size": 852,
+      "sha256": "6466bf3757dc7c6af247896eac111ecf75ffd9a32146a9d5beb759cd4ca280c2"
+    },
+    {
+      "path": "levels/zelda/graphics/objects/12.png",
+      "size": 552,
+      "sha256": "a1cdde6e466f3dbe42a8510ad5899a5e7f947196658fbbe5e7053c05d5585f09"
+    },
+    {
+      "path": "levels/zelda/graphics/objects/13.png",
+      "size": 798,
+      "sha256": "7e9f467dc8f55e30435414215c25b2c3eba9e9b40a803a4b142fbbc69758c810"
+    },
+    {
+      "path": "levels/zelda/graphics/objects/14.png",
+      "size": 557,
+      "sha256": "224bc71e6d1ccbc28f6e7b452dd20bd34351a7f3c198bad90e37387a4362d74e"
+    },
+    {
+      "path": "levels/zelda/graphics/objects/15.png",
+      "size": 1185,
+      "sha256": "6b18ec8d122582ace2920ecb17c6bcac2d9df9f62d50066cdaa7c9a90c762eca"
+    },
+    {
+      "path": "levels/zelda/graphics/objects/16.png",
+      "size": 1350,
+      "sha256": "18d061fcb6135f1f093c48587ab931934804cb331b3c0d3c62b514e3101e7f53"
+    },
+    {
+      "path": "levels/zelda/graphics/objects/17.png",
+      "size": 939,
+      "sha256": "faa65bef379c2fe8c43e18490f596425c8750117a8734d01467e07795b9b442f"
+    },
+    {
+      "path": "levels/zelda/graphics/objects/18.png",
+      "size": 1122,
+      "sha256": "8108a1cce3ea731883f4a354998f26e60c6d239f767d13376f0311eab3326903"
+    },
+    {
+      "path": "levels/zelda/graphics/objects/19.png",
+      "size": 1326,
+      "sha256": "65d15944044c5052d4a3a065b75ff39fa941cb232ec6b473666e9632760d1dae"
+    },
+    {
+      "path": "levels/zelda/graphics/objects/20.png",
+      "size": 939,
+      "sha256": "c45fdce2dfa5f9cedb56785dce43782bc1373b896395a25098c521e853c97450"
+    },
+    {
+      "path": "levels/zelda/graphics/particles/aura/0.png",
+      "size": 748,
+      "sha256": "8620c33a8acdd5c557a1f184cc30aa3522734fc7f52cad2a9b25894f6c4860f3"
+    },
+    {
+      "path": "levels/zelda/graphics/particles/aura/1.png",
+      "size": 994,
+      "sha256": "ddee89a18afeb614ee31901d493df49c2048803133af3339a542805ca0b06e42"
+    },
+    {
+      "path": "levels/zelda/graphics/particles/aura/2.png",
+      "size": 1012,
+      "sha256": "3aeea9a6651584d5434a1a2ad6bc09c245e0bca7f4c05527d2c93422f8f3a7ef"
+    },
+    {
+      "path": "levels/zelda/graphics/particles/aura/3.png",
+      "size": 747,
+      "sha256": "092f675cd89690c88a5fb56b874f232276bb37236666ad2256ad0e21627c15ea"
+    },
+    {
+      "path": "levels/zelda/graphics/particles/bamboo/0.png",
+      "size": 473,
+      "sha256": "3d72df805a510936a21171ed2c5b5524d752c7f7d1c28cf0406578c6fa95d6e7"
+    },
+    {
+      "path": "levels/zelda/graphics/particles/bamboo/1.png",
+      "size": 468,
+      "sha256": "53e608b7e1ee938e00eb57c259ea86d63793cb47c19e990bcf88afd4bde5241b"
+    },
+    {
+      "path": "levels/zelda/graphics/particles/claw/0.png",
+      "size": 384,
+      "sha256": "849abd9b48ad27246fa3d5a7469caafed464a8e9284bf1428d4fa37d44d64924"
+    },
+    {
+      "path": "levels/zelda/graphics/particles/claw/1.png",
+      "size": 466,
+      "sha256": "fca34fe0e6b8771f770e1a629ccafe4a07279485b3bd8de13a9b442d89a83646"
+    },
+    {
+      "path": "levels/zelda/graphics/particles/claw/2.png",
+      "size": 489,
+      "sha256": "a5abe781499b8bd7c08cbf3738135b31f5525685c566b416826705e50fe1d17f"
+    },
+    {
+      "path": "levels/zelda/graphics/particles/claw/3.png",
+      "size": 378,
+      "sha256": "414e39f9498eb8073c6e2f91cee2b7aeb63aa51afccc787941bf7a572659bcb0"
+    },
+    {
+      "path": "levels/zelda/graphics/particles/flame/fire.png",
+      "size": 342,
+      "sha256": "afc7f7bb3428ab68511e887611131996f815a686607eff2cbd43c3d7adbda3ca"
+    },
+    {
+      "path": "levels/zelda/graphics/particles/flame/frames/0.png",
+      "size": 195,
+      "sha256": "d06120c37acd332f247500ff09d634a447296b1493616108073b9b8acba0d3ce"
+    },
+    {
+      "path": "levels/zelda/graphics/particles/flame/frames/01.png",
+      "size": 224,
+      "sha256": "2107efa7c6d793d903713db2734546c2fd2589a818c2c344adf46d20a8cf880a"
+    },
+    {
+      "path": "levels/zelda/graphics/particles/flame/frames/02.png",
+      "size": 267,
+      "sha256": "5902b733c8198c8c4acc556a69b5a46451ba14b2d1d366bb1cec2fa7890cead4"
+    },
+    {
+      "path": "levels/zelda/graphics/particles/flame/frames/03.png",
+      "size": 266,
+      "sha256": "e4163907711f8e098712ef9fe11916c9ff33b3b50aac1e0a7b5ef9c16006f9e2"
+    },
+    {
+      "path": "levels/zelda/graphics/particles/flame/frames/04.png",
+      "size": 268,
+      "sha256": "77657d704f542a18f234e2789670fe3b46d129a6d7e87482d6957eda41a5635b"
+    },
+    {
+      "path": "levels/zelda/graphics/particles/flame/frames/05.png",
+      "size": 264,
+      "sha256": "56abff622d657cda4b51f183d7d1ca17db76abae3b5f5d2fee8510403ea48df1"
+    },
+    {
+      "path": "levels/zelda/graphics/particles/flame/frames/06.png",
+      "size": 269,
+      "sha256": "6d3120afb62f05a8ae34bb6bd96eb74169a489737422d43abcb6ba019fda97b6"
+    },
+    {
+      "path": "levels/zelda/graphics/particles/flame/frames/07.png",
+      "size": 258,
+      "sha256": "f2fda9d5333c481fb57c1fd98c5dfb99239629c9709d0976313a1c7773b7f8b1"
+    },
+    {
+      "path": "levels/zelda/graphics/particles/flame/frames/08.png",
+      "size": 245,
+      "sha256": "70686fe7ad58c7e714a7652dff8457015398da336290de8089e3a0cbb682f172"
+    },
+    {
+      "path": "levels/zelda/graphics/particles/flame/frames/09.png",
+      "size": 217,
+      "sha256": "60168fe10ab13768877dbd9e7f789f19961d541ad8ff05ac527a6cd55538cac2"
+    },
+    {
+      "path": "levels/zelda/graphics/particles/flame/frames/10.png",
+      "size": 191,
+      "sha256": "5701915e8551cd9f2801918df38f4497b50e6b16224f4024da8be1e1c468a60a"
+    },
+    {
+      "path": "levels/zelda/graphics/particles/flame/frames/11.png",
+      "size": 181,
+      "sha256": "42d9b84fd14b627a3973ba8c81d05ea2cecc80992f3c7d8d5a7c3f62bd1a52e3"
+    },
+    {
+      "path": "levels/zelda/graphics/particles/heal/frames/0.png",
+      "size": 322,
+      "sha256": "581f421c824b76d7ce28f1f9f22b39fe2bffb85d28853f31ef7b9ef2d8d8f1ee"
+    },
+    {
+      "path": "levels/zelda/graphics/particles/heal/frames/1.png",
+      "size": 403,
+      "sha256": "539d8c8bd05e0324bddf5584dfff9b7799d0435afe094bf32f9142ffc957abdb"
+    },
+    {
+      "path": "levels/zelda/graphics/particles/heal/frames/2.png",
+      "size": 427,
+      "sha256": "0bc4e0f0d9bdc86bbf856359d8f78f9efd7c1522c9d73b0a49c054668de7b02d"
+    },
+    {
+      "path": "levels/zelda/graphics/particles/heal/frames/3.png",
+      "size": 392,
+      "sha256": "ec914b02f4044667d2031d0f84f2b6d353096beb9e8ce41e76145f8bc01333ca"
+    },
+    {
+      "path": "levels/zelda/graphics/particles/heal/frames/4.png",
+      "size": 324,
+      "sha256": "92e4b9bfd4192d0ee9811bd5b6372acefdd8723ebb6b844410ebf88895d3cbc5"
+    },
+    {
+      "path": "levels/zelda/graphics/particles/heal/heal.png",
+      "size": 416,
+      "sha256": "f432089666465785c4b9778a7ad7ba43874efe30cc299581d73d875be0b38bc8"
+    },
+    {
+      "path": "levels/zelda/graphics/particles/leaf1/leaf1_00000.png",
+      "size": 1053,
+      "sha256": "ca82c3af8f5cc8156ebee5354e76592007efce04d897fa534148bd06b8fd2aaa"
+    },
+    {
+      "path": "levels/zelda/graphics/particles/leaf1/leaf1_00001.png",
+      "size": 1040,
+      "sha256": "5df90c7041963cf9cf30ad523bad8877a5d57b0fcfb139ed0128ccbffd1dd970"
+    },
+    {
+      "path": "levels/zelda/graphics/particles/leaf1/leaf1_00002.png",
+      "size": 1091,
+      "sha256": "45ffd71904c5b5456b3362c160fe9ae6fee493bab938485a2db53fa087e751d3"
+    },
+    {
+      "path": "levels/zelda/graphics/particles/leaf1/leaf1_00003.png",
+      "size": 1093,
+      "sha256": "bc8a12a7ad27f112e4afc5516652ae1e69187b2f32d79e63109de742d7689e78"
+    },
+    {
+      "path": "levels/zelda/graphics/particles/leaf1/leaf1_00004.png",
+      "size": 1053,
+      "sha256": "aeaedc1d2986e973dd9612a3af0f51be50dfdabfc8ef7289ac82c8eb54dfd794"
+    },
+    {
+      "path": "levels/zelda/graphics/particles/leaf1/leaf1_00005.png",
+      "size": 1085,
+      "sha256": "8436e50e463a33d82d68901f4fb6371ebc47d7b9b6ed87817b686638279ec0e9"
+    },
+    {
+      "path": "levels/zelda/graphics/particles/leaf1/leaf1_00006.png",
+      "size": 1033,
+      "sha256": "265d3fc0aedd12308a2922612a79f72aa4cc7fbb094ddcda05e6198d70ebb25c"
+    },
+    {
+      "path": "levels/zelda/graphics/particles/leaf1/leaf1_00007.png",
+      "size": 971,
+      "sha256": "5dcdda2aff383f088b687f3fb2b57280a19958f00d1265e6baf0fb4808eadfd1"
+    },
+    {
+      "path": "levels/zelda/graphics/particles/leaf1/leaf1_00008.png",
+      "size": 980,
+      "sha256": "fb3a183d483fe2b19cd0fd75de6ffba509a9a453cbf35121ccb305d7dfd170bc"
+    },
+    {
+      "path": "levels/zelda/graphics/particles/leaf1/leaf1_00009.png",
+      "size": 962,
+      "sha256": "54a6bf80209657d7a378ba07f9054e54c7d0dde4ddbc0c56b8d0a5c4f1d7a043"
+    },
+    {
+      "path": "levels/zelda/graphics/particles/leaf1/leaf1_00010.png",
+      "size": 884,
+      "sha256": "1c813e938b057fed625e7c76c6535a7c23ab4915e2c3625ca464c9eee929bfdd"
+    },
+    {
+      "path": "levels/zelda/graphics/particles/leaf1/leaf1_00011.png",
+      "size": 886,
+      "sha256": "d8f7d170b74d8f59bed0f86437c143b76df448aabcf5c9252bf2782ad7753b4d"
+    },
+    {
+      "path": "levels/zelda/graphics/particles/leaf2/leaf1_00000.png",
+      "size": 1450,
+      "sha256": "f0cba17095b00248603f1288096173b5e7d183e4b4ff3d30cb52a2813ce829b9"
+    },
+    {
+      "path": "levels/zelda/graphics/particles/leaf2/leaf1_00001.png",
+      "size": 1317,
+      "sha256": "ed16191d634c532f0cbdf941182e660d4264c3d15eebb4dd27fc870bc2858dc0"
+    },
+    {
+      "path": "levels/zelda/graphics/particles/leaf2/leaf1_00002.png",
+      "size": 1452,
+      "sha256": "2b8cb11383498e9915a922e6c44e85cf9c8ba04f6fa33fb21eaa2fe9181cbefa"
+    },
+    {
+      "path": "levels/zelda/graphics/particles/leaf2/leaf1_00003.png",
+      "size": 1482,
+      "sha256": "4958305f06aa4f5f088c4158358e516c3720932ca805e1de99a0d5384675c8c4"
+    },
+    {
+      "path": "levels/zelda/graphics/particles/leaf2/leaf1_00004.png",
+      "size": 1532,
+      "sha256": "35883330eb8c1324a49ce3ca29abe34ade4c2892751d94c78041b6ca02a58714"
+    },
+    {
+      "path": "levels/zelda/graphics/particles/leaf2/leaf1_00005.png",
+      "size": 1413,
+      "sha256": "eb559f39d158cc0613008fdced93d4be6ee6065c97b44dd564a705b9061522b8"
+    },
+    {
+      "path": "levels/zelda/graphics/particles/leaf2/leaf1_00006.png",
+      "size": 1365,
+      "sha256": "53315c02c694a1a68781abeb15d22c44afcd80dc2dd70af6251e110d97e5aa09"
+    },
+    {
+      "path": "levels/zelda/graphics/particles/leaf2/leaf1_00007.png",
+      "size": 1264,
+      "sha256": "3153f2ae1eaa0adc8191890c3cb3ff62108919c179638a7c42c9fd053bc08479"
+    },
+    {
+      "path": "levels/zelda/graphics/particles/leaf2/leaf1_00008.png",
+      "size": 1369,
+      "sha256": "7ecfe9d032ddc1aa9d6783364898908cf3525c5c271987910a4d53e84bf14428"
+    },
+    {
+      "path": "levels/zelda/graphics/particles/leaf2/leaf1_00009.png",
+      "size": 1364,
+      "sha256": "6d5cdb6bcb05d0a593287d63ae5fdb7c438151d9c4b120054fbfb69500bb2a65"
+    },
+    {
+      "path": "levels/zelda/graphics/particles/leaf2/leaf1_00010.png",
+      "size": 1338,
+      "sha256": "263efc8ad80e23dbf983535fad06c15b6089f1001b1c687e749b3e999a715093"
+    },
+    {
+      "path": "levels/zelda/graphics/particles/leaf2/leaf1_00011.png",
+      "size": 1217,
+      "sha256": "6421dc3904158a6551cd52ea7dbda1ca944dbe7ec71a63f5109e05faee036158"
+    },
+    {
+      "path": "levels/zelda/graphics/particles/leaf2/leaf1_00012.png",
+      "size": 1269,
+      "sha256": "d5f7acfd87a0c31d1a10034340d323f54356d911bb9b429a8f3956f0da775730"
+    },
+    {
+      "path": "levels/zelda/graphics/particles/leaf3/leaf1_00000.png",
+      "size": 811,
+      "sha256": "5d8513d3231dafaa4b74d386a5934a13c09b199d06fb5b9822281d6f526b386b"
+    },
+    {
+      "path": "levels/zelda/graphics/particles/leaf3/leaf1_00001.png",
+      "size": 962,
+      "sha256": "200be252b8249eda52b16d106ab3831857b7ae580e26709c93fc1919f2de9ec9"
+    },
+    {
+      "path": "levels/zelda/graphics/particles/leaf3/leaf1_00002.png",
+      "size": 992,
+      "sha256": "6d8e0f219e422693207deab37964cc57480d3e81575de7ce2d47e3e43375ed86"
+    },
+    {
+      "path": "levels/zelda/graphics/particles/leaf3/leaf1_00003.png",
+      "size": 1002,
+      "sha256": "bf8d9ba8eeca97583b786f4741c721c91461d2e27ff8d32b66e77e7b9a9dda94"
+    },
+    {
+      "path": "levels/zelda/graphics/particles/leaf3/leaf1_00004.png",
+      "size": 964,
+      "sha256": "19f61b1ab95379d75030f7e55a6734446d412d65aa8651e43b40860e96300761"
+    },
+    {
+      "path": "levels/zelda/graphics/particles/leaf3/leaf1_00005.png",
+      "size": 971,
+      "sha256": "4d432f4cc37bf28df637f4f9334d26089a167a901c0f7b3d570bad3dcb7005f3"
+    },
+    {
+      "path": "levels/zelda/graphics/particles/leaf3/leaf1_00006.png",
+      "size": 919,
+      "sha256": "553f70460515faa852eaa47463b4f8faf4ad17fbcec230ab77ca0dbb06628894"
+    },
+    {
+      "path": "levels/zelda/graphics/particles/leaf3/leaf1_00007.png",
+      "size": 829,
+      "sha256": "671d03c1f1f0d5e16417e5f8c41f0b22fe749d2c9512ad0aa1c65b5b8632f8ea"
+    },
+    {
+      "path": "levels/zelda/graphics/particles/leaf3/leaf1_00008.png",
+      "size": 832,
+      "sha256": "c019d2b24f987e5b715a7da4f84d3740e2a52b6645773dec172401347fbb3267"
+    },
+    {
+      "path": "levels/zelda/graphics/particles/leaf3/leaf1_00009.png",
+      "size": 814,
+      "sha256": "466078edd3736f94f87bb2873c0d6fe71cbeb8ef3ff013847eb1c1adb1ffeabf"
+    },
+    {
+      "path": "levels/zelda/graphics/particles/leaf4/leaf1_00000.png",
+      "size": 921,
+      "sha256": "10204827933546fd073ba0330f4493a577d72779a5af4179ab28bb8af2ee23c7"
+    },
+    {
+      "path": "levels/zelda/graphics/particles/leaf4/leaf1_00001.png",
+      "size": 941,
+      "sha256": "a706101a8ab474ead8c24978b3d1439865db5fc6780619ef3ad47174519de0d2"
+    },
+    {
+      "path": "levels/zelda/graphics/particles/leaf4/leaf1_00002.png",
+      "size": 977,
+      "sha256": "46f45b41dce28b0dc6aeceeb1d12e837aaab1cb50ecd4c382feba921dee5471d"
+    },
+    {
+      "path": "levels/zelda/graphics/particles/leaf4/leaf1_00003.png",
+      "size": 944,
+      "sha256": "f534204b99c5d6cd6047366c1ad7cf6f0c3cc55a5ab7686589061d93971b704d"
+    },
+    {
+      "path": "levels/zelda/graphics/particles/leaf4/leaf1_00004.png",
+      "size": 957,
+      "sha256": "06e70c6c3790a4c8d8ed270143a6165daee1a162d74025383bf9752d9a01426b"
+    },
+    {
+      "path": "levels/zelda/graphics/particles/leaf4/leaf1_00005.png",
+      "size": 916,
+      "sha256": "96fbddca0a784bcd91456ef1aa806338b65f5e2618db81757263122986665884"
+    },
+    {
+      "path": "levels/zelda/graphics/particles/leaf4/leaf1_00006.png",
+      "size": 920,
+      "sha256": "8063d7e17230ba5e0a4465ab4409b985cc7b44c7a6cd0eaa6a1b1887ddf4cffa"
+    },
+    {
+      "path": "levels/zelda/graphics/particles/leaf4/leaf1_00007.png",
+      "size": 833,
+      "sha256": "ea0282bd6b43dc3ee970f2d50aceb9c28bc6e676d6248dbc55368103b118ccec"
+    },
+    {
+      "path": "levels/zelda/graphics/particles/leaf4/leaf1_00008.png",
+      "size": 876,
+      "sha256": "059d919ee3c44235ea16029638068c80648fe5f796ae6b27ebdcd9c7a7344969"
+    },
+    {
+      "path": "levels/zelda/graphics/particles/leaf4/leaf1_00009.png",
+      "size": 850,
+      "sha256": "000279abb07da4415e4f34dabb73081b53e374304cd0e3db4a7498180d404441"
+    },
+    {
+      "path": "levels/zelda/graphics/particles/leaf4/leaf1_00010.png",
+      "size": 884,
+      "sha256": "52607b83aa8c3d960b371f68e9007d30a23c7145223afdfcebefcd896b98d7f5"
+    },
+    {
+      "path": "levels/zelda/graphics/particles/leaf5/leaf1_00000.png",
+      "size": 834,
+      "sha256": "9e3f3d7678b85a17e3c8b93e4aa889278be532cb1a0bc2c0528bc1594e6e1e40"
+    },
+    {
+      "path": "levels/zelda/graphics/particles/leaf5/leaf1_00001.png",
+      "size": 968,
+      "sha256": "b46376e2ba20e4ac48ca27ff8a77768e72964a58e54deb2c60bd6b1abff23d15"
+    },
+    {
+      "path": "levels/zelda/graphics/particles/leaf5/leaf1_00002.png",
+      "size": 993,
+      "sha256": "1fd729176cd7ec6db391c96325bf3abac67effe6290197ae7c72cb6c4a59895e"
+    },
+    {
+      "path": "levels/zelda/graphics/particles/leaf5/leaf1_00003.png",
+      "size": 916,
+      "sha256": "43a5464f3e5bb419006464beff19529a0258e378edadaf45a699757221aaa4ea"
+    },
+    {
+      "path": "levels/zelda/graphics/particles/leaf5/leaf1_00004.png",
+      "size": 992,
+      "sha256": "e44db2c5d7b49a45a2543225bd9fbf9e75977c5b359c46366291106e7177cbd2"
+    },
+    {
+      "path": "levels/zelda/graphics/particles/leaf5/leaf1_00005.png",
+      "size": 966,
+      "sha256": "288ef8fb780698b3213b7122199579cb490aaec7ee4ba64743714fbf0703d472"
+    },
+    {
+      "path": "levels/zelda/graphics/particles/leaf5/leaf1_00006.png",
+      "size": 895,
+      "sha256": "bc3de876fef9a99b1c73593d3bffa62864055c8087c87258a467051d51478a30"
+    },
+    {
+      "path": "levels/zelda/graphics/particles/leaf5/leaf1_00007.png",
+      "size": 912,
+      "sha256": "822339cd2b56c737edccfc8e7fb5338326451fbfda6545b637bbc3f453d76dfb"
+    },
+    {
+      "path": "levels/zelda/graphics/particles/leaf5/leaf1_00008.png",
+      "size": 878,
+      "sha256": "9bef727f57dc3a33b4d7280fb701d2cce11e5aa6d53aa634d43590498b116c28"
+    },
+    {
+      "path": "levels/zelda/graphics/particles/leaf5/leaf1_00009.png",
+      "size": 861,
+      "sha256": "cabc9708cad7cfa304a334846c3475a9b8a5b99b59d863ef0a71ca1b7e0ff0b3"
+    },
+    {
+      "path": "levels/zelda/graphics/particles/leaf6/leaf1_00000.png",
+      "size": 1037,
+      "sha256": "c3d05c2e0ff3fe01b1fd11fc562773931811f76251c37ab9ec6a64f63662b791"
+    },
+    {
+      "path": "levels/zelda/graphics/particles/leaf6/leaf1_00001.png",
+      "size": 1562,
+      "sha256": "90a842628631c18d9d6ced5c3d74880f6fa91dcf5c1fc6df048fb3657be9b1e7"
+    },
+    {
+      "path": "levels/zelda/graphics/particles/leaf6/leaf1_00002.png",
+      "size": 1604,
+      "sha256": "e9148e3cc4af409fbd7d98401db0e75b23d75517131478a6cb17c6efeefcf0ed"
+    },
+    {
+      "path": "levels/zelda/graphics/particles/leaf6/leaf1_00003.png",
+      "size": 1437,
+      "sha256": "263eb1fbb0c24cfcd6041d92a6db46fbac7fe81c3c01a0a9c03a0630ddbcab33"
+    },
+    {
+      "path": "levels/zelda/graphics/particles/leaf6/leaf1_00004.png",
+      "size": 1572,
+      "sha256": "bbe9717f0bbf07f2cf4aaa7c2ec6091745f00ba0f3eb0b8f7f17f02d7f86b3d6"
+    },
+    {
+      "path": "levels/zelda/graphics/particles/leaf6/leaf1_00005.png",
+      "size": 1620,
+      "sha256": "e2ddd3118758c9dd57a9bdc95dc175d083095447aa9900cf7a5a9544cc40c0dd"
+    },
+    {
+      "path": "levels/zelda/graphics/particles/leaf6/leaf1_00006.png",
+      "size": 1467,
+      "sha256": "cabd831e8472f826e18c78fa3c17442eb42fbc52e014bae4184cc414257c1788"
+    },
+    {
+      "path": "levels/zelda/graphics/particles/leaf6/leaf1_00007.png",
+      "size": 1434,
+      "sha256": "2e22c77104d028dd26cd4246b53a781a1b2f2e79eafe3c4cfcf4d77654e504c7"
+    },
+    {
+      "path": "levels/zelda/graphics/particles/leaf6/leaf1_00008.png",
+      "size": 1435,
+      "sha256": "da076d46b6ec37231d82cf9b1ca31a2fb872d22bcd147b7361be6b51c6cd7307"
+    },
+    {
+      "path": "levels/zelda/graphics/particles/leaf6/leaf1_00009.png",
+      "size": 1526,
+      "sha256": "2810e7e72c3dd8abefdb51543ad027cec9dda89b9b52f589b7426b0d7e3efab1"
+    },
+    {
+      "path": "levels/zelda/graphics/particles/leaf6/leaf1_00010.png",
+      "size": 1427,
+      "sha256": "86ff9dc4fd2f6221a3a01451f2ef6457e34ffe1cf8b7e2b686c0e42a98ccfbc0"
+    },
+    {
+      "path": "levels/zelda/graphics/particles/leaf6/leaf1_00011.png",
+      "size": 1375,
+      "sha256": "531842e4ebe38640eb5d50811ca0aba3de491b4d10a9ffe194be1ffc40ce4da7"
+    },
+    {
+      "path": "levels/zelda/graphics/particles/leaf_attack/0.png",
+      "size": 472,
+      "sha256": "023caf5829e6b69fe29d4948677c779dbbf134d05a465deac150d33b2c4c939d"
+    },
+    {
+      "path": "levels/zelda/graphics/particles/leaf_attack/1.png",
+      "size": 514,
+      "sha256": "bdcaa32e9f46eefc149d5e1f412e43ea5f1489710446a7b43f949fec6f71d236"
+    },
+    {
+      "path": "levels/zelda/graphics/particles/leaf_attack/2.png",
+      "size": 484,
+      "sha256": "4c27dce024baff4189de8d7921e8529501b7daec9ebfa16cc4129cf47a78e73b"
+    },
+    {
+      "path": "levels/zelda/graphics/particles/leaf_attack/3.png",
+      "size": 480,
+      "sha256": "ed2c0d73f6b6c1f56e025aae00cc20bb6e2848254f229c3d4850741552bcb723"
+    },
+    {
+      "path": "levels/zelda/graphics/particles/leaf_attack/4.png",
+      "size": 472,
+      "sha256": "6125b787cf048409c701dfb89636748e295775a67e916722ea96287e9984edd7"
+    },
+    {
+      "path": "levels/zelda/graphics/particles/leaf_attack/5.png",
+      "size": 446,
+      "sha256": "4375f0b19d773531dedef1426989bf27a28039a2f2ebab7c99a744a7fe8235b3"
+    },
+    {
+      "path": "levels/zelda/graphics/particles/leaf_attack/6.png",
+      "size": 472,
+      "sha256": "f032ed8a3f58c2c5b6064a1f4dc19c95f7cd70f4c0b9deac410e7a5b0490fe92"
+    },
+    {
+      "path": "levels/zelda/graphics/particles/nova/0.png",
+      "size": 488,
+      "sha256": "9da00571a01462cfa7b8f0ccb58fa7759f72bb396826b80949f41b4052d76305"
+    },
+    {
+      "path": "levels/zelda/graphics/particles/nova/1.png",
+      "size": 688,
+      "sha256": "6a10d9a30d8a10ee3e8ea7f010ae2bf5f44e34d91809693a843b45c81a219ae2"
+    },
+    {
+      "path": "levels/zelda/graphics/particles/nova/2.png",
+      "size": 769,
+      "sha256": "4418c9eb26ecdc0eccabab279c7d503fd56afb659eaaf97c62cfe9d0363ef4b4"
+    },
+    {
+      "path": "levels/zelda/graphics/particles/nova/3.png",
+      "size": 675,
+      "sha256": "7bf0986cc241093f01974865d0614194564881a4c195322dd2e22da24189a537"
+    },
+    {
+      "path": "levels/zelda/graphics/particles/nova/4.png",
+      "size": 536,
+      "sha256": "7da08d3209d239993eb955c3b35c9ad102c5b9568330720919ad67ae88b5ae7b"
+    },
+    {
+      "path": "levels/zelda/graphics/particles/nova/5.png",
+      "size": 496,
+      "sha256": "48853a20d368c590c447f073c57a0da9fb2cf7544003e68971b1b457fa8e278d"
+    },
+    {
+      "path": "levels/zelda/graphics/particles/raccoon/0.png",
+      "size": 2093,
+      "sha256": "dc246d08317ef981207810ee94c1aad937dedeb1b8420df2f19939b2bd2a217b"
+    },
+    {
+      "path": "levels/zelda/graphics/particles/raccoon/1.png",
+      "size": 2237,
+      "sha256": "2ff28f36fa2cd1277ad91aa0c23bf37e82296636e97c9b3859a619b9dccdeb22"
+    },
+    {
+      "path": "levels/zelda/graphics/particles/raccoon/2.png",
+      "size": 2550,
+      "sha256": "38076bfc48c79b1c5f2cdb7985a0b2735c04ad84e9371f6a9cb31ab3febe7b3e"
+    },
+    {
+      "path": "levels/zelda/graphics/particles/raccoon/3.png",
+      "size": 2488,
+      "sha256": "4fdccf8ce4c69758836d95b6495885af4145da25c39e6919bdbd9a4eb15f3c65"
+    },
+    {
+      "path": "levels/zelda/graphics/particles/raccoon/4.png",
+      "size": 1685,
+      "sha256": "0723c5785f1a00488658da8f52b706645dedc6001b7a201d660d3a8e80d77aaa"
+    },
+    {
+      "path": "levels/zelda/graphics/particles/raccoon/5.png",
+      "size": 1197,
+      "sha256": "a5471ed33b4db1b1a249dc3a2af39eeef04b968312c2120381522c70ae203600"
+    },
+    {
+      "path": "levels/zelda/graphics/particles/slash/0.png",
+      "size": 273,
+      "sha256": "df43a7e205b4c65c5daba424555331a54edd00b23973335c81d6b83d2728281e"
+    },
+    {
+      "path": "levels/zelda/graphics/particles/slash/1.png",
+      "size": 386,
+      "sha256": "eb5ef58b5b364745fcc124c0f3cf87e69c9f8d44e832ec2557a0a562c7b128f1"
+    },
+    {
+      "path": "levels/zelda/graphics/particles/slash/2.png",
+      "size": 337,
+      "sha256": "545a299da2783d3523a43db560a11ec22095d021eac572ba4b256741f1abe2d8"
+    },
+    {
+      "path": "levels/zelda/graphics/particles/slash/3.png",
+      "size": 337,
+      "sha256": "f46a82fa7664c542418286d70ebcd824fa61c2e06c5e36804f812784efef3d19"
+    },
+    {
+      "path": "levels/zelda/graphics/particles/smoke/0.png",
+      "size": 348,
+      "sha256": "e6b0d2e8973ea29cb72477f38297dce75ebd5c7a985ccd56d99a27a30ba1c164"
+    },
+    {
+      "path": "levels/zelda/graphics/particles/smoke/1.png",
+      "size": 469,
+      "sha256": "5184fbe0d8d7360cad8f9add1d548ed8303bbba80bdc81423c0f44ce15798832"
+    },
+    {
+      "path": "levels/zelda/graphics/particles/smoke/2.png",
+      "size": 520,
+      "sha256": "4c8ef9f14dde8252b60f7b91cba4e4a44b9ea555cd288b052f06f4746c8b9d3e"
+    },
+    {
+      "path": "levels/zelda/graphics/particles/smoke/3.png",
+      "size": 494,
+      "sha256": "71ebe2cab6291ccad55fb250d5ee024b59b810f66d7e2c81965e69e4e25def49"
+    },
+    {
+      "path": "levels/zelda/graphics/particles/smoke/4.png",
+      "size": 577,
+      "sha256": "7281922c96f794abdf1dcee7fd11e133603e55a1ccbf1d2e878cbea63a549bee"
+    },
+    {
+      "path": "levels/zelda/graphics/particles/smoke/5.png",
+      "size": 557,
+      "sha256": "0c1aea6ec6775f8f26a28b8350542a0bc5c1644f34add98b967a9df799a80b73"
+    },
+    {
+      "path": "levels/zelda/graphics/particles/smoke2/0.png",
+      "size": 407,
+      "sha256": "5e3ec0de21b1082eeddb465859278e7de6ba981909c417388433c8abb142e494"
+    },
+    {
+      "path": "levels/zelda/graphics/particles/smoke2/1.png",
+      "size": 545,
+      "sha256": "acb8c3c1ea4ac0feaa479bc66f228e89f1e54e1a0aa3e90b1ea28ca4609919b6"
+    },
+    {
+      "path": "levels/zelda/graphics/particles/smoke2/2.png",
+      "size": 628,
+      "sha256": "869bd92cada3ba7dce7f44db1a15f36137ca85f36bef581d232191d290176b54"
+    },
+    {
+      "path": "levels/zelda/graphics/particles/smoke2/3.png",
+      "size": 607,
+      "sha256": "0ca0f7014b91d082f82da49132d27594fda4963b906f0168dd87d58dbc03049f"
+    },
+    {
+      "path": "levels/zelda/graphics/particles/smoke2/4.png",
+      "size": 722,
+      "sha256": "f965629e7e8a88ac9a5d08f650a9eb88b3d2ea14eb2498a2d49b5f4b01c79a3b"
+    },
+    {
+      "path": "levels/zelda/graphics/particles/smoke2/5.png",
+      "size": 691,
+      "sha256": "c305727d6c1a075e667aeb39155ea5a513c37cac2608f670c4b0e2ca706694ea"
+    },
+    {
+      "path": "levels/zelda/graphics/particles/smoke_orange/0.png",
+      "size": 517,
+      "sha256": "bdcc7afafa0d2e7e3fe5e4571b594199d48a999948d45eb872a796ecfbcc28bd"
+    },
+    {
+      "path": "levels/zelda/graphics/particles/smoke_orange/1.png",
+      "size": 545,
+      "sha256": "0a4e61ee925368a4f3d81dc5590a3ff073c10149e1c346c6e177db7586eedaf7"
+    },
+    {
+      "path": "levels/zelda/graphics/particles/smoke_orange/2.png",
+      "size": 628,
+      "sha256": "921610e7f88e80cb1c4ada68a74ce1e2cc2b2ae2b8bd6a057d92bbb3068892da"
+    },
+    {
+      "path": "levels/zelda/graphics/particles/smoke_orange/3.png",
+      "size": 623,
+      "sha256": "2678d34e4bcef84fe4a939f19dc0825c86d125a6849a095d769daf536d155807"
+    },
+    {
+      "path": "levels/zelda/graphics/particles/smoke_orange/4.png",
+      "size": 724,
+      "sha256": "c59feea58a174686f879dc33e09ee8bc2d67926f324775922f92b1dce1617386"
+    },
+    {
+      "path": "levels/zelda/graphics/particles/smoke_orange/5.png",
+      "size": 738,
+      "sha256": "38da902f39c4a3b22ae5539d441aa06bef42e3b098de3f6a0fedd00a8ba6a4f9"
+    },
+    {
+      "path": "levels/zelda/graphics/particles/sparkle/0.png",
+      "size": 816,
+      "sha256": "94e3342217022819360df026fffe0e1bf2a57801a4be5222409deecf107ef369"
+    },
+    {
+      "path": "levels/zelda/graphics/particles/sparkle/1.png",
+      "size": 850,
+      "sha256": "c582d4133040b9acd86b36f864699f2ed43a2d2a7f3ac65907a05aec904d660e"
+    },
+    {
+      "path": "levels/zelda/graphics/particles/sparkle/2.png",
+      "size": 851,
+      "sha256": "0a4819778b97ab470da6e429809dea30ea8bdbe268c9158467abd54ca4b9fab7"
+    },
+    {
+      "path": "levels/zelda/graphics/particles/sparkle/3.png",
+      "size": 838,
+      "sha256": "9cd0b25a194dcdf3be0883459fe6cfd1c12bda780a295b03b7d2b77f3ec5f9db"
+    },
+    {
+      "path": "levels/zelda/graphics/particles/sparkle/4.png",
+      "size": 631,
+      "sha256": "cff4311adebfd10899a26d13512e1b5e28c667756ea35d4d588ec1937ffe7fde"
+    },
+    {
+      "path": "levels/zelda/graphics/particles/thunder/0.png",
+      "size": 408,
+      "sha256": "860f00fa8ef4e85f8ec22206c0c0517b4328733aba0b8f2e417beeee15b12581"
+    },
+    {
+      "path": "levels/zelda/graphics/particles/thunder/1.png",
+      "size": 441,
+      "sha256": "e36ffc38c07bf5e6a9e39b3013704fc05e0fb099b8c770fb2c92ae4914c17fa8"
+    },
+    {
+      "path": "levels/zelda/graphics/particles/thunder/2.png",
+      "size": 530,
+      "sha256": "c270bc3525b19a17f4a1d52056dea8ab84b818b5077571024ca847616ab771f2"
+    },
+    {
+      "path": "levels/zelda/graphics/particles/thunder/3.png",
+      "size": 450,
+      "sha256": "e03fb55e9ec9250054523cb7a920b3562c6c3be991c4d992e635a7a6641678c9"
+    },
+    {
+      "path": "levels/zelda/graphics/particles/thunder/4.png",
+      "size": 573,
+      "sha256": "d9a155590f0f0acd47ca2e657233854c5d2ab2927e3f27e13c20af2bab4083b9"
+    },
+    {
+      "path": "levels/zelda/graphics/particles/thunder/5.png",
+      "size": 520,
+      "sha256": "34900f1a589dfc7f4dfb4e31e6a8c892e47bc17d920d960f5baa8fba59136b3f"
+    },
+    {
+      "path": "levels/zelda/graphics/particles/thunder/6.png",
+      "size": 463,
+      "sha256": "d0c2da33513c770b5a251bb65e1b77a9a8afa0acf9dd460f525abd3bc1e74491"
+    },
+    {
+      "path": "levels/zelda/graphics/particles/thunder/7.png",
+      "size": 381,
+      "sha256": "d4ab31eb634adb36b446be096d7ff886b1ba15ea2119c470ec9f37c5ce0bcef3"
+    },
+    {
+      "path": "levels/zelda/graphics/player/down/down_0.png",
+      "size": 591,
+      "sha256": "385ec20e005572a6254a5aa53b0b7cd820ed98b834850422c901f60766e4df3e"
+    },
+    {
+      "path": "levels/zelda/graphics/player/down/down_1.png",
+      "size": 585,
+      "sha256": "47016342f5a06f3d792b144b4680319a5439add6446053207de0e9a765479901"
+    },
+    {
+      "path": "levels/zelda/graphics/player/down/down_2.png",
+      "size": 591,
+      "sha256": "385ec20e005572a6254a5aa53b0b7cd820ed98b834850422c901f60766e4df3e"
+    },
+    {
+      "path": "levels/zelda/graphics/player/down/down_3.png",
+      "size": 589,
+      "sha256": "0239b22c1882185f16c95da735b34cdab7831a5c3561647e4c41c3d4febb32e6"
+    },
+    {
+      "path": "levels/zelda/graphics/player/down_attack/attack_down.png",
+      "size": 552,
+      "sha256": "3ad1bf151176011d2becf481fc2920d43906af1a8fa6e760661e1b805917ab57"
+    },
+    {
+      "path": "levels/zelda/graphics/player/down_idle/idle_down.png",
+      "size": 591,
+      "sha256": "385ec20e005572a6254a5aa53b0b7cd820ed98b834850422c901f60766e4df3e"
+    },
+    {
+      "path": "levels/zelda/graphics/player/left/left_0.png",
+      "size": 609,
+      "sha256": "21daadbdd7943681b98e6418ff4c5941b1a0b682003cdfc96e2dd342b432d9e1"
+    },
+    {
+      "path": "levels/zelda/graphics/player/left/left_1.png",
+      "size": 563,
+      "sha256": "daec598d0d04370c02473d3087af1be3158caa7a663d57dcaca475af45eaceac"
+    },
+    {
+      "path": "levels/zelda/graphics/player/left/left_2.png",
+      "size": 621,
+      "sha256": "7b7d436904234270eaa39bfa0af290216a6282b94c904dff8dd3cd01073e6977"
+    },
+    {
+      "path": "levels/zelda/graphics/player/left/left_3.png",
+      "size": 586,
+      "sha256": "1e815c3fd56d076a713ef5f5e2f94bc22cbfe905b01bb4f1734ad550baee5b0b"
+    },
+    {
+      "path": "levels/zelda/graphics/player/left_attack/attack_left.png",
+      "size": 563,
+      "sha256": "3ae212fadca181b1c3b1724c17a8abbc34ff659d789ec8ec122ba86c190c1895"
+    },
+    {
+      "path": "levels/zelda/graphics/player/left_idle/idle_left.png",
+      "size": 609,
+      "sha256": "21daadbdd7943681b98e6418ff4c5941b1a0b682003cdfc96e2dd342b432d9e1"
+    },
+    {
+      "path": "levels/zelda/graphics/player/right/right_0.png",
+      "size": 568,
+      "sha256": "4bdd5d90a8e75f50f8591a543ce8a7bd491fe239987963985efe8340166ffd49"
+    },
+    {
+      "path": "levels/zelda/graphics/player/right/right_1.png",
+      "size": 521,
+      "sha256": "f2a2cced485ccfdd5e9f5d9a9f2b7ce9bf97d3de0aeb7844d276525b792a6947"
+    },
+    {
+      "path": "levels/zelda/graphics/player/right/right_2.png",
+      "size": 578,
+      "sha256": "f6f62749f6d6bec29cdb64cf30ff16a8148b98af3334e995d3e7ef4ca7b5e360"
+    },
+    {
+      "path": "levels/zelda/graphics/player/right/right_3.png",
+      "size": 551,
+      "sha256": "096fc26280d702ba3df29d839a3db1f54c16e68c5f49424e58881098f1615871"
+    },
+    {
+      "path": "levels/zelda/graphics/player/right_attack/attack_right.png",
+      "size": 505,
+      "sha256": "d8c58cd1da25561831b435bf1caeea90e5dea9f99f5b63bc829dba8a0b3077a8"
+    },
+    {
+      "path": "levels/zelda/graphics/player/right_idle/idle_right.png",
+      "size": 568,
+      "sha256": "4bdd5d90a8e75f50f8591a543ce8a7bd491fe239987963985efe8340166ffd49"
+    },
+    {
+      "path": "levels/zelda/graphics/player/up/up_0.png",
+      "size": 469,
+      "sha256": "eaab4bc6a9088435b91e4adc2762971ffe379dc01f21d57c8cff64fe703077d7"
+    },
+    {
+      "path": "levels/zelda/graphics/player/up/up_1.png",
+      "size": 489,
+      "sha256": "4ec54c2f14cf8c86da340c65ee391bf7d0121cb9b59451d6cdf4afd2e1735d23"
+    },
+    {
+      "path": "levels/zelda/graphics/player/up/up_2.png",
+      "size": 469,
+      "sha256": "eaab4bc6a9088435b91e4adc2762971ffe379dc01f21d57c8cff64fe703077d7"
+    },
+    {
+      "path": "levels/zelda/graphics/player/up/up_3.png",
+      "size": 507,
+      "sha256": "d0fb25a0ec53b0ad537232a4b6f3e1292688377470493d2858cecfc430960206"
+    },
+    {
+      "path": "levels/zelda/graphics/player/up_attack/attack_up.png",
+      "size": 502,
+      "sha256": "1c670a7e5b4c7ccf3368845e15264c8b835bd8c695cf967e6397f70d28b3b8b1"
+    },
+    {
+      "path": "levels/zelda/graphics/player/up_idle/idle_up.png",
+      "size": 469,
+      "sha256": "eaab4bc6a9088435b91e4adc2762971ffe379dc01f21d57c8cff64fe703077d7"
+    },
+    {
+      "path": "levels/zelda/graphics/test/player.png",
+      "size": 591,
+      "sha256": "385ec20e005572a6254a5aa53b0b7cd820ed98b834850422c901f60766e4df3e"
+    },
+    {
+      "path": "levels/zelda/graphics/test/rock.png",
+      "size": 495,
+      "sha256": "5537736c2b03141892d73816db407f12745a60efca52a9d39ad285aef99c01b9"
+    },
+    {
+      "path": "levels/zelda/graphics/tilemap/Floor.png",
+      "size": 50779,
+      "sha256": "cea66d3c9068b58d1bbed0aedeadc9679ac1ee1ce3375c6cf396bf954d28361b"
+    },
+    {
+      "path": "levels/zelda/graphics/tilemap/details.png",
+      "size": 6395,
+      "sha256": "6a67025c65a78ce99ab3f18817d6bdf314fd61dc53523d21dd4eacbeed2d49be"
+    },
+    {
+      "path": "levels/zelda/graphics/tilemap/ground.png",
+      "size": 182250,
+      "sha256": "9dba32f67a42df3e3e0d8ba438e78964c0bb406783c6acc8e52de8ea5e538486"
+    },
+    {
+      "path": "levels/zelda/graphics/weapons/axe/down.png",
+      "size": 199,
+      "sha256": "4bded397093d4910e3742b13d3e4280ab05a26b4c2e5daa1d51003212b2551b7"
+    },
+    {
+      "path": "levels/zelda/graphics/weapons/axe/full.png",
+      "size": 297,
+      "sha256": "d6d7de4609fcddc72a7208acf2177db2227444de75c02768cb69477306e61869"
+    },
+    {
+      "path": "levels/zelda/graphics/weapons/axe/left.png",
+      "size": 274,
+      "sha256": "8b41f3dec88c2ce5d8e49dd801f073e40a5af446fd55114ae81d4e4490003162"
+    },
+    {
+      "path": "levels/zelda/graphics/weapons/axe/right.png",
+      "size": 281,
+      "sha256": "00a2acd55633838cc1f62370536f9b306373c2cbbf218d2742b0115b7795c190"
+    },
+    {
+      "path": "levels/zelda/graphics/weapons/axe/up.png",
+      "size": 305,
+      "sha256": "03f1e20c3ae5015ae9ed92032a13352aef452b5022c8baab03e3948a9e4b01f1"
+    },
+    {
+      "path": "levels/zelda/graphics/weapons/lance/down.png",
+      "size": 198,
+      "sha256": "1d5f4755697bac0629a3928096deb16e2ddda600d78001f4ac40c4cd3873c7b8"
+    },
+    {
+      "path": "levels/zelda/graphics/weapons/lance/full.png",
+      "size": 422,
+      "sha256": "c4673398f9161cc7bc78f7c4f98c36fb67545a245b7a95bbbdab876c45f69baf"
+    },
+    {
+      "path": "levels/zelda/graphics/weapons/lance/left.png",
+      "size": 290,
+      "sha256": "aac78e60f7e52b4309a07034985d0f90fc323e24e1746f9c62fdc47d61afdece"
+    },
+    {
+      "path": "levels/zelda/graphics/weapons/lance/right.png",
+      "size": 279,
+      "sha256": "8f0827510042a9249fa363ac0193cca08109b5cfa6e327d57fd7c75a092e1a39"
+    },
+    {
+      "path": "levels/zelda/graphics/weapons/lance/up.png",
+      "size": 1788,
+      "sha256": "ab352060b97ccdefe7b8587fde135c11c1c30971ff14601363274119c8785edd"
+    },
+    {
+      "path": "levels/zelda/graphics/weapons/rapier/down.png",
+      "size": 174,
+      "sha256": "a05cda1f9f062b2336a863344be6720660791df89adce413ce70c9c9ba718de5"
+    },
+    {
+      "path": "levels/zelda/graphics/weapons/rapier/full.png",
+      "size": 271,
+      "sha256": "23abedf7f6247e34d284e42d7c04d77cc476e9cffbef0e38ff23b82680397b51"
+    },
+    {
+      "path": "levels/zelda/graphics/weapons/rapier/left.png",
+      "size": 254,
+      "sha256": "ed8179be47480ba8f09009fa08e09728976b3d02df1a684c25f434ea87d54551"
+    },
+    {
+      "path": "levels/zelda/graphics/weapons/rapier/right.png",
+      "size": 284,
+      "sha256": "5b6b59498f2c4112f9cb0c169397d622cbb09e1045d2f6fca5d232a46881a971"
+    },
+    {
+      "path": "levels/zelda/graphics/weapons/rapier/up.png",
+      "size": 277,
+      "sha256": "fdceae3a1ead44a5d033a8b6890c5222eda83a2e865a0a9c4c12bbec6c9321a2"
+    },
+    {
+      "path": "levels/zelda/graphics/weapons/sai/down.png",
+      "size": 168,
+      "sha256": "4dc09a44a225b31cb324cfd42e756f3bc7223613e348994095bff32e5cfea419"
+    },
+    {
+      "path": "levels/zelda/graphics/weapons/sai/full.png",
+      "size": 249,
+      "sha256": "c52fadb838689fddfe2ead482bc447472f26bea1b154656109db32b7d323f015"
+    },
+    {
+      "path": "levels/zelda/graphics/weapons/sai/left.png",
+      "size": 222,
+      "sha256": "a77ac035d2ca50cd3c4c345230d5a90ae2eeb391b1379d9bb7029e8041dc83c4"
+    },
+    {
+      "path": "levels/zelda/graphics/weapons/sai/right.png",
+      "size": 220,
+      "sha256": "9ea2403c404a00190f32d9aa21860449e5eb7cb1850585f1642cf678134e3d04"
+    },
+    {
+      "path": "levels/zelda/graphics/weapons/sai/up.png",
+      "size": 239,
+      "sha256": "004ef8355ad74f8fd7424ec40f36a35563f1cf6bc1becbb235b1def6654c97bd"
+    },
+    {
+      "path": "levels/zelda/graphics/weapons/sword/down.png",
+      "size": 1757,
+      "sha256": "98cdd34ebb9791a162cfed996c46c25e45dd584447ce68be70ea1f6d175adb7a"
+    },
+    {
+      "path": "levels/zelda/graphics/weapons/sword/full.png",
+      "size": 251,
+      "sha256": "e168ecab7806a7798006b6ef765ab15c7f47ebadf5897785cab1264cfbeec918"
+    },
+    {
+      "path": "levels/zelda/graphics/weapons/sword/left.png",
+      "size": 212,
+      "sha256": "dae399d37958769828892b5733f9dd44e00d2ac6d61df807c1ddb84d8e0080b5"
+    },
+    {
+      "path": "levels/zelda/graphics/weapons/sword/right.png",
+      "size": 215,
+      "sha256": "317d93e10bcffdd2afc551101d1eab4fccafaf33274b64416b1608d4969c12da"
+    },
+    {
+      "path": "levels/zelda/graphics/weapons/sword/up.png",
+      "size": 218,
+      "sha256": "09ee0fd3a9639edf512f87962926485f163c8ebedd11dd3271b1933a87a146b4"
+    },
+    {
+      "path": "levels/zelda/level.py",
+      "size": 201,
+      "sha256": "bc8afb17bd517a9cc3341d3053df43b64f439a08d3e80d2e9d85b73973bdd959"
+    },
+    {
+      "path": "levels/zelda/main.py",
+      "size": 229,
+      "sha256": "39de095cec7e923436ac25a5f47ab5a5440719a88292afc9c55566f162d14aa6"
+    },
+    {
+      "path": "levels/zelda/map/map_Details.csv",
+      "size": 8566,
+      "sha256": "a5acdd158bcc277a9b563ca6faeac3c8b21a1a6d33c18750c0846d41f97d0e84"
+    },
+    {
+      "path": "levels/zelda/map/map_Entities.csv",
+      "size": 8636,
+      "sha256": "8f74a9de1627242f7d0fa8b0bb3d22005e3ab1034bdaebf2fb32902c4b519c42"
+    },
+    {
+      "path": "levels/zelda/map/map_Floor.csv",
+      "size": 11216,
+      "sha256": "89608f36bfa4e9bb19a104e4dba6afd9dfa4364bd37b882614ec258ad397dc85"
+    },
+    {
+      "path": "levels/zelda/map/map_FloorBlocks.csv",
+      "size": 8925,
+      "sha256": "fcd40161689e58c567ac245b1abb6f47847c252f53bedf487c32d12471e1b91e"
+    },
+    {
+      "path": "levels/zelda/map/map_Grass.csv",
+      "size": 8506,
+      "sha256": "0712b573aaee206d211f2ca73b4488efafc4be9a7b1c857b00a4e041b260d762"
+    },
+    {
+      "path": "levels/zelda/map/map_LargeObjects.csv",
+      "size": 8531,
+      "sha256": "b39c1bea04cc9d8a6f56f8fe5ebe4862a35d985eb7d1746fcd91ccec9254f8f0"
+    },
+    {
+      "path": "levels/zelda/map/map_Objects.csv",
+      "size": 8531,
+      "sha256": "b39c1bea04cc9d8a6f56f8fe5ebe4862a35d985eb7d1746fcd91ccec9254f8f0"
+    },
+    {
+      "path": "levels/zelda/player.py",
+      "size": 202,
+      "sha256": "5ab857a9bcf260a159b857141ac35fe3b6e5051bbf46b35da2858c611b457d65"
+    },
+    {
+      "path": "levels/zelda/settings.py",
+      "size": 204,
+      "sha256": "508d0e6e4c761846765ec0a4b126531f0b1b89d62e0ef5192b3df154733a4842"
+    },
+    {
+      "path": "levels/zelda/support.py",
+      "size": 203,
+      "sha256": "99de6b09725dc60e97aafdd3bf35372279429b93c0bbaf06402b02ec4c7cce91"
+    },
+    {
+      "path": "levels/zelda/tile.py",
+      "size": 200,
+      "sha256": "0ff9b68a7b54e156d6534668e6b715f24c2dd8f303c1465b106a6d75604c150c"
+    },
+    {
+      "path": "levels/zelda/ui.py",
+      "size": 198,
+      "sha256": "e181a75d2f46f930fb3c2cf6a62d0159d7646756a08611097ba6500287dfc8ee"
+    },
+    {
+      "path": "levels/zelda/weapon.py",
+      "size": 202,
+      "sha256": "13c67386752f15f2cebf2b92b023650391e65b19e92b5b273b9d5c8c3b265813"
+    },
+    {
+      "path": "main.py",
+      "size": 95,
+      "sha256": "75c47d72357d4ec903558101ea326bea7097422a29602783ab675bfe2e829b07"
+    },
+    {
+      "path": "matrix/README.md",
+      "size": 946,
+      "sha256": "960bbf44466f4e14d661e3884aa447368dd5d7a9a1e4f390cca86b7dd9c6ae67"
+    },
+    {
+      "path": "matrix/__init__.py",
+      "size": 52,
+      "sha256": "88fcdd1927ea3bfbf13ce3060749ede0d9bbaf8e972c281bd1b2f76903d8eb1a"
+    },
+    {
+      "path": "matrix/__main__.py",
+      "size": 59,
+      "sha256": "463608676f5f9e97dfbed823794a82b3738a5864ec2f61a698607173be27a7fb"
+    },
+    {
+      "path": "matrix/assets/backgrounds/matrix-opening.jpg",
+      "size": 630312,
+      "sha256": "f86c94589cd8cf27c85650682572fa627b304aa026933372dec31d450a1c4a20"
+    },
+    {
+      "path": "matrix/assets/maps/matrix.tmx",
+      "size": 19639,
+      "sha256": "bb3debd9d5670418382791c7debdd63750835e8900e0925bfbbe9701b3acd7e8"
+    },
+    {
+      "path": "matrix/assets/sprites/player_snoblin.png",
+      "size": 3266,
+      "sha256": "776760ec65248dfde3fceb0a7ae4ca460bb2df784565453f49d42483285f4a97"
+    },
+    {
+      "path": "matrix/assets/tilesets/basic-interior.tsx",
+      "size": 250,
+      "sha256": "21d9de69ef4380632b3911a1beea4eb6535df4f76da1a8d7e83318f79858d704"
+    },
+    {
+      "path": "matrix/assets/tilesets/interiors_free_16x16.png",
+      "size": 134462,
+      "sha256": "01a890f9e34d8dc8d7e275489143b837569127d5f928419e6b6edc54b9b5ff33"
+    },
+    {
+      "path": "matrix/camera.py",
+      "size": 1072,
+      "sha256": "33436799f153b189398faecd2fa4e18638baf66adad78eec4268d37bf168cef3"
+    },
+    {
+      "path": "matrix/main.py",
+      "size": 6510,
+      "sha256": "996cd7f281ccbc3dd8da2431e3610c09b7f9b27143319dd5bf6e0905e6c892a2"
+    },
+    {
+      "path": "matrix/paths.py",
+      "size": 594,
+      "sha256": "fa386113e2624e517f78eee2905c32c766c9d24d65b039cd58682970c3a80889"
+    },
+    {
+      "path": "matrix/player.py",
+      "size": 3275,
+      "sha256": "5c5680b5d4ba4b07f262d81b6ef23466ddccb1cfcdce41cdafc1a8ab9059f564"
+    },
+    {
+      "path": "matrix/registry.py",
+      "size": 2280,
+      "sha256": "df8a91707d8cb1f3b2f3bf63db035b1eb3669d2cc90d6a3879dcc63a99812d02"
+    },
+    {
+      "path": "matrix/settings.py",
+      "size": 615,
+      "sha256": "798a7ecb5d1d2f90aded4f60d3d256b648d32e789b1a093d08b585ecff6e3b80"
+    },
+    {
+      "path": "matrix/sprites.py",
+      "size": 1209,
+      "sha256": "029953ce985cbe387d3ca25af0ebc87c2ef586c5ce955205adb502a4336983e7"
+    },
+    {
+      "path": "matrix/terminal.py",
+      "size": 3535,
+      "sha256": "ec9a15c6da64bec4abc35280d0e9b739122f5ae8c9d34094cf74fd88d2fd5f03"
+    },
+    {
+      "path": "matrix/world.py",
+      "size": 3043,
+      "sha256": "fc9839121e69826427d66659277ee1056ec6bdc500f502d6ba868c053f0da17e"
+    },
+    {
+      "path": "packaging/untitled_main.py",
+      "size": 140,
+      "sha256": "a490dc60b5bdfe86d816a05c7434c4360629fc2fe692d117811989faa4b9538b"
+    },
+    {
+      "path": "packaging/untitled_windows.spec",
+      "size": 919,
+      "sha256": "87817ab4c19c9b2444e8e439f80c588e205fa442877e5a1f1fdc79a33640461c"
+    },
+    {
+      "path": "pyproject.toml",
+      "size": 316,
+      "sha256": "3a1bf43f8a1f0f33e1c0e55b0d203c20a2b8c66bf3d0a778c40637ac8521352b"
+    },
+    {
+      "path": "requirements.txt",
+      "size": 80,
+      "sha256": "45418f31305cd9fe8f1aed0fba7a456422d039d464e8d6d29d0a41b08f2838a7"
+    },
+    {
+      "path": "scripts/build_untitled_windows.py",
+      "size": 846,
+      "sha256": "f70ec582439bf540bbfa3a1edbcc8fd0ea6749c3b140634ed03c6e6bf8055b20"
+    },
+    {
+      "path": "scripts/notion_mcp.sh",
+      "size": 531,
+      "sha256": "1930f6f2036de719dd5daf3978f5c5c33c366d49cf43444c0de348b9aefd668c"
+    },
+    {
+      "path": "shared_assets/README.md",
+      "size": 284,
+      "sha256": "53a2d02a6dffdf8a7bc8d9aa609ee65cbce4560c7e6ba99dae87e453f10cf8d6"
+    },
+    {
+      "path": "shared_assets/tilesets/16x16.png",
+      "size": 36956,
+      "sha256": "51fcfe915af508d6f55429149e555356a572aee2af1103c575ba483052db0389"
+    },
+    {
+      "path": "shared_assets/tilesets/intro_forest.tsx",
+      "size": 231,
+      "sha256": "cc0581cde951a5386cc1e3f5a8b975de7ad0db634abd7397d4882698330b2e7b"
+    }
+  ]
+}
