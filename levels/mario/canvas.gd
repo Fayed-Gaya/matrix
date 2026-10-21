@@ -41,9 +41,7 @@ func _draw() -> void:
 			if item.kind != kind or item.rect.end.x < camera-256 or item.rect.position.x > camera+1456:
 				continue
 			if kind in ["terrain", "grass"]:
-				var atlas: Texture2D = TERRAIN if kind == "terrain" else GRASS
-				var columns: int = atlas.get_width() / 64
-				draw_texture_rect_region(atlas,Rect2(item.rect.position,Vector2(64,64)),Rect2((int(item.tile)%columns)*64,(int(item.tile)/columns)*64,64,64))
+				level.native_map.paint_cell(self, kind, item.cell)
 			elif kind == "crates":
 				draw_texture(level.image("terrain/crate.png"),item.rect.position)
 			else:

@@ -7,6 +7,7 @@ const WEAPONS: Array[String] = ["sword","lance","axe","rapier","sai"]
 const SPELLS: Array[String] = ["flame","heal"]
 var data: Dictionary = JSON.parse_string(FileAccess.get_file_as_string("res://levels/zelda/assets/manifest.json"))
 var cache: Dictionary = {}
+var native_map: MatrixNativeMap
 var objects: Array[Dictionary] = []
 var enemies: Array[Dictionary] = []
 var particles: Array[Dictionary] = []
@@ -73,6 +74,8 @@ func _ready() -> void:
 
 
 func _exit_tree() -> void:
+	if native_map != null:
+		native_map.free()
 	for child: Node in get_children():
 		if child is AudioStreamPlayer:
 			child.stop()
@@ -90,14 +93,17 @@ func shrink(rect: Rect2, x: float, y: float) -> Rect2:
 
 
 func build_world() -> void:
+	native_map = MatrixNativeMap.open("res://levels/zelda/maps/world.tscn")
+	var placements: Dictionary = native_map.read_rows()
+	var origin: Vector2i = native_map.cell_bounds().position
 	for kind: String in ["map_FloorBlocks","map_Grass","map_Objects","map_Entities"]:
-		var rows: Array = data.maps[kind]
+		var rows: Array = placements[kind]
 		for y: int in range(rows.size()):
 			for x: int in range(rows[y].size()):
 				var tile: int = int(rows[y][x])
 				if tile < 0:
 					continue
-				var position: Vector2 = Vector2(x*64,y*64)
+				var position: Vector2 = Vector2((x+origin.x)*64,(y+origin.y)*64)
 				if kind == "map_Entities":
 					if tile == 394:
 						player = shrink(Rect2(position,image("test/player.png").get_size()),6,26)

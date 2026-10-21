@@ -16,19 +16,29 @@ def main() -> None:
     }
     failures = []
     verified = 0
+    normalized = 0
     for entry in manifest["files"]:
         if entry["path"] in retained:
             continue
         archived = root / "legacy/pygame" / entry["path"]
         if not archived.is_file():
             failures.append(f"Missing: {archived.relative_to(root)}")
-        elif hashlib.sha256(archived.read_bytes()).hexdigest() != entry["sha256"]:
-            failures.append(f"Changed: {archived.relative_to(root)}")
         else:
-            verified += 1
+            content = archived.read_bytes()
+            if hashlib.sha256(content).hexdigest() == entry["sha256"]:
+                verified += 1
+            elif b"\r\n" not in content and hashlib.sha256(
+                content.replace(b"\n", b"\r\n")
+            ).hexdigest() == entry["sha256"]:
+                # core.autocrlf=input normalized tracked text on initial commit.
+                # Reconstruct only in memory; never rewrite the preserved archive.
+                normalized += 1
+            else:
+                failures.append(f"Changed: {archived.relative_to(root)}")
     if failures:
         raise SystemExit("\n".join(failures))
-    print(f"Archive preservation passed: {verified} original files byte-identical")
+    print(f"Archive preservation passed: {verified} byte-identical; "
+          f"{normalized} match after exact LF-to-CRLF reconstruction")
 
 
 if __name__ == "__main__":

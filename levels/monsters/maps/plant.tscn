@@ -1,0 +1,2149 @@
+[gd_scene format=4]
+
+[ext_resource type="Script" path="res://shared/maps/native_map.gd" id="1_vvdey"]
+[ext_resource type="TileSet" path="res://levels/monsters/maps/terrain.tres" id="2_y51af"]
+[ext_resource type="Script" path="res://shared/maps/map_object.gd" id="3_bwjox"]
+
+[node name="World" type="Node2D" unique_id=464097126]
+script = ExtResource("1_vvdey")
+grid_size = Vector2i(24, 34)
+
+[node name="Terrain" type="TileMapLayer" parent="." unique_id=913340716]
+tile_map_data = PackedByteArray("AAAAAAAAAQAAAAAAAAABAAAAAQAAAAAAAAACAAAAAQAAAAAAAAADAAAAAQAAAAAAAAAEAAAAAQAAAAAAAAAFAAAAAQAAAAAAAAAGAAAAAQAAAAAAAAAHAAAAAQAAAAAAAAAIAAAAAQAAAAAAAAAJAAAAAQAAAAAAAAAKAAAAAQAAAAAAAAALAAAAAQAAAAAAAAAMAAAAAQAAAAAAAAANAAAAAQAAAAAAAAAOAAAAAQAAAAAAAAAPAAAAAQAAAAAAAAAQAAAAAQAAAAAAAAARAAAAAQAAAAAAAAASAAAAAQAAAAAAAAATAAAAAQAAAAAAAAAUAAAAAQAAAAAAAAAVAAAAAQAAAAAAAAAWAAAAAQAAAAAAAAAXAAAAAQAAAAAAAAAAAAEAAQAAAAAAAAABAAEAAQAAAAAAAAACAAEAAQAAAAAAAAADAAEAAQAAAAAAAAAEAAEAAQAAAAAAAAAFAAEAAQAAAAAAAAAGAAEAAQAAAAAAAAAHAAEAAQAAAAAAAAAIAAEAAQAAAAAAAAAJAAEAAQAAAAAAAAAKAAEAAQAAAAAAAAALAAEAAQAAAAAAAAAMAAEAAQAAAAAAAAANAAEAAQAAAAAAAAAOAAEAAQAAAAAAAAAPAAEAAQAAAAAAAAAQAAEAAQAAAAAAAAARAAEAAQAAAAAAAAASAAEAAQAAAAAAAAATAAEAAQAAAAAAAAAUAAEAAQAAAAAAAAAVAAEAAQAAAAAAAAAWAAEAAQAAAAAAAAAXAAEAAQAAAAAAAAAAAAIAAQAAAAAAAAABAAIAAQAAAAAAAAACAAIAAQAAAAAAAAADAAIAAQAAAAAAAAAEAAIAAQAAAAAAAAAFAAIAAQAAAAAAAAAGAAIAAQAAAAAAAAAHAAIAAQAAAAAAAAAIAAIAAQAAAAAAAAAJAAIAAQAAAAAAAAAKAAIAAQAAAAAAAAALAAIAAQAAAAAAAAAMAAIAAQAAAAAAAAANAAIAAQAAAAAAAAAOAAIAAQAAAAAAAAAPAAIAAQAAAAAAAAAQAAIAAQAAAAAAAAARAAIAAQAAAAAAAAASAAIAAQAAAAAAAAATAAIAAQAAAAAAAAAUAAIAAQAAAAAAAAAVAAIAAQAAAAAAAAAWAAIAAQAAAAAAAAAXAAIAAQAAAAAAAAAAAAMAAQAAAAAAAAABAAMAAQAAAAAAAAACAAMAAQAAAAAAAAADAAMAAQAAAAAAAAAEAAMAAQAAAAAAAAAFAAMAAQAAAAAAAAAGAAMAAQAAAAAAAAAHAAMAAQAAAAAAAAAIAAMAAQAAAAAAAAAJAAMAAQAAAAAAAAAKAAMAAQAAAAAAAAALAAMAAQAAAAAAAAAMAAMAAQAAAAAAAAANAAMAAQAAAAAAAAAOAAMAAQAAAAAAAAAPAAMAAQAAAAAAAAAQAAMAAQAAAAAAAAARAAMAAQAAAAAAAAASAAMAAQAAAAAAAAATAAMAAQAAAAAAAAAUAAMAAQAAAAAAAAAVAAMAAQAAAAAAAAAWAAMAAQAAAAAAAAAXAAMAAQAAAAAAAAAAAAQAAQAAAAAAAAABAAQAAQAAAAAAAAACAAQAAQAAAAAAAAADAAQAAQAAAAAAAAAEAAQAAQAAAAAAAAAFAAQAAQAAAAAAAAAGAAQAAgAAAAAAAAAHAAQAAwAAAAAAAAAIAAQAAwAAAAAAAAAJAAQAAwAAAAAAAAAKAAQAAwAAAAAAAAALAAQABAAAAAAAAAAMAAQAAQAAAAAAAAANAAQAAQAAAAAAAAAOAAQAAQAAAAAAAAAPAAQAAQAAAAAAAAAQAAQAAQAAAAAAAAARAAQAAQAAAAAAAAASAAQAAQAAAAAAAAATAAQAAQAAAAAAAAAUAAQAAQAAAAAAAAAVAAQAAQAAAAAAAAAWAAQAAQAAAAAAAAAXAAQAAQAAAAAAAAAAAAUAAQAAAAAAAAABAAUAAQAAAAAAAAACAAUAAQAAAAAAAAADAAUAAQAAAAAAAAAEAAUAAgAAAAAAAAAFAAUAAwAAAAAAAAAGAAUAAwAAAAAAAAAHAAUAAQAAAAAAAAAIAAUAAQAAAAAAAAAJAAUAAQAAAAAAAAAKAAUAAQAAAAAAAAALAAUAAwAAAAAAAAAMAAUAAwAAAAAAAAANAAUAAwAAAAAAAAAOAAUAAwAAAAAAAAAPAAUABAAAAAAAAAAQAAUAAQAAAAAAAAARAAUAAQAAAAAAAAASAAUAAQAAAAAAAAATAAUAAQAAAAAAAAAUAAUAAQAAAAAAAAAVAAUAAQAAAAAAAAAWAAUAAQAAAAAAAAAXAAUAAQAAAAAAAAAAAAYAAQAAAAAAAAABAAYAAQAAAAAAAAACAAYAAQAAAAAAAAADAAYAAgAAAAAAAAAEAAYAAwAAAAAAAAAFAAYAAQAAAAAAAAAGAAYAAQAAAAAAAAAHAAYAAQAAAAAAAAAIAAYAAQAAAAAAAAAJAAYAAQAAAAAAAAAKAAYAAQAAAAAAAAALAAYAAQAAAAAAAAAMAAYAAQAAAAAAAAANAAYAAQAAAAAAAAAOAAYAAQAAAAAAAAAPAAYAAwAAAAAAAAAQAAYAAwAAAAAAAAARAAYAAwAAAAAAAAASAAYABAAAAAAAAAATAAYAAQAAAAAAAAAUAAYAAQAAAAAAAAAVAAYAAQAAAAAAAAAWAAYAAQAAAAAAAAAXAAYAAQAAAAAAAAAAAAcAAQAAAAAAAAABAAcAAQAAAAAAAAACAAcAAgAAAAAAAAADAAcAAwAAAAAAAAAEAAcAAQAAAAAAAAAFAAcAAQAAAAAAAAAGAAcAAQAAAAAAAAAHAAcAAQAAAAAAAAAIAAcAAQAAAAAAAAAJAAcAAQAAAAAAAAAKAAcAAQAAAAAAAAALAAcAAQAAAAAAAAAMAAcAAQAAAAAAAAANAAcAAQAAAAAAAAAOAAcAAQAAAAAAAAAPAAcAAQAAAAAAAAAQAAcAAQAAAAAAAAARAAcAAQAAAAAAAAASAAcAAwAAAAAAAAATAAcABAAAAAAAAAAUAAcAAQAAAAAAAAAVAAcAAQAAAAAAAAAWAAcAAQAAAAAAAAAXAAcAAQAAAAAAAAAAAAgAAQAAAAAAAAABAAgAAgAAAAAAAAACAAgAAwAAAAAAAAADAAgAAQAAAAAAAAAEAAgAAQAAAAAAAAAFAAgAAQAAAAAAAAAGAAgABQAAAAAAAAAHAAgABgAAAAAAAAAIAAgABgAAAAAAAAAJAAgABgAAAAAAAAAKAAgABgAAAAAAAAALAAgABgAAAAAAAAAMAAgABgAAAAAAAAANAAgABgAAAAAAAAAOAAgABgAAAAAAAAAPAAgABwAAAAAAAAAQAAgAAQAAAAAAAAARAAgAAQAAAAAAAAASAAgAAQAAAAAAAAATAAgAAwAAAAAAAAAUAAgABAAAAAAAAAAVAAgAAQAAAAAAAAAWAAgAAQAAAAAAAAAXAAgAAQAAAAAAAAAAAAkAAQAAAAAAAAABAAkACAAAAAAAAAACAAkAAQAAAAAAAAADAAkAAQAAAAAAAAAEAAkAAQAAAAAAAAAFAAkABQAAAAAAAAAGAAkACQAAAAAAAAAHAAkAAQAAAAAAAAAIAAkAAQAAAAAAAAAJAAkAAQAAAAAAAAAKAAkAAQAAAAAAAAALAAkAAQAAAAAAAAAMAAkAAQAAAAAAAAANAAkAAQAAAAAAAAAOAAkAAQAAAAAAAAAPAAkACgAAAAAAAAAQAAkABwAAAAAAAAARAAkAAQAAAAAAAAASAAkAAQAAAAAAAAATAAkAAQAAAAAAAAAUAAkACwAAAAAAAAAVAAkAAwAAAAAAAAAWAAkABAAAAAAAAAAXAAkAAQAAAAAAAAAAAAoAAgAAAAAAAAABAAoADAAAAAAAAAACAAoAAQAAAAAAAAADAAoAAQAAAAAAAAAEAAoABQAAAAAAAAAFAAoACQAAAAAAAAAGAAoAAQAAAAAAAAAHAAoAAQAAAAAAAAAIAAoAAgAAAAAAAAAJAAoAAwAAAAAAAAAKAAoAAwAAAAAAAAALAAoAAwAAAAAAAAAMAAoAAwAAAAAAAAANAAoABAAAAAAAAAAOAAoAAQAAAAAAAAAPAAoAAQAAAAAAAAAQAAoACgAAAAAAAAARAAoABwAAAAAAAAASAAoAAQAAAAAAAAATAAoAAQAAAAAAAAAUAAoAAQAAAAAAAAAVAAoAAQAAAAAAAAAWAAoADQAAAAAAAAAXAAoAAQAAAAAAAAAAAAsACAAAAAAAAAABAAsAAQAAAAAAAAACAAsAAQAAAAAAAAADAAsAAQAAAAAAAAAEAAsADQAAAAAAAAAFAAsAAQAAAAAAAAAGAAsAAQAAAAAAAAAHAAsAAgAAAAAAAAAIAAsADAAAAAAAAAAJAAsAAgAAAAAAAAAKAAsAAwAAAAAAAAALAAsAAwAAAAAAAAAMAAsABAAAAAAAAAANAAsACwAAAAAAAAAOAAsABAAAAAAAAAAPAAsAAQAAAAAAAAAQAAsAAQAAAAAAAAARAAsACgAAAAAAAAASAAsABwAAAAAAAAATAAsAAQAAAAAAAAAUAAsAAQAAAAAAAAAVAAsAAQAAAAAAAAAWAAsADQAAAAAAAAAXAAsAAQAAAAAAAAAAAAwACAAAAAAAAAABAAwAAQAAAAAAAAACAAwAAQAAAAAAAAADAAwAAQAAAAAAAAAEAAwADQAAAAAAAAAFAAwAAQAAAAAAAAAGAAwAAQAAAAAAAAAHAAwACAAAAAAAAAAIAAwAAQAAAAAAAAAJAAwACAAAAAAAAAAKAAwAAQAAAAAAAAALAAwAAQAAAAAAAAAMAAwADQAAAAAAAAANAAwAAQAAAAAAAAAOAAwADQAAAAAAAAAPAAwAAQAAAAAAAAAQAAwAAQAAAAAAAAARAAwAAQAAAAAAAAASAAwACgAAAAAAAAATAAwABwAAAAAAAAAUAAwAAQAAAAAAAAAVAAwAAQAAAAAAAAAWAAwADQAAAAAAAAAXAAwAAQAAAAAAAAAAAA0ACAAAAAAAAAABAA0AAQAAAAAAAAACAA0AAQAAAAAAAAADAA0AAQAAAAAAAAAEAA0ADQAAAAAAAAAFAA0AAQAAAAAAAAAGAA0AAQAAAAAAAAAHAA0ACAAAAAAAAAAIAA0AAQAAAAAAAAAJAA0ACgAAAAAAAAAKAA0ADgAAAAAAAAALAA0ADgAAAAAAAAAMAA0ACQAAAAAAAAANAA0AAQAAAAAAAAAOAA0ADQAAAAAAAAAPAA0AAQAAAAAAAAAQAA0AAQAAAAAAAAARAA0AAQAAAAAAAAASAA0AAQAAAAAAAAATAA0ACAAAAAAAAAAUAA0AAQAAAAAAAAAVAA0AAQAAAAAAAAAWAA0ADQAAAAAAAAAXAA0AAQAAAAAAAAAAAA4ACAAAAAAAAAABAA4AAQAAAAAAAAACAA4AAQAAAAAAAAADAA4ABQAAAAAAAAAEAA4ACQAAAAAAAAAFAA4AAQAAAAAAAAAGAA4AAQAAAAAAAAAHAA4ACAAAAAAAAAAIAA4AAQAAAAAAAAAJAA4AAQAAAAAAAAAKAA4AAQAAAAAAAAALAA4AAQAAAAAAAAAMAA4AAQAAAAAAAAANAA4AAQAAAAAAAAAOAA4ADQAAAAAAAAAPAA4AAQAAAAAAAAAQAA4AAQAAAAAAAAARAA4AAQAAAAAAAAASAA4AAQAAAAAAAAATAA4ACAAAAAAAAAAUAA4AAQAAAAAAAAAVAA4AAQAAAAAAAAAWAA4ADQAAAAAAAAAXAA4AAQAAAAAAAAAAAA8ACAAAAAAAAAABAA8AAQAAAAAAAAACAA8AAQAAAAAAAAADAA8ADQAAAAAAAAAEAA8AAQAAAAAAAAAFAA8AAQAAAAAAAAAGAA8AAQAAAAAAAAAHAA8ACAAAAAAAAAAIAA8AAQAAAAAAAAAJAA8AAQAAAAAAAAAKAA8AAQAAAAAAAAALAA8AAQAAAAAAAAAMAA8AAQAAAAAAAAANAA8AAQAAAAAAAAAOAA8ADQAAAAAAAAAPAA8AAQAAAAAAAAAQAA8AAQAAAAAAAAARAA8AAQAAAAAAAAASAA8AAQAAAAAAAAATAA8ACAAAAAAAAAAUAA8AAQAAAAAAAAAVAA8AAQAAAAAAAAAWAA8ADQAAAAAAAAAXAA8AAQAAAAAAAAAAABAACAAAAAAAAAABABAAAQAAAAAAAAACABAAAQAAAAAAAAADABAADQAAAAAAAAAEABAAAQAAAAAAAAAFABAAAQAAAAAAAAAGABAAAQAAAAAAAAAHABAACAAAAAAAAAAIABAAAQAAAAAAAAAJABAAAQAAAAAAAAAKABAAAQAAAAAAAAALABAAAQAAAAAAAAAMABAAAQAAAAAAAAANABAABQAAAAAAAAAOABAACQAAAAAAAAAPABAAAQAAAAAAAAAQABAAAQAAAAAAAAARABAAAQAAAAAAAAASABAAAQAAAAAAAAATABAACAAAAAAAAAAUABAAAQAAAAAAAAAVABAAAQAAAAAAAAAWABAADQAAAAAAAAAXABAAAQAAAAAAAAAAABEACgAAAAAAAAABABEABwAAAAAAAAACABEAAQAAAAAAAAADABEACwAAAAAAAAAEABEABAAAAAAAAAAFABEAAQAAAAAAAAAGABEAAQAAAAAAAAAHABEACgAAAAAAAAAIABEABgAAAAAAAAAJABEABwAAAAAAAAAKABEAAQAAAAAAAAALABEAAQAAAAAAAAAMABEABQAAAAAAAAANABEACQAAAAAAAAAOABEAAQAAAAAAAAAPABEAAQAAAAAAAAAQABEAAQAAAAAAAAARABEAAQAAAAAAAAASABEAAQAAAAAAAAATABEACAAAAAAAAAAUABEAAQAAAAAAAAAVABEAAQAAAAAAAAAWABEADQAAAAAAAAAXABEAAQAAAAAAAAAAABIAAQAAAAAAAAABABIACAAAAAAAAAACABIAAQAAAAAAAAADABIAAQAAAAAAAAAEABIADQAAAAAAAAAFABIAAQAAAAAAAAAGABIAAQAAAAAAAAAHABIAAQAAAAAAAAAIABIAAQAAAAAAAAAJABIACAAAAAAAAAAKABIAAQAAAAAAAAALABIAAQAAAAAAAAAMABIADQAAAAAAAAANABIAAQAAAAAAAAAOABIAAQAAAAAAAAAPABIAAQAAAAAAAAAQABIAAQAAAAAAAAARABIAAQAAAAAAAAASABIAAgAAAAAAAAATABIADAAAAAAAAAAUABIAAQAAAAAAAAAVABIAAQAAAAAAAAAWABIADQAAAAAAAAAXABIAAQAAAAAAAAAAABMAAQAAAAAAAAABABMACAAAAAAAAAACABMAAQAAAAAAAAADABMAAQAAAAAAAAAEABMACwAAAAAAAAAFABMAAwAAAAAAAAAGABMAAwAAAAAAAAAHABMAAwAAAAAAAAAIABMAAwAAAAAAAAAJABMADAAAAAAAAAAKABMAAQAAAAAAAAALABMAAQAAAAAAAAAMABMADQAAAAAAAAANABMAAQAAAAAAAAAOABMAAQAAAAAAAAAPABMAAQAAAAAAAAAQABMAAQAAAAAAAAARABMAAQAAAAAAAAASABMACAAAAAAAAAATABMAAQAAAAAAAAAUABMAAQAAAAAAAAAVABMAAQAAAAAAAAAWABMADQAAAAAAAAAXABMAAQAAAAAAAAAAABQAAQAAAAAAAAABABQACgAAAAAAAAACABQABwAAAAAAAAADABQAAQAAAAAAAAAEABQAAQAAAAAAAAAFABQAAQAAAAAAAAAGABQAAQAAAAAAAAAHABQAAQAAAAAAAAAIABQAAQAAAAAAAAAJABQAAQAAAAAAAAAKABQAAQAAAAAAAAALABQABQAAAAAAAAAMABQACQAAAAAAAAANABQAAQAAAAAAAAAOABQAAQAAAAAAAAAPABQAAQAAAAAAAAAQABQAAQAAAAAAAAARABQAAgAAAAAAAAASABQADAAAAAAAAAATABQAAQAAAAAAAAAUABQAAQAAAAAAAAAVABQABQAAAAAAAAAWABQACQAAAAAAAAAXABQAAQAAAAAAAAAAABUAAQAAAAAAAAABABUAAQAAAAAAAAACABUACAAAAAAAAAADABUAAQAAAAAAAAAEABUAAQAAAAAAAAAFABUAAQAAAAAAAAAGABUAAQAAAAAAAAAHABUAAQAAAAAAAAAIABUAAQAAAAAAAAAJABUAAQAAAAAAAAAKABUABQAAAAAAAAALABUACQAAAAAAAAAMABUAAQAAAAAAAAANABUAAgAAAAAAAAAOABUAAwAAAAAAAAAPABUAAwAAAAAAAAAQABUAAwAAAAAAAAARABUADAAAAAAAAAASABUAAQAAAAAAAAATABUAAQAAAAAAAAAUABUABQAAAAAAAAAVABUACQAAAAAAAAAWABUAAQAAAAAAAAAXABUAAQAAAAAAAAAAABYAAQAAAAAAAAABABYAAQAAAAAAAAACABYACgAAAAAAAAADABYABgAAAAAAAAAEABYABgAAAAAAAAAFABYABgAAAAAAAAAGABYABgAAAAAAAAAHABYABgAAAAAAAAAIABYABgAAAAAAAAAJABYABgAAAAAAAAAKABYACQAAAAAAAAALABYAAQAAAAAAAAAMABYAAgAAAAAAAAANABYADAAAAAAAAAAOABYAAQAAAAAAAAAPABYAAQAAAAAAAAAQABYAAQAAAAAAAAARABYAAQAAAAAAAAASABYAAQAAAAAAAAATABYABQAAAAAAAAAUABYACQAAAAAAAAAVABYAAQAAAAAAAAAWABYAAQAAAAAAAAAXABYAAQAAAAAAAAAAABcAAQAAAAAAAAABABcAAQAAAAAAAAACABcAAQAAAAAAAAADABcAAQAAAAAAAAAEABcAAQAAAAAAAAAFABcAAQAAAAAAAAAGABcAAQAAAAAAAAAHABcAAQAAAAAAAAAIABcAAQAAAAAAAAAJABcAAQAAAAAAAAAKABcAAQAAAAAAAAALABcAAgAAAAAAAAAMABcADAAAAAAAAAANABcAAQAAAAAAAAAOABcAAQAAAAAAAAAPABcAAQAAAAAAAAAQABcAAQAAAAAAAAARABcAAQAAAAAAAAASABcABQAAAAAAAAATABcACQAAAAAAAAAUABcAAQAAAAAAAAAVABcAAQAAAAAAAAAWABcAAQAAAAAAAAAXABcAAQAAAAAAAAAAABgAAQAAAAAAAAABABgAAQAAAAAAAAACABgAAQAAAAAAAAADABgAAQAAAAAAAAAEABgAAQAAAAAAAAAFABgAAQAAAAAAAAAGABgAAQAAAAAAAAAHABgAAQAAAAAAAAAIABgAAQAAAAAAAAAJABgAAQAAAAAAAAAKABgAAgAAAAAAAAALABgADAAAAAAAAAAMABgAAQAAAAAAAAANABgAAQAAAAAAAAAOABgAAQAAAAAAAAAPABgABQAAAAAAAAAQABgABgAAAAAAAAARABgABgAAAAAAAAASABgACQAAAAAAAAATABgAAQAAAAAAAAAUABgAAQAAAAAAAAAVABgAAQAAAAAAAAAWABgAAQAAAAAAAAAXABgAAQAAAAAAAAAAABkAAQAAAAAAAAABABkAAQAAAAAAAAACABkAAQAAAAAAAAADABkAAQAAAAAAAAAEABkAAQAAAAAAAAAFABkAAQAAAAAAAAAGABkAAQAAAAAAAAAHABkAAQAAAAAAAAAIABkAAQAAAAAAAAAJABkAAgAAAAAAAAAKABkADAAAAAAAAAALABkAAQAAAAAAAAAMABkAAQAAAAAAAAANABkAAQAAAAAAAAAOABkABQAAAAAAAAAPABkACQAAAAAAAAAQABkAAQAAAAAAAAARABkAAQAAAAAAAAASABkAAQAAAAAAAAATABkAAQAAAAAAAAAUABkAAQAAAAAAAAAVABkAAQAAAAAAAAAWABkAAQAAAAAAAAAXABkAAQAAAAAAAAAAABoAAQAAAAAAAAABABoAAQAAAAAAAAACABoAAQAAAAAAAAADABoAAQAAAAAAAAAEABoAAQAAAAAAAAAFABoAAQAAAAAAAAAGABoAAQAAAAAAAAAHABoAAQAAAAAAAAAIABoAAQAAAAAAAAAJABoACAAAAAAAAAAKABoAAQAAAAAAAAALABoAAQAAAAAAAAAMABoAAQAAAAAAAAANABoABQAAAAAAAAAOABoACQAAAAAAAAAPABoAAQAAAAAAAAAQABoAAQAAAAAAAAARABoAAQAAAAAAAAASABoAAQAAAAAAAAATABoAAQAAAAAAAAAUABoAAQAAAAAAAAAVABoAAQAAAAAAAAAWABoAAQAAAAAAAAAXABoAAQAAAAAAAAAAABsAAQAAAAAAAAABABsAAQAAAAAAAAACABsAAQAAAAAAAAADABsAAQAAAAAAAAAEABsAAQAAAAAAAAAFABsAAQAAAAAAAAAGABsAAQAAAAAAAAAHABsAAQAAAAAAAAAIABsAAQAAAAAAAAAJABsACAAAAAAAAAAKABsAAQAAAAAAAAALABsAAQAAAAAAAAAMABsABQAAAAAAAAANABsACQAAAAAAAAAOABsAAQAAAAAAAAAPABsAAQAAAAAAAAAQABsAAQAAAAAAAAARABsAAQAAAAAAAAASABsAAQAAAAAAAAATABsAAQAAAAAAAAAUABsAAQAAAAAAAAAVABsAAQAAAAAAAAAWABsAAQAAAAAAAAAXABsAAQAAAAAAAAAAABwAAQAAAAAAAAABABwAAQAAAAAAAAACABwAAQAAAAAAAAADABwAAQAAAAAAAAAEABwAAQAAAAAAAAAFABwAAQAAAAAAAAAGABwAAQAAAAAAAAAHABwAAQAAAAAAAAAIABwAAQAAAAAAAAAJABwACAAAAAAAAAAKABwAAQAAAAAAAAALABwAAQAAAAAAAAAMABwADQAAAAAAAAANABwAAQAAAAAAAAAOABwAAQAAAAAAAAAPABwAAQAAAAAAAAAQABwAAQAAAAAAAAARABwAAQAAAAAAAAASABwAAQAAAAAAAAATABwAAQAAAAAAAAAUABwAAQAAAAAAAAAVABwAAQAAAAAAAAAWABwAAQAAAAAAAAAXABwAAQAAAAAAAAAAAB0AAQAAAAAAAAABAB0AAQAAAAAAAAACAB0AAQAAAAAAAAADAB0AAQAAAAAAAAAEAB0AAQAAAAAAAAAFAB0AAQAAAAAAAAAGAB0AAQAAAAAAAAAHAB0AAQAAAAAAAAAIAB0AAQAAAAAAAAAJAB0ACAAAAAAAAAAKAB0AAQAAAAAAAAALAB0AAQAAAAAAAAAMAB0ADQAAAAAAAAANAB0AAQAAAAAAAAAOAB0AAQAAAAAAAAAPAB0AAQAAAAAAAAAQAB0AAQAAAAAAAAARAB0AAQAAAAAAAAASAB0AAQAAAAAAAAATAB0AAQAAAAAAAAAUAB0AAQAAAAAAAAAVAB0AAQAAAAAAAAAWAB0AAQAAAAAAAAAXAB0AAQAAAAAAAAAAAB4AAQAAAAAAAAABAB4AAQAAAAAAAAACAB4AAQAAAAAAAAADAB4AAQAAAAAAAAAEAB4AAQAAAAAAAAAFAB4AAQAAAAAAAAAGAB4AAQAAAAAAAAAHAB4AAQAAAAAAAAAIAB4AAQAAAAAAAAAJAB4ADwAAAAAAAAAKAB4ADwAAAAAAAAALAB4ADwAAAAAAAAAMAB4ADwAAAAAAAAANAB4AAQAAAAAAAAAOAB4AAQAAAAAAAAAPAB4AAQAAAAAAAAAQAB4AAQAAAAAAAAARAB4AAQAAAAAAAAASAB4AAQAAAAAAAAATAB4AAQAAAAAAAAAUAB4AAQAAAAAAAAAVAB4AAQAAAAAAAAAWAB4AAQAAAAAAAAAXAB4AAQAAAAAAAAAAAB8ADwAAAAAAAAABAB8ADwAAAAAAAAACAB8ADwAAAAAAAAADAB8ADwAAAAAAAAAEAB8ADwAAAAAAAAAFAB8ADwAAAAAAAAAGAB8ADwAAAAAAAAAHAB8ADwAAAAAAAAAIAB8ADwAAAAAAAAAJAB8ADwAAAAAAAAAKAB8ADwAAAAAAAAALAB8ADwAAAAAAAAAMAB8ADwAAAAAAAAANAB8ADwAAAAAAAAAOAB8ADwAAAAAAAAAPAB8ADwAAAAAAAAAQAB8ADwAAAAAAAAARAB8ADwAAAAAAAAASAB8ADwAAAAAAAAATAB8ADwAAAAAAAAAUAB8ADwAAAAAAAAAVAB8ADwAAAAAAAAAWAB8ADwAAAAAAAAAXAB8ADwAAAAAAAAAAACAADwAAAAAAAAABACAADwAAAAAAAAACACAADwAAAAAAAAADACAADwAAAAAAAAAEACAADwAAAAAAAAAFACAADwAAAAAAAAAGACAADwAAAAAAAAAHACAADwAAAAAAAAAIACAADwAAAAAAAAAJACAADwAAAAAAAAAKACAADwAAAAAAAAALACAADwAAAAAAAAAMACAADwAAAAAAAAANACAADwAAAAAAAAAOACAADwAAAAAAAAAPACAADwAAAAAAAAAQACAADwAAAAAAAAARACAADwAAAAAAAAASACAADwAAAAAAAAATACAADwAAAAAAAAAUACAADwAAAAAAAAAVACAADwAAAAAAAAAWACAADwAAAAAAAAAXACAADwAAAAAAAAAAACEADwAAAAAAAAABACEADwAAAAAAAAACACEADwAAAAAAAAADACEADwAAAAAAAAAEACEADwAAAAAAAAAFACEADwAAAAAAAAAGACEADwAAAAAAAAAHACEADwAAAAAAAAAIACEADwAAAAAAAAAJACEADwAAAAAAAAAKACEADwAAAAAAAAALACEADwAAAAAAAAAMACEADwAAAAAAAAANACEADwAAAAAAAAAOACEADwAAAAAAAAAPACEADwAAAAAAAAAQACEADwAAAAAAAAARACEADwAAAAAAAAASACEADwAAAAAAAAATACEADwAAAAAAAAAUACEADwAAAAAAAAAVACEADwAAAAAAAAAWACEADwAAAAAAAAAXACEADwAAAAAAAAA=")
+tile_set = ExtResource("2_y51af")
+
+[node name="Terrain Top" type="TileMapLayer" parent="." unique_id=1665042708]
+tile_set = ExtResource("2_y51af")
+
+[node name="Groups" type="Node2D" parent="." unique_id=618130043]
+
+[node name="Entities" type="Node2D" parent="Groups" unique_id=495703769]
+
+[node name="Entities0" type="Control" parent="Groups/Entities" unique_id=1620513597]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 700.0
+offset_top = 1843.67
+offset_right = 700.0
+offset_bottom = 1843.67
+mouse_filter = 2
+script = ExtResource("3_bwjox")
+object_name = "Player"
+properties = {
+"direction": "up",
+"pos": "entrance"
+}
+
+[node name="Entities1" type="Control" parent="Groups/Entities" unique_id=62209210]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 577.623
+offset_top = 313.072
+offset_right = 577.623
+offset_bottom = 313.072
+mouse_filter = 2
+script = ExtResource("3_bwjox")
+object_name = "Character"
+properties = {
+"change_direction": true,
+"character_id": "p3",
+"direction": "right",
+"graphic": "young_girl",
+"radius": "400"
+}
+
+[node name="Entities2" type="Control" parent="Groups/Entities" unique_id=844111433]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 1242.74
+offset_top = 1197.13
+offset_right = 1242.74
+offset_bottom = 1197.13
+mouse_filter = 2
+script = ExtResource("3_bwjox")
+object_name = "Character"
+properties = {
+"change_direction": true,
+"character_id": "p2",
+"direction": "right",
+"graphic": "purple_girl",
+"radius": "400"
+}
+
+[node name="Entities3" type="Control" parent="Groups/Entities" unique_id=2124829255]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 852.71
+offset_top = 1451.59
+offset_right = 852.71
+offset_bottom = 1451.59
+mouse_filter = 2
+script = ExtResource("3_bwjox")
+object_name = "Character"
+properties = {
+"change_direction": true,
+"character_id": "p1",
+"direction": "down",
+"graphic": "young_girl",
+"radius": "400"
+}
+
+[node name="Entities4" type="Control" parent="Groups/Entities" unique_id=991738479]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 706.858
+offset_top = 761.71
+offset_right = 706.858
+offset_bottom = 761.71
+mouse_filter = 2
+script = ExtResource("3_bwjox")
+object_name = "Character"
+properties = {
+"change_direction": true,
+"character_id": "px",
+"direction": "right",
+"graphic": "purple_girl",
+"radius": "400"
+}
+
+[node name="Entities5" type="Control" parent="Groups/Entities" unique_id=881361728]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 88.0097
+offset_top = 837.598
+offset_right = 88.0097
+offset_bottom = 837.598
+mouse_filter = 2
+script = ExtResource("3_bwjox")
+object_name = "Character"
+properties = {
+"change_direction": true,
+"character_id": "p4",
+"direction": "right",
+"graphic": "purple_girl",
+"radius": "400"
+}
+
+[node name="Coast" type="Node2D" parent="Groups" unique_id=1495708883]
+
+[node name="Monsters" type="Node2D" parent="Groups" unique_id=1265875264]
+
+[node name="Objects" type="Node2D" parent="Groups" unique_id=158098783]
+
+[node name="Objects0" type="Control" parent="Groups/Objects" unique_id=1081762829]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 563.0
+offset_top = 976.0
+offset_right = 623.0
+offset_bottom = 1036.0
+mouse_filter = 2
+script = ExtResource("3_bwjox")
+image_id = 15
+object_size = Vector2(60, 60)
+properties = {
+"frames": [],
+"height": "60",
+"id": 25.0,
+"source": "../tilesets/../../graphics/objects/grassrock1.png",
+"trans": null,
+"width": "60"
+}
+
+[node name="Objects1" type="Control" parent="Groups/Objects" unique_id=1451580874]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 870.333
+offset_top = 1099.33
+offset_right = 934.333
+offset_bottom = 1227.33
+mouse_filter = 2
+script = ExtResource("3_bwjox")
+image_id = 16
+object_size = Vector2(64, 128)
+properties = {
+"frames": [],
+"height": "128",
+"id": 8.0,
+"source": "../tilesets/../../graphics/objects/ruin_pillar_broke_alt.png",
+"trans": null,
+"width": "64"
+}
+
+[node name="Objects2" type="Control" parent="Groups/Objects" unique_id=636714428]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 1175.0
+offset_top = 1487.0
+offset_right = 1231.0
+offset_bottom = 1547.0
+mouse_filter = 2
+script = ExtResource("3_bwjox")
+image_id = 17
+object_size = Vector2(56, 60)
+properties = {
+"frames": [],
+"height": "60",
+"id": 30.0,
+"source": "../tilesets/../../graphics/objects/sandrock2.png",
+"trans": null,
+"width": "56"
+}
+
+[node name="Objects3" type="Control" parent="Groups/Objects" unique_id=2025600474]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 1009.33
+offset_top = 1553.33
+offset_right = 1137.3301
+offset_bottom = 1745.33
+mouse_filter = 2
+script = ExtResource("3_bwjox")
+image_id = 18
+object_size = Vector2(128.00006, 192)
+properties = {
+"frames": [],
+"height": "192",
+"id": 15.0,
+"source": "../tilesets/../../graphics/objects/green_tree.png",
+"trans": null,
+"width": "128"
+}
+
+[node name="Objects4" type="Control" parent="Groups/Objects" unique_id=116259500]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 1157.33
+offset_top = 1464.0
+offset_right = 1285.33
+offset_bottom = 1656.0
+mouse_filter = 2
+script = ExtResource("3_bwjox")
+image_id = 18
+object_size = Vector2(128, 192)
+properties = {
+"frames": [],
+"height": "192",
+"id": 15.0,
+"source": "../tilesets/../../graphics/objects/green_tree.png",
+"trans": null,
+"width": "128"
+}
+
+[node name="Objects5" type="Control" parent="Groups/Objects" unique_id=1334540119]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 906.667
+offset_top = 968.0
+offset_right = 1034.667
+offset_bottom = 1160.0
+mouse_filter = 2
+script = ExtResource("3_bwjox")
+image_id = 18
+object_size = Vector2(128, 192)
+properties = {
+"frames": [],
+"height": "192",
+"id": 15.0,
+"source": "../tilesets/../../graphics/objects/green_tree.png",
+"trans": null,
+"width": "128"
+}
+
+[node name="Objects6" type="Control" parent="Groups/Objects" unique_id=1117088343]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 386.667
+offset_top = 510.667
+offset_right = 514.667
+offset_bottom = 702.667
+mouse_filter = 2
+script = ExtResource("3_bwjox")
+image_id = 18
+object_size = Vector2(128, 192)
+properties = {
+"frames": [],
+"height": "192",
+"id": 15.0,
+"source": "../tilesets/../../graphics/objects/green_tree.png",
+"trans": null,
+"width": "128"
+}
+
+[node name="Objects7" type="Control" parent="Groups/Objects" unique_id=929301664]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 1.33333
+offset_top = 1245.33
+offset_right = 129.33333
+offset_bottom = 1437.33
+mouse_filter = 2
+script = ExtResource("3_bwjox")
+image_id = 18
+object_size = Vector2(128, 192)
+properties = {
+"frames": [],
+"height": "192",
+"id": 15.0,
+"source": "../tilesets/../../graphics/objects/green_tree.png",
+"trans": null,
+"width": "128"
+}
+
+[node name="Objects8" type="Control" parent="Groups/Objects" unique_id=485933178]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 96.0
+offset_top = 1369.33
+offset_right = 224.0
+offset_bottom = 1561.33
+mouse_filter = 2
+script = ExtResource("3_bwjox")
+image_id = 18
+object_size = Vector2(128, 192)
+properties = {
+"frames": [],
+"height": "192",
+"id": 15.0,
+"source": "../tilesets/../../graphics/objects/green_tree.png",
+"trans": null,
+"width": "128"
+}
+
+[node name="Objects9" type="Control" parent="Groups/Objects" unique_id=589181464]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 372.0
+offset_top = 1002.67
+offset_right = 500.0
+offset_bottom = 1194.6699
+mouse_filter = 2
+script = ExtResource("3_bwjox")
+image_id = 18
+object_size = Vector2(128, 191.99994)
+properties = {
+"frames": [],
+"height": "192",
+"id": 15.0,
+"source": "../tilesets/../../graphics/objects/green_tree.png",
+"trans": null,
+"width": "128"
+}
+
+[node name="Objects10" type="Control" parent="Groups/Objects" unique_id=1083212386]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 1414.67
+offset_top = 1269.33
+offset_right = 1478.67
+offset_bottom = 1397.33
+mouse_filter = 2
+script = ExtResource("3_bwjox")
+image_id = 19
+object_size = Vector2(64, 128)
+properties = {
+"frames": [],
+"height": "128",
+"id": 17.0,
+"source": "../tilesets/../../graphics/objects/green_tree_small.png",
+"trans": null,
+"width": "64"
+}
+
+[node name="Objects11" type="Control" parent="Groups/Objects" unique_id=263151767]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 1310.67
+offset_top = 1397.33
+offset_right = 1374.67
+offset_bottom = 1525.33
+mouse_filter = 2
+script = ExtResource("3_bwjox")
+image_id = 19
+object_size = Vector2(64, 128)
+properties = {
+"frames": [],
+"height": "128",
+"id": 17.0,
+"source": "../tilesets/../../graphics/objects/green_tree_small.png",
+"trans": null,
+"width": "64"
+}
+
+[node name="Objects12" type="Control" parent="Groups/Objects" unique_id=682601339]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 702.667
+offset_top = 1337.33
+offset_right = 766.667
+offset_bottom = 1465.33
+mouse_filter = 2
+script = ExtResource("3_bwjox")
+image_id = 19
+object_size = Vector2(64, 128)
+properties = {
+"frames": [],
+"height": "128",
+"id": 17.0,
+"source": "../tilesets/../../graphics/objects/green_tree_small.png",
+"trans": null,
+"width": "64"
+}
+
+[node name="Objects13" type="Control" parent="Groups/Objects" unique_id=287944347]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 657.333
+offset_top = 1382.67
+offset_right = 721.333
+offset_bottom = 1510.67
+mouse_filter = 2
+script = ExtResource("3_bwjox")
+image_id = 19
+object_size = Vector2(64, 128)
+properties = {
+"frames": [],
+"height": "128",
+"id": 17.0,
+"source": "../tilesets/../../graphics/objects/green_tree_small.png",
+"trans": null,
+"width": "64"
+}
+
+[node name="Objects14" type="Control" parent="Groups/Objects" unique_id=397139956]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 56.0
+offset_top = 1358.67
+offset_right = 120.0
+offset_bottom = 1486.67
+mouse_filter = 2
+script = ExtResource("3_bwjox")
+image_id = 19
+object_size = Vector2(64, 128)
+properties = {
+"frames": [],
+"height": "128",
+"id": 17.0,
+"source": "../tilesets/../../graphics/objects/green_tree_small.png",
+"trans": null,
+"width": "64"
+}
+
+[node name="Objects15" type="Control" parent="Groups/Objects" unique_id=1314645391]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 360.0
+offset_top = 1076.0
+offset_right = 424.0
+offset_bottom = 1204.0
+mouse_filter = 2
+script = ExtResource("3_bwjox")
+image_id = 19
+object_size = Vector2(64, 128)
+properties = {
+"frames": [],
+"height": "128",
+"id": 17.0,
+"source": "../tilesets/../../graphics/objects/green_tree_small.png",
+"trans": null,
+"width": "64"
+}
+
+[node name="Objects16" type="Control" parent="Groups/Objects" unique_id=158993037]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 356.0
+offset_top = 612.0
+offset_right = 420.0
+offset_bottom = 740.0
+mouse_filter = 2
+script = ExtResource("3_bwjox")
+image_id = 19
+object_size = Vector2(64, 128)
+properties = {
+"frames": [],
+"height": "128",
+"id": 17.0,
+"source": "../tilesets/../../graphics/objects/green_tree_small.png",
+"trans": null,
+"width": "64"
+}
+
+[node name="Objects17" type="Control" parent="Groups/Objects" unique_id=830993138]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 586.667
+offset_top = 836.0
+offset_right = 650.667
+offset_bottom = 964.0
+mouse_filter = 2
+script = ExtResource("3_bwjox")
+image_id = 19
+object_size = Vector2(64, 128)
+properties = {
+"frames": [],
+"height": "128",
+"id": 17.0,
+"source": "../tilesets/../../graphics/objects/green_tree_small.png",
+"trans": null,
+"width": "64"
+}
+
+[node name="Objects18" type="Control" parent="Groups/Objects" unique_id=35683370]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 769.333
+offset_top = 814.667
+offset_right = 833.333
+offset_bottom = 942.667
+mouse_filter = 2
+script = ExtResource("3_bwjox")
+image_id = 19
+object_size = Vector2(64, 128)
+properties = {
+"frames": [],
+"height": "128",
+"id": 17.0,
+"source": "../tilesets/../../graphics/objects/green_tree_small.png",
+"trans": null,
+"width": "64"
+}
+
+[node name="Objects19" type="Control" parent="Groups/Objects" unique_id=1697768196]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 913.333
+offset_top = 1077.33
+offset_right = 1041.333
+offset_bottom = 1269.33
+mouse_filter = 2
+script = ExtResource("3_bwjox")
+image_id = 20
+object_size = Vector2(128, 192)
+properties = {
+"frames": [],
+"height": "192",
+"id": 16.0,
+"source": "../tilesets/../../graphics/objects/green_tree_bushy.png",
+"trans": null,
+"width": "128"
+}
+
+[node name="Objects20" type="Control" parent="Groups/Objects" unique_id=1340424088]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 269.333
+offset_top = 858.67
+offset_right = 397.333
+offset_bottom = 1050.6699
+mouse_filter = 2
+script = ExtResource("3_bwjox")
+image_id = 20
+object_size = Vector2(128, 191.99994)
+properties = {
+"frames": [],
+"height": "192",
+"id": 16.0,
+"source": "../tilesets/../../graphics/objects/green_tree_bushy.png",
+"trans": null,
+"width": "128"
+}
+
+[node name="Objects21" type="Control" parent="Groups/Objects" unique_id=410092041]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 1024.0
+offset_top = 656.0
+offset_right = 1152.0
+offset_bottom = 848.0
+mouse_filter = 2
+script = ExtResource("3_bwjox")
+image_id = 20
+object_size = Vector2(128, 192)
+properties = {
+"frames": [],
+"height": "192",
+"id": 16.0,
+"source": "../tilesets/../../graphics/objects/green_tree_bushy.png",
+"trans": null,
+"width": "128"
+}
+
+[node name="Objects22" type="Control" parent="Groups/Objects" unique_id=1719804603]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 1068.0
+offset_top = 773.333
+offset_right = 1196.0
+offset_bottom = 965.333
+mouse_filter = 2
+script = ExtResource("3_bwjox")
+image_id = 20
+object_size = Vector2(128, 192)
+properties = {
+"frames": [],
+"height": "192",
+"id": 16.0,
+"source": "../tilesets/../../graphics/objects/green_tree_bushy.png",
+"trans": null,
+"width": "128"
+}
+
+[node name="Objects23" type="Control" parent="Groups/Objects" unique_id=59725482]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 1378.67
+offset_top = 373.333
+offset_right = 1506.67
+offset_bottom = 565.333
+mouse_filter = 2
+script = ExtResource("3_bwjox")
+image_id = 20
+object_size = Vector2(128, 192)
+properties = {
+"frames": [],
+"height": "192",
+"id": 16.0,
+"source": "../tilesets/../../graphics/objects/green_tree_bushy.png",
+"trans": null,
+"width": "128"
+}
+
+[node name="Objects24" type="Control" parent="Groups/Objects" unique_id=1888102534]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 300.0
+offset_top = 666.667
+offset_right = 428.0
+offset_bottom = 858.667
+mouse_filter = 2
+script = ExtResource("3_bwjox")
+image_id = 20
+object_size = Vector2(128, 192)
+properties = {
+"frames": [],
+"height": "192",
+"id": 16.0,
+"source": "../tilesets/../../graphics/objects/green_tree_bushy.png",
+"trans": null,
+"width": "128"
+}
+
+[node name="Objects25" type="Control" parent="Groups/Objects" unique_id=572206955]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 784.0
+offset_top = 820.0
+offset_right = 912.0
+offset_bottom = 1012.0
+mouse_filter = 2
+script = ExtResource("3_bwjox")
+image_id = 20
+object_size = Vector2(128, 192)
+properties = {
+"frames": [],
+"height": "192",
+"id": 16.0,
+"source": "../tilesets/../../graphics/objects/green_tree_bushy.png",
+"trans": null,
+"width": "128"
+}
+
+[node name="Objects26" type="Control" parent="Groups/Objects" unique_id=201449506]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 562.667
+offset_top = 1376.0
+offset_right = 690.667
+offset_bottom = 1568.0
+mouse_filter = 2
+script = ExtResource("3_bwjox")
+image_id = 20
+object_size = Vector2(128, 192)
+properties = {
+"frames": [],
+"height": "192",
+"id": 16.0,
+"source": "../tilesets/../../graphics/objects/green_tree_bushy.png",
+"trans": null,
+"width": "128"
+}
+
+[node name="Objects27" type="Control" parent="Groups/Objects" unique_id=2024200567]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 138.667
+offset_top = 1488.0
+offset_right = 266.667
+offset_bottom = 1680.0
+mouse_filter = 2
+script = ExtResource("3_bwjox")
+image_id = 20
+object_size = Vector2(127.999985, 192)
+properties = {
+"frames": [],
+"height": "192",
+"id": 16.0,
+"source": "../tilesets/../../graphics/objects/green_tree_bushy.png",
+"trans": null,
+"width": "128"
+}
+
+[node name="Objects28" type="Control" parent="Groups/Objects" unique_id=1043940920]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 482.667
+offset_top = 1362.67
+offset_right = 610.667
+offset_bottom = 1554.67
+mouse_filter = 2
+script = ExtResource("3_bwjox")
+image_id = 20
+object_size = Vector2(128, 192)
+properties = {
+"frames": [],
+"height": "192",
+"id": 16.0,
+"source": "../tilesets/../../graphics/objects/green_tree_bushy.png",
+"trans": null,
+"width": "128"
+}
+
+[node name="Objects29" type="Control" parent="Groups/Objects" unique_id=793789381]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 1096.0
+offset_top = 1538.67
+offset_right = 1224.0
+offset_bottom = 1730.67
+mouse_filter = 2
+script = ExtResource("3_bwjox")
+image_id = 20
+object_size = Vector2(128, 192)
+properties = {
+"frames": [],
+"height": "192",
+"id": 16.0,
+"source": "../tilesets/../../graphics/objects/green_tree_bushy.png",
+"trans": null,
+"width": "128"
+}
+
+[node name="Objects30" type="Control" parent="Groups/Objects" unique_id=887241650]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 846.667
+offset_top = 1681.33
+offset_right = 974.667
+offset_bottom = 1873.33
+mouse_filter = 2
+script = ExtResource("3_bwjox")
+image_id = 20
+object_size = Vector2(128, 192)
+properties = {
+"frames": [],
+"height": "192",
+"id": 16.0,
+"source": "../tilesets/../../graphics/objects/green_tree_bushy.png",
+"trans": null,
+"width": "128"
+}
+
+[node name="Objects31" type="Control" parent="Groups/Objects" unique_id=974172497]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 434.667
+offset_top = 1728.0
+offset_right = 562.667
+offset_bottom = 1920.0
+mouse_filter = 2
+script = ExtResource("3_bwjox")
+image_id = 20
+object_size = Vector2(128, 192)
+properties = {
+"frames": [],
+"height": "192",
+"id": 16.0,
+"source": "../tilesets/../../graphics/objects/green_tree_bushy.png",
+"trans": null,
+"width": "128"
+}
+
+[node name="Objects32" type="Control" parent="Groups/Objects" unique_id=1188488668]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 439.741
+offset_top = 1436.65
+offset_right = 567.74097
+offset_bottom = 1628.65
+mouse_filter = 2
+script = ExtResource("3_bwjox")
+image_id = 20
+object_size = Vector2(127.99997, 192)
+properties = {
+"frames": [],
+"height": "192",
+"id": 16.0,
+"source": "../tilesets/../../graphics/objects/green_tree_bushy.png",
+"trans": null,
+"width": "128"
+}
+
+[node name="Objects33" type="Control" parent="Groups/Objects" unique_id=757944854]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 1374.67
+offset_top = 1346.67
+offset_right = 1502.67
+offset_bottom = 1538.67
+mouse_filter = 2
+script = ExtResource("3_bwjox")
+image_id = 20
+object_size = Vector2(128, 192)
+properties = {
+"frames": [],
+"height": "192",
+"id": 16.0,
+"source": "../tilesets/../../graphics/objects/green_tree_bushy.png",
+"trans": null,
+"width": "128"
+}
+
+[node name="Objects34" type="Control" parent="Groups/Objects" unique_id=1734905524]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 976.0
+offset_top = 725.333
+offset_right = 1104.0
+offset_bottom = 917.333
+mouse_filter = 2
+script = ExtResource("3_bwjox")
+image_id = 18
+object_size = Vector2(128, 192)
+properties = {
+"frames": [],
+"height": "192",
+"id": 15.0,
+"source": "../tilesets/../../graphics/objects/green_tree.png",
+"trans": null,
+"width": "128"
+}
+
+[node name="Objects35" type="Control" parent="Groups/Objects" unique_id=1246537405]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 822.667
+offset_top = 448.0
+offset_right = 950.667
+offset_bottom = 640.0
+mouse_filter = 2
+script = ExtResource("3_bwjox")
+image_id = 18
+object_size = Vector2(128, 192)
+properties = {
+"frames": [],
+"height": "192",
+"id": 15.0,
+"source": "../tilesets/../../graphics/objects/green_tree.png",
+"trans": null,
+"width": "128"
+}
+
+[node name="Objects36" type="Control" parent="Groups/Objects" unique_id=365287083]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 346.667
+offset_top = 1349.33
+offset_right = 474.667
+offset_bottom = 1541.33
+mouse_filter = 2
+script = ExtResource("3_bwjox")
+image_id = 18
+object_size = Vector2(128, 192)
+properties = {
+"frames": [],
+"height": "192",
+"id": 15.0,
+"source": "../tilesets/../../graphics/objects/green_tree.png",
+"trans": null,
+"width": "128"
+}
+
+[node name="Objects37" type="Control" parent="Groups/Objects" unique_id=813535784]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 780.0
+offset_top = 109.333
+offset_right = 908.0
+offset_bottom = 301.333
+mouse_filter = 2
+script = ExtResource("3_bwjox")
+image_id = 18
+object_size = Vector2(128, 192)
+properties = {
+"frames": [],
+"height": "192",
+"id": 15.0,
+"source": "../tilesets/../../graphics/objects/green_tree.png",
+"trans": null,
+"width": "128"
+}
+
+[node name="Objects38" type="Control" parent="Groups/Objects" unique_id=2120048463]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 1165.33
+offset_top = 177.333
+offset_right = 1293.33
+offset_bottom = 369.333
+mouse_filter = 2
+script = ExtResource("3_bwjox")
+image_id = 18
+object_size = Vector2(128, 192.00002)
+properties = {
+"frames": [],
+"height": "192",
+"id": 15.0,
+"source": "../tilesets/../../graphics/objects/green_tree.png",
+"trans": null,
+"width": "128"
+}
+
+[node name="Objects39" type="Control" parent="Groups/Objects" unique_id=41816372]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 161.333
+offset_top = 56.0
+offset_right = 289.333
+offset_bottom = 248.0
+mouse_filter = 2
+script = ExtResource("3_bwjox")
+image_id = 18
+object_size = Vector2(128.00002, 192)
+properties = {
+"frames": [],
+"height": "192",
+"id": 15.0,
+"source": "../tilesets/../../graphics/objects/green_tree.png",
+"trans": null,
+"width": "128"
+}
+
+[node name="Objects40" type="Control" parent="Groups/Objects" unique_id=592833876]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 457.333
+offset_top = -28.0
+offset_right = 585.333
+offset_bottom = 164.0
+mouse_filter = 2
+script = ExtResource("3_bwjox")
+image_id = 18
+object_size = Vector2(128, 192)
+properties = {
+"frames": [],
+"height": "192",
+"id": 15.0,
+"source": "../tilesets/../../graphics/objects/green_tree.png",
+"trans": null,
+"width": "128"
+}
+
+[node name="Objects41" type="Control" parent="Groups/Objects" unique_id=323441528]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 1069.33
+offset_top = 181.333
+offset_right = 1197.33
+offset_bottom = 373.333
+mouse_filter = 2
+script = ExtResource("3_bwjox")
+image_id = 20
+object_size = Vector2(128, 192.00002)
+properties = {
+"frames": [],
+"height": "192",
+"id": 16.0,
+"source": "../tilesets/../../graphics/objects/green_tree_bushy.png",
+"trans": null,
+"width": "128"
+}
+
+[node name="Objects42" type="Control" parent="Groups/Objects" unique_id=1530165730]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 664.0
+offset_top = 34.667
+offset_right = 792.0
+offset_bottom = 226.66699
+mouse_filter = 2
+script = ExtResource("3_bwjox")
+image_id = 20
+object_size = Vector2(128, 192)
+properties = {
+"frames": [],
+"height": "192",
+"id": 16.0,
+"source": "../tilesets/../../graphics/objects/green_tree_bushy.png",
+"trans": null,
+"width": "128"
+}
+
+[node name="Objects43" type="Control" parent="Groups/Objects" unique_id=222771258]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -65.3333
+offset_top = 212.0
+offset_right = 62.666702
+offset_bottom = 404.0
+mouse_filter = 2
+script = ExtResource("3_bwjox")
+image_id = 20
+object_size = Vector2(128, 192)
+properties = {
+"frames": [],
+"height": "192",
+"id": 16.0,
+"source": "../tilesets/../../graphics/objects/green_tree_bushy.png",
+"trans": null,
+"width": "128"
+}
+
+[node name="Objects44" type="Control" parent="Groups/Objects" unique_id=1663009806]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 126.667
+offset_top = 121.333
+offset_right = 254.66699
+offset_bottom = 313.333
+mouse_filter = 2
+script = ExtResource("3_bwjox")
+image_id = 20
+object_size = Vector2(127.99999, 192)
+properties = {
+"frames": [],
+"height": "192",
+"id": 16.0,
+"source": "../tilesets/../../graphics/objects/green_tree_bushy.png",
+"trans": null,
+"width": "128"
+}
+
+[node name="Objects45" type="Control" parent="Groups/Objects" unique_id=1931506943]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 400.0
+offset_top = 20.0
+offset_right = 528.0
+offset_bottom = 212.0
+mouse_filter = 2
+script = ExtResource("3_bwjox")
+image_id = 20
+object_size = Vector2(128, 192)
+properties = {
+"frames": [],
+"height": "192",
+"id": 16.0,
+"source": "../tilesets/../../graphics/objects/green_tree_bushy.png",
+"trans": null,
+"width": "128"
+}
+
+[node name="Objects46" type="Control" parent="Groups/Objects" unique_id=596843391]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 1252.0
+offset_top = 121.333
+offset_right = 1380.0
+offset_bottom = 313.333
+mouse_filter = 2
+script = ExtResource("3_bwjox")
+image_id = 20
+object_size = Vector2(128, 192)
+properties = {
+"frames": [],
+"height": "192",
+"id": 16.0,
+"source": "../tilesets/../../graphics/objects/green_tree_bushy.png",
+"trans": null,
+"width": "128"
+}
+
+[node name="Objects47" type="Control" parent="Groups/Objects" unique_id=1056499169]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 1165.33
+offset_top = 108.0
+offset_right = 1293.33
+offset_bottom = 300.0
+mouse_filter = 2
+script = ExtResource("3_bwjox")
+image_id = 20
+object_size = Vector2(128, 192)
+properties = {
+"frames": [],
+"height": "192",
+"id": 16.0,
+"source": "../tilesets/../../graphics/objects/green_tree_bushy.png",
+"trans": null,
+"width": "128"
+}
+
+[node name="Objects48" type="Control" parent="Groups/Objects" unique_id=1557703020]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 881.333
+offset_top = -26.667
+offset_right = 1009.333
+offset_bottom = 165.33301
+mouse_filter = 2
+script = ExtResource("3_bwjox")
+image_id = 20
+object_size = Vector2(128, 192)
+properties = {
+"frames": [],
+"height": "192",
+"id": 16.0,
+"source": "../tilesets/../../graphics/objects/green_tree_bushy.png",
+"trans": null,
+"width": "128"
+}
+
+[node name="Objects49" type="Control" parent="Groups/Objects" unique_id=785987998]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 1386.67
+offset_top = 58.667
+offset_right = 1514.67
+offset_bottom = 250.66699
+mouse_filter = 2
+script = ExtResource("3_bwjox")
+image_id = 20
+object_size = Vector2(128, 192)
+properties = {
+"frames": [],
+"height": "192",
+"id": 16.0,
+"source": "../tilesets/../../graphics/objects/green_tree_bushy.png",
+"trans": null,
+"width": "128"
+}
+
+[node name="Objects50" type="Control" parent="Groups/Objects" unique_id=1386117864]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 952.0
+offset_top = 90.667
+offset_right = 1016.0
+offset_bottom = 218.66699
+mouse_filter = 2
+script = ExtResource("3_bwjox")
+image_id = 19
+object_size = Vector2(64, 127.99999)
+properties = {
+"frames": [],
+"height": "128",
+"id": 17.0,
+"source": "../tilesets/../../graphics/objects/green_tree_small.png",
+"trans": null,
+"width": "64"
+}
+
+[node name="Objects51" type="Control" parent="Groups/Objects" unique_id=1247557402]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 504.0
+offset_top = 84.0
+offset_right = 568.0
+offset_bottom = 212.0
+mouse_filter = 2
+script = ExtResource("3_bwjox")
+image_id = 19
+object_size = Vector2(64, 128)
+properties = {
+"frames": [],
+"height": "128",
+"id": 17.0,
+"source": "../tilesets/../../graphics/objects/green_tree_small.png",
+"trans": null,
+"width": "64"
+}
+
+[node name="Objects52" type="Control" parent="Groups/Objects" unique_id=411761844]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 240.0
+offset_top = 138.667
+offset_right = 304.0
+offset_bottom = 266.667
+mouse_filter = 2
+script = ExtResource("3_bwjox")
+image_id = 19
+object_size = Vector2(64, 127.999985)
+properties = {
+"frames": [],
+"height": "128",
+"id": 17.0,
+"source": "../tilesets/../../graphics/objects/green_tree_small.png",
+"trans": null,
+"width": "64"
+}
+
+[node name="Objects53" type="Control" parent="Groups/Objects" unique_id=289188567]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 129.333
+offset_top = 224.0
+offset_right = 193.333
+offset_bottom = 352.0
+mouse_filter = 2
+script = ExtResource("3_bwjox")
+image_id = 19
+object_size = Vector2(64, 128)
+properties = {
+"frames": [],
+"height": "128",
+"id": 17.0,
+"source": "../tilesets/../../graphics/objects/green_tree_small.png",
+"trans": null,
+"width": "64"
+}
+
+[node name="Objects54" type="Control" parent="Groups/Objects" unique_id=622457794]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -5.33333
+offset_top = 324.0
+offset_right = 58.66667
+offset_bottom = 452.0
+mouse_filter = 2
+script = ExtResource("3_bwjox")
+image_id = 19
+object_size = Vector2(64, 128)
+properties = {
+"frames": [],
+"height": "128",
+"id": 17.0,
+"source": "../tilesets/../../graphics/objects/green_tree_small.png",
+"trans": null,
+"width": "64"
+}
+
+[node name="Objects55" type="Control" parent="Groups/Objects" unique_id=355734226]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 213.333
+offset_top = 1588.0
+offset_right = 277.333
+offset_bottom = 1716.0
+mouse_filter = 2
+script = ExtResource("3_bwjox")
+image_id = 19
+object_size = Vector2(64.000015, 128)
+properties = {
+"frames": [],
+"height": "128",
+"id": 17.0,
+"source": "../tilesets/../../graphics/objects/green_tree_small.png",
+"trans": null,
+"width": "64"
+}
+
+[node name="Objects56" type="Control" parent="Groups/Objects" unique_id=1738747001]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 1042.67
+offset_top = 868.0
+offset_right = 1106.67
+offset_bottom = 996.0
+mouse_filter = 2
+script = ExtResource("3_bwjox")
+image_id = 19
+object_size = Vector2(64, 128)
+properties = {
+"frames": [],
+"height": "128",
+"id": 17.0,
+"source": "../tilesets/../../graphics/objects/green_tree_small.png",
+"trans": null,
+"width": "64"
+}
+
+[node name="Objects57" type="Control" parent="Groups/Objects" unique_id=1439654786]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 990.667
+offset_top = 1185.33
+offset_right = 1054.667
+offset_bottom = 1313.33
+mouse_filter = 2
+script = ExtResource("3_bwjox")
+image_id = 19
+object_size = Vector2(64, 128)
+properties = {
+"frames": [],
+"height": "128",
+"id": 17.0,
+"source": "../tilesets/../../graphics/objects/green_tree_small.png",
+"trans": null,
+"width": "64"
+}
+
+[node name="Objects58" type="Control" parent="Groups/Objects" unique_id=376863446]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 828.0
+offset_top = 1164.0
+offset_right = 892.0
+offset_bottom = 1292.0
+mouse_filter = 2
+script = ExtResource("3_bwjox")
+image_id = 19
+object_size = Vector2(64, 128)
+properties = {
+"frames": [],
+"height": "128",
+"id": 17.0,
+"source": "../tilesets/../../graphics/objects/green_tree_small.png",
+"trans": null,
+"width": "64"
+}
+
+[node name="Objects59" type="Control" parent="Groups/Objects" unique_id=113549184]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 501.333
+offset_top = 1085.33
+offset_right = 565.333
+offset_bottom = 1213.33
+mouse_filter = 2
+script = ExtResource("3_bwjox")
+image_id = 19
+object_size = Vector2(64, 128)
+properties = {
+"frames": [],
+"height": "128",
+"id": 17.0,
+"source": "../tilesets/../../graphics/objects/green_tree_small.png",
+"trans": null,
+"width": "64"
+}
+
+[node name="Objects60" type="Control" parent="Groups/Objects" unique_id=435161347]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 376.0
+offset_top = 789.333
+offset_right = 440.0
+offset_bottom = 917.333
+mouse_filter = 2
+script = ExtResource("3_bwjox")
+image_id = 19
+object_size = Vector2(64, 128)
+properties = {
+"frames": [],
+"height": "128",
+"id": 17.0,
+"source": "../tilesets/../../graphics/objects/green_tree_small.png",
+"trans": null,
+"width": "64"
+}
+
+[node name="Objects61" type="Control" parent="Groups/Objects" unique_id=1795502511]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 521.333
+offset_top = 489.333
+offset_right = 585.333
+offset_bottom = 617.333
+mouse_filter = 2
+script = ExtResource("3_bwjox")
+image_id = 19
+object_size = Vector2(64, 128)
+properties = {
+"frames": [],
+"height": "128",
+"id": 17.0,
+"source": "../tilesets/../../graphics/objects/green_tree_small.png",
+"trans": null,
+"width": "64"
+}
+
+[node name="Objects62" type="Control" parent="Groups/Objects" unique_id=1531645162]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 566.667
+offset_top = 510.667
+offset_right = 630.667
+offset_bottom = 638.667
+mouse_filter = 2
+script = ExtResource("3_bwjox")
+image_id = 19
+object_size = Vector2(64, 128)
+properties = {
+"frames": [],
+"height": "128",
+"id": 17.0,
+"source": "../tilesets/../../graphics/objects/green_tree_small.png",
+"trans": null,
+"width": "64"
+}
+
+[node name="Objects63" type="Control" parent="Groups/Objects" unique_id=2000407065]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 780.0
+offset_top = 482.667
+offset_right = 844.0
+offset_bottom = 610.667
+mouse_filter = 2
+script = ExtResource("3_bwjox")
+image_id = 19
+object_size = Vector2(64, 128)
+properties = {
+"frames": [],
+"height": "128",
+"id": 17.0,
+"source": "../tilesets/../../graphics/objects/green_tree_small.png",
+"trans": null,
+"width": "64"
+}
+
+[node name="Objects64" type="Control" parent="Groups/Objects" unique_id=383731887]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 1350.67
+offset_top = 386.667
+offset_right = 1414.67
+offset_bottom = 514.667
+mouse_filter = 2
+script = ExtResource("3_bwjox")
+image_id = 19
+object_size = Vector2(64, 128)
+properties = {
+"frames": [],
+"height": "128",
+"id": 17.0,
+"source": "../tilesets/../../graphics/objects/green_tree_small.png",
+"trans": null,
+"width": "64"
+}
+
+[node name="Objects65" type="Control" parent="Groups/Objects" unique_id=1549874704]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 938.0
+offset_top = 616.667
+offset_right = 998.0
+offset_bottom = 676.667
+mouse_filter = 2
+script = ExtResource("3_bwjox")
+image_id = 15
+object_size = Vector2(60, 60)
+properties = {
+"frames": [],
+"height": "60",
+"id": 25.0,
+"source": "../tilesets/../../graphics/objects/grassrock1.png",
+"trans": null,
+"width": "60"
+}
+
+[node name="Objects66" type="Control" parent="Groups/Objects" unique_id=422586779]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 219.333
+offset_top = 1448.67
+offset_right = 279.333
+offset_bottom = 1508.67
+mouse_filter = 2
+script = ExtResource("3_bwjox")
+image_id = 15
+object_size = Vector2(60.000015, 60)
+properties = {
+"frames": [],
+"height": "60",
+"id": 25.0,
+"source": "../tilesets/../../graphics/objects/grassrock1.png",
+"trans": null,
+"width": "60"
+}
+
+[node name="Objects67" type="Control" parent="Groups/Objects" unique_id=985097730]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 0.666667
+offset_top = 1128.67
+offset_right = 60.666668
+offset_bottom = 1188.67
+mouse_filter = 2
+script = ExtResource("3_bwjox")
+image_id = 15
+object_size = Vector2(60, 60)
+properties = {
+"frames": [],
+"height": "60",
+"id": 25.0,
+"source": "../tilesets/../../graphics/objects/grassrock1.png",
+"trans": null,
+"width": "60"
+}
+
+[node name="Objects68" type="Control" parent="Groups/Objects" unique_id=998915946]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 514.0
+offset_top = 691.333
+offset_right = 574.0
+offset_bottom = 751.333
+mouse_filter = 2
+script = ExtResource("3_bwjox")
+image_id = 15
+object_size = Vector2(60, 60)
+properties = {
+"frames": [],
+"height": "60",
+"id": 25.0,
+"source": "../tilesets/../../graphics/objects/grassrock1.png",
+"trans": null,
+"width": "60"
+}
+
+[node name="Objects69" type="Control" parent="Groups/Objects" unique_id=1438043516]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 843.333
+offset_top = 759.333
+offset_right = 903.333
+offset_bottom = 819.333
+mouse_filter = 2
+script = ExtResource("3_bwjox")
+image_id = 15
+object_size = Vector2(60, 60)
+properties = {
+"frames": [],
+"height": "60",
+"id": 25.0,
+"source": "../tilesets/../../graphics/objects/grassrock1.png",
+"trans": null,
+"width": "60"
+}
+
+[node name="Objects70" type="Control" parent="Groups/Objects" unique_id=1220086918]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 1133.33
+offset_top = 950.0
+offset_right = 1189.33
+offset_bottom = 1010.0
+mouse_filter = 2
+script = ExtResource("3_bwjox")
+image_id = 21
+object_size = Vector2(56, 60)
+properties = {
+"frames": [],
+"height": "60",
+"id": 26.0,
+"source": "../tilesets/../../graphics/objects/grassrock2.png",
+"trans": null,
+"width": "56"
+}
+
+[node name="Objects71" type="Control" parent="Groups/Objects" unique_id=1469042953]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 1260.0
+offset_top = 1491.33
+offset_right = 1316.0
+offset_bottom = 1551.33
+mouse_filter = 2
+script = ExtResource("3_bwjox")
+image_id = 21
+object_size = Vector2(56, 60)
+properties = {
+"frames": [],
+"height": "60",
+"id": 26.0,
+"source": "../tilesets/../../graphics/objects/grassrock2.png",
+"trans": null,
+"width": "56"
+}
+
+[node name="Objects72" type="Control" parent="Groups/Objects" unique_id=568684636]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 792.0
+offset_top = 1323.33
+offset_right = 848.0
+offset_bottom = 1383.33
+mouse_filter = 2
+script = ExtResource("3_bwjox")
+image_id = 21
+object_size = Vector2(56, 60)
+properties = {
+"frames": [],
+"height": "60",
+"id": 26.0,
+"source": "../tilesets/../../graphics/objects/grassrock2.png",
+"trans": null,
+"width": "56"
+}
+
+[node name="Objects73" type="Control" parent="Groups/Objects" unique_id=507469500]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 534.667
+offset_top = 1014.0
+offset_right = 590.667
+offset_bottom = 1074.0
+mouse_filter = 2
+script = ExtResource("3_bwjox")
+image_id = 21
+object_size = Vector2(56, 60)
+properties = {
+"frames": [],
+"height": "60",
+"id": 26.0,
+"source": "../tilesets/../../graphics/objects/grassrock2.png",
+"trans": null,
+"width": "56"
+}
+
+[node name="Collisions" type="Node2D" parent="Groups" unique_id=414158156]
+
+[node name="Collisions0" type="Control" parent="Groups/Collisions" unique_id=1533307900]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 551.596
+offset_top = 1622.07
+offset_right = 625.2201
+offset_bottom = 1973.829
+mouse_filter = 2
+script = ExtResource("3_bwjox")
+object_size = Vector2(73.624084, 351.75903)
+
+[node name="Collisions1" type="Control" parent="Groups/Collisions" unique_id=1195409666]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 784.155
+offset_top = 1709.71
+offset_right = 918.54803
+offset_bottom = 1965.641
+mouse_filter = 2
+script = ExtResource("3_bwjox")
+object_size = Vector2(134.393, 255.93103)
+
+[node name="Collisions2" type="Control" parent="Groups/Collisions" unique_id=1982340374]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 851.936
+offset_top = 1651.28
+offset_right = 954.776
+offset_bottom = 1726.0728
+mouse_filter = 2
+script = ExtResource("3_bwjox")
+object_size = Vector2(102.84003, 74.792725)
+
+[node name="Collisions3" type="Control" parent="Groups/Collisions" unique_id=1784506646]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 910.367
+offset_top = 1589.34
+offset_right = 1030.736
+offset_bottom = 1641.9286
+mouse_filter = 2
+script = ExtResource("3_bwjox")
+object_size = Vector2(120.36896, 52.588623)
+
+[node name="Collisions4" type="Control" parent="Groups/Collisions" unique_id=786198147]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 976.98
+offset_top = 1515.72
+offset_right = 1256.2839
+offset_bottom = 1596.3558
+mouse_filter = 2
+script = ExtResource("3_bwjox")
+object_size = Vector2(279.30396, 80.635864)
+
+[node name="Collisions5" type="Control" parent="Groups/Collisions" unique_id=1763094981]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 1168.64
+offset_top = 1460.79
+offset_right = 1271.48
+offset_bottom = 1504.0295
+mouse_filter = 2
+script = ExtResource("3_bwjox")
+object_size = Vector2(102.839966, 43.239502)
+
+[node name="Collisions6" type="Control" parent="Groups/Collisions" unique_id=1404487016]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 1228.24
+offset_top = 1397.69
+offset_right = 1315.8877
+offset_bottom = 1443.2667
+mouse_filter = 2
+script = ExtResource("3_bwjox")
+object_size = Vector2(87.647705, 45.576782)
+
+[node name="Collisions7" type="Control" parent="Groups/Collisions" unique_id=1206556940]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 1291.34
+offset_top = 1325.23
+offset_right = 1391.843
+offset_bottom = 1382.4932
+mouse_filter = 2
+script = ExtResource("3_bwjox")
+object_size = Vector2(100.50305, 57.263184)
+
+[node name="Collisions8" type="Control" parent="Groups/Collisions" unique_id=922281315]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 1363.8
+offset_top = 1253.95
+offset_right = 1467.8091
+offset_bottom = 1319.3936
+mouse_filter = 2
+script = ExtResource("3_bwjox")
+object_size = Vector2(104.00903, 65.4436)
+
+[node name="Collisions9" type="Control" parent="Groups/Collisions" unique_id=1878468751]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 1415.22
+offset_top = 556.271
+offset_right = 1491.1813
+offset_bottom = 1244.598
+mouse_filter = 2
+script = ExtResource("3_bwjox")
+object_size = Vector2(75.9613, 688.327)
+
+[node name="Collisions10" type="Control" parent="Groups/Collisions" unique_id=212635317]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 1286.67
+offset_top = 499.008
+offset_right = 1404.702
+offset_bottom = 572.6321
+mouse_filter = 2
+script = ExtResource("3_bwjox")
+object_size = Vector2(118.03198, 73.624084)
+
+[node name="Collisions11" type="Control" parent="Groups/Collisions" unique_id=523033929]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 1225.9
+offset_top = 440.576
+offset_right = 1283.1632
+offset_bottom = 510.69418
+mouse_filter = 2
+script = ExtResource("3_bwjox")
+object_size = Vector2(57.263184, 70.118195)
+
+[node name="Collisions12" type="Control" parent="Groups/Collisions" unique_id=1346267241]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 1156.95
+offset_top = 389.156
+offset_right = 1217.719
+offset_bottom = 448.7564
+mouse_filter = 2
+script = ExtResource("3_bwjox")
+object_size = Vector2(60.769043, 59.600403)
+
+[node name="Collisions13" type="Control" parent="Groups/Collisions" unique_id=2078845600]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 968.799
+offset_top = 330.724
+offset_right = 1169.804
+offset_bottom = 391.4931
+mouse_filter = 2
+script = ExtResource("3_bwjox")
+object_size = Vector2(201.00494, 60.769104)
+
+[node name="Collisions14" type="Control" parent="Groups/Collisions" unique_id=261102940]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 714.037
+offset_top = 258.269
+offset_right = 966.462
+offset_bottom = 327.2185
+mouse_filter = 2
+script = ExtResource("3_bwjox")
+object_size = Vector2(252.42499, 68.94949)
+
+[node name="Collisions15" type="Control" parent="Groups/Collisions" unique_id=1961695640]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 402.011
+offset_top = 225.547
+offset_right = 710.531
+offset_bottom = 260.6061
+mouse_filter = 2
+script = ExtResource("3_bwjox")
+object_size = Vector2(308.52002, 35.059113)
+
+[node name="Collisions16" type="Control" parent="Groups/Collisions" unique_id=91045857]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 272.292
+offset_top = 239.57
+offset_right = 444.081
+offset_bottom = 323.7118
+mouse_filter = 2
+script = ExtResource("3_bwjox")
+object_size = Vector2(171.789, 84.141785)
+
+[node name="Collisions17" type="Control" parent="Groups/Collisions" unique_id=340771206]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 191.656
+offset_top = 309.689
+offset_right = 312.02502
+offset_bottom = 386.819
+mouse_filter = 2
+script = ExtResource("3_bwjox")
+object_size = Vector2(120.36902, 77.130005)
+
+[node name="Collisions18" type="Control" parent="Groups/Collisions" unique_id=354567085]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 126.213
+offset_top = 383.313
+offset_right = 248.92
+offset_bottom = 456.93707
+mouse_filter = 2
+script = ExtResource("3_bwjox")
+object_size = Vector2(122.707, 73.624084)
+
+[node name="Collisions19" type="Control" parent="Groups/Collisions" unique_id=148577203]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 61.9377
+offset_top = 458.105
+offset_right = 179.9697
+offset_bottom = 513.0309
+mouse_filter = 2
+script = ExtResource("3_bwjox")
+object_size = Vector2(118.032, 54.925873)
+
+[node name="Collisions20" type="Control" parent="Groups/Collisions" unique_id=1221934016]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 7.01182
+offset_top = 522.38
+offset_right = 123.87582
+offset_bottom = 645.08704
+mouse_filter = 2
+script = ExtResource("3_bwjox")
+object_size = Vector2(116.864, 122.70703)
+
+[node name="Collisions21" type="Control" parent="Groups/Collisions" unique_id=165852147]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 12.855
+offset_top = 660.279
+offset_right = 54.9259
+offset_bottom = 1199.02
+mouse_filter = 2
+script = ExtResource("3_bwjox")
+object_size = Vector2(42.0709, 538.741)
+
+[node name="Collisions22" type="Control" parent="Groups/Collisions" unique_id=1401245139]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 68.9495
+offset_top = 1079.82
+offset_right = 111.0204
+offset_bottom = 1336.9199
+mouse_filter = 2
+script = ExtResource("3_bwjox")
+object_size = Vector2(42.0709, 257.09998)
+
+[node name="Collisions23" type="Control" parent="Groups/Collisions" unique_id=1009787953]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 120.369
+offset_top = 1262.13
+offset_right = 196.3303
+offset_bottom = 1461.967
+mouse_filter = 2
+script = ExtResource("3_bwjox")
+object_size = Vector2(75.9613, 199.83704)
+
+[node name="Collisions24" type="Control" parent="Groups/Collisions" unique_id=1830217895]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 215.029
+offset_top = 1378.99
+offset_right = 614.702
+offset_bottom = 1480.661
+mouse_filter = 2
+script = ExtResource("3_bwjox")
+object_size = Vector2(399.67303, 101.67102)
+
+[node name="Collisions25" type="Control" parent="Groups/Collisions" unique_id=1212539289]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 615.871
+offset_top = 1336.92
+offset_right = 723.386
+offset_bottom = 1457.2891
+mouse_filter = 2
+script = ExtResource("3_bwjox")
+object_size = Vector2(107.515015, 120.36902)
+
+[node name="Collisions26" type="Control" parent="Groups/Collisions" unique_id=1740096436]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 721.048
+offset_top = 1280.82
+offset_right = 815.70746
+offset_bottom = 1404.695
+mouse_filter = 2
+script = ExtResource("3_bwjox")
+object_size = Vector2(94.659485, 123.875)
+
+[node name="Collisions27" type="Control" parent="Groups/Collisions" unique_id=655964829]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 780.649
+offset_top = 1097.35
+offset_right = 863.6221
+offset_bottom = 1346.269
+mouse_filter = 2
+script = ExtResource("3_bwjox")
+object_size = Vector2(82.97308, 248.91907)
+
+[node name="Collisions28" type="Control" parent="Groups/Collisions" unique_id=1074163424]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 851.936
+offset_top = 971.136
+offset_right = 941.92096
+offset_bottom = 1109.035
+mouse_filter = 2
+script = ExtResource("3_bwjox")
+object_size = Vector2(89.984985, 137.89905)
+
+[node name="Collisions29" type="Control" parent="Groups/Collisions" unique_id=1350929217]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 451.093
+offset_top = 952.438
+offset_right = 633.4
+offset_bottom = 1139.4199
+mouse_filter = 2
+script = ExtResource("3_bwjox")
+object_size = Vector2(182.30704, 186.98193)
+
+[node name="Collisions30" type="Control" parent="Groups/Collisions" unique_id=424169711]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 275.798
+offset_top = 1149.94
+offset_right = 621.714
+offset_bottom = 1208.3717
+mouse_filter = 2
+script = ExtResource("3_bwjox")
+object_size = Vector2(345.916, 58.431763)
+
+[node name="Collisions31" type="Control" parent="Groups/Collisions" unique_id=1879696448]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 237.233
+offset_top = 1050.6
+offset_right = 326.04932
+offset_bottom = 1133.5731
+mouse_filter = 2
+script = ExtResource("3_bwjox")
+object_size = Vector2(88.816315, 82.973145)
+
+[node name="Collisions32" type="Control" parent="Groups/Collisions" unique_id=2103076699]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 217.366
+offset_top = 883.489
+offset_right = 314.3628
+offset_bottom = 1078.651
+mouse_filter = 2
+script = ExtResource("3_bwjox")
+object_size = Vector2(96.996796, 195.16199)
+
+[node name="Collisions33" type="Control" parent="Groups/Collisions" unique_id=1141295850]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 271.124
+offset_top = 639.244
+offset_right = 391.49298
+offset_bottom = 919.71704
+mouse_filter = 2
+script = ExtResource("3_bwjox")
+object_size = Vector2(120.36899, 280.47302)
+
+[node name="Collisions34" type="Control" parent="Groups/Collisions" unique_id=1996138602]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 322.544
+offset_top = 570.294
+offset_right = 417.2035
+offset_bottom = 640.41223
+mouse_filter = 2
+script = ExtResource("3_bwjox")
+object_size = Vector2(94.659485, 70.118225)
+
+[node name="Collisions35" type="Control" parent="Groups/Collisions" unique_id=339930087]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 390.324
+offset_top = 509.525
+offset_right = 1019.05005
+offset_bottom = 628.726
+mouse_filter = 2
+script = ExtResource("3_bwjox")
+object_size = Vector2(628.7261, 119.20102)
+
+[node name="Collisions36" type="Control" parent="Groups/Collisions" unique_id=1589699034]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 1028.4
+offset_top = 571.463
+offset_right = 1076.3141
+offset_bottom = 687.158
+mouse_filter = 2
+script = ExtResource("3_bwjox")
+object_size = Vector2(47.914063, 115.69501)
+
+[node name="Collisions37" type="Control" parent="Groups/Collisions" unique_id=126204313]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 1083.33
+offset_top = 629.895
+offset_right = 1148.7736
+offset_bottom = 750.26404
+mouse_filter = 2
+script = ExtResource("3_bwjox")
+object_size = Vector2(65.4436, 120.36902)
+
+[node name="Collisions38" type="Control" parent="Groups/Collisions" unique_id=1204837919]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 1159.29
+offset_top = 703.519
+offset_right = 1229.4082
+offset_bottom = 834.406
+mouse_filter = 2
+script = ExtResource("3_bwjox")
+object_size = Vector2(70.118164, 130.88702)
+
+[node name="Collisions39" type="Control" parent="Groups/Collisions" unique_id=2043653658]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 1236.42
+offset_top = 772.468
+offset_right = 1271.4791
+offset_bottom = 1153.443
+mouse_filter = 2
+script = ExtResource("3_bwjox")
+object_size = Vector2(35.059082, 380.97498)
+
+[node name="Collisions40" type="Control" parent="Groups/Collisions" unique_id=2043569493]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 1158.12
+offset_top = 1145.26
+offset_right = 1223.5636
+offset_bottom = 1293.677
+mouse_filter = 2
+script = ExtResource("3_bwjox")
+object_size = Vector2(65.4436, 148.41699)
+
+[node name="Collisions41" type="Control" parent="Groups/Collisions" unique_id=204166634]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 1072.81
+offset_top = 1272.64
+offset_right = 1137.0851
+offset_bottom = 1328.7345
+mouse_filter = 2
+script = ExtResource("3_bwjox")
+object_size = Vector2(64.275024, 56.094482)
+
+[node name="Collisions42" type="Control" parent="Groups/Collisions" unique_id=74071513]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 886.995
+offset_top = 1319.39
+offset_right = 1083.3259
+offset_bottom = 1343.9314
+mouse_filter = 2
+script = ExtResource("3_bwjox")
+object_size = Vector2(196.33093, 24.541382)
+
+[node name="Collisions43" type="Control" parent="Groups/Collisions" unique_id=2111987117]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 830.9
+offset_top = 1349.77
+offset_right = 884.65735
+offset_bottom = 1411.7078
+mouse_filter = 2
+script = ExtResource("3_bwjox")
+object_size = Vector2(53.757324, 61.937744)
+
+[node name="Collisions44" type="Control" parent="Groups/Collisions" unique_id=1220854978]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 746.758
+offset_top = 1422.23
+offset_right = 830.8998
+offset_bottom = 1471.3126
+mouse_filter = 2
+script = ExtResource("3_bwjox")
+object_size = Vector2(84.141785, 49.08264)
+
+[node name="Collisions45" type="Control" parent="Groups/Collisions" unique_id=165072106]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 639.244
+offset_top = 1478.32
+offset_right = 765.45703
+offset_bottom = 1537.9203
+mouse_filter = 2
+script = ExtResource("3_bwjox")
+object_size = Vector2(126.21301, 59.60034)
+
+[node name="Collisions46" type="Control" parent="Groups/Collisions" unique_id=684827272]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 587.824
+offset_top = 1550.78
+offset_right = 702.35
+offset_bottom = 1602.2001
+mouse_filter = 2
+script = ExtResource("3_bwjox")
+object_size = Vector2(114.526, 51.420044)
+
+[node name="Transition" type="Node2D" parent="Groups" unique_id=471058697]
+
+[node name="Transition0" type="Control" parent="Groups/Transition" unique_id=472622483]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 647.875
+offset_top = 1952.42
+offset_right = 762.792
+offset_bottom = 1956.2534
+mouse_filter = 2
+script = ExtResource("3_bwjox")
+object_size = Vector2(114.91699, 3.833374)
+properties = {
+"pos": "plant",
+"target": "world"
+}
+
+[node name="Water" type="Node2D" parent="Groups" unique_id=1709555414]

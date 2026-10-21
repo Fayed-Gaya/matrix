@@ -1,0 +1,15 @@
+[gd_resource type="TileSet" format=3]
+
+[ext_resource type="Texture2D" path="res://levels/mario/assets/graphics/enemy/run/1.png" id="1_mhijf"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qjgts"]
+texture = ExtResource("1_mhijf")
+texture_region_size = Vector2i(51, 46)
+0:0/0 = 0
+0:0/0/texture_origin = Vector2i(6, -9)
+
+[resource]
+tile_size = Vector2i(64, 64)
+custom_data_layer_0/name = "value"
+custom_data_layer_0/type = 2
+sources/0 = SubResource("TileSetAtlasSource_qjgts")

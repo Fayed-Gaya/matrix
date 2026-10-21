@@ -1,0 +1,15 @@
+[gd_resource type="TileSet" format=3]
+
+[ext_resource type="Texture2D" path="res://levels/zelda/assets/graphics/test/rock.png" id="1_2hukb"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qffyl"]
+texture = ExtResource("1_2hukb")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+0:0/0/custom_data_0 = 395
+
+[resource]
+tile_size = Vector2i(64, 64)
+custom_data_layer_0/name = "value"
+custom_data_layer_0/type = 2
+sources/395 = SubResource("TileSetAtlasSource_qffyl")

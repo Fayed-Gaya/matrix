@@ -11,11 +11,22 @@ upgrade costs/caps, regeneration, HUD, original sprites/font/music/effects.
 The source's initial half health, 80% energy, 5000 XP and stat tables are retained.
 The source has **no player death/reset routine**; this port does not invent one.
 
-Assets/maps copied under `assets/` from `legacy/pygame/levels/zelda/`. The manifest
-retains every CSV cell, source stat table and explicit sorted frame paths.
-Rebuild with `python3 scripts/build_zelda_manifest.py` (reads archived settings).
-No new artwork or attribution/licensing claim is introduced. Runtime uses only
-this module's GDScript/data/assets, not Python or hub gameplay code.
+Open `maps/world.tscn` directly in Godot. Paint Ground for scenery, and
+map_FloorBlocks, map_Grass, map_Objects and map_Entities for collision and
+population. Each has an external TileSet. Entity values 390–393 place the four
+enemy species; 394 places the player. FloorBlocks are translucent editor guides.
+Grass keeps the existing random visual variation at runtime. Objects retain
+the original vertical offset, depth sorting and collision shrink rules.
+
+The previous runtime drew `graphics/tilemap/ground.png` as one image; Ground now
+references its exact 64×64 regions as individually paintable native cells.
+No additional scenery was flattened. The unused CSV Floor/Details/LargeObjects
+grids were not runtime layers and are not overlaid (which would change the art).
+Paint beyond the old extent to expand the map, including negative coordinates.
+The native scene is authoritative; save normally without regeneration.
+`assets/manifest.json` retains only frame paths and weapon/magic/enemy tables.
+Artwork, source images and attribution remain preserved; Python and the archive
+are not runtime dependencies. Frozen fixtures are regression expectations only.
 
 The archived launcher currently fails: `level.py` requests MAP_DIR from settings,
 which does not expose it, and fallback imports then report a missing `level`.

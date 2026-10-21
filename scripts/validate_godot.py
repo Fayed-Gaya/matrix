@@ -1,12 +1,9 @@
 """Validate with the pinned engine; Python is development tooling only."""
 
 import argparse
-import json
 import subprocess
 import tempfile
 from pathlib import Path
-
-from convert_hub_map import describe_map
 
 
 def main() -> None:
@@ -14,18 +11,17 @@ def main() -> None:
     parser.add_argument("--godot", default="godot")
     args = parser.parse_args()
     root = Path(__file__).resolve().parent.parent
+    # Prevent reintroducing a second runtime map-authoring source.
+    for folder in ("app", "hub", "levels", "shared"):
+        obsolete = [p for p in (root / folder).rglob("*") if p.suffix in {".tmx", ".tsx", ".csv"}]
+        if obsolete:
+            raise SystemExit(f"Obsolete map-authoring source remains: {obsolete[0]}")
     version = subprocess.check_output([args.godot, "--version"], text=True).strip()
     if not version.startswith("4.7.2.stable."):
         raise SystemExit(f"Expected Godot 4.7.2 stable; got {version}")
     with tempfile.TemporaryDirectory(prefix="matrix-godot-") as logs:
-        descriptor = Path(logs) / "hub.json"
-        descriptor.write_text(json.dumps(describe_map()))
-        untitled_descriptor = Path(logs) / "untitled.json"
-        untitled_descriptor.write_text(
-            json.dumps(
-                describe_map(root / "levels/untitled/assets/maps/untitled-intro.tmx", "player")
-            )
-        )
+        descriptor = root / "scripts/validation/hub_map_reference.json"
+        untitled_descriptor = root / "scripts/validation/untitled_map_reference.json"
         for name, options, marker in [
             ("import", ["--editor", "--import"], None),
             (
@@ -102,6 +98,18 @@ def main() -> None:
                 "you",
                 ["--script", "res://scripts/validation/you_check.gd"],
                 "You camera validation passed",
+            ),
+            (
+                "native_maps",
+                [
+                    "--script",
+                    "res://scripts/validation/native_maps_check.gd",
+                    "--",
+                    "mario",
+                    "zelda",
+                    "monsters",
+                ],
+                "Native map authoring validation passed",
             ),
             ("startup", ["--quit-after", "5"], "Matrix hub ready"),
         ]:

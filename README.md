@@ -12,6 +12,15 @@ make check   # Archive guard, Godot imports, hub/level behavior and startup
 make runtime-check # Fresh archive-free import and all ten routes
 ```
 
+Maps are authored directly in Godot. Open `hub/world.tscn`,
+`levels/untitled/world.tscn`, or a scene under
+`levels/{mario,zelda,monsters}/maps/`; select a TileMapLayer and paint.
+Save the scene normally. Edit collision/interaction markers in the 2D editor.
+No Tiled, CSV edits or scene-generation command is required.
+See [native map editing and verification](docs/migration/native-maps.md).
+`make editor-map-check` verifies open/paint/erase/save/reload in an actual
+Godot editor using a disposable copy; it requires a desktop display.
+
 On this Mac the default executable is
 `/Applications/Godot.app/Contents/MacOS/Godot`. On another machine, use
 `make check GODOT=/path/to/godot` (or `GODOT=godot` if on PATH). Validation

@@ -1,0 +1,144 @@
+[gd_scene format=4]
+
+[ext_resource type="Script" path="res://shared/maps/native_map.gd" id="1_qbvtm"]
+[ext_resource type="TileSet" path="res://levels/monsters/maps/terrain.tres" id="2_g4dhf"]
+[ext_resource type="Script" path="res://shared/maps/map_object.gd" id="3_i23y3"]
+
+[node name="World" type="Node2D" unique_id=1234970665]
+script = ExtResource("1_qbvtm")
+grid_size = Vector2i(9, 12)
+
+[node name="Terrain" type="TileMapLayer" parent="." unique_id=1858445665]
+tile_map_data = PackedByteArray("AAAAAAAANwAAAAAAAAABAAAAOAAAAAAAAAACAAAAOAAAAAAAAAADAAAAOAAAAAAAAAAEAAAAOAAAAAAAAAAFAAAAOAAAAAAAAAAGAAAAOAAAAAAAAAAHAAAAOAAAAAAAAAAIAAAAOQAAAAAAAAAAAAEAOgAAAAAAAAABAAEAOwAAAAAAAAACAAEAOwAAAAAAAAADAAEAPAAAAAAAAAAEAAEAPQAAAAAAAAAFAAEAOwAAAAAAAAAGAAEAOwAAAAAAAAAHAAEAOwAAAAAAAAAIAAEAPgAAAAAAAAAAAAIAOgAAAAAAAAABAAIAPwAAAAAAAAACAAIAPwAAAAAAAAADAAIAQAAAAAAAAAAEAAIAQQAAAAAAAAAFAAIAPwAAAAAAAAAGAAIAPwAAAAAAAAAHAAIAPwAAAAAAAAAIAAIAQgAAAAAAAAAAAAMAOgAAAAAAAAABAAMAQwAAAAAAAAACAAMAQwAAAAAAAAADAAMAQwAAAAAAAAAEAAMAQwAAAAAAAAAFAAMAQwAAAAAAAAAGAAMAQwAAAAAAAAAHAAMAQwAAAAAAAAAIAAMARAAAAAAAAAAAAAQAOgAAAAAAAAABAAQARQAAAAAAAAACAAQARQAAAAAAAAADAAQARQAAAAAAAAAEAAQARQAAAAAAAAAFAAQARQAAAAAAAAAGAAQARQAAAAAAAAAHAAQARQAAAAAAAAAIAAQARgAAAAAAAAAAAAUAOgAAAAAAAAABAAUARQAAAAAAAAACAAUARQAAAAAAAAADAAUARQAAAAAAAAAEAAUARQAAAAAAAAAFAAUARQAAAAAAAAAGAAUARQAAAAAAAAAHAAUARQAAAAAAAAAIAAUARAAAAAAAAAAAAAYAOgAAAAAAAAABAAYARQAAAAAAAAACAAYARQAAAAAAAAADAAYARQAAAAAAAAAEAAYARQAAAAAAAAAFAAYARQAAAAAAAAAGAAYARQAAAAAAAAAHAAYARQAAAAAAAAAIAAYARAAAAAAAAAAAAAcAOgAAAAAAAAABAAcARQAAAAAAAAACAAcARQAAAAAAAAADAAcARQAAAAAAAAAEAAcARQAAAAAAAAAFAAcARQAAAAAAAAAGAAcARQAAAAAAAAAHAAcARQAAAAAAAAAIAAcARAAAAAAAAAAAAAgAOgAAAAAAAAABAAgARQAAAAAAAAACAAgARQAAAAAAAAADAAgARQAAAAAAAAAEAAgARQAAAAAAAAAFAAgARQAAAAAAAAAGAAgARQAAAAAAAAAHAAgARQAAAAAAAAAIAAgARAAAAAAAAAAAAAkAOgAAAAAAAAABAAkARQAAAAAAAAACAAkARQAAAAAAAAADAAkARQAAAAAAAAAEAAkARQAAAAAAAAAFAAkARQAAAAAAAAAGAAkARQAAAAAAAAAHAAkARQAAAAAAAAAIAAkARAAAAAAAAAAAAAoAOgAAAAAAAAABAAoARQAAAAAAAAACAAoARQAAAAAAAAADAAoARQAAAAAAAAAEAAoARQAAAAAAAAAFAAoARQAAAAAAAAAGAAoARQAAAAAAAAAHAAoARQAAAAAAAAAIAAoARAAAAAAAAAAAAAsARwAAAAAAAAABAAsASAAAAAAAAAACAAsASQAAAAAAAAADAAsASgAAAAAAAAAEAAsASAAAAAAAAAAFAAsASAAAAAAAAAAGAAsASAAAAAAAAAAHAAsASAAAAAAAAAAIAAsASwAAAAAAAAA=")
+tile_set = ExtResource("2_g4dhf")
+
+[node name="Terrain Top" type="TileMapLayer" parent="." unique_id=753558359]
+tile_map_data = PackedByteArray("AAAGAAIATAAAAAAAAAAGAAMATQAAAAAAAAAGAAQATQAAAAAAAAAGAAUATQAAAAAAAAABAAYATgAAAAAAAAACAAYATgAAAAAAAAADAAYATwAAAAAAAAAFAAYAUAAAAAAAAAAGAAYAUQAAAAAAAAA=")
+tile_set = ExtResource("2_g4dhf")
+
+[node name="Groups" type="Node2D" parent="." unique_id=655507431]
+
+[node name="Entities" type="Node2D" parent="Groups" unique_id=977203398]
+
+[node name="Entities0" type="Control" parent="Groups/Entities" unique_id=854615370]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 192.666
+offset_top = 651.333
+offset_right = 192.666
+offset_bottom = 651.333
+mouse_filter = 2
+script = ExtResource("3_i23y3")
+object_name = "Player"
+properties = {
+"direction": "right",
+"pos": "world"
+}
+
+[node name="Entities1" type="Control" parent="Groups/Entities" unique_id=1995270113]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 286.934
+offset_top = 374.101
+offset_right = 286.934
+offset_bottom = 374.101
+mouse_filter = 2
+script = ExtResource("3_i23y3")
+object_name = "Character"
+properties = {
+"character_id": "Nurse",
+"graphic": "purple_girl"
+}
+
+[node name="Coast" type="Node2D" parent="Groups" unique_id=1084522083]
+
+[node name="Water" type="Node2D" parent="Groups" unique_id=2035561336]
+
+[node name="Monsters" type="Node2D" parent="Groups" unique_id=1947156171]
+
+[node name="Collisions" type="Node2D" parent="Groups" unique_id=486313697]
+
+[node name="Collisions0" type="Control" parent="Groups/Collisions" unique_id=426571218]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 54.0322
+offset_top = 141.886
+offset_right = 449.16818
+offset_bottom = 444.219
+mouse_filter = 2
+script = ExtResource("3_i23y3")
+object_size = Vector2(395.136, 302.333)
+
+[node name="Collisions1" type="Control" parent="Groups/Collisions" unique_id=542667006]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -5.77444
+offset_top = 712.73
+offset_right = 148.48555
+offset_bottom = 777.07367
+mouse_filter = 2
+script = ExtResource("3_i23y3")
+object_size = Vector2(154.26, 64.34369)
+
+[node name="Collisions2" type="Control" parent="Groups/Collisions" unique_id=1374730514]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 239.227
+offset_top = 710.668
+offset_right = 590.23
+offset_bottom = 780.3737
+mouse_filter = 2
+script = ExtResource("3_i23y3")
+object_size = Vector2(351.003, 69.70569)
+
+[node name="Collisions3" type="Control" parent="Groups/Collisions" unique_id=994651827]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 524.236
+offset_top = 3.29968
+offset_right = 669.83405
+offset_bottom = 713.1427
+mouse_filter = 2
+script = ExtResource("3_i23y3")
+object_size = Vector2(145.59802, 709.843)
+
+[node name="Collisions4" type="Control" parent="Groups/Collisions" unique_id=1997409658]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 451.231
+offset_top = 123.325
+offset_right = 527.1236
+offset_bottom = 225.61499
+mouse_filter = 2
+script = ExtResource("3_i23y3")
+object_size = Vector2(75.89261, 102.28999)
+
+[node name="Collisions5" type="Control" parent="Groups/Collisions" unique_id=534922909]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -41.246
+offset_top = 10.724
+offset_right = 51.145
+offset_bottom = 698.294
+mouse_filter = 2
+script = ExtResource("3_i23y3")
+object_size = Vector2(92.391, 687.57)
+
+[node name="Objects" type="Node2D" parent="Groups" unique_id=958762005]
+
+[node name="Transition" type="Node2D" parent="Groups" unique_id=1592740615]
+
+[node name="Transition0" type="Control" parent="Groups/Transition" unique_id=702653198]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 161.333
+offset_top = 699.999
+offset_right = 221.333
+offset_bottom = 706.6657
+mouse_filter = 2
+script = ExtResource("3_i23y3")
+object_size = Vector2(60, 6.666687)
+properties = {
+"pos": "hospital2",
+"target": "world"
+}

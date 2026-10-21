@@ -5,6 +5,7 @@ const FIELD_SIZE: Vector2 = Vector2(1200, 704)
 const NODES: Array[Vector2] = [Vector2(110,400), Vector2(300,220), Vector2(480,610), Vector2(610,350), Vector2(880,210), Vector2(1050,400)]
 var manifest: Dictionary = JSON.parse_string(FileAccess.get_file_as_string("res://levels/mario/assets/manifest.json"))
 var cache: Dictionary = {}
+var native_map: MatrixNativeMap
 var mode: String = "overworld"
 var selected: int = 0
 var max_level: int = 2
@@ -58,6 +59,8 @@ func _ready() -> void:
 
 
 func _exit_tree() -> void:
+	if native_map != null:
+		native_map.free()
 	for node: Node in get_children():
 		if node is AudioStreamPlayer:
 			node.stop()
@@ -112,8 +115,12 @@ func enter_stage(index: int) -> void:
 	animation = 0
 	status = "idle"
 	facing_right = true
-	var data: Dictionary = manifest.maps[mini(index, 2)]
-	level_width = data.terrain[0].size() * 64
+	if native_map != null:
+		native_map.free()
+	native_map = MatrixNativeMap.open("res://levels/mario/maps/stage_"+str(mini(index,2))+".tscn")
+	var data: Dictionary = native_map.read_rows()
+	var origin: Vector2i = native_map.cell_bounds().position
+	level_width = (data.terrain[0].size() + origin.x) * 64
 	for kind: String in data:
 		var rows: Array = data[kind]
 		for y: int in range(rows.size()):
@@ -121,14 +128,14 @@ func enter_stage(index: int) -> void:
 				var tile: int = int(rows[y][x])
 				if tile < 0:
 					continue
-				var position: Vector2 = Vector2(x * 64, y * 64)
+				var position: Vector2 = Vector2((x + origin.x) * 64, (y + origin.y) * 64)
 				if kind == "player":
 					if tile == 0:
 						player = Rect2(position, Vector2(50, frames("character/idle")[0].get_height()))
 					else:
 						goal = Rect2(position, Vector2(64,64))
 					continue
-				var item: Dictionary = {"kind":kind, "rect":Rect2(position,Vector2(64,64)), "tile":tile, "frame":0.0, "dead":false, "folder":"", "speed":0}
+				var item: Dictionary = {"kind":kind, "cell":Vector2i(x,y)+origin, "rect":Rect2(position,Vector2(64,64)), "tile":tile, "frame":0.0, "dead":false, "folder":"", "speed":0}
 				if kind == "crates":
 					item.rect = Rect2(position + Vector2(0,64) - Vector2(0,image("terrain/crate.png").get_height()), image("terrain/crate.png").get_size())
 				elif kind == "coins":

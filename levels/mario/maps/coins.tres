@@ -1,0 +1,22 @@
+[gd_resource type="TileSet" format=3]
+
+[ext_resource type="Texture2D" path="res://levels/mario/assets/graphics/coins/gold/0.png" id="1_jff4r"]
+[ext_resource type="Texture2D" path="res://levels/mario/assets/graphics/coins/silver/0.png" id="2_gxjdt"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nr0wi"]
+texture = ExtResource("1_jff4r")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_c7wt7"]
+texture = ExtResource("2_gxjdt")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/custom_data_0 = 1
+
+[resource]
+tile_size = Vector2i(64, 64)
+custom_data_layer_0/name = "value"
+custom_data_layer_0/type = 2
+sources/0 = SubResource("TileSetAtlasSource_nr0wi")
+sources/1 = SubResource("TileSetAtlasSource_c7wt7")

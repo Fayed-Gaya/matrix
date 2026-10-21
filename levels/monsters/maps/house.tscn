@@ -1,0 +1,117 @@
+[gd_scene format=4]
+
+[ext_resource type="Script" path="res://shared/maps/native_map.gd" id="1_fxfk4"]
+[ext_resource type="TileSet" path="res://levels/monsters/maps/terrain.tres" id="2_o8w2r"]
+[ext_resource type="Script" path="res://shared/maps/map_object.gd" id="3_ei1an"]
+
+[node name="World" type="Node2D" unique_id=1088510483]
+script = ExtResource("1_fxfk4")
+grid_size = Vector2i(9, 12)
+
+[node name="Terrain" type="TileMapLayer" parent="." unique_id=931096084]
+tile_map_data = PackedByteArray("AAAAAAAANwAAAAAAAAABAAAAOAAAAAAAAAACAAAAOAAAAAAAAAADAAAAOAAAAAAAAAAEAAAAOAAAAAAAAAAFAAAAOAAAAAAAAAAGAAAAOAAAAAAAAAAHAAAAOAAAAAAAAAAIAAAAOQAAAAAAAAAAAAEAOgAAAAAAAAABAAEAOwAAAAAAAAACAAEAOwAAAAAAAAADAAEAPAAAAAAAAAAEAAEAPQAAAAAAAAAFAAEAOwAAAAAAAAAGAAEAOwAAAAAAAAAHAAEAOwAAAAAAAAAIAAEAPgAAAAAAAAAAAAIAOgAAAAAAAAABAAIAPwAAAAAAAAACAAIAPwAAAAAAAAADAAIAQAAAAAAAAAAEAAIAQQAAAAAAAAAFAAIAPwAAAAAAAAAGAAIAPwAAAAAAAAAHAAIAPwAAAAAAAAAIAAIAQgAAAAAAAAAAAAMAOgAAAAAAAAABAAMAQwAAAAAAAAACAAMAQwAAAAAAAAADAAMAQwAAAAAAAAAEAAMAQwAAAAAAAAAFAAMAQwAAAAAAAAAGAAMAQwAAAAAAAAAHAAMAQwAAAAAAAAAIAAMARAAAAAAAAAAAAAQAOgAAAAAAAAABAAQARQAAAAAAAAACAAQARQAAAAAAAAADAAQARQAAAAAAAAAEAAQARQAAAAAAAAAFAAQARQAAAAAAAAAGAAQARQAAAAAAAAAHAAQARQAAAAAAAAAIAAQARgAAAAAAAAAAAAUAOgAAAAAAAAABAAUARQAAAAAAAAACAAUARQAAAAAAAAADAAUARQAAAAAAAAAEAAUARQAAAAAAAAAFAAUARQAAAAAAAAAGAAUARQAAAAAAAAAHAAUARQAAAAAAAAAIAAUARAAAAAAAAAAAAAYAOgAAAAAAAAABAAYARQAAAAAAAAACAAYARQAAAAAAAAADAAYARQAAAAAAAAAEAAYARQAAAAAAAAAFAAYARQAAAAAAAAAGAAYARQAAAAAAAAAHAAYARQAAAAAAAAAIAAYARAAAAAAAAAAAAAcAOgAAAAAAAAABAAcARQAAAAAAAAACAAcARQAAAAAAAAADAAcARQAAAAAAAAAEAAcARQAAAAAAAAAFAAcARQAAAAAAAAAGAAcARQAAAAAAAAAHAAcARQAAAAAAAAAIAAcARAAAAAAAAAAAAAgAOgAAAAAAAAABAAgARQAAAAAAAAACAAgARQAAAAAAAAADAAgARQAAAAAAAAAEAAgARQAAAAAAAAAFAAgARQAAAAAAAAAGAAgARQAAAAAAAAAHAAgARQAAAAAAAAAIAAgARAAAAAAAAAAAAAkAOgAAAAAAAAABAAkARQAAAAAAAAACAAkARQAAAAAAAAADAAkARQAAAAAAAAAEAAkARQAAAAAAAAAFAAkARQAAAAAAAAAGAAkARQAAAAAAAAAHAAkARQAAAAAAAAAIAAkARAAAAAAAAAAAAAoAOgAAAAAAAAABAAoARQAAAAAAAAACAAoARQAAAAAAAAADAAoARQAAAAAAAAAEAAoARQAAAAAAAAAFAAoARQAAAAAAAAAGAAoARQAAAAAAAAAHAAoARQAAAAAAAAAIAAoARAAAAAAAAAAAAAsARwAAAAAAAAABAAsASAAAAAAAAAACAAsASQAAAAAAAAADAAsASgAAAAAAAAAEAAsASAAAAAAAAAAFAAsASAAAAAAAAAAGAAsASAAAAAAAAAAHAAsASAAAAAAAAAAIAAsASwAAAAAAAAA=")
+tile_set = ExtResource("2_o8w2r")
+
+[node name="Terrain Top" type="TileMapLayer" parent="." unique_id=2114696149]
+tile_set = ExtResource("2_o8w2r")
+
+[node name="Groups" type="Node2D" parent="." unique_id=1339006369]
+
+[node name="Entities" type="Node2D" parent="Groups" unique_id=680316270]
+
+[node name="Entities0" type="Control" parent="Groups/Entities" unique_id=369419212]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 193.333
+offset_top = 620.0
+offset_right = 193.333
+offset_bottom = 620.0
+mouse_filter = 2
+script = ExtResource("3_ei1an")
+object_name = "Player"
+properties = {
+"direction": "right",
+"pos": "world"
+}
+
+[node name="Coast" type="Node2D" parent="Groups" unique_id=379676336]
+
+[node name="Water" type="Node2D" parent="Groups" unique_id=1756928291]
+
+[node name="Monsters" type="Node2D" parent="Groups" unique_id=131946013]
+
+[node name="Collisions" type="Node2D" parent="Groups" unique_id=747628749]
+
+[node name="Collisions0" type="Control" parent="Groups/Collisions" unique_id=1354096835]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -58.0
+offset_top = 72.6667
+offset_right = 60.0
+offset_bottom = 757.9997
+mouse_filter = 2
+script = ExtResource("3_ei1an")
+object_size = Vector2(118, 685.333)
+
+[node name="Collisions1" type="Control" parent="Groups/Collisions" unique_id=1150685626]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 515.333
+offset_top = 92.6667
+offset_right = 596.6663
+offset_bottom = 772.6667
+mouse_filter = 2
+script = ExtResource("3_ei1an")
+object_size = Vector2(81.33331, 680)
+
+[node name="Collisions2" type="Control" parent="Groups/Collisions" unique_id=1406678079]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 70.6667
+offset_top = 43.3333
+offset_right = 512.6667
+offset_bottom = 190.0003
+mouse_filter = 2
+script = ExtResource("3_ei1an")
+object_size = Vector2(442, 146.667)
+
+[node name="Collisions3" type="Control" parent="Groups/Collisions" unique_id=2049152592]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 67.3333
+offset_top = 670.0
+offset_right = 156.6666
+offset_bottom = 724.6667
+mouse_filter = 2
+script = ExtResource("3_ei1an")
+object_size = Vector2(89.3333, 54.666687)
+
+[node name="Collisions4" type="Control" parent="Groups/Collisions" unique_id=1347337383]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 226.667
+offset_top = 670.667
+offset_right = 509.33398
+offset_bottom = 725.3337
+mouse_filter = 2
+script = ExtResource("3_ei1an")
+object_size = Vector2(282.667, 54.666687)
+
+[node name="Objects" type="Node2D" parent="Groups" unique_id=871224771]
+
+[node name="Transition" type="Node2D" parent="Groups" unique_id=1002432648]
+
+[node name="Transition0" type="Control" parent="Groups/Transition" unique_id=1241426083]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 161.333
+offset_top = 690.666
+offset_right = 221.333
+offset_bottom = 706.666
+mouse_filter = 2
+script = ExtResource("3_ei1an")
+object_size = Vector2(60, 16)
+properties = {
+"pos": "house",
+"target": "world"
+}

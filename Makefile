@@ -1,4 +1,4 @@
-.PHONY: check editor run legacy-check hub-map archive-check runtime-check
+.PHONY: check editor run legacy-check archive-check runtime-check
 
 GODOT ?= /Applications/Godot.app/Contents/MacOS/Godot
 PYTHON ?= ../../.venv/bin/python
@@ -15,16 +15,6 @@ run:
 legacy-check:
 	$(MAKE) -C legacy/pygame PYTHON="$(PYTHON)" check
 
-# Rebuild after editing hub/assets/maps/matrix.tmx in Tiled.
-hub-map:
-	"$(GODOT)" --headless --path . --import
-	python3 scripts/convert_hub_map.py --godot "$(GODOT)"
-
-.PHONY: untitled-map
-untitled-map:
-	"$(GODOT)" --headless --path . --import
-	python3 scripts/convert_hub_map.py --godot "$(GODOT)" --map levels/untitled/assets/maps/untitled-intro.tmx --spawn player --output res://levels/untitled/world.tscn --world-script res://levels/untitled/world.gd
-
 # Temporary preservation guard; remove only with authorized archive deletion.
 archive-check:
 	python3 scripts/validate_archive.py
@@ -32,3 +22,8 @@ archive-check:
 # Fresh imports and all ten routes without Python/archive or existing cache.
 runtime-check:
 	python3 scripts/validate_runtime.py --godot "$(GODOT)"
+
+# Actual native editor open/paint/save verification in a disposable project.
+.PHONY: editor-map-check
+editor-map-check:
+	python3 scripts/validate_native_editor.py --godot "$(GODOT)"
