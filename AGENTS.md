@@ -1,8 +1,8 @@
 # Matrix migration guide
 
 The repository is migrating from Pygame CE to Godot 4.7.2 with GDScript and
-Compatibility rendering. The hub, Bouncing Ball (`BOUNCE`), and Balls (`BALLS`) are migrated; eight level
-ports are pending.
+Compatibility rendering. The hub, Bouncing Ball, Balls, and The Bug are migrated; seven level ports
+are pending.
 
 - Keep `project.godot` at the repository root. Use typed GDScript for gameplay.
 - `app/` owns startup/routing, `hub/` the spaceship/terminal, `levels/` the
@@ -27,8 +27,10 @@ ports are pending.
   the user authorizes removal after manual gameplay testing, in its own commit.
 - Read `legacy/pygame/AGENTS.md` for archived Python development instructions.
 - Use `docs/migration/README.md` for inventory, risks, and milestone status.
-- Commit meaningful milestones; do not push or merge automatically.
-- Pause for review between migration milestones. Never claim unchecked parity.
+- Commit and push each completed level to the migration branch, as authorized
+  by the user. Do not merge.
+- Continue level by level without review pauses, as authorized by the user.
+  Record limitations and blockers; never claim unchecked parity.
 - Keep generated cache data, build output, credentials, and local tools out of Git.
   Track `.import` sidecars that define asset import settings; ignore `.godot/`.
 

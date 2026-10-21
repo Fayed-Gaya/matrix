@@ -52,6 +52,11 @@ def main() -> None:
                 ],
                 "Balls validation passed",
             ),
+            (
+                "bug",
+                ["--script", "res://scripts/validation/bug_check.gd"],
+                "The Bug validation passed",
+            ),
             ("startup", ["--quit-after", "5"], "Matrix hub ready"),
         ]:
             result = subprocess.run(

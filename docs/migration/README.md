@@ -234,3 +234,18 @@ The original drawing cases include all four corners. The center view was
 compared with a fresh Pygame render; letterbox clipping was checked visually
 and by sampling a margin pixel. All 771 archived files remain byte-identical.
 Manual timing/appearance review and other-platform exports remain pending.
+
+
+## Stage 4c — The Bug
+
+Balls commit `3bced83` was pushed. The user authorized continuing without review
+pauses, committing and pushing each completed level. Root agent instructions
+now reflect that authorization; the archive-removal restriction remains.
+
+`BUG` preserves the cat, white 600×600 field, coordinate/button debug text and
+cursor-following label. Shared-window scaling, logical mouse coordinates,
+fallback-font metrics and Escape return are documented in the level README.
+Mouse motion and left/middle/right events and cleanup were checked headlessly
+and in a real Compatibility window; the capture was inspected. A fractional
+pixel-boundary assumption in the test was corrected to target a pixel interior.
+Original source/assets remain unchanged; no full font/pixel parity is claimed.

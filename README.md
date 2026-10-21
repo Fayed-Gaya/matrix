@@ -1,7 +1,7 @@
 # Matrix
 
 Matrix is migrating to **Godot 4.7.2, GDScript, Compatibility renderer** in this
-existing repository. The root Godot project now runs the opening screen and Matrix hub. `BOUNCE` and `BALLS` run the migrated movement demos. The other eight registered games
+existing repository. The root Godot project now runs the opening screen and Matrix hub. `BOUNCE`, `BALLS`, and `BUG` run migrated demos. The other seven registered games
 are pending migration; their codes open explicit status screens with a return
 to the hub.
 

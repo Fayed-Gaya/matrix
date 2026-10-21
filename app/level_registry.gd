@@ -10,7 +10,7 @@ const ENTRIES: Dictionary = {
 	"PONG": {"name": "Tom Pong", "scene": ""},
 	"BALLS": {"name": "Balls", "scene": "res://levels/balls/balls.tscn"},
 	"BOUNCE": {"name": "Bouncing Ball", "scene": "res://levels/bouncing_ball/bouncing_ball.tscn"},
-	"BUG": {"name": "The Bug", "scene": ""},
+	"BUG": {"name": "The Bug", "scene": "res://levels/the_bug/the_bug.tscn"},
 	"YOU": {"name": "You", "scene": ""},
 	"UNTITLED": {"name": "Untitled Game", "scene": ""},
 }
