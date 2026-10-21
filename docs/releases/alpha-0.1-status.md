@@ -8,7 +8,7 @@ No browser release, Pages publication, release tag or archive removal authorized
 - [x] Phase 2: pinned Godot CI plus preserved archived tests.
 - [ ] Phase 3: web export and isolated PCK pass locally; real browser smoke in progress.
 - [x] Phase 4: build artifact and manual-main-only Pages preparation.
-- [ ] Phase 5: third-party inventory, obligations and unresolved release blockers.
+- [x] Phase 5: third-party inventory, obligations and unresolved release blockers.
 - [ ] Phase 6: final checks, pushed milestones and PR; no merge/publish/tag.
 
 Initial checkout was the old migration branch. A pre-existing editor save in
@@ -17,8 +17,8 @@ saved. A recovery copy/patch is at /tmp/matrix-alpha-preexisting-project.godot
 and /tmp/matrix-alpha-preexisting.patch. No user files discarded.
 
 Installed Godot reports 4.7.2.stable.official.ed1daf0bf. Web templates were absent.
-Official Godot release URLs and SHA-256 digests are being pinned for setup.
-See development.md for GitHub Flow; forthcoming release docs record build,
+Official Godot release URLs and SHA-256 digests are pinned for setup.
+See development.md for GitHub Flow; release docs record build,
 deployment and licensing details. Keep this status updated at each milestone.
 
 Milestone 2: Godot CI + single-threaded Web export + manual Pages preparation.
@@ -27,7 +27,12 @@ Custom templates live in ignored build/toolchain/godot; setup verifies the entir
 TPZ and extracts only the no-thread web templates. All ten exported scenes and
 runtime JSON/dynamic resources load from the isolated PCK. Removed ten unused
 .import sidecar entries accidentally present in Monsters' audio manifest.
-Native full checks and Chrome/Firefox smoke are running; CI will also test Edge.
+Native full checks and fresh runtime checks passed locally and in Linux CI.
+Export and isolated packed-resource checks passed locally and in CI.
+The first browser smoke failed in all three browsers because the test held keys
+during slow polling and overshot waypoints. A subsequent pulse test exposed an
+incorrect waypoint tolerance beside a collision. Corrected test uses short
+real key pulses through the clear corridor; new browser validation is pending.
 Diagnostics are opt-in (?matrix_smoke=1), read-only state; tests use real keys.
 No physical feed is activated. YOU has an explicit web explanation and Escape.
 
@@ -42,3 +47,20 @@ Recent logs: /tmp/matrix-alpha-export.log, /tmp/matrix-alpha-pack.log,
 /tmp/matrix-alpha-browser-tests.log, /tmp/matrix-alpha-check.log,
 /tmp/matrix-alpha-runtime.log. Native Godot editor PID 2004 was already open;
 it was left running and its pre-existing project save is preserved.
+
+Milestone 3: preliminary licensing inventory/notices and browser test corrections.
+PR: https://github.com/Fayed-Gaya/matrix/pull/4 (draft until final validation).
+678 active code/resource/media entries, SHA-256 and six embedded font records in
+third-party-inventory.json; freshness is checked in CI. No archive changes.
+Read licensing-audit.md: Pong GPL version/scope, non-commercial Pixeltype,
+conflicting Snoblin redistribution grants and missing media/font permissions
+are publication blockers. No licensing election or asset substitution made.
+Web exports now carry source notices, OFL/GPL reference texts and generated
+exact-engine component notices. See web-release.md for build/deployment and
+specific manual browser/gameplay/audio/native camera checks. Pages is suitable
+for this ~56 MB single-threaded static build but has not been configured/deployed.
+
+Initial CI run 39692641234: Godot validation passed; Web export/PCK passed,
+Chrome/Firefox/Edge launched but test navigation failed as described above.
+Archived Checks workflow passed. Final corrected CI results must be recorded
+before handoff; successful web/source artifact links should be added here.

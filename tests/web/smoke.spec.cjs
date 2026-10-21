@@ -10,15 +10,21 @@ test('opening, real keyboard navigation, ten terminal codes, return and resize',
   await page.locator('canvas').click();
   await page.keyboard.press('Enter');
   await expect.poll(async () => (await state(page)).opening).toBe(false);
-  async function walk(key, predicate) {
-    await page.keyboard.down(key);
-    try { await expect.poll(async () => predicate(await state(page)), {timeout: 15000, intervals: [10, 20, 30]}).toBe(true); }
-    finally { await page.keyboard.up(key); }
+  async function moveAxis(axis, target, negative, positive) {
+    for (let pulse = 0; pulse < 50; pulse++) {
+      const current = await state(page);
+      const distance = target - current[axis];
+      if (Math.abs(distance) <= 2) return;
+      await page.keyboard.press(distance < 0 ? negative : positive, {delay: Math.min(50, Math.max(8, Math.abs(distance) / 260 * 1000))});
+    }
+    throw new Error('Could not reach waypoint: ' + JSON.stringify(await state(page)));
   }
-  // Walk below the furniture, then across to the terminal; no state-changing hooks.
-  await walk('ArrowDown', s => s.y >= 420);
-  await walk('ArrowRight', s => s.x >= 395);
-  await walk('ArrowDown', s => s.near_terminal);
+  // Short real key pulses avoid holding movement during slow browser assertions.
+  await moveAxis('y', 423, 'ArrowUp', 'ArrowDown');
+  await moveAxis('x', 400, 'ArrowLeft', 'ArrowRight');
+  for (let pulse = 0; pulse < 15 && !(await state(page)).near_terminal; pulse++)
+    await page.keyboard.press('ArrowDown', {delay: 25});
+  expect((await state(page)).near_terminal).toBe(true);
   const codes = ['BOUNCE','BALLS','BUG','PONG','JUMP','MARIO','ZELDA','MONSTERS','UNTITLED','YOU'];
   for (const code of codes) {
     await page.keyboard.press('e');

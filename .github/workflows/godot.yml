@@ -9,7 +9,7 @@ on:
 permissions:
   contents: read
 concurrency:
-  group: godot-${{ github.ref }}
+  group: godot-${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
 jobs:
   godot:
@@ -29,6 +29,8 @@ jobs:
       - name: Install verified Godot 4.7.2 and templates
         if: steps.toolchain.outputs.cache-hit != 'true'
         run: python3 scripts/setup_godot.py --editor --templates
+      - name: Verify licensing inventory freshness
+        run: python3 scripts/audit_licenses.py --check
       - name: Validate active project and fresh runtime
         shell: bash
         run: |

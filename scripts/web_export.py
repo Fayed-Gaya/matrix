@@ -2,6 +2,7 @@
 
 import argparse
 import json
+import shutil
 import subprocess
 from pathlib import Path
 
@@ -43,6 +44,18 @@ def main():
     for name in ("index.html", "index.js", "index.wasm", "index.pck"):
         if not (destination / name).is_file():
             raise SystemExit("Missing export: " + name)
+    shutil.copy2(ROOT / "THIRD_PARTY_NOTICES.md", destination / "THIRD_PARTY_NOTICES.md")
+    shutil.copytree(ROOT / "LICENSES", destination / "LICENSES", dirs_exist_ok=True)
+    run(
+        [
+            args.godot,
+            "--headless",
+            "--path",
+            ".",
+            "--script",
+            "res://scripts/release/engine_notices.gd",
+        ]
+    )
     (destination / ".nojekyll").touch()
     revision = subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=ROOT, text=True).strip()
     (destination / "build-info.json").write_text(
@@ -50,6 +63,11 @@ def main():
             {
                 "engine": version,
                 "commit": revision,
+                "dirty": bool(
+                    subprocess.check_output(
+                        ["git", "status", "--porcelain"], cwd=ROOT, text=True
+                    ).strip()
+                ),
                 "milestone": "Alpha 0.1 technical preview",
                 "threads": False,
             },
