@@ -15,11 +15,6 @@ run:
 legacy-check:
 	$(MAKE) -C legacy/pygame PYTHON="$(PYTHON)" check
 
-.PHONY: untitled-map
-untitled-map:
-	"$(GODOT)" --headless --path . --import
-	python3 scripts/convert_hub_map.py --godot "$(GODOT)" --map levels/untitled/assets/maps/untitled-intro.tmx --spawn player --output res://levels/untitled/world.tscn --world-script res://levels/untitled/world.gd
-
 # Temporary preservation guard; remove only with authorized archive deletion.
 archive-check:
 	python3 scripts/validate_archive.py

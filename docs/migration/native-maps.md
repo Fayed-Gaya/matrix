@@ -27,7 +27,7 @@ Do not flatten artwork or replace source art. Keep manifests for non-map frame/a
 - [x] Safety: fetch refs, inspect status/worktrees/processes, isolate branch.
 - [x] Audit implementations and existing parity checklist.
 - [x] Hub: native authority, editable TileSet/shapes/markers, validation, commit/push.
-- [ ] Untitled: same, including NPC/dialogue; validation, commit/push.
+- [x] Untitled: same, including NPC/dialogue; validation, commit/push.
 - [ ] Mario: three native maps, runtime adapter, parity/edit validation, commit/push.
 - [ ] Zelda: native map and runtime adapter, parity/edit validation, commit/push.
 - [ ] Monsters: eight native maps/objects/regions, parity/edit validation, commit/push.
@@ -48,3 +48,7 @@ Exercise save/reload edits through native resources and their runtime readers.
 Run existing behavioral suites and all terminal routes. Record automatic evidence here.
 Headless/resource checks do not certify visual or gameplay parity. Full exploration,
 collision feel, dialogue, routes, combat, timing and audible playback remain manual.
+
+Untitled milestone: `make check` passed on 2026-10-21, including every cell,
+all 11 collision rectangles, spawn/NPC, dialogue, ambience and all ten routes.
+The scene and external TileSet are authoritative; shapes and markers feed runtime.
