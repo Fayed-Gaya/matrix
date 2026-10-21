@@ -26,10 +26,15 @@ feeds with platform/hardware limitations; full gameplay parity is not certified.
   true before launch, to avoid activating physical cameras. Test with synthetic
   CameraFeeds; real hardware/permission checks remain manual.
 - Do not add persistence, accounts, cloud services, or downloadable content.
-- `legacy/pygame/` is the preserved runnable reference. Do not delete it until
+- `legacy/pygame/` is the preserved source reference. Do not delete it until
   the user authorizes removal after manual gameplay testing, in its own commit.
 - Read `legacy/pygame/AGENTS.md` for archived Python development instructions.
-- Use `docs/migration/README.md` for inventory, risks, and milestone status.
+- Use `docs/migration/README.md` for inventory, risks, and milestone status;
+  `docs/migration/parity-checklist.md` records verified behavior and manual gaps.
+- `make archive-check` verifies all 771 archived baseline checksums.
+  `make runtime-check` validates fresh imports/routes without the archive/cache.
+- Exports are not configured/certified yet. Include runtime `*.json` manifests
+  and camera permissions when creating platform packaging.
 - Commit and push each completed level to the migration branch, as authorized
   by the user. Do not merge.
 - Continue level by level without review pauses, as authorized by the user.

@@ -8,7 +8,8 @@ camera backend. Each level documents parity differences and manual checks.
 ```sh
 make editor  # Open the Godot project
 make run     # Launch the Matrix hub
-make check   # Headless import, resource, hub behavior and startup validation
+make check   # Archive guard, Godot imports, hub/level behavior and startup
+make runtime-check # Fresh archive-free import and all ten routes
 ```
 
 On this Mac the default executable is
@@ -23,11 +24,12 @@ requires Python 3 as development tooling and rejects engines other than
 - `shared/`: intentionally reused Godot resources.
 - `scripts/`: development tools and validation.
 
-See [the migration inventory and plan](docs/migration/README.md).
+See [the parity checklist and manual acceptance steps](docs/migration/parity-checklist.md)
+and [migration inventory/log](docs/migration/README.md).
 The original [project documentation](legacy/pygame/README.md), games, assets,
 Tiled workspace, and Windows packaging tools remain in `legacy/pygame/`.
-Godot excludes the archive from resource scanning. Imported assets for ports
-will live with their Godot modules, with attribution preserved.
+Godot excludes the archive from resource scanning. Ported assets
+live with their Godot modules, with attribution preserved.
 
 Run the archived hub using the existing local environment:
 

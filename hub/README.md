@@ -7,9 +7,10 @@ Escape closes the terminal or quits from the room. Codes ignore surrounding
 whitespace and letter case, and input is limited to 18 characters.
 
 Codes: `JUMP`, `MARIO`, `MONSTERS`, `ZELDA`, `PONG`, `BALLS`, `BOUNCE`, `BUG`,
-`YOU`, `UNTITLED`. Each currently opens an explicit not-yet-migrated screen.
-Escape or its Return button returns to the same hub position without replaying
-the opening. These screens test routing; they are not migrated games.
+`YOU`, `UNTITLED`. Each opens its native Godot level module. Escape returns to
+the same hub position without replaying the opening; some levels close a local
+menu first. See each level README for controls and parity limitations. You camera
+capture depends on native platform support and needs hardware testing.
 
 - `hub.tscn` / `hub.gd`: lifecycle, input, terminal, 2x SubViewport, camera bounds.
 - `overlay.gd`: opening, terminal and interaction hint at full window resolution.

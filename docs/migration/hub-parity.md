@@ -1,9 +1,8 @@
 # Stage 3 hub parity
 
-This document records the Stage 3 hub checkpoint. Stage 4 progress is recorded
-in the migration log and individual level READMEs; BOUNCE and BALLS now run their
-actual ports, while the other eight codes retain pending screens with return controls.
-Stage 2 commit `2f67df7` was pushed at the user's request before this work.
+This document records the hub implementation, updated after the ten Stage 4
+ports. All original codes now load native module scenes. Per-level limitations
+and remaining manual checks are summarized in [the parity checklist](parity-checklist.md).
 
 | Original behavior | Godot implementation / evidence |
 | --- | --- |
@@ -15,8 +14,8 @@ Stage 2 commit `2f67df7` was pushed at the user's request before this work.
 | Terminal proximity and pause | Same 24×24 rectangle around the map's point object; reachable without crossing a collision; E interaction and movement lock checked |
 | Code entry | Uppercase printable input, 18-character limit, Backspace, Enter, trim/case-insensitive lookup, invalid/empty feedback and Escape closure checked |
 | Registered codes | All ten original codes preserved, including UNTITLED; tested through actual terminal key events |
-| Launching actual games | Pending Stage 4. All ten currently show explicit pending screens, never substitute generic games |
-| Return to hub | New improvement: Escape or pending-screen button frees level and resumes same hub instance/position; opening and terminal stay closed |
+| Launching actual games | All ten native module scenes load through actual terminal key events; camera hardware disabled during automation |
+| Return to hub | New improvement: Escape frees level and resumes same hub instance/position; opening and terminal stay closed |
 | Independent level contract | Tested with a separate fixture scene extending MatrixLevel; root and child timer/audio nodes released on return |
 
 ## Intentional differences and remaining limits
@@ -39,7 +38,7 @@ as another process. There is no persistence; the hub is retained in memory only.
 The return contract removes/frees the entire level root. Future levels must
 own their timers/audio/camera under that root and release external resources
 (such as camera hardware) when exiting the tree. The fixture tests ownership
-cleanup, not real hardware or future port behavior.
+cleanup; dedicated level suites cover current ports. Real camera hardware remains unverified.
 
 ## Automated and visual verification
 
@@ -71,9 +70,8 @@ Run `make run` and check:
    around the bookcase, couch, counter and small furniture.
 3. Walk down/right from spawn, around the small obstacles to the computer on
    the bottom counter; press E when prompted. Check invalid input and editing.
-4. Try a registered code, inspect the pending notice, press Escape or Return,
+4. Try a registered code, play the level briefly, then press Escape,
    and verify the same player position and responsive controls.
 5. Escape closes the terminal; Escape from the room quits the application.
 
-Next milestone: Stage 4, Bouncing Ball (`BOUNCE`), then the other simple games
-before the larger platformer/RPG ports. Pause for review at each level commit.
+Keep the archive until manual gameplay review and explicit removal authorization.

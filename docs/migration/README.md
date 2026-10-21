@@ -1,5 +1,16 @@
 # Matrix migration baseline and plan
 
+## Current status
+
+All ten registered codes have native Godot module scenes. Automated checks and
+Compatibility-window review cover the hub and each port; full gameplay parity
+is not certified. You has documented camera platform/hardware limitations.
+See [the consolidated parity checklist](parity-checklist.md) for current evidence,
+known differences and manual acceptance steps. The sections below are the
+chronological checkpoint log; earlier pending/pausing instructions describe
+those historical stages. The user subsequently authorized commit/push per level
+and continuation without review pauses. No merge or archive deletion is authorized.
+
 ## Checkpoint
 
 Stage 1 baseline (Stage 2 results follow below). Baseline: `9f89816` on `main`, matching the
@@ -380,3 +391,21 @@ external-texture preview is unsupported, and real permissions/capture/colors/
 orientation/shutdown and mobile packaging remain manual work. See
 `levels/you/README.md` for API references and limitations. All ten codes now have
 module scenes; Stage 5 consolidates validation and the manual parity checklist.
+
+
+## Stage 5 — validation and cleanup preparation
+
+You (`60314a8`) was committed/pushed first. All ten terminal routes now require
+actual scene paths in the integration suite. Archive preservation is a repeatable
+SHA-256 guard in `make archive-check` (also run by `make check`). A separate
+`make runtime-check` freshly imports and exercises all native routes without the
+archive, development Python files or existing import cache. Stale hub notes were
+updated and the consolidated parity checklist records per-level differences.
+
+Full engine/resource/hub/level/startup checks, archive checks, isolated runtime,
+archived source quality checks, Python tooling lint/format and diff hygiene
+passed. Windowed native routing/return was also rechecked with hardware capture
+disabled. Manual full gameplay/audio/camera and target exports remain unverified;
+stock Windows/web camera support and unused arena content are explicit limits.
+`legacy/pygame/` remains tracked and byte-identical for all 771 baseline files.
+No merge, archive removal, persistence, accounts or infrastructure was added.

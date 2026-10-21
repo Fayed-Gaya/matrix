@@ -113,6 +113,8 @@ func run() -> void:
 	check(LevelRegistry.lookup(" jump ").name == "Jump", "Lookup trims and ignores case")
 	check(LevelRegistry.ENTRIES.size() == 10, "All ten original codes registered")
 	for code: String in LevelRegistry.ENTRIES:
+		check(not LevelRegistry.lookup(code).scene.is_empty(), "Native scene required: " + code)
+	for code: String in LevelRegistry.ENTRIES:
 		key(KEY_E)
 		text(" " + code.to_lower() + " ")
 		if code == "YOU":
