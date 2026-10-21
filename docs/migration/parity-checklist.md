@@ -1,7 +1,7 @@
 # Godot migration parity checklist
 
 Checkpoint: Godot 4.7.2, GDScript, Compatibility, branch
-`migration/godot-4.7.2`. All ten original terminal codes have independent native
+`migration/native-godot-maps` (based on `migration/godot-4.7.2`). All ten original terminal codes have independent native
 scenes inside one application. The hub remains in memory on return; leaving a
 level discards that visit's game state. No persistence/accounts/cloud/DLC added.
 This is an implementation and validation record, **not full gameplay parity**.
@@ -26,7 +26,8 @@ This is an implementation and validation record, **not full gameplay parity**.
   resources, all-code terminal integration, per-level behavioral suites and
   startup. Rejects error output and leaked-instance warnings even on exit code 0.
   Tests never activate physical camera feeds.
-- `make archive-check`: SHA-256 comparison of all 771 relocated baseline files.
+- `make archive-check`: SHA-256 comparison of all 771 relocated baseline files;
+  exact in-memory CRLF reconstruction is accepted for Git-normalized text.
 - `make runtime-check`: copies only the root Godot project plus app/hub/levels/
   shared into a temporary directory, imports without existing cache, launches all
   ten actual scenes and returns. No archive, Python runtime or old import cache
@@ -62,3 +63,16 @@ permissions/usage descriptions before camera-capable application packaging.
 **Keep `legacy/pygame/` tracked.** Removal requires explicit user authorization
 following manual review and must be a separate final commit. Do not merge the
 migration branch automatically.
+
+## Native map authoring (2026-10-21)
+
+All 14 maps now have authoritative editable Godot scenes and external TileSets.
+See [native migration evidence and editing instructions](native-maps.md).
+No current map-editing command depends on Tiled or the preserved Pygame archive.
+Existing manual gameplay/audio/export limitations above still apply.
+
+`make editor-map-check` opens all fourteen scenes in a disposable Compatibility
+editor, programmatically paints/erases/saves/reloads cells and compares custom
+static tile drawing with native TileMapLayer pixels for flip/transpose combinations.
+This is automated editor/API evidence, not a human usability test. Native resource
+checks also cover collision/interaction/NPC/object properties and map extension.

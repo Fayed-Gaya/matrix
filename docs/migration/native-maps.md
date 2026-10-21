@@ -4,6 +4,33 @@ Branch: `migration/native-godot-maps`; isolated checkout: `~/git/matrix-native-g
 Base: latest fetched GitHub migration commit `d0fd58e` (2026-10-21).
 Original checkout clean; cmux and its Codex process were still running. Neither is modified.
 
+## Current authoring workflow
+
+Native scenes and external TileSets are the sole map authority. Open the scene
+in Godot, select a TileMapLayer and paint using its palette, then save normally.
+No Tiled installation, Python map parser, CSV edit or generation command is needed.
+
+| Editable scenes | Placement/metadata editing guide |
+| --- | --- |
+| `hub/world.tscn` | [Hub](../../hub/README.md): Ground/Details/Above, bounds, collision rectangles, PlayerSpawn and Terminal |
+| `levels/untitled/world.tscn` | [Untitled](../../levels/untitled/README.md): native layers, bounds, collisions and NPC position/dialogue |
+| `levels/mario/maps/stage_{0,1,2}.tscn` | [Mario](../../levels/mario/README.md): terrain/grass, actor/coin/palm/constraint/spawn/goal placement palettes |
+| `levels/zelda/maps/world.tscn` | [Zelda](../../levels/zelda/README.md): paintable scenery, obstacle/grass/object/entity placement palettes |
+| `levels/monsters/maps/*.tscn` (eight scenes) | [Monsters](../../levels/monsters/README.md): terrain plus Groups object/region rectangles and gameplay properties |
+
+Placement-layer values identify existing gameplay objects; their animations,
+facing and collision rules remain game logic. Static tile drawing respects
+native tile and cell flip/transpose transforms. Monsters region previews show
+static frames; runtime supplies their animation and depth sorting. Keep region
+rectangles axis-aligned and edit position/size rather than rotating or scaling
+them. Hub/Untitled bounds are explicit; adjust them along with scenery if expanding
+the room. Other maps expand their native cell bounds beyond grid_size automatically.
+
+Frozen JSON fixtures under scripts/validation record the migration baseline only;
+they never generate maps. Intentional content edits will require corresponding
+regression expectations to be reviewed and updated. Non-map manifests retain
+sprite frames, audio, atlas cutouts and game statistics, not map placement grids.
+
 ## Audit and implementation plan
 
 Read the migration parity checklist; its gameplay/manual limitations continue to apply.
@@ -31,8 +58,9 @@ Do not flatten artwork or replace source art. Keep manifests for non-map frame/a
 - [x] Mario: three native maps, runtime adapter, parity/edit validation, commit/push.
 - [x] Zelda: native map and runtime adapter, parity/edit validation, commit/push.
 - [x] Monsters: eight native maps/objects/regions, parity/edit validation, commit/push.
-- [ ] Retire conversion scripts/commands and redundant copied authoring inputs; update docs.
-- [ ] Final make check, make runtime-check, archive integrity and editor/resource verification.
+- [x] Retire conversion scripts/commands and redundant copied authoring inputs; update docs.
+- [x] Final make check, make runtime-check, archive integrity and editor/resource verification.
+- [x] CLI handoff: review retirement/docs/editor tests and finalize the cleanup milestone.
 
 ## Verification policy
 
@@ -74,3 +102,62 @@ terrain painting/extension survive save/reload. Deterministic Compatibility worl
 PNG is byte-identical. Manifest maps removed; 792-image atlas, animation, audio,
 trainer and battle data retained. Region nodes are editable Control rectangles;
 previews use static frames while runtime retains animation and depth sorting.
+
+Tool retirement: removed 59 redundant non-archive TMX/TSX/CSV authoring files,
+four Python map/manifest converters, the Godot generation helper and both make
+regeneration targets. PNG/source artwork, atlas cutouts, licenses/attribution,
+non-map manifests and the complete Pygame archive remain. Current docs instruct
+native editing. Historical source inventory remains explicitly historical.
+Final verification completed on 2026-10-21:
+- `make check`: all resource/behavior/native authoring stages passed; 14 native maps.
+- `make runtime-check`: fresh imports and all ten launch/return routes passed
+  without the archive, Python application runtime, or old Godot cache.
+- `make editor-map-check`: actual Compatibility editor opened all 14 scenes,
+  selected native TileMapLayers, painted/erased cells, saved via EditorInterface,
+  and reloaded the edited scratch scenes successfully in a disposable project.
+  Initial test startup raced with editor scene restoration; waiting for startup
+  fixed the test, and the final run passed all scenes. Repository maps were not
+  edited by this test. This test does not replace manual gameplay acceptance.
+- `git diff --check` passed; no changes under `legacy/pygame/`.
+
+## Handoff record and final CLI review
+
+User requested this app agent stop and hand off on 2026-10-21. All map milestones
+were pushed through `10ece18` at handoff. Tooling retirement, documentation,
+validation improvements and editor tests were handed over uncommitted, with
+source deletions already staged. The CLI retained this worktree and those edits;
+its completion record follows below. The app agent left no validation processes
+running.
+
+Recent validation logs remain at `/tmp/matrix-native-final-check.log`,
+`/tmp/matrix-native-runtime-check.log`, `/tmp/matrix-native-editor-check.log`.
+Deterministic captures: `/tmp/matrix-before-{mario,zelda,monsters}.png` and
+`/tmp/matrix-{mario,zelda,monsters}-native-{mario,zelda,monsters}.png`.
+The representative Mario/Zelda/Monsters native captures are byte-identical to
+baseline; only Zelda was explicitly visually inspected during this phase.
+Full-map gameplay, editor usability by a human, sound and exports remain manual.
+
+
+The CLI completed the handoff review without resetting or replacing this worktree.
+Staged source/tool deletions were checked against resource references; no current
+map-authoring dependency on Tiled remains. Python validation tools were formatted.
+Review caught a custom-renderer defect: Godot cell flip/transpose flags were not
+applied to static native tiles. The renderer now combines cell flags with TileData
+transforms and preserves rectangular tile dimensions and texture origins. An actual
+Compatibility-editor pixel comparison against native TileMapLayer drawing covers
+16 combinations in disposable resources. No authored scene/layout was changed.
+
+CLI acceptance commands passed: `make check`, `make runtime-check`,
+`make editor-map-check`, Python tooling Ruff lint/format and `git diff --check`.
+Logs: `/tmp/matrix-native-cli-final-check.log`,
+`/tmp/matrix-native-cli-runtime-check.log`, `/tmp/matrix-native-cli-editor-check.log`.
+The final archive check reports 709 byte-identical files and 62 matching after
+exact in-memory CRLF reconstruction; no archive bytes were rewritten.
+Final cleanup is committed/pushed to the same migration branch; no merge or
+archive modification/removal is part of this milestone.
+
+Manual acceptance still required: open each scene and try palette painting,
+selection/duplication and rectangle handles as a human; confirm runtime placement
+changes; walk every map boundary/collision and Monster transition; test Mario routes,
+Zelda combat and Monsters encounters/dialogue/battles; listen to music/effects.
+Exports and real camera hardware remain outside this map-authoring verification.

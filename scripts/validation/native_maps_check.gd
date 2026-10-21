@@ -86,6 +86,7 @@ func check_roundtrip(map: MatrixNativeMap) -> void:
 	if reloaded.has_node("Groups"):
 		var grid: Dictionary = reloaded.read_monsters()
 		assert(grid.layers[0].cells.size() == grid.width*grid.height)
+		assert(equivalent(grid.groups,map.read_monsters().groups))
 	else:
 		var grid: Dictionary = reloaded.read_rows()
 		assert(int(grid[String(selected.name)][0][0]) == value)
@@ -103,6 +104,12 @@ func check_hub(module: String, fixture: String) -> void:
 		var entry: Array = expected.collision[i]
 		assert(map.collision_rects[i] == Rect2(entry[0],entry[1],entry[2],entry[3]))
 	map.get_node("PlayerSpawn").position += Vector2(5,7)
+	if fixture == "untitled":
+		map.get_node("NPCs").get_child(0).position += Vector2(6,8)
+		map.get_node("NPCs").get_child(0).set_meta("dialogue","Native editor dialogue test")
+	else:
+		map.get_node("Terminal").position += Vector2(4,7)
+		map.get_node("Terminal").size += Vector2(3,5)
 	var shape: CollisionShape2D = map.get_node("Collisions").get_child(0)
 	shape.position += Vector2(3,9)
 	shape.shape = shape.shape.duplicate()

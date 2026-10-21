@@ -6,12 +6,16 @@ import tempfile
 from pathlib import Path
 
 
-
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--godot", default="godot")
     args = parser.parse_args()
     root = Path(__file__).resolve().parent.parent
+    # Prevent reintroducing a second runtime map-authoring source.
+    for folder in ("app", "hub", "levels", "shared"):
+        obsolete = [p for p in (root / folder).rglob("*") if p.suffix in {".tmx", ".tsx", ".csv"}]
+        if obsolete:
+            raise SystemExit(f"Obsolete map-authoring source remains: {obsolete[0]}")
     version = subprocess.check_output([args.godot, "--version"], text=True).strip()
     if not version.startswith("4.7.2.stable."):
         raise SystemExit(f"Expected Godot 4.7.2 stable; got {version}")
@@ -95,7 +99,18 @@ def main() -> None:
                 ["--script", "res://scripts/validation/you_check.gd"],
                 "You camera validation passed",
             ),
-            ("native_maps", ["--script", "res://scripts/validation/native_maps_check.gd", "--", "mario", "zelda", "monsters"], "Native map authoring validation passed"),
+            (
+                "native_maps",
+                [
+                    "--script",
+                    "res://scripts/validation/native_maps_check.gd",
+                    "--",
+                    "mario",
+                    "zelda",
+                    "monsters",
+                ],
+                "Native map authoring validation passed",
+            ),
             ("startup", ["--quit-after", "5"], "Matrix hub ready"),
         ]:
             result = subprocess.run(

@@ -11,8 +11,16 @@ feeds with platform/hardware limitations; full gameplay parity is not certified.
   assets into their Godot module; keep the archive independent and intact.
 - Commit Godot `.uid` sidecars; ignore `.godot/` and generated exports.
 - `make check` validates exact engine version, imports, resource loads and startup.
-  It also verifies converted map data, terminal behavior, routing/return, and both movement demos against source traces.
-  `make hub-map` regenerates the native hub map from its copied TMX source.
+  It also verifies native map cells/regions, native edit/save/reload behavior,
+  terminal behavior, routing/return, and movement demos against source traces.
+  Godot scenes/TileSets are authoritative: open hub/world.tscn,
+  levels/untitled/world.tscn, or levels/{mario,zelda,monsters}/maps/*.tscn
+  and paint TileMapLayers directly. Never regenerate maps from TMX/CSV/JSON.
+  Preserve each game's custom movement, collision and animation algorithms;
+  shared/maps reads native placements and preserves those runtime rules.
+  Read docs/migration/native-maps.md for editor instructions and verification.
+  `make editor-map-check` opens/edits all maps in a disposable actual editor
+  project (requires a desktop display); no authored scenes are changed.
   `make editor` opens the project; `make run` launches it. Override `GODOT`
   with the executable path on other machines. Python 3 runs validation tooling
   only; the Godot game must not depend on Python or the archived environment.
@@ -35,8 +43,8 @@ feeds with platform/hardware limitations; full gameplay parity is not certified.
   `make runtime-check` validates fresh imports/routes without the archive/cache.
 - Exports are not configured/certified yet. Include runtime `*.json` manifests
   and camera permissions when creating platform packaging.
-- Commit and push each completed level to the migration branch, as authorized
-  by the user. Do not merge.
+- Commit and push validated milestones to `migration/native-godot-maps`, as
+  authorized by the user. Do not merge.
 - Continue level by level without review pauses, as authorized by the user.
   Record limitations and blockers; never claim unchecked parity.
 - Keep generated cache data, build output, credentials, and local tools out of Git.

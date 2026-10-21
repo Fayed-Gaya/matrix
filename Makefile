@@ -22,3 +22,8 @@ archive-check:
 # Fresh imports and all ten routes without Python/archive or existing cache.
 runtime-check:
 	python3 scripts/validate_runtime.py --godot "$(GODOT)"
+
+# Actual native editor open/paint/save verification in a disposable project.
+.PHONY: editor-map-check
+editor-map-check:
+	python3 scripts/validate_native_editor.py --godot "$(GODOT)"

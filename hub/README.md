@@ -31,4 +31,5 @@ Map bounds are exported on World. Save normally; no regeneration is required.
 `make check` compares the baseline cells/rectangles with a frozen regression
 fixture and exercises terminal routing and movement. Intentional map changes
 need corresponding regression expectations updated. The fixture is not an
-editing source. See `docs/migration/native-maps.md` and `hub-parity.md`.
+editing source. See [native map authoring](../docs/migration/native-maps.md) and
+[hub parity](../docs/migration/hub-parity.md).

@@ -58,12 +58,31 @@ func paint_cell(canvas: CanvasItem, layer_name: String, cell: Vector2i) -> void:
 	var tile: TileData = layer.get_cell_tile_data(cell)
 	var region: Rect2i = source.get_tile_texture_region(coords)
 	var center: Vector2 = layer.map_to_local(cell) + layer.position
-	var rect: Rect2 = Rect2(center - Vector2(region.size)/2 - Vector2(tile.texture_origin), region.size)
-	if tile.flip_h:
+	var alternative: int = layer.get_cell_alternative_tile(cell)
+	var cell_transpose: bool = bool(alternative & TileSetAtlasSource.TRANSFORM_TRANSPOSE)
+	# Cell transforms compose after the authored alternative's transform.
+	var flip_h: bool = (tile.flip_v if cell_transpose else tile.flip_h) != bool(alternative & TileSetAtlasSource.TRANSFORM_FLIP_H)
+	var flip_v: bool = (tile.flip_h if cell_transpose else tile.flip_v) != bool(alternative & TileSetAtlasSource.TRANSFORM_FLIP_V)
+	var transpose: bool = tile.transpose != bool(alternative & TileSetAtlasSource.TRANSFORM_TRANSPOSE)
+	var dimensions: Vector2 = Vector2(region.size)
+	var origin: Vector2 = Vector2(tile.texture_origin)
+	if transpose:
+		dimensions = Vector2(dimensions.y,dimensions.x)
+	# TileData's texture origin is already authored for its alternative. Only
+	# per-cell transforms move that origin; combined flags orient the pixels.
+	if alternative & TileSetAtlasSource.TRANSFORM_TRANSPOSE:
+		origin = Vector2(origin.y,origin.x)
+	if alternative & TileSetAtlasSource.TRANSFORM_FLIP_H:
+		origin.x = -origin.x
+	if alternative & TileSetAtlasSource.TRANSFORM_FLIP_V:
+		origin.y = -origin.y
+	# draw_texture_rect_region transposes the destination dimensions itself.
+	var rect: Rect2 = Rect2(center-dimensions/2-origin,region.size)
+	if flip_h:
 		rect.size.x = -rect.size.x
-	if tile.flip_v:
+	if flip_v:
 		rect.size.y = -rect.size.y
-	canvas.draw_texture_rect_region(source.texture, rect, region, layer.modulate * tile.modulate, tile.transpose)
+	canvas.draw_texture_rect_region(source.texture, rect, region, layer.modulate * tile.modulate, transpose)
 
 
 func read_monsters() -> Dictionary:

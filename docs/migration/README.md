@@ -1,3 +1,7 @@
+> Current map workflow: native Godot scenes and external TileSets are authoritative.
+> See [native map authoring](native-maps.md). Earlier stage descriptions below are
+> historical checkpoints; their conversion tooling and runtime map grids are retired.
+
 # Matrix migration baseline and plan
 
 ## Current status
@@ -84,13 +88,13 @@ used by every level. PyInstaller is installed separately by Windows CI.
    removal authorization; removal must be a separate final commit.
 
 No persistence, accounts, cloud infrastructure, or downloadable content.
-Do not push or merge automatically. Import/copy needed assets into Godot-owned
+Push validated milestones to the authorized dedicated migration branch; do not merge. Import/copy needed assets into Godot-owned
 locations so the finished runtime does not depend on the removable archive.
 Retain attribution and source documentation with reused content.
 
 ## Risks and decisions to validate
 
-- TMX/TSX/CSV maps need a deliberate Godot conversion/import process. Preserve
+- Native map resources must preserve
   tile IDs, transforms, object properties, collision/spawn rectangles, animation,
   layer order, map transitions, and relative tileset references. Do not flatten
   interactive maps into a background image. Audit external references first.
@@ -316,8 +320,8 @@ Untitled (`cc9a744`) was committed/pushed first. Mario now has its own native
 platformer/overworld model, renderer and source-data manifest. Six nodes/three
 map datasets, platform collision/jump/scrolling, enemy patrol/stomp/damage,
 coins, health/immunity/reset, goals/unlocks, particles, decoration, music/SFX
-and source UI are present. Every CSV cell matches the archive. A rebuild tool
-keeps explicit frame paths and map data reviewable.
+and source UI are present. Every CSV cell matched the archive at this checkpoint. Native scenes now
+replace those runtime grids; the manifest retains only frame paths.
 
 All regression stages passed. Dedicated checks cover all six entries, movement,
 landing/jump, coins, damage cooldown, stomp bounce, actual goal unlock, scrolling,
@@ -338,7 +342,7 @@ Mario (`5cf3f37`) was committed/pushed first. Zelda's independent action RPG
 includes the map, Y sorting, rectangular movement, source weapons/magic, four
 enemy types and AI ranges, grass destruction, particles, XP/upgrades, cooldowns,
 HUD and audio. Every CSV cell matches the archive. Source data tables/frame
-paths are retained in an explicit rebuildable manifest.
+paths are retained in a non-map manifest; native scenes now own placements.
 
 The original package launch fails because settings does not expose MAP_DIR.
 It was not edited. Source captures used an in-memory MAP_DIR binding only.
