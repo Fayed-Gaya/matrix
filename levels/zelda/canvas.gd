@@ -9,7 +9,7 @@ func _draw() -> void:
 	camera = level.player.get_center()-Vector2(640,360)
 	draw_rect(Rect2(0,0,1280,720),Color("71ddee"))
 	draw_set_transform(-camera)
-	draw_texture(level.image("tilemap/ground.png"),Vector2.ZERO)
+	level.native_map.paint_layer(self,"Ground",Rect2(camera,Vector2(1280,720)))
 	var entries: Array[Dictionary] = []
 	for item: Dictionary in level.objects:
 		if not item.dead and item.type != "boundary" and item.rect.intersects(Rect2(camera-Vector2(256,256),Vector2(1792,1232))):

@@ -29,7 +29,7 @@ Do not flatten artwork or replace source art. Keep manifests for non-map frame/a
 - [x] Hub: native authority, editable TileSet/shapes/markers, validation, commit/push.
 - [x] Untitled: same, including NPC/dialogue; validation, commit/push.
 - [x] Mario: three native maps, runtime adapter, parity/edit validation, commit/push.
-- [ ] Zelda: native map and runtime adapter, parity/edit validation, commit/push.
+- [x] Zelda: native map and runtime adapter, parity/edit validation, commit/push.
 - [ ] Monsters: eight native maps/objects/regions, parity/edit validation, commit/push.
 - [ ] Retire conversion scripts/commands and redundant copied authoring inputs; update docs.
 - [ ] Final make check, make runtime-check, archive integrity and editor/resource verification.
@@ -58,3 +58,11 @@ node entries and gameplay checks pass, and native paint/erase/positive and negat
 extension survives resource save/reload. Deterministic stage_0 Compatibility PNG
 is byte-identical before/after. Manifest map grids removed; frame paths retained.
 Manual platforming and other camera positions remain unverified in this milestone.
+
+Zelda milestone: every active placement cell equals the baseline; collision,
+combat, spells, grass, XP, upgrades and lifecycle checks pass. Native save/reload
+and extension checks pass. Deterministic Compatibility world PNG is byte-identical
+and was visually inspected. Ground preserves the previous precomposed image as
+paintable 64px regions; no new flattening. Previously unused source CSV layers
+remain regression/reference evidence, not new runtime overlays. Manifest map
+grids removed; gameplay/stat/frame data retained. Full-map playtesting remains.

@@ -1,0 +1,48 @@
+[gd_resource type="TileSet" format=3]
+
+[ext_resource type="Texture2D" path="res://levels/zelda/assets/graphics/monsters/bamboo/idle/0.png" id="1_00xys"]
+[ext_resource type="Texture2D" path="res://levels/zelda/assets/graphics/monsters/spirit/idle/0.png" id="2_eae8u"]
+[ext_resource type="Texture2D" path="res://levels/zelda/assets/graphics/monsters/raccoon/idle/0.png" id="3_h8nnm"]
+[ext_resource type="Texture2D" path="res://levels/zelda/assets/graphics/monsters/squid/idle/0.png" id="4_qb7el"]
+[ext_resource type="Texture2D" path="res://levels/zelda/assets/graphics/test/player.png" id="5_vn23a"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_c5lwc"]
+texture = ExtResource("1_00xys")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+0:0/0/custom_data_0 = 390
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ckdck"]
+texture = ExtResource("2_eae8u")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+0:0/0/custom_data_0 = 391
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_10j3x"]
+texture = ExtResource("3_h8nnm")
+texture_region_size = Vector2i(240, 240)
+0:0/0 = 0
+0:0/0/texture_origin = Vector2i(-88, -88)
+0:0/0/custom_data_0 = 392
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_17ua4"]
+texture = ExtResource("4_qb7el")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+0:0/0/custom_data_0 = 393
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8cup7"]
+texture = ExtResource("5_vn23a")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+0:0/0/custom_data_0 = 394
+
+[resource]
+tile_size = Vector2i(64, 64)
+custom_data_layer_0/name = "value"
+custom_data_layer_0/type = 2
+sources/390 = SubResource("TileSetAtlasSource_c5lwc")
+sources/391 = SubResource("TileSetAtlasSource_ckdck")
+sources/392 = SubResource("TileSetAtlasSource_10j3x")
+sources/393 = SubResource("TileSetAtlasSource_17ua4")
+sources/394 = SubResource("TileSetAtlasSource_8cup7")
