@@ -120,8 +120,12 @@ func run() -> void:
 		await settle()
 		check(app.active_level != null and app.active_code == code, "Route for " + code)
 		check(not hub.visible and not hub.can_process(), "Hub suspended for " + code)
-		check(app.active_level.get_node("Message").text.contains("not been migrated"),
-			"Pending level status is explicit")
+		if LevelRegistry.lookup(code).scene.is_empty():
+			check(app.active_level.get_node("Message").text.contains("not been migrated"),
+				"Pending level status is explicit")
+		else:
+			check(app.active_level.scene_file_path == LevelRegistry.lookup(code).scene,
+				"Registered scene loaded for " + code)
 		var previous: WeakRef = weakref(app.active_level)
 		if code == "JUMP":
 			await capture("pending")

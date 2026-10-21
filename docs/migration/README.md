@@ -184,3 +184,27 @@ Stage 4 work; pending-code screens explicitly say they are not migrated yet.
 
 See [hub parity, verification and manual checks](hub-parity.md). The original
 archive remains intact. This checkpoint pauses before the first level port.
+
+
+## Stage 4a — Bouncing Ball
+
+Hub commit `0db39ec` was pushed at the user's request before this work.
+`BOUNCE` now loads `levels/bouncing_ball/bouncing_ball.tscn`, an independent
+GDScript level extending MatrixLevel. The other nine codes remain explicit
+pending destinations. The source GIF and its transparency-preserving PNG copy
+are owned by the level; the archive is unchanged.
+
+See [the level's controls, parity and timing differences](../../levels/bouncing_ball/README.md).
+The source's one-pixel move/edge-reflection sequence is preserved, but its
+uncapped loop is paced at 60 ticks/sec. The original 1200×1000 field fits the
+shared resizable window. Escape returns to the retained hub; no persistence.
+
+Validation passed: `make check` (imports/resources, hub regression suite, all
+5,000 source-trace ticks, level behavior and startup); targeted imported-alpha
+checks; actual Compatibility-window level checks and inspected screenshot
+(`/tmp/matrix-bounce-review.png`); Python validation-tool lint/format; and
+`git diff --check`. All 771 archived baseline files remain byte-identical.
+The source GIF copy is identical and the converted PNG's rendered RGBA pixels
+were compared successfully. Manual pacing/visual review and cross-platform
+exports remain pending; full wall-clock timing parity is not claimed.
+The next level is Balls (`BALLS`); pause for review before starting it.

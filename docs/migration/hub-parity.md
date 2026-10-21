@@ -1,7 +1,8 @@
 # Stage 3 hub parity
 
-This checkpoint migrates the hub, not the ten individual games. Those codes
-currently route to a clearly labeled pending screen with return controls.
+This document records the Stage 3 hub checkpoint. Stage 4 progress is recorded
+in the migration log and individual level READMEs; BOUNCE now runs its actual
+port, while the other nine codes retain pending screens with return controls.
 Stage 2 commit `2f67df7` was pushed at the user's request before this work.
 
 | Original behavior | Godot implementation / evidence |

@@ -46,3 +46,6 @@ return_to_hub={
 "deadzone": 0.2,
 "events": [Object(InputEventKey,"physical_keycode":4194305)]
 }
+
+[physics]
+common/physics_ticks_per_second=60
