@@ -319,3 +319,22 @@ This is not a claim of full parity. Fixed physics, camera/world-coordinate
 scrolling, exact icon arrival, deterministic frame order, synchronized rendering,
 particles/random scenery and fonts/audio can differ. Full routes and audible
 mixing still need playtesting. See `levels/mario/README.md`. Next: Zelda.
+
+
+## Stage 4h — Zelda
+
+Mario (`5cf3f37`) was committed/pushed first. Zelda's independent action RPG
+includes the map, Y sorting, rectangular movement, source weapons/magic, four
+enemy types and AI ranges, grass destruction, particles, XP/upgrades, cooldowns,
+HUD and audio. Every CSV cell matches the archive. Source data tables/frame
+paths are retained in an explicit rebuildable manifest.
+
+The original package launch fails because settings does not expose MAP_DIR.
+It was not edited. Source captures used an in-memory MAP_DIR binding only.
+Native world/menu captures were compared with those reference renders.
+
+The complete regression pipeline and targeted combat/spell/grass/XP/upgrade/
+cleanup checks passed. Source absence of a player death/reset routine is retained.
+Known timing, rendering, pause-edge and attack-audio differences plus manual
+combat/audio/export gaps are documented in `levels/zelda/README.md`. This is
+not a full-parity certification. Next: Monsters, then camera support for You.

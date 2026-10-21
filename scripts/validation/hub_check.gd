@@ -114,7 +114,7 @@ func run() -> void:
 	for code: String in LevelRegistry.ENTRIES:
 		key(KEY_E)
 		text(" " + code.to_lower() + " ")
-		if code == "ZELDA":
+		if code == "MONSTERS":
 			await capture("terminal")
 		key(KEY_ENTER)
 		await settle()
@@ -127,7 +127,7 @@ func run() -> void:
 			check(app.active_level.scene_file_path == LevelRegistry.lookup(code).scene,
 				"Registered scene loaded for " + code)
 		var previous: WeakRef = weakref(app.active_level)
-		if code == "ZELDA":
+		if code == "MONSTERS":
 			await capture("pending")
 			app.active_level.get_node("Return").pressed.emit()
 		else:
