@@ -67,6 +67,17 @@ jobs:
           set -o pipefail
           make web-export GODOT="$PWD/build/toolchain/godot/godot" 2>&1 | tee web-export.log
           python3 scripts/check_web_pack.py --godot "$PWD/build/toolchain/godot/godot" 2>&1 | tee web-pack.log
+      - name: Package corresponding source snapshot
+        run: git archive --format=zip --output=exports/matrix-source-${{ github.sha }}.zip HEAD
+      - uses: actions/upload-artifact@v4
+        with:
+          name: matrix-web-${{ github.sha }}
+          path: exports/web/
+          if-no-files-found: error
+      - uses: actions/upload-artifact@v4
+        with:
+          name: matrix-source-${{ github.sha }}
+          path: exports/matrix-source-*.zip
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
@@ -80,17 +91,6 @@ jobs:
       - name: Smoke test Chrome, Firefox and Edge
         working-directory: tests/web
         run: xvfb-run -a npm test
-      - name: Package corresponding source snapshot
-        run: git archive --format=zip --output=exports/matrix-source-${{ github.sha }}.zip HEAD
-      - uses: actions/upload-artifact@v4
-        with:
-          name: matrix-web-${{ github.sha }}
-          path: exports/web/
-          if-no-files-found: error
-      - uses: actions/upload-artifact@v4
-        with:
-          name: matrix-source-${{ github.sha }}
-          path: exports/matrix-source-*.zip
       - uses: actions/upload-artifact@v4
         if: always()
         with:

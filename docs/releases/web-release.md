@@ -57,6 +57,11 @@ and resize. Opt-in `?matrix_smoke=1` reports read-only state in a DOM attribute;
 it offers no launch, teleport or gameplay-control API. Automation never activates
 physical cameras. The normal URL does not enable telemetry. Screenshots/traces
 and browser versions are recorded by the test runner. CI uses Xvfb/Mesa on Linux.
+Cold Monsters loading exceeded 20 seconds on some software-rendered runs; the
+smoke allows 60 seconds per launch and four minutes for all ten. These are test
+time budgets, not performance promises. Measure startup responsiveness on real
+desktop hardware before release; loading/performance is not certified.
+Local Chrome/Edge use the default GPU backend; only CI forces SwiftShader.
 An installed Chrome/Edge channel is required; Firefox is Playwright's pinned build.
 
 Keyboard focus and an initial click/key gesture are required for browser audio.
@@ -72,8 +77,10 @@ Godot and Web runs on PRs targeting main, pushes to main, manual dispatch and
 reusable calls. `Godot validation` runs make check/runtime-check without cameras;
 `Web export` builds, checks packed resources and smoke-tests Chrome/Firefox/Edge.
 Archived Python quality/build workflows are retained. Failed jobs upload useful
-logs, screenshots and traces; successful jobs upload `matrix-web-<sha>` and
-`matrix-source-<sha>` artifacts. Download from the Actions run's Artifacts section;
+logs, screenshots and traces. After export/PCK validation succeeds, CI uploads
+`matrix-web-<sha>` and `matrix-source-<sha>` before browser smoke tests, so a
+browser failure still leaves a diagnosable build. The job remains failed and
+Pages deployment is blocked until all tests pass. Download from the Actions run's Artifacts section;
 extract the web ZIP and serve its root. Artifacts expire per repository policy;
 they are not immutable published releases. Do not confuse a PR's tested merge SHA
 with a later approved main release SHA.

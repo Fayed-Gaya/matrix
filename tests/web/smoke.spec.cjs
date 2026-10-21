@@ -21,10 +21,10 @@ test('opening, real keyboard navigation, ten terminal codes, return and resize',
   }
   // Short real key pulses avoid holding movement during slow browser assertions.
   await moveAxis('y', 426, 'ArrowUp', 'ArrowDown', 1);
-  await moveAxis('x', 400, 'ArrowLeft', 'ArrowRight');
+  await moveAxis('x', 398, 'ArrowLeft', 'ArrowRight', 8);
   for (let pulse = 0; pulse < 15 && !(await state(page)).near_terminal; pulse++)
     await page.keyboard.press('ArrowDown', {delay: 25});
-  expect((await state(page)).near_terminal).toBe(true);
+  await expect.poll(async () => (await state(page)).near_terminal).toBe(true);
   const codes = ['BOUNCE','BALLS','BUG','PONG','JUMP','MARIO','ZELDA','MONSTERS','UNTITLED','YOU'];
   for (const code of codes) {
     await page.keyboard.press('e');

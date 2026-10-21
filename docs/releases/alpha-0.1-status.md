@@ -1,66 +1,67 @@
 # Matrix Alpha 0.1 implementation status
 
 Branch: `feature/alpha-0.1-release-pipeline`, based on merged main `eb091f5`.
-Owner reports hub and all ten levels manually tested locally and working.
-No browser release, Pages publication, release tag or archive removal authorized.
+PR: https://github.com/Fayed-Gaya/matrix/pull/4 (no merge authorized).
+Owner reports native hub/all ten levels manually tested locally and working.
+No Pages publication, release tag or archive removal is authorized.
 
-- [x] Phase 1: GitHub Flow, feature branch, workflow/agent documentation.
-- [x] Phase 2: pinned Godot CI plus preserved archived tests.
-- [ ] Phase 3: web export and isolated PCK pass locally; real browser smoke in progress.
-- [x] Phase 4: build artifact and manual-main-only Pages preparation.
-- [x] Phase 5: third-party inventory, obligations and unresolved release blockers.
-- [ ] Phase 6: final checks, pushed milestones and PR; no merge/publish/tag.
+- [x] GitHub Flow and agent/development documentation; no permanent dev branch.
+- [x] Pinned Godot 4.7.2 CI; preserved archived Python checks.
+- [x] Single-threaded Compatibility Web export, ten levels, runtime manifests,
+  browser YOU explanation/return and preserved native camera implementation.
+- [x] Web/source artifacts and manual-main-only Pages preparation; not deployed.
+- [x] Preliminary licensing audit, inventory, notices and explicit blockers.
+- [ ] Final corrected Edge smoke, final CI/artifact links and PR handoff.
 
-Initial checkout was the old migration branch. A pre-existing editor save in
-project.godot was retained when creating this branch; input bindings remain as
-saved. A recovery copy/patch is at /tmp/matrix-alpha-preexisting-project.godot
-and /tmp/matrix-alpha-preexisting.patch. No user files discarded.
+## Verification and evidence
 
-Installed Godot reports 4.7.2.stable.official.ed1daf0bf. Web templates were absent.
-Official Godot release URLs and SHA-256 digests are pinned for setup.
-See development.md for GitHub Flow; release docs record build,
-deployment and licensing details. Keep this status updated at each milestone.
+Local `make check`, `make runtime-check`, web export and isolated exported-PCK
+validation passed. All 771 archive checksums pass; no archive changes.
+New Python tooling passes Ruff and licensing inventory freshness checks.
+Local Chrome/default GPU passed opening, real keyboard walk/terminal entry,
+all ten codes/scenes, Escape return, resize and error assertions (2.3 minutes).
+Local forced-SwiftShader cold Monsters loading stalled; default local tests now
+use the normal GPU backend. Local Firefox/Edge acceptance is not certified.
 
-Milestone 2: Godot CI + single-threaded Web export + manual Pages preparation.
-Pinned official SHA-256 editor/templates in scripts/release/godot-toolchain.json.
-Custom templates live in ignored build/toolchain/godot; setup verifies the entire
-TPZ and extracts only the no-thread web templates. All ten exported scenes and
-runtime JSON/dynamic resources load from the isolated PCK. Removed ten unused
-.import sidecar entries accidentally present in Monsters' audio manifest.
-Native full checks and fresh runtime checks passed locally and in Linux CI.
-Export and isolated packed-resource checks passed locally and in CI.
-The first browser smoke failed in all three browsers because the test held keys
-during slow polling and overshot waypoints. A subsequent pulse test exposed an
-incorrect waypoint tolerance beside a collision. Corrected test uses short
-real key pulses through the clear corridor; new browser validation is pending.
-Diagnostics are opt-in (?matrix_smoke=1), read-only state; tests use real keys.
-No physical feed is activated. YOU has an explicit web explanation and Escape.
+CI run https://github.com/Fayed-Gaya/matrix/actions/runs/39694656251 on `84458b6`:
+Godot validation, export/PCK and archived Checks passed; Chrome and Firefox
+passed all ten routes (about 1.4 minutes each). Edge failed the test's terminal
+approach: horizontal tolerance could leave the player beside an obstruction.
+Corrected range keeps the player inside the clear corridor; the terminal
+assertion remains. Earlier held-key polling overshot waypoints; short real key
+pulses fixed that. Cold scene loading exceeded 20 seconds on some runs; tests
+allow 60 seconds per launch/four minutes overall. Performance is not certified.
+See the PR checks for the latest revision; record final results before handoff.
 
-Preliminary licensing findings: Pong GPL declaration (version unspecified);
-Pixeltype embeds a FontStruct Non-Commercial License; many original asset grants
-are missing. No blanket Matrix license or release clearance is assumed. Preserve
-all levels; complete the detailed audit and notices before any approved release.
+Artifacts are uploaded after export/PCK validation, before browser tests, so
+failed smoke runs still retain a diagnosable build. Tests remain required for a
+successful job/Pages deployment. CI records browser versions/screenshots/traces.
+Logs: /tmp/matrix-alpha-{check,runtime,export,pack,browser-tests}.log and
+/tmp/matrix-alpha-chrome-defaultgpu.log. Test diagnostics are opt-in read-only
+DOM state, not gameplay controls. No automated physical camera activation.
 
-Local tools: Node 22.23.4 checksum-verified official macOS binary installed in
-ignored build/toolchain/node for tests. Pinned Playwright 1.56.1 and lockfile.
-Recent logs: /tmp/matrix-alpha-export.log, /tmp/matrix-alpha-pack.log,
-/tmp/matrix-alpha-browser-tests.log, /tmp/matrix-alpha-check.log,
-/tmp/matrix-alpha-runtime.log. Native Godot editor PID 2004 was already open;
-it was left running and its pre-existing project save is preserved.
+## Release readiness
 
-Milestone 3: preliminary licensing inventory/notices and browser test corrections.
-PR: https://github.com/Fayed-Gaya/matrix/pull/4 (draft until final validation).
-678 active code/resource/media entries, SHA-256 and six embedded font records in
-third-party-inventory.json; freshness is checked in CI. No archive changes.
-Read licensing-audit.md: Pong GPL version/scope, non-commercial Pixeltype,
-conflicting Snoblin redistribution grants and missing media/font permissions
-are publication blockers. No licensing election or asset substitution made.
-Web exports now carry source notices, OFL/GPL reference texts and generated
-exact-engine component notices. See web-release.md for build/deployment and
-specific manual browser/gameplay/audio/native camera checks. Pages is suitable
-for this ~56 MB single-threaded static build but has not been configured/deployed.
+Read [web-release.md](web-release.md) for local commands, manual gameplay/audio,
+focus/scaling/performance/native-camera checks and GitHub Pages settings.
+Pages is suitable for the ~57 MB static single-threaded build. It remains
+unconfigured/unpublished; dispatch defaults to build-only and only runs on main.
 
-Initial CI run 39692641234: Godot validation passed; Web export/PCK passed,
-Chrome/Firefox/Edge launched but test navigation failed as described above.
-Archived Checks workflow passed. Final corrected CI results must be recorded
-before handoff; successful web/source artifact links should be added here.
+Read [licensing-audit.md](licensing-audit.md): Pong GPL version/combined-work scope,
+non-commercial Pixeltype, conflicting Snoblin redistribution grants and missing
+media/font permissions block publication clearance. No license election, asset
+substitution or level removal was made. Inventory covers 678 active code/media/
+resource files and six font records. Builds carry preliminary notices, OFL/GPL
+reference texts and generated exact-engine component notices; these are not
+clearance. Source ZIPs match each CI build revision and expire with artifacts.
+
+## Preservation and local setup
+
+Existing editor-saved project.godot/input serialization was preserved when
+branching from updated main. Recovery files: /tmp/matrix-alpha-preexisting.patch
+and /tmp/matrix-alpha-preexisting-project.godot. The already-open native editor
+(PID 2004 at start) was left alone. No worktrees were created/reset/cleaned.
+Official editor/templates URLs and SHA-256 are pinned in
+scripts/release/godot-toolchain.json. Ignored build/toolchain contains verified
+web templates and a local official Node 22.23.4 macOS binary. Playwright 1.56.1
+and its dependency lock are tracked; generated tools/builds/caches are ignored.
