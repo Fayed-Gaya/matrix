@@ -2,7 +2,7 @@
 
 ## Checkpoint
 
-Stage 1: repository preparation. Baseline: `9f89816` on `main`, matching the
+Stage 1 baseline (Stage 2 results follow below). Baseline: `9f89816` on `main`, matching the
 local `origin/main` reference (no fetch performed). Branch:
 `migration/godot-4.7.2`. Initial tracked/untracked Git status was clean.
 Ignored local environment, credentials, IDE files, caches, and local documentation
@@ -129,3 +129,48 @@ replacement version.
 | Mario, Zelda, Monsters | Yes | Pending |
 | You camera | Yes | Pending feasibility and hardware test |
 | Music, effects, sprites, fonts, map data, docs | Yes | Import and playback pending |
+
+## Stage 2 — Godot foundation
+
+Completed on `migration/godot-4.7.2`. Stage 1 commit `6bcd652` was pushed at
+the user's request before beginning this checkpoint.
+
+- Root `project.godot`, GDScript startup scene in `app/`, and module ownership
+  notes in `hub/`, `levels/`, `shared/`. Startup shows a foundation message;
+  there is no migrated hub or level gameplay yet.
+- Compatibility is explicit for desktop, mobile, and web. Initial logical/window
+  size is 1280×720, resizable, with canvas scaling and nearest texture filtering.
+  Pixel camera/render behavior will be matched to the original in Stage 3.
+- `legacy/.gdignore` prevents importing the preserved Python asset collection;
+  `docs/.gdignore` excludes development documentation. `.godot/`, exports and
+  export credentials are ignored; stable GDScript `.uid` sidecars are tracked.
+- `make check` uses a Python development wrapper to reject other engine versions,
+  import resources, load scripts/scenes/resources, instantiate scenes, check
+  settings, and launch the main scene for five frames. It checks error output
+  as well as exit codes, because script errors may otherwise return success.
+- `make editor`, `make run`, and `make legacy-check` are documented at root.
+  Set `GODOT` to a different executable path for other machines. Existing CI
+  continues to check the Python archive; Godot CI/export packaging remains
+  unconfigured. Local checks do not require another engine or dependencies.
+
+Verification:
+
+- Installed binary: `/Applications/Godot.app/Contents/MacOS/Godot`, version
+  `4.7.2.stable.official.ed1daf0bf`.
+- `make check`: passed import, configuration/resource checks, and main-scene
+  startup. Initial sandbox attempt could not write normal macOS Godot settings;
+  the rerun with normal directory access passed.
+- A windowed ten-frame launch exited successfully and reported OpenGL 4.1,
+  Compatibility, Intel Iris Plus Graphics 645, and the startup-ready message.
+  This verifies window/renderer startup, not visual layout or gameplay parity.
+- `make legacy-check`: passed. Validation wrapper Ruff lint/format and
+  `git diff --check`: passed.
+- Mobile/web/Windows exports, interactive resizing, audio, camera capture, and
+  gameplay remain untested. No export presets or persistence were introduced.
+
+Command and renderer reference:
+[Godot command-line documentation](https://docs.godotengine.org/en/stable/tutorials/editor/command_line_tutorial.html)
+and [ProjectSettings reference](https://docs.godotengine.org/en/stable/classes/class_projectsettings.html).
+The installed engine was used to validate the actual commands and settings.
+
+Next checkpoint: Stage 3, hub migration with explicit scene routing and return.

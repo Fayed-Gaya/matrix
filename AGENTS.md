@@ -1,9 +1,18 @@
 # Matrix migration guide
 
 The repository is migrating from Pygame CE to Godot 4.7.2 with GDScript and
-Compatibility rendering. Stage 1 is complete; no Godot project exists yet.
+Compatibility rendering. Stage 2 establishes the root Godot project; gameplay migration is pending.
 
-- Keep the Godot project at the repository root when Stage 2 begins.
+- Keep `project.godot` at the repository root. Use typed GDScript for gameplay.
+- `app/` owns startup/routing, `hub/` the spaceship/terminal, `levels/` the
+  independent games, `shared/` reused resources, `scripts/` validation tools.
+- `legacy/.gdignore` excludes Python/assets from Godot imports. Copy required
+  assets into their Godot module; keep the archive independent and intact.
+- Commit Godot `.uid` sidecars; ignore `.godot/` and generated exports.
+- `make check` validates exact engine version, imports, resource loads and startup.
+  `make editor` opens the project; `make run` launches it. Override `GODOT`
+  with the executable path on other machines. Python 3 runs validation tooling
+  only; the Godot game must not depend on Python or the archived environment.
 - Use independent level modules inside one application, with a small hub/router.
 - Preserve terminal codes and distinguishing mechanics; track parity explicitly.
 - Do not add persistence, accounts, cloud services, or downloadable content.

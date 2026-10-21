@@ -1,12 +1,32 @@
 # Matrix
 
 Matrix is migrating to **Godot 4.7.2, GDScript, Compatibility renderer** in this
-existing repository. Stage 1 preserves the original implementation; the Godot
-project will be initialized at the repository root in Stage 2.
+existing repository. The root Godot project currently shows a foundation screen;
+the spaceship hub and ten games are pending migration.
+
+```sh
+make editor  # Open the Godot project
+make run     # Launch the foundation scene
+make check   # Headless import, resource, configuration and startup validation
+```
+
+On this Mac the default executable is
+`/Applications/Godot.app/Contents/MacOS/Godot`. On another machine, use
+`make check GODOT=/path/to/godot` (or `GODOT=godot` if on PATH). Validation
+requires Python 3 as development tooling and rejects engines other than
+4.7.2 stable. The game itself uses GDScript only.
+
+- `app/`: application startup; routing follows with the hub.
+- `hub/`: spaceship hub module (Stage 3).
+- `levels/`: independent Godot level modules (Stage 4).
+- `shared/`: intentionally reused Godot resources.
+- `scripts/`: development tools and validation.
 
 See [the migration inventory and plan](docs/migration/README.md).
 The original [project documentation](legacy/pygame/README.md), games, assets,
-Tiled workspace, and Windows packaging tools are in `legacy/pygame/`.
+Tiled workspace, and Windows packaging tools remain in `legacy/pygame/`.
+Godot excludes the archive from resource scanning. Imported assets for ports
+will live with their Godot modules, with attribution preserved.
 
 Run the archived hub using the existing local environment:
 
@@ -17,7 +37,9 @@ cd legacy/pygame
 
 Or install `legacy/pygame/requirements.txt` into a Python environment and run
 `python3 main.py` from that directory. Individual levels still support
-`python3 -m levels.<level_name>` there.
+`python3 -m levels.<level_name>` there. `make legacy-check` at root checks the
+archive with the local environment. Its Windows workflow still builds archived
+Untitled; Godot export presets and platform packaging are not established yet.
 
 The archive remains tracked until manual Godot playtesting and explicit
 approval to remove it. No Godot gameplay parity is claimed at this stage.
