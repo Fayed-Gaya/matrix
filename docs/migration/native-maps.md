@@ -26,7 +26,7 @@ Do not flatten artwork or replace source art. Keep manifests for non-map frame/a
 
 - [x] Safety: fetch refs, inspect status/worktrees/processes, isolate branch.
 - [x] Audit implementations and existing parity checklist.
-- [ ] Hub: native authority, editable TileSet/shapes/markers, validation, commit/push.
+- [x] Hub: native authority, editable TileSet/shapes/markers, validation, commit/push.
 - [ ] Untitled: same, including NPC/dialogue; validation, commit/push.
 - [ ] Mario: three native maps, runtime adapter, parity/edit validation, commit/push.
 - [ ] Zelda: native map and runtime adapter, parity/edit validation, commit/push.
@@ -35,6 +35,12 @@ Do not flatten artwork or replace source art. Keep manifests for non-map frame/a
 - [ ] Final make check, make runtime-check, archive integrity and editor/resource verification.
 
 ## Verification policy
+
+Hub milestone: pinned Godot full validation passed, including every baseline tile,
+all collision rectangles, terminal integration and ten launch/return routes.
+Fresh-checkout archive check: 709 files byte-identical; 62 match the baseline
+after exact in-memory LF-to-CRLF reconstruction (Git core.autocrlf=input).
+No archived files were edited. The validator now handles this checkout behavior.
 
 Compare every original cell and all metadata before removing old runtime map data.
 Keep frozen baseline fixtures only as regression evidence, never a generation source.

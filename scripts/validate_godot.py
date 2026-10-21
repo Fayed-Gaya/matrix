@@ -6,7 +6,6 @@ import subprocess
 import tempfile
 from pathlib import Path
 
-from convert_hub_map import describe_map
 
 
 def main() -> None:
@@ -18,14 +17,11 @@ def main() -> None:
     if not version.startswith("4.7.2.stable."):
         raise SystemExit(f"Expected Godot 4.7.2 stable; got {version}")
     with tempfile.TemporaryDirectory(prefix="matrix-godot-") as logs:
-        descriptor = Path(logs) / "hub.json"
-        descriptor.write_text(json.dumps(describe_map()))
+        descriptor = root / "scripts/validation/hub_map_reference.json"
         untitled_descriptor = Path(logs) / "untitled.json"
-        untitled_descriptor.write_text(
-            json.dumps(
-                describe_map(root / "levels/untitled/assets/maps/untitled-intro.tmx", "player")
-            )
-        )
+        # Untitled remains TMX-authored until its next milestone.
+        from convert_hub_map import describe_map
+        untitled_descriptor.write_text(json.dumps(describe_map(root / "levels/untitled/assets/maps/untitled-intro.tmx", "player")))
         for name, options, marker in [
             ("import", ["--editor", "--import"], None),
             (

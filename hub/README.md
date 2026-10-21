@@ -15,20 +15,20 @@ capture depends on native platform support and needs hardware testing.
 - `hub.tscn` / `hub.gd`: lifecycle, input, terminal, 2x SubViewport, camera bounds.
 - `overlay.gd`: opening, terminal and interaction hint at full window resolution.
 - `player.gd`: sprite animation and 16x16 rectangle collision movement.
-- `world.tscn`: generated native TileMapLayers, collision rectangles and markers
+- `world.tscn`: authoritative native TileMapLayers, collision rectangles and markers
   stored as exported world properties. `world.gd` defines those properties.
 - `assets/`: independent copies of the existing map, sheets and background.
 
 The current map is preserved as authored, including its open green ground and
 furniture arrangement. A more elaborate spaceship interior is future content.
 
-Edit `assets/maps/matrix.tmx` in Tiled, then run `make hub-map` and `make check`.
-The converter deliberately supports this map's finite orthogonal CSV layers and
-rectangle/point objects; unsupported transforms or custom/animated tiles fail
-instead of being silently discarded. For direct Godot editing, the generated
-`world.tscn` is native and editable, but regenerating overwrites those edits.
-Keep the TMX as the authoring source for this checkpoint.
+Open `hub/world.tscn` directly in Godot. Select Ground, Details or Above and
+paint using the TileMap panel; `tileset.tres` contains the original atlas sources.
+Move PlayerSpawn and resize/move Terminal in the 2D editor. Expand Collisions to
+edit rectangle shapes. Existing custom movement reads these shapes directly.
+Map bounds are exported on World. Save normally; no regeneration is required.
 
-`make check` compares every converted cell and collision rectangle with TMX and
-checks input, camera/resize, terminal, routing, cleanup, and return behavior.
-See `docs/migration/hub-parity.md` for known differences and manual checks.
+`make check` compares the baseline cells/rectangles with a frozen regression
+fixture and exercises terminal routing and movement. Intentional map changes
+need corresponding regression expectations updated. The fixture is not an
+editing source. See `docs/migration/native-maps.md` and `hub-parity.md`.
