@@ -85,3 +85,8 @@ renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
 environment/defaults/default_clear_color=Color(0.039, 0.055, 0.071, 1)
 renderer/rendering_method.web="gl_compatibility"
+
+[audio]
+
+; Preserve stream mixing semantics on single-threaded web; latency needs browser review.
+general/default_playback_type.web=1

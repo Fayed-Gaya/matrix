@@ -25,6 +25,9 @@ func _ready() -> void:
 	if test_mode:
 		$Status.text = "No camera active. Escape: return to Matrix"
 		return
+	if OS.has_feature("web"):
+		$Status.text = "YOU: live camera capture is unavailable in this browser build. Play the native macOS version for camera capture. Escape returns to Matrix."
+		return
 	if OS.get_name() not in ["macOS","Linux","iOS","Android"]:
 		$Status.text = "Camera capture is unavailable on this platform in stock Godot."
 		return

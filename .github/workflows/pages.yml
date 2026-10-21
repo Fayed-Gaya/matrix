@@ -1,0 +1,43 @@
+name: Manual browser deployment
+on:
+  workflow_dispatch:
+    inputs:
+      deploy:
+        description: 'Publish to Pages (requires explicit release approval)'
+        type: boolean
+        default: false
+      licensing_cleared:
+        description: 'All documented licensing blockers resolved and release approved'
+        type: boolean
+        default: false
+permissions:
+  contents: read
+concurrency:
+  group: matrix-pages
+  cancel-in-progress: false
+jobs:
+  build:
+    if: github.ref == 'refs/heads/main'
+    uses: ./.github/workflows/godot.yml
+  deploy:
+    if: github.ref == 'refs/heads/main' && inputs.deploy && inputs.licensing_cleared
+    needs: build
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: matrix-web-${{ github.sha }}
+          path: site
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+      - id: deployment
+        uses: actions/deploy-pages@v4
