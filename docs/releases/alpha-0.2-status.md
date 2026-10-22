@@ -20,14 +20,18 @@ requested asynchronously. Continue known independent work while awaiting it.
 
 ## Current checkpoint
 
-Branch: `feature/alpha-0.2-catalog`, based on main `145771f`.
-Phase 1 in progress: Godot modules/fixtures moved to `archive/godot/`, import and
-export exclusions added, active validation/browser catalog reduced to six.
-ZELDA/UNTITLED remain temporarily until their respective implementation phases.
-No archive contents or published release files changed.
+Branch: `feature/alpha-0.2-bubby`, stacked on the completed hub branch.
+Phase 1: `3e840c2`, PR [#7](https://github.com/Fayed-Gaya/matrix/pull/7), green CI.
+Phase 2: `46f5f77`, PR [#8](https://github.com/Fayed-Gaya/matrix/pull/8), base #7.
+Both pushed; neither merged. Published release and Pygame archive unchanged.
+Only unrelated untracked user sprite existed at the start of this phase.
 
-Next: validate actual pack exclusion and compare build size/test duration;
-finish current documentation/inventory, commit/push and open PR. Then hub.
+Current phase: Bubby. Next concrete action: preserve Zelda foundation/reference,
+reuse its avatar/animation and axis-separated exploration logic, then author
+provisional apartment/outdoor native scenes and a pigeon/envelope objective.
+Use explicit provisional labels, simple shoo encounter, no XP/upgrades, retry
+and hub return. Retain source/assets/attribution, replace public ZELDA code only
+when the new slice loads and its progression checks pass.
 
 ## Baseline evidence
 
@@ -137,3 +141,31 @@ also passed. Phase 2 checkpoint is ready. No public release or merge performed.
 Next: Bubby, replacing the ZELDA public code with a provisional apartment →
 outside → pigeon → small objective/ending slice. Personalization remains blocked
 on references; implement clearly marked fictional placeholders, not Kate facts.
+
+## Phase 3 implementation (uncommitted)
+
+BUBBY now replaces ZELDA without a public alias. Two native rooms, copied
+provisional Zelda avatar/music, original local environment/pigeon art with
+SVG/Aseprite sources, door/table/envelope markers, three-shoo encounter,
+composure/retry, delivery objective and placeholder ending are implemented.
+The complete Zelda source/assets/frozen checks are retained under excluded
+`levels/bubby/source/`; no Pygame archive changes. Existing tutorial asset
+permissions remain unresolved. Active validation skips `.gdignore` source
+references; historical full suite remains available separately.
+
+Targeted headless and actual Compatibility-window progression checks passed,
+including alias rejection, native edit/save/reload, pickup gating, cooldown,
+contact/retry, return, dialogue and completion. Rendered apartment/outside
+inspected; moved notices into the upper wall HUD so doors stay visible. This
+is automated progression with positioned fixtures, not human walkthrough.
+Next: final current-doc/catalog updates, full checks/fresh runtime/export/PCK
+resource audit, actual editor persistence and Chrome smoke; then commit/push
+and stacked PR against the hub branch. No personal/story/art approval claimed.
+
+Phase 2 GitHub CI passed (Checks plus Godot/Web, including three desktop
+browsers): https://github.com/Fayed-Gaya/matrix/actions/runs/39722744758.
+Phase 3 final `make check`, fresh runtime, actual editor (four scenes), web
+export, isolated PCK import-dependency audit and Chrome six-code smoke passed.
+Native cameras remained disabled in automated routes. No legacy diff; user
+sprite SHA256 unchanged. Human full-path playthrough, encounter feel/balance,
+audible music, personal references/art direction and real devices remain open.

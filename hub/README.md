@@ -5,8 +5,8 @@ upper-right desk: stand in front and press E when prompted. Type a code and
 Enter; Backspace edits, Escape closes. Returning from a level preserves your
 hub position and skips the opening. Codes ignore surrounding space and case.
 
-Current codes: BOUNCE, BALLS, BUG, YOU, ZELDA, UNTITLED. The latter two become
-BUBBY and BUSBOY at their respective implementation checkpoints; MACHINE is
+Current codes: BOUNCE, BALLS, BUG, YOU, BUBBY, UNTITLED. UNTITLED becomes
+BUSBOY at its implementation checkpoint; MACHINE is
 pending. PONG/JUMP/MARIO/MONSTERS are archived, not public aliases.
 
 ## Native editing

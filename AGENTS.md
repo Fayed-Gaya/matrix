@@ -34,7 +34,7 @@ YOU retains native camera behavior with platform/hardware limitations.
   It also verifies native map cells/regions, native edit/save/reload behavior,
   terminal behavior, routing/return, and movement demos against source traces.
   Godot scenes/TileSets are authoritative: open hub/world.tscn,
-  levels/untitled/world.tscn, or levels/zelda/maps/*.tscn
+  levels/untitled/world.tscn, or levels/bubby/maps/*.tscn
   and paint TileMapLayers directly. Never regenerate maps from TMX/CSV/JSON.
   Preserve each game's custom movement, collision and animation algorithms;
   shared/maps reads native placements and preserves those runtime rules.

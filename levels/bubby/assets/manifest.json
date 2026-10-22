@@ -1,0 +1,52 @@
+{
+  "frames": {
+    "player/down": [
+      "res://levels/bubby/assets/player/down/down_0.png",
+      "res://levels/bubby/assets/player/down/down_1.png",
+      "res://levels/bubby/assets/player/down/down_2.png",
+      "res://levels/bubby/assets/player/down/down_3.png"
+    ],
+    "player/down_attack": [
+      "res://levels/bubby/assets/player/down_attack/attack_down.png"
+    ],
+    "player/down_idle": [
+      "res://levels/bubby/assets/player/down_idle/idle_down.png"
+    ],
+    "player/left": [
+      "res://levels/bubby/assets/player/left/left_0.png",
+      "res://levels/bubby/assets/player/left/left_1.png",
+      "res://levels/bubby/assets/player/left/left_2.png",
+      "res://levels/bubby/assets/player/left/left_3.png"
+    ],
+    "player/left_attack": [
+      "res://levels/bubby/assets/player/left_attack/attack_left.png"
+    ],
+    "player/left_idle": [
+      "res://levels/bubby/assets/player/left_idle/idle_left.png"
+    ],
+    "player/right": [
+      "res://levels/bubby/assets/player/right/right_0.png",
+      "res://levels/bubby/assets/player/right/right_1.png",
+      "res://levels/bubby/assets/player/right/right_2.png",
+      "res://levels/bubby/assets/player/right/right_3.png"
+    ],
+    "player/right_attack": [
+      "res://levels/bubby/assets/player/right_attack/attack_right.png"
+    ],
+    "player/right_idle": [
+      "res://levels/bubby/assets/player/right_idle/idle_right.png"
+    ],
+    "player/up": [
+      "res://levels/bubby/assets/player/up/up_0.png",
+      "res://levels/bubby/assets/player/up/up_1.png",
+      "res://levels/bubby/assets/player/up/up_2.png",
+      "res://levels/bubby/assets/player/up/up_3.png"
+    ],
+    "player/up_attack": [
+      "res://levels/bubby/assets/player/up_attack/attack_up.png"
+    ],
+    "player/up_idle": [
+      "res://levels/bubby/assets/player/up_idle/idle_up.png"
+    ]
+  }
+}
