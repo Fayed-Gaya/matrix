@@ -15,11 +15,12 @@ Pygame archive are preserved.
 
 ## Current phase / next concrete action
 
-All eight development/assessment phases have checkpoints below. Integrated main
-CI passed through `fee16d7`. The next authorized development cycle is the
-[spaceship hub refinement, round 2](alpha-0.2-hub-round2.md), on
-`feature/alpha-0.2-hub-refinement`; that record owns current implementation/checks.
-Do not merge or publish this refinement without fresh authorization.
+Hub PR #17 merged with history preserved at `a3588fbe31eb22534fe50213dc77abd86a9f2f0d`
+on 2026-10-22. Integrated Checks `39862548448` and Godot/Web `39862548809`
+passed, including fresh runtime, archive preservation, export and six browsers.
+Current work: [Bubby creative refinement](alpha-0.2-bubby-refinement.md), branch
+`feature/alpha-0.2-bubby-refinement`, isolated worktree
+`~/git/matrix-bubby-refinement`. No release authorization.
 No manual gameplay work is requested at this juncture. The owner may use
 `alpha-0.2-mobile-testing.md` before sharing or refine testing later. Never claim
 physical iPhone/Android, audible-audio or full human gameplay verification.
@@ -81,9 +82,11 @@ are in modules/shared. Shared avatar/movement remain small; games are independen
 
 - Hub: original cabin/bed/window/storage/plant/computer, boundaries, movement,
   opening, terminal and preserved return position.
-- Bubby: generic **provisional** apartment/outside, tutorial avatar/music,
-  three-shoo pigeon, composure/retry, envelope/table objective and draft ending.
-  No Kate apartment/story specifics were available; no biography invented.
+- Bubby refinement: **provisional** apartment → pigeon-occupied balcony, scattering
+  birds, cute Grand Coo with marked hops/recovery shoo windows, composure/retry,
+  unharmed departure and balcony-reclamation ending. New editable raster art;
+  tutorial avatar/music and missing Kate references remain explicit. See its
+  refinement journal for current validation/PR status.
 - Busboy: retained forest art/characters/opening/ambience, waykeeper dialogue,
   Strike/Guard/Cleanse with mana/stain/telegraphed turns, retreat/defeat/retry,
   cleared gate and shrine ending. Earth/Fire/Blood remain future vision.
@@ -156,8 +159,10 @@ Logs/captures: `/tmp/matrix-alpha02/`, especially `mobile-final2-check.log`,
   Xcode 26.3 is a host-compatible candidate per Apple, not a verified phone/build.
   Newer Xcode needs an OS this model does not officially support. No installations,
   signing/account/device changes, enrollment or purchases performed.
-- PixelLab HTTP MCP is configured/enabled, but no tools exposed to this session.
-  No secrets printed/committed and no paid generation called. Isolated temporary
+- PixelLab was unavailable in earlier sessions; Bubby refinement now exposed
+  callable tools and used one verified included-trial pigeon generation (39→38,
+  $0 credits). See its art/refinement record; no paid generation, secret exposure
+  or account configuration changes. Isolated temporary
   `ASEPRITE_USER_FOLDER` avoids its batch-only extension dialog error. See
   `docs/art-pipeline.md`; do not alter user plugin/credential configuration.
 - User's untracked `art/Sprite.aseprite` remains untouched/uncommitted, SHA256

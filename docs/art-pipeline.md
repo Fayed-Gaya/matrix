@@ -26,7 +26,8 @@ Sources/SVGs/Aseprite copies do not auto-synchronize. Keep nearest filtering.
 | art/hub/round2/*.aseprite (current hub) | hub/assets/round2/*.png |
 | art/hub/cabin-atlas.aseprite (original draft) | hub/assets/alpha02/cabin-atlas.png |
 | art/hub/cabin-player.aseprite | shared/actors/astronaut.png |
-| art/bubby/{apartment-atlas,outside-atlas,pigeon}.aseprite | levels/bubby/assets/*.png |
+| art/bubby/refinement/*.aseprite (current Bubby) | levels/bubby/assets/refinement/*.png |
+| art/bubby/{apartment-atlas,outside-atlas,pigeon}.aseprite (retained draft) | levels/bubby/assets/*.png |
 | art/busboy/{root,props}.aseprite | levels/busboy/assets/*.png |
 | art/machine/{town-atlas,governor}.aseprite | levels/machine/assets/*.png |
 
@@ -35,7 +36,15 @@ modified. Choose source/output explicitly; no directory-wide art sweep.
 
 ## PixelLab/Codex tooling
 
-Read-only local inspection found PixelLab configured/enabled as an HTTP MCP
+Bubby refinement update (2026-10-22): tools are now exposed and authenticated.
+One 96px pigeon generation used one verified included trial generation; credits
+remained $0. Original download, layered Aseprite master, prompt/job provenance and
+honest static-sprite assessment are in
+[the Bubby art record](../art/bubby/refinement/README.md). No paid generation or
+account/configuration changes. This validates one sprite, not animation/style
+consistency across a whole game.
+
+Earlier sessions: read-only local inspection found PixelLab configured/enabled as an HTTP MCP
 with an Authorization header. No credential value was printed or copied into
 the repository. Its tools were not exposed to this session; that observation
 does not establish a provider/account failure. No generation call was made.

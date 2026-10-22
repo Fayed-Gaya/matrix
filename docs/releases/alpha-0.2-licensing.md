@@ -23,3 +23,13 @@ No levels/notices were silently deleted or relicensed, and no new publication
 or legal-clearance decision is made. Alpha 0.1 publication approval does not
 automatically authorize an Alpha 0.2 release. Personal references and final art
 approval remain separate from licensing questions and automated test results.
+
+## Bubby refinement provenance (2026-10-22)
+
+The Grand Coo uses one PixelLab included-trial output. The original download,
+job/seed and editable master are preserved under `art/bubby/refinement/`; its
+README records actual usage and no additional paid charges. Environmental
+sprites are original local raster studies. This provenance is not a legal
+clearance claim; provider terms/output rights must be considered alongside the
+existing unresolved tutorial avatar/music obligations before distribution.
+No pre-existing notices or source references were removed.

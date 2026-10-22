@@ -1,43 +1,60 @@
-# Bubby — provisional Alpha 0.2 slice
+# Bubby — the Grand Coo
 
-Terminal code **BUBBY**; ZELDA is not an alias. Move with WASD/arrows, E interacts
-with doors/table/envelope, Space shoos the pigeon, Escape closes dialogue first
-or returns to Matrix. This slice has two native rooms and no XP/upgrades.
+Terminal **BUBBY**, no ZELDA alias. WASD/arrows move, E/Use interacts, Space/Shoo
+shoos. Escape closes dialogue first, then returns to Matrix. Touch retains
+independent movement and action fingers; Matrix returns immediately.
 
-Read the table if desired, go outside through the bottom-right door, approach
-the pigeon and shoo it three times (short cooldown). Contact reduces composure;
-at zero you restart inside, with a fresh encounter. The pigeon leaves unharmed.
-Collect the envelope with E, return through the house door at bottom-left and
-bring it to the table. A short placeholder ending completes the objective.
-You may continue exploring or return to the hub. Nothing is saved.
+Explore the provisional apartment and optionally read the notebook. The glass
+doors at the right lead onto the balcony (approach their lower edge). The small
+pigeons scatter. One rather grand pigeon remains. Dismiss the introduction:
+step away from its **locked landing circle**, then approach within 86 pixels
+and shoo during **SHOO WINDOW**. Six successful shoos convince it to relocate,
+unharmed. Composure has five points; landing hits have a grace period. At zero,
+continue to retry immediately on the balcony, fully refreshed. Stepping inside
+also resets an unfinished encounter. Victory clears the mess and gives a short
+ending; re-entry retains victory for this visit. Nothing is saved.
 
-**Provisional:** apartment/outdoor layout, narrative, delivery objective and
-pigeon design are fictional implementation stand-ins. They do not describe
-Kate's actual home, appearance, routines or experiences. Personal references,
-emotional narrative, artistic acceptance and final enemy interpretation await
-owner input. The reused tutorial avatar is visibly provisional, not Kate.
+The envelope/table delivery errand has been replaced. The notebook is optional
+flavor, not a required pickup or invented personal memory. There is no XP,
+inventory, equipment or shared RPG framework.
 
-## Authoring and preservation
+## Provisional personal references
 
-Open `maps/apartment.tscn` or `maps/outside.tscn`. Paint Ground/Details using the
-external `.tres` TileSets. Move PlayerSpawn/PigeonSpawn, resize Exit/Table/Envelope
-ReferenceRects and edit CollisionShape2D rectangles. Scenes are authoritative;
-there is no runtime map conversion. `room.gd` reads native markers and geometry.
-`player.gd` adapts the Zelda exploration/animation foundation with substeps and
-scaled source frames; the room owns each player/bird tree. `bubby.gd` owns the
-short objective, lightweight encounter and retry state. No shared RPG framework.
+Apartment layout, furnishings, balcony architecture, dialogue and reused tutorial
+avatar are **stand-ins**, not a claim about Kate's home, likeness or possessions.
+The player role is Kate; the visible avatar awaits real likeness references.
+Ending language is generic, not attributed to her or the relationship.
 
-The complete original Zelda module and frozen checks remain under `source/`,
-excluded by `.gdignore` and the web preset. Paths inside that historical source
-are preserved, not rewritten into a second running game. The pinned original
-suite remains available through `make archived-godot-check`.
+## Native authoring
 
-Copied avatar frames/music retain their existing unresolved tutorial asset/code
-provenance and notices; no new permission or license clearance is claimed.
-Original provisional environment/pigeon source: `art/bubby/`; runtime PNGs here.
-`assets/manifest.json` includes only active avatar frame dependencies.
+Open `maps/apartment.tscn` or `maps/outside.tscn` (the latter is now the balcony;
+its internal filename is retained). Ground/Details use external TileSets.
+Independent props have foot anchors and native Y sorting. Edit collision
+rectangles, PlayerSpawn/ReturnSpawn/PigeonSpawn and Exit/Table regions directly.
+The balcony's Mess node owns removable dirt/feathers; rails remain independent.
+Scenes are authoritative: there is no TMX/CSV/JSON map conversion or runtime grid.
 
-Targeted validation checks full delivery progression, code/alias policy,
-blocked pickup, shoo cooldown, contact/retry, dialogue and hub return, plus native
-scene edit/save/reload. Headless checks do not establish human gameplay feel,
-audio quality, personal meaning, art approval or mobile usability.
+`bubby.gd` owns rest/tell/hop/depart/defeat states. The target locks once per hop;
+only the landing circle can cause damage. Recovery is the shoo window; actions
+have a cooldown. `player.gd` retains axis-separated substep collision/animation,
+using idle/walking frames for unarmed shooing rather than a sword attack sprite.
+
+Current art: `art/bubby/refinement/README.md`; Aseprite masters → explicit PNG
+exports → native props/TileSets. One PixelLab included trial created the pigeon;
+local original raster studies created the environment. Avatar/music retain
+existing unresolved tutorial provenance. Original Zelda source remains excluded
+under `source/`, unchanged. Existing draft art is retained, not silently deleted.
+
+## Validation
+
+`make fast-check CHECKS="bubby mobile"` covers input, native edit/save/reload,
+spawn-to-door collision navigation, scattering, locked tells, dodge, recovery
+windows/range/cooldown, landing damage/grace, failure/retry, victory/re-entry and
+hub return. Optional actual-window captures:
+
+```sh
+"$GODOT" --path . --script res://scripts/validation/bubby_check.gd -- /tmp/bubby
+```
+
+These positioned/accelerated automated fixtures do not establish human balance,
+personal recognition, audio quality or physical iPhone usability.

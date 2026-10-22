@@ -48,7 +48,7 @@ func move_axis(amount: Vector2, obstacles: Array[Rect2], bounds: Vector2) -> voi
 
 func _draw() -> void:
 	if frames.is_empty(): return
-	var state: String = facing + ("_attack" if action_time > 0 else ("" if moving else "_idle"))
+	var state: String = facing + ("" if moving else "_idle")
 	var images: Array = frames["player/" + state]
 	var picture: Texture2D = images[int(frame_index) % images.size()]
 	draw_set_transform(Vector2(0, 6), 0, Vector2(1, 0.5))

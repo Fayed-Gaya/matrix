@@ -27,6 +27,13 @@ func _process(_delta: float) -> void:
 		"scene": app.active_level.scene_file_path if app.active_level != null else "",
 		"camera_status": app.active_level.get_node("Status").text if app.active_code == "YOU" else "",
 	}
+	if app.active_level is BubbyLevel:
+		var level: BubbyLevel = app.active_level as BubbyLevel
+		state["bubby"] = {"room": level.room_name, "x": level.player.position.x, "y": level.player.position.y,
+			"phase": level.boss_state, "composure": level.health, "resolve": level.pigeon_health,
+			"dialogue": not level.dialogue.is_empty(), "complete": level.complete,
+			"bird_x": level.pigeon.position.x if is_instance_valid(level.pigeon) else 0,
+			"bird_y": level.pigeon.position.y if is_instance_valid(level.pigeon) else 0}
 	bridge.call("eval","document.documentElement.setAttribute('data-matrix-state', %s)" % JSON.stringify(JSON.stringify(state)))
 
 func touch_regions() -> Dictionary:
