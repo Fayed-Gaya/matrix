@@ -1,7 +1,7 @@
 # Alpha 0.2 implementation status
 
 Updated 2026-10-22. Work in `/Users/Fayed/git/matrix`; current branch
-`feature/alpha-0.2-mobile`, stacked on workflow PR #12. **No merges, release tags or
+`feature/alpha-0.2-ios-feasibility`, stacked on mobile PR #13. **No merges, release tags or
 public deployments authorized.** Keep Alpha 0.1 tag `v0.1.0-alpha.1` at
 `f6146918b424af8cc64e1969c7447892b766cacb`, published bytes and Pygame archive.
 
@@ -18,7 +18,7 @@ public deployments authorized.** Keep Alpha 0.1 tag `v0.1.0-alpha.1` at
 7. Desktop/mobile browsers — implemented; physical acceptance pending; landscape/touch, all seven routes/return,
    BUG pointer/touch, YOU fallback, iPhone Chrome/Safari prioritized. Android
    desired without blocking on unavailable hardware. Real iPhone needs owner.
-8. Native iOS feasibility — **next/current phase**, personal-device milestone only; no purchases,
+8. Native iOS feasibility — assessment complete; personal-device milestone only; no purchases,
    enrollment, certificates, TestFlight/App Store or native publication.
 
 The owner supplied the truncated remainder; no missing-scope blocker remains.
@@ -38,9 +38,10 @@ were read through Google Drive, including Bubby and release/mobile tabs.
 | Busboy | `09771b3` | busboy | [#10](https://github.com/Fayed-Gaya/matrix/pull/10) → #9 |
 | Machine/shared actor | `b8d781b` | machine | [#11](https://github.com/Fayed-Gaya/matrix/pull/11) → #10 |
 | Workflow/export | `66448ab` | workflow | [#12](https://github.com/Fayed-Gaya/matrix/pull/12) → #11 |
+| Touch/mobile | `d9d457e` | mobile | [#13](https://github.com/Fayed-Gaya/matrix/pull/13) → #12 |
 
-All pushed, none merged. #7–#11 GitHub Checks/Godot/Web are green, including
-Chrome/Firefox/Edge. Machine CI is also green (Godot/Web run 39727878256; Checks 39727878312). PR validation also runs
+All pushed, none merged. #7–#12 GitHub Checks/Godot/Web are green, including
+Chrome/Firefox/Edge. Workflow CI green (Godot/Web 39729243722; Checks 39729243773). Mobile Checks green (39730221407); Godot/Web 39730221390 pending last inspection. PR validation also runs
 on stacked Alpha 0.2 bases. Retarget descendants after approved base merges.
 
 ## Implemented game/catalog details
@@ -160,3 +161,21 @@ is unverified. Final full check includes combat adapters and passes without leak
 fresh runtime and audited export pass. Local Edge remains unavailable; full CI
 installs Edge and WebKit. Next concrete action: commit/push Phase 7 and open its
 stacked PR, then read-only Phase 8 assessment.
+
+## Phase 8 / release handoff
+
+Read-only native iOS assessment is in alpha-0.2-ios-feasibility.md. This Intel
+MacBookPro15,4 runs macOS 15.8.1, only Command Line Tools, no full Xcode/iOS SDK
+or matching iOS templates; about 19 GiB free. Xcode 26.3 is a host-compatible
+candidate per Apple, not a proven phone/engine combination. Newer Xcode needs
+a newer OS than this model officially supports. No signing/account/device
+changes or installations performed. Personal-device development is plausible
+but blocked on toolchain setup and owner device/account steps.
+
+All eight queue phases now have implementation/assessment work recorded.
+Remaining acceptance: real iPhone 17 Chrome/Safari, Android if available, full
+human paths/balance/audio/art, licensing clearance and explicit authorization
+before merging/publishing. Kate/Kobe-specific personalization remains provisional.
+Next session: inspect status/concurrency, check final PR CI, address failures,
+then follow alpha-0.2-mobile-testing.md with the owner. Keep private user art,
+all archives and Alpha 0.1 tag/packages untouched. No Alpha 0.2 deployment/tag.
