@@ -1,0 +1,51 @@
+# Editable art and runtime export
+
+Edit source under `art/`; runtime images belong to hub/levels/shared. Godot
+`.import` settings and `.uid` sidecars are tracked, generated caches/builds are
+not. Native scenes/TileSets remain authoritative for map layout; exporting an
+image never regenerates scene cells, collisions, NPCs or portals.
+
+For the single-frame baked atlases/sheets in this iteration:
+
+```sh
+make art-export SOURCE=art/machine/governor.aseprite OUTPUT=levels/machine/assets/governor.png
+make fast-check CHECKS=machine
+```
+
+Override `ASEPRITE=/path/to/aseprite` if needed. The helper validates the source
+header, preserves sheet dimensions, writes the PNG atomically, and uses a
+throwaway preferences directory. This avoids the installed PixelLab extension's
+batch-only dialog error without changing its installation or your preferences.
+Aseprite documents the [temporary preferences override](https://www.aseprite.org/docs/preferences-folder/).
+Animated source files are rejected rather than silently flattened/repacked;
+use Aseprite's deliberate sprite-sheet export with the intended runtime layout.
+Sources/SVGs/Aseprite copies do not auto-synchronize. Keep nearest filtering.
+
+| Editable source | Runtime target |
+| --- | --- |
+| art/hub/cabin-atlas.aseprite | hub/assets/alpha02/cabin-atlas.png |
+| art/hub/cabin-player.aseprite | shared/actors/astronaut.png |
+| art/bubby/{apartment-atlas,outside-atlas,pigeon}.aseprite | levels/bubby/assets/*.png |
+| art/busboy/{root,props}.aseprite | levels/busboy/assets/*.png |
+| art/machine/{town-atlas,governor}.aseprite | levels/machine/assets/*.png |
+
+The unrelated user `art/Sprite.aseprite` is not auto-exported, committed or
+modified. Choose source/output explicitly; no directory-wide art sweep.
+
+## PixelLab/Codex tooling
+
+Read-only local inspection found PixelLab configured/enabled as an HTTP MCP
+with an Authorization header. No credential value was printed or copied into
+the repository. Its tools were not exposed to this session; that observation
+does not establish a provider/account failure. No generation call was made.
+Original local pixel art provided a working alternative without API charges.
+
+[Official OpenAI MCP documentation](https://learn.chatgpt.com/docs/extend/mcp?surface=cli)
+describes `codex mcp list` for configured servers and `/mcp` for active servers.
+Inspect those in a session that exposes PixelLab before assuming it can be used.
+Keep local credentials private; do not paste headers into issues/docs. Current
+scope prohibits paid API generation even if tools become available. Do not
+change credentials or external plugin configuration merely to silence an error.
+
+Creative content and unresolved asset permissions are recorded in
+`releases/alpha-0.2-licensing.md`; a successful export is not licensing clearance.
