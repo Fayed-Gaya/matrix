@@ -27,7 +27,7 @@ func layout_buttons() -> void:
 		actions[i].position = Vector2(24 + i * (width + 16), size.y * 0.75)
 		actions[i].size = Vector2(width, 52)
 		actions[i].add_theme_font_size_override("font_size", 18 if size.x >= 900 else 13)
-	leave.position = Vector2(size.x - 230, 18)
+	leave.position = Vector2(size.x - (370 if MatrixMobileOverlay.active(self) else 230), 18)
 	leave.size = Vector2(210, 40)
 
 func sync_buttons() -> void:
@@ -52,6 +52,9 @@ func _draw() -> void:
 		return
 	if level.encounter != null:
 		draw_battle(level, font)
+		return
+	if MatrixMobileOverlay.active(self):
+		MatrixMobileOverlay.draw(self, "BUSBOY · Draft", level.objective(), level.interaction_hint(), level.dialogue)
 		return
 	draw_rect(Rect2(0,0,size.x,128), Color(0.04,0.08,0.06,0.92))
 	draw_string(font, Vector2(18,26), "BUSBOY · " + ("Starting room" if level.room_name == "cabin" else "Cursed forest") + " · Provisional", HORIZONTAL_ALIGNMENT_LEFT, size.x - 36, 22, Color("d2e4bd"))

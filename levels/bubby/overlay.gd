@@ -3,6 +3,9 @@ extends Control
 func _draw() -> void:
 	var level: BubbyLevel = get_parent() as BubbyLevel
 	if level.room == null: return
+	if MatrixMobileOverlay.active(self):
+		MatrixMobileOverlay.draw(self, "BUBBY · Draft", level.objective(), level.interaction_hint(), level.dialogue)
+		return
 	var font: Font = ThemeDB.fallback_font
 	draw_rect(Rect2(0, 0, size.x, 128), Color(0.05, 0.08, 0.1, 0.9))
 	draw_string(font, Vector2(18, 26), "BUBBY · Provisional " + ("apartment" if level.room_name == "apartment" else "outside"), HORIZONTAL_ALIGNMENT_LEFT, size.x - 36, 22, Color("f2d3bc"))

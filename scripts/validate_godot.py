@@ -50,6 +50,11 @@ def main() -> None:
                 "Matrix hub integration passed",
             ),
             (
+                "mobile",
+                ["--script", "res://scripts/validation/mobile_check.gd"],
+                "Mobile input validation passed",
+            ),
+            (
                 "bouncing_ball",
                 [
                     "--script",

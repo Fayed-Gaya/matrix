@@ -1,7 +1,7 @@
 # Alpha 0.2 implementation status
 
 Updated 2026-10-22. Work in `/Users/Fayed/git/matrix`; current branch
-`feature/alpha-0.2-workflow`, stacked on Machine. **No merges, release tags or
+`feature/alpha-0.2-mobile`, stacked on workflow PR #12. **No merges, release tags or
 public deployments authorized.** Keep Alpha 0.1 tag `v0.1.0-alpha.1` at
 `f6146918b424af8cc64e1969c7447892b766cacb`, published bytes and Pygame archive.
 
@@ -12,13 +12,13 @@ public deployments authorized.** Keep Alpha 0.1 tag `v0.1.0-alpha.1` at
 3. BUBBY replaces ZELDA — playable provisional delivery/pigeon slice.
 4. BUSBOY replaces UNTITLED — playable provisional forest/turn encounter.
 5. MACHINE — playable provisional home/town/three interiors/NPCs/boss showcase.
-6. Workflow/performance — **current phase**; add targeted/full validation paths,
+6. Workflow/performance — implemented; added targeted/full validation paths,
    prevent development/output imports, clean reproducible exports, isolated
    Aseprite batch helper and practical tooling/authoring documentation.
-7. Desktop/mobile browsers — next; landscape/touch, all seven routes/return,
+7. Desktop/mobile browsers — implemented; physical acceptance pending; landscape/touch, all seven routes/return,
    BUG pointer/touch, YOU fallback, iPhone Chrome/Safari prioritized. Android
    desired without blocking on unavailable hardware. Real iPhone needs owner.
-8. Native iOS feasibility — last, personal-device milestone only; no purchases,
+8. Native iOS feasibility — **next/current phase**, personal-device milestone only; no purchases,
    enrollment, certificates, TestFlight/App Store or native publication.
 
 The owner supplied the truncated remainder; no missing-scope blocker remains.
@@ -37,8 +37,9 @@ were read through Google Drive, including Bubby and release/mobile tabs.
 | Bubby | `38876f2` | bubby | [#9](https://github.com/Fayed-Gaya/matrix/pull/9) → #8 |
 | Busboy | `09771b3` | busboy | [#10](https://github.com/Fayed-Gaya/matrix/pull/10) → #9 |
 | Machine/shared actor | `b8d781b` | machine | [#11](https://github.com/Fayed-Gaya/matrix/pull/11) → #10 |
+| Workflow/export | `66448ab` | workflow | [#12](https://github.com/Fayed-Gaya/matrix/pull/12) → #11 |
 
-All pushed, none merged. #7–#10 GitHub Checks/Godot/Web are green, including
+All pushed, none merged. #7–#11 GitHub Checks/Godot/Web are green, including
 Chrome/Firefox/Edge. Machine CI is also green (Godot/Web run 39727878256; Checks 39727878312). PR validation also runs
 on stacked Alpha 0.2 bases. Retarget descendants after approved base merges.
 
@@ -113,8 +114,8 @@ Alpha 0.1 docs/inventory unchanged in final stack; current inventory/addendum:
   documented temporary `ASEPRITE_USER_FOLDER` exports successfully without that
   error or changing user configuration; wrapper implemented in Phase 6.
 - Local gh CLI authentication returns 401; connected GitHub tools work for PR/CI.
-- Next session: inspect Git/status/concurrency first, continue Phase 6 on the
-  current branch, then touch/browser Phase 7 and iOS Phase 8. Keep all archives,
+- Next session: inspect Git/status/concurrency first, continue Phase 7 validation on the
+  current branch, then iOS feasibility Phase 8. Keep all archives,
   notices, user art and immutable release intact; commit/push checkpoints.
 
 ## Phase 6 checkpoint
@@ -132,3 +133,30 @@ Local observations: selected Machine check 8.538 s, full check 13.101 s, export
 benchmarks. Final full check and Chrome seven-code smoke passed (10.0 s);
 clean embedded-audit export and explicit disposable Aseprite export passed.
 Logs: /tmp/matrix-alpha02/workflow-*. Next: Phase 7 mobile controls and tests.
+
+## Phase 7 implementation checkpoint
+
+Landscape multi-touch adapter reuses existing movement/key actions, with Use,
+Shoo, Spark/Brace and direct Matrix return. All seven terminal codes are touch
+buttons. Portrait pauses/resumes; focus/context changes release held inputs.
+BUG supports held/dragged/released touch and keeps original mouse behavior.
+Compact exploration overlays preserve dialogue; native camera path unchanged.
+Phone browser CSS coordinates now drive logical canvas sizing (initial DPR-3
+probe otherwise rendered a 2532×1170 root for 844×390 CSS pixels).
+
+Full make check including multi-touch/focus/rotation/combat/route checks passed,
+fresh runtime passed, final staged export/PCK audit passed, license inventory
+refreshed and checked. First browser matrix: desktop Chrome/Firefox and mobile
+Chrome passed. Local Edge is absent (not a gameplay failure); CI installs it.
+WebKit loaded the game but its Touch constructor rejected the harness; changed
+to generic canvas touch events and rerunning all available browsers. Initial
+combat fixture exited before audio mixer cleanup; a 0.15 s drain resolves the
+leak with strict leak detection retained. Direction labels changed to arrows
+after inspecting phone captures. No real iPhone/Android test claimed.
+
+Owner steps: docs/releases/alpha-0.2-mobile-testing.md. Final rerun: desktop Chrome 7.2 s, Firefox 21.1 s, mobile Chrome 10.9 s and
+mobile WebKit 12.9 s passed (four tests, 1.0 min total). Physical-device behavior
+is unverified. Final full check includes combat adapters and passes without leaks;
+fresh runtime and audited export pass. Local Edge remains unavailable; full CI
+installs Edge and WebKit. Next concrete action: commit/push Phase 7 and open its
+stacked PR, then read-only Phase 8 assessment.

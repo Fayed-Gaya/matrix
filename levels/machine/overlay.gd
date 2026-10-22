@@ -3,6 +3,9 @@ extends Control
 func _draw() -> void:
 	var level: MachineLevel = get_parent() as MachineLevel
 	if level.room == null: return
+	if MatrixMobileOverlay.active(self):
+		MatrixMobileOverlay.draw(self, "MACHINE · Draft", level.objective() + (" · You %d/5 · Governor %d/6" % [level.health, level.boss_health] if level.room_name == "outskirts" else ""), level.interaction_hint(), level.dialogue)
+		return
 	var font: Font = ThemeDB.fallback_font
 	draw_rect(Rect2(0,0,size.x,128),Color(0.05,0.08,0.11,0.92))
 	draw_string(font,Vector2(18,26),"MACHINE · The quiet hour · Draft",HORIZONTAL_ALIGNMENT_LEFT,size.x-36,22,Color("edc58a"))

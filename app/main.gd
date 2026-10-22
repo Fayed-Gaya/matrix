@@ -4,6 +4,7 @@ extends Control
 
 const HUB_SCENE: PackedScene = preload("res://hub/hub.tscn")
 const PENDING_SCENE: PackedScene = preload("res://app/pending_level.tscn")
+var mobile_controls: MatrixMobileControls
 var hub: Control
 var active_level: MatrixLevel
 var active_code: String = ""
@@ -14,6 +15,8 @@ func _ready() -> void:
 	hub = HUB_SCENE.instantiate()
 	add_child(hub)
 	hub.level_requested.connect(launch_level)
+	mobile_controls = preload("res://app/mobile_controls.gd").new()
+	add_child(mobile_controls)
 	print("Matrix hub ready")
 	if OS.has_feature("web"):
 		add_child(preload("res://app/web_diagnostics.gd").new())
@@ -48,6 +51,7 @@ func _enter_level(code: String, entry: Dictionary) -> void:
 	hub.suspend()
 	active_level.return_requested.connect(return_to_hub)
 	add_child(active_level)
+	move_child(mobile_controls, -1)
 	transitioning = false
 
 
