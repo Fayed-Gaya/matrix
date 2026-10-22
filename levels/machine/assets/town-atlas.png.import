@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bu0scig4pg5f7"
-path="res://.godot/imported/cabin-player.png-4c3b13a85ea5cd95f82d33199bd07aa2.ctex"
+uid="uid://bxwkts08l8h12"
+path="res://.godot/imported/town-atlas.png-f1ced5f56cab212aa8ed96502d20673b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://hub/assets/alpha02/cabin-player.png"
-dest_files=["res://.godot/imported/cabin-player.png-4c3b13a85ea5cd95f82d33199bd07aa2.ctex"]
+source_file="res://levels/machine/assets/town-atlas.png"
+dest_files=["res://.godot/imported/town-atlas.png-f1ced5f56cab212aa8ed96502d20673b.ctex"]
 
 [params]
 

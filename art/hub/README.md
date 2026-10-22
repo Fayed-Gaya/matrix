@@ -13,7 +13,8 @@ and coral. No Kate/Kobe personal references or artistic approvals are implied.
   SVGs do not automatically synchronize or regenerate.
 
 Export each Aseprite sheet as PNG, at its original size, to
-`hub/assets/alpha02/` with the matching name. Do not trim, resize, rotate or
+`hub/assets/alpha02/` for the atlas; the player sheet is shared at
+`shared/actors/astronaut.png`. Do not trim, resize, rotate or
 repack cells; nearest filtering preserves pixels. Commit the PNG `.import`
 settings. Room composition is edited in Godot, not baked into the image.
 `art/.gdignore` and export exclusions keep editable sources out of the game.

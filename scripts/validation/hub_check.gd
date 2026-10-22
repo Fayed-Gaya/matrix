@@ -111,7 +111,7 @@ func run() -> void:
 	key(KEY_ESCAPE)
 	check(not hub.overlay.terminal_active, "Escape closes terminal")
 	check(LevelRegistry.lookup(" balls ").name == "Balls", "Lookup trims and ignores case")
-	check(LevelRegistry.ENTRIES.size() == 6, "Six retained modules registered before MACHINE")
+	check(LevelRegistry.ENTRIES.size() == 7, "All seven Alpha 0.2 modules registered")
 	for retired: String in ["PONG", "JUMP", "MARIO", "MONSTERS", "ZELDA", "UNTITLED"]:
 		check(LevelRegistry.lookup(retired).is_empty(), "Archived code unavailable: " + retired)
 	for code: String in LevelRegistry.ENTRIES:

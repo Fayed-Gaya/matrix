@@ -4,7 +4,7 @@ Matrix uses **Godot 4.7.2, GDScript, Compatibility renderer** in this
 existing repository. Alpha 0.2 development retains `BOUNCE`, `BALLS`, `BUG`,
 `YOU`, and the two RPG foundations (`BUBBY` and `BUSBOY`). `PONG`, `JUMP`, `MARIO`, and `MONSTERS` are preserved
 under `archive/godot/`, excluded from the playable catalog and browser pack.
-MACHINE is planned, not yet playable. YOU retains native camera functionality
+`MACHINE` is a playable provisional clockwork-town showcase. YOU retains native camera functionality
 and a clear browser fallback. See [current implementation status](docs/releases/alpha-0.2-status.md).
 
 The published Alpha 0.1 preview is unchanged and still contains all ten levels.

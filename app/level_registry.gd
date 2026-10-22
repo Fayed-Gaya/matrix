@@ -3,6 +3,7 @@ extends RefCounted
 ## Empty scene paths explicitly identify levels awaiting migration.
 
 const ENTRIES: Dictionary = {
+	"MACHINE": {"name":"Machine", "scene":"res://levels/machine/machine.tscn"},
 	"BUBBY": {"name": "Bubby", "scene": "res://levels/bubby/bubby.tscn"},
 	"BALLS": {"name": "Balls", "scene": "res://levels/balls/balls.tscn"},
 	"BOUNCE": {"name": "Bouncing Ball", "scene": "res://levels/bouncing_ball/bouncing_ball.tscn"},
