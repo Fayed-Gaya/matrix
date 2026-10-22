@@ -1,36 +1,30 @@
-# Matrix hub
+# Matrix spaceship cabin
 
-Run `make run` from the repository root. Press any key to dismiss the opening.
-Move with WASD/arrows; walk toward the computer on the bottom counter. Press E
-when the prompt appears, type a code, and press Enter. Backspace edits input;
-Escape closes the terminal or quits from the room. Codes ignore surrounding
-whitespace and letter case, and input is limited to 18 characters.
+Press any key at the opening. Move with WASD/arrows. The computer is on the
+upper-right desk: stand in front and press E when prompted. Type a code and
+Enter; Backspace edits, Escape closes. Returning from a level preserves your
+hub position and skips the opening. Codes ignore surrounding space and case.
 
-Current codes: `ZELDA`, `BALLS`, `BOUNCE`, `BUG`, `YOU`, `UNTITLED`.
-PONG/JUMP/MARIO/MONSTERS are archived for Alpha 0.2; BUBBY/BUSBOY replacements
-and MACHINE will enter the registry when their implementation is ready. Each opens its native Godot level module. Escape returns to
-the same hub position without replaying the opening; some levels close a local
-menu first. See each level README for controls and parity limitations. You camera
-capture depends on native platform support and needs hardware testing.
+Current codes: BOUNCE, BALLS, BUG, YOU, ZELDA, UNTITLED. The latter two become
+BUBBY and BUSBOY at their respective implementation checkpoints; MACHINE is
+pending. PONG/JUMP/MARIO/MONSTERS are archived, not public aliases.
 
-- `hub.tscn` / `hub.gd`: lifecycle, input, terminal, 2x SubViewport, camera bounds.
-- `overlay.gd`: opening, terminal and interaction hint at full window resolution.
-- `player.gd`: sprite animation and 16x16 rectangle collision movement.
-- `world.tscn`: authoritative native TileMapLayers, collision rectangles and markers
-  stored as exported world properties. `world.gd` defines those properties.
-- `assets/`: independent copies of the existing map, sheets and background.
+## Native editing
 
-The current map is preserved as authored, including its open green ground and
-furniture arrangement. A more elaborate spaceship interior is future content.
+Open `world.tscn` in Godot. Paint Ground/Details/Above TileMapLayers with the
+external `tileset.tres`. Move PlayerSpawn and resize Terminal's approach area.
+Edit RectangleShape2D children under Collisions; these are read by the existing
+axis-separated movement implementation. Bounds are 640×352. No runtime map
+conversion, procedural room generator, extra rooms or additional interactions.
+The hatch is scenery, not an exit. Native scenes/TileSets remain authoritative.
 
-Open `hub/world.tscn` directly in Godot. Select Ground, Details or Above and
-paint using the TileMap panel; `tileset.tres` contains the original atlas sources.
-Move PlayerSpawn and resize/move Terminal in the 2D editor. Expand Collisions to
-edit rectangle shapes. Existing custom movement reads these shapes directly.
-Map bounds are exported on World. Save normally; no regeneration is required.
+The original Alpha 0.2 art is under `assets/alpha02/`. Editable SVG/Aseprite
+sources and export notes: `art/hub/README.md`. The old hub art/layout and frozen
+fixture remain excluded under `archive/godot/`. This cabin is a first visual
+iteration for owner refinement, not a claim of approved final art direction.
 
-`make check` compares the baseline cells/rectangles with a frozen regression
-fixture and exercises terminal routing and movement. Intentional map changes
-need corresponding regression expectations updated. The fixture is not an
-editing source. See [native map authoring](../docs/migration/native-maps.md) and
-[hub parity](../docs/migration/hub-parity.md).
+Validation covers movement normalization, boundaries, thin obstacles, input,
+landmarks, collision rectangles, computer reachability, terminal input, all
+active routes, hub return and window/camera resizing. Native resource checks
+also edit/save/reload disposable scene copies. Human movement feel and artistic
+acceptance remain manual. See `docs/releases/alpha-0.2-status.md` for evidence.

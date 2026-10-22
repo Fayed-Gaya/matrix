@@ -1,7 +1,6 @@
 extends Control
 ## Full-window opening and terminal rendering, separate from the pixel world.
 
-const BACKGROUND: Texture2D = preload("res://hub/assets/backgrounds/matrix-opening.jpg")
 const TEXT: Color = Color("e2efeb")
 const MUTED: Color = Color("91a4a6")
 const GREEN: Color = Color("6fe89e")
@@ -15,12 +14,13 @@ var message: String = ""
 func _draw() -> void:
 	var font: Font = ThemeDB.fallback_font
 	if opening:
-		var factor: float = maxf(size.x / BACKGROUND.get_width(), size.y / BACKGROUND.get_height())
-		var crop: Vector2 = size / factor
-		draw_texture_rect_region(BACKGROUND, Rect2(Vector2.ZERO, size),
-			Rect2((BACKGROUND.get_size() - crop) / 2, crop))
-		_center("Press start (any key) to begin", size.y - 52, 34, TEXT)
-		_center("MATRIX", size.y - 18, 28, MUTED)
+		draw_rect(Rect2(Vector2.ZERO, size), Color("101c30"))
+		for i: int in range(64):
+			var star: Vector2 = Vector2(fposmod(i * 173.0 + 41.0, size.x), fposmod(i * 97.0 + 19.0, size.y))
+			draw_rect(Rect2(star, Vector2(2, 2)), MUTED if i % 3 else GREEN)
+		_center("MATRIX", size.y * 0.42, 64, TEXT)
+		_center("A quiet cabin. A thousand possible worlds.", size.y * 0.52, 22, MUTED)
+		_center("Press any key to begin", size.y * 0.72, 26, GREEN)
 	elif terminal_active:
 		draw_rect(Rect2(Vector2.ZERO, size), Color("02080a"))
 		var prompt: Rect2 = Rect2(28, size.y - 76, maxf(1, size.x - 56), 46)

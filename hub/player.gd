@@ -2,7 +2,7 @@ class_name HubPlayer
 extends Node2D
 ## Reference 16x16 hitbox and axis-separated rectangle movement.
 
-const SHEET: Texture2D = preload("res://hub/assets/sprites/player_snoblin.png")
+const SHEET: Texture2D = preload("res://hub/assets/alpha02/cabin-player.png")
 const SPEED: float = 260.0
 const HALF_SIZE: Vector2 = Vector2(8, 8)
 var facing: String = "down"
