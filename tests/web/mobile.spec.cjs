@@ -13,35 +13,50 @@ test('landscape touch movement, terminal, seven routes, return and rotation', as
     await page.touchscreen.tap(p[0], p[1]);
   }
   // Browser touch events exercise the actual canvas input path; no gameplay setters.
-  async function hold(command, duration) {
+  async function touch(command, pressed) {
     const p = (await state(page)).touch_regions[command];
-    await page.evaluate(([x,y]) => {
+    await page.evaluate(([x,y,pressed]) => {
       const canvas = document.querySelector('canvas');
       const touch = {identifier:7,target:canvas,clientX:x,clientY:y,pageX:x,pageY:y};
-      const event = new Event('touchstart',{bubbles:true,cancelable:true});
-      Object.assign(event,{touches:[touch],targetTouches:[touch],changedTouches:[touch]});
+      const event = new Event(pressed?'touchstart':'touchend',{bubbles:true,cancelable:true});
+      Object.assign(event,{touches:pressed?[touch]:[],targetTouches:pressed?[touch]:[],changedTouches:[touch]});
       canvas.dispatchEvent(event);
-    }, p);
-    await page.waitForTimeout(duration);
-    await page.evaluate(([x,y]) => {
-      const canvas = document.querySelector('canvas');
-      const touch = {identifier:7,target:canvas,clientX:x,clientY:y,pageX:x,pageY:y};
-      const event = new Event('touchend',{bubbles:true,cancelable:true});
-      Object.assign(event,{touches:[],targetTouches:[],changedTouches:[touch]});
-      canvas.dispatchEvent(event);
-    }, p);
+    }, [...p,pressed]);
+    return p;
   }
   await tap('Begin');
   await expect.poll(async () => (await state(page)).opening).toBe(false);
   async function move(axis,target,negative,positive) {
     for(let i=0;i<30;i++) {
-      const distance=target-(await state(page))[axis];
-      if(Math.abs(distance)<6) return;
-      await hold(distance<0?negative:positive,Math.max(16,Math.min(80,Math.abs(distance)/260*1000)));
+      const before=(await state(page))[axis];
+      const distance=target-before;
+      // Interaction is the acceptance condition; waypoint precision is only for routing.
+      if(Math.abs(distance)<=18) return;
+      const command=distance<0?negative:positive;
+      const point=await touch(command,true);
+      try {
+        // Wait for rendered physics progress, rather than assuming an 80ms press
+        // spans a frame on a software-rendered CI runner. Collision still fails.
+        await page.waitForFunction(({axis,before,target,point})=>{
+          const raw=document.documentElement.getAttribute('data-matrix-state');
+          if(!raw)return false;
+          const value=JSON.parse(raw)[axis];
+          if(Math.abs(value-before)<Math.min(26,Math.abs(target-before)) && Math.abs(value-target)>18) return false;
+          // Release in this browser callback, avoiding another protocol round trip
+          // while the character is still moving on a slow renderer.
+          const canvas=document.querySelector('canvas');
+          const pointer={identifier:7,target:canvas,clientX:point[0],clientY:point[1],pageX:point[0],pageY:point[1]};
+          const event=new Event('touchend',{bubbles:true,cancelable:true});
+          Object.assign(event,{touches:[],targetTouches:[],changedTouches:[pointer]});
+          canvas.dispatchEvent(event);
+          return true;
+        },{axis,before,target,point},{timeout:5000,polling:16});
+      } catch(error) { await touch(command,false); throw error; }
+      await expect.poll(async () => (await state(page)).touch_held.includes(command)).toBe(false);
     }
     throw Error('Touch navigation stalled: '+JSON.stringify(await state(page)));
   }
-  await move('y',168,'Up','Down');
+  await move('y',172,'Up','Down');
   await move('x',464,'Left','Right');
   await expect.poll(async () => (await state(page)).near_terminal).toBe(true);
   for(const code of ['BOUNCE','BALLS','BUG','BUBBY','BUSBOY','MACHINE','YOU']) {

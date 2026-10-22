@@ -25,13 +25,27 @@ npm test
 ```
 
 Desktop Chrome/Firefox/Edge use real keyboard navigation. Mobile Chrome/WebKit
-contexts use 844×390 CSS pixels, DPR 3, touch-enabled landscape. Tests navigate
+contexts use 844×390 CSS pixels and touch-enabled landscape. Local GPU-backed
+Chrome and WebKit use DPR 3. Software-rendered CI Chrome runs the full route
+test at DPR 1 plus a separate DPR-3 canvas/control-size/touch/rotation probe;
+WebKit retains full DPR-3 navigation. Tests navigate
 to the computer, tap every code, return, and rotate both ways. Browser touch
-movement dispatches canvas TouchEvents; these are simulated browser inputs, not
+movement dispatches canvas touch events and waits for observed physics progress
+and release (short timed pulses can fall between frames on software-rendered CI); these are simulated browser inputs, not
 physical-device tests or setters of game state. Read-only `?matrix_smoke=1`
 telemetry supports assertions; it cannot launch/move a character. Headless checks
 also cover two fingers, release outside a button, focus loss and BUG field mapping.
 All automated YOU launches use synthetic/no-camera paths.
+
+Initial Linux CI passed desktop Chrome/Firefox/Edge but short timed touch presses
+were unreliable; software-rendered Chrome also overshot tight waypoints. Inputs
+now wait for observed movement and release inside the browser callback. The
+actual terminal-proximity, seven-route and return assertions remain mandatory.
+The density split avoids making high-DPI software rendering a timing benchmark
+for physical phones. Failure traces retain DOM/network/source evidence; explicit
+scene/failure screenshots remain, without continuous canvas screencasting.
+[Playwright documents these trace options](https://playwright.dev/docs/api/class-testoptions#test-options-trace).
+Hardware/browser performance acceptance is still required.
 
 ## Owner iPhone 17 check (Chrome and Safari separately)
 

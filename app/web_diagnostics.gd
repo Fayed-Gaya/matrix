@@ -19,7 +19,7 @@ func _process(_delta: float) -> void:
 	var hub: MatrixHub = app.hub as MatrixHub
 	var state: Dictionary = {
 		"touch": app.mobile_controls.enabled, "touch_context": app.mobile_controls.context,
-		"touch_regions": touch_regions(),
+		"touch_regions": touch_regions(), "touch_held": app.mobile_controls.fingers.values(),
 		"code": app.active_code, "opening": hub.overlay.opening,
 		"terminal": hub.overlay.terminal_active, "near_terminal": hub.is_near_terminal(),
 		"x": hub.player.position.x, "y": hub.player.position.y,
