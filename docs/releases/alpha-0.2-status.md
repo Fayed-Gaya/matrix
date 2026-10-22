@@ -15,11 +15,12 @@ Pygame archive are preserved.
 
 ## Current phase / next concrete action
 
-All eight development/assessment phases have checkpoints below. Integrated main
-CI passed through `fee16d7`. The next authorized development cycle is the
-[spaceship hub refinement, round 2](alpha-0.2-hub-round2.md), on
-`feature/alpha-0.2-hub-refinement`; that record owns current implementation/checks.
-Do not merge or publish this refinement without fresh authorization.
+Hub PR #17 merged with history preserved at `a3588fbe31eb22534fe50213dc77abd86a9f2f0d`
+on 2026-10-22. Integrated Checks `39862548448` and Godot/Web `39862548809`
+passed, including fresh runtime, archive preservation, export and six browsers.
+Current work: [Bubby creative refinement](alpha-0.2-bubby-refinement.md), branch
+`feature/alpha-0.2-bubby-refinement`, isolated worktree
+`~/git/matrix-bubby-refinement`. No release authorization.
 No manual gameplay work is requested at this juncture. The owner may use
 `alpha-0.2-mobile-testing.md` before sharing or refine testing later. Never claim
 physical iPhone/Android, audible-audio or full human gameplay verification.

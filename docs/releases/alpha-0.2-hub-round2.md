@@ -231,7 +231,13 @@ PointLight2D nodes are retained. The earlier lighting suspicion was not confirme
 
 The strengthened native corridor regression passed. Both local mobile browsers
 passed after correction. The first Firefox retest exceeded its unchanged 60s
-cold-initialization guard before entering the game; a targeted retry is running
-to exercise the corrected terminal draw path. Evidence: `fixes-fast.log`,
+cold-initialization guard before entering the game; the targeted retry passed
+all seven routes in 1.7 minutes without shader errors. Evidence: `fixes-fast.log`,
 `browser-fixed.log`, `firefox-fixed.log`. These failures were
 investigated rather than ignored or hidden by weakening checks.
+
+## Approved integration
+
+Owner approved PR #17; merged with merge commit `a3588fb` on 2026-10-22.
+Final feature CI and integrated main CI `39862548809` passed.
+No tag, deployment or publication.
