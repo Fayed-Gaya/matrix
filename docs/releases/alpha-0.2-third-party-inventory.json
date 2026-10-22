@@ -1,7 +1,7 @@
 {
   "scope": "Active modules plus their excluded source references for provenance, not an export manifest. External archive/godot, legacy/pygame, caches and import sidecars are excluded from these counts.",
   "counts": {
-    ".gd": 41,
+    ".gd": 43,
     ".gdshader": 1,
     ".gif": 1,
     ".json": 4,
@@ -28,8 +28,8 @@
       "path": "app/main.gd",
       "module": "app",
       "type": ".gd",
-      "size": 1836,
-      "sha256": "1fcbbc91f818d4e3383dcee0200d8fd2686ffbb6134cb02b4ac36968fea150f2",
+      "size": 2004,
+      "sha256": "9035bfb177fa79a42e34940b0678e67a26d0d60d6f834819b912fde1ffe1622e",
       "exact_archived_matches": [],
       "source_reference": false,
       "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
@@ -40,6 +40,16 @@
       "type": ".tscn",
       "size": 281,
       "sha256": "8bcd988d4c55dbfe13440fc78cffb6aaeab0b4e9d8261121edeb2268e0e37e0a",
+      "exact_archived_matches": [],
+      "source_reference": false,
+      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
+    },
+    {
+      "path": "app/mobile_controls.gd",
+      "module": "app",
+      "type": ".gd",
+      "size": 7090,
+      "sha256": "a17b4d4d4b0bf47c6673945ac4b131a17c01b3c8947df6525bd468b0807aa216",
       "exact_archived_matches": [],
       "source_reference": false,
       "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
@@ -68,8 +78,8 @@
       "path": "app/web_diagnostics.gd",
       "module": "app",
       "type": ".gd",
-      "size": 1074,
-      "sha256": "fea7958099843892b852f2c4f35ea9f8b596c7974b7b7dd9786c5ad8987a9cd6",
+      "size": 1543,
+      "sha256": "6427a0f3c250864d506c196c61cfae1abb8f874b0f973aa13bf30536aeaa77be",
       "exact_archived_matches": [],
       "source_reference": false,
       "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
@@ -108,8 +118,8 @@
       "path": "hub/overlay.gd",
       "module": "hub",
       "type": ".gd",
-      "size": 1909,
-      "sha256": "ca86f6373e6e62d5c66a6f25fe4f024bdd6ceeed92ce3897894492d5b7447b68",
+      "size": 2032,
+      "sha256": "01c6d90b49d04093772e5f4b5310ddc4d9caa002d9af088948c2a6b00de925d4",
       "exact_archived_matches": [],
       "source_reference": false,
       "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
@@ -650,8 +660,8 @@
       "path": "levels/bubby/overlay.gd",
       "module": "bubby",
       "type": ".gd",
-      "size": 1895,
-      "sha256": "4083bed227f5048df76d2e58db6cb334e74292833af2d0f0069f14f8c2226e0e",
+      "size": 2054,
+      "sha256": "fa2f25ac3d9d5b5485616d4cd3bdcb135a1500c8144fee136ed91dfcc1c3f85c",
       "exact_archived_matches": [],
       "source_reference": false,
       "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
@@ -4470,8 +4480,8 @@
       "path": "levels/busboy/overlay.gd",
       "module": "busboy",
       "type": ".gd",
-      "size": 5057,
-      "sha256": "7e96a5e360a512d99a895dc4103a43815d74f358504a48ff37f8de0edfd5b693",
+      "size": 5264,
+      "sha256": "ff33112c37b8a2d27051d423212cc7764c19d62fbaabc0b240fe138644e85cf6",
       "exact_archived_matches": [],
       "source_reference": false,
       "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
@@ -4813,8 +4823,8 @@
       "path": "levels/machine/overlay.gd",
       "module": "machine",
       "type": ".gd",
-      "size": 1931,
-      "sha256": "c1e9ae9e70c7d65a9b6ae711431e4d9c8be34295d83e624cf204b1c96f1b3550",
+      "size": 2206,
+      "sha256": "d1db7a06eae6be11047ee8bc66cd67c0d7965cfb56145153a2eccda9300add07",
       "exact_archived_matches": [],
       "source_reference": false,
       "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
@@ -4855,8 +4865,8 @@
       "path": "levels/the_bug/the_bug.gd",
       "module": "the_bug",
       "type": ".gd",
-      "size": 1049,
-      "sha256": "83310709f33ae1f441c229205d89a19ef3a44fdf46f167d5bb2f7718c4ff25eb",
+      "size": 1792,
+      "sha256": "80cc98a8d1381b88c48db18a3adcc7d5fdd0f4933d8ac0f18cb5e807ecf18424",
       "exact_archived_matches": [],
       "source_reference": false,
       "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
@@ -4947,6 +4957,16 @@
       "type": ".gd",
       "size": 4678,
       "sha256": "4d9b59f1f484b357ea0665950b899089109525617114e8c65d3b7b7fdc9f4d0d",
+      "exact_archived_matches": [],
+      "source_reference": false,
+      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
+    },
+    {
+      "path": "shared/mobile_overlay.gd",
+      "module": "shared",
+      "type": ".gd",
+      "size": 1504,
+      "sha256": "b0451a9229003ad06c111d94371c68cefbaba95e936609be429fab9ce483e499",
       "exact_archived_matches": [],
       "source_reference": false,
       "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"

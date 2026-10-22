@@ -13,6 +13,7 @@ test('opening, real keyboard navigation, active terminal codes, return and resiz
   async function moveAxis(axis, target, negative, positive, tolerance = 12) {
     for (let pulse = 0; pulse < 50; pulse++) {
       const current = await state(page);
+      if (current.near_terminal) return; // The usable terminal is the destination, including its collision edge.
       const distance = target - current[axis];
       if (Math.abs(distance) <= tolerance) return;
       await page.keyboard.press(distance < 0 ? negative : positive, {delay: Math.min(50, Math.max(8, Math.abs(distance) / 260 * 1000))});

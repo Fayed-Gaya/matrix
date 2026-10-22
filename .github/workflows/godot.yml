@@ -84,10 +84,10 @@ jobs:
         working-directory: tests/web
         run: |
           npm ci
-          npx playwright install --with-deps chrome firefox msedge
+          npx playwright install --with-deps chrome firefox msedge webkit
           sudo apt-get update
           sudo apt-get install -y xvfb libgl1-mesa-dri
-      - name: Smoke test Chrome, Firefox and Edge
+      - name: Smoke test desktop browsers and mobile Chrome/WebKit contexts
         working-directory: tests/web
         run: xvfb-run -a npm test
       - uses: actions/upload-artifact@v4

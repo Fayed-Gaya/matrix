@@ -102,3 +102,11 @@ Output: `releases/alpha-0.2-third-party-inventory.json`. It includes excluded
 module source references for provenance, not only exported files. See
 `releases/alpha-0.2-licensing.md`; no permissions are newly cleared. Never stage
 unrelated user artwork, credentials, caches, generated previews or local tools.
+
+## Phone browser checks
+
+Landscape touch controls and the in-game terminal code picker are enabled on
+touch devices. `make fast-check CHECKS=mobile` checks input/routing without
+cameras; the full browser matrix includes mobile Chrome/WebKit emulation.
+See [Alpha 0.2 mobile acceptance](releases/alpha-0.2-mobile-testing.md) for local
+iPhone hosting and the physical-device checklist. Emulation is not iOS approval.
