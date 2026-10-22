@@ -55,6 +55,24 @@
       112,
       52,
       64
+    ],
+    [
+      342,
+      134,
+      68,
+      40
+    ],
+    [
+      360,
+      164,
+      25,
+      24
+    ],
+    [
+      46,
+      248,
+      54,
+      34
     ]
   ],
   "features": [
@@ -65,8 +83,8 @@
         0
       ],
       "atlas": [
-        1,
-        0
+        0,
+        1
       ]
     },
     {
@@ -76,7 +94,7 @@
         5
       ],
       "atlas": [
-        0,
+        3,
         0
       ]
     },
@@ -87,8 +105,8 @@
         5
       ],
       "atlas": [
-        2,
-        0
+        5,
+        1
       ]
     }
   ],
@@ -97,17 +115,25 @@
       "node": "OpenChamber",
       "position": [
         64,
-        80
+        192
       ],
-      "texture": "res://hub/assets/refinement/pod-open.png"
+      "texture": "res://hub/assets/round2/pod-open.png",
+      "offset": [
+        0,
+        -112
+      ]
     },
     {
       "node": "SealedChamber",
       "position": [
         160,
-        80
+        192
       ],
-      "texture": "res://hub/assets/refinement/pod-sealed.png"
+      "texture": "res://hub/assets/round2/pod-sealed.png",
+      "offset": [
+        0,
+        -112
+      ]
     },
     {
       "node": "SpaceViewport",
@@ -115,15 +141,59 @@
         256,
         8
       ],
-      "texture": "res://hub/assets/refinement/viewport.png"
+      "texture": "res://hub/assets/round2/viewport.png",
+      "offset": [
+        0,
+        0
+      ]
     },
     {
       "node": "Computer",
       "position": [
         416,
-        96
+        176
       ],
-      "texture": "res://hub/assets/refinement/terminal.png"
+      "texture": "res://hub/assets/round2/terminal.png",
+      "offset": [
+        0,
+        -80
+      ]
+    },
+    {
+      "node": "ChamberServiceBay",
+      "position": [
+        48,
+        64
+      ],
+      "texture": "res://hub/assets/round2/chamber-bay.png",
+      "offset": [
+        0,
+        0
+      ]
+    },
+    {
+      "node": "Worktable",
+      "position": [
+        336,
+        192
+      ],
+      "texture": "res://hub/assets/round2/worktable.png",
+      "offset": [
+        0,
+        -80
+      ]
+    },
+    {
+      "node": "Storage",
+      "position": [
+        40,
+        288
+      ],
+      "texture": "res://hub/assets/round2/locker.png",
+      "offset": [
+        0,
+        -56
+      ]
     }
   ]
 }

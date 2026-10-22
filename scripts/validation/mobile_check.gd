@@ -47,8 +47,10 @@ func run() -> void:
 	for code: String in LevelRegistry.ENTRIES:
 		(app.hub as MatrixHub).open_terminal()
 		await settle()
-		check(controls.regions.has(code), "Touch terminal includes " + code)
-		controls.activate(code)
+		check(not controls.regions.has(code), "Touch terminal never advertises " + code)
+		var field: LineEdit = (app.hub as MatrixHub).overlay.native_input
+		check(field.visible and field.virtual_keyboard_enabled, "Native touch terminal uses real LineEdit")
+		field.text_submitted.emit(code.to_lower())
 		await settle()
 		check(app.active_code == code, "Touch code routes " + code)
 		if code == "BUBBY":
@@ -93,9 +95,10 @@ func run() -> void:
 	hub.open_terminal()
 	await settle()
 	var panel: Rect2 = (hub.overlay as HubOverlay).terminal_panel()
+	check(panel.encloses(controls.regions["Enter"]), "Phone submit target stays inside terminal")
+	check(hub.overlay.native_input.max_length == 18, "Touch text entry keeps length limit")
 	for code: String in LevelRegistry.ENTRIES:
-		check(panel.encloses(controls.regions[code]), "Phone code hit area is inside terminal: " + code)
-		check((controls.regions[code] as Rect2).size.y >= 44, "Phone code target at least 44px")
+		check(not controls.regions.has(code), "Phone has no known-code hit area")
 	app.free()
 	await process_frame
 	await create_timer(0.15).timeout # Let the audio mixer release the generated combat tone.

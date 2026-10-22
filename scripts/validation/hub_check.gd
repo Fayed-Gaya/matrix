@@ -70,7 +70,7 @@ func run() -> void:
 	check(not hub.overlay.terminal_active, "Start key must not open terminal")
 	check(hub.player.position == Vector2(112, 224), "Cabin spawn")
 	check(hub.world.bounds == Vector2(512, 320), "Cabin bounds")
-	check(hub.world.collision_rects.size() == 7, "Cabin collision count")
+	check(hub.world.collision_rects.size() == 10, "Cabin collision count")
 	check(hub.world.terminal_rect == Rect2(416, 176, 64, 32), "Computer approach trigger")
 	check(hub.world_viewport.size == Vector2i(512, 320), "2x rendering fits cabin at 1280x720")
 	check(hub.world.get_node("Above").z_index > hub.player.z_index, "Above tiles overlay player")
@@ -97,6 +97,7 @@ func run() -> void:
 	check(hub.is_near_terminal(), "Terminal trigger is reachable without crossing collision")
 	key(KEY_E)
 	check(hub.overlay.terminal_active, "E opens reachable terminal")
+	await capture("terminal")
 	var stationary: Vector2 = hub.player.position
 	Input.action_press("hub_up")
 	await physics_frame
@@ -124,8 +125,6 @@ func run() -> void:
 	for code: String in LevelRegistry.ENTRIES:
 		key(KEY_E)
 		text(" " + code.to_lower() + " ")
-		if code == "YOU":
-			await capture("terminal")
 		key(KEY_ENTER)
 		await settle()
 		check(app.active_level != null and app.active_code == code, "Route for " + code)
@@ -222,6 +221,7 @@ func check_map(path: String) -> void:
 		var sprite: Sprite2D = hub.world.get_node(object.node) as Sprite2D
 		check(sprite.position == Vector2(object.position[0], object.position[1]), "Native prop placement: " + object.node)
 		check(sprite.texture.resource_path == object.texture, "Independent editable prop art: " + object.node)
+		check(sprite.offset == Vector2(object.offset[0], object.offset[1]), "Prop art retains its placement around the depth anchor")
 	for feature: Dictionary in expected.features:
 		var layer: TileMapLayer = hub.world.get_node(feature.layer)
 		var cell: Vector2i = Vector2i(feature.cell[0], feature.cell[1])

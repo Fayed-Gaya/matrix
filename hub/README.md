@@ -16,11 +16,14 @@ axis-separated movement implementation. Bounds are 512×320. No runtime map
 conversion, procedural room generator, extra rooms or additional interactions.
 The open/empty chamber and opaque sealed chamber are scenery, not interactions. Native scenes/TileSets remain authoritative.
 
-The refined cabin uses `assets/refinement/`: a four-cell hull atlas and separate
-open pod, sealed pod, star viewport, computer and amber wall-light sprites.
+The current cabin uses `assets/round2/`: a native deck/hull atlas, layered pod
+art, service bay, framed viewport, CRT, worktable, storage and hub-only avatar.
+Three static PointLight2D nodes add restrained amber/teal light.
+Props use native y-sorting with their position anchored at floor level and
+negative Sprite2D offsets, so the player passes naturally behind their tops.
 Move these named Sprite2D nodes directly in Godot; their collision shapes are
 separate named children under Collisions. Keep sprite footprints and shapes aligned.
-The original Alpha 0.2 draft art remains under `assets/alpha02/`. Editable SVG/Aseprite
+Previous drafts remain under `assets/alpha02/` and `assets/refinement/`. Editable raster/Aseprite
 sources and export notes: `art/hub/README.md`. The old hub art/layout and frozen
 fixture remain excluded under `archive/godot/`. This cabin is a first visual
 iteration for owner refinement, not a claim of approved final art direction.
@@ -36,6 +39,11 @@ Hub walking is 182 px/s (30% below the previous 260), configured only in
 uses integer 2× rendering where the full room fits, 1× on smaller windows and
 landscape phones, and a clamped camera only below native room size.
 
-The terminal draws a bounded panel over the cabin. Keyboard codes still work;
-mobile destination hit areas share `HubOverlay.code_rect()` with its layout.
+The terminal reveals no directory or destination names. Keyboard codes still work.
+`web_terminal.gd` owns a real browser input/form (including text editing, paste and
+OS keyboard focus via a user tap); no code registry is copied into HTML. Its
+layout follows visualViewport for keyboard space and removes focus on close.
+Native touch uses an actual LineEdit with virtual keyboard enabled.
+Native terminal typography requests the installed Menlo/DejaVu/Liberation mono
+family; browsers use CSS monospace. No new font asset is bundled.
 No identity or story is assigned to the sealed chamber occupant.

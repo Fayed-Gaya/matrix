@@ -4,6 +4,7 @@ extends Control
 signal level_requested(code: String)
 
 const PlayerScript: GDScript = preload("res://hub/player.gd")
+var web_terminal: MatrixWebTerminal
 var player: HubPlayer
 @onready var world: HubWorld = $WorldViewport/World
 @onready var world_viewport: SubViewport = $WorldViewport
@@ -14,10 +15,13 @@ var pixel_scale: int = 2
 
 
 func _ready() -> void:
+	web_terminal = preload("res://hub/web_terminal.gd").new()
+	web_terminal.hub = self
+	add_child(web_terminal)
 	player = PlayerScript.new()
 	player.name = "Player"
 	player.position = world.player_spawn
-	player.z_index = 1
+	player.z_index = 0 # Native world y-sorting uses prop foot anchors.
 	world.add_child(player)
 	display.texture = world_viewport.get_texture()
 	resized.connect(sync_viewport)
@@ -80,12 +84,21 @@ func open_terminal() -> void:
 	overlay.terminal_active = true
 	overlay.input_text = ""
 	overlay.message = ""
+	web_terminal.open()
+
+
+func close_terminal() -> void:
+	overlay.terminal_active = false
+	overlay.native_input.release_focus()
+	web_terminal.close()
+	for action: String in ["hub_up", "hub_down", "hub_left", "hub_right"]:
+		Input.action_release(action)
 
 
 func terminal_key(event: InputEventKey) -> void:
 	match event.keycode:
 		KEY_ESCAPE:
-			overlay.terminal_active = false
+			close_terminal()
 		KEY_BACKSPACE:
 			overlay.input_text = overlay.input_text.left(-1)
 		KEY_ENTER, KEY_KP_ENTER:
@@ -105,7 +118,7 @@ func submit_code() -> void:
 
 
 func suspend() -> void:
-	overlay.terminal_active = false
+	close_terminal()
 	process_mode = Node.PROCESS_MODE_DISABLED
 	world_viewport.render_target_update_mode = SubViewport.UPDATE_DISABLED
 	hide()

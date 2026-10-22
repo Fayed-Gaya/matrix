@@ -17,7 +17,7 @@ Pygame archive are preserved.
 
 All eight development/assessment phases have checkpoints below. Integrated main
 CI passed through `fee16d7`. The next authorized development cycle is the
-[focused spaceship hub refinement](alpha-0.2-hub-refinement.md), on
+[spaceship hub refinement, round 2](alpha-0.2-hub-round2.md), on
 `feature/alpha-0.2-hub-refinement`; that record owns current implementation/checks.
 Do not merge or publish this refinement without fresh authorization.
 No manual gameplay work is requested at this juncture. The owner may use

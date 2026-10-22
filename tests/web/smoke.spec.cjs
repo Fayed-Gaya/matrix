@@ -32,6 +32,9 @@ test('opening, real keyboard navigation, active terminal codes, return and resiz
     await page.keyboard.press('e');
     await expect.poll(async () => (await state(page)).terminal).toBe(true);
     if (code === 'BOUNCE') await page.screenshot({path: testInfo.outputPath('hub-terminal.png')});
+    const input=page.getByRole('textbox',{name:'Terminal input'});
+    await expect(input).toBeFocused();
+    await expect(page.locator('#matrix-terminal')).not.toContainText(/BOUNCE|BALLS|BUG|BUBBY|BUSBOY|MACHINE|YOU|WORLD|DESTINATION|SIMULATION/);
     await page.keyboard.type(code);
     await page.keyboard.press('Enter');
     await expect.poll(async () => (await state(page)).code, {timeout: 60000}).toBe(code);

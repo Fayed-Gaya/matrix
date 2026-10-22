@@ -1,5 +1,9 @@
 # Alpha 0.2 hub refinement
 
+Round 2 supersedes the art/terminal portions below: see
+[round-2 implementation and pipeline assessment](alpha-0.2-hub-round2.md).
+This first-round evidence is retained for comparison.
+
 Branch: `feature/alpha-0.2-hub-refinement`, based on integrated main `fee16d7`.
 Implementation commit: `371696c`; [PR #17](https://github.com/Fayed-Gaya/matrix/pull/17).
 Scope: hub only; no merge, tag or publication authorized. Owner manually played

@@ -5,11 +5,43 @@ extends Control
 const TEXT: Color = Color("e2efeb")
 const MUTED: Color = Color("91a4a6")
 const GREEN: Color = Color("6fe89e")
+var terminal_font: SystemFont = SystemFont.new()
+var native_input: LineEdit
 var opening: bool = true
 var terminal_active: bool = false
 var near_terminal: bool = false
 var input_text: String = ""
 var message: String = ""
+
+
+func _ready() -> void:
+	terminal_font.font_names = PackedStringArray(["Menlo", "DejaVu Sans Mono", "Liberation Mono", "monospace"])
+	native_input = LineEdit.new()
+	native_input.name = "TerminalInput"
+	native_input.max_length = 18
+	native_input.virtual_keyboard_enabled = true
+	native_input.virtual_keyboard_type = LineEdit.KEYBOARD_TYPE_DEFAULT
+	native_input.add_theme_font_override("font", terminal_font)
+	native_input.add_theme_font_size_override("font_size", 24)
+	native_input.add_theme_color_override("font_color", GREEN)
+	for style: String in ["normal", "focus", "read_only"]:
+		native_input.add_theme_stylebox_override(style, StyleBoxEmpty.new())
+	native_input.text_changed.connect(func(value: String) -> void: input_text = value.to_upper())
+	native_input.text_submitted.connect(func(value: String) -> void:
+		input_text = value.to_upper()
+		(get_parent() as MatrixHub).submit_code())
+	add_child(native_input)
+	native_input.hide()
+
+
+func _process(_delta: float) -> void:
+	native_input.visible = terminal_active and MatrixMobileOverlay.active(self) and not OS.has_feature("web")
+	if native_input.visible:
+		native_input.position = terminal_panel().position + Vector2(46, 64)
+		native_input.size = Vector2(terminal_panel().size.x - 76, 48)
+		if native_input.text != input_text:
+			native_input.text = input_text
+			native_input.caret_column = input_text.length()
 
 
 func _draw() -> void:
@@ -38,40 +70,22 @@ func _center(text: String, y: float, font_size: int, color: Color) -> void:
 
 
 func terminal_panel() -> Rect2:
-	var extent: Vector2 = Vector2(minf(860, size.x - 40), minf(440, size.y - 40))
+	var extent: Vector2 = Vector2(minf(800, size.x - 32), minf(350, size.y - 24))
 	return Rect2(((size - extent) / 2).floor(), extent)
-
-
-func code_rect(index: int) -> Rect2:
-	var panel: Rect2 = terminal_panel()
-	var width: float = (panel.size.x - 60) / 4
-	return Rect2(panel.position + Vector2(20 + (index % 4) * (width + 6), 92 + (index / 4) * 58), Vector2(width, 48))
 
 
 func _draw_terminal() -> void:
 	var panel: Rect2 = terminal_panel()
 	var origin: Vector2 = panel.position
-	var font: Font = ThemeDB.fallback_font
-	# Keep the cabin visible behind a deliberately sized monitor-like panel.
-	draw_rect(Rect2(Vector2.ZERO, size), Color(0.02, 0.06, 0.09, 0.85))
-	draw_rect(Rect2(origin + Vector2(6, 8), panel.size), Color("071017"))
-	draw_rect(panel, Color("101f27"))
-	draw_rect(panel, Color("718c87"), false, 2)
-	draw_rect(Rect2(origin + Vector2(1, 1), Vector2(panel.size.x - 2, 54)), Color("1b3339"))
-	draw_rect(Rect2(origin + Vector2(20, 20), Vector2(4, 14)), GREEN)
-	draw_string(font, origin + Vector2(36, 35), "MATRIX / WORLD ACCESS", HORIZONTAL_ALIGNMENT_LEFT, panel.size.x - 180, 22, TEXT)
-	draw_string(font, origin + Vector2(20, 76), "SELECT A DESTINATION" if MatrixMobileOverlay.active(self) else "AVAILABLE CODES", HORIZONTAL_ALIGNMENT_LEFT, panel.size.x - 40, 14, MUTED)
-	if not MatrixMobileOverlay.active(self):
-		var codes: Array = LevelRegistry.ENTRIES.keys()
-		for i: int in range(codes.size()):
-			var slot: Rect2 = code_rect(i)
-			draw_rect(slot, Color("183037"))
-			draw_rect(slot, Color("365b59"), false)
-			draw_string(font, slot.position + Vector2(12, 30), str(codes[i]), HORIZONTAL_ALIGNMENT_LEFT, slot.size.x - 20, 18, GREEN)
-	var prompt: Rect2 = Rect2(origin + Vector2(20, panel.size.y - 88), Vector2(panel.size.x - 40, 42))
-	draw_rect(prompt, Color("09191e"))
-	draw_rect(prompt, Color("568e80"), false)
-	draw_string(font, prompt.position + Vector2(12, 28), "> " + input_text + "_", HORIZONTAL_ALIGNMENT_LEFT, prompt.size.x - 24, 23, GREEN)
+	draw_rect(Rect2(Vector2.ZERO, size), Color(0.01, 0.03, 0.03, 0.94))
+	draw_rect(panel, Color("030b09"))
+	draw_rect(panel, Color("305846"), false)
+	draw_string(terminal_font, origin + Vector2(24, 34), "MATRIX", HORIZONTAL_ALIGNMENT_LEFT, -1, 14, Color("4d7966"))
+	draw_string(terminal_font, origin + Vector2(panel.size.x - 62, 34), "ESC", HORIZONTAL_ALIGNMENT_LEFT, -1, 14, MUTED)
+	var at: Vector2 = origin + Vector2(24, 94)
+	draw_string(terminal_font, at, ">", HORIZONTAL_ALIGNMENT_LEFT, -1, 24, GREEN)
+	if not native_input.visible:
+		draw_string(terminal_font, at + Vector2(24, 0), input_text + "_", HORIZONTAL_ALIGNMENT_LEFT, panel.size.x - 76, 24, GREEN)
+	draw_line(origin + Vector2(24, 112), origin + Vector2(panel.size.x - 24, 112), Color("234b3a"))
 	if not message.is_empty():
-		draw_string(font, prompt.position + Vector2(0, -12), message, HORIZONTAL_ALIGNMENT_LEFT, prompt.size.x, 16, Color("e9b28e"))
-	draw_string(font, origin + Vector2(20, panel.size.y - 18), "Tap a code to enter / Back to cabin" if MatrixMobileOverlay.active(self) else "TYPE CODE + ENTER    /    ESC RETURN TO CABIN", HORIZONTAL_ALIGNMENT_LEFT, panel.size.x - 40, 14, MUTED)
+		draw_string(terminal_font, origin + Vector2(24, 152), message, HORIZONTAL_ALIGNMENT_LEFT, panel.size.x - 48, 16, Color("b39472"))

@@ -63,11 +63,37 @@ test('landscape touch movement, terminal, seven routes, return and rotation', as
   await move('y',192,'Up','Down');
   await move('x',448,'Left','Right');
   await expect.poll(async () => (await state(page)).near_terminal).toBe(true);
+  await tap('Use');
+  const input=page.getByRole('textbox',{name:'Terminal input'});
+  await input.tap();
+  await expect(input).toBeFocused();
+  await page.keyboard.insertText('not-a-code');
+  await page.getByRole('button',{name:'ENTER',exact:true}).tap();
+  await expect(page.locator('#matrix-terminal')).toContainText('Unknown code');
+  await expect(input).toHaveValue('');
+  await page.setViewportSize({width:844,height:180});
+  await input.tap();
+  await expect(input).toBeFocused();
+  const box=await input.boundingBox();
+  expect(box.y).toBeGreaterThanOrEqual(0);
+  expect(box.y+box.height).toBeLessThanOrEqual(180);
+  const submitBox=await page.getByRole('button',{name:'ENTER',exact:true}).boundingBox();
+  expect(submitBox.y+submitBox.height).toBeLessThanOrEqual(180);
+  await page.getByRole('button',{name:'Close terminal'}).tap();
+  await expect.poll(async () => (await state(page)).terminal).toBe(false);
+  await page.setViewportSize({width:844,height:390});
+  await expect.poll(async () => (await state(page)).height).toBe(390);
   for(const code of ['BOUNCE','BALLS','BUG','BUBBY','BUSBOY','MACHINE','YOU']) {
     await tap('Use');
     await expect.poll(async () => (await state(page)).terminal).toBe(true);
     if (code === 'BOUNCE') await page.screenshot({path: testInfo.outputPath('hub-terminal.png')});
-    await tap(code);
+    const field=page.getByRole('textbox', {name:'Terminal input'});
+    await field.tap();
+    await expect(field).toBeFocused();
+    await expect(page.locator('#matrix-terminal')).not.toContainText(/BOUNCE|BALLS|BUG|BUBBY|BUSBOY|MACHINE|YOU|WORLD|DESTINATION|SIMULATION/);
+    await page.keyboard.insertText(code.toLowerCase());
+    await expect(field).toHaveValue(code);
+    await page.getByRole('button', {name:'ENTER',exact:true}).tap();
     await expect.poll(async () => (await state(page)).code).toBe(code);
     if(code==='BUSBOY') { await tap('Begin'); }
     if(code==='YOU') expect((await state(page)).camera_status).toContain('unavailable in this browser');

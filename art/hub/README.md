@@ -58,3 +58,34 @@ credentials were not printed. An included/no-cost generation allowance could
 not be verified, so no generation call or paid experiment was made. Generation
 quality/consistency and AI-to-Aseprite cleanup savings remain unevaluated. The
 original-art → Aseprite → Godot export/import path was tested separately.
+
+## Current round 2 raster masters
+
+`round2/` replaces the flat SVG construction method for the active hub. The eleven
+`.aseprite` files each have **Shadow / Construction / Shading / Detail** layers.
+They are single-frame masters, including the player's arranged animation sheet.
+Native sizes: deck atlas 256×128 (32px cells), service bay 208×144, pods 80×112,
+viewport 192×64, CRT 64×80, worktable 80×80, locker 64×56, sconce 32×32, light
+64×64, player sheet 96×192. Player row/column layout remains compatible with the
+existing shared animator; only the hub points at this new sheet.
+
+These are original raster studies, created using locally authored pixel brushes,
+polygon/ellipse masks, shading ramps and restrained texture, assembled through
+Aseprite's Lua interface, then actually exported with the isolated helper:
+
+```sh
+make art-export SOURCE=art/hub/round2/pod-open.aseprite OUTPUT=hub/assets/round2/pod-open.png
+```
+
+Choose one file explicitly. Keep transparent canvas sizes, anchors and atlas
+coordinates stable. Edit the four layers in Aseprite; do not overwrite masters
+by rerunning the initial construction study. `seed_art.py` is retained for
+provenance and reproducibility; its explicit `--reseed` replaces the original
+studies. It is never part of game startup, editor import, build or map authoring.
+It does not consume the previous PNG/SVG or any third-party artwork. Old sources
+remain as history; SVGs are not authoritative for this new raster set.
+
+No PixelLab or other AI image generation was used. Account allowance and tool
+exposure remain unverified. Layer metadata and export success establish editability
+and integration; they do not certify artistic quality. See the round-2 report
+for strengths, remaining weaknesses and the human inputs with highest value.
