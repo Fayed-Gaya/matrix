@@ -1,18 +1,22 @@
 # Matrix Alpha 0.1 implementation status
 
-Branch: `feature/alpha-0.1-release-pipeline`, based on merged main `eb091f5`.
-PR: https://github.com/Fayed-Gaya/matrix/pull/4 merged with merge commit `34dda87`.
-Owner reports native hub/all ten levels manually tested locally and working.
-On 2026-10-21 the owner explicitly authorized merge, tag and technical-preview
-publication with documented licensing issues still unresolved. This is owner risk
-acceptance, not third-party permission or licensing clearance. Archive removal
-is not authorized. A follow-up PR adds an accurately named deployment input.
+Published technical preview: `v0.1.0-alpha.1`, commit `f614691`.
+- Play: https://fayed-gaya.github.io/matrix/
+- Prerelease/packages: https://github.com/Fayed-Gaya/matrix/releases/tag/v0.1.0-alpha.1
+- Deployment: https://github.com/Fayed-Gaya/matrix/actions/runs/39696864605
+
+PR #4 merged as `34dda87`; explicit preview gate PR #5 merged as `f614691`.
+Both used merge commits. The owner authorized technical-preview publication on
+2026-10-21 with documented licensing issues unresolved. Publication occurred
+2026-10-22 00:07:57 UTC (Oct 21 local). This is owner risk acceptance, not
+third-party permission or licensing clearance. Archive removal is not authorized.
 
 - [x] GitHub Flow and agent/development documentation; no permanent dev branch.
 - [x] Pinned Godot 4.7.2 CI; preserved archived Python checks.
 - [x] Single-threaded Compatibility Web export, ten levels, runtime manifests,
   browser YOU explanation/return and preserved native camera implementation.
-- [x] Web/source artifacts and manual-main-only Pages preparation; not deployed.
+- [x] Pages deployed and GitHub prerelease published with exact CI web/source
+  packages and SHA256SUMS.txt; all ten levels and archive retained.
 - [x] Preliminary licensing audit, inventory, notices and explicit blockers.
 - [x] Final Chrome/Firefox/Edge smoke, CI/artifact links and PR handoff.
 
@@ -58,10 +62,27 @@ DOM state, not gameplay controls. No automated physical camera activation.
 
 Read [web-release.md](web-release.md) for local commands, manual gameplay/audio,
 focus/scaling/performance/native-camera checks and GitHub Pages settings.
-Pages is suitable for the ~57 MB static single-threaded build. Publication is
-in progress; dispatch defaults to build-only and only runs on main. For this
-authorized preview, use deploy=true, licensing_cleared=false and
-technical_preview_acknowledged=true. Preserve the unresolved findings in notices.
+Pages is configured for GitHub Actions and serves the ~57 MB single-threaded
+build. The deployment used deploy=true, licensing_cleared=false and
+technical_preview_acknowledged=true. Godot checks, fresh runtime, isolated PCK,
+Chrome/Firefox/Edge smoke and Pages deployment passed on `f614691`. Main CI
+39696790181 passed on retry after a Godot 4.7.2 import-thread signal-11 crash;
+the independent deployment validation passed initially. No tests were weakened.
+
+The actual HTTPS URL was checked: opening screen, player movement, terminal,
+YOU's browser camera explanation and Escape return worked through real keys.
+Hosted build-info records `f614691`, dirty=false; WASM serves as application/wasm.
+Full hosted gameplay/audio/performance, isolated Mac Firefox and local Edge
+acceptance remain unverified. Local re-export passed with duplicate UID warnings
+from ignored Playwright assets; published packages use the clean CI artifact.
+
+Release package SHA-256:
+- web: `ef88a16e274e9cf26129f28342c761375d6958a89f30b598fdec89920ae78a2c`
+- source: `5d8f09de11278f9b9479f3e83faf6c0e739304c729831314431e2b139ef8233b`
+
+The tag remains fixed at the published revision. Documentation-only follow-ups
+on main do not republish Pages or move the tag. Future publications require
+explicit authorization.
 
 Read [licensing-audit.md](licensing-audit.md): Pong GPL version/combined-work scope,
 non-commercial Pixeltype, conflicting Snoblin redistribution grants and missing
