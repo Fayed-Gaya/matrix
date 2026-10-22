@@ -2,7 +2,7 @@
 
 Matrix uses **Godot 4.7.2, GDScript, Compatibility renderer** in this
 existing repository. Alpha 0.2 development retains `BOUNCE`, `BALLS`, `BUG`,
-`YOU`, and the two RPG foundations (`BUBBY` and `UNTITLED` until the Busboy checkpoint). `PONG`, `JUMP`, `MARIO`, and `MONSTERS` are preserved
+`YOU`, and the two RPG foundations (`BUBBY` and `BUSBOY`). `PONG`, `JUMP`, `MARIO`, and `MONSTERS` are preserved
 under `archive/godot/`, excluded from the playable catalog and browser pack.
 MACHINE is planned, not yet playable. YOU retains native camera functionality
 and a clear browser fallback. See [current implementation status](docs/releases/alpha-0.2-status.md).
@@ -17,7 +17,7 @@ make runtime-check # Fresh archive-free import and all active routes
 ```
 
 Maps are authored directly in Godot. Open `hub/world.tscn`,
-`levels/untitled/world.tscn`, or a scene under
+`levels/busboy/maps/{cabin,forest}.tscn`, or a scene under
 `levels/bubby/maps/`; select a TileMapLayer and paint.
 Save the scene normally. Edit collision/interaction markers in the 2D editor.
 No Tiled, CSV edits or scene-generation command is required.

@@ -8,7 +8,7 @@ from collections import Counter, defaultdict
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-OUTPUT = ROOT / "docs/releases/third-party-inventory.json"
+OUTPUT = ROOT / "docs/releases/alpha-0.2-third-party-inventory.json"
 EXTENSIONS = {
     ".gd",
     ".gdshader",
@@ -31,7 +31,9 @@ def font_notices(path):
     content = path.read_bytes()
     count = struct.unpack_from(">H", content, 4)[0]
     tables = {
-        content[12 + i * 16 : 16 + i * 16].decode(): struct.unpack_from(">II", content, 20 + i * 16)
+        content[12 + i * 16 : 16 + i * 16].decode(): struct.unpack_from(
+            ">II", content, 20 + i * 16
+        )
         for i in range(count)
     }
     start, _ = tables["name"]
@@ -50,7 +52,9 @@ def font_notices(path):
             ">HHHHHH", content, start + 6 + i * 12
         )
         if key in labels:
-            value = content[start + storage + offset : start + storage + offset + size].decode(
+            value = content[
+                start + storage + offset : start + storage + offset + size
+            ].decode(
                 "utf-16-be" if platform in (0, 3) else "mac_roman", errors="replace"
             )
             names[labels[key]].add(value)
@@ -78,13 +82,14 @@ def inventory():
                 "size": path.stat().st_size,
                 "sha256": checksum,
                 "exact_archived_matches": sorted(originals[checksum]),
-                "assessment": "See module findings in licensing-audit.md; inventory is not license clearance",
+                "source_reference": "source" in relative.parts,
+                "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance",
             }
             if path.suffix.lower() in (".ttf", ".otf"):
                 row["embedded_font_notices"] = font_notices(path)
             rows.append(row)
     return {
-        "scope": "Active code, scenes/resources and media; includes source-only originals for provenance. Import caches/sidecars and archived runtime excluded from active count.",
+        "scope": "Active modules plus their excluded source references for provenance, not an export manifest. External archive/godot, legacy/pygame, caches and import sidecars are excluded from these counts.",
         "counts": dict(sorted(Counter(row["type"] for row in rows).items())),
         "files": rows,
     }
@@ -97,7 +102,9 @@ def main():
     value = json.dumps(inventory(), indent=2, ensure_ascii=False) + "\n"
     if args.check:
         if not OUTPUT.is_file() or OUTPUT.read_text() != value:
-            raise SystemExit("Licensing inventory stale: python3 scripts/audit_licenses.py")
+            raise SystemExit(
+                "Licensing inventory stale: python3 scripts/audit_licenses.py"
+            )
         print("Licensing inventory matches current files (not distribution clearance)")
     else:
         OUTPUT.parent.mkdir(parents=True, exist_ok=True)

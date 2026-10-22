@@ -2,7 +2,8 @@
 
 Matrix uses Godot 4.7.2, typed GDScript and Compatibility rendering. The
 migration and native map authoring are merged. The owner manually tested the
-hub and all ten levels locally; browser readiness is a separate milestone.
+Alpha 0.1 hub and all ten levels locally. Alpha 0.2 redesigns need their own
+manual acceptance; see docs/releases/alpha-0.2-status.md.
 YOU retains native camera behavior with platform/hardware limitations.
 
 ## GitHub Flow
@@ -34,7 +35,7 @@ YOU retains native camera behavior with platform/hardware limitations.
   It also verifies native map cells/regions, native edit/save/reload behavior,
   terminal behavior, routing/return, and movement demos against source traces.
   Godot scenes/TileSets are authoritative: open hub/world.tscn,
-  levels/untitled/world.tscn, or levels/bubby/maps/*.tscn
+  levels/busboy/maps/{cabin,forest}.tscn, or levels/bubby/maps/*.tscn
   and paint TileMapLayers directly. Never regenerate maps from TMX/CSV/JSON.
   Preserve each game's custom movement, collision and animation algorithms;
   shared/maps reads native placements and preserves those runtime rules.
