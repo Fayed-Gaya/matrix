@@ -14,10 +14,7 @@ func _enter_tree() -> void:
 func run() -> void:
 	await get_tree().create_timer(3.0).timeout
 	var paths: Array[String] = ["res://hub/world.tscn", "res://levels/untitled/world.tscn"]
-	for i: int in range(3): paths.append("res://levels/mario/maps/stage_"+str(i)+".tscn")
 	paths.append("res://levels/zelda/maps/world.tscn")
-	for name: String in ["arena","fire","hospital","hospital2","house","plant","water","world"]:
-		paths.append("res://levels/monsters/maps/"+name+".tscn")
 	var editor: EditorInterface = get_editor_interface()
 	for i: int in range(paths.size()):
 		editor.open_scene_from_path(paths[i])
@@ -59,7 +56,7 @@ func run() -> void:
 		reloaded.free()
 		print("Editor open/paint/erase/save/reload passed: "+paths[i])
 	await check_tile_transforms()
-	print("Native Godot editor validation passed: 14 directly editable scenes")
+	print("Native Godot editor validation passed: " + str(paths.size()) + " directly editable scenes")
 	get_tree().quit()
 
 

@@ -19,7 +19,7 @@ legacy-check:
 archive-check:
 	python3 scripts/validate_archive.py
 
-# Fresh imports and all ten routes without Python/archive or existing cache.
+# Fresh imports and all active routes without Python/archive or existing cache.
 runtime-check:
 	python3 scripts/validate_runtime.py --godot "$(GODOT)"
 
@@ -37,3 +37,8 @@ web-export:
 
 web-serve:
 	python3 -m http.server 8060 --bind 127.0.0.1 --directory exports/web
+
+# Full original ten-level Godot checks from the preserved pre-Alpha-0.2 revision.
+.PHONY: archived-godot-check
+archived-godot-check:
+	python3 scripts/validate_archived_godot.py --godot "$(GODOT)"

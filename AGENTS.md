@@ -14,12 +14,13 @@ YOU retains native camera behavior with platform/hardware limitations.
 - Published releases use immutable version tags; do not create/move release tags
   or deploy/publish without authorization. See `docs/development.md`.
 - Alpha 0.1 technical preview is published as `v0.1.0-alpha.1` at `f614691`.
-  Keep `docs/releases/alpha-0.1-status.md` current across handoffs. Never move
+  Use `docs/releases/alpha-0.2-status.md` for current implementation handoffs. Never move
   that tag or replace published package bytes. On 2026-10-21 the owner explicitly
   authorized merging,
   tagging and publishing Alpha 0.1 as a technical preview with documented licensing
   issues unresolved. Use the explicit preview acknowledgement; never claim legal
-  clearance. Keep all ten levels and the archive. Future releases need authorization.
+  clearance. Future releases need fresh authorization. Alpha 0.2 archives four Godot
+  levels as requested; preserve their source and the independent Pygame archive.
 
 ## Project conventions
 
@@ -33,7 +34,7 @@ YOU retains native camera behavior with platform/hardware limitations.
   It also verifies native map cells/regions, native edit/save/reload behavior,
   terminal behavior, routing/return, and movement demos against source traces.
   Godot scenes/TileSets are authoritative: open hub/world.tscn,
-  levels/untitled/world.tscn, or levels/{mario,zelda,monsters}/maps/*.tscn
+  levels/untitled/world.tscn, or levels/zelda/maps/*.tscn
   and paint TileMapLayers directly. Never regenerate maps from TMX/CSV/JSON.
   Preserve each game's custom movement, collision and animation algorithms;
   shared/maps reads native placements and preserves those runtime rules.
@@ -60,7 +61,7 @@ YOU retains native camera behavior with platform/hardware limitations.
   `docs/migration/parity-checklist.md` records verified behavior and manual gaps.
 - `make archive-check` verifies all 771 archived baseline checksums.
   `make runtime-check` validates fresh imports/routes without the archive/cache.
-- Web exports must include runtime JSON manifests and all ten levels, exclude
+- Web exports must include active runtime JSON manifests and the active catalog, exclude
   the archive/development sources, and provide a clear YOU fallback with hub return.
 - Record limitations and blockers; never claim unchecked browser/platform parity.
 - Preserve third-party notices; unresolved licensing remains a clearance blocker.
@@ -77,3 +78,14 @@ make -C legacy/pygame PYTHON=../../.venv/bin/python check
 
 The root virtual environment is local and is not moved or committed. Its
 availability is machine-specific; install archived requirements if needed.
+
+## Alpha 0.2
+
+Read docs/releases/alpha-0.2-status.md before continuing. Retired Godot modules
+PONG/JUMP/MARIO/MONSTERS live in archive/godot with original paths preserved
+as source references. Never import/bundle them into the active game. Historical
+checks remain available via make archived-godot-check. art/ contains editable
+sources and user work; copy only approved runtime exports to active modules.
+Keep BOUNCE/BALLS/BUG/YOU, evolve ZELDA into BUBBY and UNTITLED into BUSBOY,
+then implement MACHINE. No paid generation, fabricated personal references,
+merges, release tags or deployments under the current authorization.

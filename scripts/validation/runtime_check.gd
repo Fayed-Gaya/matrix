@@ -31,5 +31,5 @@ func run() -> void:
 	app.free()
 	await settle()
 	await create_timer(0.15).timeout
-	print("Standalone runtime validation passed: ten native routes, no archive")
+	print("Standalone runtime validation passed: active native routes, no archive")
 	quit()

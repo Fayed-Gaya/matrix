@@ -110,8 +110,10 @@ func run() -> void:
 	check(hub.overlay.input_text.length() == 17, "Backspace edits code")
 	key(KEY_ESCAPE)
 	check(not hub.overlay.terminal_active, "Escape closes terminal")
-	check(LevelRegistry.lookup(" jump ").name == "Jump", "Lookup trims and ignores case")
-	check(LevelRegistry.ENTRIES.size() == 10, "All ten original codes registered")
+	check(LevelRegistry.lookup(" balls ").name == "Balls", "Lookup trims and ignores case")
+	check(LevelRegistry.ENTRIES.size() == 6, "Six retained modules registered before MACHINE")
+	for retired: String in ["PONG", "JUMP", "MARIO", "MONSTERS"]:
+		check(LevelRegistry.lookup(retired).is_empty(), "Archived code unavailable: " + retired)
 	for code: String in LevelRegistry.ENTRIES:
 		check(not LevelRegistry.lookup(code).scene.is_empty(), "Native scene required: " + code)
 	for code: String in LevelRegistry.ENTRIES:
