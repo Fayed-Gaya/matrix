@@ -22,17 +22,22 @@ Do not publish or merge merely because automated checks pass.
 | 4 Busboy | Forest/NPC/turn encounter slice | `09771b3` / busboy | [#10](https://github.com/Fayed-Gaya/matrix/pull/10) → #9 |
 | 5 Machine | Home/town/interiors/NPCs/boss | `b8d781b` / machine | [#11](https://github.com/Fayed-Gaya/matrix/pull/11) → #10 |
 | 6 Workflow | Targeted/full checks, clean audited exports, art helper | `66448ab` / workflow | [#12](https://github.com/Fayed-Gaya/matrix/pull/12) → #11 |
-| 7 Mobile | Touch/layout/rotation + automated browser coverage | `d9d457e`, `af0dffb` / mobile | [#13](https://github.com/Fayed-Gaya/matrix/pull/13) → #12 |
+| 7 Mobile | Touch/layout/rotation + automated browser coverage | `d9d457e`, `af0dffb`, `586b570` / mobile | [#13](https://github.com/Fayed-Gaya/matrix/pull/13) → #12 |
 | 8 iOS | Read-only feasibility, no native build | `2587bab` + handoff / ios-feasibility | [#14](https://github.com/Fayed-Gaya/matrix/pull/14) → #13 |
 
 All checkpoints pushed; none merged into main. A normal feature-branch merge
 brings mobile's CI fix into the assessment branch, preserving commits. Retarget
 stacked descendants only after authorized base merges. #7–#12 Checks/Godot/Web
-CI are green; #12 runs: 39729243722 / 39729243773. Mobile's initial Godot/Checks
-passed, but its browser job 39730221390 failed on touch navigation timing;
-fixed in `af0dffb`, **new CI pending last inspection**. Inspect the newest run
-for the branch SHA, not the earlier failing run. Final assessment CI likewise
-reruns after its synchronization push.
+CI are green; #12 runs: 39729243722 / 39729243773. Mobile follow-up `af0dffb`
+passed Checks and all six browser tests in run 39731973805 (2.3 min). The next
+identical-game assessment run 39732120559 exposed two helper errors: Chrome was
+already within terminal range but demanded tighter pixel alignment; WebKit hit
+the desk collision while also already in interaction range. Both now stop at
+that real goal (`586b570`), retaining the terminal/launch/return assertions.
+Linux captures also revealed missing arrow glyphs; geometric arrows replace
+them. Inspect CI for `586b570` and the final assessment tip; those runs start
+on the synchronization push. Never treat the earlier success as proof that a
+newest run passed.
 
 ## Scope and playable content
 
@@ -93,10 +98,18 @@ on CI; frame-observed input/release and realistic interaction waypoints replace
 that assumption. High-DPI software Chrome also overshot due rendering latency.
 CI now keeps full touch navigation at DPR 1 plus a separate DPR-3 scaling/touch/
 rotation probe; WebKit retains full DPR-3 navigation. No route/proximity/return
-assertions removed. Failure traces keep DOM/network/source and explicit scene/
+assertions removed. Terminal-edge follow-up also stops at usable range instead
+of demanding a point beyond the desk collision. Failure traces keep DOM/network/source and explicit scene/
 failure PNGs, without continuous canvas screencasting. Local CI-flag retest:
 Chrome full 24.4 s, Chrome DPR-3 layout 14.8 s, WebKit full 13.2 s; all passed
 (three tests, 1.3 min). Physical iOS/Android acceptance is unverified.
+
+Final terminal-edge/portable-arrow checkpoint: full make check, audited export
+and five locally available browser tests passed (1.1 min): desktop Chrome 7.5 s,
+Firefox 22.3 s, mobile Chrome DPR 3 10.2 s, Chrome DPR-3 layout 3.5 s and mobile
+WebKit DPR 3 10.9 s. Local Edge remains absent; CI installs it. Logs:
+`terminal-edge-{full,export,browsers}.log`. Geometry avoids platform-font tofu;
+the hub now says Tap Begin/Use on touch devices.
 
 Baseline main `145771f`: check 155.486 s, fresh runtime 67.049 s, export 40.124 s,
 PCK audit 5.106 s; Chrome ten-code smoke ~1.4 min (rounded). Catalog-only:
