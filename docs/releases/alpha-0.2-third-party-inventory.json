@@ -78,8 +78,8 @@
       "path": "app/web_diagnostics.gd",
       "module": "app",
       "type": ".gd",
-      "size": 1491,
-      "sha256": "3a419fc4b4d0aaeb1b97d851f3c0b349afe107525a75e735532315a735f47baa",
+      "size": 1543,
+      "sha256": "6427a0f3c250864d506c196c61cfae1abb8f874b0f973aa13bf30536aeaa77be",
       "exact_archived_matches": [],
       "source_reference": false,
       "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"

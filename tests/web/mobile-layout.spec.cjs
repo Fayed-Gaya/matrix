@@ -1,0 +1,23 @@
+const { test, expect } = require('@playwright/test');
+const state=page=>page.locator('html').getAttribute('data-matrix-state').then(s=>s?JSON.parse(s):{});
+test('DPR-3 touch canvas retains CSS-sized controls and rotation',async({page},testInfo)=>{
+  const errors=[];
+  page.on('pageerror',e=>errors.push(e.message));
+  page.on('console',m=>{if(/SCRIPT ERROR:|^ERROR:/.test(m.text()))errors.push(m.text());});
+  await page.goto('http://127.0.0.1:8060/?matrix_smoke=1');
+  await expect.poll(async()=> (await state(page)).touch,{timeout:60000}).toBe(true);
+  await expect.poll(async()=> (await state(page)).width).toBe(844);
+  expect(await page.evaluate(()=>[document.querySelector('canvas').width,document.querySelector('canvas').height])).toEqual([2532,1170]);
+  const begin=(await state(page)).touch_regions.Begin;
+  await page.touchscreen.tap(...begin);
+  await expect.poll(async()=> (await state(page)).opening).toBe(false);
+  const regions=(await state(page)).touch_regions;
+  expect(regions.Right[0]-regions.Up[0]).toBe(48);
+  expect(regions.Down[1]-regions.Up[1]).toBe(96);
+  await page.screenshot({path:testInfo.outputPath('DPR3-controls.png')});
+  await page.setViewportSize({width:390,height:844});
+  await expect.poll(async()=> (await state(page)).touch_context).toBe('portrait');
+  await page.setViewportSize({width:844,height:390});
+  await expect.poll(async()=> (await state(page)).touch_context).toBe('hub');
+  expect(errors).toEqual([]);
+});
