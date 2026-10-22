@@ -2,7 +2,7 @@ class_name HubWorld
 extends Node2D
 ## Authoritative native scene. Rectangle movement reads editor shapes/markers.
 
-@export var bounds: Vector2 = Vector2(800, 800)
+@export var bounds: Vector2 = Vector2(640, 352)
 var player_spawn: Vector2:
  get: return $PlayerSpawn.position
 var terminal_rect: Rect2:

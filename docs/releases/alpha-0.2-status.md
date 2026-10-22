@@ -101,3 +101,39 @@ historical checkout. Phase 1 implementation and verification are complete.
 Next phase: original one-room hub and editable source artwork; preserve input,
 terminal/return routing and targeted collision tests while replacing old layout
 expectations deliberately. No full manual gameplay acceptance is claimed.
+
+## Phase 2 in progress
+
+Phase 1 pushed as `3e840c2`, PR https://github.com/Fayed-Gaya/matrix/pull/7
+(target main; not merged). Current branch `feature/alpha-0.2-hub` is stacked
+on that branch. Original cabin tile/player art has SVG and Aseprite editable
+sources under art/hub, PNG runtime exports under hub/assets/alpha02. No paid
+generation calls. Old hub art/layout/fixture retained under archive/godot.
+One native 640×352 scene, external TileSet, bed/window/storage/plant/computer,
+collisions and interaction markers replace the old room. Existing movement,
+camera, terminal and return contract retained. Opening uses original starfield.
+Next: validate new layout/navigation, inspect actual rendered scene, document
+authoring, commit/push and open a stacked PR. Aseprite's installed PixelLab
+extension logs batch-only dialog errors; source files were still created.
+
+Phase 1 CI passed on GitHub: Checks and Godot/Web run
+https://github.com/Fayed-Gaya/matrix/actions/runs/39721990740, including desktop
+Chrome/Firefox/Edge smoke checks and downloadable web/source artifacts. The
+web artifact is `matrix-web-df2c0fc6706ae600d8047fa609f0d5dddabc0cac` (PR merge
+ref build, not a published release). Local gh authentication is invalid (401);
+the connected GitHub tools work, and were used for the PR/CI inspection.
+
+Phase 2 targeted resource/hub/native-map checks passed, followed by disposable
+actual-editor paint/erase/save/reload of all three active scenes and sixteen
+renderer transform combinations. Fresh archive-free runtime, web export and
+isolated PCK/dependency audit passed. Actual Compatibility window hub input
+and routing test passed; captured cabin visually inspected. Remaining: Chrome
+smoke and final journal/commit/stacked PR. Human artistic acceptance, gameplay
+feel, sound, touch/device/platform coverage remain unverified for the new hub.
+
+New hub Chrome real-input smoke passed (six routes, terminal launch/return,
+resize; 10.4 s suite). Actual cabin wall/furniture long-step collision checks
+also passed. Phase 2 checkpoint is ready. No public release or merge performed.
+Next: Bubby, replacing the ZELDA public code with a provisional apartment →
+outside → pigeon → small objective/ending slice. Personalization remains blocked
+on references; implement clearly marked fictional placeholders, not Kate facts.

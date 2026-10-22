@@ -68,11 +68,11 @@ func run() -> void:
 	key(KEY_ENTER)
 	check(not hub.overlay.opening, "Any key dismisses opening")
 	check(not hub.overlay.terminal_active, "Start key must not open terminal")
-	check(hub.player.position == Vector2(359, 344), "Reference spawn")
-	check(hub.world.bounds == Vector2(800, 800), "Reference bounds")
-	check(hub.world.collision_rects.size() == 10, "Reference collision count")
-	check(hub.world.terminal_rect == Rect2(394, 439, 24, 24), "Reference point trigger")
-	check(hub.world_viewport.size == Vector2i(640, 360), "2x rendering at 1280x720")
+	check(hub.player.position == Vector2(320, 256), "Cabin spawn")
+	check(hub.world.bounds == Vector2(640, 352), "Cabin bounds")
+	check(hub.world.collision_rects.size() == 11, "Cabin collision count")
+	check(hub.world.terminal_rect == Rect2(440, 160, 48, 24), "Computer approach trigger")
+	check(hub.world_viewport.size == Vector2i(640, 352), "2x rendering fits cabin at 1280x720")
 	check(hub.world.get_node("Above").z_index > hub.player.z_index, "Above tiles overlay player")
 	await capture("hub")
 	key(KEY_E)
@@ -86,9 +86,9 @@ func run() -> void:
 	check(hub.player.position.x > 100 and hub.player.position.y == 100,
 		"Physics loop responds to movement actions")
 	check_movement()
-	# Reach the terminal by walking around reference collision rectangles.
-	hub.player.position = Vector2(410, 420)
-	hub.player.step(Vector2.DOWN, 0.065, hub.world.collision_rects, hub.world.bounds)
+	# Approach the computer from its walkable front, without penetrating the desk.
+	hub.player.position = Vector2(464, 184)
+	hub.player.step(Vector2.UP, 0.065, hub.world.collision_rects, hub.world.bounds)
 	check(hub.is_near_terminal(), "Terminal trigger is reachable without crossing collision")
 	key(KEY_E)
 	check(hub.overlay.terminal_active, "E opens reachable terminal")
@@ -151,14 +151,14 @@ func run() -> void:
 	check(app.active_level == null and fixture.get_ref() == null, "Independent level return/cleanup")
 	root.size = Vector2i(1920, 1080)
 	await settle()
-	check(hub.world_viewport.size == Vector2i(800, 540), "Large window clamps viewport to map")
-	check(hub.display.position == Vector2(160, 0), "Large world display is centered")
+	check(hub.world_viewport.size == Vector2i(640, 352), "Large window clamps viewport to map")
+	check(hub.display.position == Vector2(320, 188), "Large world display is centered")
 	root.size = Vector2i(640, 480)
 	await settle()
 	check(hub.world_viewport.size == Vector2i(320, 240), "Small window updates viewport")
-	hub.player.position = Vector2(792, 792)
+	hub.player.position = hub.world.bounds - Vector2(8, 8)
 	hub.update_camera()
-	check(hub.camera_offset == Vector2(480, 560), "Camera clamps at map edge")
+	check(hub.camera_offset == Vector2(320, 112), "Camera clamps at map edge")
 	hub.player.position = Vector2(8, 8)
 	hub.update_camera()
 	check(hub.camera_offset == Vector2.ZERO, "Camera clamps at map origin")
@@ -188,6 +188,12 @@ func check_movement() -> void:
 	player.position = Vector2(10, 10)
 	player.step(Vector2(-1, -1), 0.1, [], Vector2(800, 800))
 	check(player.position == Vector2(8, 8), "Player stays inside bounds")
+	for direction: Vector2 in [Vector2.UP, Vector2.DOWN, Vector2.LEFT, Vector2.RIGHT]:
+		player.position = hub.world.player_spawn
+		player.step(direction, 3.0, hub.world.collision_rects, hub.world.bounds)
+		check(Rect2(32, 64, 576, 256).encloses(player.hitbox()), "Cabin walls stop long movement")
+		for obstacle: Rect2 in hub.world.collision_rects:
+			check(not player.hitbox().intersects(obstacle), "Cabin furniture/wall collision has no penetration")
 	player.position = hub.world.player_spawn
 
 
@@ -197,25 +203,13 @@ func check_map(path: String) -> void:
 		var rect: Array = expected.collision[i]
 		check(hub.world.collision_rects[i] == Rect2(rect[0], rect[1], rect[2], rect[3]),
 			"Converted collision rectangle " + str(i))
-	for entry: Dictionary in expected.layers:
-		var layer: TileMapLayer = hub.world.get_node(entry.name)
-		var occupied: int = 0
-		for index: int in range(entry.cells.size()):
-			var gid: int = int(entry.cells[index])
-			var coordinates: Vector2i = Vector2i(index % int(entry.width), index / int(entry.width))
-			if gid == 0:
-				check(layer.get_cell_source_id(coordinates) == -1, "Expected empty cell")
-				continue
-			occupied += 1
-			var source_id: int = expected.tilesets.size() - 1
-			while gid < int(expected.tilesets[source_id].firstgid):
-				source_id -= 1
-			var tile: int = gid - int(expected.tilesets[source_id].firstgid)
-			var columns: int = int(expected.tilesets[source_id].columns)
-			check(layer.get_cell_source_id(coordinates) == source_id, "Converted tile source")
-			check(layer.get_cell_atlas_coords(coordinates) == Vector2i(tile % columns, tile / columns),
-				"Converted atlas coordinates")
-		check(layer.get_used_cells().size() == occupied, "Converted cell count: " + entry.name)
+	for feature: Dictionary in expected.features:
+		var layer: TileMapLayer = hub.world.get_node(feature.layer)
+		var cell: Vector2i = Vector2i(feature.cell[0], feature.cell[1])
+		check(layer.get_cell_source_id(cell) == 0, "Cabin landmark tile exists")
+		check(layer.get_cell_atlas_coords(cell) == Vector2i(feature.atlas[0], feature.atlas[1]),
+			"Cabin landmark atlas coordinates")
+
 
 
 func check_input_bindings() -> void:

@@ -4,11 +4,10 @@
     ".gd": 24,
     ".gdshader": 1,
     ".gif": 1,
-    ".jpg": 1,
     ".json": 1,
     ".mp3": 1,
     ".ogg": 1,
-    ".png": 285,
+    ".png": 284,
     ".tres": 7,
     ".tscn": 12,
     ".ttf": 1,
@@ -70,48 +69,21 @@
       "assessment": "See module findings in licensing-audit.md; inventory is not license clearance"
     },
     {
-      "path": "hub/assets/backgrounds/matrix-opening.jpg",
+      "path": "hub/assets/alpha02/cabin-atlas.png",
       "module": "hub",
-      "type": ".jpg",
-      "size": 630312,
-      "sha256": "f86c94589cd8cf27c85650682572fa627b304aa026933372dec31d450a1c4a20",
-      "exact_archived_matches": [
-        "legacy/pygame/matrix/assets/backgrounds/matrix-opening.jpg"
-      ],
+      "type": ".png",
+      "size": 1698,
+      "sha256": "bd783209b88ed237ee78818af3190a67d6067c1b2533de43dd2a98bfeb2d90bb",
+      "exact_archived_matches": [],
       "assessment": "See module findings in licensing-audit.md; inventory is not license clearance"
     },
     {
-      "path": "hub/assets/sprites/player_snoblin.png",
+      "path": "hub/assets/alpha02/cabin-player.png",
       "module": "hub",
       "type": ".png",
-      "size": 3266,
-      "sha256": "776760ec65248dfde3fceb0a7ae4ca460bb2df784565453f49d42483285f4a97",
-      "exact_archived_matches": [
-        "legacy/pygame/levels/untitled/assets/sprites/player_snoblin.png",
-        "legacy/pygame/matrix/assets/sprites/player_snoblin.png"
-      ],
-      "assessment": "See module findings in licensing-audit.md; inventory is not license clearance"
-    },
-    {
-      "path": "hub/assets/tilesets/16x16.png",
-      "module": "hub",
-      "type": ".png",
-      "size": 36956,
-      "sha256": "51fcfe915af508d6f55429149e555356a572aee2af1103c575ba483052db0389",
-      "exact_archived_matches": [
-        "legacy/pygame/shared_assets/tilesets/16x16.png"
-      ],
-      "assessment": "See module findings in licensing-audit.md; inventory is not license clearance"
-    },
-    {
-      "path": "hub/assets/tilesets/interiors_free_16x16.png",
-      "module": "hub",
-      "type": ".png",
-      "size": 134462,
-      "sha256": "01a890f9e34d8dc8d7e275489143b837569127d5f928419e6b6edc54b9b5ff33",
-      "exact_archived_matches": [
-        "legacy/pygame/matrix/assets/tilesets/interiors_free_16x16.png"
-      ],
+      "size": 774,
+      "sha256": "ff7a683ddd7fe288523ad67f5c3d9545c8d5656a6aa7e53bf458e19fd4fad9ad",
+      "exact_archived_matches": [],
       "assessment": "See module findings in licensing-audit.md; inventory is not license clearance"
     },
     {
@@ -136,8 +108,8 @@
       "path": "hub/overlay.gd",
       "module": "hub",
       "type": ".gd",
-      "size": 1917,
-      "sha256": "6053efa34bbf07ef4edcbf79c9f717a453ef4d16a7d7c189afc87db8cda9289d",
+      "size": 1909,
+      "sha256": "ca86f6373e6e62d5c66a6f25fe4f024bdd6ceeed92ce3897894492d5b7447b68",
       "exact_archived_matches": [],
       "assessment": "See module findings in licensing-audit.md; inventory is not license clearance"
     },
@@ -145,8 +117,8 @@
       "path": "hub/player.gd",
       "module": "hub",
       "type": ".gd",
-      "size": 2179,
-      "sha256": "eb7cbac63d596ace301bea2ca0bfc7414271555b82c850edfd4237b78079951a",
+      "size": 2177,
+      "sha256": "e60d144ff7c380806733654ba93a8d312525d0810307531c29393127e0747327",
       "exact_archived_matches": [],
       "assessment": "See module findings in licensing-audit.md; inventory is not license clearance"
     },
@@ -154,8 +126,8 @@
       "path": "hub/tileset.tres",
       "module": "hub",
       "type": ".tres",
-      "size": 20864,
-      "sha256": "ad2f76aa542d399e46113e72becbb76648735947d909a87fd21250c373143a16",
+      "size": 529,
+      "sha256": "d242d658567033651fb3e05314365aa1f31da77d0fe396b889fd995605aff919",
       "exact_archived_matches": [],
       "assessment": "See module findings in licensing-audit.md; inventory is not license clearance"
     },
@@ -164,7 +136,7 @@
       "module": "hub",
       "type": ".gd",
       "size": 602,
-      "sha256": "0bda0c289f23ffd434f6e8f1eccafcb60e2e4ae5b17a383123fcd79e1cedcd9e",
+      "sha256": "032e4f32a2faa8ed98bcac5897ca7359e0caacc53a6f0603a58ef27fd6c1963c",
       "exact_archived_matches": [],
       "assessment": "See module findings in licensing-audit.md; inventory is not license clearance"
     },
@@ -172,8 +144,8 @@
       "path": "hub/world.tscn",
       "module": "hub",
       "type": ".tscn",
-      "size": 44796,
-      "sha256": "36924148cf66de4a2bd5ddfde05fdd0f15eca1c87e2ab4cbbcec74b1335f788f",
+      "size": 7648,
+      "sha256": "93aac8ffa03da31f002993017beeaa8d9da47173db7cef54cf5174632952bc67",
       "exact_archived_matches": [],
       "assessment": "See module findings in licensing-audit.md; inventory is not license clearance"
     },
