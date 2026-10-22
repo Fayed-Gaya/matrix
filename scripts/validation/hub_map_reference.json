@@ -1,130 +1,129 @@
 {
   "spawn": [
-    320,
-    256
+    112,
+    224
   ],
   "bounds": [
-    640,
-    352
+    512,
+    320
   ],
   "terminal": [
-    440,
-    160,
-    48,
-    24
+    416,
+    176,
+    64,
+    32
   ],
   "collision": [
     [
       0,
       0,
-      640,
+      512,
       64
     ],
     [
       0,
-      320,
-      640,
+      288,
+      512,
       32
     ],
     [
       0,
       64,
       32,
-      256
+      224
     ],
     [
-      608,
+      480,
       64,
       32,
-      256
+      224
     ],
     [
-      96,
-      128,
-      32,
+      70,
+      88,
+      68,
+      96
+    ],
+    [
+      166,
+      88,
+      68,
+      96
+    ],
+    [
+      422,
+      112,
+      52,
       64
-    ],
-    [
-      448,
-      96,
-      32,
-      64
-    ],
-    [
-      544,
-      96,
-      32,
-      32
-    ],
-    [
-      160,
-      96,
-      32,
-      32
-    ],
-    [
-      576,
-      256,
-      32,
-      32
-    ],
-    [
-      64,
-      128,
-      32,
-      32
-    ],
-    [
-      456,
-      200,
-      16,
-      16
     ]
   ],
   "features": [
     {
-      "layer": "Details",
+      "layer": "Ground",
       "cell": [
-        3,
-        4
+        0,
+        0
       ],
       "atlas": [
-        0,
-        1
+        1,
+        0
       ]
     },
     {
-      "layer": "Details",
+      "layer": "Ground",
       "cell": [
-        14,
-        3
+        4,
+        5
+      ],
+      "atlas": [
+        0,
+        0
+      ]
+    },
+    {
+      "layer": "Ground",
+      "cell": [
+        15,
+        5
       ],
       "atlas": [
         2,
-        1
+        0
       ]
+    }
+  ],
+  "objects": [
+    {
+      "node": "OpenChamber",
+      "position": [
+        64,
+        80
+      ],
+      "texture": "res://hub/assets/refinement/pod-open.png"
     },
     {
-      "layer": "Details",
-      "cell": [
-        14,
-        4
+      "node": "SealedChamber",
+      "position": [
+        160,
+        80
       ],
-      "atlas": [
-        3,
-        1
-      ]
+      "texture": "res://hub/assets/refinement/pod-sealed.png"
     },
     {
-      "layer": "Details",
-      "cell": [
-        8,
-        1
+      "node": "SpaceViewport",
+      "position": [
+        256,
+        8
       ],
-      "atlas": [
-        0,
-        2
-      ]
+      "texture": "res://hub/assets/refinement/viewport.png"
+    },
+    {
+      "node": "Computer",
+      "position": [
+        416,
+        96
+      ],
+      "texture": "res://hub/assets/refinement/terminal.png"
     }
   ]
 }

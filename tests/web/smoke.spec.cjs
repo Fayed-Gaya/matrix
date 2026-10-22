@@ -10,26 +10,28 @@ test('opening, real keyboard navigation, active terminal codes, return and resiz
   await page.locator('canvas').click();
   await page.keyboard.press('Enter');
   await expect.poll(async () => (await state(page)).opening).toBe(false);
+  await page.screenshot({path: testInfo.outputPath('hub-room.png')});
   async function moveAxis(axis, target, negative, positive, tolerance = 12) {
     for (let pulse = 0; pulse < 50; pulse++) {
       const current = await state(page);
       if (current.near_terminal) return; // The usable terminal is the destination, including its collision edge.
       const distance = target - current[axis];
       if (Math.abs(distance) <= tolerance) return;
-      await page.keyboard.press(distance < 0 ? negative : positive, {delay: Math.min(50, Math.max(8, Math.abs(distance) / 260 * 1000))});
+      await page.keyboard.press(distance < 0 ? negative : positive, {delay: Math.min(50, Math.max(8, Math.abs(distance) / 182 * 1000))});
     }
     throw new Error('Could not reach waypoint: ' + JSON.stringify(await state(page)));
   }
   // Short real key pulses avoid holding movement during slow browser assertions.
   // Reach the usable corridor, rather than demanding sub-frame pixel alignment.
   // Exact movement/collision traces are covered by the Godot checks.
-  await moveAxis('y', 172, 'ArrowUp', 'ArrowDown', 18);
-  await moveAxis('x', 464, 'ArrowLeft', 'ArrowRight', 4);
+  await moveAxis('y', 192, 'ArrowUp', 'ArrowDown', 18);
+  await moveAxis('x', 448, 'ArrowLeft', 'ArrowRight', 4);
   await expect.poll(async () => (await state(page)).near_terminal).toBe(true);
   const codes = ['BOUNCE','BALLS','BUG','BUBBY','BUSBOY','MACHINE','YOU'];
   for (const code of codes) {
     await page.keyboard.press('e');
     await expect.poll(async () => (await state(page)).terminal).toBe(true);
+    if (code === 'BOUNCE') await page.screenshot({path: testInfo.outputPath('hub-terminal.png')});
     await page.keyboard.type(code);
     await page.keyboard.press('Enter');
     await expect.poll(async () => (await state(page)).code, {timeout: 60000}).toBe(code);

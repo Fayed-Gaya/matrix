@@ -88,6 +88,14 @@ func run() -> void:
 	root.size = Vector2i(844,390)
 	await settle()
 	check(not paused and controls.context == "hub", "Landscape resumes")
+	var hub: MatrixHub = app.hub as MatrixHub
+	check(hub.pixel_scale == 1 and hub.world_viewport.size == Vector2i(512,320), "Phone shows both chambers and viewport without camera cropping")
+	hub.open_terminal()
+	await settle()
+	var panel: Rect2 = (hub.overlay as HubOverlay).terminal_panel()
+	for code: String in LevelRegistry.ENTRIES:
+		check(panel.encloses(controls.regions[code]), "Phone code hit area is inside terminal: " + code)
+		check((controls.regions[code] as Rect2).size.y >= 44, "Phone code target at least 44px")
 	app.free()
 	await process_frame
 	await create_timer(0.15).timeout # Let the audio mixer release the generated combat tone.

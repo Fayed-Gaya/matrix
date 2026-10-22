@@ -26,6 +26,7 @@ test('landscape touch movement, terminal, seven routes, return and rotation', as
   }
   await tap('Begin');
   await expect.poll(async () => (await state(page)).opening).toBe(false);
+  await page.screenshot({path: testInfo.outputPath('hub-room.png')});
   async function move(axis,target,negative,positive) {
     for(let i=0;i<30;i++) {
       const current=await state(page);
@@ -59,12 +60,13 @@ test('landscape touch movement, terminal, seven routes, return and rotation', as
     }
     throw Error('Touch navigation stalled: '+JSON.stringify(await state(page)));
   }
-  await move('y',172,'Up','Down');
-  await move('x',464,'Left','Right');
+  await move('y',192,'Up','Down');
+  await move('x',448,'Left','Right');
   await expect.poll(async () => (await state(page)).near_terminal).toBe(true);
   for(const code of ['BOUNCE','BALLS','BUG','BUBBY','BUSBOY','MACHINE','YOU']) {
     await tap('Use');
     await expect.poll(async () => (await state(page)).terminal).toBe(true);
+    if (code === 'BOUNCE') await page.screenshot({path: testInfo.outputPath('hub-terminal.png')});
     await tap(code);
     await expect.poll(async () => (await state(page)).code).toBe(code);
     if(code==='BUSBOY') { await tap('Begin'); }

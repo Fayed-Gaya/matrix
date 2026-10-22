@@ -7,7 +7,7 @@
     ".json": 4,
     ".mp3": 2,
     ".ogg": 2,
-    ".png": 320,
+    ".png": 326,
     ".tres": 11,
     ".tscn": 26,
     ".ttf": 1,
@@ -48,8 +48,8 @@
       "path": "app/mobile_controls.gd",
       "module": "app",
       "type": ".gd",
-      "size": 7090,
-      "sha256": "a17b4d4d4b0bf47c6673945ac4b131a17c01b3c8947df6525bd468b0807aa216",
+      "size": 7008,
+      "sha256": "44394fdc06d39f7606071693c99608630023e90cfa7723b8b48a9d4df25877f6",
       "exact_archived_matches": [],
       "source_reference": false,
       "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
@@ -95,11 +95,71 @@
       "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
     },
     {
+      "path": "hub/assets/refinement/hull-atlas.png",
+      "module": "hub",
+      "type": ".png",
+      "size": 441,
+      "sha256": "77b1c876044ba7862c64c6061a2f934f25b1ce004d05f70d8a7bb2385c568dd0",
+      "exact_archived_matches": [],
+      "source_reference": false,
+      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
+    },
+    {
+      "path": "hub/assets/refinement/pod-open.png",
+      "module": "hub",
+      "type": ".png",
+      "size": 922,
+      "sha256": "10b2244923f3c89f3071168ef686bd2092b555c50fa87f168319ef579a5eb333",
+      "exact_archived_matches": [],
+      "source_reference": false,
+      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
+    },
+    {
+      "path": "hub/assets/refinement/pod-sealed.png",
+      "module": "hub",
+      "type": ".png",
+      "size": 900,
+      "sha256": "675d8cedb38c1d71612622cf6e8f3361c3edfce81ba576c2799ccb400d49522e",
+      "exact_archived_matches": [],
+      "source_reference": false,
+      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
+    },
+    {
+      "path": "hub/assets/refinement/terminal.png",
+      "module": "hub",
+      "type": ".png",
+      "size": 696,
+      "sha256": "35a1e56825f7c7fc35ab1cfbe2d40de30de0c0779238b4ab89b2d10cd12070ae",
+      "exact_archived_matches": [],
+      "source_reference": false,
+      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
+    },
+    {
+      "path": "hub/assets/refinement/viewport.png",
+      "module": "hub",
+      "type": ".png",
+      "size": 688,
+      "sha256": "6ea6f1c52572806102c776c49ece4ef731d80402fb220f59f7b277e0289798ae",
+      "exact_archived_matches": [],
+      "source_reference": false,
+      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
+    },
+    {
+      "path": "hub/assets/refinement/wall-light.png",
+      "module": "hub",
+      "type": ".png",
+      "size": 215,
+      "sha256": "9cf283295dd89b041b024431556a5d5f85b17378d799dc596636573985abdf26",
+      "exact_archived_matches": [],
+      "source_reference": false,
+      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
+    },
+    {
       "path": "hub/hub.gd",
       "module": "hub",
       "type": ".gd",
-      "size": 3550,
-      "sha256": "85ac0035030f4554a418a18e436d8487d48121ac876cb3fdf714cd52b090fe93",
+      "size": 3776,
+      "sha256": "5a2af0fdcd08c72ca4bb498cd69ad4580d3b7904ca8c26d72359a51ebc978b40",
       "exact_archived_matches": [],
       "source_reference": false,
       "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
@@ -118,8 +178,8 @@
       "path": "hub/overlay.gd",
       "module": "hub",
       "type": ".gd",
-      "size": 2032,
-      "sha256": "01c6d90b49d04093772e5f4b5310ddc4d9caa002d9af088948c2a6b00de925d4",
+      "size": 3975,
+      "sha256": "2ab030435e0a7a3e54ae4abc4034da0b177fb5af7139665efef58ac54a818016",
       "exact_archived_matches": [],
       "source_reference": false,
       "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
@@ -129,7 +189,7 @@
       "module": "hub",
       "type": ".gd",
       "size": 280,
-      "sha256": "2cedd1c7d1fe48b3ff04b90ccc01d9fb5297b51b5df90b11058ee84928e27a28",
+      "sha256": "419a72ce395895bfd40d114626f009432a12bd90776c8623921715a360969b3a",
       "exact_archived_matches": [],
       "source_reference": false,
       "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
@@ -138,8 +198,8 @@
       "path": "hub/tileset.tres",
       "module": "hub",
       "type": ".tres",
-      "size": 529,
-      "sha256": "d242d658567033651fb3e05314365aa1f31da77d0fe396b889fd995605aff919",
+      "size": 361,
+      "sha256": "e65ef4dde6146f9a0c946b982d40f0d9fb09911d2274b36a99d62552823c89f2",
       "exact_archived_matches": [],
       "source_reference": false,
       "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
@@ -158,8 +218,8 @@
       "path": "hub/world.tscn",
       "module": "hub",
       "type": ".tscn",
-      "size": 7648,
-      "sha256": "93aac8ffa03da31f002993017beeaa8d9da47173db7cef54cf5174632952bc67",
+      "size": 6026,
+      "sha256": "fb397a867c488e26c5d42aec9ecec12d536014eb95ced1ddc6faef8b1cdf3954",
       "exact_archived_matches": [],
       "source_reference": false,
       "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"

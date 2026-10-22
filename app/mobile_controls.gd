@@ -59,9 +59,10 @@ func layout_controls() -> void:
 	if context == "terminal":
 		var codes: Array = LevelRegistry.ENTRIES.keys()
 		for i: int in range(codes.size()):
-			regions[str(codes[i])] = Rect2(24 + (i % 4) * ((size.x - 48) / 4), 76 + (i / 4) * 62, (size.x - 64) / 4, 52)
+			regions[str(codes[i])] = ((app.hub as MatrixHub).overlay as HubOverlay).code_rect(i)
 		regions.erase("Back")
-		regions["Back"] = Rect2(size.x - 126, 12, 110, 44)
+		var panel: Rect2 = ((app.hub as MatrixHub).overlay as HubOverlay).terminal_panel()
+		regions["Back"] = Rect2(panel.end.x - 106, panel.position.y + 6, 94, 42)
 		return
 	if context in ["battle", "busboy_opening"] or app.active_code in ["BOUNCE", "BUG", "YOU"]: return
 	# Leave the world centre visible and provide two independent action fingers.
@@ -164,5 +165,3 @@ func _draw() -> void:
 			draw_colored_polygon(points, Color.WHITE)
 			continue
 		draw_string(ThemeDB.fallback_font, rect.position + Vector2(5, 31), command, HORIZONTAL_ALIGNMENT_CENTER, rect.size.x - 10, 18, Color.WHITE)
-	if context == "terminal":
-		draw_string(ThemeDB.fallback_font, Vector2(24, 46), "Choose a terminal code", HORIZONTAL_ALIGNMENT_LEFT, size.x - 160, 22, Color.WHITE)

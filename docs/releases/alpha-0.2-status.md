@@ -15,8 +15,11 @@ Pygame archive are preserved.
 
 ## Current phase / next concrete action
 
-All eight development/assessment phases have checkpoints below. Finish/check
-CI on integrated `main`, then await a release-preparation/publication instruction.
+All eight development/assessment phases have checkpoints below. Integrated main
+CI passed through `fee16d7`. The next authorized development cycle is the
+[focused spaceship hub refinement](alpha-0.2-hub-refinement.md), on
+`feature/alpha-0.2-hub-refinement`; that record owns current implementation/checks.
+Do not merge or publish this refinement without fresh authorization.
 No manual gameplay work is requested at this juncture. The owner may use
 `alpha-0.2-mobile-testing.md` before sharing or refine testing later. Never claim
 physical iPhone/Android, audible-audio or full human gameplay verification.

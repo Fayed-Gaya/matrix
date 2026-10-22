@@ -10,6 +10,7 @@ var player: HubPlayer
 @onready var display: TextureRect = $WorldDisplay
 @onready var overlay: Control = $Overlay
 var camera_offset: Vector2 = Vector2.ZERO
+var pixel_scale: int = 2
 
 
 func _ready() -> void:
@@ -26,11 +27,13 @@ func _ready() -> void:
 func sync_viewport() -> void:
 	if not is_node_ready():
 		return
+	# Fit the whole cabin at 1x on landscape phones, retaining sharp integer pixels.
+	pixel_scale = 2 if size.x >= world.bounds.x * 2 and size.y >= world.bounds.y * 2 else 1
 	var render_size: Vector2i = Vector2i(
-		maxi(1, int(size.x) / 2), maxi(1, int(size.y) / 2))
+		maxi(1, int(size.x) / pixel_scale), maxi(1, int(size.y) / pixel_scale))
 	render_size = render_size.min(Vector2i(world.bounds))
 	world_viewport.size = render_size
-	display.size = Vector2(render_size * 2)
+	display.size = Vector2(render_size * pixel_scale)
 	display.position = ((size - display.size) / 2).floor()
 	update_camera()
 	overlay.queue_redraw()
