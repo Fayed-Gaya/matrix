@@ -70,9 +70,9 @@ def main() -> None:
                 "Untitled validation passed",
             ),
             (
-                "zelda",
-                ["--script", "res://scripts/validation/zelda_check.gd"],
-                "Zelda validation passed",
+                "bubby",
+                ["--script", "res://scripts/validation/bubby_check.gd"],
+                "Bubby validation passed",
             ),
             (
                 "you",
@@ -84,8 +84,6 @@ def main() -> None:
                 [
                     "--script",
                     "res://scripts/validation/native_maps_check.gd",
-                    "--",
-                    "zelda",
                 ],
                 "Native map authoring validation passed",
             ),

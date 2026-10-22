@@ -14,7 +14,7 @@ func run() -> void:
 	check_exclusions("res://")
 	for excluded: String in ["res://legacy/pygame/main.py","res://docs/migration/README.md","res://scripts/validation/hub_check.gd","res://build/toolchain/godot/web_nothreads_release.zip"]:
 		assert(not FileAccess.file_exists(excluded),"Unnecessary export file: "+excluded)
-	for module: String in ["zelda"]:
+	for module: String in ["bubby"]:
 		var path: String = "res://levels/"+module+"/assets/manifest.json"
 		assert(FileAccess.file_exists(path),"Missing runtime JSON: "+path)
 		check_paths(JSON.parse_string(FileAccess.get_file_as_string(path)))
@@ -53,6 +53,7 @@ func check_exclusions(path: String) -> void:
 			assert(not resource_path.begins_with(fingerprint + "."), "Retired imported asset bundled: " + resource_path)
 	for child: String in directory.get_directories():
 		var next: String = path.path_join(child)
+		assert(child != "source", "Excluded source reference bundled: " + next)
 		assert(not next in ["res://archive", "res://legacy", "res://art", "res://tests", "res://build"], "Excluded directory bundled: " + next)
-		assert(not next in ["res://levels/jump", "res://levels/mario", "res://levels/monsters", "res://levels/tom_pong"], "Archived module bundled: " + next)
+		assert(not next in ["res://levels/jump", "res://levels/mario", "res://levels/monsters", "res://levels/tom_pong", "res://levels/zelda"], "Archived module bundled: " + next)
 		check_exclusions(next)

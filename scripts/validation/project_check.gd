@@ -31,6 +31,8 @@ func check(condition: bool, message: String) -> void:
 
 
 func check_resources(path: String) -> void:
+	if FileAccess.file_exists(path.path_join(".gdignore")):
+		return # Excluded source references are not active Godot resources.
 	var directory: DirAccess = DirAccess.open(path)
 	if directory == null:
 		check(false, "Cannot open: " + path)

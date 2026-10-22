@@ -14,7 +14,8 @@ func _enter_tree() -> void:
 func run() -> void:
 	await get_tree().create_timer(3.0).timeout
 	var paths: Array[String] = ["res://hub/world.tscn", "res://levels/untitled/world.tscn"]
-	paths.append("res://levels/zelda/maps/world.tscn")
+	for room: String in ["apartment", "outside"]:
+		paths.append("res://levels/bubby/maps/" + room + ".tscn")
 	var editor: EditorInterface = get_editor_interface()
 	for i: int in range(paths.size()):
 		editor.open_scene_from_path(paths[i])
