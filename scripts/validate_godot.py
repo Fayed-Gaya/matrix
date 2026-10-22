@@ -60,16 +60,6 @@ def main() -> None:
                 "The Bug validation passed",
             ),
             (
-                "pong",
-                ["--script", "res://scripts/validation/pong_check.gd"],
-                "Pong validation passed",
-            ),
-            (
-                "jump",
-                ["--script", "res://scripts/validation/jump_check.gd"],
-                "Jump validation passed",
-            ),
-            (
                 "untitled",
                 [
                     "--script",
@@ -80,19 +70,9 @@ def main() -> None:
                 "Untitled validation passed",
             ),
             (
-                "mario",
-                ["--script", "res://scripts/validation/mario_check.gd"],
-                "Mario validation passed",
-            ),
-            (
                 "zelda",
                 ["--script", "res://scripts/validation/zelda_check.gd"],
                 "Zelda validation passed",
-            ),
-            (
-                "monsters",
-                ["--script", "res://scripts/validation/monsters_check.gd"],
-                "Monsters validation passed",
             ),
             (
                 "you",
@@ -105,9 +85,7 @@ def main() -> None:
                     "--script",
                     "res://scripts/validation/native_maps_check.gd",
                     "--",
-                    "mario",
                     "zelda",
-                    "monsters",
                 ],
                 "Native map authoring validation passed",
             ),

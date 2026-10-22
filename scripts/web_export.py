@@ -68,7 +68,7 @@ def main():
                         ["git", "status", "--porcelain"], cwd=ROOT, text=True
                     ).strip()
                 ),
-                "milestone": "Alpha 0.1 technical preview",
+                "milestone": "Alpha 0.2 development (unreleased)",
                 "threads": False,
             },
             indent=2,

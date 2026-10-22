@@ -1,6 +1,6 @@
 const { test, expect } = require('@playwright/test');
 const state = page => page.locator('html').getAttribute('data-matrix-state').then(s => s ? JSON.parse(s) : {});
-test('opening, real keyboard navigation, ten terminal codes, return and resize', async ({ page }, testInfo) => {
+test('opening, real keyboard navigation, active terminal codes, return and resize', async ({ page }, testInfo) => {
   const errors = [];
   page.on('pageerror', e => errors.push(e.message));
   page.on('console', m => { if (/SCRIPT ERROR:|^ERROR:/.test(m.text())) errors.push(m.text()); });
@@ -25,7 +25,7 @@ test('opening, real keyboard navigation, ten terminal codes, return and resize',
   for (let pulse = 0; pulse < 15 && !(await state(page)).near_terminal; pulse++)
     await page.keyboard.press('ArrowDown', {delay: 25});
   await expect.poll(async () => (await state(page)).near_terminal).toBe(true);
-  const codes = ['BOUNCE','BALLS','BUG','PONG','JUMP','MARIO','ZELDA','MONSTERS','UNTITLED','YOU'];
+  const codes = ['BOUNCE','BALLS','BUG','ZELDA','UNTITLED','YOU'];
   for (const code of codes) {
     await page.keyboard.press('e');
     await expect.poll(async () => (await state(page)).terminal).toBe(true);

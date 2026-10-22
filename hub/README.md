@@ -6,8 +6,9 @@ when the prompt appears, type a code, and press Enter. Backspace edits input;
 Escape closes the terminal or quits from the room. Codes ignore surrounding
 whitespace and letter case, and input is limited to 18 characters.
 
-Codes: `JUMP`, `MARIO`, `MONSTERS`, `ZELDA`, `PONG`, `BALLS`, `BOUNCE`, `BUG`,
-`YOU`, `UNTITLED`. Each opens its native Godot level module. Escape returns to
+Current codes: `ZELDA`, `BALLS`, `BOUNCE`, `BUG`, `YOU`, `UNTITLED`.
+PONG/JUMP/MARIO/MONSTERS are archived for Alpha 0.2; BUBBY/BUSBOY replacements
+and MACHINE will enter the registry when their implementation is ready. Each opens its native Godot level module. Escape returns to
 the same hub position without replaying the opening; some levels close a local
 menu first. See each level README for controls and parity limitations. You camera
 capture depends on native platform support and needs hardware testing.

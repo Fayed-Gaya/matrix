@@ -1,6 +1,8 @@
 """Validate the exported PCK in isolation, never against checkout resources."""
 
 import argparse
+import json
+import re
 import subprocess
 import tempfile
 from pathlib import Path
@@ -13,6 +15,16 @@ def main():
     parser.add_argument("--godot", default="godot")
     args = parser.parse_args()
     with tempfile.TemporaryDirectory(prefix="matrix-web-pack-") as directory:
+        # Import-cache destinations can be bundled even when source directories
+        # are absent. Audit the retired assets' path fingerprints as well.
+        fingerprints = set()
+        for sidecar in (ROOT / "archive/godot").rglob("*.import"):
+            for match in re.finditer(
+                r'res://\.godot/imported/[^"\n]+', sidecar.read_text()
+            ):
+                fingerprints.add(match.group().rsplit(".", 1)[0])
+        excluded = Path(directory) / "retired-imports.json"
+        excluded.write_text(json.dumps(sorted(fingerprints)))
         result = subprocess.run(
             [
                 args.godot,
@@ -25,6 +37,8 @@ def main():
                 str(Path(directory) / "pack.log"),
                 "--script",
                 str(ROOT / "scripts/validation/web_pack_check.gd"),
+                "--",
+                str(excluded),
             ],
             text=True,
             capture_output=True,

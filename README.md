@@ -1,22 +1,25 @@
 # Matrix
 
 Matrix uses **Godot 4.7.2, GDScript, Compatibility renderer** in this
-existing repository. The root Godot project runs the opening screen and Matrix hub. `BOUNCE`, `BALLS`, `BUG`, `PONG`, `JUMP`, `UNTITLED`, `MARIO`, `ZELDA`, `MONSTERS`, and `YOU` have Godot modules. You uses native
-camera feeds with platform/hardware limitations; the web build explains its
-unavailable camera capture and supports returning to the hub. The owner has
-manually tested the native hub and all ten levels. Browser gameplay/audio and
-platform-specific behavior still need acceptance testing.
+existing repository. Alpha 0.2 development retains `BOUNCE`, `BALLS`, `BUG`,
+`YOU`, and the two RPG foundations (`ZELDA` and `UNTITLED` until their Bubby
+and Busboy checkpoints). `PONG`, `JUMP`, `MARIO`, and `MONSTERS` are preserved
+under `archive/godot/`, excluded from the playable catalog and browser pack.
+MACHINE is planned, not yet playable. YOU retains native camera functionality
+and a clear browser fallback. See [current implementation status](docs/releases/alpha-0.2-status.md).
+
+The published Alpha 0.1 preview is unchanged and still contains all ten levels.
 
 ```sh
 make editor  # Open the Godot project
 make run     # Launch the Matrix hub
 make check   # Archive guard, Godot imports, hub/level behavior and startup
-make runtime-check # Fresh archive-free import and all ten routes
+make runtime-check # Fresh archive-free import and all active routes
 ```
 
 Maps are authored directly in Godot. Open `hub/world.tscn`,
 `levels/untitled/world.tscn`, or a scene under
-`levels/{mario,zelda,monsters}/maps/`; select a TileMapLayer and paint.
+`levels/zelda/maps/`; select a TileMapLayer and paint.
 Save the scene normally. Edit collision/interaction markers in the 2D editor.
 No Tiled, CSV edits or scene-generation command is required.
 See [native map editing and verification](docs/migration/native-maps.md).
