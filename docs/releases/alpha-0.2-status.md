@@ -159,8 +159,10 @@ Logs/captures: `/tmp/matrix-alpha02/`, especially `mobile-final2-check.log`,
   Xcode 26.3 is a host-compatible candidate per Apple, not a verified phone/build.
   Newer Xcode needs an OS this model does not officially support. No installations,
   signing/account/device changes, enrollment or purchases performed.
-- PixelLab HTTP MCP is configured/enabled, but no tools exposed to this session.
-  No secrets printed/committed and no paid generation called. Isolated temporary
+- PixelLab was unavailable in earlier sessions; Bubby refinement now exposed
+  callable tools and used one verified included-trial pigeon generation (39→38,
+  $0 credits). See its art/refinement record; no paid generation, secret exposure
+  or account configuration changes. Isolated temporary
   `ASEPRITE_USER_FOLDER` avoids its batch-only extension dialog error. See
   `docs/art-pipeline.md`; do not alter user plugin/credential configuration.
 - User's untracked `art/Sprite.aseprite` remains untouched/uncommitted, SHA256
