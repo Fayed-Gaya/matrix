@@ -99,6 +99,7 @@ test('landscape touch movement, terminal, seven routes, return and rotation', as
     if(code==='YOU') expect((await state(page)).camera_status).toContain('unavailable in this browser');
     if(code==='BUG') await page.touchscreen.tap(422,195);
     await page.screenshot({path:testInfo.outputPath(`${code}-touch.png`)});
+    if(code==='BUSBOY') await require('./busboy_path.cjs')(page,testInfo,true);
     await tap('Matrix');
     await expect.poll(async () => (await state(page)).code).toBe('');
   }

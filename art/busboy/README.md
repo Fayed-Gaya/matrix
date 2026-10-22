@@ -1,3 +1,8 @@
+# Busboy editable art
+
+Current sources/trial findings: [refinement/README.md](refinement/README.md).
+Older geometric drafts below are preserved as references, not current scenery.
+
 # Provisional Busboy props
 
 Original local geometric SVG/Aseprite sources: 32px corrupted root and 128×32
