@@ -1,5 +1,8 @@
 # Hub refinement review captures
 
+These are round-1 captures. [Round 2](../hub-round2/README.md) supersedes the
+room artwork and removes the terminal directory shown below.
+
 Captured from the implementation in `371696c`, using Godot 4.7.2 Compatibility.
 These are actual rendered frames, not concept art.
 

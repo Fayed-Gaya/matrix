@@ -1,18 +1,24 @@
 # Hub creative refinement — round 2
 
-Branch `feature/alpha-0.2-hub-refinement`, PR #17, based on `dab670f`.
+Branch `feature/alpha-0.2-hub-refinement`, [PR #17](https://github.com/Fayed-Gaya/matrix/pull/17), based on `dab670f`.
+Implementation commit: `c1aa0b6`; review captures/status follow in a separate commit.
 Scope: improve room art and remove exposed terminal destinations. No merge,
 tag, deployment or publication authorized. Pre-existing `project.godot` edits
 and private `art/Sprite.aseprite` are preserved and excluded.
 
 ## Current checkpoint / next action
 
-Detailed raster assets, native scene integration and minimal terminal implemented.
-Full checks, fresh runtime, native editor checks and local audited export passed.
-The final three-browser input run passed (1.6 min), including a 180px-high
-viewport. Final review captures, commits/push and PR update follow.
+Implementation complete; code and actual desktop/mobile/chamber/depth captures
+are committed on the existing refinement branch. No creative decision blocks
+this pass. Review the [new captures](../reviews/hub-round2/README.md) and latest
+PR CI before any separately authorized merge. No merge/release action performed.
 
-## Implemented so far
+Local input run: three browsers passed (1.6 min); refreshed artwork/capture smoke:
+two passed (1.1 min). Final native hub/mobile checks and rendered depth inspection
+passed. CI on PR #17 runs the full suite and six-browser matrix against committed
+settings, excluding the preserved user `project.godot` edits.
+
+## Implemented
 
 - Original shaded, layered raster assets: curved pod casings, opaque sealed cover,
   continuous empty ribbed berth (no head/torso-shaped cushions), latches, vents, mounting/service bay and instrumentation.
@@ -190,3 +196,17 @@ feel, audible audio and final creative acceptance remain unverified. No manual
 full-level regression was represented as performed. The existing release tag,
 archives and unrelated user assets/settings are preserved.
 
+
+## Resume / evidence
+
+All current implementation is on PR #17. Check its latest CI status/artifacts;
+no release tag or deployment was made. Local logs are under
+`/tmp/matrix-hub-round2/`: `check.log`, `runtime.log`, `editor.log`, `export.log`,
+`fast-final.log`, `browser-final.log`, `browser-captures.log`, `capture.log`,
+`closeup.log` and `depth.log`. Captures and this assessment are tracked; temporary
+render scripts/logs are not runtime dependencies.
+
+Next artistic input with highest value: the unavailable reference image or one
+approved style crop. PixelLab trial additionally needs active tool exposure and
+verified allowance. Neither blocks this playable implementation. Physical phone
+checks can happen when the owner chooses to test; do not imply they passed.
