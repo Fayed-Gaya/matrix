@@ -2,8 +2,9 @@
 
 Matrix uses Godot 4.7.2, typed GDScript and Compatibility rendering. The
 migration and native map authoring are merged. The owner manually tested the
-Alpha 0.1 hub and all ten levels locally. Alpha 0.2 redesigns need their own
-manual acceptance; see docs/releases/alpha-0.2-status.md.
+Alpha 0.1 hub and all ten levels locally. Alpha 0.2 physical-device/gameplay acceptance remains unverified. The owner
+deferred manual testing while integrating this private alpha; see
+docs/releases/alpha-0.2-status.md.
 YOU retains native camera behavior with platform/hardware limitations.
 
 ## GitHub Flow
@@ -89,7 +90,9 @@ checks remain available via make archived-godot-check. art/ contains editable
 sources and user work; copy only approved runtime exports to active modules.
 Keep BOUNCE/BALLS/BUG/YOU, evolve ZELDA into BUBBY and UNTITLED into BUSBOY,
 MACHINE is now a provisional seven-room showcase. No paid generation, fabricated personal references,
-merges, release tags or deployments under the current authorization.
+release tags or deployments under the current authorization. The owner
+authorized merging the Alpha 0.2 PR stack and validating integrated main on
+2026-10-22; that does not authorize publication or imply manual acceptance.
 
 ## Fast iteration and release validation
 

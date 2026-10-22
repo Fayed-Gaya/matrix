@@ -1,18 +1,25 @@
 # Alpha 0.2 implementation status
 
-Updated 2026-10-22. Work in `/Users/Fayed/git/matrix`, branch
-`feature/alpha-0.2-ios-feasibility`, PR #14 stacked on mobile PR #13.
-**No main merges, release tags or public deployments authorized.** Alpha 0.1
-`v0.1.0-alpha.1` remains `f6146918b424af8cc64e1969c7447892b766cacb`;
-its records/packages and the Pygame archive are preserved.
+Updated 2026-10-22. Alpha 0.2 PRs #7–#14 are merged into `main` with
+merge commits; original commits preserved. Integrated code commit:
+`90a8514786c14a7edccbbc1a587f3a25e4a08cac` (tree identical to validated
+feature tip `f1192e810db916af9ce810586b06b750cb7bbfb2`).
+
+The owner explicitly authorized integration and main validation, and deferred
+manual testing to keep the private-alpha workflow lightweight. Physical-device
+acceptance remains **unverified**, not a prerequisite for this integration.
+Release tags, publication, Pages deployment and notifications remain outside
+this authorization. Alpha 0.1 `v0.1.0-alpha.1` remains
+`f6146918b424af8cc64e1969c7447892b766cacb`; its records/packages and the
+Pygame archive are preserved.
 
 ## Current phase / next concrete action
 
-The eight-phase queue has implementation/assessment checkpoints below. Browser
-acceptance on physical devices remains pending. Inspect final PR CI, resolve
-actual failures, then use `alpha-0.2-mobile-testing.md` with the owner on iPhone
-17 Chrome/Safari. No verified physical-device access exists in this session.
-Do not publish or merge merely because automated checks pass.
+All eight development/assessment phases have checkpoints below. Finish/check
+CI on integrated `main`, then await a release-preparation/publication instruction.
+No manual gameplay work is requested at this juncture. The owner may use
+`alpha-0.2-mobile-testing.md` before sharing or refine testing later. Never claim
+physical iPhone/Android, audible-audio or full human gameplay verification.
 
 | Phase | Result | Commit / branch suffix (`feature/alpha-0.2-…`) | PR/base |
 | --- | --- | --- | --- |
@@ -25,19 +32,25 @@ Do not publish or merge merely because automated checks pass.
 | 7 Mobile | Touch/layout/rotation + automated browser coverage | `d9d457e`, `af0dffb`, `586b570` / mobile | [#13](https://github.com/Fayed-Gaya/matrix/pull/13) → #12 |
 | 8 iOS | Read-only feasibility, no native build | `2587bab` + handoff / ios-feasibility | [#14](https://github.com/Fayed-Gaya/matrix/pull/14) → #13 |
 
-All checkpoints pushed; none merged into main. A normal feature-branch merge
-brings mobile's CI fix into the assessment branch, preserving commits. Retarget
-stacked descendants only after authorized base merges. #7–#12 Checks/Godot/Web
-CI are green; #12 runs: 39729243722 / 39729243773. Mobile follow-up `af0dffb`
-passed Checks and all six browser tests in run 39731973805 (2.3 min). The next
-identical-game assessment run 39732120559 exposed two helper errors: Chrome was
-already within terminal range but demanded tighter pixel alignment; WebKit hit
-the desk collision while also already in interaction range. Both now stop at
-that real goal (`586b570`), retaining the terminal/launch/return assertions.
-Linux captures also revealed missing arrow glyphs; geometric arrows replace
-them. Inspect CI for `586b570` and the final assessment tip; those runs start
-on the synchronization push. Never treat the earlier success as proof that a
-newest run passed.
+All eight PRs were retargeted to main in dependency order and merged on
+2026-10-22. Merge commits: #7 `0da07b5`, #8 `7f42436`, #9 `b8783da`,
+#10 `b048186`, #11 `0424606`, #12 `b7d5878`, #13 `2f17ac2`, #14 `90a8514`.
+The PR/base column above records the original stack, not outstanding PRs.
+A documentation-only follow-up records authorization and integration status.
+
+All final feature-head CI passed, including six browser checks at both mobile
+`586b570` (run 39738016779) and final feature tip `f1192e8` (39738086285).
+Final feature browser matrix: six passed in 2.5 min. Linux WebKit Machine
+capture inspected: geometric arrows render correctly. Main push CI is automatic
+(check the newest main SHA/run); the first integrated run is 39739655477, with
+Checks 39739655444 already successful at this checkpoint. Further documentation
+integration triggers a fresh main run; report its actual result separately.
+
+Earlier CI failures were resolved, not ignored: short timed touches were
+unreliable on software rendering; subsequent helpers demanded a pixel waypoint
+beyond a usable desk collision edge. Helpers now stop at actual terminal range,
+while terminal/launch/return assertions remain. Linux missing arrow glyphs were
+replaced with geometry. Detailed local evidence remains below.
 
 ## Scope and playable content
 
