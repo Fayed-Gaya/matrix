@@ -57,11 +57,11 @@ func layout_controls() -> void:
 		if context == "opening": return
 	if not app.active_code.is_empty(): regions["Matrix"] = Rect2(size.x - 126, 12, 110, 44)
 	if context == "terminal":
-		var codes: Array = LevelRegistry.ENTRIES.keys()
-		for i: int in range(codes.size()):
-			regions[str(codes[i])] = Rect2(24 + (i % 4) * ((size.x - 48) / 4), 76 + (i / 4) * 62, (size.x - 64) / 4, 52)
-		regions.erase("Back")
-		regions["Back"] = Rect2(size.x - 126, 12, 110, 44)
+		# Web terminal owns real DOM input/buttons. Native touch uses LineEdit.
+		if not OS.has_feature("web"):
+			var panel: Rect2 = ((app.hub as MatrixHub).overlay as HubOverlay).terminal_panel()
+			regions["Back"] = Rect2(panel.end.x - 80, panel.position.y + 8, 68, 44)
+			regions["Enter"] = Rect2(panel.position + Vector2(24, 162), Vector2(92, 44))
 		return
 	if context in ["battle", "busboy_opening"] or app.active_code in ["BOUNCE", "BUG", "YOU"]: return
 	# Leave the world centre visible and provide two independent action fingers.
@@ -105,15 +105,12 @@ func _input(event: InputEvent) -> void:
 func activate(command: String) -> void:
 	if command in ["Up", "Down", "Left", "Right"]:
 		sync_movement()
-	elif context == "terminal" and LevelRegistry.ENTRIES.has(command):
-		var hub: MatrixHub = app.hub as MatrixHub
-		hub.overlay.input_text = command
-		hub.submit_code()
+	elif command == "Enter": send_key(KEY_ENTER)
 	elif command == "Matrix":
 		release_all()
 		app.return_to_hub()
 	elif command == "Back":
-		if context == "terminal": (app.hub as MatrixHub).overlay.terminal_active = false
+		if context == "terminal": (app.hub as MatrixHub).close_terminal()
 	elif command == "Begin": send_key(KEY_ENTER)
 	elif command == "Use": send_key(KEY_E)
 	elif command in ["Shoo", "Spark"]: send_key(KEY_SPACE)
@@ -163,6 +160,5 @@ func _draw() -> void:
 				points.append(rect.get_center() + point.rotated(angle))
 			draw_colored_polygon(points, Color.WHITE)
 			continue
-		draw_string(ThemeDB.fallback_font, rect.position + Vector2(5, 31), command, HORIZONTAL_ALIGNMENT_CENTER, rect.size.x - 10, 18, Color.WHITE)
-	if context == "terminal":
-		draw_string(ThemeDB.fallback_font, Vector2(24, 46), "Choose a terminal code", HORIZONTAL_ALIGNMENT_LEFT, size.x - 160, 22, Color.WHITE)
+		var font: Font = ((app.hub as MatrixHub).overlay as HubOverlay).terminal_font if context == "terminal" else ThemeDB.fallback_font
+		draw_string(font, rect.position + Vector2(5, 31), command, HORIZONTAL_ALIGNMENT_CENTER, rect.size.x - 10, 18, Color.WHITE)

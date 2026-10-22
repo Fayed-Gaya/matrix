@@ -1,92 +1,86 @@
 {
   "spawn": [
-    320,
-    256
+    112,
+    224
   ],
   "bounds": [
-    640,
-    352
+    512,
+    320
   ],
   "terminal": [
-    440,
-    160,
-    48,
-    24
+    416,
+    176,
+    64,
+    32
   ],
   "collision": [
     [
       0,
       0,
-      640,
+      512,
       64
     ],
     [
       0,
-      320,
-      640,
+      288,
+      512,
       32
     ],
     [
       0,
       64,
       32,
-      256
+      224
     ],
     [
-      608,
+      480,
       64,
       32,
-      256
+      224
     ],
     [
-      96,
-      128,
-      32,
+      70,
+      88,
+      68,
+      96
+    ],
+    [
+      166,
+      88,
+      68,
+      96
+    ],
+    [
+      422,
+      112,
+      52,
       64
     ],
     [
-      448,
-      96,
-      32,
-      64
+      342,
+      134,
+      68,
+      40
     ],
     [
-      544,
-      96,
-      32,
-      32
+      360,
+      164,
+      25,
+      20
     ],
     [
-      160,
-      96,
-      32,
-      32
-    ],
-    [
-      576,
-      256,
-      32,
-      32
-    ],
-    [
-      64,
-      128,
-      32,
-      32
-    ],
-    [
-      456,
-      200,
-      16,
-      16
+      46,
+      248,
+      54,
+      34
     ]
   ],
   "features": [
     {
-      "layer": "Details",
+      "layer": "Ground",
       "cell": [
-        3,
-        4
+        0,
+        0
       ],
       "atlas": [
         0,
@@ -94,36 +88,111 @@
       ]
     },
     {
-      "layer": "Details",
+      "layer": "Ground",
       "cell": [
-        14,
-        3
-      ],
-      "atlas": [
-        2,
-        1
-      ]
-    },
-    {
-      "layer": "Details",
-      "cell": [
-        14,
-        4
+        4,
+        5
       ],
       "atlas": [
         3,
-        1
+        0
       ]
     },
     {
-      "layer": "Details",
+      "layer": "Ground",
       "cell": [
-        8,
-        1
+        15,
+        5
       ],
       "atlas": [
+        5,
+        1
+      ]
+    }
+  ],
+  "objects": [
+    {
+      "node": "OpenChamber",
+      "position": [
+        64,
+        192
+      ],
+      "texture": "res://hub/assets/round2/pod-open.png",
+      "offset": [
         0,
-        2
+        -112
+      ]
+    },
+    {
+      "node": "SealedChamber",
+      "position": [
+        160,
+        192
+      ],
+      "texture": "res://hub/assets/round2/pod-sealed.png",
+      "offset": [
+        0,
+        -112
+      ]
+    },
+    {
+      "node": "SpaceViewport",
+      "position": [
+        256,
+        8
+      ],
+      "texture": "res://hub/assets/round2/viewport.png",
+      "offset": [
+        0,
+        0
+      ]
+    },
+    {
+      "node": "Computer",
+      "position": [
+        416,
+        176
+      ],
+      "texture": "res://hub/assets/round2/terminal.png",
+      "offset": [
+        0,
+        -80
+      ]
+    },
+    {
+      "node": "ChamberServiceBay",
+      "position": [
+        48,
+        64
+      ],
+      "texture": "res://hub/assets/round2/chamber-bay.png",
+      "offset": [
+        0,
+        0
+      ]
+    },
+    {
+      "node": "Worktable",
+      "position": [
+        336,
+        192
+      ],
+      "texture": "res://hub/assets/round2/worktable.png",
+      "offset": [
+        0,
+        -80
+      ]
+    },
+    {
+      "node": "Storage",
+      "position": [
+        40,
+        288
+      ],
+      "texture": "res://hub/assets/round2/locker.png",
+      "offset": [
+        0,
+        -56
       ]
     }
   ]

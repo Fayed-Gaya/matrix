@@ -68,30 +68,37 @@ func run() -> void:
 	key(KEY_ENTER)
 	check(not hub.overlay.opening, "Any key dismisses opening")
 	check(not hub.overlay.terminal_active, "Start key must not open terminal")
-	check(hub.player.position == Vector2(320, 256), "Cabin spawn")
-	check(hub.world.bounds == Vector2(640, 352), "Cabin bounds")
-	check(hub.world.collision_rects.size() == 11, "Cabin collision count")
-	check(hub.world.terminal_rect == Rect2(440, 160, 48, 24), "Computer approach trigger")
-	check(hub.world_viewport.size == Vector2i(640, 352), "2x rendering fits cabin at 1280x720")
+	check(hub.player.position == Vector2(112, 224), "Cabin spawn")
+	check(hub.world.bounds == Vector2(512, 320), "Cabin bounds")
+	check(hub.world.collision_rects.size() == 10, "Cabin collision count")
+	check(hub.world.terminal_rect == Rect2(416, 176, 64, 32), "Computer approach trigger")
+	check(hub.world_viewport.size == Vector2i(512, 320), "2x rendering fits cabin at 1280x720")
 	check(hub.world.get_node("Above").z_index > hub.player.z_index, "Above tiles overlay player")
 	await capture("hub")
 	key(KEY_E)
 	check(not hub.overlay.terminal_active, "Terminal cannot open from spawn")
 	check_input_bindings()
-	hub.player.position = Vector2(100, 100)
+	hub.player.position = Vector2(300, 224)
 	Input.action_press("hub_right")
 	await physics_frame
 	await physics_frame
 	Input.action_release("hub_right")
-	check(hub.player.position.x > 100 and hub.player.position.y == 100,
+	check(hub.player.position.x > 300 and hub.player.position.y == 224,
 		"Physics loop responds to movement actions")
 	check_movement()
+	check(is_equal_approx(hub.player.speed, 182.0), "Hub walking speed reduced by 30 percent")
+	hub.player.position = hub.world.player_spawn
+	hub.player.step(Vector2.UP, 1.0, hub.world.collision_rects, hub.world.bounds)
+	check(hub.player.position.y == 192.0, "Long frame stops at pod-front corridor")
+	hub.player.step(Vector2.RIGHT, 336.0 / 182.0, hub.world.collision_rects, hub.world.bounds)
+	check(hub.is_near_terminal(), "Walk from open chamber to computer across clear floor")
 	# Approach the computer from its walkable front, without penetrating the desk.
-	hub.player.position = Vector2(464, 184)
+	hub.player.position = Vector2(448, 208)
 	hub.player.step(Vector2.UP, 0.065, hub.world.collision_rects, hub.world.bounds)
 	check(hub.is_near_terminal(), "Terminal trigger is reachable without crossing collision")
 	key(KEY_E)
 	check(hub.overlay.terminal_active, "E opens reachable terminal")
+	await capture("terminal")
 	var stationary: Vector2 = hub.player.position
 	Input.action_press("hub_up")
 	await physics_frame
@@ -119,8 +126,6 @@ func run() -> void:
 	for code: String in LevelRegistry.ENTRIES:
 		key(KEY_E)
 		text(" " + code.to_lower() + " ")
-		if code == "YOU":
-			await capture("terminal")
 		key(KEY_ENTER)
 		await settle()
 		check(app.active_level != null and app.active_code == code, "Route for " + code)
@@ -151,14 +156,17 @@ func run() -> void:
 	check(app.active_level == null and fixture.get_ref() == null, "Independent level return/cleanup")
 	root.size = Vector2i(1920, 1080)
 	await settle()
-	check(hub.world_viewport.size == Vector2i(640, 352), "Large window clamps viewport to map")
-	check(hub.display.position == Vector2(320, 188), "Large world display is centered")
+	check(hub.world_viewport.size == Vector2i(512, 320), "Large window clamps viewport to map")
+	check(hub.display.position == Vector2(448, 220), "Large world display is centered")
 	root.size = Vector2i(640, 480)
 	await settle()
-	check(hub.world_viewport.size == Vector2i(320, 240), "Small window updates viewport")
+	check(hub.world_viewport.size == Vector2i(512, 320) and hub.pixel_scale == 1, "Small window fits whole cabin at 1x")
+	root.size = Vector2i(320, 240)
+	await settle()
+	check(hub.world_viewport.size == Vector2i(320, 240), "Tiny window updates viewport")
 	hub.player.position = hub.world.bounds - Vector2(8, 8)
 	hub.update_camera()
-	check(hub.camera_offset == Vector2(320, 112), "Camera clamps at map edge")
+	check(hub.camera_offset == Vector2(192, 80), "Camera clamps at map edge")
 	hub.player.position = Vector2(8, 8)
 	hub.update_camera()
 	check(hub.camera_offset == Vector2.ZERO, "Camera clamps at map origin")
@@ -184,16 +192,23 @@ func check_movement() -> void:
 	check(not player.hitbox().intersects(obstacles[0]), "No obstacle penetration")
 	player.position = Vector2(100, 100)
 	player.step(Vector2(1, 1), 0.1, [], Vector2(800, 800))
-	check(is_equal_approx(player.position.distance_to(Vector2(100, 100)), 26), "Normalized speed")
+	check(is_equal_approx(player.position.distance_to(Vector2(100, 100)), 18.2), "Normalized speed")
 	player.position = Vector2(10, 10)
 	player.step(Vector2(-1, -1), 0.1, [], Vector2(800, 800))
 	check(player.position == Vector2(8, 8), "Player stays inside bounds")
 	for direction: Vector2 in [Vector2.UP, Vector2.DOWN, Vector2.LEFT, Vector2.RIGHT]:
 		player.position = hub.world.player_spawn
 		player.step(direction, 3.0, hub.world.collision_rects, hub.world.bounds)
-		check(Rect2(32, 64, 576, 256).encloses(player.hitbox()), "Cabin walls stop long movement")
+		check(Rect2(32, 64, 448, 224).encloses(player.hitbox()), "Cabin walls stop long movement")
 		for obstacle: Rect2 in hub.world.collision_rects:
 			check(not player.hitbox().intersects(obstacle), "Cabin furniture/wall collision has no penetration")
+	# Approach both pod fronts and the computer with a long frame: stop at their feet.
+	for point: Vector2 in [Vector2(104,240), Vector2(200,240), Vector2(372,240), Vector2(448,240)]:
+		player.position = point
+		player.step(Vector2.UP, 1.0, hub.world.collision_rects, hub.world.bounds)
+		check(is_equal_approx(player.position.y, 192.0 if point.x < 400 else 184.0), "Pod/computer front blocks movement")
+		for obstacle: Rect2 in hub.world.collision_rects:
+			check(not player.hitbox().intersects(obstacle), "Pod/computer collision remains nonpenetrating")
 	player.position = hub.world.player_spawn
 
 
@@ -203,6 +218,11 @@ func check_map(path: String) -> void:
 		var rect: Array = expected.collision[i]
 		check(hub.world.collision_rects[i] == Rect2(rect[0], rect[1], rect[2], rect[3]),
 			"Converted collision rectangle " + str(i))
+	for object: Dictionary in expected.objects:
+		var sprite: Sprite2D = hub.world.get_node(object.node) as Sprite2D
+		check(sprite.position == Vector2(object.position[0], object.position[1]), "Native prop placement: " + object.node)
+		check(sprite.texture.resource_path == object.texture, "Independent editable prop art: " + object.node)
+		check(sprite.offset == Vector2(object.offset[0], object.offset[1]), "Prop art retains its placement around the depth anchor")
 	for feature: Dictionary in expected.features:
 		var layer: TileMapLayer = hub.world.get_node(feature.layer)
 		var cell: Vector2i = Vector2i(feature.cell[0], feature.cell[1])

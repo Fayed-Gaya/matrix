@@ -8,7 +8,10 @@ and asks for rotation. This is a browser game; no installation/account is needed
 Touch: direction pad for exploration/BALLS; Use for doors/NPCs/dialogue/terminal;
 Shoo in Bubby; Spark/Brace in Machine. Busboy combat uses its existing visible
 Strike/Guard/Cleanse/Continue/Retreat buttons. Matrix returns directly from any
-level. The terminal offers the same seven registered codes as tappable buttons.
+level. The terminal intentionally reveals no codes or destinations. Open with
+Use, tap the real text field for the phone keyboard, type a known code, then
+Go/ENTER. ESC closes the terminal. Browser DOM input follows visualViewport to
+keep entry/submit accessible when the keyboard occupies screen space.
 BUG uses a held/dragged finger as its left mouse pointer. BOUNCE needs no gameplay
 input. YOU explains browser camera unavailability and has a Matrix return button;
 native macOS camera code is unchanged. No browser camera permission is requested.
@@ -29,7 +32,9 @@ contexts use 844×390 CSS pixels and touch-enabled landscape. Local GPU-backed
 Chrome and WebKit use DPR 3. Software-rendered CI Chrome runs the full route
 test at DPR 1 plus a separate DPR-3 canvas/control-size/touch/rotation probe;
 WebKit retains full DPR-3 navigation. Tests navigate
-to the computer, tap every code, return, and rotate both ways. Browser touch
+to the computer, focus a real browser textbox, type every code, submit, return
+and rotate both ways. They also check unknown input, uppercase conversion, no
+visible code list and a 180px-high keyboard-space approximation. Browser touch
 movement dispatches canvas touch events and waits for observed physics progress
 and release (short timed pulses can fall between frames on software-rendered CI); these are simulated browser inputs, not
 physical-device tests or setters of game state. Read-only `?matrix_smoke=1`
@@ -78,3 +83,9 @@ Physical iPhone Chrome/Safari, Android hardware, full human walkthroughs, audibl
 audio, real-device thermal/memory behavior and artistic/balance acceptance remain
 manual. Playwright WebKit on macOS is useful evidence, not certification of iOS
 Safari or Chrome. Android emulation/hardware coverage must be reported separately.
+
+Round 2 still needs a real iPhone check: landscape → Use → tap field → verify
+the OS keyboard appears → edit/submit a known code with Go or ENTER → return
+to Matrix → reopen and close with ESC. Confirm keyboard dismissal, no unwanted
+page zoom/scroll, readable error feedback and controls after close/rotation.
+Playwright verifies focus/DOM typing/layout, not the iOS keyboard itself.

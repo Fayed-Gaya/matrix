@@ -105,8 +105,9 @@ unrelated user artwork, credentials, caches, generated previews or local tools.
 
 ## Phone browser checks
 
-Landscape touch controls and the in-game terminal code picker are enabled on
-touch devices. `make fast-check CHECKS=mobile` checks input/routing without
+Landscape touch controls are enabled on touch devices. The terminal has no
+code directory: tap its real text field to open the browser/OS keyboard and
+enter a code, then Go/ENTER. `make fast-check CHECKS=mobile` checks input/routing without
 cameras; the full browser matrix includes mobile Chrome/WebKit emulation.
 See [Alpha 0.2 mobile acceptance](releases/alpha-0.2-mobile-testing.md) for local
 iPhone hosting and the physical-device checklist. Emulation is not iOS approval.
