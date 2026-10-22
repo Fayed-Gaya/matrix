@@ -7,8 +7,8 @@
     ".json": 4,
     ".mp3": 2,
     ".ogg": 2,
-    ".png": 337,
-    ".tres": 11,
+    ".png": 349,
+    ".tres": 12,
     ".tscn": 26,
     ".ttf": 1,
     ".wav": 8
@@ -78,8 +78,8 @@
       "path": "app/web_diagnostics.gd",
       "module": "app",
       "type": ".gd",
-      "size": 1543,
-      "sha256": "6427a0f3c250864d506c196c61cfae1abb8f874b0f973aa13bf30536aeaa77be",
+      "size": 2663,
+      "sha256": "7f9f05ef139d9ac216e9309f0e55ad6a41aa6146d76394a90b211b18b6560560",
       "exact_archived_matches": [],
       "source_reference": false,
       "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
@@ -4538,6 +4538,126 @@
       "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
     },
     {
+      "path": "levels/busboy/assets/refinement/bedroll.png",
+      "module": "busboy",
+      "type": ".png",
+      "size": 558,
+      "sha256": "86faf540b5c0712dec779b43a52c992546855e62aa21dc1671c3e4b600f0074d",
+      "exact_archived_matches": [],
+      "source_reference": false,
+      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
+    },
+    {
+      "path": "levels/busboy/assets/refinement/fern.png",
+      "module": "busboy",
+      "type": ".png",
+      "size": 582,
+      "sha256": "37c9fd50446018f0b479fa262407b822c382480f2f4ee5e8c975349cf98f3df1",
+      "exact_archived_matches": [],
+      "source_reference": false,
+      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
+    },
+    {
+      "path": "levels/busboy/assets/refinement/fungi.png",
+      "module": "busboy",
+      "type": ".png",
+      "size": 218,
+      "sha256": "07f6c95cce9f0d0622695c4104d3440ad9594f68b8d32fb563eed7c5ebcf9fba",
+      "exact_archived_matches": [],
+      "source_reference": false,
+      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
+    },
+    {
+      "path": "levels/busboy/assets/refinement/glow.png",
+      "module": "busboy",
+      "type": ".png",
+      "size": 1281,
+      "sha256": "311b6793332a28b1a92e6590d438ab95c8b45d40ee724a4863f6defdc8921da4",
+      "exact_archived_matches": [],
+      "source_reference": false,
+      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
+    },
+    {
+      "path": "levels/busboy/assets/refinement/lantern.png",
+      "module": "busboy",
+      "type": ".png",
+      "size": 188,
+      "sha256": "d41214dd5b43d009693a21f76565574b135961d4e260d1ccc8c8ab1a41e60c67",
+      "exact_archived_matches": [],
+      "source_reference": false,
+      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
+    },
+    {
+      "path": "levels/busboy/assets/refinement/root.png",
+      "module": "busboy",
+      "type": ".png",
+      "size": 6309,
+      "sha256": "2c2012b4bf7de3895a53c418843ce9cd050e42a117b1dfba919f0670418d110a",
+      "exact_archived_matches": [],
+      "source_reference": false,
+      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
+    },
+    {
+      "path": "levels/busboy/assets/refinement/shrine.png",
+      "module": "busboy",
+      "type": ".png",
+      "size": 796,
+      "sha256": "8ad4393d9d7aadb092bf0e8ca5e85d03c71dd57629e074ef99d0629d0208c460",
+      "exact_archived_matches": [],
+      "source_reference": false,
+      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
+    },
+    {
+      "path": "levels/busboy/assets/refinement/table.png",
+      "module": "busboy",
+      "type": ".png",
+      "size": 667,
+      "sha256": "6483a9affe20ccbaf35e4844ec0c0f8c16918c8766c9e227ddd6ef96c85bd2bb",
+      "exact_archived_matches": [],
+      "source_reference": false,
+      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
+    },
+    {
+      "path": "levels/busboy/assets/refinement/terrain.png",
+      "module": "busboy",
+      "type": ".png",
+      "size": 932,
+      "sha256": "e14ed16e4c2bd39334f208f6e0e94ee217f8c734d9353d50bd7ed0e85f28174e",
+      "exact_archived_matches": [],
+      "source_reference": false,
+      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
+    },
+    {
+      "path": "levels/busboy/assets/refinement/traveller.png",
+      "module": "busboy",
+      "type": ".png",
+      "size": 1400,
+      "sha256": "678f2c92b1bea306c92c5c14b280deb7a3c7bc656fa3e54459b0c011ed28ff8e",
+      "exact_archived_matches": [],
+      "source_reference": false,
+      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
+    },
+    {
+      "path": "levels/busboy/assets/refinement/tree.png",
+      "module": "busboy",
+      "type": ".png",
+      "size": 7398,
+      "sha256": "750b3e1d06a29db67096483e047b2a0e0d46ac5aa167cd31e62e7080d47b8220",
+      "exact_archived_matches": [],
+      "source_reference": false,
+      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
+    },
+    {
+      "path": "levels/busboy/assets/refinement/waykeeper.png",
+      "module": "busboy",
+      "type": ".png",
+      "size": 1556,
+      "sha256": "917df671d9c76880a940a6f7dc4b7c5cd06937dbdc9e400f98e41060f4ca0d46",
+      "exact_archived_matches": [],
+      "source_reference": false,
+      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
+    },
+    {
       "path": "levels/busboy/assets/root.png",
       "module": "busboy",
       "type": ".png",
@@ -4600,8 +4720,8 @@
       "path": "levels/busboy/busboy.gd",
       "module": "busboy",
       "type": ".gd",
-      "size": 6305,
-      "sha256": "ba2d97c8cc517ea20ec5ecd1c2d54aa54c3d1d478f8e8cd590e60aeb36efe31e",
+      "size": 7167,
+      "sha256": "91e5ad252cac2ff29071bb8e45e4fda4e729165a4797d6d3cb78154a7e53524c",
       "exact_archived_matches": [],
       "source_reference": false,
       "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
@@ -4620,8 +4740,8 @@
       "path": "levels/busboy/encounter.gd",
       "module": "busboy",
       "type": ".gd",
-      "size": 1955,
-      "sha256": "2b02b6ef0d4255be726d30291a778add2f6a3bf6b3ad26a8e54a3237cadfadb2",
+      "size": 2758,
+      "sha256": "11c5a70b6fb29a72640ce15b74f5e6eafc35952e4ce3953d3fd150a608617d1f",
       "exact_archived_matches": [],
       "source_reference": false,
       "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
@@ -4630,8 +4750,8 @@
       "path": "levels/busboy/maps/cabin.tscn",
       "module": "busboy",
       "type": ".tscn",
-      "size": 9743,
-      "sha256": "25e31e3f9647ab42f2ca8afd30ce1235cb3084d37c1def6da71cb0f368a1323e",
+      "size": 7993,
+      "sha256": "23225e9165c32fc7a787c8b850f032e9586805dc791733fd245051147a6cb239",
       "exact_archived_matches": [],
       "source_reference": false,
       "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
@@ -4640,8 +4760,18 @@
       "path": "levels/busboy/maps/forest.tscn",
       "module": "busboy",
       "type": ".tscn",
-      "size": 17380,
-      "sha256": "87bf72d87ec00cedb9ef53f3b8a0f80c3ec96e9f0e3f2476beadd6b23b5fc80c",
+      "size": 25037,
+      "sha256": "0202b38952cae985f970e8ef4490243b05b484f9f5fd3b5f1df8db6f0f18fe31",
+      "exact_archived_matches": [],
+      "source_reference": false,
+      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
+    },
+    {
+      "path": "levels/busboy/maps/woodland.tres",
+      "module": "busboy",
+      "type": ".tres",
+      "size": 658,
+      "sha256": "8edbcd275444565de8a8bfcff8177019573f8caf62e3668d79cb67f2343b15b5",
       "exact_archived_matches": [],
       "source_reference": false,
       "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
@@ -4650,8 +4780,8 @@
       "path": "levels/busboy/npc.gd",
       "module": "busboy",
       "type": ".gd",
-      "size": 362,
-      "sha256": "108e3191bdad2dec0b9ac4ceeb552c8e715b92b6313c7170817401064c2494c3",
+      "size": 358,
+      "sha256": "0a18745d9d821899f07f2ab9323f8984db49edb91eb12a2f0f44ea51dc8a27ab",
       "exact_archived_matches": [],
       "source_reference": false,
       "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
@@ -4660,8 +4790,8 @@
       "path": "levels/busboy/overlay.gd",
       "module": "busboy",
       "type": ".gd",
-      "size": 5264,
-      "sha256": "ff33112c37b8a2d27051d423212cc7764c19d62fbaabc0b240fe138644e85cf6",
+      "size": 10025,
+      "sha256": "171282d7afae94ca1d0581a8eba0a7c3439679151b3049eaa16301a1e1e7270c",
       "exact_archived_matches": [],
       "source_reference": false,
       "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
@@ -4670,8 +4800,8 @@
       "path": "levels/busboy/player.gd",
       "module": "busboy",
       "type": ".gd",
-      "size": 2192,
-      "sha256": "7590d7afb716b1f958644170a47abe44730bc9d3a42ce0028fce174de012e1d7",
+      "size": 2190,
+      "sha256": "058d7424017f3db68a85d008165bf617c80757c764a10addd4c3b2373a437f4d",
       "exact_archived_matches": [],
       "source_reference": false,
       "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"

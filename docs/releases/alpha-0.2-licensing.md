@@ -23,3 +23,13 @@ No levels/notices were silently deleted or relicensed, and no new publication
 or legal-clearance decision is made. Alpha 0.1 publication approval does not
 automatically authorize an Alpha 0.2 release. Personal references and final art
 approval remain separate from licensing questions and automated test results.
+
+## Busboy refinement provenance
+
+Two included-trial PixelLab outputs (tree/root) and ten original local layered
+raster studies are documented in `art/busboy/refinement/README.md`. Existing
+opening, ambience and cropped atlas tent are reused; prototype sheets and
+original Untitled remain preserved. The canonical Doc links Clockwork Raven's
+forest pack but does not establish that it is the origin of the local files.
+No Kobe authorship/approval or redistribution clearance is asserted. Provider
+output terms and existing asset grants remain part of the unresolved review.

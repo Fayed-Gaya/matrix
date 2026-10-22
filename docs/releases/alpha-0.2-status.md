@@ -15,11 +15,11 @@ Pygame archive are preserved.
 
 ## Current phase / next concrete action
 
-All eight development/assessment phases have checkpoints below. Integrated main
-CI passed through `fee16d7`. The next authorized development cycle is the
-[spaceship hub refinement, round 2](alpha-0.2-hub-round2.md), on
-`feature/alpha-0.2-hub-refinement`; that record owns current implementation/checks.
-Do not merge or publish this refinement without fresh authorization.
+Hub PR #17 merged at `a3588fb`; integrated main CI passed. Bubby PR #18
+(`feature/alpha-0.2-bubby-refinement`, `2f95f55`) is independent and awaiting owner
+creative review; do not modify or merge it without approval. Current work is
+[Busboy creative refinement](alpha-0.2-busboy-refinement.md), based directly on
+main in `~/git/matrix-busboy-refinement`. No release authorization.
 No manual gameplay work is requested at this juncture. The owner may use
 `alpha-0.2-mobile-testing.md` before sharing or refine testing later. Never claim
 physical iPhone/Android, audible-audio or full human gameplay verification.

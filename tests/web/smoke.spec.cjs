@@ -41,6 +41,7 @@ test('opening, real keyboard navigation, active terminal codes, return and resiz
     expect((await state(page)).scene).toMatch(/^res:\/\/levels\/.+\.tscn$/);
     if (code === 'YOU') expect((await state(page)).camera_status).toContain('unavailable in this browser');
     await page.screenshot({path: testInfo.outputPath(`${code}.png`)});
+    if(code==='BUSBOY') await require('./busboy_path.cjs')(page,testInfo,false);
     await page.keyboard.press('Escape');
     await expect.poll(async () => (await state(page)).code).toBe('');
   }
