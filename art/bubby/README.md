@@ -1,3 +1,9 @@
+# Bubby art
+
+Current masters and actual PixelLab trial: [refinement/README.md](refinement/README.md).
+The older SVG/Aseprite studies below are retained as draft references; current
+rooms use independent refinement sprites and the new room atlas.
+
 # Provisional Bubby art sources
 
 Original local geometric pixel-art SVGs for a generic apartment, small outdoor

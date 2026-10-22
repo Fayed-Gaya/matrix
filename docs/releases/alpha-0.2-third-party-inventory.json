@@ -810,8 +810,8 @@
       "path": "levels/bubby/assets/refinement/grand-coo.png",
       "module": "bubby",
       "type": ".png",
-      "size": 2633,
-      "sha256": "fedb5d13b54058a6d37a7f6b9fec29f86c4f64f40a7272942adad544c9b990e6",
+      "size": 2625,
+      "sha256": "307b9ca7f9c23f1c74f77ab45d85b1f91a653bab6138f04afc182c674d231d46",
       "exact_archived_matches": [],
       "source_reference": false,
       "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
@@ -941,7 +941,7 @@
       "module": "bubby",
       "type": ".tscn",
       "size": 8109,
-      "sha256": "120567acbd919af3c43c254740f5d14fac1efe121ecf38308670121a853fde9c",
+      "sha256": "75eb15def08e6427a15ff644a690e54ad34e04cd06ace60d6e764799b15e1ae3",
       "exact_archived_matches": [],
       "source_reference": false,
       "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"

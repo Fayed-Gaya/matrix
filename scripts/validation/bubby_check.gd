@@ -65,6 +65,11 @@ func run() -> void:
 	assert(not level.dialogue.is_empty() and not level.complete)
 	key(KEY_ESCAPE)
 	assert(level.dialogue.is_empty() and app.active_level == level)
+	# Natural approaches below the visible curtain must not snag its collider.
+	for approach_y: float in [268.0, 282.0, 306.0]:
+		level.player.position = Vector2(235, approach_y)
+		level.player.step(Vector2.RIGHT, 2.4, level.room.collision_rects, level.room.bounds)
+		assert(level.near("Exit"), "Door curtain must leave the lower approach clear")
 	# Walk the authored route from spawn to door using the actual collision algorithm.
 	level.player.position = level.room.player_spawn
 	for i: int in range(8): level.player.step(Vector2.DOWN, 0.05, level.room.collision_rects, level.room.bounds)

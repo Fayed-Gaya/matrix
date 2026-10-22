@@ -82,9 +82,11 @@ are in modules/shared. Shared avatar/movement remain small; games are independen
 
 - Hub: original cabin/bed/window/storage/plant/computer, boundaries, movement,
   opening, terminal and preserved return position.
-- Bubby: generic **provisional** apartment/outside, tutorial avatar/music,
-  three-shoo pigeon, composure/retry, envelope/table objective and draft ending.
-  No Kate apartment/story specifics were available; no biography invented.
+- Bubby refinement: **provisional** apartment → pigeon-occupied balcony, scattering
+  birds, cute Grand Coo with marked hops/recovery shoo windows, composure/retry,
+  unharmed departure and balcony-reclamation ending. New editable raster art;
+  tutorial avatar/music and missing Kate references remain explicit. See its
+  refinement journal for current validation/PR status.
 - Busboy: retained forest art/characters/opening/ambience, waykeeper dialogue,
   Strike/Guard/Cleanse with mana/stain/telegraphed turns, retreat/defeat/retry,
   cleared gate and shrine ending. Earth/Fire/Blood remain future vision.

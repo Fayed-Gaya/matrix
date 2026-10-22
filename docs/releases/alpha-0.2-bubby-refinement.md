@@ -44,5 +44,18 @@ Read hub's raster/Aseprite findings. No reliable Kate/apartment photos supplied.
 
 ## Validation / remaining acceptance
 
-Hub integration CI passed; Bubby implementation validation pending. Physical
+Passed locally: full `make check` (archive771/tools/all seven levels),
+`make runtime-check`, audited `make web-export`, targeted `bubby mobile`, and
+actual Compatibility-window complete progression/captures. Aseprite exported
+all twelve environment masters; explicit pigeon-master export was pixel-identical
+to the original PixelLab PNG. Balance after the trial: 38 generations, $0 credits.
+
+Browser round one exposed a genuine oversized curtain collider: its lower end
+extended below the visible curtain, blocking a natural y≈272 approach. Fixed to
+match its actual visible extent; added long-frame native approaches at y=268,
+282 and 306. Browser waypoint tolerances/assertions were unchanged. Targeted
+checks and fresh audited export passed after correction; browser retry pending.
+No archive/other-level assets or Alpha 0.1 records changed.
+
+Physical
 iPhone gameplay/audio/OS keyboard and artistic acceptance remain unverified.

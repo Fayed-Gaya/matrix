@@ -36,7 +36,7 @@ size = Vector2(132, 17)
 size = Vector2(70, 22)
 
 [sub_resource type="RectangleShape2D" id="C8"]
-size = Vector2(12, 69)
+size = Vector2(12, 40)
 
 [node name="Apartment" type="Node2D"]
 y_sort_enabled = true
@@ -126,7 +126,7 @@ position = Vector2(297.0, 175.0)
 shape = SubResource("C7")
 
 [node name="Boundary8" type="CollisionShape2D" parent="Collisions"]
-position = Vector2(539.0, 228.5)
+position = Vector2(539.0, 214.0)
 shape = SubResource("C8")
 
 [node name="PlayerSpawn" type="Marker2D" parent="."]
