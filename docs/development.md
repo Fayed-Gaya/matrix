@@ -110,3 +110,5 @@ touch devices. `make fast-check CHECKS=mobile` checks input/routing without
 cameras; the full browser matrix includes mobile Chrome/WebKit emulation.
 See [Alpha 0.2 mobile acceptance](releases/alpha-0.2-mobile-testing.md) for local
 iPhone hosting and the physical-device checklist. Emulation is not iOS approval.
+
+Native iOS is assessment-only: [toolchain and personal-device plan](releases/alpha-0.2-ios-feasibility.md).

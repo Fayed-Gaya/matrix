@@ -1,162 +1,152 @@
 # Alpha 0.2 implementation status
 
-Updated 2026-10-22. Work in `/Users/Fayed/git/matrix`; current branch
-`feature/alpha-0.2-mobile`, stacked on workflow PR #12. **No merges, release tags or
-public deployments authorized.** Keep Alpha 0.1 tag `v0.1.0-alpha.1` at
-`f6146918b424af8cc64e1969c7447892b766cacb`, published bytes and Pygame archive.
+Updated 2026-10-22. Work in `/Users/Fayed/git/matrix`, branch
+`feature/alpha-0.2-ios-feasibility`, PR #14 stacked on mobile PR #13.
+**No main merges, release tags or public deployments authorized.** Alpha 0.1
+`v0.1.0-alpha.1` remains `f6146918b424af8cc64e1969c7447892b766cacb`;
+its records/packages and the Pygame archive are preserved.
 
-## Scope/order and current action
+## Current phase / next concrete action
 
-1. Retire PONG/JUMP/MARIO/MONSTERS — implemented.
-2. Original one-room spaceship hub — implemented.
-3. BUBBY replaces ZELDA — playable provisional delivery/pigeon slice.
-4. BUSBOY replaces UNTITLED — playable provisional forest/turn encounter.
-5. MACHINE — playable provisional home/town/three interiors/NPCs/boss showcase.
-6. Workflow/performance — implemented; added targeted/full validation paths,
-   prevent development/output imports, clean reproducible exports, isolated
-   Aseprite batch helper and practical tooling/authoring documentation.
-7. Desktop/mobile browsers — implemented; physical acceptance pending; landscape/touch, all seven routes/return,
-   BUG pointer/touch, YOU fallback, iPhone Chrome/Safari prioritized. Android
-   desired without blocking on unavailable hardware. Real iPhone needs owner.
-8. Native iOS feasibility — **next/current phase**, personal-device milestone only; no purchases,
-   enrollment, certificates, TestFlight/App Store or native publication.
+The eight-phase queue has implementation/assessment checkpoints below. Browser
+acceptance on physical devices remains pending. Inspect final PR CI, resolve
+actual failures, then use `alpha-0.2-mobile-testing.md` with the owner on iPhone
+17 Chrome/Safari. No verified physical-device access exists in this session.
+Do not publish or merge merely because automated checks pass.
 
-The owner supplied the truncated remainder; no missing-scope blocker remains.
-Proceed with thoughtful provisional choices, no paid API generation, no invented
-Kate details/Kobe preferences, and do not require Kobe participation. Canonical
+| Phase | Result | Commit / branch suffix (`feature/alpha-0.2-…`) | PR/base |
+| --- | --- | --- | --- |
+| 1 Catalog | Four modules archived/excluded | `3e840c2` / catalog | [#7](https://github.com/Fayed-Gaya/matrix/pull/7) → main |
+| 2 Hub | Original one-room spaceship | `46f5f77` / hub | [#8](https://github.com/Fayed-Gaya/matrix/pull/8) → #7 |
+| 3 Bubby | Provisional apartment/pigeon delivery | `38876f2` / bubby | [#9](https://github.com/Fayed-Gaya/matrix/pull/9) → #8 |
+| 4 Busboy | Forest/NPC/turn encounter slice | `09771b3` / busboy | [#10](https://github.com/Fayed-Gaya/matrix/pull/10) → #9 |
+| 5 Machine | Home/town/interiors/NPCs/boss | `b8d781b` / machine | [#11](https://github.com/Fayed-Gaya/matrix/pull/11) → #10 |
+| 6 Workflow | Targeted/full checks, clean audited exports, art helper | `66448ab` / workflow | [#12](https://github.com/Fayed-Gaya/matrix/pull/12) → #11 |
+| 7 Mobile | Touch/layout/rotation + automated browser coverage | `d9d457e`, `af0dffb`, `586b570` / mobile | [#13](https://github.com/Fayed-Gaya/matrix/pull/13) → #12 |
+| 8 iOS | Read-only feasibility, no native build | `2587bab` + handoff / ios-feasibility | [#14](https://github.com/Fayed-Gaya/matrix/pull/14) → #13 |
+
+All checkpoints pushed; none merged into main. A normal feature-branch merge
+brings mobile's CI fix into the assessment branch, preserving commits. Retarget
+stacked descendants only after authorized base merges. #7–#12 Checks/Godot/Web
+CI are green; #12 runs: 39729243722 / 39729243773. Mobile follow-up `af0dffb`
+passed Checks and all six browser tests in run 39731973805 (2.3 min). The next
+identical-game assessment run 39732120559 exposed two helper errors: Chrome was
+already within terminal range but demanded tighter pixel alignment; WebKit hit
+the desk collision while also already in interaction range. Both now stop at
+that real goal (`586b570`), retaining the terminal/launch/return assertions.
+Linux captures also revealed missing arrow glyphs; geometric arrows replace
+them. Inspect CI for `586b570` and the final assessment tip; those runs start
+on the synchronization push. Never treat the earlier success as proof that a
+newest run passed.
+
+## Scope and playable content
+
+Order preserved: retire four → hub → Bubby → Busboy → Machine → workflow →
+browser/mobile → iOS feasibility. The owner supplied the truncated remainder.
 [Matrix plan](https://docs.google.com/document/d/10g9vxXnyFI6-pNac0DiiAO6ksOC0VN4FpzJWzzscIlU/edit)
 and [Busboy plan](https://docs.google.com/document/d/183hSTmkQ3NHhDRTlgq8zJkLPunC7iQTP3-npaEApzno/edit)
-were read through Google Drive, including Bubby and release/mobile tabs.
+were read through Google Drive, including Bubby/release/mobile tabs.
 
-## Commits/stacked PRs
+Active: **BOUNCE, BALLS, BUG, YOU, BUBBY, BUSBOY, MACHINE**. ZELDA/UNTITLED
+aliases and PONG/JUMP/MARIO/MONSTERS are rejected. Complete retired Godot modules
+and original hub art/layout/fixtures remain in `archive/godot/`; original
+Zelda/Untitled plus frozen checks remain in Bubby/Busboy `source/`. All excluded
+from imports and PCK, including retired import-cache fingerprints. Original
+full ten-level tests passed via `make archived-godot-check`, using pinned
+`145771f` in a disposable tree. Pygame 771-file preservation passes: 709 original
+bytes; 62 match exact in-memory LF→CRLF reconstruction after Git normalization.
+No archive files rewritten. Historical Alpha 0.1 docs/inventory unchanged.
 
-| Phase | Commit | Branch suffix (`feature/alpha-0.2-…`) | PR/base |
-| --- | --- | --- | --- |
-| Catalog/archive | `3e840c2` | catalog | [#7](https://github.com/Fayed-Gaya/matrix/pull/7) → main |
-| Hub/art | `46f5f77` | hub | [#8](https://github.com/Fayed-Gaya/matrix/pull/8) → #7 |
-| Bubby | `38876f2` | bubby | [#9](https://github.com/Fayed-Gaya/matrix/pull/9) → #8 |
-| Busboy | `09771b3` | busboy | [#10](https://github.com/Fayed-Gaya/matrix/pull/10) → #9 |
-| Machine/shared actor | `b8d781b` | machine | [#11](https://github.com/Fayed-Gaya/matrix/pull/11) → #10 |
-| Workflow/export | `66448ab` | workflow | [#12](https://github.com/Fayed-Gaya/matrix/pull/12) → #11 |
+Twelve authoritative native maps: `hub/world.tscn`; Bubby apartment/outside;
+Busboy cabin/forest; Machine bedroom/home/town/workshop/library/cafe/outskirts.
+External TileSets/collisions/markers own editing; no TMX/CSV conversion. Editable
+SVG/Aseprite art is under `art/{hub,bubby,busboy,machine}`; approved runtime PNGs
+are in modules/shared. Shared avatar/movement remain small; games are independent.
 
-All pushed, none merged. #7–#11 GitHub Checks/Godot/Web are green, including
-Chrome/Firefox/Edge. Machine CI is also green (Godot/Web run 39727878256; Checks 39727878312). PR validation also runs
-on stacked Alpha 0.2 bases. Retarget descendants after approved base merges.
+- Hub: original cabin/bed/window/storage/plant/computer, boundaries, movement,
+  opening, terminal and preserved return position.
+- Bubby: generic **provisional** apartment/outside, tutorial avatar/music,
+  three-shoo pigeon, composure/retry, envelope/table objective and draft ending.
+  No Kate apartment/story specifics were available; no biography invented.
+- Busboy: retained forest art/characters/opening/ambience, waykeeper dialogue,
+  Strike/Guard/Cleanse with mana/stain/telegraphed turns, retreat/defeat/retry,
+  cleared gate and shrine ending. Earth/Fire/Blood remain future vision.
+  No identified Kobe artwork/approval; new fiction/props are provisional.
+- Machine: original provisional clockwork premise/art, three NPC relays, gated
+  governor boss with marked pulses, Spark/Brace, retry, ending/restarted clock.
+  No XP/persistence. Intended few-minute length has not been human-measured.
 
-## Implemented game/catalog details
+## Verification and measured results
 
-Active: BOUNCE, BALLS, BUG, YOU, BUBBY, BUSBOY, MACHINE. Old public aliases
-ZELDA/UNTITLED and the four retired codes are rejected. Complete retired modules
-and original hub art/layout/fixtures remain under `archive/godot/`. Original
-Zelda/Untitled and frozen checks remain under Bubby/Busboy `source/`, excluded
-by `.gdignore` and export policy. `make archived-godot-check` validates the full
-original ten-level suite in a disposable tree from pinned `145771f`; it passed.
-Pygame `legacy/pygame/` remains unchanged (all 771 checksums verified).
+Passed locally: full `make check` (all active mechanics, touch combat adapters,
+focus/multi-finger/release/rotation/routes), `make runtime-check`, staged
+`make web-export` with isolated PCK/dynamic-manifest/exclusion audit, archive
+checks, licensing inventory freshness, two export-replacement tests and diff
+whitespace checks. A disposable Aseprite export passed without changing prefs.
+Each new game also passed positioned-fixture progression in headless and actual
+Compatibility windows; captures inspected. These are not human walkthroughs.
 
-Twelve native editable maps: `hub/world.tscn`; Bubby apartment/outside; Busboy
-cabin/forest; Machine bedroom/home/town/workshop/library/cafe/outskirts. Scenes,
-external TileSets, collision shapes and markers own editing; no TMX/CSV conversion.
-Editable original SVG/Aseprite sources under `art/{hub,bubby,busboy,machine}`;
-approved runtime PNGs in modules and shared avatar under `shared/actors/`.
+Actual editor opened/painted/erased/saved/reloaded all twelve maps. Sixteen
+nonblank native/custom transform pixel comparisons passed. An occluded-window
+frame-signal stall was fixed using explicit `RenderingServer.force_draw(false)`;
+all comparisons retained plus a nonblank guard, no timeout increase.
 
-Bubby: generic provisional apartment/outside, reused tutorial avatar/music,
-three-shoo pigeon, composure/retry, envelope objective and placeholder ending.
-No Kate apartment/story references were available; nothing asserts her biography.
-Busboy: retained forest art/characters/opening/ambience, NPC conversation,
-Strike/Guard/Cleanse with mana/stain/telegraphed turns, retreat/retry, cleared
-collision gate and shrine ending. Earth/Fire/Blood remain future vision. No
-identified Kobe art/approval; new props/fiction explicitly provisional.
-Machine: original provisional clockwork premise/art, shared Matrix avatar,
-three NPC relays, realtime marked pulses/spark/brace/retry, ending and restarted
-town clock. No XP/persistence. Intended few-minute length is not human-measured.
+Desktop Chrome/Firefox/Edge passed initial mobile CI. Local GPU-backed Chrome,
+Firefox, mobile Chrome DPR 3 and mobile WebKit DPR 3 passed four tests (1.0 min).
+Local Edge is absent; CI installs it. Short timed touch presses were unreliable
+on CI; frame-observed input/release and realistic interaction waypoints replace
+that assumption. High-DPI software Chrome also overshot due rendering latency.
+CI now keeps full touch navigation at DPR 1 plus a separate DPR-3 scaling/touch/
+rotation probe; WebKit retains full DPR-3 navigation. No route/proximity/return
+assertions removed. Terminal-edge follow-up also stops at usable range instead
+of demanding a point beyond the desk collision. Failure traces keep DOM/network/source and explicit scene/
+failure PNGs, without continuous canvas screencasting. Local CI-flag retest:
+Chrome full 24.4 s, Chrome DPR-3 layout 14.8 s, WebKit full 13.2 s; all passed
+(three tests, 1.3 min). Physical iOS/Android acceptance is unverified.
 
-## Evidence and limitations
+Final terminal-edge/portable-arrow checkpoint: full make check, audited export
+and five locally available browser tests passed (1.1 min): desktop Chrome 7.5 s,
+Firefox 22.3 s, mobile Chrome DPR 3 10.2 s, Chrome DPR-3 layout 3.5 s and mobile
+WebKit DPR 3 10.9 s. Local Edge remains absent; CI installs it. Logs:
+`terminal-edge-{full,export,browsers}.log`. Geometry avoids platform-font tofu;
+the hub now says Tap Begin/Use on touch devices.
 
-Per meaningful checkpoint: headless resource/behavior checks, fresh runtime,
-web export, isolated PCK/dynamic/import-cache exclusion audit and Chrome real
-keyboard terminal/return/resize smoke passed. Each new game also passed targeted
-headless and actual Compatibility-window progression; rendered captures inspected.
-These use positioned fixtures, not full human walkthroughs.
+Baseline main `145771f`: check 155.486 s, fresh runtime 67.049 s, export 40.124 s,
+PCK audit 5.106 s; Chrome ten-code smoke ~1.4 min (rounded). Catalog-only:
+53.904 / 30.792 / 55.140 / 4.181 s; Chrome 33.8 s. No catalog-only export-time
+gain claimed. Workflow observations: Machine fast 8.538 s, full 13.101 s,
+export 10.444 s before embedded audit, PCK 1.369 s. Final full Godot stage sum
+14.46 s (excludes archive/tool overhead). Single local observations with cache/
+editor effects, not controlled benchmarks.
 
-Actual editor passed open/paint/erase/save/reload on all twelve scenes, plus all
-sixteen nonblank native/custom transform pixel comparisons. Initial twelve-map
-run stalled after successful edits waiting for an occluded-window draw signal;
-fixed with explicit offscreen `RenderingServer.force_draw(false)`, keeping all
-comparisons and adding a nonblank guard. Rerun passed; no timeout increase.
-Machine Chrome seven-code suite: 10.0 s. Local logs/captures:
-`/tmp/matrix-alpha02/` (`baseline*`, `catalog*`, `hub*`, `bubby*`, `busboy*`, `machine*`).
+Raw web bytes: baseline 58,556,112 → about 44,048,920 (−24.8%); PCK
+18,547,604 → 4,041,252 (−78.2%). Engine WASM remains 39,514,754 B. These are
+uncompressed file totals, not download transfer sizes. Generated exports ignored.
+Logs/captures: `/tmp/matrix-alpha02/`, especially `mobile-final2-check.log`,
+`mobile-runtime-check.log`, `mobile-synchronized-export.log`,
+`mobile-density-split-browsers.log`; CI retains logs/scene PNGs/build/source.
 
-Baseline main `145771f`: make check 155.486 s, fresh runtime 67.049 s,
-export 40.124 s, PCK audit 5.106 s; Chrome ten-code suite ~1.4 min (rounded).
-After catalog-only retirement: check 53.904 s, runtime 30.792 s, export 55.140 s
-(no export-time improvement), PCK 4.181 s, Chrome 33.8 s. Raw web bytes
-58,556,112 → 46,033,285 (−21.4%); PCK 18,547,604 → 6,024,772 (−67.5%).
-Engine WASM alone 39,514,754 B. Later six-game Busboy build 43,964,097 B,
-PCK 3,955,584 B; workflow build 44,038,744 B (seven levels). Single local observations
-with cache/editor effects, not controlled benchmarks or network transfer sizes.
+## Remaining acceptance / safeguards
 
-Human full-path gameplay, artistic acceptance, personal narrative, encounter
-balance/feel, audible audio and real device/mobile/browser acceptance remain
-unverified for redesigned content. Licensing issues remain unresolved. Historical
-Alpha 0.1 docs/inventory unchanged in final stack; current inventory/addendum:
-`alpha-0.2-third-party-inventory.json`, `alpha-0.2-licensing.md`.
-
-## Tooling observations/resume safeguards
-
-- User's untracked `art/Sprite.aseprite` is untouched/uncommitted; SHA256
+- Owner iPhone 17 Chrome/Safari: full paths, landscape/notch/browser bars,
+  simultaneous controls, readable dialogue, audio, sleep/resume, loading/frame
+  rate/memory. Android desired, unavailable hardware does not block private alpha.
+- Human art/narrative/balance/feel acceptance remains. Kate-specific details and
+  Kobe direction are provisional; do not require his participation or invent facts.
+- Licensing remains unresolved: `alpha-0.2-licensing.md` and current
+  `alpha-0.2-third-party-inventory.json`. Passing inventory is not clearance.
+- iOS: see `alpha-0.2-ios-feasibility.md`. Intel MacBookPro15,4 / macOS 15.8.1;
+  no full Xcode, iPhoneOS SDK or matching iOS templates, about 19 GiB free.
+  Xcode 26.3 is a host-compatible candidate per Apple, not a verified phone/build.
+  Newer Xcode needs an OS this model does not officially support. No installations,
+  signing/account/device changes, enrollment or purchases performed.
+- PixelLab HTTP MCP is configured/enabled, but no tools exposed to this session.
+  No secrets printed/committed and no paid generation called. Isolated temporary
+  `ASEPRITE_USER_FOLDER` avoids its batch-only extension dialog error. See
+  `docs/art-pipeline.md`; do not alter user plugin/credential configuration.
+- User's untracked `art/Sprite.aseprite` remains untouched/uncommitted, SHA256
   `a50dd0d09cd0e7f6753b81089849f0001f4c9a07b338926eb17ea8a29b51bd32`.
-- An existing root Godot editor and idle Codex app sessions were observed;
-  no concurrent edits detected. Do not terminate or overwrite them.
-- PixelLab HTTP MCP is configured/enabled locally with Authorization; no secret
-  printed/committed. No PixelLab tools are exposed to this session and no paid
-  generation called. Local original art avoided this dependency.
-- Installed Aseprite PixelLab extension logs a batch-only dialog error. Verified
-  documented temporary `ASEPRITE_USER_FOLDER` exports successfully without that
-  error or changing user configuration; wrapper implemented in Phase 6.
-- Local gh CLI authentication returns 401; connected GitHub tools work for PR/CI.
-- Next session: inspect Git/status/concurrency first, continue Phase 7 validation on the
-  current branch, then iOS feasibility Phase 8. Keep all archives,
-  notices, user art and immutable release intact; commit/push checkpoints.
-
-## Phase 6 checkpoint
-
-Implemented targeted `make fast-check CHECKS=...`, full `make release-check`,
-per-stage timings, tracked build/export import barriers, clean staged web exports
-with mandatory PCK audit before replacement, and explicit isolated Aseprite
-exports. Failed builds preserve the previous local preview; successful builds
-remove obsolete workers/sidecars. Two focused replacement tests pass. Full CI
-coverage remains enabled; duplicate post-export audit removed because it now
-runs inside the export command. See docs/development.md and art-pipeline.md.
-
-Local observations: selected Machine check 8.538 s, full check 13.101 s, export
-10.444 s before embedded audit, isolated PCK audit 1.369 s. Not controlled
-benchmarks. Final full check and Chrome seven-code smoke passed (10.0 s);
-clean embedded-audit export and explicit disposable Aseprite export passed.
-Logs: /tmp/matrix-alpha02/workflow-*. Next: Phase 7 mobile controls and tests.
-
-## Phase 7 implementation checkpoint
-
-Landscape multi-touch adapter reuses existing movement/key actions, with Use,
-Shoo, Spark/Brace and direct Matrix return. All seven terminal codes are touch
-buttons. Portrait pauses/resumes; focus/context changes release held inputs.
-BUG supports held/dragged/released touch and keeps original mouse behavior.
-Compact exploration overlays preserve dialogue; native camera path unchanged.
-Phone browser CSS coordinates now drive logical canvas sizing (initial DPR-3
-probe otherwise rendered a 2532×1170 root for 844×390 CSS pixels).
-
-Full make check including multi-touch/focus/rotation/combat/route checks passed,
-fresh runtime passed, final staged export/PCK audit passed, license inventory
-refreshed and checked. First browser matrix: desktop Chrome/Firefox and mobile
-Chrome passed. Local Edge is absent (not a gameplay failure); CI installs it.
-WebKit loaded the game but its Touch constructor rejected the harness; changed
-to generic canvas touch events and rerunning all available browsers. Initial
-combat fixture exited before audio mixer cleanup; a 0.15 s drain resolves the
-leak with strict leak detection retained. Direction labels changed to arrows
-after inspecting phone captures. No real iPhone/Android test claimed.
-
-Owner steps: docs/releases/alpha-0.2-mobile-testing.md. Final rerun: desktop Chrome 7.2 s, Firefox 21.1 s, mobile Chrome 10.9 s and
-mobile WebKit 12.9 s passed (four tests, 1.0 min total). Physical-device behavior
-is unverified. Final full check includes combat adapters and passes without leaks;
-fresh runtime and audited export pass. Local Edge remains unavailable; full CI
-installs Edge and WebKit. Next concrete action: commit/push Phase 7 and open its
-stacked PR, then read-only Phase 8 assessment.
+- Inspect Git/worktrees/concurrency before resuming. Do not stop user editors or
+  discard work. Local gh auth fails; connected GitHub tools work. Use
+  `make fast-check CHECKS=...` for iteration and `make release-check` for the
+  comprehensive automated path. Real devices/art/audio require manual acceptance.
