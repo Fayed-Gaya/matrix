@@ -15,7 +15,8 @@ YOU retains native camera behavior with platform/hardware limitations.
   or deploy/publish without authorization. See `docs/development.md`.
 - Alpha 0.1 technical preview is published as `v0.1.0-alpha.1` at `f614691`.
   Keep `docs/releases/alpha-0.1-status.md` current across handoffs. Never move
-  that tag or replace published package bytes. On 2026-10-21 the owner explicitly authorized merging,
+  that tag or replace published package bytes. On 2026-10-21 the owner explicitly
+  authorized merging,
   tagging and publishing Alpha 0.1 as a technical preview with documented licensing
   issues unresolved. Use the explicit preview acknowledgement; never claim legal
   clearance. Keep all ten levels and the archive. Future releases need authorization.
