@@ -75,6 +75,10 @@ func terminal_panel() -> Rect2:
 
 
 func _draw_terminal() -> void:
+	# Web owns the complete terminal in DOM. Do not draw a hidden second UI:
+	# Firefox/macOS rejects the engine's thin-line canvas shader variant.
+	if OS.has_feature("web"):
+		return
 	var panel: Rect2 = terminal_panel()
 	var origin: Vector2 = panel.position
 	draw_rect(Rect2(Vector2.ZERO, size), Color(0.01, 0.03, 0.03, 0.94))

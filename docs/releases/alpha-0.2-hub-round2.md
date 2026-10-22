@@ -8,8 +8,9 @@ and private `art/Sprite.aseprite` are preserved and excluded.
 
 ## Current checkpoint / next action
 
-Implementation complete; code and actual desktop/mobile/chamber/depth captures
-are committed on the existing refinement branch. No creative decision blocks
+Implementation and actual desktop/mobile/chamber/depth captures are committed
+on the existing refinement branch. Follow-up browser findings/corrections are
+recorded at the end of this document; their retest is the current action. No creative decision blocks
 this pass. Review the [new captures](../reviews/hub-round2/README.md) and latest
 PR CI before any separately authorized merge. No merge/release action performed.
 
@@ -210,3 +211,27 @@ Next artistic input with highest value: the unavailable reference image or one
 approved style crop. PixelLab trial additionally needs active tool exposure and
 verified allowance. Neither blocks this playable implementation. Physical phone
 checks can happen when the owner chooses to test; do not imply they passed.
+
+## Follow-up failures and corrections
+
+Final-head CI run `39754958894` passed Godot/fresh runtime/export and four browser
+checks, but both mobile navigation checks hit a real chair obstruction on the
+horizontal approach. The chair collider extended to y=188 while the narrowest
+pod-front corridor has player centre y=192 (hitbox top y=184). Its visible feet
+end earlier. The collider now ends at y=184, preserving the object collision and
+clear corridor; a headless long-frame walk reproduces that exact route. Browser
+test tolerances, timeouts, routing assertions and console-error guards are unchanged.
+
+An additional local Firefox run loaded/routed all levels but caught a native
+canvas shader compilation error at the first terminal opening. Trace output
+identified the unlit primitive path in the hidden native terminal drawing under
+the HTML terminal. Web now renders the terminal once, through its actual DOM
+interface; native terminal drawing remains for native builds. The three room
+PointLight2D nodes are retained. The earlier lighting suspicion was not confirmed.
+
+The strengthened native corridor regression passed. Both local mobile browsers
+passed after correction. The first Firefox retest exceeded its unchanged 60s
+cold-initialization guard before entering the game; a targeted retry is running
+to exercise the corrected terminal draw path. Evidence: `fixes-fast.log`,
+`browser-fixed.log`, `firefox-fixed.log`. These failures were
+investigated rather than ignored or hidden by weakening checks.

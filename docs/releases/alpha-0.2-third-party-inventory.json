@@ -288,8 +288,8 @@
       "path": "hub/overlay.gd",
       "module": "hub",
       "type": ".gd",
-      "size": 4214,
-      "sha256": "938ce064d5af60f11986f4376bbeb0d2b958dbaa035023efc16749ca66355b88",
+      "size": 4395,
+      "sha256": "7c8c8d67bfdafe72fa6c50236d46c1289ce0121eef8cc7e3abecc81afffdd5f1",
       "exact_archived_matches": [],
       "source_reference": false,
       "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
@@ -339,7 +339,7 @@
       "module": "hub",
       "type": ".tscn",
       "size": 8047,
-      "sha256": "a60cee6dc571a35b05c78ba22a62daea86832d3501007c82c75706522005e774",
+      "sha256": "e99d365bf409de514e36a5f4e04899127e3efd9b4aa0e53fb6ee2265250a088b",
       "exact_archived_matches": [],
       "source_reference": false,
       "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"

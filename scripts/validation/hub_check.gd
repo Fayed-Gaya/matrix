@@ -88,7 +88,8 @@ func run() -> void:
 	check_movement()
 	check(is_equal_approx(hub.player.speed, 182.0), "Hub walking speed reduced by 30 percent")
 	hub.player.position = hub.world.player_spawn
-	hub.player.step(Vector2.UP, 24.0 / 182.0, hub.world.collision_rects, hub.world.bounds)
+	hub.player.step(Vector2.UP, 1.0, hub.world.collision_rects, hub.world.bounds)
+	check(hub.player.position.y == 192.0, "Long frame stops at pod-front corridor")
 	hub.player.step(Vector2.RIGHT, 336.0 / 182.0, hub.world.collision_rects, hub.world.bounds)
 	check(hub.is_near_terminal(), "Walk from open chamber to computer across clear floor")
 	# Approach the computer from its walkable front, without penetrating the desk.
@@ -202,10 +203,10 @@ func check_movement() -> void:
 		for obstacle: Rect2 in hub.world.collision_rects:
 			check(not player.hitbox().intersects(obstacle), "Cabin furniture/wall collision has no penetration")
 	# Approach both pod fronts and the computer with a long frame: stop at their feet.
-	for point: Vector2 in [Vector2(104,240), Vector2(200,240), Vector2(448,240)]:
+	for point: Vector2 in [Vector2(104,240), Vector2(200,240), Vector2(372,240), Vector2(448,240)]:
 		player.position = point
 		player.step(Vector2.UP, 1.0, hub.world.collision_rects, hub.world.bounds)
-		check(is_equal_approx(player.position.y, 192.0 if point.x < 300 else 184.0), "Pod/computer front blocks movement")
+		check(is_equal_approx(player.position.y, 192.0 if point.x < 400 else 184.0), "Pod/computer front blocks movement")
 		for obstacle: Rect2 in hub.world.collision_rects:
 			check(not player.hitbox().intersects(obstacle), "Pod/computer collision remains nonpenetrating")
 	player.position = hub.world.player_spawn

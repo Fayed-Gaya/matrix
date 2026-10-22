@@ -42,7 +42,7 @@ size = Vector2(52, 64)
 size = Vector2(68, 40)
 
 [sub_resource type="RectangleShape2D" id="Shape8"]
-size = Vector2(25, 24)
+size = Vector2(25, 20)
 
 [sub_resource type="RectangleShape2D" id="Shape9"]
 size = Vector2(54, 34)
@@ -169,7 +169,7 @@ position = Vector2(376.0, 154.0)
 shape = SubResource("Shape7")
 
 [node name="TuckedChair" type="CollisionShape2D" parent="Collisions"]
-position = Vector2(372.5, 176.0)
+position = Vector2(372.5, 174.0)
 shape = SubResource("Shape8")
 
 [node name="Storage" type="CollisionShape2D" parent="Collisions"]
