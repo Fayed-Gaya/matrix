@@ -3,12 +3,19 @@
 import argparse
 import subprocess
 import tempfile
+import time
 from pathlib import Path
 
 
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--godot", default="godot")
+    parser.add_argument(
+        "--only",
+        nargs="+",
+        type=str.lower,
+        help="Targeted stages; imports/resources always run (e.g. hub, machine, bounce)",
+    )
     args = parser.parse_args()
     root = Path(__file__).resolve().parent.parent
     # Prevent reintroducing a second runtime map-authoring source.
@@ -25,7 +32,7 @@ def main() -> None:
         raise SystemExit(f"Expected Godot 4.7.2 stable; got {version}")
     with tempfile.TemporaryDirectory(prefix="matrix-godot-") as logs:
         descriptor = root / "scripts/validation/hub_map_reference.json"
-        for name, options, marker in [
+        stages = [
             ("import", ["--editor", "--import"], None),
             (
                 "resources",
@@ -96,7 +103,21 @@ def main() -> None:
                 "Machine validation passed",
             ),
             ("startup", ["--quit-after", "5"], "Matrix hub ready"),
-        ]:
+        ]
+        aliases = {"bounce": "bouncing_ball"}
+        requested = {aliases.get(name, name) for name in (args.only or [])}
+        known = {stage[0] for stage in stages}
+        if requested - known:
+            parser.error(
+                "Unknown check(s): "
+                + ", ".join(sorted(requested - known))
+                + "; choose "
+                + ", ".join(sorted(known))
+            )
+        for name, options, marker in stages:
+            if requested and name not in requested | {"import", "resources"}:
+                continue
+            started = time.monotonic()
             result = subprocess.run(
                 [
                     args.godot,
@@ -122,7 +143,9 @@ def main() -> None:
                 or (marker is not None and marker not in output)
             ):
                 raise SystemExit(f"Godot {name} validation failed")
-    print(f"Godot {version}: all validation stages passed")
+            print(f"Stage {name}: passed in {time.monotonic() - started:.2f}s")
+    scope = "selected" if args.only else "all"
+    print(f"Godot {version}: {scope} validation stages passed")
 
 
 if __name__ == "__main__":

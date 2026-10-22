@@ -66,7 +66,6 @@ jobs:
         run: |
           set -o pipefail
           make web-export GODOT="$PWD/build/toolchain/godot/godot" 2>&1 | tee web-export.log
-          python3 scripts/check_web_pack.py --godot "$PWD/build/toolchain/godot/godot" 2>&1 | tee web-pack.log
       - name: Package corresponding source snapshot
         run: git archive --format=zip --output=exports/matrix-source-${{ github.sha }}.zip HEAD
       - uses: actions/upload-artifact@v4

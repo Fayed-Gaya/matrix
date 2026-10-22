@@ -90,3 +90,17 @@ sources and user work; copy only approved runtime exports to active modules.
 Keep BOUNCE/BALLS/BUG/YOU, evolve ZELDA into BUBBY and UNTITLED into BUSBOY,
 MACHINE is now a provisional seven-room showcase. No paid generation, fabricated personal references,
 merges, release tags or deployments under the current authorization.
+
+## Fast iteration and release validation
+
+- `make fast-check CHECKS=machine` (or `CHECKS="hub bubby"`) always imports and
+  loads active resources, then runs selected behavior checks. Unknown names fail.
+- `make check` keeps the full active catalog/archive/tool checks. CI does not
+  use the reduced selection. `make release-check` adds fresh runtime, inventory,
+  clean audited web export and the complete configured browser matrix.
+- `make web-export` audits the staged PCK before replacing generated output;
+  failure keeps the prior local preview. No export command publishes anything.
+- `make art-export SOURCE=... OUTPUT=...` is explicit and single-frame only;
+  it isolates Aseprite batch preferences. Never auto-export unrelated user art.
+- Keep build/.gdignore and exports/.gdignore tracked despite ignored outputs.
+  Do not delete caches while another editor/session uses them.

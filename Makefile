@@ -4,6 +4,7 @@ GODOT ?= /Applications/Godot.app/Contents/MacOS/Godot
 PYTHON ?= ../../.venv/bin/python
 
 check: archive-check
+	python3 -m unittest discover -s scripts/tests -v
 	python3 scripts/validate_godot.py --godot "$(GODOT)"
 
 editor:
@@ -42,3 +43,21 @@ web-serve:
 .PHONY: archived-godot-check
 archived-godot-check:
 	python3 scripts/validate_archived_godot.py --godot "$(GODOT)"
+
+# Everyday targeted path; import/resource checks always remain enabled.
+CHECKS ?= hub
+.PHONY: fast-check release-check art-export
+fast-check:
+	python3 scripts/validate_godot.py --godot "$(GODOT)" --only $(CHECKS)
+
+# Comprehensive automated path; real-device/human acceptance stays manual.
+release-check:
+	$(MAKE) check GODOT="$(GODOT)"
+	$(MAKE) runtime-check GODOT="$(GODOT)"
+	python3 scripts/audit_licenses.py --check
+	$(MAKE) web-export GODOT="$(GODOT)"
+	cd tests/web && npm test
+
+ASEPRITE ?= /Applications/Aseprite.app/Contents/MacOS/aseprite
+art-export:
+	python3 scripts/export_art.py --aseprite "$(ASEPRITE)" --source "$(SOURCE)" --output "$(OUTPUT)"

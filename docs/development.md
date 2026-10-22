@@ -1,66 +1,104 @@
 # Development workflow
 
-Matrix follows GitHub Flow. `main` is the latest integrated, validated code;
-there is no permanent dev branch. Start substantial work from updated main on
-a short-lived `feature/...` or `fix/...` branch. Commit meaningful checkpoints,
-push the branch and open a pull request targeting main. Codex may commit/push
-feature work autonomously; merging requires explicit user authorization.
-Use merge commits to retain implementation history. Do not force-push main.
+Use Godot **4.7.2 stable**, typed GDScript, Compatibility renderer. Keep the
+project at the repository root. Gameplay never needs Python or the archived
+Pygame environment; Python 3 is development tooling. Override `GODOT` with the
+engine executable on other machines. Node 22/npm and the pinned Playwright
+package/browsers are needed only for browser checks.
 
-Published releases use immutable annotated version tags (for example
-`v0.1.0-alpha.1`). Create a tag only after release approval and checks. Never
-move/reuse a published tag; fixes receive a new version. Alpha 0.1 is published at `v0.1.0-alpha.1`; preserve that tag and its artifacts.
-Current Alpha 0.2 work is unreleased; see `releases/alpha-0.2-status.md`.
-
-Reproduce checks with Godot 4.7.2 stable and Python 3:
+## Everyday iteration
 
 ```sh
-make check GODOT=/path/to/godot
-make runtime-check GODOT=/path/to/godot
-make editor-map-check GODOT=/path/to/godot # optional real desktop editor
+make editor
+make run
+make fast-check CHECKS=machine      # import/resources + one behavior suite
+make fast-check CHECKS="hub bubby" # focused suites; bounce is an alias
+make check                         # all seven behaviors/routes/maps + archive/tools
 ```
 
-The first checks include archive integrity, resource/script/scene loading, hub
-and level behavior, native map editing, startup, and fresh archive-free routing.
-Automated camera tests inject synthetic feeds and never activate physical feeds.
-The archived Python workflows remain separate source-quality/build checks.
+Targeted checks always verify engine version, imports and all active resource
+loads. Unknown selectors fail; no silent omissions. `make check` retains every
+active suite and archive-integrity guard. Cameras are synthetic/test-disabled.
+Per-stage times are printed. Do not run full browser/manual matrices for every
+local edit; run the affected path, then full checks at a meaningful checkpoint.
+Native scenes/TileSets/collision/interaction markers are authoritative. Relevant
+level READMEs describe the twelve maps. `make editor-map-check` opens and edits
+all maps in a disposable actual desktop editor; it is slower and requires a
+GUI, not a substitute for human editor/gameplay acceptance.
 
-In GitHub Settings → Rules → Rulesets (or Branches), protect main: require a PR,
-require the `Godot validation` and `Web export` checks once they have run, require
-an up-to-date branch if desired, block force pushes and deletion. Configure human
-review requirements to match the owner's policy. These settings are documented,
-not changed automatically. Configure tag rules to prevent modifying/deleting
-published version tags. No rule is bypassed by this work.
-
-## Alpha 0.2 catalog and archived checks
-
-The current branch retains BOUNCE, BALLS, BUG, YOU and the two RPG foundations.
-BUBBY/BUSBOY replace their public codes during their implementation checkpoints;
-MACHINE is added only when playable. PONG, JUMP, MARIO and MONSTERS are source
-references under `archive/godot/`, excluded from imports and exported packs.
-`make check` and browser smoke tests cover the active catalog. To run the full
-original ten-level Godot suite without changing this worktree:
+## Comprehensive automated release path
 
 ```sh
-make archived-godot-check GODOT=/path/to/godot
-make web-export GODOT=/path/to/godot
-python3 scripts/check_web_pack.py --godot /path/to/godot
-make web-serve
+npm ci --prefix tests/web
+(cd tests/web && npx playwright install chrome firefox msedge)
+make release-check
+# Optional real desktop editor persistence:
+make editor-map-check
 ```
 
-The pack check walks exported directories to reject retired module assets and
-checks dynamic JSON dependencies and all active routes from the isolated PCK.
-`art/` is editable source, excluded from imports/exports; approved runtime images
-belong in their owning module. Do not stage unrelated user artwork. Historical
-Alpha 0.1 release documentation describes that release, not the current catalog.
+This runs full checks, fresh archive-free import/routes, inventory freshness,
+web export with staged PCK resource/checksum/retired-import auditing, and the
+complete configured desktop browser smoke matrix. CI retains full Godot/fresh
+runtime and Chrome/Firefox/Edge coverage. The pack audit is inside web export,
+so CI does not repeat it as a separate identical pass. Human full-path gameplay,
+audio/feel/art acceptance and real device tests remain separately required.
+See current acceptance gaps in `releases/alpha-0.2-status.md`.
 
-Alpha 0.2 may use stacked feature PRs while earlier phases await merge. The
-Godot/Web workflow also checks PRs targeting `feature/alpha-0.2-*`; public Pages
-deployment remains manually authorized from main. Merge none of these branches
-without owner authorization; retarget descendants after their base is merged.
+```sh
+make web-export                    # clean, audited local preview; never publishes
+make web-serve                     # localhost:8060
+python3 scripts/check_web_pack.py --godot /path/to/godot --pack /path/to/index.pck
+```
 
-Alpha 0.2's rolling active licensing inventory is
-`docs/releases/alpha-0.2-third-party-inventory.json`; regenerate/check it using
-`python3 scripts/audit_licenses.py [--check]`. The original
-`third-party-inventory.json` is retained as an Alpha 0.1 historical snapshot.
-See `docs/releases/alpha-0.2-licensing.md`; no permissions are newly cleared.
+Export builds in a staging directory, audits actual bytes, then replaces only
+the generated local `exports/web/`. Failed builds/audits retain the previous
+local preview; successful builds discard stale workers/sidecars. Keep source
+files out of managed output. `build-info.json` includes runtime-input dirtiness
+and PCK SHA-256; unrelated editable/private art does not mark unchanged runtime
+bytes dirty. Build/export/test/art directories are excluded from Godot scanning.
+No step deploys Pages, creates tags or changes published Alpha 0.1 bytes.
+
+## GitHub Flow and release authority
+
+`main` is integrated, validated code, with no permanent dev branch. Use short
+feature/fix branches and meaningful checkpoint commits/pushes. Open PRs; merges
+require explicit owner authorization. Use merge commits to preserve history;
+never force-push main. Alpha 0.2 uses stacked PRs: retarget descendants after
+approved base merges. CI also checks PRs targeting `feature/alpha-0.2-*`.
+
+Published version tags are immutable. Alpha 0.1 remains `v0.1.0-alpha.1`.
+Tagging/publishing Alpha 0.2 needs separate explicit approval; do not infer it
+from permission to push feature branches. Pages remains manual and main-only.
+The historical `releases/web-release.md` describes Alpha 0.1 packaging/settings;
+current release gaps are in the Alpha 0.2 status file.
+
+GitHub Settings → Rulesets/Branches: require PRs, `Godot validation` and `Web
+export`, block force pushes/deletion, optionally require up-to-date branches.
+Set human review requirements to owner preference. Protect published tags from
+updates/deletion. These settings are documented, not automatically bypassed or
+changed by this work.
+
+## Catalog, archives and assets
+
+Active codes: BOUNCE, BALLS, BUG, YOU, BUBBY, BUSBOY, MACHINE. PONG/JUMP/MARIO/
+MONSTERS are excluded source references under `archive/godot/`. ZELDA/UNTITLED
+are replaced without aliases; their complete original Godot sources remain in
+Bubby/Busboy `source/`. All Pygame originals remain under `legacy/pygame/`.
+`make archived-godot-check` runs the complete original ten-level Godot suite from
+pinned historical `145771f` in a disposable tree; that commit must exist locally.
+The archived Python quality workflow remains intact; Windows archive packaging
+was already manual-only and remains so. No archive is removed in this milestone.
+
+[Art pipeline](art-pipeline.md) covers explicit Aseprite exports, original draft
+sources and PixelLab limitations. Current licensing inventory is separate from
+the unchanged Alpha 0.1 historical snapshot:
+
+```sh
+python3 scripts/audit_licenses.py
+python3 scripts/audit_licenses.py --check
+```
+
+Output: `releases/alpha-0.2-third-party-inventory.json`. It includes excluded
+module source references for provenance, not only exported files. See
+`releases/alpha-0.2-licensing.md`; no permissions are newly cleared. Never stage
+unrelated user artwork, credentials, caches, generated previews or local tools.

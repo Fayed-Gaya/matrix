@@ -1,6 +1,7 @@
 """Validate the exported PCK in isolation, never against checkout resources."""
 
 import argparse
+import hashlib
 import json
 import re
 import subprocess
@@ -13,7 +14,16 @@ ROOT = Path(__file__).resolve().parent.parent
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--godot", default="godot")
+    parser.add_argument("--pack", type=Path, default=ROOT / "exports/web/index.pck")
     args = parser.parse_args()
+    pack = args.pack.resolve()
+    if not pack.is_file():
+        parser.error("Pack does not exist: " + str(pack))
+    metadata = pack.parent / "build-info.json"
+    if metadata.is_file():
+        expected = json.loads(metadata.read_text()).get("pack_sha256")
+        if expected and hashlib.sha256(pack.read_bytes()).hexdigest() != expected:
+            raise SystemExit("Packed build checksum differs from build-info.json")
     with tempfile.TemporaryDirectory(prefix="matrix-web-pack-") as directory:
         # Import-cache destinations can be bundled even when source directories
         # are absent. Audit the retired assets' path fingerprints as well.
@@ -35,7 +45,7 @@ def main():
                 "--path",
                 directory,
                 "--main-pack",
-                str(ROOT / "exports/web/index.pck"),
+                str(pack),
                 "--log-file",
                 str(Path(directory) / "pack.log"),
                 "--script",

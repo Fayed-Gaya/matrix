@@ -1,254 +1,134 @@
 # Alpha 0.2 implementation status
 
-## Scope and execution
+Updated 2026-10-22. Work in `/Users/Fayed/git/matrix`; current branch
+`feature/alpha-0.2-workflow`, stacked on Machine. **No merges, release tags or
+public deployments authorized.** Keep Alpha 0.1 tag `v0.1.0-alpha.1` at
+`f6146918b424af8cc64e1969c7447892b766cacb`, published bytes and Pygame archive.
 
-Authorized: feature branches, checkpoint commits/pushes and PRs. **No merge,
-release tag or public deployment.** Preserve published `v0.1.0-alpha.1` at
-`f6146918b424af8cc64e1969c7447892b766cacb` and the Pygame archive.
+## Scope/order and current action
 
-Order: (1) retire four unused levels; (2) original spaceship hub; (3) Bubby;
-(4) Busboy; (5) Machine; (6) workflow/performance improvements; (7) desktop and
-mobile-browser integration/testing; (8) native iOS feasibility, last.
-The owner supplied the previously truncated remainder: no participation from
-Kobe is required. Machine may use thoughtful provisional art/story/boss choices.
-Its sequence is bedroom → home → town → several interiors/NPCs → outside-town
-boss, a few minutes of accessible play. Mobile landscape/touch is committed;
-prioritize iPhone Chrome/Safari, preserve desktop, Android is desired without
-blocking on unavailable hardware. Real iPhone acceptance requires owner help.
-iOS feasibility only: no enrollment, purchases, distribution certificates or
-publication. Continue technically unblocked phases without review pauses.
+1. Retire PONG/JUMP/MARIO/MONSTERS — implemented.
+2. Original one-room spaceship hub — implemented.
+3. BUBBY replaces ZELDA — playable provisional delivery/pigeon slice.
+4. BUSBOY replaces UNTITLED — playable provisional forest/turn encounter.
+5. MACHINE — playable provisional home/town/three interiors/NPCs/boss showcase.
+6. Workflow/performance — **current phase**; add targeted/full validation paths,
+   prevent development/output imports, clean reproducible exports, isolated
+   Aseprite batch helper and practical tooling/authoring documentation.
+7. Desktop/mobile browsers — next; landscape/touch, all seven routes/return,
+   BUG pointer/touch, YOU fallback, iPhone Chrome/Safari prioritized. Android
+   desired without blocking on unavailable hardware. Real iPhone needs owner.
+8. Native iOS feasibility — last, personal-device milestone only; no purchases,
+   enrollment, certificates, TestFlight/App Store or native publication.
 
-## Current checkpoint
+The owner supplied the truncated remainder; no missing-scope blocker remains.
+Proceed with thoughtful provisional choices, no paid API generation, no invented
+Kate details/Kobe preferences, and do not require Kobe participation. Canonical
+[Matrix plan](https://docs.google.com/document/d/10g9vxXnyFI6-pNac0DiiAO6ksOC0VN4FpzJWzzscIlU/edit)
+and [Busboy plan](https://docs.google.com/document/d/183hSTmkQ3NHhDRTlgq8zJkLPunC7iQTP3-npaEApzno/edit)
+were read through Google Drive, including Bubby and release/mobile tabs.
 
-Branch: `feature/alpha-0.2-busboy`, stacked on Bubby.
-- Phase 1: `3e840c2`, PR [#7](https://github.com/Fayed-Gaya/matrix/pull/7), green CI.
-- Phase 2: `46f5f77`, PR [#8](https://github.com/Fayed-Gaya/matrix/pull/8), green CI; base #7.
-- Phase 3: `38876f2`, PR [#9](https://github.com/Fayed-Gaya/matrix/pull/9), base #8.
-All pushed, none merged. Alpha 0.1/Pygame archive/user sprite unchanged.
+## Commits/stacked PRs
 
-Busboy implementation complete, uncommitted checkpoint awaiting final commit/push.
-Passed make check, fresh runtime, five-scene actual editor persistence, web
-export/PCK audit, targeted headless/windowed progression and final Chrome smoke
-(9.7 s). Final visual wall adjustment rechecked with resources/progression/export.
-Raw web directory 43,964,097 B; PCK 3,955,584 B. Alpha 0.1 historical licensing
-snapshot restored unchanged; current inventory has its own Alpha 0.2 filename.
-Next: commit/push Busboy and open stacked PR, then implement Machine.
-Machine direction: provisional clockwork town, a home and several civic interiors,
-helpful NPCs and a clearly telegraphed guardian boss; no personal context needed.
+| Phase | Commit | Branch suffix (`feature/alpha-0.2-…`) | PR/base |
+| --- | --- | --- | --- |
+| Catalog/archive | `3e840c2` | catalog | [#7](https://github.com/Fayed-Gaya/matrix/pull/7) → main |
+| Hub/art | `46f5f77` | hub | [#8](https://github.com/Fayed-Gaya/matrix/pull/8) → #7 |
+| Bubby | `38876f2` | bubby | [#9](https://github.com/Fayed-Gaya/matrix/pull/9) → #8 |
+| Busboy | `09771b3` | busboy | [#10](https://github.com/Fayed-Gaya/matrix/pull/10) → #9 |
+| Machine/shared actor | `b8d781b` | machine | [#11](https://github.com/Fayed-Gaya/matrix/pull/11) → #10 |
 
-## Baseline evidence
+All pushed, none merged. #7–#10 GitHub Checks/Godot/Web are green, including
+Chrome/Firefox/Edge. Machine CI is also green (Godot/Web run 39727878256; Checks 39727878312). PR validation also runs
+on stacked Alpha 0.2 bases. Retarget descendants after approved base merges.
 
-Pre-change main `145771f`, local Godot 4.7.2, Compatibility, this Mac:
+## Implemented game/catalog details
 
-| Check | Result | Wall time |
-| --- | --- | --- |
-| make check | Passed | 155.486 s |
-| make runtime-check | Passed | 67.049 s |
-| make web-export | Passed | 40.124 s |
-| isolated exported PCK check | Passed, all ten codes | 5.106 s |
+Active: BOUNCE, BALLS, BUG, YOU, BUBBY, BUSBOY, MACHINE. Old public aliases
+ZELDA/UNTITLED and the four retired codes are rejected. Complete retired modules
+and original hub art/layout/fixtures remain under `archive/godot/`. Original
+Zelda/Untitled and frozen checks remain under Bubby/Busboy `source/`, excluded
+by `.gdignore` and export policy. `make archived-godot-check` validates the full
+original ten-level suite in a disposable tree from pinned `145771f`; it passed.
+Pygame `legacy/pygame/` remains unchanged (all 771 checksums verified).
 
-Existing web directory before rebuilding: 58,556,112 bytes; PCK 18,547,604 bytes.
-Engine WASM alone: 39,514,754 bytes. Rebuilt baseline and Chrome route timing
-are being captured before comparison. Logs/measurements:
-`/tmp/matrix-alpha02/baseline*.log`, `/tmp/matrix-alpha02/baseline.json`.
-These are local evidence, not committed build artifacts or universal benchmarks.
+Twelve native editable maps: `hub/world.tscn`; Bubby apartment/outside; Busboy
+cabin/forest; Machine bedroom/home/town/workshop/library/cafe/outskirts. Scenes,
+external TileSets, collision shapes and markers own editing; no TMX/CSV conversion.
+Editable original SVG/Aseprite sources under `art/{hub,bubby,busboy,machine}`;
+approved runtime PNGs in modules and shared avatar under `shared/actors/`.
 
-## Preservation and unresolved inputs
+Bubby: generic provisional apartment/outside, reused tutorial avatar/music,
+three-shoo pigeon, composure/retry, envelope objective and placeholder ending.
+No Kate apartment/story references were available; nothing asserts her biography.
+Busboy: retained forest art/characters/opening/ambience, NPC conversation,
+Strike/Guard/Cleanse with mana/stain/telegraphed turns, retreat/retry, cleared
+collision gate and shrine ending. Earth/Fire/Blood remain future vision. No
+identified Kobe art/approval; new props/fiction explicitly provisional.
+Machine: original provisional clockwork premise/art, shared Matrix avatar,
+three NPC relays, realtime marked pulses/spark/brace/retry, ending and restarted
+town clock. No XP/persistence. Intended few-minute length is not human-measured.
 
-- User's untracked `art/Sprite.aseprite` must remain untouched/uncommitted:
-  SHA256 `a50dd0d09cd0e7f6753b81089849f0001f4c9a07b338926eb17ea8a29b51bd32`.
-- One existing Godot editor and idle Codex app processes were observed; no
-  concurrent edits detected. Do not terminate them or overwrite their work.
-- No Kate apartment photographs/personal narrative specifics in accessible docs.
-  Bubby environments/story must be explicitly provisional, never biography.
-- Kobe source artwork has not been identified as such in accessible documents.
-  Inspect existing assets and preserve references; do not assert approval/authorship.
-- PixelLab generation tools are not exposed in this session; paid generation is
-  prohibited. Original local pixel artwork and editable sources are feasible.
-- Licensing issues from Alpha 0.1 remain unresolved; notices must stay intact.
-- Human editor usability, full gameplay/audio, real devices and browser/platform
-  acceptance are separate from automated verification. None newly certified.
+## Evidence and limitations
 
-Baseline desktop Chrome real-input smoke passed all ten codes (1.4 minutes
-reported suite wall time; 1.2 minutes test body). No physical camera activated.
-`tests/.gdignore` and `art/.gdignore` exclude development dependencies and user
-editable art from Godot scanning; runtime art must be deliberately exported.
+Per meaningful checkpoint: headless resource/behavior checks, fresh runtime,
+web export, isolated PCK/dynamic/import-cache exclusion audit and Chrome real
+keyboard terminal/return/resize smoke passed. Each new game also passed targeted
+headless and actual Compatibility-window progression; rendered captures inspected.
+These use positioned fixtures, not full human walkthroughs.
 
-## Phase 1 verification (2026-10-22)
+Actual editor passed open/paint/erase/save/reload on all twelve scenes, plus all
+sixteen nonblank native/custom transform pixel comparisons. Initial twelve-map
+run stalled after successful edits waiting for an occluded-window draw signal;
+fixed with explicit offscreen `RenderingServer.force_draw(false)`, keeping all
+comparisons and adding a nonblank guard. Rerun passed; no timeout increase.
+Machine Chrome seven-code suite: 10.0 s. Local logs/captures:
+`/tmp/matrix-alpha02/` (`baseline*`, `catalog*`, `hub*`, `bubby*`, `busboy*`, `machine*`).
 
-| Metric | Original | Reduced catalog | Observed change |
-| --- | ---: | ---: | ---: |
-| Total local web directory | 58,556,112 B | 46,033,285 B | −12,522,827 B (21.4%) |
-| PCK | 18,547,604 B | 6,024,772 B | −12,522,832 B (67.5%) |
-| make check | 155.486 s | 53.904 s | −65.3% |
-| fresh runtime | 67.049 s | 30.792 s | −54.1% |
-| web export | 40.124 s | 55.140 s | slower; no export-time improvement claimed |
-| isolated pack checks | 5.106 s | 4.181 s | Passed both |
+Baseline main `145771f`: make check 155.486 s, fresh runtime 67.049 s,
+export 40.124 s, PCK audit 5.106 s; Chrome ten-code suite ~1.4 min (rounded).
+After catalog-only retirement: check 53.904 s, runtime 30.792 s, export 55.140 s
+(no export-time improvement), PCK 4.181 s, Chrome 33.8 s. Raw web bytes
+58,556,112 → 46,033,285 (−21.4%); PCK 18,547,604 → 6,024,772 (−67.5%).
+Engine WASM alone 39,514,754 B. Later six-game Busboy build 43,964,097 B,
+PCK 3,955,584 B; workflow build 44,038,744 B (seven levels). Single local observations
+with cache/editor effects, not controlled benchmarks or network transfer sizes.
 
-Pack directory traversal confirms no retired module directories, archive,
-legacy, user art, tests or toolchain. All six retained routes and Zelda dynamic
-manifest resources loaded from the isolated PCK, without checkout resources.
-WASM is unchanged (39,514,754 B), limiting total download reduction. Timings are
-single local observations with cache/editor effects, not controlled benchmarks.
-Retained levels still receive their behavioral checks; original complete tests
-remain separately reproducible. Licensing inventory regenerated; no permissions
-resolved. `git diff --check` and targeted Python lint passed.
+Human full-path gameplay, artistic acceptance, personal narrative, encounter
+balance/feel, audible audio and real device/mobile/browser acceptance remain
+unverified for redesigned content. Licensing issues remain unresolved. Historical
+Alpha 0.1 docs/inventory unchanged in final stack; current inventory/addendum:
+`alpha-0.2-third-party-inventory.json`, `alpha-0.2-licensing.md`.
 
-Reduced-catalog desktop Chrome smoke passed all six real terminal routes,
-return-to-hub and resize (25.3 s body, 33.8 s suite, versus baseline 1.2/1.4 min
-rounded reporter times). An expanded exported dependency audit also rejected
-retired import-cache fingerprints, not merely directory names; passed.
-Alpha 0.1 tag and user sprite SHA256 rechecked unchanged; no legacy diff.
-New historical-check command is undergoing its first isolated full-suite run.
-CI PR triggers include stacked Alpha 0.2 branches; no deployment trigger changed.
+## Tooling observations/resume safeguards
 
-The new `make archived-godot-check` passed the complete original ten-level
-suite, including all fourteen original native maps, in an isolated pinned
-historical checkout. Phase 1 implementation and verification are complete.
-Next phase: original one-room hub and editable source artwork; preserve input,
-terminal/return routing and targeted collision tests while replacing old layout
-expectations deliberately. No full manual gameplay acceptance is claimed.
+- User's untracked `art/Sprite.aseprite` is untouched/uncommitted; SHA256
+  `a50dd0d09cd0e7f6753b81089849f0001f4c9a07b338926eb17ea8a29b51bd32`.
+- An existing root Godot editor and idle Codex app sessions were observed;
+  no concurrent edits detected. Do not terminate or overwrite them.
+- PixelLab HTTP MCP is configured/enabled locally with Authorization; no secret
+  printed/committed. No PixelLab tools are exposed to this session and no paid
+  generation called. Local original art avoided this dependency.
+- Installed Aseprite PixelLab extension logs a batch-only dialog error. Verified
+  documented temporary `ASEPRITE_USER_FOLDER` exports successfully without that
+  error or changing user configuration; wrapper implemented in Phase 6.
+- Local gh CLI authentication returns 401; connected GitHub tools work for PR/CI.
+- Next session: inspect Git/status/concurrency first, continue Phase 6 on the
+  current branch, then touch/browser Phase 7 and iOS Phase 8. Keep all archives,
+  notices, user art and immutable release intact; commit/push checkpoints.
 
-## Phase 2 in progress
+## Phase 6 checkpoint
 
-Phase 1 pushed as `3e840c2`, PR https://github.com/Fayed-Gaya/matrix/pull/7
-(target main; not merged). Current branch `feature/alpha-0.2-hub` is stacked
-on that branch. Original cabin tile/player art has SVG and Aseprite editable
-sources under art/hub, PNG runtime exports under hub/assets/alpha02. No paid
-generation calls. Old hub art/layout/fixture retained under archive/godot.
-One native 640×352 scene, external TileSet, bed/window/storage/plant/computer,
-collisions and interaction markers replace the old room. Existing movement,
-camera, terminal and return contract retained. Opening uses original starfield.
-Next: validate new layout/navigation, inspect actual rendered scene, document
-authoring, commit/push and open a stacked PR. Aseprite's installed PixelLab
-extension logs batch-only dialog errors; source files were still created.
+Implemented targeted `make fast-check CHECKS=...`, full `make release-check`,
+per-stage timings, tracked build/export import barriers, clean staged web exports
+with mandatory PCK audit before replacement, and explicit isolated Aseprite
+exports. Failed builds preserve the previous local preview; successful builds
+remove obsolete workers/sidecars. Two focused replacement tests pass. Full CI
+coverage remains enabled; duplicate post-export audit removed because it now
+runs inside the export command. See docs/development.md and art-pipeline.md.
 
-Phase 1 CI passed on GitHub: Checks and Godot/Web run
-https://github.com/Fayed-Gaya/matrix/actions/runs/39721990740, including desktop
-Chrome/Firefox/Edge smoke checks and downloadable web/source artifacts. The
-web artifact is `matrix-web-df2c0fc6706ae600d8047fa609f0d5dddabc0cac` (PR merge
-ref build, not a published release). Local gh authentication is invalid (401);
-the connected GitHub tools work, and were used for the PR/CI inspection.
-
-Phase 2 targeted resource/hub/native-map checks passed, followed by disposable
-actual-editor paint/erase/save/reload of all three active scenes and sixteen
-renderer transform combinations. Fresh archive-free runtime, web export and
-isolated PCK/dependency audit passed. Actual Compatibility window hub input
-and routing test passed; captured cabin visually inspected. Remaining: Chrome
-smoke and final journal/commit/stacked PR. Human artistic acceptance, gameplay
-feel, sound, touch/device/platform coverage remain unverified for the new hub.
-
-New hub Chrome real-input smoke passed (six routes, terminal launch/return,
-resize; 10.4 s suite). Actual cabin wall/furniture long-step collision checks
-also passed. Phase 2 checkpoint is ready. No public release or merge performed.
-Next: Bubby, replacing the ZELDA public code with a provisional apartment →
-outside → pigeon → small objective/ending slice. Personalization remains blocked
-on references; implement clearly marked fictional placeholders, not Kate facts.
-
-## Phase 3 implementation (uncommitted)
-
-BUBBY now replaces ZELDA without a public alias. Two native rooms, copied
-provisional Zelda avatar/music, original local environment/pigeon art with
-SVG/Aseprite sources, door/table/envelope markers, three-shoo encounter,
-composure/retry, delivery objective and placeholder ending are implemented.
-The complete Zelda source/assets/frozen checks are retained under excluded
-`levels/bubby/source/`; no Pygame archive changes. Existing tutorial asset
-permissions remain unresolved. Active validation skips `.gdignore` source
-references; historical full suite remains available separately.
-
-Targeted headless and actual Compatibility-window progression checks passed,
-including alias rejection, native edit/save/reload, pickup gating, cooldown,
-contact/retry, return, dialogue and completion. Rendered apartment/outside
-inspected; moved notices into the upper wall HUD so doors stay visible. This
-is automated progression with positioned fixtures, not human walkthrough.
-Next: final current-doc/catalog updates, full checks/fresh runtime/export/PCK
-resource audit, actual editor persistence and Chrome smoke; then commit/push
-and stacked PR against the hub branch. No personal/story/art approval claimed.
-
-Phase 2 GitHub CI passed (Checks plus Godot/Web, including three desktop
-browsers): https://github.com/Fayed-Gaya/matrix/actions/runs/39722744758.
-Phase 3 final `make check`, fresh runtime, actual editor (four scenes), web
-export, isolated PCK import-dependency audit and Chrome six-code smoke passed.
-Native cameras remained disabled in automated routes. No legacy diff; user
-sprite SHA256 unchanged. Human full-path playthrough, encounter feel/balance,
-audible music, personal references/art direction and real devices remain open.
-
-## Phase 4 implementation (uncommitted)
-
-BUSBOY replaces UNTITLED without a public alias. Retained the existing forest
-tiles, avatar/NPC sprites, opening and ambience; complete Untitled reference
-and frozen tests remain under excluded `levels/busboy/source/`. New native
-starting room and scrolling forest have editable regions/NPC dialogue, collision
-rectangles, a corruption gate and shrine. One NPC unlocks the introductory
-turn encounter. Strike/Guard/Cleanse have telegraphed turns, mana/stain costs,
-resolution delay, retreat, defeat/retry, victory and physical gate clearing.
-Reaching the shrine completes a short provisional introduction. The independent
-turn model borrows the retained Monsters action-flow idea without its assets,
-party/capture/XP dependencies. No persistence or new external dependencies.
-
-New root/room props have original SVG/Aseprite sources. These and all new
-dialogue/layout are provisional, not attributed to or approved by Kobe. Earth,
-Fire and Blood remain documented future regions; not implemented as new maps.
-Avatar/NPC are drawn at 2× source scale for forest readability; movement speed
-retuned to 160 logical units/s, while normalized movement/substeps remain.
-
-Targeted headless and actual Compatibility-window intro checks passed: NPC
-gating/dialogue movement lock, turn/cooldown/mana/guard rules, defeat/retry and
-retreat, victory/gate collision, shrine completion, scene edit/save/reload and
-hub return. Renders inspected; corrected a wrong border tile used as floor,
-actor readability and tree collision alignment. Full-path human playtesting,
-combat balance, sound, final art/narrative and device testing remain manual.
-Next: final docs/inventory and checks, editor persistence, browser export/PCK
-audit and smoke; commit/push, stacked PR.
-
-The full remaining scope arrived before interruption; MACHINE is no longer
-blocked on missing instructions. Earlier journal references to that blocker
-are superseded by the current scope above. Bubby CI is green:
-https://github.com/Fayed-Gaya/matrix/actions/runs/39723990748.
-
-## Phase 5 started
-Busboy pushed as `09771b3`, PR https://github.com/Fayed-Gaya/matrix/pull/10
-(base #9). Current branch `feature/alpha-0.2-machine`, stacked on Busboy.
-Machine uses a provisional clockwork settlement: bedroom → home → town →
-workshop/library/cafe NPCs (three relays) → outside-town governor boss.
-Reuse the original Matrix avatar/movement as a shared actor, keep Machine
-room/objective/realtime boss state independent. Boss telegraphs ground strikes;
-move, spark attack and timed brace, with safe retry and a short ending.
-Creative premise/art/boss are reviewable placeholders, not final direction.
-Next: native rooms, dialogue/relay progression, boss, targeted checks and export.
-
-Machine targeted headless and actual Compatibility-window progression passed:
-all seven rooms/portal arrivals, native edit/save/reload, relays/no duplicates,
-gated outskirts, boss recovery/cooldown/dodge/brace, safe defeat preserving
-relays, completion/clock restart and hub return. Rendered town and boss inspected.
-This is positioned automated progression, not human full-path play or measured
-completion time. New art has editable SVG/Aseprite sources; shared avatar/motion
-refactor preserves hub speed while Machine uses 145 logical units/s.
-Next: full checks/fresh runtime, twelve-scene editor check, web/PCK/browser smoke,
-then commit/push/stacked PR and continue Phase 6. Busboy CI green:
-https://github.com/Fayed-Gaya/matrix/actions/runs/39725887989.
-
-Machine editor test opened/painted/saved/reloaded all twelve scenes, then timed
-out waiting for `frame_post_draw` in the independent offscreen transform probe.
-No scene/edit failure or script error was reported. Updated that probe to force
-an offscreen draw (supported RenderingServer API) and require nontransparent
-pixels, retaining all sixteen exact comparisons. Rerun pending; no timeout
-increase or test removal. Main full checks and fresh runtime had already passed.
-
-The editor probe fix passed all twelve scenes and all sixteen nonblank exact
-pixel comparisons. See RenderingServer.force_draw documentation:
-https://docs.godotengine.org/en/stable/classes/class_renderingserver.html#class-renderingserver-method-force-draw
-No renderer comparison was skipped or timeout increased. Web/PCK/seven-code
-Chrome checks now running. Phase 6 research found a verified Aseprite fix: a
-temporary ASEPRITE_USER_FOLDER avoids PixelLab's batch-only dialog errors,
-without changing installed plugins/preferences. PixelLab is configured/enabled
-as HTTP MCP locally (credentials not printed), but exposes no tools in this
-session; no paid generation calls were made.
-
-Machine checkpoint: full make check and fresh runtime passed; actual editor
-passed all twelve scenes and sixteen nonblank renderer comparisons after the
-occlusion fix. Web export, isolated PCK audit and Chrome seven-code real-input
-smoke passed (10.0 s suite). No full human playthrough or completion-time claim.
-Next phase: workflow fast/release paths, exclude tool/output directories from
-Godot scans, safe repeatable exports and isolated Aseprite batch helper, then
-mobile controls/testing and finally native iOS feasibility. No merge/publish.
+Local observations: selected Machine check 8.538 s, full check 13.101 s, export
+10.444 s before embedded audit, isolated PCK audit 1.369 s. Not controlled
+benchmarks. Final full check and Chrome seven-code smoke passed (10.0 s);
+clean embedded-audit export and explicit disposable Aseprite export passed.
+Logs: /tmp/matrix-alpha02/workflow-*. Next: Phase 7 mobile controls and tests.
