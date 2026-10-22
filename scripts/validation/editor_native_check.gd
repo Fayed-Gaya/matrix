@@ -18,6 +18,8 @@ func run() -> void:
 		paths.append("res://levels/bubby/maps/" + room + ".tscn")
 	for room: String in ["cabin", "forest"]:
 		paths.append("res://levels/busboy/maps/" + room + ".tscn")
+	for room: String in ["bedroom", "home", "town", "workshop", "library", "cafe", "outskirts"]:
+		paths.append("res://levels/machine/maps/" + room + ".tscn")
 	var editor: EditorInterface = get_editor_interface()
 	for i: int in range(paths.size()):
 		editor.open_scene_from_path(paths[i])
@@ -64,6 +66,7 @@ func run() -> void:
 
 
 func check_tile_transforms() -> void:
+	print("Checking native/custom renderer transform pixels")
 	# Compare custom drawing with native TileMapLayer pixels, including rectangular
 	# tiles and nonzero texture origins. Scene serialization alone misses this.
 	var picture: Image = Image.create(40,24,false,Image.FORMAT_RGBA8)
@@ -109,11 +112,17 @@ func check_tile_transforms() -> void:
 			custom.set_cell(Vector2i.ZERO,0,Vector2i.ZERO,alternative)
 			painter.queue_redraw()
 			await get_tree().process_frame
-			await RenderingServer.frame_post_draw
+			# macOS may suspend automatic draws when the editor window is occluded.
+			# Force the offscreen render instead of waiting forever for that signal.
+			RenderingServer.force_draw(false)
 			var rendered: Image = viewport.get_texture().get_image()
+			assert(rendered.get_size() == Vector2i(160,96))
+			var covered: int = 0
 			for y: int in range(96):
 				for x: int in range(80):
+					if rendered.get_pixel(x,y).a > 0.01: covered += 1
 					assert(rendered.get_pixel(x,y).is_equal_approx(rendered.get_pixel(x+80,y)),"Native/custom tile transform mismatch: base %d, flags %d, pixel %d,%d" % [base,flags,x,y])
+			assert(covered > 0,"Renderer probe must contain actual tile pixels")
 	map.free()
 	viewport.queue_free()
 	await get_tree().process_frame

@@ -205,3 +205,50 @@ The full remaining scope arrived before interruption; MACHINE is no longer
 blocked on missing instructions. Earlier journal references to that blocker
 are superseded by the current scope above. Bubby CI is green:
 https://github.com/Fayed-Gaya/matrix/actions/runs/39723990748.
+
+## Phase 5 started
+Busboy pushed as `09771b3`, PR https://github.com/Fayed-Gaya/matrix/pull/10
+(base #9). Current branch `feature/alpha-0.2-machine`, stacked on Busboy.
+Machine uses a provisional clockwork settlement: bedroom → home → town →
+workshop/library/cafe NPCs (three relays) → outside-town governor boss.
+Reuse the original Matrix avatar/movement as a shared actor, keep Machine
+room/objective/realtime boss state independent. Boss telegraphs ground strikes;
+move, spark attack and timed brace, with safe retry and a short ending.
+Creative premise/art/boss are reviewable placeholders, not final direction.
+Next: native rooms, dialogue/relay progression, boss, targeted checks and export.
+
+Machine targeted headless and actual Compatibility-window progression passed:
+all seven rooms/portal arrivals, native edit/save/reload, relays/no duplicates,
+gated outskirts, boss recovery/cooldown/dodge/brace, safe defeat preserving
+relays, completion/clock restart and hub return. Rendered town and boss inspected.
+This is positioned automated progression, not human full-path play or measured
+completion time. New art has editable SVG/Aseprite sources; shared avatar/motion
+refactor preserves hub speed while Machine uses 145 logical units/s.
+Next: full checks/fresh runtime, twelve-scene editor check, web/PCK/browser smoke,
+then commit/push/stacked PR and continue Phase 6. Busboy CI green:
+https://github.com/Fayed-Gaya/matrix/actions/runs/39725887989.
+
+Machine editor test opened/painted/saved/reloaded all twelve scenes, then timed
+out waiting for `frame_post_draw` in the independent offscreen transform probe.
+No scene/edit failure or script error was reported. Updated that probe to force
+an offscreen draw (supported RenderingServer API) and require nontransparent
+pixels, retaining all sixteen exact comparisons. Rerun pending; no timeout
+increase or test removal. Main full checks and fresh runtime had already passed.
+
+The editor probe fix passed all twelve scenes and all sixteen nonblank exact
+pixel comparisons. See RenderingServer.force_draw documentation:
+https://docs.godotengine.org/en/stable/classes/class_renderingserver.html#class-renderingserver-method-force-draw
+No renderer comparison was skipped or timeout increased. Web/PCK/seven-code
+Chrome checks now running. Phase 6 research found a verified Aseprite fix: a
+temporary ASEPRITE_USER_FOLDER avoids PixelLab's batch-only dialog errors,
+without changing installed plugins/preferences. PixelLab is configured/enabled
+as HTTP MCP locally (credentials not printed), but exposes no tools in this
+session; no paid generation calls were made.
+
+Machine checkpoint: full make check and fresh runtime passed; actual editor
+passed all twelve scenes and sixteen nonblank renderer comparisons after the
+occlusion fix. Web export, isolated PCK audit and Chrome seven-code real-input
+smoke passed (10.0 s suite). No full human playthrough or completion-time claim.
+Next phase: workflow fast/release paths, exclude tool/output directories from
+Godot scans, safe repeatable exports and isolated Aseprite batch helper, then
+mobile controls/testing and finally native iOS feasibility. No merge/publish.

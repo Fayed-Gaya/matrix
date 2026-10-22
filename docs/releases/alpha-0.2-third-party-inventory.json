@@ -1,15 +1,15 @@
 {
   "scope": "Active modules plus their excluded source references for provenance, not an export manifest. External archive/godot, legacy/pygame, caches and import sidecars are excluded from these counts.",
   "counts": {
-    ".gd": 36,
+    ".gd": 41,
     ".gdshader": 1,
     ".gif": 1,
     ".json": 4,
     ".mp3": 2,
     ".ogg": 2,
-    ".png": 318,
-    ".tres": 10,
-    ".tscn": 18,
+    ".png": 320,
+    ".tres": 11,
+    ".tscn": 26,
     ".ttf": 1,
     ".wav": 8
   },
@@ -18,8 +18,8 @@
       "path": "app/level_registry.gd",
       "module": "app",
       "type": ".gd",
-      "size": 701,
-      "sha256": "de7c2cf6e211294dfc1037b70a4d346e9a9aaaf960891d405d60e30f9afff5a2",
+      "size": 778,
+      "sha256": "0ecdcec253b828af8495638d9fe551276433aa93eb601e133ab99ae3711c3291",
       "exact_archived_matches": [],
       "source_reference": false,
       "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
@@ -85,16 +85,6 @@
       "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
     },
     {
-      "path": "hub/assets/alpha02/cabin-player.png",
-      "module": "hub",
-      "type": ".png",
-      "size": 774,
-      "sha256": "ff7a683ddd7fe288523ad67f5c3d9545c8d5656a6aa7e53bf458e19fd4fad9ad",
-      "exact_archived_matches": [],
-      "source_reference": false,
-      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
-    },
-    {
       "path": "hub/hub.gd",
       "module": "hub",
       "type": ".gd",
@@ -128,8 +118,8 @@
       "path": "hub/player.gd",
       "module": "hub",
       "type": ".gd",
-      "size": 2177,
-      "sha256": "e60d144ff7c380806733654ba93a8d312525d0810307531c29393127e0747327",
+      "size": 280,
+      "sha256": "2cedd1c7d1fe48b3ff04b90ccc01d9fb5297b51b5df90b11058ee84928e27a28",
       "exact_archived_matches": [],
       "source_reference": false,
       "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
@@ -4690,6 +4680,156 @@
       "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
     },
     {
+      "path": "levels/machine/assets/governor.png",
+      "module": "machine",
+      "type": ".png",
+      "size": 294,
+      "sha256": "046197537ffbb0d9f22f643eef752fb7c93d99208156284d1038c216c6521086",
+      "exact_archived_matches": [],
+      "source_reference": false,
+      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
+    },
+    {
+      "path": "levels/machine/assets/town-atlas.png",
+      "module": "machine",
+      "type": ".png",
+      "size": 2616,
+      "sha256": "d7474bbf0e4a5f4d443cabe5dac9891e03efba7925da164bfc7ab0f6d9851faa",
+      "exact_archived_matches": [],
+      "source_reference": false,
+      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
+    },
+    {
+      "path": "levels/machine/effects.gd",
+      "module": "machine",
+      "type": ".gd",
+      "size": 600,
+      "sha256": "c6e43211cd792cba629801325220e9461810e18f422e8f21bef511aef265f636",
+      "exact_archived_matches": [],
+      "source_reference": false,
+      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
+    },
+    {
+      "path": "levels/machine/machine.gd",
+      "module": "machine",
+      "type": ".gd",
+      "size": 8344,
+      "sha256": "6cacb43e60c07ed96c867d235ce6bed6e553e0e03ab5bc40166fac27cddd9179",
+      "exact_archived_matches": [],
+      "source_reference": false,
+      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
+    },
+    {
+      "path": "levels/machine/machine.tscn",
+      "module": "machine",
+      "type": ".tscn",
+      "size": 943,
+      "sha256": "c3b9ae3e9e8582d7f5abd5b03e8ea53e1cb970ac7888e9172a8a6044f2acd12f",
+      "exact_archived_matches": [],
+      "source_reference": false,
+      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
+    },
+    {
+      "path": "levels/machine/maps/bedroom.tscn",
+      "module": "machine",
+      "type": ".tscn",
+      "size": 6803,
+      "sha256": "d3324a76a957b7defe27c8e84c6fbc866c480473d2cda7619bbcad227267d937",
+      "exact_archived_matches": [],
+      "source_reference": false,
+      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
+    },
+    {
+      "path": "levels/machine/maps/cafe.tscn",
+      "module": "machine",
+      "type": ".tscn",
+      "size": 7219,
+      "sha256": "835cbc7b895fa27b7d410d0cc794d24f0a66f020f1ddcd1fc779e5e1245661bf",
+      "exact_archived_matches": [],
+      "source_reference": false,
+      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
+    },
+    {
+      "path": "levels/machine/maps/home.tscn",
+      "module": "machine",
+      "type": ".tscn",
+      "size": 7160,
+      "sha256": "5db0fa970bc1090f23eda8cbf53bb319ba86386b630edc794adc6188c677061e",
+      "exact_archived_matches": [],
+      "source_reference": false,
+      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
+    },
+    {
+      "path": "levels/machine/maps/library.tscn",
+      "module": "machine",
+      "type": ".tscn",
+      "size": 7226,
+      "sha256": "08baf84e0cca439acd05d501071c3555540c886058d8c0f121909378173e7f5f",
+      "exact_archived_matches": [],
+      "source_reference": false,
+      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
+    },
+    {
+      "path": "levels/machine/maps/outskirts.tscn",
+      "module": "machine",
+      "type": ".tscn",
+      "size": 12336,
+      "sha256": "569da95b5ff05ebc225b70b3666efb0374114e1720ed310b0bf0c91b67013194",
+      "exact_archived_matches": [],
+      "source_reference": false,
+      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
+    },
+    {
+      "path": "levels/machine/maps/town.tres",
+      "module": "machine",
+      "type": ".tres",
+      "size": 691,
+      "sha256": "19f11d77a7d7866c68e6fd778e56f0d5b5ad465ff0670f3559cae53749c6338a",
+      "exact_archived_matches": [],
+      "source_reference": false,
+      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
+    },
+    {
+      "path": "levels/machine/maps/town.tscn",
+      "module": "machine",
+      "type": ".tscn",
+      "size": 15981,
+      "sha256": "f58cd307e1b9a040a4165205a96206bf6cd534e08b3d70c3a13b4d515607f0b2",
+      "exact_archived_matches": [],
+      "source_reference": false,
+      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
+    },
+    {
+      "path": "levels/machine/maps/workshop.tscn",
+      "module": "machine",
+      "type": ".tscn",
+      "size": 7228,
+      "sha256": "a379588e19c754e1c83f9845b3842ec6494e5493c4aea228c8e06a209de0de39",
+      "exact_archived_matches": [],
+      "source_reference": false,
+      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
+    },
+    {
+      "path": "levels/machine/overlay.gd",
+      "module": "machine",
+      "type": ".gd",
+      "size": 1931,
+      "sha256": "c1e9ae9e70c7d65a9b6ae711431e4d9c8be34295d83e624cf204b1c96f1b3550",
+      "exact_archived_matches": [],
+      "source_reference": false,
+      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
+    },
+    {
+      "path": "levels/machine/room.gd",
+      "module": "machine",
+      "type": ".gd",
+      "size": 1258,
+      "sha256": "16a75e2e9844962c79e770c2979e7e68bbe85c1957a55c54a6dfbdb1500a626c",
+      "exact_archived_matches": [],
+      "source_reference": false,
+      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
+    },
+    {
       "path": "levels/the_bug/assets/cat.png",
       "module": "the_bug",
       "type": ".png",
@@ -4757,6 +4897,26 @@
       "type": ".tscn",
       "size": 913,
       "sha256": "e9f615603a6397a7b198a38b2ec5f4c1b4580c40834a31f58acb9fd4e5869dbb",
+      "exact_archived_matches": [],
+      "source_reference": false,
+      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
+    },
+    {
+      "path": "shared/actors/astronaut.png",
+      "module": "shared",
+      "type": ".png",
+      "size": 774,
+      "sha256": "ff7a683ddd7fe288523ad67f5c3d9545c8d5656a6aa7e53bf458e19fd4fad9ad",
+      "exact_archived_matches": [],
+      "source_reference": false,
+      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
+    },
+    {
+      "path": "shared/actors/pixel_player.gd",
+      "module": "shared",
+      "type": ".gd",
+      "size": 2196,
+      "sha256": "929dfe19e05c518baa92525f82411d9de5a16983bdf28971a475ae46f36351ba",
       "exact_archived_matches": [],
       "source_reference": false,
       "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"

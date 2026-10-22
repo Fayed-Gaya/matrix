@@ -88,5 +88,5 @@ as source references. Never import/bundle them into the active game. Historical
 checks remain available via make archived-godot-check. art/ contains editable
 sources and user work; copy only approved runtime exports to active modules.
 Keep BOUNCE/BALLS/BUG/YOU, evolve ZELDA into BUBBY and UNTITLED into BUSBOY,
-then implement MACHINE. No paid generation, fabricated personal references,
+MACHINE is now a provisional seven-room showcase. No paid generation, fabricated personal references,
 merges, release tags or deployments under the current authorization.

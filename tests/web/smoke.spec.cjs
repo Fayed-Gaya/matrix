@@ -23,7 +23,7 @@ test('opening, real keyboard navigation, active terminal codes, return and resiz
   await moveAxis('y', 168, 'ArrowUp', 'ArrowDown', 3);
   await moveAxis('x', 464, 'ArrowLeft', 'ArrowRight', 4);
   await expect.poll(async () => (await state(page)).near_terminal).toBe(true);
-  const codes = ['BOUNCE','BALLS','BUG','BUBBY','BUSBOY','YOU'];
+  const codes = ['BOUNCE','BALLS','BUG','BUBBY','BUSBOY','MACHINE','YOU'];
   for (const code of codes) {
     await page.keyboard.press('e');
     await expect.poll(async () => (await state(page)).terminal).toBe(true);

@@ -16,7 +16,7 @@ archive/source exclusions and retired import-cache fingerprints.
 | Bubby avatar/music and Zelda-derived exploration | Copied active assets; full original Zelda retained in excluded module source | Existing tutorial/code/art/audio permission questions unresolved |
 | Busboy forest tiles, avatar/NPC, opening, ambience and Untitled exploration | Existing assets/code reused; full original module retained in excluded source | No evidence establishes Kobe ownership/approval; original grants remain unresolved |
 | Busboy turn model | Small new model informed by archived Monsters action flow; no archived runtime/party/assets loaded | Retain provenance; do not infer tutorial-derived code clearance |
-| New cabin, provisional Bubby environments/pigeon, provisional Busboy root/props | Locally authored geometric SVG/Aseprite source and PNG exports; no paid generation or external art input | Draft creative work; no Kate biography or Kobe direction implied |
+| New cabin, provisional Bubby environments/pigeon, provisional Busboy root/props, Machine settlement/governor | Locally authored geometric SVG/Aseprite source and PNG exports; no paid generation or external art input | Draft creative work; no Kate biography or Kobe direction implied |
 | BOUNCE/BALLS/BUG/YOU/shared fonts | Retained | Original audit/open questions still apply |
 
 No levels/notices were silently deleted or relicensed, and no new publication

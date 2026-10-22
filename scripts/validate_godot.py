@@ -90,6 +90,11 @@ def main() -> None:
                 ],
                 "Native map authoring validation passed",
             ),
+            (
+                "machine",
+                ["--script", "res://scripts/validation/machine_check.gd"],
+                "Machine validation passed",
+            ),
             ("startup", ["--quit-after", "5"], "Matrix hub ready"),
         ]:
             result = subprocess.run(
