@@ -61,7 +61,13 @@ approval to remove it. See [hub parity and manual checks](docs/migration/hub-par
 and known differences. Move with WASD/arrows; E opens the nearby terminal.
 Escape closes the terminal, returns from a level, or quits from the room.
 
-## Alpha 0.1 web preparation
+## Alpha 0.1 technical preview
+
+**[Play in your desktop browser](https://fayed-gaya.github.io/matrix/)** ·
+[Release, web/source downloads and checksums](https://github.com/Fayed-Gaya/matrix/releases/tag/v0.1.0-alpha.1)
+
+Published as `v0.1.0-alpha.1` with explicit owner acknowledgement of unresolved
+licensing issues. This is not licensing clearance or full gameplay certification.
 
 See [development workflow](docs/development.md), [web build/hosting/CI](docs/releases/web-release.md),
 [preliminary licensing blockers](docs/releases/licensing-audit.md), and

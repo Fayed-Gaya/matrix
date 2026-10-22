@@ -2,6 +2,11 @@
 
 Target: current desktop Chrome, Firefox and Edge with WebAssembly/WebGL 2.
 Godot 4.7.2 stable, Compatibility, GDScript, no threads/GDExtensions/PWA.
+Published technical preview: [play](https://fayed-gaya.github.io/matrix/) ·
+[release/source/checksums](https://github.com/Fayed-Gaya/matrix/releases/tag/v0.1.0-alpha.1).
+Tag `v0.1.0-alpha.1` fixes revision `f614691`; later documentation changes do
+not move the tag or automatically republish the site.
+
 All ten codes are included. YOU displays an explicit browser-unavailable notice
 and Escape returns to Matrix; the native macOS camera path is preserved.
 The owner reports all ten native levels manually tested locally and working.
@@ -119,7 +124,7 @@ Pages supports this static single-threaded build. If policy/storage/size constra
 later prevent Pages, a static HTTPS host such as itch.io can use the same build;
 licensing and target-browser acceptance still apply. No alternate host is created.
 
-## Manual acceptance before publication
+## Remaining acceptance for a fully validated release
 
 - In each target browser, complete representative gameplay in all ten levels,
   including game-over/restart, local menus and return navigation; routing smoke
@@ -131,7 +136,10 @@ licensing and target-browser acceptance still apply. No alternate host is create
 - Read YOU's camera explanation, return to the hub, then regression-test native
   macOS camera permissions/live capture separately. Web tests never access cameras.
 - After an approved main deployment, repeat smoke/gameplay tests at the actual
-  project-subpath HTTPS URL and check network/console errors. Pages itself has
-  not been deployed or verified by this preparation.
-- Resolve the licensing audit blockers, configure branch/environment protection,
-  and approve the exact release revision before any publication or version tag.
+  project-subpath HTTPS URL and check network/console errors. The published HTTPS
+  opening, movement, terminal, YOU explanation and hub return
+  were verified on 2026-10-21 local; full hosted gameplay/audio is still manual.
+- For a release claiming licensing clearance, resolve the audit findings first.
+  This technical preview was explicitly authorized with findings unresolved.
+  Future publication/tagging still requires approval; configure the documented
+  branch/tag/environment protections to enforce the intended workflow.

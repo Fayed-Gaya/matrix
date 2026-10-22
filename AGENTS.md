@@ -13,9 +13,10 @@ YOU retains native camera behavior with platform/hardware limitations.
 - Never merge into main without explicit authorization for that merge.
 - Published releases use immutable version tags; do not create/move release tags
   or deploy/publish without authorization. See `docs/development.md`.
-- Current milestone: Alpha 0.1 browser release preparation on
-  `feature/alpha-0.1-release-pipeline`. Keep `docs/releases/alpha-0.1-status.md`
-  current across handoffs. On 2026-10-21 the owner explicitly authorized merging,
+- Alpha 0.1 technical preview is published as `v0.1.0-alpha.1` at `f614691`.
+  Keep `docs/releases/alpha-0.1-status.md` current across handoffs. Never move
+  that tag or replace published package bytes. On 2026-10-21 the owner explicitly
+  authorized merging,
   tagging and publishing Alpha 0.1 as a technical preview with documented licensing
   issues unresolved. Use the explicit preview acknowledgement; never claim legal
   clearance. Keep all ten levels and the archive. Future releases need authorization.
