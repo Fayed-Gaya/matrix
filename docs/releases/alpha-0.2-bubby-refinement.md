@@ -15,15 +15,26 @@ Replace unrelated envelope errand. Forgiving immediate retry, keyboard and touch
 Apartment, furnishings, avatar likeness and personal ending remain provisional.
 No XP, persistence, other-level redesign, merge, release tag or deployment.
 
-Next: implement encounter and editable room/art; run targeted checks, then broad
-checks, fresh runtime, audited export and focused browser validation/captures.
+Implemented: native apartment/balcony redesign, optional notebook, scattering
+birds, six-shoo Grand Coo with locked landing tells, five-point composure,
+retry/retreat, unharmed departure, cleanup and ending. Twelve layered original
+Aseprite environment masters plus one actual PixelLab pigeon. Targeted Bubby and
+mobile checks passed, including movement+shoo fingers and touch retry. Actual
+Compatibility renders inspected; a floor-coordinate defect was caught visually
+and fixed with a new guard. HUD now reserves space above the whole room.
+
+Next: finish broad checks, fresh runtime, audited export and browser gameplay;
+inspect refreshed desktop/mobile captures, then one final push and PR.
 
 ## Art evidence
 
 PixelLab tools are exposed in this session. Balance inspection reported a trial
 with 39 included generations and $0 credits. One 96px pigeon trial submitted
 (job `0aa8cca5-8951-4909-b3f3-0faeb740b199`, seed 220226, cost one generation).
-No paid credits, subscription/configuration or credential changes.
+Generation completed and was downloaded/inspected: strong cute silhouette,
+static view; imported to a layered Aseprite master (base plus empty refinement
+layer). No hand cleanup claimed. No paid credits, subscription/configuration or
+credential changes. See `art/bubby/refinement/README.md`.
 
 ## References
 

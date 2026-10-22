@@ -56,9 +56,28 @@ func run() -> void:
 		if code == "BUBBY":
 			var bubby: BubbyLevel = app.active_level as BubbyLevel
 			bubby.show_room("outside")
+			bubby.close_dialogue()
 			bubby.player.position = bubby.pigeon.position
 			controls.activate("Shoo")
-			check(bubby.pigeon_health == 2, "Shoo touch button reaches combat input")
+			check(bubby.pigeon_health == BubbyLevel.MAX_PIGEON - 1, "Shoo touch button reaches combat input")
+			bubby.shoo_wait = 0
+			bubby.player.position = bubby.pigeon.position - Vector2(70,0)
+			var before: Vector2 = bubby.player.position
+			touch(3, (controls.regions["Right"] as Rect2).get_center(), true)
+			touch(4, (controls.regions["Shoo"] as Rect2).get_center(), true)
+			await settle()
+			check(Input.is_action_pressed("hub_right") and bubby.pigeon_health == BubbyLevel.MAX_PIGEON - 2, "Independent movement and shoo fingers reach Bubby together")
+			bubby._physics_process(0.05)
+			check(bubby.player.position.x > before.x, "Bubby moves while shoo finger is held")
+			touch(4, Vector2.ZERO, false)
+			check(Input.is_action_pressed("hub_right"), "Releasing shoo preserves movement finger")
+			touch(3, Vector2.ZERO, false)
+			check(not Input.is_action_pressed("hub_right"), "Bubby touch movement releases")
+			bubby.health = 1
+			bubby.hurt_wait = 0
+			bubby.take_nudge()
+			controls.activate("Use")
+			check(bubby.health == BubbyLevel.MAX_COMPOSURE and bubby.boss_state == "rest", "Touch Use retries a failed encounter")
 			bubby.dialogue = "Fixture conversation"
 			controls.activate("Use")
 			check(bubby.dialogue.is_empty(), "Use closes narrative dialogue")

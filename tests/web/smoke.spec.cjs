@@ -41,6 +41,31 @@ test('opening, real keyboard navigation, active terminal codes, return and resiz
     expect((await state(page)).scene).toMatch(/^res:\/\/levels\/.+\.tscn$/);
     if (code === 'YOU') expect((await state(page)).camera_status).toContain('unavailable in this browser');
     await page.screenshot({path: testInfo.outputPath(`${code}.png`)});
+    if (code === 'BUBBY') {
+      async function walk(axis, target, negative, positive) {
+        for (let i=0;i<80;i++) {
+          const current=(await state(page)).bubby;
+          const distance=target-current[axis];
+          if(Math.abs(distance)<14) return;
+          await page.keyboard.press(distance<0?negative:positive,{delay:Math.min(60,Math.max(10,Math.abs(distance)/135*1000))});
+        }
+        throw Error('Bubby apartment navigation stalled: '+JSON.stringify(await state(page)));
+      }
+      await walk('y',282,'ArrowUp','ArrowDown');
+      await walk('x',560,'ArrowLeft','ArrowRight');
+      await page.keyboard.press('e');
+      await expect.poll(async()=>(await state(page)).bubby?.room).toBe('outside');
+      await expect.poll(async()=>(await state(page)).bubby?.dialogue).toBe(true);
+      await page.keyboard.press('e');
+      await expect.poll(async()=>{
+        const b=(await state(page)).bubby;
+        return b.phase==='rest' && Math.hypot(b.x-b.bird_x,b.y-b.bird_y)<=86;
+      },{timeout:15000}).toBe(true);
+      const before=(await state(page)).bubby.resolve;
+      await page.keyboard.press('Space');
+      await expect.poll(async()=>(await state(page)).bubby.resolve).toBe(before-1);
+      await page.screenshot({path:testInfo.outputPath('BUBBY-balcony.png')});
+    }
     await page.keyboard.press('Escape');
     await expect.poll(async () => (await state(page)).code).toBe('');
   }

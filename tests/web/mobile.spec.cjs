@@ -99,6 +99,66 @@ test('landscape touch movement, terminal, seven routes, return and rotation', as
     if(code==='YOU') expect((await state(page)).camera_status).toContain('unavailable in this browser');
     if(code==='BUG') await page.touchscreen.tap(422,195);
     await page.screenshot({path:testInfo.outputPath(`${code}-touch.png`)});
+    if(code==='BUBBY') {
+      async function walk(axis,target,negative,positive) {
+        for(let i=0;i<30;i++) {
+          const b=(await state(page)).bubby;
+          if(Math.abs(target-b[axis])<=14) return;
+          const point=await touch(target<b[axis]?negative:positive,true);
+          try {
+            await page.waitForFunction(({axis,before,target,point})=>{
+              const b=JSON.parse(document.documentElement.getAttribute('data-matrix-state')).bubby;
+              if(Math.abs(b[axis]-before)<Math.min(24,Math.abs(target-before)) && Math.abs(b[axis]-target)>14) return false;
+              const canvas=document.querySelector('canvas');
+              const p={identifier:7,target:canvas,clientX:point[0],clientY:point[1],pageX:point[0],pageY:point[1]};
+              const e=new Event('touchend',{bubbles:true,cancelable:true});
+              Object.assign(e,{touches:[],targetTouches:[],changedTouches:[p]});canvas.dispatchEvent(e);
+              return true;
+            },{axis,before:b[axis],target,point},{timeout:5000,polling:16});
+          } catch(e) { await touch(target<b[axis]?negative:positive,false);throw e; }
+        }
+        throw Error('Bubby touch navigation stalled: '+JSON.stringify(await state(page)));
+      }
+      await walk('y',282,'Up','Down');
+      await walk('x',560,'Left','Right');
+      await tap('Use');
+      await expect.poll(async()=>(await state(page)).bubby?.room).toBe('outside');
+      await tap('Use');
+      await expect.poll(async()=>{
+        const b=(await state(page)).bubby;
+        return b.phase==='rest' && Math.hypot(b.x-b.bird_x,b.y-b.bird_y)<=86;
+      },{timeout:15000}).toBe(true);
+      // Two simultaneous action/movement fingers, released in-browser on physics progress.
+      const before=(await state(page)).bubby;
+      await page.evaluate(()=>{
+        const s=JSON.parse(document.documentElement.getAttribute('data-matrix-state'));
+        const canvas=document.querySelector('canvas');
+        const points=['Right','Shoo'].map((name,i)=>{
+          const [x,y]=s.touch_regions[name];
+          return {identifier:7+i,target:canvas,clientX:x,clientY:y,pageX:x,pageY:y};
+        });
+        const event=new Event('touchstart',{bubbles:true,cancelable:true});
+        Object.assign(event,{touches:points,targetTouches:points,changedTouches:points});canvas.dispatchEvent(event);
+        window.bubbyTestTouches=points;
+      });
+      try {
+        await page.waitForFunction(({x,resolve})=>{
+          const b=JSON.parse(document.documentElement.getAttribute('data-matrix-state')).bubby;
+          if(b.x<x+6 || b.resolve>=resolve) return false;
+          const e=new Event('touchend',{bubbles:true,cancelable:true});
+          Object.assign(e,{touches:[],targetTouches:[],changedTouches:window.bubbyTestTouches});
+          document.querySelector('canvas').dispatchEvent(e);return true;
+        },{x:before.x,resolve:before.resolve},{timeout:5000,polling:16});
+      } finally {
+        await page.evaluate(()=>{
+          const e=new Event('touchend',{bubbles:true,cancelable:true});
+          Object.assign(e,{touches:[],targetTouches:[],changedTouches:window.bubbyTestTouches});
+          document.querySelector('canvas').dispatchEvent(e);delete window.bubbyTestTouches;
+        });
+      }
+      await expect.poll(async()=>(await state(page)).touch_held.length).toBe(0);
+      await page.screenshot({path:testInfo.outputPath('BUBBY-balcony-touch.png')});
+    }
     await tap('Matrix');
     await expect.poll(async () => (await state(page)).code).toBe('');
   }
