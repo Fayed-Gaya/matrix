@@ -163,3 +163,20 @@ Logs/captures: `/tmp/matrix-alpha02/`, especially `mobile-final2-check.log`,
   discard work. Local gh auth fails; connected GitHub tools work. Use
   `make fast-check CHECKS=...` for iteration and `make release-check` for the
   comprehensive automated path. Real devices/art/audio require manual acceptance.
+
+## Integrated-main CI follow-up
+
+PRs #7–#15 are merged; integration/status tip `6a2f5ce`. Main run 39739932921
+passed Godot/fresh runtime/inventory/export/PCK audit and five browser checks.
+Edge failed only the vertical helper's 3-pixel waypoint tolerance at y=178,
+inside the valid approach corridor. The desktop helper now uses the same
+y=172 ±18 approach corridor as touch; actual terminal proximity, all seven
+launches/returns, resize and error assertions remain mandatory. Exact movement
+and collision traces remain in Godot validation. No gameplay settings changed.
+This test-only correction goes through its own PR and final main CI rerun.
+
+A concurrently opened Godot editor changed local project.godot (web renderer
+and audio overrides removed). That uncommitted change and the user's sprite
+are preserved, excluded from commits; CI's clean checkout is authoritative for
+integrated main. Local make check/runtime/inventory/export also passed, but the
+local export records that dirty settings state. No manual testing requested.
