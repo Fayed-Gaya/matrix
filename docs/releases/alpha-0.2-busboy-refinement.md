@@ -17,8 +17,10 @@ writing, explicit magic/stain tradeoff, immediate defeat retry, clear turn UI an
 a lit shrine ending reflecting remaining stain. Local rendered frames inspected;
 face-layer/crop defects corrected. Current state passed full make check, fresh
 runtime and audited web export; targeted route/combat/mobile checks also passed.
-Next: real browser route/button smoke, inspect phone UI, preserve compact review
-captures, commit final handoff, then one final push and PR.
+Browser route/button smoke and phone UI inspection completed successfully; the
+compact review set and final handoff are ready. Final delivery checks/export,
+inventory freshness and source lint passed. Next: owner creative review of the
+focused PR, not additional regions or integration without approval.
 
 ## References and provenance
 
@@ -52,3 +54,56 @@ credentials or configuration changes. Full details: `art/busboy/refinement/READM
 
 Human gameplay/art/balance, audible audio and physical phone acceptance remain
 unverified. Future Earth/Fire/Blood and antagonist arc remain outside scope.
+
+## Validation and review checkpoint
+
+Implementation checkpoint `d666520`, scope/reference checkpoint `5950e1f`.
+Passed: full `make check` (771 archive checksums, tool checks, all seven active
+modules), fresh archive-free `make runtime-check`, audited web export and targeted
+`busboy mobile` checks. Native full path exercises actual collision walking,
+waykeeper gating, dialogue lock, scene cell/region/collision save/reload, magic
+costs/stacked stain/guard mitigation, non-magic and mixed victories, failed cast,
+defeat/immediate retry, retreat, gate removal, lit shrine/ending and Matrix return.
+
+Actual Compatibility-window progression passed and frames were visually reviewed.
+Three browser contexts passed in **2.1 min**: Chrome, mobile Chrome DPR3 and mobile
+WebKit DPR3. They use actual keys/touches to navigate the refuge/forest, speak,
+cast/guard, verify exact mana/stain/reply values, reject a low-mana cast, retreat
+and return; all seven terminal routes, rotation and error guards remain.
+
+Final dialogue/portrait layout also passed a focused mobile Chrome run (46.4 s).
+Visual review led to two small draw-only corrections: actor shadows now align
+with revised foot anchors and the phone dialogue footer avoids the movement pad.
+Final targeted rendering/resource checks and audited delivery export passed after
+those corrections. Browser smoke covers the encounter's first turns; native fixtures
+cover the full victory, defeat/retry and ending. No human walkthrough/physical
+phone/audio/balance acceptance is claimed.
+
+[Six compact actual review captures](../reviews/busboy-refinement/README.md).
+Forest/tree/root detail is materially stronger; local characters and cabin remain
+simpler, repeated canopy shapes/ground litter are noticeable, and props are static.
+An artist's palette/edge/silhouette pass would improve cohesion. Current style,
+conversation and shrine beats are provisional, not Kobe-approved canon.
+
+Useful inputs, in priority order:
+1. Kobe's actual source sprites/reference folder, with filenames/authorship/license
+   information and which elements he considers central.
+2. One approved style/palette crop plus protagonist/waykeeper silhouette direction.
+3. A short approved environmental motif or dialogue line to preserve. The original
+   Untitled bus-a-boy fallback line remains archived; it was not treated as a new
+   approved plot requirement.
+His participation is not required to play/review this introductory slice.
+
+## Resume / authority
+
+Three local recovery checkpoints; one final push and PR targeting main. Locate
+the PR by branch `feature/alpha-0.2-busboy-refinement`. Next action: owner creative
+review of that PR, not further scope expansion. Do not merge this branch or Bubby
+PR #18, tag or deploy without explicit authorization. Bubby worktree remains at
+`2f95f55`; it is not an ancestor/dependency. Archives, other level assets, original
+checkout settings/private sprite and immutable Alpha 0.1 remain preserved.
+
+Local logs: `/tmp/matrix-busboy-{full,runtime,export,fast-final2,browsers,mobile-final,
+capture-final,foot-check,export-delivery}.log`. Generated exports/tool links stay
+out of Git. To inspect locally: `make -C ~/git/matrix-busboy-refinement run`.
+Use this existing worktree for future Busboy work; inspect activity/status first.

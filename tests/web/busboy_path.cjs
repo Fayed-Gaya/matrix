@@ -50,6 +50,7 @@ module.exports=async function busboyPath(page,testInfo,mobile){
   await expect.poll(async()=>(await state(page)).busboy?.room).toBe('forest');
   await walk('x',224);await walk('y',400);await walk('x',352,true);await use();
   await expect.poll(async()=>(await state(page)).busboy?.dialogue).toBe(true);
+  if(mobile)await page.screenshot({path:testInfo.outputPath('BUSBOY-npc-touch.png')});
   await use();
   await expect.poll(async()=>(await state(page)).busboy?.dialogue).toBe(false);
   await walk('y',432);await walk('x',400);await walk('y',240);await walk('x',704);await use();

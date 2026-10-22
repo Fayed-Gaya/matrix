@@ -3,6 +3,7 @@ extends Control
 const BACKGROUND: Texture2D = preload("res://levels/busboy/assets/backgrounds/environment_forestbackground.png")
 const ROOT_IMAGE: Texture2D = preload("res://levels/busboy/assets/refinement/root.png")
 const TREE_IMAGE: Texture2D = preload("res://levels/busboy/assets/refinement/tree.png")
+const NPC_SHEET: Texture2D = preload("res://levels/busboy/assets/refinement/waykeeper.png")
 const PLAYER_SHEET: Texture2D = preload("res://levels/busboy/assets/refinement/traveller.png")
 var actions: Array[Button] = []
 var leave: Button
@@ -85,11 +86,16 @@ func _draw() -> void:
 	if not hint.is_empty() and level.dialogue.is_empty():
 		draw_string(font,Vector2(190 if mobile else 20,size.y-(84 if mobile else 43)),hint,HORIZONTAL_ALIGNMENT_LEFT,size.x-(400 if mobile else 40),16,Color("e2c895"))
 	if not level.dialogue.is_empty():
-		var box: Rect2 = Rect2(24,84 if mobile else size.y/2-122,size.x-48,size.y-182 if mobile else 244)
+		var box: Rect2 = Rect2(24,84 if mobile else size.y-238,size.x-48,size.y-182 if mobile else 190)
 		draw_rect(box,Color("162a30f5"))
 		draw_rect(box.grow(-5),Color("819b82"),false,1)
-		draw_multiline_string(font,box.position+Vector2(18,28),level.dialogue,HORIZONTAL_ALIGNMENT_LEFT,box.size.x-36,16 if mobile else 20,-1,Color("e0e4cc"))
-		draw_string(font,box.position+Vector2(18,box.size.y-18),"Use / Enter: continue",HORIZONTAL_ALIGNMENT_LEFT,box.size.x-36,14,Color("b7b293"))
+		var has_portrait: bool = level.room_name == "forest" and not level.nearby_npc().is_empty() and not level.complete
+		if has_portrait:
+			draw_texture_rect_region(NPC_SHEET,Rect2(box.position+Vector2(12,24),Vector2(72,72)),Rect2(32,96,32,32))
+			draw_string(font,box.position+Vector2(12,113),"WAYKEEPER",HORIZONTAL_ALIGNMENT_LEFT,82,11,Color("b7b293"))
+		var inset: float = 104 if has_portrait else 18
+		draw_multiline_string(font,box.position+Vector2(inset,28),level.dialogue,HORIZONTAL_ALIGNMENT_LEFT,box.size.x-inset-18,16 if mobile else 20,-1,Color("e0e4cc"))
+		draw_string(font,box.position+Vector2(190 if mobile else 18,box.size.y-18),"Use / Enter: continue",HORIZONTAL_ALIGNMENT_LEFT,box.size.x-36,14,Color("b7b293"))
 
 func bar(rect: Rect2, current: int, maximum: int, color: Color) -> void:
 	draw_rect(rect,Color("263438"))
