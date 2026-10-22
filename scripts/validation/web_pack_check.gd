@@ -55,5 +55,5 @@ func check_exclusions(path: String) -> void:
 		var next: String = path.path_join(child)
 		assert(child != "source", "Excluded source reference bundled: " + next)
 		assert(not next in ["res://archive", "res://legacy", "res://art", "res://tests", "res://build"], "Excluded directory bundled: " + next)
-		assert(not next in ["res://levels/jump", "res://levels/mario", "res://levels/monsters", "res://levels/tom_pong", "res://levels/zelda"], "Archived module bundled: " + next)
+		assert(not next in ["res://levels/jump", "res://levels/mario", "res://levels/monsters", "res://levels/tom_pong", "res://levels/zelda", "res://levels/untitled"], "Archived module bundled: " + next)
 		check_exclusions(next)

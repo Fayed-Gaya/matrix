@@ -58,3 +58,9 @@ Alpha 0.2 may use stacked feature PRs while earlier phases await merge. The
 Godot/Web workflow also checks PRs targeting `feature/alpha-0.2-*`; public Pages
 deployment remains manually authorized from main. Merge none of these branches
 without owner authorization; retarget descendants after their base is merged.
+
+Alpha 0.2's rolling active licensing inventory is
+`docs/releases/alpha-0.2-third-party-inventory.json`; regenerate/check it using
+`python3 scripts/audit_licenses.py [--check]`. The original
+`third-party-inventory.json` is retained as an Alpha 0.1 historical snapshot.
+See `docs/releases/alpha-0.2-licensing.md`; no permissions are newly cleared.

@@ -4,7 +4,6 @@ var checked: int = 0
 
 func _initialize() -> void:
 	check_hub("hub", "hub")
-	check_hub("levels/untitled", "untitled")
 	print("Native map authoring validation passed: "+str(checked)+" scenes")
 	quit()
 
@@ -17,12 +16,8 @@ func check_hub(module: String, fixture: String) -> void:
 		var entry: Array = expected.collision[i]
 		assert(map.collision_rects[i] == Rect2(entry[0],entry[1],entry[2],entry[3]))
 	map.get_node("PlayerSpawn").position += Vector2(5,7)
-	if fixture == "untitled":
-		map.get_node("NPCs").get_child(0).position += Vector2(6,8)
-		map.get_node("NPCs").get_child(0).set_meta("dialogue","Native editor dialogue test")
-	else:
-		map.get_node("Terminal").position += Vector2(4,7)
-		map.get_node("Terminal").size += Vector2(3,5)
+	map.get_node("Terminal").position += Vector2(4,7)
+	map.get_node("Terminal").size += Vector2(3,5)
 	var shape: CollisionShape2D = map.get_node("Collisions").get_child(0)
 	shape.position += Vector2(3,9)
 	shape.shape = shape.shape.duplicate()
@@ -38,10 +33,8 @@ func check_hub(module: String, fixture: String) -> void:
 	assert(edited.player_spawn == map.player_spawn)
 	assert(edited.collision_rects[0] == map.collision_rects[0])
 	assert(edited.get_node("Ground").get_cell_source_id(cell) == -1)
-	if fixture == "untitled":
-		assert(edited.npc_data == map.npc_data)
-	else:
-		assert(edited.terminal_rect == map.terminal_rect)
+	assert(edited.terminal_rect == map.terminal_rect)
+
 	edited.free()
 	map.free()
 	DirAccess.remove_absolute(path)

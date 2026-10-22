@@ -13,7 +13,11 @@ def main() -> None:
     root = Path(__file__).resolve().parent.parent
     # Prevent reintroducing a second runtime map-authoring source.
     for folder in ("app", "hub", "levels", "shared"):
-        obsolete = [p for p in (root / folder).rglob("*") if p.suffix in {".tmx", ".tsx", ".csv"}]
+        obsolete = [
+            p
+            for p in (root / folder).rglob("*")
+            if p.suffix in {".tmx", ".tsx", ".csv"}
+        ]
         if obsolete:
             raise SystemExit(f"Obsolete map-authoring source remains: {obsolete[0]}")
     version = subprocess.check_output([args.godot, "--version"], text=True).strip()
@@ -21,7 +25,6 @@ def main() -> None:
         raise SystemExit(f"Expected Godot 4.7.2 stable; got {version}")
     with tempfile.TemporaryDirectory(prefix="matrix-godot-") as logs:
         descriptor = root / "scripts/validation/hub_map_reference.json"
-        untitled_descriptor = root / "scripts/validation/untitled_map_reference.json"
         for name, options, marker in [
             ("import", ["--editor", "--import"], None),
             (
@@ -31,7 +34,12 @@ def main() -> None:
             ),
             (
                 "hub",
-                ["--script", "res://scripts/validation/hub_check.gd", "--", str(descriptor)],
+                [
+                    "--script",
+                    "res://scripts/validation/hub_check.gd",
+                    "--",
+                    str(descriptor),
+                ],
                 "Matrix hub integration passed",
             ),
             (
@@ -60,14 +68,9 @@ def main() -> None:
                 "The Bug validation passed",
             ),
             (
-                "untitled",
-                [
-                    "--script",
-                    "res://scripts/validation/untitled_check.gd",
-                    "--",
-                    str(untitled_descriptor),
-                ],
-                "Untitled validation passed",
+                "busboy",
+                ["--script", "res://scripts/validation/busboy_check.gd"],
+                "Busboy validation passed",
             ),
             (
                 "bubby",

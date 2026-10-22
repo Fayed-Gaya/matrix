@@ -19,7 +19,8 @@ def main():
         # are absent. Audit the retired assets' path fingerprints as well.
         fingerprints = set()
         sidecars = list((ROOT / "archive/godot").rglob("*.import"))
-        sidecars.extend((ROOT / "levels/bubby/source").rglob("*.import"))
+        for folder in ("bubby", "busboy"):
+            sidecars.extend((ROOT / "levels" / folder / "source").rglob("*.import"))
         for sidecar in sidecars:
             for match in re.finditer(
                 r'res://\.godot/imported/[^"\n]+', sidecar.read_text()

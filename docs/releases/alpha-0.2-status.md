@@ -6,32 +6,35 @@ Authorized: feature branches, checkpoint commits/pushes and PRs. **No merge,
 release tag or public deployment.** Preserve published `v0.1.0-alpha.1` at
 `f6146918b424af8cc64e1969c7447892b766cacb` and the Pygame archive.
 
-Order: (1) retire PONG/JUMP/MARIO/MONSTERS; (2) original one-room spaceship hub;
-(3) BUBBY replaces ZELDA; (4) BUSBOY replaces UNTITLED; (5) MACHINE and later
-release work after confirming the truncated request. Keep BOUNCE/BALLS/BUG/YOU.
-No old public aliases when Bubby/Busboy are implemented. MACHINE is not yet
-implemented or advertised as playable.
-
-Canonical Matrix and Busboy Google Docs were read on 2026-10-22. They describe
-mobile feasibility/touch integration, a later full acceptance pass, and a new
-showcase level, but important creative details remain open. The submitted
-request cuts off at “Do not invent Kobe's preferences or”; a clarification was
-requested asynchronously. Continue known independent work while awaiting it.
+Order: (1) retire four unused levels; (2) original spaceship hub; (3) Bubby;
+(4) Busboy; (5) Machine; (6) workflow/performance improvements; (7) desktop and
+mobile-browser integration/testing; (8) native iOS feasibility, last.
+The owner supplied the previously truncated remainder: no participation from
+Kobe is required. Machine may use thoughtful provisional art/story/boss choices.
+Its sequence is bedroom → home → town → several interiors/NPCs → outside-town
+boss, a few minutes of accessible play. Mobile landscape/touch is committed;
+prioritize iPhone Chrome/Safari, preserve desktop, Android is desired without
+blocking on unavailable hardware. Real iPhone acceptance requires owner help.
+iOS feasibility only: no enrollment, purchases, distribution certificates or
+publication. Continue technically unblocked phases without review pauses.
 
 ## Current checkpoint
 
-Branch: `feature/alpha-0.2-bubby`, stacked on the completed hub branch.
-Phase 1: `3e840c2`, PR [#7](https://github.com/Fayed-Gaya/matrix/pull/7), green CI.
-Phase 2: `46f5f77`, PR [#8](https://github.com/Fayed-Gaya/matrix/pull/8), base #7.
-Both pushed; neither merged. Published release and Pygame archive unchanged.
-Only unrelated untracked user sprite existed at the start of this phase.
+Branch: `feature/alpha-0.2-busboy`, stacked on Bubby.
+- Phase 1: `3e840c2`, PR [#7](https://github.com/Fayed-Gaya/matrix/pull/7), green CI.
+- Phase 2: `46f5f77`, PR [#8](https://github.com/Fayed-Gaya/matrix/pull/8), green CI; base #7.
+- Phase 3: `38876f2`, PR [#9](https://github.com/Fayed-Gaya/matrix/pull/9), base #8.
+All pushed, none merged. Alpha 0.1/Pygame archive/user sprite unchanged.
 
-Current phase: Bubby. Next concrete action: preserve Zelda foundation/reference,
-reuse its avatar/animation and axis-separated exploration logic, then author
-provisional apartment/outdoor native scenes and a pigeon/envelope objective.
-Use explicit provisional labels, simple shoo encounter, no XP/upgrades, retry
-and hub return. Retain source/assets/attribution, replace public ZELDA code only
-when the new slice loads and its progression checks pass.
+Busboy implementation complete, uncommitted checkpoint awaiting final commit/push.
+Passed make check, fresh runtime, five-scene actual editor persistence, web
+export/PCK audit, targeted headless/windowed progression and final Chrome smoke
+(9.7 s). Final visual wall adjustment rechecked with resources/progression/export.
+Raw web directory 43,964,097 B; PCK 3,955,584 B. Alpha 0.1 historical licensing
+snapshot restored unchanged; current inventory has its own Alpha 0.2 filename.
+Next: commit/push Busboy and open stacked PR, then implement Machine.
+Machine direction: provisional clockwork town, a home and several civic interiors,
+helpful NPCs and a clearly telegraphed guardian boss; no personal context needed.
 
 ## Baseline evidence
 
@@ -169,3 +172,36 @@ export, isolated PCK import-dependency audit and Chrome six-code smoke passed.
 Native cameras remained disabled in automated routes. No legacy diff; user
 sprite SHA256 unchanged. Human full-path playthrough, encounter feel/balance,
 audible music, personal references/art direction and real devices remain open.
+
+## Phase 4 implementation (uncommitted)
+
+BUSBOY replaces UNTITLED without a public alias. Retained the existing forest
+tiles, avatar/NPC sprites, opening and ambience; complete Untitled reference
+and frozen tests remain under excluded `levels/busboy/source/`. New native
+starting room and scrolling forest have editable regions/NPC dialogue, collision
+rectangles, a corruption gate and shrine. One NPC unlocks the introductory
+turn encounter. Strike/Guard/Cleanse have telegraphed turns, mana/stain costs,
+resolution delay, retreat, defeat/retry, victory and physical gate clearing.
+Reaching the shrine completes a short provisional introduction. The independent
+turn model borrows the retained Monsters action-flow idea without its assets,
+party/capture/XP dependencies. No persistence or new external dependencies.
+
+New root/room props have original SVG/Aseprite sources. These and all new
+dialogue/layout are provisional, not attributed to or approved by Kobe. Earth,
+Fire and Blood remain documented future regions; not implemented as new maps.
+Avatar/NPC are drawn at 2× source scale for forest readability; movement speed
+retuned to 160 logical units/s, while normalized movement/substeps remain.
+
+Targeted headless and actual Compatibility-window intro checks passed: NPC
+gating/dialogue movement lock, turn/cooldown/mana/guard rules, defeat/retry and
+retreat, victory/gate collision, shrine completion, scene edit/save/reload and
+hub return. Renders inspected; corrected a wrong border tile used as floor,
+actor readability and tree collision alignment. Full-path human playtesting,
+combat balance, sound, final art/narrative and device testing remain manual.
+Next: final docs/inventory and checks, editor persistence, browser export/PCK
+audit and smoke; commit/push, stacked PR.
+
+The full remaining scope arrived before interruption; MACHINE is no longer
+blocked on missing instructions. Earlier journal references to that blocker
+are superseded by the current scope above. Bubby CI is green:
+https://github.com/Fayed-Gaya/matrix/actions/runs/39723990748.
