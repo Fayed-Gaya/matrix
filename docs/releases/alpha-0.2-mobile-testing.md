@@ -45,7 +45,13 @@ The density split avoids making high-DPI software rendering a timing benchmark
 for physical phones. Failure traces retain DOM/network/source evidence; explicit
 scene/failure screenshots remain, without continuous canvas screencasting.
 [Playwright documents these trace options](https://playwright.dev/docs/api/class-testoptions#test-options-trace).
-Hardware/browser performance acceptance is still required.
+A subsequent identical-source CI run exposed a legitimate desk collision edge
+within usable terminal range: navigation now stops when that real interaction
+condition is reached, rather than demanding passage through the desk to a
+pixel waypoint. Terminal proximity/launch/return assertions remain unchanged.
+Linux captures also exposed missing arrow glyphs; direction arrows are now drawn
+as geometry with no platform-font dependency. Hardware/browser performance
+acceptance is still required.
 
 ## Owner iPhone 17 check (Chrome and Safari separately)
 

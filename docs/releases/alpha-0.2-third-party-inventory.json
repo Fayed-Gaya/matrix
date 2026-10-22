@@ -48,8 +48,8 @@
       "path": "app/mobile_controls.gd",
       "module": "app",
       "type": ".gd",
-      "size": 6810,
-      "sha256": "793ab6e7ebd842f815ff5156f5ed3430e5dfe639f0dc2d7622fefb455ea131b9",
+      "size": 7090,
+      "sha256": "a17b4d4d4b0bf47c6673945ac4b131a17c01b3c8947df6525bd468b0807aa216",
       "exact_archived_matches": [],
       "source_reference": false,
       "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
@@ -118,8 +118,8 @@
       "path": "hub/overlay.gd",
       "module": "hub",
       "type": ".gd",
-      "size": 1909,
-      "sha256": "ca86f6373e6e62d5c66a6f25fe4f024bdd6ceeed92ce3897894492d5b7447b68",
+      "size": 2032,
+      "sha256": "01c6d90b49d04093772e5f4b5310ddc4d9caa002d9af088948c2a6b00de925d4",
       "exact_archived_matches": [],
       "source_reference": false,
       "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
