@@ -20,7 +20,7 @@ func _draw() -> void:
 			draw_rect(Rect2(star, Vector2(2, 2)), MUTED if i % 3 else GREEN)
 		_center("MATRIX", size.y * 0.42, 64, TEXT)
 		_center("A quiet cabin. A thousand possible worlds.", size.y * 0.52, 22, MUTED)
-		_center("Press any key to begin", size.y * 0.72, 26, GREEN)
+		_center("Tap Begin" if MatrixMobileOverlay.active(self) else "Press any key to begin", size.y * 0.72, 26, GREEN)
 	elif terminal_active:
 		draw_rect(Rect2(Vector2.ZERO, size), Color("02080a"))
 		var prompt: Rect2 = Rect2(28, size.y - 76, maxf(1, size.x - 56), 46)
@@ -32,7 +32,7 @@ func _draw() -> void:
 			draw_string(font, Vector2(30, size.y - 90), message,
 				HORIZONTAL_ALIGNMENT_LEFT, size.x - 60, 22, Color("ff7070"))
 	elif near_terminal:
-		_center("Press E to access terminal", size.y - 22, 22, TEXT)
+		_center("Tap Use to access terminal" if MatrixMobileOverlay.active(self) else "Press E to access terminal", size.y - 22, 22, TEXT)
 
 
 func _center(text: String, y: float, font_size: int, color: Color) -> void:

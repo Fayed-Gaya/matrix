@@ -156,7 +156,13 @@ func _draw() -> void:
 		var rect: Rect2 = regions[command]
 		draw_rect(rect, Color(0.05, 0.12, 0.17, 0.87))
 		draw_rect(rect, Color("88cbbd"), false, 2)
-		var label: String = {"Up":"▲", "Down":"▼", "Left":"◀", "Right":"▶"}.get(command, command)
-		draw_string(ThemeDB.fallback_font, rect.position + Vector2(5, 31), label, HORIZONTAL_ALIGNMENT_CENTER, rect.size.x - 10, 18, Color.WHITE)
+		if command in ["Up", "Down", "Left", "Right"]:
+			var angle: float = {"Up":0.0, "Down":PI, "Left":-PI/2, "Right":PI/2}[command]
+			var points: PackedVector2Array = PackedVector2Array()
+			for point: Vector2 in [Vector2(-10,8), Vector2(0,-10), Vector2(10,8)]:
+				points.append(rect.get_center() + point.rotated(angle))
+			draw_colored_polygon(points, Color.WHITE)
+			continue
+		draw_string(ThemeDB.fallback_font, rect.position + Vector2(5, 31), command, HORIZONTAL_ALIGNMENT_CENTER, rect.size.x - 10, 18, Color.WHITE)
 	if context == "terminal":
 		draw_string(ThemeDB.fallback_font, Vector2(24, 46), "Choose a terminal code", HORIZONTAL_ALIGNMENT_LEFT, size.x - 160, 22, Color.WHITE)

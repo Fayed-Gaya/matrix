@@ -28,7 +28,9 @@ test('landscape touch movement, terminal, seven routes, return and rotation', as
   await expect.poll(async () => (await state(page)).opening).toBe(false);
   async function move(axis,target,negative,positive) {
     for(let i=0;i<30;i++) {
-      const before=(await state(page))[axis];
+      const current=await state(page);
+      if(current.near_terminal) return;
+      const before=current[axis];
       const distance=target-before;
       // Interaction is the acceptance condition; waypoint precision is only for routing.
       if(Math.abs(distance)<=18) return;
@@ -40,8 +42,9 @@ test('landscape touch movement, terminal, seven routes, return and rotation', as
         await page.waitForFunction(({axis,before,target,point})=>{
           const raw=document.documentElement.getAttribute('data-matrix-state');
           if(!raw)return false;
-          const value=JSON.parse(raw)[axis];
-          if(Math.abs(value-before)<Math.min(26,Math.abs(target-before)) && Math.abs(value-target)>18) return false;
+          const current=JSON.parse(raw);
+          const value=current[axis];
+          if(!current.near_terminal && Math.abs(value-before)<Math.min(26,Math.abs(target-before)) && Math.abs(value-target)>18) return false;
           // Release in this browser callback, avoiding another protocol round trip
           // while the character is still moving on a slow renderer.
           const canvas=document.querySelector('canvas');
