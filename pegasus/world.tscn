@@ -2,20 +2,20 @@
 
 [ext_resource type="Script" path="res://pegasus/world.gd" id="1"]
 [ext_resource type="TileSet" path="res://pegasus/tileset.tres" id="2"]
-[ext_resource type="Texture2D" path="res://pegasus/assets/round2/pod-open.png" id="3"]
-[ext_resource type="Texture2D" path="res://pegasus/assets/round2/pod-sealed.png" id="4"]
-[ext_resource type="Texture2D" path="res://pegasus/assets/round2/viewport.png" id="5"]
-[ext_resource type="Texture2D" path="res://pegasus/assets/round2/terminal.png" id="6"]
+[ext_resource type="Texture2D" path="res://assets/art/pegasus/round2/pod-open.png" id="3"]
+[ext_resource type="Texture2D" path="res://assets/art/pegasus/round2/pod-sealed.png" id="4"]
+[ext_resource type="Texture2D" path="res://assets/art/pegasus/round2/viewport.png" id="5"]
+[ext_resource type="Texture2D" path="res://assets/art/pegasus/round2/terminal.png" id="6"]
 
-[ext_resource type="Texture2D" path="res://pegasus/assets/round2/wall-light.png" id="7"]
+[ext_resource type="Texture2D" path="res://assets/art/pegasus/round2/wall-light.png" id="7"]
 
-[ext_resource type="Texture2D" path="res://pegasus/assets/round2/chamber-bay.png" id="8"]
+[ext_resource type="Texture2D" path="res://assets/art/pegasus/round2/chamber-bay.png" id="8"]
 
-[ext_resource type="Texture2D" path="res://pegasus/assets/round2/worktable.png" id="9"]
+[ext_resource type="Texture2D" path="res://assets/art/pegasus/round2/worktable.png" id="9"]
 
-[ext_resource type="Texture2D" path="res://pegasus/assets/round2/locker.png" id="10"]
+[ext_resource type="Texture2D" path="res://assets/art/pegasus/round2/locker.png" id="10"]
 
-[ext_resource type="Texture2D" path="res://pegasus/assets/round2/light.png" id="11"]
+[ext_resource type="Texture2D" path="res://assets/art/pegasus/round2/light.png" id="11"]
 
 [sub_resource type="RectangleShape2D" id="Shape0"]
 size = Vector2(512, 64)

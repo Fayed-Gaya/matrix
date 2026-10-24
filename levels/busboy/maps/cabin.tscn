@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://levels/busboy/room.gd" id="1_4hcvg"]
 [ext_resource type="TileSet" path="res://levels/busboy/tileset.tres" id="2_qy787"]
-[ext_resource type="Texture2D" path="res://levels/busboy/assets/props.png" id="3_rpxno"]
+[ext_resource type="Texture2D" path="res://assets/art/busboy/props.png" id="3_rpxno"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_yco3r"]
 atlas = ExtResource("3_rpxno")

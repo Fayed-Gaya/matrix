@@ -117,7 +117,7 @@
         64,
         192
       ],
-      "texture": "res://pegasus/assets/round2/pod-open.png",
+      "texture": "res://assets/art/pegasus/round2/pod-open.png",
       "offset": [
         0,
         -112
@@ -129,7 +129,7 @@
         160,
         192
       ],
-      "texture": "res://pegasus/assets/round2/pod-sealed.png",
+      "texture": "res://assets/art/pegasus/round2/pod-sealed.png",
       "offset": [
         0,
         -112
@@ -141,7 +141,7 @@
         256,
         8
       ],
-      "texture": "res://pegasus/assets/round2/viewport.png",
+      "texture": "res://assets/art/pegasus/round2/viewport.png",
       "offset": [
         0,
         0
@@ -153,7 +153,7 @@
         416,
         176
       ],
-      "texture": "res://pegasus/assets/round2/terminal.png",
+      "texture": "res://assets/art/pegasus/round2/terminal.png",
       "offset": [
         0,
         -80
@@ -165,7 +165,7 @@
         48,
         64
       ],
-      "texture": "res://pegasus/assets/round2/chamber-bay.png",
+      "texture": "res://assets/art/pegasus/round2/chamber-bay.png",
       "offset": [
         0,
         0
@@ -177,7 +177,7 @@
         336,
         192
       ],
-      "texture": "res://pegasus/assets/round2/worktable.png",
+      "texture": "res://assets/art/pegasus/round2/worktable.png",
       "offset": [
         0,
         -80
@@ -189,7 +189,7 @@
         40,
         288
       ],
-      "texture": "res://pegasus/assets/round2/locker.png",
+      "texture": "res://assets/art/pegasus/round2/locker.png",
       "offset": [
         0,
         -56

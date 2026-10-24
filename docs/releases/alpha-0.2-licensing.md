@@ -23,3 +23,13 @@ No levels/notices were silently deleted or relicensed, and no new publication
 or legal-clearance decision is made. Alpha 0.1 publication approval does not
 automatically authorize an Alpha 0.2 release. Personal references and final art
 approval remain separate from licensing questions and automated test results.
+
+## Centralized asset paths
+
+Current runtime graphics/audio live under `assets/art/<experience>/` and
+`assets/audio/<experience>/`; editable masters live under excluded
+`assets/art/source/`. Pegasus is the current spaceship name. Original assets
+and attribution in archive/legacy and level source snapshots are unchanged.
+The refreshed current inventory records new paths and preserved content hashes;
+relocation establishes no new permissions. Unassigned RedGIFs audio on a separate
+local branch has unverified redistribution rights and is excluded from web export.

@@ -21,7 +21,7 @@ def main() -> None:
         raise SystemExit(f"Expected Godot 4.7.2 stable; got {version}")
     with tempfile.TemporaryDirectory(prefix="matrix-native-editor-") as directory:
         project = Path(directory)
-        for folder in ("app", "pegasus", "levels", "shared"):
+        for folder in ("app", "pegasus", "levels", "shared", "assets"):
             shutil.copytree(root / folder, project / folder)
         shutil.copy2(root / "project.godot", project / "project.godot")
         for stage, options, marker in (

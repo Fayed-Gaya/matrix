@@ -10,26 +10,22 @@ Native scenes and external TileSets are the sole map authority. Open the scene
 in Godot, select a TileMapLayer and paint using its palette, then save normally.
 No Tiled installation, Python map parser, CSV edit or generation command is needed.
 
-| Editable scenes | Placement/metadata editing guide |
+| Editable scenes | Editing guide |
 | --- | --- |
-| `hub/world.tscn` | [Hub](../../hub/README.md): Ground/Details/Above, bounds, collision rectangles, PlayerSpawn and Terminal |
-| `levels/untitled/world.tscn` | [Untitled](../../levels/untitled/README.md): native layers, bounds, collisions and NPC position/dialogue |
-| `levels/mario/maps/stage_{0,1,2}.tscn` | [Mario](../../levels/mario/README.md): terrain/grass, actor/coin/palm/constraint/spawn/goal placement palettes |
-| `levels/zelda/maps/world.tscn` | [Zelda](../../levels/zelda/README.md): paintable scenery, obstacle/grass/object/entity placement palettes |
-| `levels/monsters/maps/*.tscn` (eight scenes) | [Monsters](../../levels/monsters/README.md): terrain plus Groups object/region rectangles and gameplay properties |
+| `pegasus/world.tscn` | [Pegasus](../../pegasus/README.md): layers, bounds, collision shapes, spawn and terminal |
+| `levels/bubby/maps/{apartment,outside}.tscn` | [Bubby](../../levels/bubby/README.md) |
+| `levels/busboy/maps/{cabin,forest}.tscn` | [Busboy](../../levels/busboy/README.md) |
+| `levels/machine/maps/*.tscn` (seven rooms) | [Machine](../../levels/machine/README.md) |
 
-Placement-layer values identify existing gameplay objects; their animations,
-facing and collision rules remain game logic. Static tile drawing respects
-native tile and cell flip/transpose transforms. Monsters region previews show
-static frames; runtime supplies their animation and depth sorting. Keep region
-rectangles axis-aligned and edit position/size rather than rotating or scaling
-them. Hub/Untitled bounds are explicit; adjust them along with scenery if expanding
-the room. Other maps expand their native cell bounds beyond grid_size automatically.
+External TileSets reference graphics under `assets/art/`. Static native cells,
+collision shapes and markers are authoritative; custom movement/animation and
+sorting remain game code. Frozen fixtures are regression expectations, never
+map-generation inputs. `make editor-map-check` edits disposable copies only.
 
-Frozen JSON fixtures under scripts/validation record the migration baseline only;
-they never generate maps. Intentional content edits will require corresponding
-regression expectations to be reviewed and updated. Non-map manifests retain
-sprite frames, audio, atlas cutouts and game statistics, not map placement grids.
+The remaining sections are the original migration record: hub/Untitled/Zelda
+names and paths describe those historical revisions. Current active paths above
+supersede them; retired modules remain under `archive/godot/`, with original
+Bubby/Busboy foundations under their excluded `source/` directories.
 
 ## Audit and implementation plan
 

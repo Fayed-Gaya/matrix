@@ -17,7 +17,7 @@ func _ready() -> void:
 	pegasus.level_requested.connect(launch_level)
 	mobile_controls = preload("res://app/mobile_controls.gd").new()
 	add_child(mobile_controls)
-	print("Matrix pegasus ready")
+	print("Pegasus ready")
 	if OS.has_feature("web"):
 		add_child(preload("res://app/web_diagnostics.gd").new())
 

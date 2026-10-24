@@ -1,63 +1,47 @@
 # Editable art and runtime export
 
-Edit source under `art/`; runtime images belong to pegasus/levels/shared. Godot
-`.import` settings and `.uid` sidecars are tracked, generated caches/builds are
-not. Native scenes/TileSets remain authoritative for map layout; exporting an
-image never regenerates scene cells, collisions, NPCs or portals.
-
-For the single-frame baked atlases/sheets in this iteration:
+Edit `assets/art/source/<experience>/`; runtime PNGs live in
+`assets/art/<experience>/` and audio in `assets/audio/<experience>/`.
+`assets/art/source/.gdignore` prevents source imports. Track runtime `.import`
+settings and script `.uid` sidecars; never track generated caches or previews.
+Native scenes/TileSets remain authoritative for map layout, collision and markers.
 
 ```sh
-make art-export SOURCE=art/machine/governor.aseprite OUTPUT=levels/machine/assets/governor.png
+make art-export SOURCE=assets/art/source/machine/governor.aseprite OUTPUT=assets/art/machine/governor.png
 make fast-check CHECKS=machine
 ```
 
-Override `ASEPRITE=/path/to/aseprite` if needed. The helper validates the source
-header, preserves sheet dimensions, writes the PNG atomically, and uses a
-throwaway preferences directory. This avoids the installed PixelLab extension's
-batch-only dialog error without changing its installation or your preferences.
-Aseprite documents the [temporary preferences override](https://www.aseprite.org/docs/preferences-folder/).
-Animated source files are rejected rather than silently flattened/repacked;
-use Aseprite's deliberate sprite-sheet export with the intended runtime layout.
-Sources/SVGs/Aseprite copies do not auto-synchronize. Keep nearest filtering.
+Override `ASEPRITE` if needed. The helper accepts one explicit single-frame
+Aseprite sheet, preserves dimensions and writes atomically with temporary batch
+preferences. It rejects source-directory outputs and animated files rather than
+silently flattening them. Export animations deliberately with the intended
+sprite-sheet layout. Keep nearest filtering; do not trim or repack atlases.
+SVG and Aseprite versions do not automatically synchronize.
 
 | Editable source | Runtime target |
 | --- | --- |
-| art/pegasus/round2/*.aseprite (current pegasus) | pegasus/assets/round2/*.png |
-| art/pegasus/cabin-atlas.aseprite (original draft) | pegasus/assets/alpha02/cabin-atlas.png |
-| art/pegasus/cabin-player.aseprite | shared/actors/astronaut.png |
-| art/bubby/{apartment-atlas,outside-atlas,pigeon}.aseprite | levels/bubby/assets/*.png |
-| art/busboy/{root,props}.aseprite | levels/busboy/assets/*.png |
-| art/machine/{town-atlas,governor}.aseprite | levels/machine/assets/*.png |
+| assets/art/source/pegasus/round2/*.aseprite | assets/art/pegasus/round2/*.png |
+| assets/art/source/pegasus/cabin-atlas.aseprite | assets/art/pegasus/alpha02/cabin-atlas.png |
+| assets/art/source/pegasus/cabin-player.aseprite | assets/art/shared/actors/astronaut.png |
+| assets/art/source/bubby/*.aseprite | assets/art/bubby/*.png |
+| assets/art/source/busboy/*.aseprite | assets/art/busboy/*.png |
+| assets/art/source/machine/*.aseprite | assets/art/machine/*.png |
 
-The unrelated user `art/Sprite.aseprite` is not auto-exported, committed or
-modified. Choose source/output explicitly; no directory-wide art sweep.
+Never sweep/export private user art. The owner's untracked `art/Sprite.aseprite`
+remains in the original checkout during isolated cleanup; Git cannot relocate
+untracked files. Move it to `assets/art/source/Sprite.aseprite` only when applying
+this structure there, preserving its bytes and untracked status.
 
-## PixelLab/Codex tooling
+## Pipeline evidence
 
-Read-only local inspection found PixelLab configured/enabled as an HTTP MCP
-with an Authorization header. No credential value was printed or copied into
-the repository. Its tools were not exposed to this session; that observation
-does not establish a provider/account failure. No generation call was made.
-Original local pixel art provided a working alternative without API charges.
+The integrated Pegasus artwork uses layered original raster/Aseprite masters;
+its [round-two report](releases/alpha-0.2-hub-round2.md) preserves the actual
+experiment, visual assessment and PixelLab availability observed then. Bubby and
+Busboy refinement PRs are separate, unmerged work; their findings do not imply
+their assets are integrated here. No generation was needed for this refactor.
+Do not print credentials, change account settings or incur paid generation
+without authorization. Explicit exports isolate Aseprite preferences and avoid
+its installed extension's batch-dialog issue without altering configuration.
 
-[Official OpenAI MCP documentation](https://learn.chatgpt.com/docs/extend/mcp?surface=cli)
-describes `codex mcp list` for configured servers and `/mcp` for active servers.
-Inspect those in a session that exposes PixelLab before assuming it can be used.
-Keep local credentials private; do not paste headers into issues/docs. Current
-scope prohibits paid API generation even if tools become available. Do not
-change credentials or external plugin configuration merely to silence an error.
-
-Creative content and unresolved asset permissions are recorded in
-`releases/alpha-0.2-licensing.md`; a successful export is not licensing clearance.
-
-## Detailed pegasus raster trial
-
-[Round 2 findings](releases/alpha-0.2-pegasus-round2.md) record actual tools,
-PixelLab diagnostics, artistic limitations and recommended next steps. Eleven
-new single-frame Aseprite masters have four named raster layers each. A local
-original brush/polygon construction script seeded them; daily edits/export use
-Aseprite directly. `--reseed` overwrites those studies and must never be used
-over later hand edits. No map data is generated by this art tool. Native Godot
-TileSets/placements/lights remain authoritative. This validates layered raster
-export/integration, not AI art quality or human-level environmental illustration.
+Current provenance caveats: [licensing addendum](releases/alpha-0.2-licensing.md).
+Successful import/export does not establish artistic acceptance or permissions.

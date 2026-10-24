@@ -24,7 +24,7 @@ var notice_time: float = 7
 func _ready() -> void:
 	show_room("cabin")
 	display.texture = field.get_texture()
-	var ambience: AudioStreamMP3 = (load("res://levels/busboy/assets/audio/forest_ambience.mp3") as AudioStreamMP3).duplicate()
+	var ambience: AudioStreamMP3 = (load("res://assets/audio/busboy/forest_ambience.mp3") as AudioStreamMP3).duplicate()
 	ambience.loop = true
 	$Ambience.stream = ambience
 	$Ambience.play()

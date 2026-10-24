@@ -31,8 +31,47 @@ from this structural cleanup. No archive or excluded Bubby/Busboy source changed
 - Rename: Pegasus scene/classes, app property/router, inputs, mobile contexts,
   active tests/fixtures and current instructions updated together. Focused
   `make fast-check CHECKS="pegasus mobile"` passed.
-- Next: consolidate runtime/source assets, update tooling and inventory, then
-  full Godot/fresh runtime/audited web/browser validation.
+- Assets: centralized 59 runtime files (57 PNGs, two audio files) plus 59
+  import sidecars, and all tracked editable art. Exactly 100 media/editable
+  files compared byte-identical; all import UIDs and `[params]` retained.
+- Full Godot, archive (771 files), fresh runtime and isolated PCK checks pass.
+  Browser checks and final diff review are the remaining delivery checkpoint.
 
 Historical release/review records retain their original names and locations
 as evidence of those revisions. Current paths and commands supersede them.
+
+## Resulting layout
+
+```text
+app/                     Matrix application and routing
+pegasus/                 opening spaceship scenes/scripts/TileSet
+levels/                  seven independent modules; maps/JSON stay here
+shared/                  reused scripts/resources
+assets/art/source/       editable originals; .gdignore excludes imports
+assets/art/{pegasus,bubby,busboy,machine,bounce,bug,shared}/
+assets/audio/{bubby,busboy}/
+archive/                 excluded historical Godot implementations (unchanged)
+legacy/                  preserved Pygame sources (retirement deferred)
+docs/ scripts/ tests/ LICENSES/ .github/
+```
+
+`Pegasus`, `PegasusWorld`, `PegasusPlayer`, `PegasusOverlay` and
+`PegasusWebTerminal` replace spaceship-specific class names. `MatrixApp` owns
+`pegasus` and `return_to_pegasus`; `MatrixLevel`/`return_requested` remain
+application-wide. Input/context/check selector names use `pegasus`; bindings,
+movement, map cells and all seven terminal codes are unchanged.
+
+## Applying alongside existing work
+
+This isolated worktree is `/tmp/matrix-pegasus-cleanup`; the original checkout
+is deliberately not switched or modified. Its dirty TileSets/project settings,
+private `art/Sprite.aseprite` and separate audio commit `f08b12e` are preserved.
+Git moves tracked artwork only. When integrating in that checkout, move the
+private sprite to `assets/art/source/Sprite.aseprite` separately, retaining its
+untracked status; do not overwrite any file. Bubby #18 and Busboy #19 will need
+asset-path and app/input-name reconciliation when eventually integrated. Their
+creative commits have not been changed or included here.
+
+The standalone RedGIFs audio is not introduced from its separate local branch.
+If later integrated, its explicit export exclusion and PCK absence check prevent
+accidental browser packaging. Redistribution rights remain unverified.

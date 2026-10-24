@@ -179,7 +179,7 @@ func run() -> void:
 	# AudioServer releases stopped decoder instances on its mixer thread.
 	await create_timer(0.15).timeout
 	if failures == 0:
-		print("Matrix pegasus integration passed")
+		print("Pegasus integration passed")
 	quit(0 if failures == 0 else 1)
 
 

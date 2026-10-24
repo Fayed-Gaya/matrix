@@ -63,6 +63,8 @@ def build(destination, engine, version):
         "pegasus",
         "levels",
         "shared",
+        "assets",
+        ":(exclude)assets/art/source",
         "project.godot",
         "export_presets.cfg",
         "THIRD_PARTY_NOTICES.md",

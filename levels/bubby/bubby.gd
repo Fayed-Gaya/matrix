@@ -4,7 +4,7 @@ extends MatrixLevel
 
 const PlayerScript: GDScript = preload("res://levels/bubby/player.gd")
 const ROOMS: Dictionary = {"apartment": preload("res://levels/bubby/maps/apartment.tscn"), "outside": preload("res://levels/bubby/maps/outside.tscn")}
-const PIGEON: Texture2D = preload("res://levels/bubby/assets/pigeon.png")
+const PIGEON: Texture2D = preload("res://assets/art/bubby/pigeon.png")
 var room: BubbyRoom
 var player: BubbyPlayer
 var room_name: String = ""
@@ -24,7 +24,7 @@ var notice_time: float = 8
 
 func _ready() -> void:
 	show_room("apartment")
-	var music: AudioStreamOggVorbis = (load("res://levels/bubby/assets/music.ogg") as AudioStreamOggVorbis).duplicate()
+	var music: AudioStreamOggVorbis = (load("res://assets/audio/bubby/music.ogg") as AudioStreamOggVorbis).duplicate()
 	music.loop = true
 	$Music.stream = music
 	$Music.play()

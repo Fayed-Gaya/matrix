@@ -1,9 +1,9 @@
-# Matrix spaceship cabin
+# Pegasus spaceship cabin
 
 Press any key at the opening. Move with WASD/arrows. The computer is on the
 upper-right desk: stand in front and press E when prompted. Type a code and
 Enter; Backspace edits, Escape closes. Returning from a level preserves your
-pegasus position and skips the opening. Codes ignore surrounding space and case.
+Pegasus position and skips the opening. Codes ignore surrounding space and case.
 
 Current codes: BOUNCE, BALLS, BUG, YOU, BUBBY, BUSBOY, MACHINE. PONG/JUMP/MARIO/MONSTERS are archived, not public aliases.
 
@@ -16,21 +16,21 @@ axis-separated movement implementation. Bounds are 512×320. No runtime map
 conversion, procedural room generator, extra rooms or additional interactions.
 The open/empty chamber and opaque sealed chamber are scenery, not interactions. Native scenes/TileSets remain authoritative.
 
-The current cabin uses `assets/round2/`: a native deck/hull atlas, layered pod
-art, service bay, framed viewport, CRT, worktable, storage and pegasus-only avatar.
+The current cabin uses `assets/art/pegasus/round2/`: a native deck/hull atlas, layered pod
+art, service bay, framed viewport, CRT, worktable, storage and Pegasus-only avatar.
 Three static PointLight2D nodes add restrained amber/teal light.
 Props use native y-sorting with their position anchored at floor level and
 negative Sprite2D offsets, so the player passes naturally behind their tops.
 Move these named Sprite2D nodes directly in Godot; their collision shapes are
 separate named children under Collisions. Keep sprite footprints and shapes aligned.
-Previous drafts remain under `assets/alpha02/` and `assets/refinement/`. Editable raster/Aseprite
-sources and export notes: `art/pegasus/README.md`. The old pegasus art/layout and frozen
+Previous drafts remain under `assets/art/pegasus/alpha02/` and `assets/art/pegasus/refinement/`. Editable raster/Aseprite
+sources and export notes: `assets/art/source/pegasus/README.md`. The old spaceship art/layout and frozen
 fixture remain excluded under `archive/godot/`. This cabin is a first visual
 iteration for owner refinement, not a claim of approved final art direction.
 
 Validation covers movement normalization, boundaries, thin obstacles, input,
 landmarks, collision rectangles, computer reachability, terminal input, all
-active routes, pegasus return and window/camera resizing. Native resource checks
+active routes, Pegasus return and window/camera resizing. Native resource checks
 also edit/save/reload disposable scene copies. Human movement feel and artistic
 acceptance remain manual. See `docs/releases/alpha-0.2-status.md` for evidence.
 

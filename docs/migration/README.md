@@ -1,4 +1,9 @@
 > Current map workflow: native Godot scenes and external TileSets are authoritative.
+
+Historical migration record. The current spaceship is Pegasus (`pegasus/`);
+runtime assets are centralized under `assets/`. See [current layout and retirement audit](../repository-cleanup.md).
+Original names below describe their recorded revisions.
+
 > See [native map authoring](native-maps.md). Earlier stage descriptions below are
 > historical checkpoints; their conversion tooling and runtime map grids are retired.
 

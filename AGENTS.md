@@ -27,10 +27,10 @@ YOU retains native camera behavior with platform/hardware limitations.
 ## Project conventions
 
 - Keep `project.godot` at the repository root. Use typed GDScript for gameplay.
-- `app/` owns startup/routing, `pegasus/` the spaceship/terminal, `levels/` the
+- `app/` owns startup/routing, `pegasus/` Pegasus, the opening spaceship/terminal, `levels/` the
   independent games, `shared/` reused resources, `scripts/` validation tools.
 - `legacy/.gdignore` excludes Python/assets from Godot imports. Copy required
-  assets into their Godot module; keep the archive independent and intact.
+  graphics/audio into assets/art/ or assets/audio/; keep the archive independent and intact.
 - Commit Godot `.uid` sidecars; ignore `.godot/` and generated exports.
 - `make check` validates exact engine version, imports, resource loads and startup.
   It also verifies native map cells/regions, native edit/save/reload behavior,
@@ -86,8 +86,8 @@ availability is machine-specific; install archived requirements if needed.
 Read docs/releases/alpha-0.2-status.md before continuing. Retired Godot modules
 PONG/JUMP/MARIO/MONSTERS live in archive/godot with original paths preserved
 as source references. Never import/bundle them into the active game. Historical
-checks remain available via make archived-godot-check. art/ contains editable
-sources and user work; copy only approved runtime exports to active modules.
+checks remain available via make archived-godot-check. assets/art/source/ contains editable
+sources and user work; export runtime images to assets/art/ and audio to assets/audio/.
 Keep BOUNCE/BALLS/BUG/YOU, evolve ZELDA into BUBBY and UNTITLED into BUSBOY,
 MACHINE is now a provisional seven-room showcase. No paid generation, fabricated personal references,
 release tags or deployments under the current authorization. The owner
@@ -107,3 +107,13 @@ authorized merging the Alpha 0.2 PR stack and validating integrated main on
   it isolates Aseprite batch preferences. Never auto-export unrelated user art.
 - Keep build/.gdignore and exports/.gdignore tracked despite ignored outputs.
   Do not delete caches while another editor/session uses them.
+
+## Repository layout
+
+Runtime graphics/audio belong in `assets/art/<experience>/` and
+`assets/audio/<experience>/`; editable masters belong in excluded
+`assets/art/source/<experience>/`. Scenes, TileSets, JSON and scripts stay in
+their modules. Matrix is the application; Pegasus is the opening spaceship,
+not a terminal destination. Use `make fast-check CHECKS=pegasus`.
+Read `docs/repository-cleanup.md` for the deferred legacy retirement decision
+and cross-branch integration notes. Preserve historical release/review snapshots.

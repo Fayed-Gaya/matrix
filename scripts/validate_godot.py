@@ -19,7 +19,7 @@ def main() -> None:
     args = parser.parse_args()
     root = Path(__file__).resolve().parent.parent
     # Prevent reintroducing a second runtime map-authoring source.
-    for folder in ("app", "pegasus", "levels", "shared"):
+    for folder in ("app", "pegasus", "levels", "shared", "assets"):
         obsolete = [
             p
             for p in (root / folder).rglob("*")
@@ -47,7 +47,7 @@ def main() -> None:
                     "--",
                     str(descriptor),
                 ],
-                "Matrix pegasus integration passed",
+                "Pegasus integration passed",
             ),
             (
                 "mobile",
@@ -107,7 +107,7 @@ def main() -> None:
                 ["--script", "res://scripts/validation/machine_check.gd"],
                 "Machine validation passed",
             ),
-            ("startup", ["--quit-after", "5"], "Matrix pegasus ready"),
+            ("startup", ["--quit-after", "5"], "Pegasus ready"),
         ]
         aliases = {"bounce": "bouncing_ball"}
         requested = {aliases.get(name, name) for name in (args.only or [])}
