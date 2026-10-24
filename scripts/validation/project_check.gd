@@ -15,7 +15,7 @@ func _initialize() -> void:
 			"Compatibility renderer required: " + setting)
 	check(ProjectSettings.get_setting("application/run/main_scene") == "res://app/main.tscn",
 		"Expected Matrix startup scene")
-	for excluded: String in ["legacy", "archive", "assets/art/source"]:
+	for excluded: String in ["archive", "assets/art/source"]:
 		if DirAccess.dir_exists_absolute("res://" + excluded):
 			check(FileAccess.file_exists("res://" + excluded + "/.gdignore"), "Source/archive must be excluded: " + excluded)
 	for folder: String in ["app", "pegasus", "levels", "shared", "assets", "scripts"]:

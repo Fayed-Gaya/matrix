@@ -1,6 +1,7 @@
 # Matrix technical preview — third-party notices
 
-This build retains all ten levels. This preliminary notice is not a blanket
+Current development builds retain seven active levels; excluded original
+Godot modules remain as source references. This preliminary notice is not a blanket
 license for Matrix or clearance to publish. See docs/releases/licensing-audit.md
 in the corresponding source snapshot for unresolved permissions and obligations.
 
@@ -40,6 +41,8 @@ in the corresponding source snapshot for unresolved permissions and obligations.
 
 Corresponding source is the exact Git commit recorded in build-info.json.
 CI supplies a separate source snapshot artifact, including build scripts,
-native scenes/TileSets, source assets and retained Pygame reference. Public
+native scenes/TileSets and source assets. Historical Pygame sources and notices
+remain available in Git history at 55c803c4c8488db9dd17b36bbecd62f775cd52d8;
+see the frozen inventory in docs/releases/third-party-inventory.json. Public
 releases must accompany their binary/site with that same-version source and
 all applicable notices, and resolve the blockers before distribution approval.

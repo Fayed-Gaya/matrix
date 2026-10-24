@@ -1,1 +1,0 @@
-"""Monsters level implementation package."""

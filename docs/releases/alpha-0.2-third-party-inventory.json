@@ -1,5 +1,6 @@
 {
-  "scope": "Active modules and centralized art/audio plus excluded source references for provenance, not an export manifest. External archive/godot, legacy/pygame, caches and import sidecars are excluded from these counts.",
+  "scope": "Active modules/art/audio plus excluded level sources; not an export manifest. exact_archived_matches are historical paths at provenance_revision, not current files. archive/godot, caches and import sidecars are excluded.",
+  "provenance_revision": "55c803c4c8488db9dd17b36bbecd62f775cd52d8",
   "counts": {
     ".gd": 44,
     ".gdshader": 1,

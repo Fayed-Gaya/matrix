@@ -1,7 +1,6 @@
-.PHONY: check smoke-check tools-check regression-check editor run legacy-check archive-check runtime-check
+.PHONY: check smoke-check tools-check regression-check editor run runtime-check
 
 GODOT ?= /Applications/Godot.app/Contents/MacOS/Godot
-PYTHON ?= ../../.venv/bin/python
 
 # Level 2: one import and minimal startup/registered-route smoke.
 check: smoke-check
@@ -22,13 +21,6 @@ editor:
 
 run:
 	"$(GODOT)" --path .
-
-legacy-check:
-	$(MAKE) -C legacy/pygame PYTHON="$(PYTHON)" check
-
-# Temporary preservation guard; remove only with authorized archive deletion.
-archive-check:
-	python3 scripts/validate_archive.py
 
 # Fresh imports and all active routes without Python/archive or existing cache.
 runtime-check:

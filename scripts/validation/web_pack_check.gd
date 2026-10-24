@@ -12,7 +12,7 @@ func _initialize() -> void:
 
 func run() -> void:
 	check_exclusions("res://")
-	for excluded: String in ["res://legacy/pygame/main.py","res://assets/audio/redgifs-wittysizzlingmongoose.mp3","res://docs/migration/README.md","res://scripts/validation/pegasus_check.gd","res://build/toolchain/godot/web_nothreads_release.zip"]:
+	for excluded: String in ["res://assets/audio/redgifs-wittysizzlingmongoose.mp3","res://docs/development.md","res://scripts/validation/pegasus_check.gd","res://build/toolchain/godot/web_nothreads_release.zip"]:
 		assert(not FileAccess.file_exists(excluded),"Unnecessary export file: "+excluded)
 	for module: String in ["bubby"]:
 		var path: String = "res://levels/"+module+"/assets/manifest.json"
@@ -54,6 +54,6 @@ func check_exclusions(path: String) -> void:
 	for child: String in directory.get_directories():
 		var next: String = path.path_join(child)
 		assert(child != "source", "Excluded source reference bundled: " + next)
-		assert(not next in ["res://archive", "res://legacy", "res://art", "res://tests", "res://build"], "Excluded directory bundled: " + next)
+		assert(not next in ["res://archive", "res://art", "res://tests", "res://build"], "Excluded directory bundled: " + next)
 		assert(not next in ["res://levels/jump", "res://levels/mario", "res://levels/monsters", "res://levels/tom_pong", "res://levels/zelda", "res://levels/untitled"], "Archived module bundled: " + next)
 		check_exclusions(next)

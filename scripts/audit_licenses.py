@@ -62,12 +62,14 @@ def font_notices(path):
 
 
 def inventory():
-    originals = defaultdict(list)
-    for path in (ROOT / "legacy/pygame").rglob("*"):
-        if path.is_file() and path.suffix.lower() in EXTENSIONS:
-            originals[hashlib.sha256(path.read_bytes()).hexdigest()].append(
-                str(path.relative_to(ROOT))
-            )
+    # Frozen attribution evidence survives Pygame retirement; never dereference
+    # its historical paths in the current working tree.
+    baseline = json.loads(
+        (ROOT / "docs/releases/third-party-inventory.json").read_text()
+    )
+    originals = {
+        row["sha256"]: row["exact_archived_matches"] for row in baseline["files"]
+    }
     rows = []
     for folder in ("app", "pegasus", "levels", "shared", "assets"):
         for path in sorted((ROOT / folder).rglob("*")):
@@ -87,7 +89,7 @@ def inventory():
                 "type": path.suffix.lower(),
                 "size": path.stat().st_size,
                 "sha256": checksum,
-                "exact_archived_matches": sorted(originals[checksum]),
+                "exact_archived_matches": sorted(originals.get(checksum, [])),
                 "source_reference": "source" in relative.parts,
                 "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance",
             }
@@ -95,7 +97,8 @@ def inventory():
                 row["embedded_font_notices"] = font_notices(path)
             rows.append(row)
     return {
-        "scope": "Active modules and centralized art/audio plus excluded source references for provenance, not an export manifest. External archive/godot, legacy/pygame, caches and import sidecars are excluded from these counts.",
+        "scope": "Active modules/art/audio plus excluded level sources; not an export manifest. exact_archived_matches are historical paths at provenance_revision, not current files. archive/godot, caches and import sidecars are excluded.",
+        "provenance_revision": "55c803c4c8488db9dd17b36bbecd62f775cd52d8",
         "counts": dict(sorted(Counter(row["type"] for row in rows).items())),
         "files": rows,
     }

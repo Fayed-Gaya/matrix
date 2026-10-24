@@ -11,7 +11,7 @@ func settle() -> void:
 
 func run() -> void:
 	if "--archive-free" in OS.get_cmdline_user_args():
-		assert(not DirAccess.dir_exists_absolute("res://legacy"))
+		assert(not DirAccess.dir_exists_absolute("res://archive"))
 	assert(ProjectSettings.get_setting("application/run/main_scene") == "res://app/main.tscn")
 	for setting: String in ["rendering/renderer/rendering_method", "rendering/renderer/rendering_method.mobile", "rendering/renderer/rendering_method.web"]:
 		assert(ProjectSettings.get_setting(setting) == "gl_compatibility", "Compatibility renderer required")
