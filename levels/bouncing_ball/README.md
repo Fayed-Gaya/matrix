@@ -12,7 +12,7 @@ at the playfield boundary.
 
 ## Source and assets
 
-Reference: `legacy/pygame/levels/bouncing_ball/bouncing_ball.py` at the Stage 1
+Reference: [original Pygame source](https://github.com/Fayed-Gaya/matrix/blob/55c803c4c8488db9dd17b36bbecd62f775cd52d8/legacy/pygame/levels/bouncing_ball/bouncing_ball.py) at the Stage 1
 baseline. `source/intro_ball.gif` is an unchanged copy of the original asset,
 excluded from Godot import scanning. `assets/intro_ball.png` is its 111×111
 Pygame-rendered surface converted to RGBA PNG for Godot, including color-key

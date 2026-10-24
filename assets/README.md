@@ -9,7 +9,8 @@
 
 Maps, TileSets, scripts and JSON configuration remain in their owning modules.
 See [art workflow](../docs/art-pipeline.md). Historical assets in `archive/`,
-`legacy/` and level `source/` snapshots are intentionally not consolidated.
+level `source/` snapshots are intentionally not consolidated. Pygame origins
+are retained in the frozen licensing inventory and Git history.
 Existing notices and unresolved permissions still apply. Unassigned experimental
 recordings are not approved game content; the known RedGIFs recording is explicitly
 excluded from browser exports if present. Do not publish it without rights review.

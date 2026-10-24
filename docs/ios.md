@@ -1,4 +1,4 @@
-# Native iOS feasibility — assessment only
+# Native iOS feasibility
 
 Assessed 2026-10-22 after the browser implementation. A personal-device build is
 plausible, but **not built or verified**. It is separate from the committed

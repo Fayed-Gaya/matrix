@@ -10,7 +10,7 @@ logical field space; fonts/rasterization differ from Pygame. Outside-field
 positions may be negative or beyond 600, and debug text is clipped, like the
 source window. No sound or gameplay objectives existed in the source.
 
-Asset source: `legacy/pygame/levels/the_bug/cat.png`, copied unchanged; no new
+Asset source: [original Pygame source](https://github.com/Fayed-Gaya/matrix/blob/55c803c4c8488db9dd17b36bbecd62f775cd52d8/legacy/pygame/levels/the_bug/cat.png), copied unchanged; no new
 licensing/authorship claim. Runtime is independent of the archive and Python.
 The optional historical behavior suite sends mouse movement and all three button events and checks
 routing/return. Manual checking on other input devices/platforms remains needed.

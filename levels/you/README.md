@@ -6,7 +6,7 @@ Escape returns to Matrix and releases the feed. No images are recorded, saved,
 transmitted or persisted by the level.
 
 This is a native GDScript CameraServer/CameraFeed/CameraTexture port of
-`legacy/pygame/levels/you/you.py`. It requests the closest declared format to
+[original Pygame source](https://github.com/Fayed-Gaya/matrix/blob/55c803c4c8488db9dd17b36bbecd62f775cd52d8/legacy/pygame/levels/you/you.py). It requests the closest declared format to
 640×480, or uses the backend default when formats are not exposed. RGB and
 combined/separate YCbCr textures are displayed through a Compatibility canvas
 shader, applying the feed's UV transform. YCbCr conversion assumes full-range

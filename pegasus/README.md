@@ -32,7 +32,7 @@ Optional `make regression-check` covers movement normalization, boundaries, thin
 landmarks, collision rectangles, computer reachability, terminal input, all
 active routes, Pegasus return and window/camera resizing. Native resource checks
 also edit/save/reload disposable scene copies. Human movement feel and artistic
-acceptance remain manual. See `docs/releases/alpha-0.2-status.md` for evidence.
+acceptance remain manual. See `docs/releases/alpha-0.2.md` for evidence.
 
 Pegasus walking is 182 px/s (30% below the previous 260), configured only in
 `player.gd`. Shared actors and other levels keep their own speeds. The cabin

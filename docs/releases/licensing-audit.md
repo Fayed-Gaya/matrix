@@ -10,8 +10,11 @@ permissions, establish licensing clearance or change the obligations below.
 `third-party-inventory.json` records every active GDScript/shader, scene/TileSet,
 manifest and media file with SHA-256, size, module, exact archived matches and
 embedded font notices. It also includes source-only copies for provenance; its
-count is not the number of exported resources. Regenerate with
-`python3 scripts/audit_licenses.py`; `--check` detects stale evidence. Matching a
+count is not the number of exported resources. This Alpha 0.1 inventory is frozen;
+`python3 scripts/audit_licenses.py` / `--check` maintain the separate current
+`alpha-0.2-third-party-inventory.json`. Historical source paths can be inspected
+at Git revision `55c803c4c8488db9dd17b36bbecd62f775cd52d8`. Godot paths below
+refer to the immutable `v0.1.0-alpha.1` tree, before later module renames/retirement. Matching a
 hash establishes identity, not permission. Derived atlas/scale/map resources
 retain their original content's obligations. No root Matrix LICENSE existed.
 
@@ -78,7 +81,8 @@ conditions. OFL font embedding does not itself license the game's code.
 2. Supply the exact released revision's preferred source: GDScript/shaders,
    native scenes/TileSets, required asset sources, build/export scripts and
    dependency/toolchain instructions, plus notices and modification information.
-   CI creates a corresponding source snapshot alongside the web artifact.
+   On-demand release validation creates a corresponding source snapshot alongside
+   the web artifact.
    WebAssembly/compiled GDScript is not a substitute for preferred source.
 3. Resolve grants for unlicensed media and redistribution restrictions above.
    Archive all actual license/permission evidence. Confirm required BY credits
@@ -89,4 +93,4 @@ conditions. OFL font embedding does not itself license the game's code.
    file-level provenance is confirmed. Do not claim this notice is final clearance.
 5. Only after owner approval, clear the manual deployment gate and publish/tag.
    Current CI artifacts are technical verification outputs, not an approved
-   Alpha 0.1 release; their existence does not resolve these distribution issues.
+   future release; their existence does not resolve these distribution issues.

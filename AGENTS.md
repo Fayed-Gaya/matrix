@@ -1,132 +1,33 @@
-# Matrix migration guide
+# Matrix
 
-Matrix uses Godot 4.7.2, typed GDScript and Compatibility rendering. The
-migration and native map authoring are merged. The owner manually tested the
-Alpha 0.1 pegasus and all ten levels locally. Alpha 0.2 physical-device/gameplay acceptance remains unverified. The owner
-deferred manual testing while integrating this private alpha; see
-docs/releases/alpha-0.2-status.md.
-YOU retains native camera behavior with platform/hardware limitations.
+Godot 4.7.2, typed GDScript, Compatibility renderer. Matrix is the application;
+Pegasus is its opening spaceship, not a terminal-launched level.
 
-## Development and release authority
+- `app/` owns startup/routing; `pegasus/` the spaceship; `levels/` independent
+  games; `shared/` reusable code. Level roots extend `MatrixLevel` and emit
+  `return_requested`; consume Escape locally before returning to Pegasus.
+- Native scenes/TileSets/collision markers are authoritative. Never regenerate
+  maps from TMX/CSV/JSON. Preserve each game's movement and collision rules.
+- Runtime art/audio: `assets/art/<experience>/`, `assets/audio/<experience>/`.
+  Editable originals: excluded `assets/art/source/`. Keep `.import` and `.uid`
+  sidecars; do not commit caches, exports, credentials or local tools.
+- Work directly on `main` when practical. Codex may commit/push validated work
+  at meaningful checkpoints. Fetch/reconcile safely; never force-push, overwrite
+  user edits or rewrite published history. Branches/PRs are optional; honor
+  explicit review gates. Preserve other worktrees and private artwork.
+- During implementation use `make fast-check CHECKS=<component>`; before pushing
+  runtime changes run `make smoke-check`. Docs-only changes need link/diff checks,
+  not gameplay tests. Use broader checks only when warranted; see
+  `docs/development.md` for commands. Automated YOU launches must set root metadata
+  `matrix_test_mode=true` before instantiation; never activate physical cameras.
+- Obtain explicit owner approval for release tags, GitHub Releases, public
+  deployment/distribution and release acceptance. Published tags/artifacts are
+  immutable. Preserve third-party notices and `archive/godot/` plus level source
+  snapshots; unresolved licensing is not cleared by passing tests.
+- No paid generation, accounts, persistence, cloud services or DLC without a
+  request. Do not invent personal references or artistic approval.
 
-- `main` is the single permanent development branch; no permanent dev branch.
-  It may contain validated work beyond the latest published release.
-- Codex may autonomously implement, validate, commit and push routine work
-  directly to main. Make meaningful incremental commits; push at logical
-  checkpoints with ordinary fast-forward pushes. Fetch/reconcile concurrent
-  changes safely; never force-push or rewrite published history.
-- Feature branches/worktrees are optional. Use PRs when useful for major
-  architecture, risky experiments, concurrent integration or requested formal
-  review; do not create one automatically for every task/phase. Honor explicit
-  task-specific review gates, including pending creative reviews.
-- Run focused checks during iteration and comprehensive validation at suitable
-  milestones. Diagnose failures before calling work validated or pushing it as
-  such. Report unresolved blockers. Manual gameplay acceptance is for release
-  readiness, not routine commits/pushes. See `docs/development.md` for commands.
-- Release authority is separate: obtain explicit owner authorization before
-  creating/changing release tags, publishing a GitHub Release, deploying/updating
-  the public site, publishing distribution artifacts or declaring a release
-  accepted. Published tags and artifact bytes are immutable.
-- Alpha 0.1 `v0.1.0-alpha.1` at `f614691` remains the authorized technical preview
-  with documented licensing issues unresolved, not legal clearance. Preserve
-  its tag/artifacts, historical Godot sources and independent Pygame archive.
-  Use `docs/releases/alpha-0.2-status.md` for current handoffs.
-
-## Project conventions
-
-- Keep `project.godot` at the repository root. Use typed GDScript for gameplay.
-- `app/` owns startup/routing, `pegasus/` Pegasus, the opening spaceship/terminal, `levels/` the
-  independent games, `shared/` reused resources, `scripts/` validation tools.
-- `legacy/.gdignore` excludes Python/assets from Godot imports. Copy required
-  graphics/audio into assets/art/ or assets/audio/; keep the archive independent and intact.
-- Commit Godot `.uid` sidecars; ignore `.godot/` and generated exports.
-- Default to `make fast-check CHECKS=<component>` during implementation.
-  `make smoke-check` / `make check` imports and checks startup/registered routes
-  before pushing integrated runtime work; docs-only edits need no gameplay tests.
-  Godot scenes/TileSets are authoritative: open pegasus/world.tscn,
-  levels/busboy/maps/{cabin,forest}.tscn, or levels/bubby/maps/*.tscn
-  and paint TileMapLayers directly. Never regenerate maps from TMX/CSV/JSON.
-  Preserve each game's custom movement, collision and animation algorithms;
-  shared/maps reads native placements and preserves those runtime rules.
-  Read docs/migration/native-maps.md for editor instructions and verification.
-  `make editor-map-check` opens/edits all maps in a disposable actual editor
-  project (requires a desktop display); no authored scenes are changed.
-  `make editor` opens the project; `make run` launches it. Override `GODOT`
-  with the executable path on other machines. Python 3 runs validation tooling
-  only; the Godot game must not depend on Python or the archived environment.
-- Use independent level modules inside one application, with a small pegasus/router.
-  Level roots extend `MatrixLevel` and emit `return_requested`; the router
-  frees the level tree and resumes the pegasus. Consume Escape for local menus.
-  Add completed scene paths to `app/level_registry.gd`. Empty paths deliberately
-  show pending status, and must never be described as migrated gameplay.
-- Preserve terminal codes and distinguishing mechanics; track parity explicitly.
-- Automated scenes that launch YOU must set root metadata `matrix_test_mode` to
-  true before launch, to avoid activating physical cameras. Test with synthetic
-  CameraFeeds; real hardware/permission checks remain manual.
-- Do not add persistence, accounts, cloud services, or downloadable content.
-- `legacy/pygame/` is the preserved source reference. Do not delete it until
-  the user authorizes removal after manual gameplay testing, in its own commit.
-- Read `legacy/pygame/AGENTS.md` for archived Python development instructions.
-- Use `docs/migration/README.md` for inventory, risks, and milestone status;
-  `docs/migration/parity-checklist.md` records verified behavior and manual gaps.
-- `make archive-check` verifies all 771 archived baseline checksums.
-  `make runtime-check` validates fresh imports/routes without the archive/cache.
-- Web exports must include active runtime JSON manifests and the active catalog, exclude
-  the archive/development sources, and provide a clear YOU fallback with pegasus return.
-- Record limitations and blockers; never claim unchecked browser/platform parity.
-- Preserve third-party notices; unresolved licensing remains a clearance blocker.
-  Do not remove affected levels silently.
-- Keep generated cache data, build output, credentials, and local tools out of Git.
-  Track `.import` sidecars that define asset import settings; ignore `.godot/`.
-
-To run the archive from the repository root:
-
-```sh
-(cd legacy/pygame && ../../.venv/bin/python main.py)
-make -C legacy/pygame PYTHON=../../.venv/bin/python check
-```
-
-The root virtual environment is local and is not moved or committed. Its
-availability is machine-specific; install archived requirements if needed.
-
-## Alpha 0.2
-
-Read docs/releases/alpha-0.2-status.md before continuing. Retired Godot modules
-PONG/JUMP/MARIO/MONSTERS live in archive/godot with original paths preserved
-as source references. Never import/bundle them into the active game. Historical
-checks remain available via make archived-godot-check. assets/art/source/ contains editable
-sources and user work; export runtime images to assets/art/ and audio to assets/audio/.
-Keep BOUNCE/BALLS/BUG/YOU, evolve ZELDA into BUBBY and UNTITLED into BUSBOY,
-MACHINE is now a provisional seven-room showcase. No paid generation, fabricated personal references,
-release tags or deployments under the current authorization. The owner
-authorized merging the Alpha 0.2 PR stack and validating integrated main on
-2026-10-22; that does not authorize publication or imply manual acceptance.
-
-## Testing tiers
-
-- Local default: `make fast-check CHECKS="pegasus mobile"` runs only selected
-  focused behavior/resources after import. Diagnose/retest affected failures;
-  do not repeat successful unrelated checks. `make tools-check` is for tooling.
-- Integration: `make smoke-check` (`make check`) is the small headless CI gate
-  for runtime pushes, not a gameplay walkthrough. Markdown/docs-only CI is skipped.
-- Release: explicitly run `make release-check`; add `make compatibility-check`
-  when relevant. Historical traces/maps/walkthroughs are optional via
-  `make regression-check`; archive checks are explicit only. Keep archives intact.
-- Report compact results; read full logs only on failures. No routine screenshots,
-  web exports or browser matrix. Manual gameplay/device acceptance belongs to
-  release readiness, never routine commits/pushes. Commands/details live in
-  `docs/development.md`. No test target publishes/deploys.
-- `make web-export` audits staged bytes before replacing the previous preview.
-  `make art-export SOURCE=... OUTPUT=...` is explicit/single-frame with isolated
-  Aseprite preferences. Never export unrelated art or delete in-use caches.
-- Keep build/.gdignore and exports/.gdignore tracked despite ignored outputs.
-
-## Repository layout
-
-Runtime graphics/audio belong in `assets/art/<experience>/` and
-`assets/audio/<experience>/`; editable masters belong in excluded
-`assets/art/source/<experience>/`. Scenes, TileSets, JSON and scripts stay in
-their modules. Matrix is the application; Pegasus is the opening spaceship,
-not a terminal destination. Use `make fast-check CHECKS=pegasus`.
-Read `docs/repository-cleanup.md` for the deferred legacy retirement decision
-and cross-branch integration notes. Preserve historical release/review snapshots.
+Read module READMEs for gameplay/maps, `docs/art-pipeline.md` for art work, and
+`docs/releases/` when preparing a release. Update documentation when behavior,
+interfaces or meaningful decisions change; do not create routine task reports,
+status journals or retrospectives.

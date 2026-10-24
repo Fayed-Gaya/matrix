@@ -19,7 +19,7 @@ state in the source or this port.
 - A 60 FPS cap, now temporarily applied through `Engine.max_fps` and restored
   when the level leaves the scene tree, including application teardown.
 
-Reference: `legacy/pygame/levels/balls/balls.py`. This module uses native drawing
+Reference: [original Pygame source](https://github.com/Fayed-Gaya/matrix/blob/55c803c4c8488db9dd17b36bbecd62f775cd52d8/legacy/pygame/levels/balls/balls.py). This module uses native drawing
 and GDScript; there are no external assets or runtime Python dependencies.
 
 ## Differences and limits
