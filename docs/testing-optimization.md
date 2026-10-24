@@ -57,3 +57,14 @@ Optional compatibility validation passed once on this Mac: Firefox, mobile
 Chromium and mobile WebKit, three tests in 2.2 min. It is not part of routine CI.
 Browser times reflect headless software rendering and are not controlled against
 the earlier headed local run. Publication/device acceptance remain unverified.
+
+## Main CI result
+
+[New smoke run 40071326947](https://github.com/Fayed-Gaya/matrix/actions/runs/40071326947)
+passed on `4fe26b3`: one integration job, **18 s**, including a cold editor-cache
+installation. Import plus all registered route/return checks took **8 s** in
+that job. The previous Godot/Web job span was **474 s**: roughly **96.2% shorter**
+for this observed routine CI run. This is reduced coverage/work, not a controlled
+engine benchmark. Cache hits may improve future runs; none are assumed here.
+No templates, Node/browser setup, web/source builds or archive jobs ran; success
+artifact upload was skipped. The optional/manual release workflow was not invoked.
