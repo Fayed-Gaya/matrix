@@ -41,7 +41,7 @@ func check_resources(path: String) -> void:
 		if not child.begins_with("."):
 			check_resources(path.path_join(child))
 	for file: String in directory.get_files():
-		if file.get_extension() in ["gd", "tscn", "tres", "gdshader"]:
+		if file.get_extension() in ["gd", "tscn", "tres", "gdshader", "png", "jpg", "jpeg", "wav", "ogg", "mp3", "ttf", "otf"]:
 			var resource_path: String = path.path_join(file)
 			var resource: Resource = load(resource_path)
 			check(resource != null, "Cannot load: " + resource_path)

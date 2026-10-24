@@ -45,7 +45,7 @@ The original [project documentation](legacy/pygame/README.md), games, assets,
 Tiled workspace, and Windows packaging tools remain in `legacy/pygame/`.
 Godot excludes the archive from resource scanning. Ported runtime art/audio live under assets/art/ and assets/audio/, with attribution preserved.
 
-Run the archived pegasus using the existing local environment:
+Run the archived Pygame implementation using the existing local environment:
 
 ```sh
 cd legacy/pygame
@@ -60,7 +60,7 @@ Untitled. A reproducible single-threaded Godot Web preset is configured;
 other platform packaging is not configured or certified.
 
 The archive remains tracked until manual Godot playtesting and explicit
-approval to remove it. See [pegasus parity and manual checks](docs/migration/hub-parity.md) for verification
+approval to remove it. See [historical spaceship parity and manual checks](docs/migration/hub-parity.md) for verification
 and known differences. Move with WASD/arrows; E opens the nearby terminal.
 Escape closes the terminal, returns from a level, or quits from the room.
 

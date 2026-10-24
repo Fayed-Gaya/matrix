@@ -35,7 +35,9 @@ from this structural cleanup. No archive or excluded Bubby/Busboy source changed
   import sidecars, and all tracked editable art. Exactly 100 media/editable
   files compared byte-identical; all import UIDs and `[params]` retained.
 - Full Godot, archive (771 files), fresh runtime and isolated PCK checks pass.
-  Browser checks and final diff review are the remaining delivery checkpoint.
+  Five available browser projects passed (2.5 minutes): desktop Chrome/Firefox,
+  mobile Chrome, DPR-3 Chrome layout and mobile WebKit. Local Edge is absent; CI
+  installs it. Final export includes explicit unassigned-audio/source exclusions.
 
 Historical release/review records retain their original names and locations
 as evidence of those revisions. Current paths and commands supersede them.
@@ -75,3 +77,24 @@ creative commits have not been changed or included here.
 The standalone RedGIFs audio is not introduced from its separate local branch.
 If later integrated, its explicit export exclusion and PCK absence check prevent
 accidental browser packaging. Redistribution rights remain unverified.
+
+## Final verification
+
+- `make check`: six Python tool/layout tests, exact Godot 4.7.2 import,
+  all active resource/scene loads, Pegasus input/collision/terminal/routes,
+  seven gameplay suites, native edit/save/reload, mobile and startup passed.
+- `make runtime-check`: fresh archive/cache-free imports and seven routes passed.
+- `make web-export`: single-threaded Compatibility export and isolated PCK audit
+  passed. Final exclusion-only export rerun verifies staged bytes before delivery.
+- Local Playwright: five projects passed; checks include keyboard and touch entry,
+  all seven returns, resizing/rotation and browser error guards.
+- Relocated Aseprite single-frame export passed; temporary probe PNG removed.
+- Current inventory freshness, focused Ruff and `git diff --check` passed.
+- Archive/level-source trees unchanged. Historical releases/review records retain
+  original terminology; migration docs clearly separate current editing paths
+  from historical evidence. No new CI workflow is needed: existing active CI
+  runs the updated Makefile/tools; archived CI remains because legacy is retained.
+
+No human gameplay, audible-audio or physical-device acceptance claimed. No
+release, tag, main merge or deployment authorized/performed. After approval,
+merge this PR normally; reconcile the still-open creative branches separately.

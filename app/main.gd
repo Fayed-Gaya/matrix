@@ -1,6 +1,6 @@
 class_name MatrixApp
 extends Control
-## Keeps the pegasus in memory; only the active level is replaced and freed.
+## Keeps Pegasus in memory; only the active level is replaced and freed.
 
 const PEGASUS_SCENE: PackedScene = preload("res://pegasus/pegasus.tscn")
 const PENDING_SCENE: PackedScene = preload("res://app/pending_level.tscn")

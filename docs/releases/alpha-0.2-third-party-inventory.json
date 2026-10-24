@@ -28,8 +28,8 @@
       "path": "app/main.gd",
       "module": "app",
       "type": ".gd",
-      "size": 2053,
-      "sha256": "bbdafa9c99139d161499099d6493c5653c1d2610a6f813acfd2ffb132d2a58bb",
+      "size": 2049,
+      "sha256": "f55b0ae60294f314e922d4a9977b22650f2859c4263e0938c963f61218819603",
       "exact_archived_matches": [],
       "source_reference": false,
       "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
