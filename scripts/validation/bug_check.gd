@@ -28,10 +28,10 @@ func run() -> void:
 	if args.size() == 1:
 		await RenderingServer.frame_post_draw
 		assert(root.get_texture().get_image().save_png(args[0]) == OK)
-	app.return_to_hub()
+	app.return_to_pegasus()
 	await process_frame
 	await process_frame
-	assert(app.active_level == null and app.hub.visible)
+	assert(app.active_level == null and app.pegasus.visible)
 	app.free()
 	print("The Bug validation passed")
 	quit()

@@ -1,7 +1,7 @@
 # Matrix
 
 Matrix uses **Godot 4.7.2, GDScript, Compatibility renderer** in this
-existing repository. Alpha 0.2 development retains `BOUNCE`, `BALLS`, `BUG`,
+existing repository. Its opening spaceship is **Pegasus**. Alpha 0.2 development retains `BOUNCE`, `BALLS`, `BUG`,
 `YOU`, and the two RPG foundations (`BUBBY` and `BUSBOY`). `PONG`, `JUMP`, `MARIO`, and `MONSTERS` are preserved
 under `archive/godot/`, excluded from the playable catalog and browser pack.
 `MACHINE` is a playable provisional clockwork-town showcase. YOU retains native camera functionality
@@ -11,12 +11,12 @@ The published Alpha 0.1 preview is unchanged and still contains all ten levels.
 
 ```sh
 make editor  # Open the Godot project
-make run     # Launch the Matrix hub
-make check   # Archive guard, Godot imports, hub/level behavior and startup
+make run     # Launch Matrix in Pegasus
+make check   # Archive guard, Godot imports, pegasus/level behavior and startup
 make runtime-check # Fresh archive-free import and all active routes
 ```
 
-Maps are authored directly in Godot. Open `hub/world.tscn`,
+Maps are authored directly in Godot. Open `pegasus/world.tscn`,
 `levels/busboy/maps/{cabin,forest}.tscn`, or a scene under
 `levels/bubby/maps/`; select a TileMapLayer and paint.
 Save the scene normally. Edit collision/interaction markers in the 2D editor.
@@ -32,7 +32,9 @@ requires Python 3 as development tooling and rejects engines other than
 4.7.2 stable. The game itself uses GDScript only.
 
 - `app/`: application startup, registry and level routing.
-- `hub/`: opening, room, player, camera and terminal.
+- `pegasus/`: Pegasus, the opening spaceship, player, camera and terminal.
+- `assets/art/`: runtime graphics; `source/` holds excluded editable artwork.
+- `assets/audio/`: runtime audio grouped by experience.
 - `levels/`: independent Godot level modules (Stage 4).
 - `shared/`: intentionally reused Godot resources.
 - `scripts/`: development tools and validation.
@@ -41,10 +43,9 @@ See [the parity checklist and manual acceptance steps](docs/migration/parity-che
 and [migration inventory/log](docs/migration/README.md).
 The original [project documentation](legacy/pygame/README.md), games, assets,
 Tiled workspace, and Windows packaging tools remain in `legacy/pygame/`.
-Godot excludes the archive from resource scanning. Ported assets
-live with their Godot modules, with attribution preserved.
+Godot excludes the archive from resource scanning. Ported runtime art/audio live under assets/art/ and assets/audio/, with attribution preserved.
 
-Run the archived hub using the existing local environment:
+Run the archived Pygame implementation using the existing local environment:
 
 ```sh
 cd legacy/pygame
@@ -59,7 +60,7 @@ Untitled. A reproducible single-threaded Godot Web preset is configured;
 other platform packaging is not configured or certified.
 
 The archive remains tracked until manual Godot playtesting and explicit
-approval to remove it. See [hub parity and manual checks](docs/migration/hub-parity.md) for verification
+approval to remove it. See [historical spaceship parity and manual checks](docs/migration/hub-parity.md) for verification
 and known differences. Move with WASD/arrows; E opens the nearby terminal.
 Escape closes the terminal, returns from a level, or quits from the room.
 

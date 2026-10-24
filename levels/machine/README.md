@@ -34,10 +34,10 @@ dialogue/relay. Keep Governor and ClockHand names for their runtime hooks.
 No runtime map conversion. Source art/export notes are in `art/machine/`.
 
 Machine owns its room/progression/realtime boss state. The generic pixel actor
-and original astronaut sheet are shared with the hub under `shared/actors/`;
-hub movement behavior remains at its previous speed, Machine uses 145 units/s.
+and original astronaut sheet are shared with the pegasus under `shared/actors/`;
+pegasus movement behavior remains at its previous speed, Machine uses 145 units/s.
 Sounds are short original generated tones; there is no new audio dependency.
-All child room/effects/audio trees are freed on hub return.
+All child room/effects/audio trees are freed on pegasus return.
 
 Validation checks seven native scenes and portal arrivals, source editing/save/
 reload, room/home/town/three NPC progression, relay gating/no duplicates, boss

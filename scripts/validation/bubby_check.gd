@@ -101,7 +101,7 @@ func run() -> void:
 	key(KEY_ESCAPE)
 	await process_frame
 	await process_frame
-	assert(app.active_level == null and app.hub.visible)
+	assert(app.active_level == null and app.pegasus.visible)
 	app.free()
 	await process_frame
 	await create_timer(0.15).timeout

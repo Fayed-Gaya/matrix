@@ -27,7 +27,7 @@ func run() -> void:
 			await process_frame
 		app.active_level.return_requested.emit()
 		await settle()
-		assert(app.active_level == null and app.hub.visible)
+		assert(app.active_level == null and app.pegasus.visible)
 	app.free()
 	await settle()
 	await create_timer(0.15).timeout

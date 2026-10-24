@@ -1,5 +1,10 @@
 # Alpha 0.2 implementation status
 
+Structural cleanup: [Pegasus/assets and legacy audit](../repository-cleanup.md)
+tracks the current branch, validation and integration considerations. Historical
+phase entries below retain their original names and paths.
+
+
 Updated 2026-10-22. Alpha 0.2 PRs #7–#14 are merged into `main` with
 merge commits; original commits preserved. Integrated code commit:
 `90a8514786c14a7edccbbc1a587f3a25e4a08cac` (tree identical to validated

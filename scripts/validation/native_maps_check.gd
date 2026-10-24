@@ -3,11 +3,11 @@ extends SceneTree
 var checked: int = 0
 
 func _initialize() -> void:
-	check_hub("hub", "hub")
+	check_pegasus("pegasus", "pegasus")
 	print("Native map authoring validation passed: "+str(checked)+" scenes")
 	quit()
 
-func check_hub(module: String, fixture: String) -> void:
+func check_pegasus(module: String, fixture: String) -> void:
 	var map: Node2D = load("res://"+module+"/world.tscn").instantiate()
 	var expected: Dictionary = JSON.parse_string(FileAccess.get_file_as_string("res://scripts/validation/"+fixture+"_map_reference.json"))
 	assert(map.player_spawn == Vector2(expected.spawn[0],expected.spawn[1]))
@@ -27,7 +27,7 @@ func check_hub(module: String, fixture: String) -> void:
 	layer.erase_cell(cell)
 	var packed: PackedScene = PackedScene.new()
 	assert(packed.pack(map) == OK)
-	var path: String = "user://native-hub-roundtrip.tscn"
+	var path: String = "user://native-pegasus-roundtrip.tscn"
 	assert(ResourceSaver.save(packed,path) == OK)
 	var edited: Node2D = (ResourceLoader.load(path,"PackedScene",ResourceLoader.CACHE_MODE_IGNORE) as PackedScene).instantiate()
 	assert(edited.player_spawn == map.player_spawn)

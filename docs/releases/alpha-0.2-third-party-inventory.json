@@ -1,5 +1,5 @@
 {
-  "scope": "Active modules plus their excluded source references for provenance, not an export manifest. External archive/godot, legacy/pygame, caches and import sidecars are excluded from these counts.",
+  "scope": "Active modules and centralized art/audio plus excluded source references for provenance, not an export manifest. External archive/godot, legacy/pygame, caches and import sidecars are excluded from these counts.",
   "counts": {
     ".gd": 44,
     ".gdshader": 1,
@@ -28,8 +28,8 @@
       "path": "app/main.gd",
       "module": "app",
       "type": ".gd",
-      "size": 2004,
-      "sha256": "9035bfb177fa79a42e34940b0678e67a26d0d60d6f834819b912fde1ffe1622e",
+      "size": 2049,
+      "sha256": "f55b0ae60294f314e922d4a9977b22650f2859c4263e0938c963f61218819603",
       "exact_archived_matches": [],
       "source_reference": false,
       "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
@@ -48,8 +48,8 @@
       "path": "app/mobile_controls.gd",
       "module": "app",
       "type": ".gd",
-      "size": 6975,
-      "sha256": "32e16084ab6d09e14fe0e3403f7c4e0c8c28c85b70733f331f30600866d26836",
+      "size": 7013,
+      "sha256": "f339beab9b00814922dc54c53456b4a15237afdf3172514bbb1d7c21d62f0f08",
       "exact_archived_matches": [],
       "source_reference": false,
       "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
@@ -78,268 +78,88 @@
       "path": "app/web_diagnostics.gd",
       "module": "app",
       "type": ".gd",
-      "size": 1543,
-      "sha256": "6427a0f3c250864d506c196c61cfae1abb8f874b0f973aa13bf30536aeaa77be",
+      "size": 1567,
+      "sha256": "7e715425c609bb429aa18b0b92156394e12091c37be00cd0293636b647e86415",
       "exact_archived_matches": [],
       "source_reference": false,
       "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
     },
     {
-      "path": "hub/assets/alpha02/cabin-atlas.png",
-      "module": "hub",
-      "type": ".png",
-      "size": 1698,
-      "sha256": "bd783209b88ed237ee78818af3190a67d6067c1b2533de43dd2a98bfeb2d90bb",
-      "exact_archived_matches": [],
-      "source_reference": false,
-      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
-    },
-    {
-      "path": "hub/assets/refinement/hull-atlas.png",
-      "module": "hub",
-      "type": ".png",
-      "size": 441,
-      "sha256": "77b1c876044ba7862c64c6061a2f934f25b1ce004d05f70d8a7bb2385c568dd0",
-      "exact_archived_matches": [],
-      "source_reference": false,
-      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
-    },
-    {
-      "path": "hub/assets/refinement/pod-open.png",
-      "module": "hub",
-      "type": ".png",
-      "size": 922,
-      "sha256": "10b2244923f3c89f3071168ef686bd2092b555c50fa87f168319ef579a5eb333",
-      "exact_archived_matches": [],
-      "source_reference": false,
-      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
-    },
-    {
-      "path": "hub/assets/refinement/pod-sealed.png",
-      "module": "hub",
-      "type": ".png",
-      "size": 900,
-      "sha256": "675d8cedb38c1d71612622cf6e8f3361c3edfce81ba576c2799ccb400d49522e",
-      "exact_archived_matches": [],
-      "source_reference": false,
-      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
-    },
-    {
-      "path": "hub/assets/refinement/terminal.png",
-      "module": "hub",
-      "type": ".png",
-      "size": 696,
-      "sha256": "35a1e56825f7c7fc35ab1cfbe2d40de30de0c0779238b4ab89b2d10cd12070ae",
-      "exact_archived_matches": [],
-      "source_reference": false,
-      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
-    },
-    {
-      "path": "hub/assets/refinement/viewport.png",
-      "module": "hub",
-      "type": ".png",
-      "size": 688,
-      "sha256": "6ea6f1c52572806102c776c49ece4ef731d80402fb220f59f7b277e0289798ae",
-      "exact_archived_matches": [],
-      "source_reference": false,
-      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
-    },
-    {
-      "path": "hub/assets/refinement/wall-light.png",
-      "module": "hub",
-      "type": ".png",
-      "size": 215,
-      "sha256": "9cf283295dd89b041b024431556a5d5f85b17378d799dc596636573985abdf26",
-      "exact_archived_matches": [],
-      "source_reference": false,
-      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
-    },
-    {
-      "path": "hub/assets/round2/chamber-bay.png",
-      "module": "hub",
-      "type": ".png",
-      "size": 1320,
-      "sha256": "f1ab87cac240a94303e224b29080abc50bb589bb98ccfa798f56cd398f4a19d1",
-      "exact_archived_matches": [],
-      "source_reference": false,
-      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
-    },
-    {
-      "path": "hub/assets/round2/deck-atlas.png",
-      "module": "hub",
-      "type": ".png",
-      "size": 1682,
-      "sha256": "5bfb8613d2e80b53d6daeb02680809a76952008c6f1b9f7264da4d7c2c2617e3",
-      "exact_archived_matches": [],
-      "source_reference": false,
-      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
-    },
-    {
-      "path": "hub/assets/round2/light.png",
-      "module": "hub",
-      "type": ".png",
-      "size": 774,
-      "sha256": "44b48a8531c12a47e6ee250e0a80f9b0083dc94817bd6387c54267628f4764ef",
-      "exact_archived_matches": [],
-      "source_reference": false,
-      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
-    },
-    {
-      "path": "hub/assets/round2/locker.png",
-      "module": "hub",
-      "type": ".png",
-      "size": 763,
-      "sha256": "72f5bb8bb374b391a766354842c6aa20f61d9af8c2845c77f9868afa1e182434",
-      "exact_archived_matches": [],
-      "source_reference": false,
-      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
-    },
-    {
-      "path": "hub/assets/round2/player.png",
-      "module": "hub",
-      "type": ".png",
-      "size": 1032,
-      "sha256": "17b27e320e697f5ff4c6d602df7b89bb84c688087fddd85e078a60adf4b8b755",
-      "exact_archived_matches": [],
-      "source_reference": false,
-      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
-    },
-    {
-      "path": "hub/assets/round2/pod-open.png",
-      "module": "hub",
-      "type": ".png",
-      "size": 1798,
-      "sha256": "4c21bafbdd5c820182741a86cd3f5ab7fa288b9b2c267c035e4bf26bc6956c4e",
-      "exact_archived_matches": [],
-      "source_reference": false,
-      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
-    },
-    {
-      "path": "hub/assets/round2/pod-sealed.png",
-      "module": "hub",
-      "type": ".png",
-      "size": 1745,
-      "sha256": "c66424ccd75485ba3c0b6c63b72c1165aee746d89ecc33feb359134363ddd567",
-      "exact_archived_matches": [],
-      "source_reference": false,
-      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
-    },
-    {
-      "path": "hub/assets/round2/terminal.png",
-      "module": "hub",
-      "type": ".png",
-      "size": 1087,
-      "sha256": "f19072ff69415161fe7c3bf5b4cd6349add5f6d7de538393bcba9b68845793a0",
-      "exact_archived_matches": [],
-      "source_reference": false,
-      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
-    },
-    {
-      "path": "hub/assets/round2/viewport.png",
-      "module": "hub",
-      "type": ".png",
-      "size": 1248,
-      "sha256": "43867dadded11f2e99e6f7ca6d93ee02d9a3d773148951b343fdb552294e3266",
-      "exact_archived_matches": [],
-      "source_reference": false,
-      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
-    },
-    {
-      "path": "hub/assets/round2/wall-light.png",
-      "module": "hub",
-      "type": ".png",
-      "size": 475,
-      "sha256": "b36d16b1aa935d9408b79bcc61303371208c08b1c458985002c12f73bc96b76a",
-      "exact_archived_matches": [],
-      "source_reference": false,
-      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
-    },
-    {
-      "path": "hub/assets/round2/worktable.png",
-      "module": "hub",
-      "type": ".png",
-      "size": 1004,
-      "sha256": "0cf2425c3e6afe76b075d234b1d928cff513278d9741d94a0f54b03f1f751c23",
-      "exact_archived_matches": [],
-      "source_reference": false,
-      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
-    },
-    {
-      "path": "hub/hub.gd",
-      "module": "hub",
+      "path": "pegasus/overlay.gd",
+      "module": "pegasus",
       "type": ".gd",
-      "size": 4190,
-      "sha256": "28a3e2938b4d8dc8bc5b0d4324ca1a08fabf71001610275d1809e57f5a412bad",
+      "size": 4397,
+      "sha256": "5c9d7d3653c68a8a592f61e2a96d9eb480a7955c75224baadd7b2282f51d351d",
       "exact_archived_matches": [],
       "source_reference": false,
       "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
     },
     {
-      "path": "hub/hub.tscn",
-      "module": "hub",
+      "path": "pegasus/pegasus.gd",
+      "module": "pegasus",
+      "type": ".gd",
+      "size": 4249,
+      "sha256": "1f404dbd5f0adf43114a261f81b389e35dffc7858ce2024c3a5b90ab5816f069",
+      "exact_archived_matches": [],
+      "source_reference": false,
+      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
+    },
+    {
+      "path": "pegasus/pegasus.tscn",
+      "module": "pegasus",
       "type": ".tscn",
-      "size": 1039,
-      "sha256": "7b4d174acc22e2d1199d2f4e6dfa3fb9a174f50aad0faa049ceb825afd907f34",
+      "size": 1067,
+      "sha256": "642362736dd344317f200ebbc081083c134959ab594627d62494c4cc2420dcb8",
       "exact_archived_matches": [],
       "source_reference": false,
       "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
     },
     {
-      "path": "hub/overlay.gd",
-      "module": "hub",
+      "path": "pegasus/player.gd",
+      "module": "pegasus",
       "type": ".gd",
-      "size": 4395,
-      "sha256": "7c8c8d67bfdafe72fa6c50236d46c1289ce0121eef8cc7e3abecc81afffdd5f1",
+      "size": 297,
+      "sha256": "6366feae58e9195ee9a23f13307ac5c053982964f648be197ac170c68fec93a2",
       "exact_archived_matches": [],
       "source_reference": false,
       "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
     },
     {
-      "path": "hub/player.gd",
-      "module": "hub",
-      "type": ".gd",
-      "size": 281,
-      "sha256": "58af06f79d69216465070a5c232dd831e39d28732464868edf41471ccfb73fe2",
-      "exact_archived_matches": [],
-      "source_reference": false,
-      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
-    },
-    {
-      "path": "hub/tileset.tres",
-      "module": "hub",
+      "path": "pegasus/tileset.tres",
+      "module": "pegasus",
       "type": ".tres",
-      "size": 475,
-      "sha256": "c1db2792fe45601a67ede83296eda91eac0cd1e40e34632410282a5ae2f28ccf",
+      "size": 483,
+      "sha256": "4ef0b9e7eb7830c73d47693fc460e5f5a1fc5a2b0c6a45e0227f2a29ceada411",
       "exact_archived_matches": [],
       "source_reference": false,
       "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
     },
     {
-      "path": "hub/web_terminal.gd",
-      "module": "hub",
+      "path": "pegasus/web_terminal.gd",
+      "module": "pegasus",
       "type": ".gd",
-      "size": 5785,
-      "sha256": "b4e617dba808c4d9e28800e1f7164801646c6da9883865dc80ea6621b6dc401f",
+      "size": 5812,
+      "sha256": "758b50267b8607d622ac9d7ef391977e8db00a546c528c4cc7251638c37d7b25",
       "exact_archived_matches": [],
       "source_reference": false,
       "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
     },
     {
-      "path": "hub/world.gd",
-      "module": "hub",
+      "path": "pegasus/world.gd",
+      "module": "pegasus",
       "type": ".gd",
-      "size": 602,
-      "sha256": "032e4f32a2faa8ed98bcac5897ca7359e0caacc53a6f0603a58ef27fd6c1963c",
+      "size": 606,
+      "sha256": "1d287c3635921fa9236a238056a0599a90eadeb1c6910ad86c0c8471583c25cf",
       "exact_archived_matches": [],
       "source_reference": false,
       "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
     },
     {
-      "path": "hub/world.tscn",
-      "module": "hub",
+      "path": "pegasus/world.tscn",
+      "module": "pegasus",
       "type": ".tscn",
-      "size": 8047,
-      "sha256": "e99d365bf409de514e36a5f4e04899127e3efd9b4aa0e53fb6ee2265250a088b",
+      "size": 8127,
+      "sha256": "2dc4c030f7a0715c68afe7ea39689ce2178bc3cfedc156e5a6da91c61123b12d",
       "exact_archived_matches": [],
       "source_reference": false,
       "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
@@ -375,21 +195,11 @@
       "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
     },
     {
-      "path": "levels/bouncing_ball/assets/intro_ball.png",
-      "module": "bouncing_ball",
-      "type": ".png",
-      "size": 7927,
-      "sha256": "ddc2890ceda53a36da6340591942d1d29b037c08048586fc7bb783324b3a75f3",
-      "exact_archived_matches": [],
-      "source_reference": false,
-      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
-    },
-    {
       "path": "levels/bouncing_ball/bouncing_ball.gd",
       "module": "bouncing_ball",
       "type": ".gd",
-      "size": 1735,
-      "sha256": "0120f6c08b083e9257f3ae2487eddea89bd9184d244339ff6a3b943de8958c33",
+      "size": 1725,
+      "sha256": "277537f7aac7050cb654e230185839d56ec1c4f2a22b1db8bbc5aa8c742a74c2",
       "exact_archived_matches": [],
       "source_reference": false,
       "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
@@ -418,361 +228,12 @@
       "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
     },
     {
-      "path": "levels/bubby/assets/apartment-atlas.png",
-      "module": "bubby",
-      "type": ".png",
-      "size": 1491,
-      "sha256": "cd86721a2fcdb1e6c1cb8d9de8f9b804c2d1b8fb82b061d1d4a1df34f8d9002f",
-      "exact_archived_matches": [],
-      "source_reference": false,
-      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
-    },
-    {
       "path": "levels/bubby/assets/manifest.json",
       "module": "bubby",
       "type": ".json",
-      "size": 1850,
-      "sha256": "a2d6266fa0c2834cdf234e49560a3b336c436eab45f6ee30a0457ede012dbeff",
+      "size": 1778,
+      "sha256": "8717f40770c55b2bd9ebefdd1f96e0b77e75490b2412a8a9c17463d2e38f7736",
       "exact_archived_matches": [],
-      "source_reference": false,
-      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
-    },
-    {
-      "path": "levels/bubby/assets/music.ogg",
-      "module": "bubby",
-      "type": ".ogg",
-      "size": 1750046,
-      "sha256": "5d226045574a6a281b1579d825dae13da412d83333ec1b7fd04a61e3b03fd4be",
-      "exact_archived_matches": [
-        "legacy/pygame/levels/zelda/audio/main.ogg"
-      ],
-      "source_reference": false,
-      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
-    },
-    {
-      "path": "levels/bubby/assets/outside-atlas.png",
-      "module": "bubby",
-      "type": ".png",
-      "size": 1380,
-      "sha256": "374a90b9041efa71ea4b6f412f8cdab30c6c73fec97cc8d52200351cc6d01d76",
-      "exact_archived_matches": [],
-      "source_reference": false,
-      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
-    },
-    {
-      "path": "levels/bubby/assets/pigeon.png",
-      "module": "bubby",
-      "type": ".png",
-      "size": 276,
-      "sha256": "aa0ca222535ed62021ac6fc6625f0764f52d29ad023712ea4876e3040d1827be",
-      "exact_archived_matches": [],
-      "source_reference": false,
-      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
-    },
-    {
-      "path": "levels/bubby/assets/player/down/down_0.png",
-      "module": "bubby",
-      "type": ".png",
-      "size": 591,
-      "sha256": "385ec20e005572a6254a5aa53b0b7cd820ed98b834850422c901f60766e4df3e",
-      "exact_archived_matches": [
-        "legacy/pygame/levels/zelda/graphics/player/down/down_0.png",
-        "legacy/pygame/levels/zelda/graphics/player/down/down_2.png",
-        "legacy/pygame/levels/zelda/graphics/player/down_idle/idle_down.png",
-        "legacy/pygame/levels/zelda/graphics/test/player.png"
-      ],
-      "source_reference": false,
-      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
-    },
-    {
-      "path": "levels/bubby/assets/player/down/down_1.png",
-      "module": "bubby",
-      "type": ".png",
-      "size": 585,
-      "sha256": "47016342f5a06f3d792b144b4680319a5439add6446053207de0e9a765479901",
-      "exact_archived_matches": [
-        "legacy/pygame/levels/zelda/graphics/player/down/down_1.png"
-      ],
-      "source_reference": false,
-      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
-    },
-    {
-      "path": "levels/bubby/assets/player/down/down_2.png",
-      "module": "bubby",
-      "type": ".png",
-      "size": 591,
-      "sha256": "385ec20e005572a6254a5aa53b0b7cd820ed98b834850422c901f60766e4df3e",
-      "exact_archived_matches": [
-        "legacy/pygame/levels/zelda/graphics/player/down/down_0.png",
-        "legacy/pygame/levels/zelda/graphics/player/down/down_2.png",
-        "legacy/pygame/levels/zelda/graphics/player/down_idle/idle_down.png",
-        "legacy/pygame/levels/zelda/graphics/test/player.png"
-      ],
-      "source_reference": false,
-      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
-    },
-    {
-      "path": "levels/bubby/assets/player/down/down_3.png",
-      "module": "bubby",
-      "type": ".png",
-      "size": 589,
-      "sha256": "0239b22c1882185f16c95da735b34cdab7831a5c3561647e4c41c3d4febb32e6",
-      "exact_archived_matches": [
-        "legacy/pygame/levels/zelda/graphics/player/down/down_3.png"
-      ],
-      "source_reference": false,
-      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
-    },
-    {
-      "path": "levels/bubby/assets/player/down_attack/attack_down.png",
-      "module": "bubby",
-      "type": ".png",
-      "size": 552,
-      "sha256": "3ad1bf151176011d2becf481fc2920d43906af1a8fa6e760661e1b805917ab57",
-      "exact_archived_matches": [
-        "legacy/pygame/levels/zelda/graphics/player/down_attack/attack_down.png"
-      ],
-      "source_reference": false,
-      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
-    },
-    {
-      "path": "levels/bubby/assets/player/down_idle/idle_down.png",
-      "module": "bubby",
-      "type": ".png",
-      "size": 591,
-      "sha256": "385ec20e005572a6254a5aa53b0b7cd820ed98b834850422c901f60766e4df3e",
-      "exact_archived_matches": [
-        "legacy/pygame/levels/zelda/graphics/player/down/down_0.png",
-        "legacy/pygame/levels/zelda/graphics/player/down/down_2.png",
-        "legacy/pygame/levels/zelda/graphics/player/down_idle/idle_down.png",
-        "legacy/pygame/levels/zelda/graphics/test/player.png"
-      ],
-      "source_reference": false,
-      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
-    },
-    {
-      "path": "levels/bubby/assets/player/left/left_0.png",
-      "module": "bubby",
-      "type": ".png",
-      "size": 609,
-      "sha256": "21daadbdd7943681b98e6418ff4c5941b1a0b682003cdfc96e2dd342b432d9e1",
-      "exact_archived_matches": [
-        "legacy/pygame/levels/zelda/graphics/player/left/left_0.png",
-        "legacy/pygame/levels/zelda/graphics/player/left_idle/idle_left.png"
-      ],
-      "source_reference": false,
-      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
-    },
-    {
-      "path": "levels/bubby/assets/player/left/left_1.png",
-      "module": "bubby",
-      "type": ".png",
-      "size": 563,
-      "sha256": "daec598d0d04370c02473d3087af1be3158caa7a663d57dcaca475af45eaceac",
-      "exact_archived_matches": [
-        "legacy/pygame/levels/zelda/graphics/player/left/left_1.png"
-      ],
-      "source_reference": false,
-      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
-    },
-    {
-      "path": "levels/bubby/assets/player/left/left_2.png",
-      "module": "bubby",
-      "type": ".png",
-      "size": 621,
-      "sha256": "7b7d436904234270eaa39bfa0af290216a6282b94c904dff8dd3cd01073e6977",
-      "exact_archived_matches": [
-        "legacy/pygame/levels/zelda/graphics/player/left/left_2.png"
-      ],
-      "source_reference": false,
-      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
-    },
-    {
-      "path": "levels/bubby/assets/player/left/left_3.png",
-      "module": "bubby",
-      "type": ".png",
-      "size": 586,
-      "sha256": "1e815c3fd56d076a713ef5f5e2f94bc22cbfe905b01bb4f1734ad550baee5b0b",
-      "exact_archived_matches": [
-        "legacy/pygame/levels/zelda/graphics/player/left/left_3.png"
-      ],
-      "source_reference": false,
-      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
-    },
-    {
-      "path": "levels/bubby/assets/player/left_attack/attack_left.png",
-      "module": "bubby",
-      "type": ".png",
-      "size": 563,
-      "sha256": "3ae212fadca181b1c3b1724c17a8abbc34ff659d789ec8ec122ba86c190c1895",
-      "exact_archived_matches": [
-        "legacy/pygame/levels/zelda/graphics/player/left_attack/attack_left.png"
-      ],
-      "source_reference": false,
-      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
-    },
-    {
-      "path": "levels/bubby/assets/player/left_idle/idle_left.png",
-      "module": "bubby",
-      "type": ".png",
-      "size": 609,
-      "sha256": "21daadbdd7943681b98e6418ff4c5941b1a0b682003cdfc96e2dd342b432d9e1",
-      "exact_archived_matches": [
-        "legacy/pygame/levels/zelda/graphics/player/left/left_0.png",
-        "legacy/pygame/levels/zelda/graphics/player/left_idle/idle_left.png"
-      ],
-      "source_reference": false,
-      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
-    },
-    {
-      "path": "levels/bubby/assets/player/right/right_0.png",
-      "module": "bubby",
-      "type": ".png",
-      "size": 568,
-      "sha256": "4bdd5d90a8e75f50f8591a543ce8a7bd491fe239987963985efe8340166ffd49",
-      "exact_archived_matches": [
-        "legacy/pygame/levels/zelda/graphics/player/right/right_0.png",
-        "legacy/pygame/levels/zelda/graphics/player/right_idle/idle_right.png"
-      ],
-      "source_reference": false,
-      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
-    },
-    {
-      "path": "levels/bubby/assets/player/right/right_1.png",
-      "module": "bubby",
-      "type": ".png",
-      "size": 521,
-      "sha256": "f2a2cced485ccfdd5e9f5d9a9f2b7ce9bf97d3de0aeb7844d276525b792a6947",
-      "exact_archived_matches": [
-        "legacy/pygame/levels/zelda/graphics/player/right/right_1.png"
-      ],
-      "source_reference": false,
-      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
-    },
-    {
-      "path": "levels/bubby/assets/player/right/right_2.png",
-      "module": "bubby",
-      "type": ".png",
-      "size": 578,
-      "sha256": "f6f62749f6d6bec29cdb64cf30ff16a8148b98af3334e995d3e7ef4ca7b5e360",
-      "exact_archived_matches": [
-        "legacy/pygame/levels/zelda/graphics/player/right/right_2.png"
-      ],
-      "source_reference": false,
-      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
-    },
-    {
-      "path": "levels/bubby/assets/player/right/right_3.png",
-      "module": "bubby",
-      "type": ".png",
-      "size": 551,
-      "sha256": "096fc26280d702ba3df29d839a3db1f54c16e68c5f49424e58881098f1615871",
-      "exact_archived_matches": [
-        "legacy/pygame/levels/zelda/graphics/player/right/right_3.png"
-      ],
-      "source_reference": false,
-      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
-    },
-    {
-      "path": "levels/bubby/assets/player/right_attack/attack_right.png",
-      "module": "bubby",
-      "type": ".png",
-      "size": 505,
-      "sha256": "d8c58cd1da25561831b435bf1caeea90e5dea9f99f5b63bc829dba8a0b3077a8",
-      "exact_archived_matches": [
-        "legacy/pygame/levels/zelda/graphics/player/right_attack/attack_right.png"
-      ],
-      "source_reference": false,
-      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
-    },
-    {
-      "path": "levels/bubby/assets/player/right_idle/idle_right.png",
-      "module": "bubby",
-      "type": ".png",
-      "size": 568,
-      "sha256": "4bdd5d90a8e75f50f8591a543ce8a7bd491fe239987963985efe8340166ffd49",
-      "exact_archived_matches": [
-        "legacy/pygame/levels/zelda/graphics/player/right/right_0.png",
-        "legacy/pygame/levels/zelda/graphics/player/right_idle/idle_right.png"
-      ],
-      "source_reference": false,
-      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
-    },
-    {
-      "path": "levels/bubby/assets/player/up/up_0.png",
-      "module": "bubby",
-      "type": ".png",
-      "size": 469,
-      "sha256": "eaab4bc6a9088435b91e4adc2762971ffe379dc01f21d57c8cff64fe703077d7",
-      "exact_archived_matches": [
-        "legacy/pygame/levels/zelda/graphics/player/up/up_0.png",
-        "legacy/pygame/levels/zelda/graphics/player/up/up_2.png",
-        "legacy/pygame/levels/zelda/graphics/player/up_idle/idle_up.png"
-      ],
-      "source_reference": false,
-      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
-    },
-    {
-      "path": "levels/bubby/assets/player/up/up_1.png",
-      "module": "bubby",
-      "type": ".png",
-      "size": 489,
-      "sha256": "4ec54c2f14cf8c86da340c65ee391bf7d0121cb9b59451d6cdf4afd2e1735d23",
-      "exact_archived_matches": [
-        "legacy/pygame/levels/zelda/graphics/player/up/up_1.png"
-      ],
-      "source_reference": false,
-      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
-    },
-    {
-      "path": "levels/bubby/assets/player/up/up_2.png",
-      "module": "bubby",
-      "type": ".png",
-      "size": 469,
-      "sha256": "eaab4bc6a9088435b91e4adc2762971ffe379dc01f21d57c8cff64fe703077d7",
-      "exact_archived_matches": [
-        "legacy/pygame/levels/zelda/graphics/player/up/up_0.png",
-        "legacy/pygame/levels/zelda/graphics/player/up/up_2.png",
-        "legacy/pygame/levels/zelda/graphics/player/up_idle/idle_up.png"
-      ],
-      "source_reference": false,
-      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
-    },
-    {
-      "path": "levels/bubby/assets/player/up/up_3.png",
-      "module": "bubby",
-      "type": ".png",
-      "size": 507,
-      "sha256": "d0fb25a0ec53b0ad537232a4b6f3e1292688377470493d2858cecfc430960206",
-      "exact_archived_matches": [
-        "legacy/pygame/levels/zelda/graphics/player/up/up_3.png"
-      ],
-      "source_reference": false,
-      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
-    },
-    {
-      "path": "levels/bubby/assets/player/up_attack/attack_up.png",
-      "module": "bubby",
-      "type": ".png",
-      "size": 502,
-      "sha256": "1c670a7e5b4c7ccf3368845e15264c8b835bd8c695cf967e6397f70d28b3b8b1",
-      "exact_archived_matches": [
-        "legacy/pygame/levels/zelda/graphics/player/up_attack/attack_up.png"
-      ],
-      "source_reference": false,
-      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
-    },
-    {
-      "path": "levels/bubby/assets/player/up_idle/idle_up.png",
-      "module": "bubby",
-      "type": ".png",
-      "size": 469,
-      "sha256": "eaab4bc6a9088435b91e4adc2762971ffe379dc01f21d57c8cff64fe703077d7",
-      "exact_archived_matches": [
-        "legacy/pygame/levels/zelda/graphics/player/up/up_0.png",
-        "legacy/pygame/levels/zelda/graphics/player/up/up_2.png",
-        "legacy/pygame/levels/zelda/graphics/player/up_idle/idle_up.png"
-      ],
       "source_reference": false,
       "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
     },
@@ -780,8 +241,8 @@
       "path": "levels/bubby/bubby.gd",
       "module": "bubby",
       "type": ".gd",
-      "size": 6082,
-      "sha256": "efca4e9aff4c60afd7cdc6799fb0554e5a84b38cce4b656f10d4b163e5002b16",
+      "size": 6102,
+      "sha256": "3ab0c8991ed92f21904fc086ae7e653547557ab027a477c8f6ff1d717850b5ed",
       "exact_archived_matches": [],
       "source_reference": false,
       "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
@@ -800,8 +261,8 @@
       "path": "levels/bubby/maps/apartment.tres",
       "module": "bubby",
       "type": ".tres",
-      "size": 534,
-      "sha256": "d6fd66ccd415f1c96c02131c601d2a875a5a64c323962bde315db6754d8433f8",
+      "size": 531,
+      "sha256": "716b0d1a2523e2d871ffc76fc24245f5b9febbb7038adb49051e561023d375b2",
       "exact_archived_matches": [],
       "source_reference": false,
       "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
@@ -820,8 +281,8 @@
       "path": "levels/bubby/maps/outside.tres",
       "module": "bubby",
       "type": ".tres",
-      "size": 532,
-      "sha256": "4a436e270c081e49bb53773a850d7539c6924cfdeaaea7706d8cca23e215110e",
+      "size": 529,
+      "sha256": "2b405594ecbb11f88032e88a830a1c0a95f201fbb23f94e322a1910918a515de",
       "exact_archived_matches": [],
       "source_reference": false,
       "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
@@ -4504,104 +3965,11 @@
       "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
     },
     {
-      "path": "levels/busboy/assets/audio/forest_ambience.mp3",
-      "module": "busboy",
-      "type": ".mp3",
-      "size": 716670,
-      "sha256": "9850aa1d0d5d66bd9c5daf8bb77c6d852e01f2f4de22f283bd5621e8bed13b75",
-      "exact_archived_matches": [
-        "legacy/pygame/levels/untitled/assets/audio/forest_ambience.mp3"
-      ],
-      "source_reference": false,
-      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
-    },
-    {
-      "path": "levels/busboy/assets/backgrounds/environment_forestbackground.png",
-      "module": "busboy",
-      "type": ".png",
-      "size": 1228912,
-      "sha256": "8b93f4f164532cc36652b055db14fc5a719459df69cbd4cc05500b9483f286f3",
-      "exact_archived_matches": [
-        "legacy/pygame/levels/untitled/assets/backgrounds/environment_forestbackground.png"
-      ],
-      "source_reference": false,
-      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
-    },
-    {
-      "path": "levels/busboy/assets/props.png",
-      "module": "busboy",
-      "type": ".png",
-      "size": 494,
-      "sha256": "0ff58c876bcf29170963d4c90e3c53d0eccb85a3258cbc3be45812191c995e99",
-      "exact_archived_matches": [],
-      "source_reference": false,
-      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
-    },
-    {
-      "path": "levels/busboy/assets/root.png",
-      "module": "busboy",
-      "type": ".png",
-      "size": 357,
-      "sha256": "34af46e3da65b03be4f27c24570253f8a97bd204f7f2d47c7dc0a3cd6d8d225b",
-      "exact_archived_matches": [],
-      "source_reference": false,
-      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
-    },
-    {
-      "path": "levels/busboy/assets/sprites/npc_snoblin_blue.png",
-      "module": "busboy",
-      "type": ".png",
-      "size": 3345,
-      "sha256": "26df25396415b34028086bb67096afd2cd4eaeee483e7edc922bada3d0af0540",
-      "exact_archived_matches": [
-        "legacy/pygame/levels/untitled/assets/sprites/npc_snoblin_blue.png"
-      ],
-      "source_reference": false,
-      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
-    },
-    {
-      "path": "levels/busboy/assets/sprites/player_snoblin.png",
-      "module": "busboy",
-      "type": ".png",
-      "size": 3266,
-      "sha256": "776760ec65248dfde3fceb0a7ae4ca460bb2df784565453f49d42483285f4a97",
-      "exact_archived_matches": [
-        "legacy/pygame/levels/untitled/assets/sprites/player_snoblin.png",
-        "legacy/pygame/matrix/assets/sprites/player_snoblin.png"
-      ],
-      "source_reference": false,
-      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
-    },
-    {
-      "path": "levels/busboy/assets/sprites/static_shadow.png",
-      "module": "busboy",
-      "type": ".png",
-      "size": 5123,
-      "sha256": "5aa1cf738f544328316fcbd9d5b444679efbed48ae37355963fcbf8a97f0fa1b",
-      "exact_archived_matches": [
-        "legacy/pygame/levels/untitled/assets/sprites/static_shadow.png"
-      ],
-      "source_reference": false,
-      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
-    },
-    {
-      "path": "levels/busboy/assets/tilesets/16x16.png",
-      "module": "busboy",
-      "type": ".png",
-      "size": 36956,
-      "sha256": "51fcfe915af508d6f55429149e555356a572aee2af1103c575ba483052db0389",
-      "exact_archived_matches": [
-        "legacy/pygame/shared_assets/tilesets/16x16.png"
-      ],
-      "source_reference": false,
-      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
-    },
-    {
       "path": "levels/busboy/busboy.gd",
       "module": "busboy",
       "type": ".gd",
-      "size": 6305,
-      "sha256": "ba2d97c8cc517ea20ec5ecd1c2d54aa54c3d1d478f8e8cd590e60aeb36efe31e",
+      "size": 6322,
+      "sha256": "bfdf951ea4cdc43f1fa26339df9df8f37cd05a03ba74cfe0cc46f3642e69ed43",
       "exact_archived_matches": [],
       "source_reference": false,
       "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
@@ -4630,8 +3998,8 @@
       "path": "levels/busboy/maps/cabin.tscn",
       "module": "busboy",
       "type": ".tscn",
-      "size": 9743,
-      "sha256": "25e31e3f9647ab42f2ca8afd30ce1235cb3084d37c1def6da71cb0f368a1323e",
+      "size": 9740,
+      "sha256": "e97600538a561073c86abde7799b3e3633418a63e912e05d7186327ed29897f2",
       "exact_archived_matches": [],
       "source_reference": false,
       "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
@@ -4640,8 +4008,8 @@
       "path": "levels/busboy/maps/forest.tscn",
       "module": "busboy",
       "type": ".tscn",
-      "size": 17380,
-      "sha256": "87bf72d87ec00cedb9ef53f3b8a0f80c3ec96e9f0e3f2476beadd6b23b5fc80c",
+      "size": 17374,
+      "sha256": "62eae60f57ecb4c2d09944d3687365326e1dff369d544d9a2a1d6d01d18864b1",
       "exact_archived_matches": [],
       "source_reference": false,
       "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
@@ -4650,8 +4018,8 @@
       "path": "levels/busboy/npc.gd",
       "module": "busboy",
       "type": ".gd",
-      "size": 362,
-      "sha256": "108e3191bdad2dec0b9ac4ceeb552c8e715b92b6313c7170817401064c2494c3",
+      "size": 359,
+      "sha256": "3e4d8d69321f1b72a601eb815a902b7e1d1dd2438261dd0befc08e7caaa819dc",
       "exact_archived_matches": [],
       "source_reference": false,
       "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
@@ -4660,8 +4028,8 @@
       "path": "levels/busboy/overlay.gd",
       "module": "busboy",
       "type": ".gd",
-      "size": 5264,
-      "sha256": "ff33112c37b8a2d27051d423212cc7764c19d62fbaabc0b240fe138644e85cf6",
+      "size": 5255,
+      "sha256": "6d3ec4ab5b10d2b3c311e7e1976d99c1aca66cc09121f32e7b35b3f5b099e43b",
       "exact_archived_matches": [],
       "source_reference": false,
       "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
@@ -4670,8 +4038,8 @@
       "path": "levels/busboy/player.gd",
       "module": "busboy",
       "type": ".gd",
-      "size": 2192,
-      "sha256": "7590d7afb716b1f958644170a47abe44730bc9d3a42ce0028fce174de012e1d7",
+      "size": 2189,
+      "sha256": "8ee6dbd73cdcd045383dc40658e5f35b5c91f8079d82ef586cd9bf53af957c71",
       "exact_archived_matches": [],
       "source_reference": false,
       "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
@@ -4863,28 +4231,8 @@
       "path": "levels/busboy/tileset.tres",
       "module": "busboy",
       "type": ".tres",
-      "size": 4576,
-      "sha256": "569f3c6744455af90f2cfe8b0889aa5881136d3adb31b9ff58185cfc4eeef596",
-      "exact_archived_matches": [],
-      "source_reference": false,
-      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
-    },
-    {
-      "path": "levels/machine/assets/governor.png",
-      "module": "machine",
-      "type": ".png",
-      "size": 294,
-      "sha256": "046197537ffbb0d9f22f643eef752fb7c93d99208156284d1038c216c6521086",
-      "exact_archived_matches": [],
-      "source_reference": false,
-      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
-    },
-    {
-      "path": "levels/machine/assets/town-atlas.png",
-      "module": "machine",
-      "type": ".png",
-      "size": 2616,
-      "sha256": "d7474bbf0e4a5f4d443cabe5dac9891e03efba7925da164bfc7ab0f6d9851faa",
+      "size": 4573,
+      "sha256": "6ede05890991431adaa721cf3efdcce855729eb52844dfa6a2a2f7aaaf6724d9",
       "exact_archived_matches": [],
       "source_reference": false,
       "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
@@ -4903,8 +4251,8 @@
       "path": "levels/machine/machine.gd",
       "module": "machine",
       "type": ".gd",
-      "size": 8344,
-      "sha256": "6cacb43e60c07ed96c867d235ce6bed6e553e0e03ab5bc40166fac27cddd9179",
+      "size": 8379,
+      "sha256": "5e91f53df75f4b519a419b93d96b8d93b4294a3d9d4f590bef3b34f657a25615",
       "exact_archived_matches": [],
       "source_reference": false,
       "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
@@ -4963,8 +4311,8 @@
       "path": "levels/machine/maps/outskirts.tscn",
       "module": "machine",
       "type": ".tscn",
-      "size": 12336,
-      "sha256": "569da95b5ff05ebc225b70b3666efb0374114e1720ed310b0bf0c91b67013194",
+      "size": 12333,
+      "sha256": "7ebb6fe46596c3798014dd5a0957a0473b35e63f47bd37ccde6c0a877bef2085",
       "exact_archived_matches": [],
       "source_reference": false,
       "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
@@ -4973,8 +4321,8 @@
       "path": "levels/machine/maps/town.tres",
       "module": "machine",
       "type": ".tres",
-      "size": 691,
-      "sha256": "19f11d77a7d7866c68e6fd778e56f0d5b5ad465ff0670f3559cae53749c6338a",
+      "size": 688,
+      "sha256": "ad527015eb429abf9b7e0c1e77b7e5bd3601a7b94086175dba659cc1af424507",
       "exact_archived_matches": [],
       "source_reference": false,
       "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
@@ -5020,18 +4368,6 @@
       "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
     },
     {
-      "path": "levels/the_bug/assets/cat.png",
-      "module": "the_bug",
-      "type": ".png",
-      "size": 291408,
-      "sha256": "e42dbc430c91b23ba58a11d379acc9b5c8b720007449eb5dabcc74fcb63f5fde",
-      "exact_archived_matches": [
-        "legacy/pygame/levels/the_bug/cat.png"
-      ],
-      "source_reference": false,
-      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
-    },
-    {
       "path": "levels/the_bug/canvas.gd",
       "module": "the_bug",
       "type": ".gd",
@@ -5045,8 +4381,8 @@
       "path": "levels/the_bug/the_bug.gd",
       "module": "the_bug",
       "type": ".gd",
-      "size": 1792,
-      "sha256": "80cc98a8d1381b88c48db18a3adcc7d5fdd0f4933d8ac0f18cb5e807ecf18424",
+      "size": 1785,
+      "sha256": "bc0528e5aea785fd1e92187ab1fe9f797325b4b51c4d855a9a7472e6d2a08b55",
       "exact_archived_matches": [],
       "source_reference": false,
       "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
@@ -5092,16 +4428,6 @@
       "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
     },
     {
-      "path": "shared/actors/astronaut.png",
-      "module": "shared",
-      "type": ".png",
-      "size": 774,
-      "sha256": "ff7a683ddd7fe288523ad67f5c3d9545c8d5656a6aa7e53bf458e19fd4fad9ad",
-      "exact_archived_matches": [],
-      "source_reference": false,
-      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
-    },
-    {
       "path": "shared/actors/pixel_player.gd",
       "module": "shared",
       "type": ".gd",
@@ -5115,8 +4441,8 @@
       "path": "shared/level.gd",
       "module": "shared",
       "type": ".gd",
-      "size": 371,
-      "sha256": "7da1b8c564828413170f56734fa57d05589acd2a8f61723bffc7b992c1300d0f",
+      "size": 375,
+      "sha256": "4668288c6c162860a3dd09f2b1533f0fc4542bb6dd6bc1b98cb709ee78d1b802",
       "exact_archived_matches": [],
       "source_reference": false,
       "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
@@ -5148,6 +4474,680 @@
       "size": 1504,
       "sha256": "b0451a9229003ad06c111d94371c68cefbaba95e936609be429fab9ce483e499",
       "exact_archived_matches": [],
+      "source_reference": false,
+      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
+    },
+    {
+      "path": "assets/art/bounce/intro_ball.png",
+      "module": "bounce",
+      "type": ".png",
+      "size": 7927,
+      "sha256": "ddc2890ceda53a36da6340591942d1d29b037c08048586fc7bb783324b3a75f3",
+      "exact_archived_matches": [],
+      "source_reference": false,
+      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
+    },
+    {
+      "path": "assets/art/bubby/apartment-atlas.png",
+      "module": "bubby",
+      "type": ".png",
+      "size": 1491,
+      "sha256": "cd86721a2fcdb1e6c1cb8d9de8f9b804c2d1b8fb82b061d1d4a1df34f8d9002f",
+      "exact_archived_matches": [],
+      "source_reference": false,
+      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
+    },
+    {
+      "path": "assets/art/bubby/outside-atlas.png",
+      "module": "bubby",
+      "type": ".png",
+      "size": 1380,
+      "sha256": "374a90b9041efa71ea4b6f412f8cdab30c6c73fec97cc8d52200351cc6d01d76",
+      "exact_archived_matches": [],
+      "source_reference": false,
+      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
+    },
+    {
+      "path": "assets/art/bubby/pigeon.png",
+      "module": "bubby",
+      "type": ".png",
+      "size": 276,
+      "sha256": "aa0ca222535ed62021ac6fc6625f0764f52d29ad023712ea4876e3040d1827be",
+      "exact_archived_matches": [],
+      "source_reference": false,
+      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
+    },
+    {
+      "path": "assets/art/bubby/player/down/down_0.png",
+      "module": "bubby",
+      "type": ".png",
+      "size": 591,
+      "sha256": "385ec20e005572a6254a5aa53b0b7cd820ed98b834850422c901f60766e4df3e",
+      "exact_archived_matches": [
+        "legacy/pygame/levels/zelda/graphics/player/down/down_0.png",
+        "legacy/pygame/levels/zelda/graphics/player/down/down_2.png",
+        "legacy/pygame/levels/zelda/graphics/player/down_idle/idle_down.png",
+        "legacy/pygame/levels/zelda/graphics/test/player.png"
+      ],
+      "source_reference": false,
+      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
+    },
+    {
+      "path": "assets/art/bubby/player/down/down_1.png",
+      "module": "bubby",
+      "type": ".png",
+      "size": 585,
+      "sha256": "47016342f5a06f3d792b144b4680319a5439add6446053207de0e9a765479901",
+      "exact_archived_matches": [
+        "legacy/pygame/levels/zelda/graphics/player/down/down_1.png"
+      ],
+      "source_reference": false,
+      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
+    },
+    {
+      "path": "assets/art/bubby/player/down/down_2.png",
+      "module": "bubby",
+      "type": ".png",
+      "size": 591,
+      "sha256": "385ec20e005572a6254a5aa53b0b7cd820ed98b834850422c901f60766e4df3e",
+      "exact_archived_matches": [
+        "legacy/pygame/levels/zelda/graphics/player/down/down_0.png",
+        "legacy/pygame/levels/zelda/graphics/player/down/down_2.png",
+        "legacy/pygame/levels/zelda/graphics/player/down_idle/idle_down.png",
+        "legacy/pygame/levels/zelda/graphics/test/player.png"
+      ],
+      "source_reference": false,
+      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
+    },
+    {
+      "path": "assets/art/bubby/player/down/down_3.png",
+      "module": "bubby",
+      "type": ".png",
+      "size": 589,
+      "sha256": "0239b22c1882185f16c95da735b34cdab7831a5c3561647e4c41c3d4febb32e6",
+      "exact_archived_matches": [
+        "legacy/pygame/levels/zelda/graphics/player/down/down_3.png"
+      ],
+      "source_reference": false,
+      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
+    },
+    {
+      "path": "assets/art/bubby/player/down_attack/attack_down.png",
+      "module": "bubby",
+      "type": ".png",
+      "size": 552,
+      "sha256": "3ad1bf151176011d2becf481fc2920d43906af1a8fa6e760661e1b805917ab57",
+      "exact_archived_matches": [
+        "legacy/pygame/levels/zelda/graphics/player/down_attack/attack_down.png"
+      ],
+      "source_reference": false,
+      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
+    },
+    {
+      "path": "assets/art/bubby/player/down_idle/idle_down.png",
+      "module": "bubby",
+      "type": ".png",
+      "size": 591,
+      "sha256": "385ec20e005572a6254a5aa53b0b7cd820ed98b834850422c901f60766e4df3e",
+      "exact_archived_matches": [
+        "legacy/pygame/levels/zelda/graphics/player/down/down_0.png",
+        "legacy/pygame/levels/zelda/graphics/player/down/down_2.png",
+        "legacy/pygame/levels/zelda/graphics/player/down_idle/idle_down.png",
+        "legacy/pygame/levels/zelda/graphics/test/player.png"
+      ],
+      "source_reference": false,
+      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
+    },
+    {
+      "path": "assets/art/bubby/player/left/left_0.png",
+      "module": "bubby",
+      "type": ".png",
+      "size": 609,
+      "sha256": "21daadbdd7943681b98e6418ff4c5941b1a0b682003cdfc96e2dd342b432d9e1",
+      "exact_archived_matches": [
+        "legacy/pygame/levels/zelda/graphics/player/left/left_0.png",
+        "legacy/pygame/levels/zelda/graphics/player/left_idle/idle_left.png"
+      ],
+      "source_reference": false,
+      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
+    },
+    {
+      "path": "assets/art/bubby/player/left/left_1.png",
+      "module": "bubby",
+      "type": ".png",
+      "size": 563,
+      "sha256": "daec598d0d04370c02473d3087af1be3158caa7a663d57dcaca475af45eaceac",
+      "exact_archived_matches": [
+        "legacy/pygame/levels/zelda/graphics/player/left/left_1.png"
+      ],
+      "source_reference": false,
+      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
+    },
+    {
+      "path": "assets/art/bubby/player/left/left_2.png",
+      "module": "bubby",
+      "type": ".png",
+      "size": 621,
+      "sha256": "7b7d436904234270eaa39bfa0af290216a6282b94c904dff8dd3cd01073e6977",
+      "exact_archived_matches": [
+        "legacy/pygame/levels/zelda/graphics/player/left/left_2.png"
+      ],
+      "source_reference": false,
+      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
+    },
+    {
+      "path": "assets/art/bubby/player/left/left_3.png",
+      "module": "bubby",
+      "type": ".png",
+      "size": 586,
+      "sha256": "1e815c3fd56d076a713ef5f5e2f94bc22cbfe905b01bb4f1734ad550baee5b0b",
+      "exact_archived_matches": [
+        "legacy/pygame/levels/zelda/graphics/player/left/left_3.png"
+      ],
+      "source_reference": false,
+      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
+    },
+    {
+      "path": "assets/art/bubby/player/left_attack/attack_left.png",
+      "module": "bubby",
+      "type": ".png",
+      "size": 563,
+      "sha256": "3ae212fadca181b1c3b1724c17a8abbc34ff659d789ec8ec122ba86c190c1895",
+      "exact_archived_matches": [
+        "legacy/pygame/levels/zelda/graphics/player/left_attack/attack_left.png"
+      ],
+      "source_reference": false,
+      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
+    },
+    {
+      "path": "assets/art/bubby/player/left_idle/idle_left.png",
+      "module": "bubby",
+      "type": ".png",
+      "size": 609,
+      "sha256": "21daadbdd7943681b98e6418ff4c5941b1a0b682003cdfc96e2dd342b432d9e1",
+      "exact_archived_matches": [
+        "legacy/pygame/levels/zelda/graphics/player/left/left_0.png",
+        "legacy/pygame/levels/zelda/graphics/player/left_idle/idle_left.png"
+      ],
+      "source_reference": false,
+      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
+    },
+    {
+      "path": "assets/art/bubby/player/right/right_0.png",
+      "module": "bubby",
+      "type": ".png",
+      "size": 568,
+      "sha256": "4bdd5d90a8e75f50f8591a543ce8a7bd491fe239987963985efe8340166ffd49",
+      "exact_archived_matches": [
+        "legacy/pygame/levels/zelda/graphics/player/right/right_0.png",
+        "legacy/pygame/levels/zelda/graphics/player/right_idle/idle_right.png"
+      ],
+      "source_reference": false,
+      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
+    },
+    {
+      "path": "assets/art/bubby/player/right/right_1.png",
+      "module": "bubby",
+      "type": ".png",
+      "size": 521,
+      "sha256": "f2a2cced485ccfdd5e9f5d9a9f2b7ce9bf97d3de0aeb7844d276525b792a6947",
+      "exact_archived_matches": [
+        "legacy/pygame/levels/zelda/graphics/player/right/right_1.png"
+      ],
+      "source_reference": false,
+      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
+    },
+    {
+      "path": "assets/art/bubby/player/right/right_2.png",
+      "module": "bubby",
+      "type": ".png",
+      "size": 578,
+      "sha256": "f6f62749f6d6bec29cdb64cf30ff16a8148b98af3334e995d3e7ef4ca7b5e360",
+      "exact_archived_matches": [
+        "legacy/pygame/levels/zelda/graphics/player/right/right_2.png"
+      ],
+      "source_reference": false,
+      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
+    },
+    {
+      "path": "assets/art/bubby/player/right/right_3.png",
+      "module": "bubby",
+      "type": ".png",
+      "size": 551,
+      "sha256": "096fc26280d702ba3df29d839a3db1f54c16e68c5f49424e58881098f1615871",
+      "exact_archived_matches": [
+        "legacy/pygame/levels/zelda/graphics/player/right/right_3.png"
+      ],
+      "source_reference": false,
+      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
+    },
+    {
+      "path": "assets/art/bubby/player/right_attack/attack_right.png",
+      "module": "bubby",
+      "type": ".png",
+      "size": 505,
+      "sha256": "d8c58cd1da25561831b435bf1caeea90e5dea9f99f5b63bc829dba8a0b3077a8",
+      "exact_archived_matches": [
+        "legacy/pygame/levels/zelda/graphics/player/right_attack/attack_right.png"
+      ],
+      "source_reference": false,
+      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
+    },
+    {
+      "path": "assets/art/bubby/player/right_idle/idle_right.png",
+      "module": "bubby",
+      "type": ".png",
+      "size": 568,
+      "sha256": "4bdd5d90a8e75f50f8591a543ce8a7bd491fe239987963985efe8340166ffd49",
+      "exact_archived_matches": [
+        "legacy/pygame/levels/zelda/graphics/player/right/right_0.png",
+        "legacy/pygame/levels/zelda/graphics/player/right_idle/idle_right.png"
+      ],
+      "source_reference": false,
+      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
+    },
+    {
+      "path": "assets/art/bubby/player/up/up_0.png",
+      "module": "bubby",
+      "type": ".png",
+      "size": 469,
+      "sha256": "eaab4bc6a9088435b91e4adc2762971ffe379dc01f21d57c8cff64fe703077d7",
+      "exact_archived_matches": [
+        "legacy/pygame/levels/zelda/graphics/player/up/up_0.png",
+        "legacy/pygame/levels/zelda/graphics/player/up/up_2.png",
+        "legacy/pygame/levels/zelda/graphics/player/up_idle/idle_up.png"
+      ],
+      "source_reference": false,
+      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
+    },
+    {
+      "path": "assets/art/bubby/player/up/up_1.png",
+      "module": "bubby",
+      "type": ".png",
+      "size": 489,
+      "sha256": "4ec54c2f14cf8c86da340c65ee391bf7d0121cb9b59451d6cdf4afd2e1735d23",
+      "exact_archived_matches": [
+        "legacy/pygame/levels/zelda/graphics/player/up/up_1.png"
+      ],
+      "source_reference": false,
+      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
+    },
+    {
+      "path": "assets/art/bubby/player/up/up_2.png",
+      "module": "bubby",
+      "type": ".png",
+      "size": 469,
+      "sha256": "eaab4bc6a9088435b91e4adc2762971ffe379dc01f21d57c8cff64fe703077d7",
+      "exact_archived_matches": [
+        "legacy/pygame/levels/zelda/graphics/player/up/up_0.png",
+        "legacy/pygame/levels/zelda/graphics/player/up/up_2.png",
+        "legacy/pygame/levels/zelda/graphics/player/up_idle/idle_up.png"
+      ],
+      "source_reference": false,
+      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
+    },
+    {
+      "path": "assets/art/bubby/player/up/up_3.png",
+      "module": "bubby",
+      "type": ".png",
+      "size": 507,
+      "sha256": "d0fb25a0ec53b0ad537232a4b6f3e1292688377470493d2858cecfc430960206",
+      "exact_archived_matches": [
+        "legacy/pygame/levels/zelda/graphics/player/up/up_3.png"
+      ],
+      "source_reference": false,
+      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
+    },
+    {
+      "path": "assets/art/bubby/player/up_attack/attack_up.png",
+      "module": "bubby",
+      "type": ".png",
+      "size": 502,
+      "sha256": "1c670a7e5b4c7ccf3368845e15264c8b835bd8c695cf967e6397f70d28b3b8b1",
+      "exact_archived_matches": [
+        "legacy/pygame/levels/zelda/graphics/player/up_attack/attack_up.png"
+      ],
+      "source_reference": false,
+      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
+    },
+    {
+      "path": "assets/art/bubby/player/up_idle/idle_up.png",
+      "module": "bubby",
+      "type": ".png",
+      "size": 469,
+      "sha256": "eaab4bc6a9088435b91e4adc2762971ffe379dc01f21d57c8cff64fe703077d7",
+      "exact_archived_matches": [
+        "legacy/pygame/levels/zelda/graphics/player/up/up_0.png",
+        "legacy/pygame/levels/zelda/graphics/player/up/up_2.png",
+        "legacy/pygame/levels/zelda/graphics/player/up_idle/idle_up.png"
+      ],
+      "source_reference": false,
+      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
+    },
+    {
+      "path": "assets/art/bug/cat.png",
+      "module": "bug",
+      "type": ".png",
+      "size": 291408,
+      "sha256": "e42dbc430c91b23ba58a11d379acc9b5c8b720007449eb5dabcc74fcb63f5fde",
+      "exact_archived_matches": [
+        "legacy/pygame/levels/the_bug/cat.png"
+      ],
+      "source_reference": false,
+      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
+    },
+    {
+      "path": "assets/art/busboy/backgrounds/environment_forestbackground.png",
+      "module": "busboy",
+      "type": ".png",
+      "size": 1228912,
+      "sha256": "8b93f4f164532cc36652b055db14fc5a719459df69cbd4cc05500b9483f286f3",
+      "exact_archived_matches": [
+        "legacy/pygame/levels/untitled/assets/backgrounds/environment_forestbackground.png"
+      ],
+      "source_reference": false,
+      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
+    },
+    {
+      "path": "assets/art/busboy/props.png",
+      "module": "busboy",
+      "type": ".png",
+      "size": 494,
+      "sha256": "0ff58c876bcf29170963d4c90e3c53d0eccb85a3258cbc3be45812191c995e99",
+      "exact_archived_matches": [],
+      "source_reference": false,
+      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
+    },
+    {
+      "path": "assets/art/busboy/root.png",
+      "module": "busboy",
+      "type": ".png",
+      "size": 357,
+      "sha256": "34af46e3da65b03be4f27c24570253f8a97bd204f7f2d47c7dc0a3cd6d8d225b",
+      "exact_archived_matches": [],
+      "source_reference": false,
+      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
+    },
+    {
+      "path": "assets/art/busboy/sprites/npc_snoblin_blue.png",
+      "module": "busboy",
+      "type": ".png",
+      "size": 3345,
+      "sha256": "26df25396415b34028086bb67096afd2cd4eaeee483e7edc922bada3d0af0540",
+      "exact_archived_matches": [
+        "legacy/pygame/levels/untitled/assets/sprites/npc_snoblin_blue.png"
+      ],
+      "source_reference": false,
+      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
+    },
+    {
+      "path": "assets/art/busboy/sprites/player_snoblin.png",
+      "module": "busboy",
+      "type": ".png",
+      "size": 3266,
+      "sha256": "776760ec65248dfde3fceb0a7ae4ca460bb2df784565453f49d42483285f4a97",
+      "exact_archived_matches": [
+        "legacy/pygame/levels/untitled/assets/sprites/player_snoblin.png",
+        "legacy/pygame/matrix/assets/sprites/player_snoblin.png"
+      ],
+      "source_reference": false,
+      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
+    },
+    {
+      "path": "assets/art/busboy/sprites/static_shadow.png",
+      "module": "busboy",
+      "type": ".png",
+      "size": 5123,
+      "sha256": "5aa1cf738f544328316fcbd9d5b444679efbed48ae37355963fcbf8a97f0fa1b",
+      "exact_archived_matches": [
+        "legacy/pygame/levels/untitled/assets/sprites/static_shadow.png"
+      ],
+      "source_reference": false,
+      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
+    },
+    {
+      "path": "assets/art/busboy/tilesets/16x16.png",
+      "module": "busboy",
+      "type": ".png",
+      "size": 36956,
+      "sha256": "51fcfe915af508d6f55429149e555356a572aee2af1103c575ba483052db0389",
+      "exact_archived_matches": [
+        "legacy/pygame/shared_assets/tilesets/16x16.png"
+      ],
+      "source_reference": false,
+      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
+    },
+    {
+      "path": "assets/art/machine/governor.png",
+      "module": "machine",
+      "type": ".png",
+      "size": 294,
+      "sha256": "046197537ffbb0d9f22f643eef752fb7c93d99208156284d1038c216c6521086",
+      "exact_archived_matches": [],
+      "source_reference": false,
+      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
+    },
+    {
+      "path": "assets/art/machine/town-atlas.png",
+      "module": "machine",
+      "type": ".png",
+      "size": 2616,
+      "sha256": "d7474bbf0e4a5f4d443cabe5dac9891e03efba7925da164bfc7ab0f6d9851faa",
+      "exact_archived_matches": [],
+      "source_reference": false,
+      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
+    },
+    {
+      "path": "assets/art/pegasus/alpha02/cabin-atlas.png",
+      "module": "pegasus",
+      "type": ".png",
+      "size": 1698,
+      "sha256": "bd783209b88ed237ee78818af3190a67d6067c1b2533de43dd2a98bfeb2d90bb",
+      "exact_archived_matches": [],
+      "source_reference": false,
+      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
+    },
+    {
+      "path": "assets/art/pegasus/refinement/hull-atlas.png",
+      "module": "pegasus",
+      "type": ".png",
+      "size": 441,
+      "sha256": "77b1c876044ba7862c64c6061a2f934f25b1ce004d05f70d8a7bb2385c568dd0",
+      "exact_archived_matches": [],
+      "source_reference": false,
+      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
+    },
+    {
+      "path": "assets/art/pegasus/refinement/pod-open.png",
+      "module": "pegasus",
+      "type": ".png",
+      "size": 922,
+      "sha256": "10b2244923f3c89f3071168ef686bd2092b555c50fa87f168319ef579a5eb333",
+      "exact_archived_matches": [],
+      "source_reference": false,
+      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
+    },
+    {
+      "path": "assets/art/pegasus/refinement/pod-sealed.png",
+      "module": "pegasus",
+      "type": ".png",
+      "size": 900,
+      "sha256": "675d8cedb38c1d71612622cf6e8f3361c3edfce81ba576c2799ccb400d49522e",
+      "exact_archived_matches": [],
+      "source_reference": false,
+      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
+    },
+    {
+      "path": "assets/art/pegasus/refinement/terminal.png",
+      "module": "pegasus",
+      "type": ".png",
+      "size": 696,
+      "sha256": "35a1e56825f7c7fc35ab1cfbe2d40de30de0c0779238b4ab89b2d10cd12070ae",
+      "exact_archived_matches": [],
+      "source_reference": false,
+      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
+    },
+    {
+      "path": "assets/art/pegasus/refinement/viewport.png",
+      "module": "pegasus",
+      "type": ".png",
+      "size": 688,
+      "sha256": "6ea6f1c52572806102c776c49ece4ef731d80402fb220f59f7b277e0289798ae",
+      "exact_archived_matches": [],
+      "source_reference": false,
+      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
+    },
+    {
+      "path": "assets/art/pegasus/refinement/wall-light.png",
+      "module": "pegasus",
+      "type": ".png",
+      "size": 215,
+      "sha256": "9cf283295dd89b041b024431556a5d5f85b17378d799dc596636573985abdf26",
+      "exact_archived_matches": [],
+      "source_reference": false,
+      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
+    },
+    {
+      "path": "assets/art/pegasus/round2/chamber-bay.png",
+      "module": "pegasus",
+      "type": ".png",
+      "size": 1320,
+      "sha256": "f1ab87cac240a94303e224b29080abc50bb589bb98ccfa798f56cd398f4a19d1",
+      "exact_archived_matches": [],
+      "source_reference": false,
+      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
+    },
+    {
+      "path": "assets/art/pegasus/round2/deck-atlas.png",
+      "module": "pegasus",
+      "type": ".png",
+      "size": 1682,
+      "sha256": "5bfb8613d2e80b53d6daeb02680809a76952008c6f1b9f7264da4d7c2c2617e3",
+      "exact_archived_matches": [],
+      "source_reference": false,
+      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
+    },
+    {
+      "path": "assets/art/pegasus/round2/light.png",
+      "module": "pegasus",
+      "type": ".png",
+      "size": 774,
+      "sha256": "44b48a8531c12a47e6ee250e0a80f9b0083dc94817bd6387c54267628f4764ef",
+      "exact_archived_matches": [],
+      "source_reference": false,
+      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
+    },
+    {
+      "path": "assets/art/pegasus/round2/locker.png",
+      "module": "pegasus",
+      "type": ".png",
+      "size": 763,
+      "sha256": "72f5bb8bb374b391a766354842c6aa20f61d9af8c2845c77f9868afa1e182434",
+      "exact_archived_matches": [],
+      "source_reference": false,
+      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
+    },
+    {
+      "path": "assets/art/pegasus/round2/player.png",
+      "module": "pegasus",
+      "type": ".png",
+      "size": 1032,
+      "sha256": "17b27e320e697f5ff4c6d602df7b89bb84c688087fddd85e078a60adf4b8b755",
+      "exact_archived_matches": [],
+      "source_reference": false,
+      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
+    },
+    {
+      "path": "assets/art/pegasus/round2/pod-open.png",
+      "module": "pegasus",
+      "type": ".png",
+      "size": 1798,
+      "sha256": "4c21bafbdd5c820182741a86cd3f5ab7fa288b9b2c267c035e4bf26bc6956c4e",
+      "exact_archived_matches": [],
+      "source_reference": false,
+      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
+    },
+    {
+      "path": "assets/art/pegasus/round2/pod-sealed.png",
+      "module": "pegasus",
+      "type": ".png",
+      "size": 1745,
+      "sha256": "c66424ccd75485ba3c0b6c63b72c1165aee746d89ecc33feb359134363ddd567",
+      "exact_archived_matches": [],
+      "source_reference": false,
+      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
+    },
+    {
+      "path": "assets/art/pegasus/round2/terminal.png",
+      "module": "pegasus",
+      "type": ".png",
+      "size": 1087,
+      "sha256": "f19072ff69415161fe7c3bf5b4cd6349add5f6d7de538393bcba9b68845793a0",
+      "exact_archived_matches": [],
+      "source_reference": false,
+      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
+    },
+    {
+      "path": "assets/art/pegasus/round2/viewport.png",
+      "module": "pegasus",
+      "type": ".png",
+      "size": 1248,
+      "sha256": "43867dadded11f2e99e6f7ca6d93ee02d9a3d773148951b343fdb552294e3266",
+      "exact_archived_matches": [],
+      "source_reference": false,
+      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
+    },
+    {
+      "path": "assets/art/pegasus/round2/wall-light.png",
+      "module": "pegasus",
+      "type": ".png",
+      "size": 475,
+      "sha256": "b36d16b1aa935d9408b79bcc61303371208c08b1c458985002c12f73bc96b76a",
+      "exact_archived_matches": [],
+      "source_reference": false,
+      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
+    },
+    {
+      "path": "assets/art/pegasus/round2/worktable.png",
+      "module": "pegasus",
+      "type": ".png",
+      "size": 1004,
+      "sha256": "0cf2425c3e6afe76b075d234b1d928cff513278d9741d94a0f54b03f1f751c23",
+      "exact_archived_matches": [],
+      "source_reference": false,
+      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
+    },
+    {
+      "path": "assets/art/shared/actors/astronaut.png",
+      "module": "shared",
+      "type": ".png",
+      "size": 774,
+      "sha256": "ff7a683ddd7fe288523ad67f5c3d9545c8d5656a6aa7e53bf458e19fd4fad9ad",
+      "exact_archived_matches": [],
+      "source_reference": false,
+      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
+    },
+    {
+      "path": "assets/audio/bubby/music.ogg",
+      "module": "bubby",
+      "type": ".ogg",
+      "size": 1750046,
+      "sha256": "5d226045574a6a281b1579d825dae13da412d83333ec1b7fd04a61e3b03fd4be",
+      "exact_archived_matches": [
+        "legacy/pygame/levels/zelda/audio/main.ogg"
+      ],
+      "source_reference": false,
+      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
+    },
+    {
+      "path": "assets/audio/busboy/forest_ambience.mp3",
+      "module": "busboy",
+      "type": ".mp3",
+      "size": 716670,
+      "sha256": "9850aa1d0d5d66bd9c5daf8bb77c6d852e01f2f4de22f283bd5621e8bed13b75",
+      "exact_archived_matches": [
+        "legacy/pygame/levels/untitled/assets/audio/forest_ambience.mp3"
+      ],
       "source_reference": false,
       "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
     }

@@ -1,5 +1,10 @@
 # Godot migration parity checklist
 
+Historical migration record. The current spaceship is Pegasus (`pegasus/`);
+runtime assets are centralized under `assets/`. See [current layout and retirement audit](../repository-cleanup.md).
+Original names below describe their recorded revisions.
+
+
 Checkpoint: Godot 4.7.2, GDScript, Compatibility, branch
 `migration/native-godot-maps` (based on `migration/godot-4.7.2`). All ten original terminal codes have independent native
 scenes inside one application. The hub remains in memory on return; leaving a

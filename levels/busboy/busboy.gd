@@ -24,7 +24,7 @@ var notice_time: float = 7
 func _ready() -> void:
 	show_room("cabin")
 	display.texture = field.get_texture()
-	var ambience: AudioStreamMP3 = (load("res://levels/busboy/assets/audio/forest_ambience.mp3") as AudioStreamMP3).duplicate()
+	var ambience: AudioStreamMP3 = (load("res://assets/audio/busboy/forest_ambience.mp3") as AudioStreamMP3).duplicate()
 	ambience.loop = true
 	$Ambience.stream = ambience
 	$Ambience.play()
@@ -132,7 +132,7 @@ func _physics_process(delta: float) -> void:
 	notice_time = maxf(0, notice_time - delta)
 	if encounter != null: encounter.tick(delta)
 	elif not opening and dialogue.is_empty():
-		player.step(Input.get_vector("hub_left", "hub_right", "hub_up", "hub_down"), delta, room.collision_rects, room.bounds)
+		player.step(Input.get_vector("pegasus_left", "pegasus_right", "pegasus_up", "pegasus_down"), delta, room.collision_rects, room.bounds)
 	update_camera()
 	display.visible = not opening
 	overlay.queue_redraw()
@@ -147,9 +147,9 @@ func _unhandled_input(event: InputEvent) -> void:
 		elif event.keycode in [KEY_3, KEY_KP_3]: choose("cleanse")
 	elif not dialogue.is_empty():
 		if event.keycode in [KEY_E, KEY_ENTER, KEY_SPACE, KEY_ESCAPE]: dialogue = ""
-	elif event.is_action_pressed("return_to_hub"): return_requested.emit()
+	elif event.is_action_pressed("return_to_pegasus"): return_requested.emit()
 	elif opening and event.keycode in [KEY_ENTER, KEY_SPACE]: opening = false
-	elif not opening and event.is_action_pressed("hub_interact"): interact()
+	elif not opening and event.is_action_pressed("pegasus_interact"): interact()
 	else: return
 	get_viewport().set_input_as_handled()
 	overlay.queue_redraw()

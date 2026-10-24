@@ -26,7 +26,7 @@ test('landscape touch movement, terminal, seven routes, return and rotation', as
   }
   await tap('Begin');
   await expect.poll(async () => (await state(page)).opening).toBe(false);
-  await page.screenshot({path: testInfo.outputPath('hub-room.png')});
+  await page.screenshot({path: testInfo.outputPath('pegasus-room.png')});
   async function move(axis,target,negative,positive) {
     for(let i=0;i<30;i++) {
       const current=await state(page);
@@ -86,7 +86,7 @@ test('landscape touch movement, terminal, seven routes, return and rotation', as
   for(const code of ['BOUNCE','BALLS','BUG','BUBBY','BUSBOY','MACHINE','YOU']) {
     await tap('Use');
     await expect.poll(async () => (await state(page)).terminal).toBe(true);
-    if (code === 'BOUNCE') await page.screenshot({path: testInfo.outputPath('hub-terminal.png')});
+    if (code === 'BOUNCE') await page.screenshot({path: testInfo.outputPath('pegasus-terminal.png')});
     const field=page.getByRole('textbox', {name:'Terminal input'});
     await field.tap();
     await expect(field).toBeFocused();
@@ -106,6 +106,6 @@ test('landscape touch movement, terminal, seven routes, return and rotation', as
   await expect.poll(async () => (await state(page)).touch_context).toBe('portrait');
   await page.screenshot({path:testInfo.outputPath('portrait.png')});
   await page.setViewportSize({width:844,height:390});
-  await expect.poll(async () => (await state(page)).touch_context).toBe('hub');
+  await expect.poll(async () => (await state(page)).touch_context).toBe('pegasus');
   expect(errors).toEqual([]);
 });

@@ -69,7 +69,7 @@ def inventory():
                 str(path.relative_to(ROOT))
             )
     rows = []
-    for folder in ("app", "hub", "levels", "shared"):
+    for folder in ("app", "pegasus", "levels", "shared", "assets"):
         for path in sorted((ROOT / folder).rglob("*")):
             if not path.is_file() or path.suffix.lower() not in EXTENSIONS:
                 continue
@@ -77,7 +77,13 @@ def inventory():
             relative = path.relative_to(ROOT)
             row = {
                 "path": str(relative),
-                "module": relative.parts[1] if folder == "levels" else folder,
+                "module": (
+                    relative.parts[1]
+                    if folder == "levels"
+                    else relative.parts[2]
+                    if folder == "assets"
+                    else folder
+                ),
                 "type": path.suffix.lower(),
                 "size": path.stat().st_size,
                 "sha256": checksum,
@@ -89,7 +95,7 @@ def inventory():
                 row["embedded_font_notices"] = font_notices(path)
             rows.append(row)
     return {
-        "scope": "Active modules plus their excluded source references for provenance, not an export manifest. External archive/godot, legacy/pygame, caches and import sidecars are excluded from these counts.",
+        "scope": "Active modules and centralized art/audio plus excluded source references for provenance, not an export manifest. External archive/godot, legacy/pygame, caches and import sidecars are excluded from these counts.",
         "counts": dict(sorted(Counter(row["type"] for row in rows).items())),
         "files": rows,
     }

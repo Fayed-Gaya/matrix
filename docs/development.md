@@ -12,7 +12,7 @@ package/browsers are needed only for browser checks.
 make editor
 make run
 make fast-check CHECKS=machine      # import/resources + one behavior suite
-make fast-check CHECKS="hub bubby" # focused suites; bounce is an alias
+make fast-check CHECKS="pegasus bubby" # focused suites; bounce is an alias
 make check                         # all seven behaviors/routes/maps + archive/tools
 ```
 
@@ -83,7 +83,9 @@ changed by this work.
 Active codes: BOUNCE, BALLS, BUG, YOU, BUBBY, BUSBOY, MACHINE. PONG/JUMP/MARIO/
 MONSTERS are excluded source references under `archive/godot/`. ZELDA/UNTITLED
 are replaced without aliases; their complete original Godot sources remain in
-Bubby/Busboy `source/`. All Pygame originals remain under `legacy/pygame/`.
+Bubby/Busboy `source/`. All Pygame originals remain under `legacy/pygame/`; see the [retirement audit](repository-cleanup.md).
+Runtime graphics/audio are centralized in `assets/art/` and `assets/audio/`;
+editable masters live in excluded `assets/art/source/`. Module JSON/maps/TileSets stay with their code.
 `make archived-godot-check` runs the complete original ten-level Godot suite from
 pinned historical `145771f` in a disposable tree; that commit must exist locally.
 The archived Python quality workflow remains intact; Windows archive packaging

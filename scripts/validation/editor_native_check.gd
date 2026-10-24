@@ -13,7 +13,7 @@ func _enter_tree() -> void:
 
 func run() -> void:
 	await get_tree().create_timer(3.0).timeout
-	var paths: Array[String] = ["res://hub/world.tscn"]
+	var paths: Array[String] = ["res://pegasus/world.tscn"]
 	for room: String in ["apartment", "outside"]:
 		paths.append("res://levels/bubby/maps/" + room + ".tscn")
 	for room: String in ["cabin", "forest"]:

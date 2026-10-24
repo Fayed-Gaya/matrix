@@ -3,7 +3,7 @@ extends MatrixLevel
 ## Provisional general-audience clockwork-town showcase; progress is session-only.
 
 const FIELD_SIZE: Vector2 = Vector2(640,352)
-const AVATAR: Texture2D = preload("res://shared/actors/astronaut.png")
+const AVATAR: Texture2D = preload("res://assets/art/shared/actors/astronaut.png")
 const ROOMS: Dictionary = {
 	"bedroom":preload("res://levels/machine/maps/bedroom.tscn"),
 	"home":preload("res://levels/machine/maps/home.tscn"),
@@ -205,7 +205,7 @@ func _physics_process(delta: float) -> void:
 	guard_left = maxf(0,guard_left-delta)
 	guard_wait = maxf(0,guard_wait-delta)
 	if dialogue.is_empty():
-		player.step(Input.get_vector("hub_left","hub_right","hub_up","hub_down"),delta,room.collision_rects,room.bounds)
+		player.step(Input.get_vector("pegasus_left","pegasus_right","pegasus_up","pegasus_down"),delta,room.collision_rects,room.bounds)
 		if room_name == "outskirts" and boss_phase in [BossPhase.WINDUP,BossPhase.RECOVER]: update_boss(delta)
 	if room_name == "town" and complete:
 		room.get_node("ClockHand").rotation += delta
@@ -217,8 +217,8 @@ func _unhandled_input(event: InputEvent) -> void:
 	if not event is InputEventKey or not event.pressed or event.echo: return
 	if not dialogue.is_empty():
 		if event.keycode in [KEY_ENTER,KEY_SPACE,KEY_E,KEY_ESCAPE]: dialogue = ""
-	elif event.is_action_pressed("return_to_hub"): return_requested.emit()
-	elif event.is_action_pressed("hub_interact"): interact()
+	elif event.is_action_pressed("return_to_pegasus"): return_requested.emit()
+	elif event.is_action_pressed("pegasus_interact"): interact()
 	elif event.keycode == KEY_SPACE: attack()
 	elif event.keycode == KEY_SHIFT: brace()
 	else: return

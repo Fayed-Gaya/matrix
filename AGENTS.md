@@ -2,7 +2,7 @@
 
 Matrix uses Godot 4.7.2, typed GDScript and Compatibility rendering. The
 migration and native map authoring are merged. The owner manually tested the
-Alpha 0.1 hub and all ten levels locally. Alpha 0.2 physical-device/gameplay acceptance remains unverified. The owner
+Alpha 0.1 pegasus and all ten levels locally. Alpha 0.2 physical-device/gameplay acceptance remains unverified. The owner
 deferred manual testing while integrating this private alpha; see
 docs/releases/alpha-0.2-status.md.
 YOU retains native camera behavior with platform/hardware limitations.
@@ -27,15 +27,15 @@ YOU retains native camera behavior with platform/hardware limitations.
 ## Project conventions
 
 - Keep `project.godot` at the repository root. Use typed GDScript for gameplay.
-- `app/` owns startup/routing, `hub/` the spaceship/terminal, `levels/` the
+- `app/` owns startup/routing, `pegasus/` Pegasus, the opening spaceship/terminal, `levels/` the
   independent games, `shared/` reused resources, `scripts/` validation tools.
 - `legacy/.gdignore` excludes Python/assets from Godot imports. Copy required
-  assets into their Godot module; keep the archive independent and intact.
+  graphics/audio into assets/art/ or assets/audio/; keep the archive independent and intact.
 - Commit Godot `.uid` sidecars; ignore `.godot/` and generated exports.
 - `make check` validates exact engine version, imports, resource loads and startup.
   It also verifies native map cells/regions, native edit/save/reload behavior,
   terminal behavior, routing/return, and movement demos against source traces.
-  Godot scenes/TileSets are authoritative: open hub/world.tscn,
+  Godot scenes/TileSets are authoritative: open pegasus/world.tscn,
   levels/busboy/maps/{cabin,forest}.tscn, or levels/bubby/maps/*.tscn
   and paint TileMapLayers directly. Never regenerate maps from TMX/CSV/JSON.
   Preserve each game's custom movement, collision and animation algorithms;
@@ -46,9 +46,9 @@ YOU retains native camera behavior with platform/hardware limitations.
   `make editor` opens the project; `make run` launches it. Override `GODOT`
   with the executable path on other machines. Python 3 runs validation tooling
   only; the Godot game must not depend on Python or the archived environment.
-- Use independent level modules inside one application, with a small hub/router.
+- Use independent level modules inside one application, with a small pegasus/router.
   Level roots extend `MatrixLevel` and emit `return_requested`; the router
-  frees the level tree and resumes the hub. Consume Escape for local menus.
+  frees the level tree and resumes the pegasus. Consume Escape for local menus.
   Add completed scene paths to `app/level_registry.gd`. Empty paths deliberately
   show pending status, and must never be described as migrated gameplay.
 - Preserve terminal codes and distinguishing mechanics; track parity explicitly.
@@ -64,7 +64,7 @@ YOU retains native camera behavior with platform/hardware limitations.
 - `make archive-check` verifies all 771 archived baseline checksums.
   `make runtime-check` validates fresh imports/routes without the archive/cache.
 - Web exports must include active runtime JSON manifests and the active catalog, exclude
-  the archive/development sources, and provide a clear YOU fallback with hub return.
+  the archive/development sources, and provide a clear YOU fallback with pegasus return.
 - Record limitations and blockers; never claim unchecked browser/platform parity.
 - Preserve third-party notices; unresolved licensing remains a clearance blocker.
   Do not remove affected levels silently.
@@ -86,8 +86,8 @@ availability is machine-specific; install archived requirements if needed.
 Read docs/releases/alpha-0.2-status.md before continuing. Retired Godot modules
 PONG/JUMP/MARIO/MONSTERS live in archive/godot with original paths preserved
 as source references. Never import/bundle them into the active game. Historical
-checks remain available via make archived-godot-check. art/ contains editable
-sources and user work; copy only approved runtime exports to active modules.
+checks remain available via make archived-godot-check. assets/art/source/ contains editable
+sources and user work; export runtime images to assets/art/ and audio to assets/audio/.
 Keep BOUNCE/BALLS/BUG/YOU, evolve ZELDA into BUBBY and UNTITLED into BUSBOY,
 MACHINE is now a provisional seven-room showcase. No paid generation, fabricated personal references,
 release tags or deployments under the current authorization. The owner
@@ -96,7 +96,7 @@ authorized merging the Alpha 0.2 PR stack and validating integrated main on
 
 ## Fast iteration and release validation
 
-- `make fast-check CHECKS=machine` (or `CHECKS="hub bubby"`) always imports and
+- `make fast-check CHECKS=machine` (or `CHECKS="pegasus bubby"`) always imports and
   loads active resources, then runs selected behavior checks. Unknown names fail.
 - `make check` keeps the full active catalog/archive/tool checks. CI does not
   use the reduced selection. `make release-check` adds fresh runtime, inventory,
@@ -107,3 +107,13 @@ authorized merging the Alpha 0.2 PR stack and validating integrated main on
   it isolates Aseprite batch preferences. Never auto-export unrelated user art.
 - Keep build/.gdignore and exports/.gdignore tracked despite ignored outputs.
   Do not delete caches while another editor/session uses them.
+
+## Repository layout
+
+Runtime graphics/audio belong in `assets/art/<experience>/` and
+`assets/audio/<experience>/`; editable masters belong in excluded
+`assets/art/source/<experience>/`. Scenes, TileSets, JSON and scripts stay in
+their modules. Matrix is the application; Pegasus is the opening spaceship,
+not a terminal destination. Use `make fast-check CHECKS=pegasus`.
+Read `docs/repository-cleanup.md` for the deferred legacy retirement decision
+and cross-branch integration notes. Preserve historical release/review snapshots.

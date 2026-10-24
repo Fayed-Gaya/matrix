@@ -16,7 +16,7 @@ func _initialize() -> void:
 	check(ProjectSettings.get_setting("application/run/main_scene") == "res://app/main.tscn",
 		"Expected Matrix startup scene")
 	check(FileAccess.file_exists("res://legacy/.gdignore"), "Archive must be excluded")
-	for folder: String in ["app", "hub", "levels", "shared", "scripts"]:
+	for folder: String in ["app", "pegasus", "levels", "shared", "assets", "scripts"]:
 		check(DirAccess.dir_exists_absolute("res://" + folder), "Missing folder: " + folder)
 		check_resources("res://" + folder)
 	if failures == 0:
@@ -41,7 +41,7 @@ func check_resources(path: String) -> void:
 		if not child.begins_with("."):
 			check_resources(path.path_join(child))
 	for file: String in directory.get_files():
-		if file.get_extension() in ["gd", "tscn", "tres", "gdshader"]:
+		if file.get_extension() in ["gd", "tscn", "tres", "gdshader", "png", "jpg", "jpeg", "wav", "ogg", "mp3", "ttf", "otf"]:
 			var resource_path: String = path.path_join(file)
 			var resource: Resource = load(resource_path)
 			check(resource != null, "Cannot load: " + resource_path)

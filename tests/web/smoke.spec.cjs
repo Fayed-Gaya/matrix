@@ -10,7 +10,7 @@ test('opening, real keyboard navigation, active terminal codes, return and resiz
   await page.locator('canvas').click();
   await page.keyboard.press('Enter');
   await expect.poll(async () => (await state(page)).opening).toBe(false);
-  await page.screenshot({path: testInfo.outputPath('hub-room.png')});
+  await page.screenshot({path: testInfo.outputPath('pegasus-room.png')});
   async function moveAxis(axis, target, negative, positive, tolerance = 12) {
     for (let pulse = 0; pulse < 50; pulse++) {
       const current = await state(page);
@@ -31,7 +31,7 @@ test('opening, real keyboard navigation, active terminal codes, return and resiz
   for (const code of codes) {
     await page.keyboard.press('e');
     await expect.poll(async () => (await state(page)).terminal).toBe(true);
-    if (code === 'BOUNCE') await page.screenshot({path: testInfo.outputPath('hub-terminal.png')});
+    if (code === 'BOUNCE') await page.screenshot({path: testInfo.outputPath('pegasus-terminal.png')});
     const input=page.getByRole('textbox',{name:'Terminal input'});
     await expect(input).toBeFocused();
     await expect(page.locator('#matrix-terminal')).not.toContainText(/BOUNCE|BALLS|BUG|BUBBY|BUSBOY|MACHINE|YOU|WORLD|DESTINATION|SIMULATION/);

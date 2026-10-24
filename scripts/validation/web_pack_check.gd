@@ -12,7 +12,7 @@ func _initialize() -> void:
 
 func run() -> void:
 	check_exclusions("res://")
-	for excluded: String in ["res://legacy/pygame/main.py","res://docs/migration/README.md","res://scripts/validation/hub_check.gd","res://build/toolchain/godot/web_nothreads_release.zip"]:
+	for excluded: String in ["res://legacy/pygame/main.py","res://assets/audio/redgifs-wittysizzlingmongoose.mp3","res://docs/migration/README.md","res://scripts/validation/pegasus_check.gd","res://build/toolchain/godot/web_nothreads_release.zip"]:
 		assert(not FileAccess.file_exists(excluded),"Unnecessary export file: "+excluded)
 	for module: String in ["bubby"]:
 		var path: String = "res://levels/"+module+"/assets/manifest.json"
@@ -26,7 +26,7 @@ func run() -> void:
 		await process_frame
 		await process_frame
 		assert(app.active_level != null and app.active_code == code)
-		app.return_to_hub()
+		app.return_to_pegasus()
 		await process_frame
 		await process_frame
 	app.free()

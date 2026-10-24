@@ -45,7 +45,7 @@ archived-godot-check:
 	python3 scripts/validate_archived_godot.py --godot "$(GODOT)"
 
 # Everyday targeted path; import/resource checks always remain enabled.
-CHECKS ?= hub
+CHECKS ?= pegasus
 .PHONY: fast-check release-check art-export
 fast-check:
 	python3 scripts/validate_godot.py --godot "$(GODOT)" --only $(CHECKS)

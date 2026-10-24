@@ -19,17 +19,19 @@ def main():
     parser.add_argument("--output", required=True, type=Path)
     args = parser.parse_args()
     source, output = args.source.resolve(), args.output.resolve()
-    if not source.is_relative_to(ROOT / "art") or source.suffix not in {
+    if not source.is_relative_to(ROOT / "assets/art/source") or source.suffix not in {
         ".aseprite",
         ".ase",
     }:
-        parser.error("Choose an explicit editable .aseprite/.ase source under art/")
+        parser.error(
+            "Choose an explicit editable .aseprite/.ase source under assets/art/source/"
+        )
     if (
-        not output.is_relative_to(ROOT)
+        not output.is_relative_to(ROOT / "assets/art")
+        or output.is_relative_to(ROOT / "assets/art/source")
         or output.suffix != ".png"
-        or output.relative_to(ROOT).parts[0] not in {"hub", "levels", "shared"}
     ):
-        parser.error("Output must be a runtime PNG under hub/, levels/ or shared/")
+        parser.error("Output must be a runtime PNG under assets/art/, outside source/")
     header = source.read_bytes()[:128]
     if len(header) < 128 or struct.unpack_from("<H", header, 4)[0] != 0xA5E0:
         parser.error("Invalid Aseprite source")

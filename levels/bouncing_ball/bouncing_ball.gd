@@ -3,7 +3,7 @@ extends MatrixLevel
 ## The original one-pixel update, paced at 60 fixed ticks per second.
 
 const FIELD_SIZE: Vector2 = Vector2(1200, 1000)
-const BALL: Texture2D = preload("res://levels/bouncing_ball/assets/intro_ball.png")
+const BALL: Texture2D = preload("res://assets/art/bounce/intro_ball.png")
 var ball_position: Vector2i = Vector2i.ZERO
 var direction: Vector2i = Vector2i.ONE
 var field_scale: float = 1.0

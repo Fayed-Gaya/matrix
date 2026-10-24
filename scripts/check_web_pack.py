@@ -31,6 +31,11 @@ def main():
         sidecars = list((ROOT / "archive/godot").rglob("*.import"))
         for folder in ("bubby", "busboy"):
             sidecars.extend((ROOT / "levels" / folder / "source").rglob("*.import"))
+        # An unassigned experimental recording exists on a separate owner branch.
+        # If later integrated, reject its imported payload as well as its source.
+        unassigned = ROOT / "assets/audio/redgifs-wittysizzlingmongoose.mp3.import"
+        if unassigned.is_file():
+            sidecars.append(unassigned)
         for sidecar in sidecars:
             for match in re.finditer(
                 r'res://\.godot/imported/[^"\n]+', sidecar.read_text()

@@ -16,13 +16,13 @@ func _ready() -> void:
 
 
 func _process(_delta: float) -> void:
-	var hub: MatrixHub = app.hub as MatrixHub
+	var pegasus: Pegasus = app.pegasus as Pegasus
 	var state: Dictionary = {
 		"touch": app.mobile_controls.enabled, "touch_context": app.mobile_controls.context,
 		"touch_regions": touch_regions(), "touch_held": app.mobile_controls.fingers.values(),
-		"code": app.active_code, "opening": hub.overlay.opening,
-		"terminal": hub.overlay.terminal_active, "near_terminal": hub.is_near_terminal(),
-		"x": hub.player.position.x, "y": hub.player.position.y,
+		"code": app.active_code, "opening": pegasus.overlay.opening,
+		"terminal": pegasus.overlay.terminal_active, "near_terminal": pegasus.is_near_terminal(),
+		"x": pegasus.player.position.x, "y": pegasus.player.position.y,
 		"width": app.size.x, "height": app.size.y,
 		"scene": app.active_level.scene_file_path if app.active_level != null else "",
 		"camera_status": app.active_level.get_node("Status").text if app.active_code == "YOU" else "",

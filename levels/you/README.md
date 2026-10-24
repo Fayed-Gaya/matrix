@@ -38,7 +38,7 @@ vertical orientation, combined/separate YCbCr neutral-gray conversion, resize,
 disconnection and release on Escape. The actual Compatibility-window pixels
 passed checks and the synthetic capture was inspected. CameraTexture internally
 enables device monitoring even for a synthetic feed; tests activate no physical
-feed and restore monitoring on exit. The general hub suite also skips hardware.
+feed and restore monitoring on exit. The general pegasus suite also skips hardware.
 
 **Not verified:** live capture, permission allow/deny flows, actual camera LED
 shutdown/re-entry, device-specific orientation/colors/resolution, unplugging real

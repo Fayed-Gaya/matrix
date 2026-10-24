@@ -60,9 +60,11 @@ def build(destination, engine, version):
     # Editable source/private art and docs do not make unchanged runtime bytes dirty.
     build_inputs = [
         "app",
-        "hub",
+        "pegasus",
         "levels",
         "shared",
+        "assets",
+        ":(exclude)assets/art/source",
         "project.godot",
         "export_presets.cfg",
         "THIRD_PARTY_NOTICES.md",

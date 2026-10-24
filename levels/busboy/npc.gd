@@ -1,6 +1,6 @@
 extends Node2D
 
-const SHEET: Texture2D = preload("res://levels/busboy/assets/sprites/npc_snoblin_blue.png")
+const SHEET: Texture2D = preload("res://assets/art/busboy/sprites/npc_snoblin_blue.png")
 
 
 func _draw() -> void:
