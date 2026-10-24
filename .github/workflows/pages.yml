@@ -22,7 +22,7 @@ concurrency:
 jobs:
   build:
     if: github.ref == 'refs/heads/main'
-    uses: ./.github/workflows/godot.yml
+    uses: ./.github/workflows/release-validation.yml
   deploy:
     if: github.ref == 'refs/heads/main' && inputs.deploy && (inputs.licensing_cleared || inputs.technical_preview_acknowledged)
     needs: build

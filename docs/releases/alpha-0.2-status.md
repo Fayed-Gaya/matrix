@@ -18,6 +18,10 @@ this authorization. Alpha 0.1 `v0.1.0-alpha.1` remains
 `f6146918b424af8cc64e1969c7447892b766cacb`; its records/packages and the
 Pygame archive are preserved.
 
+Testing policy update: three tiers in [development instructions](../development.md),
+with [coverage/timing audit](../testing-optimization.md). Historical full-suite/CI
+entries below describe past runs; they are not current routine requirements.
+
 ## Current phase / next concrete action
 
 Updated 2026-10-24: PR #17 is integrated; the Pegasus/assets cleanup

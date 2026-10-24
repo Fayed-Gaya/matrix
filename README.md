@@ -12,7 +12,8 @@ The published Alpha 0.1 preview is unchanged and still contains all ten levels.
 ```sh
 make editor  # Open the Godot project
 make run     # Launch Matrix in Pegasus
-make check   # Archive guard, Godot imports, pegasus/level behavior and startup
+make fast-check CHECKS=pegasus # Default focused development check
+make check   # Minimal headless startup and registered launch/return smoke
 make runtime-check # Fresh archive-free import and all active routes
 ```
 

@@ -6,58 +6,84 @@ Pygame environment; Python 3 is development tooling. Override `GODOT` with the
 engine executable on other machines. Node 22/npm and the pinned Playwright
 package/browsers are needed only for browser checks.
 
-## Everyday iteration
+## Three testing tiers
+
+| Tier | Command | When / scope |
+| --- | --- | --- |
+| 1 — local | `make fast-check CHECKS=busboy` | Default during implementation: import, load selected scene and check a few useful mechanics. Space-separated selectors work. |
+| 2 — integration | `make smoke-check` (also `make check`) | Before pushing integrated runtime changes; automatically on relevant main pushes. One import, Pegasus startup, every registered level launch/return, error/leak guard. |
+| 3 — release | `make release-check` | Explicit milestone/release candidate: tooling, focused regressions/resources, fresh runtime, inventory, audited web export and one Chromium terminal→BOUNCE→Pegasus flow. Never publishes. |
+
+Selectors: `pegasus bounce balls bug bubby busboy machine you mobile`; `all`
+selects those focused checks, `resources` explicitly adds whole-project resource
+loading, and `bouncing_ball` aliases `bounce`. Unknown/empty selectors fail.
+A selected check does not execute unrelated levels or a full walkthrough.
+Imports are Godot's project-wide scan; already imported assets are reused.
 
 ```sh
-make editor
-make run
-make fast-check CHECKS=machine      # import/resources + one behavior suite
-make fast-check CHECKS="pegasus bubby" # focused suites; bounce is an alias
-make check                         # all seven behaviors/routes/maps + archive/tools
+make editor                         # or make run
+make fast-check CHECKS="pegasus mobile"
+make smoke-check                    # integrated runtime changes
+make tools-check                    # Python tooling/layout changes only
 ```
 
-Targeted checks always verify engine version, imports and all active resource
-loads. Unknown selectors fail; no silent omissions. `make check` retains every
-active suite and archive-integrity guard. Cameras are synthetic/test-disabled.
-Per-stage times are printed. Do not run full browser/manual matrices for every
-local edit; run the affected path, then full checks at a meaningful checkpoint.
-Native scenes/TileSets/collision/interaction markers are authoritative. Relevant
-level READMEs describe the twelve maps. `make editor-map-check` opens and edits
-all maps in a disposable actual desktop editor; it is slower and requires a
-GUI, not a substitute for human editor/gameplay acceptance.
+Documentation-only changes normally need link/diff review, not gameplay tests;
+CI skips Markdown/docs-only pushes. Run targeted tests, fix failures and retest
+the affected path; do not repeatedly rerun unrelated successful suites. Success
+output is compact. Detailed engine logs are in ignored `build/test-logs/`;
+failures print diagnostics and fail even if Godot returned zero. Cameras are
+always disabled/synthetic in automation. No automatic screenshots on success.
 
-## Comprehensive automated release path
+## On-demand release and compatibility checks
 
 ```sh
 npm ci --prefix tests/web
-(cd tests/web && npx playwright install chrome firefox msedge)
+(cd tests/web && npx playwright install chromium)
 make release-check
-# Optional real desktop editor persistence:
-make editor-map-check
+# Only for relevant browser/input/layout changes:
+(cd tests/web && npx playwright install firefox webkit)
+make compatibility-check
 ```
 
-This runs full checks, fresh archive-free import/routes, inventory freshness,
-web export with staged PCK resource/checksum/retired-import auditing, and the
-complete configured desktop browser smoke matrix. CI retains full Godot/fresh
-runtime and Chrome/Firefox/Edge coverage. The pack audit is inside web export,
-so CI does not repeat it as a separate identical pass. Human full-path gameplay,
-audio/feel/art acceptance and real device tests remain release-readiness checks,
-not prerequisites for routine development pushes.
-See current acceptance gaps in `releases/alpha-0.2-status.md`.
+The optional compatibility set is desktop Firefox plus landscape Chromium/WebKit
+with one representative destination each. No seven-level-by-browser matrix.
+Edge uses Chromium; assess it manually when warranted rather than maintaining
+a duplicate automatic project. Browser failures retain screenshots/traces;
+normal successful runs do not generate review images. Physical iPhone/Android,
+audible audio, art and full gameplay acceptance remain release-readiness work;
+automation does not establish acceptance. See `releases/alpha-0.2-mobile-testing.md`.
+
+Manual GitHub **Release validation (no publication)** runs the same release
+command, installing only Chromium unless compatibility is explicitly selected.
+Normal **Matrix smoke** CI installs only the engine, not templates or browsers;
+there is no routine export, source package, archive job or success artifact upload.
+
+## Optional historical evidence and tools
+
+`make regression-check` runs retained migration traces, exact map/layout checks,
+complete gameplay scenarios and native edit/save tests. These are opt-in evidence,
+not routine or release gates; intentional design changes need not preserve old
+speeds, coordinates or balance. A selected historical suite can be invoked with
+`python3 scripts/validate_godot.py --godot /path/to/godot --regression --only busboy`.
+`make archive-check`, `make archived-godot-check` and `make legacy-check` remain
+explicit preservation/reference tools; archived Python CI is manual-only.
+Do not edit/delete preserved archives just because their checks are optional.
+
+`make runtime-check` runs the same canonical route smoke from fresh archive-free
+resources. `make editor-map-check` opens disposable maps in a real editor; use
+it for editor persistence changes, not ordinary gameplay edits. Native scenes,
+TileSets, collisions and markers remain authoritative. Never regenerate maps.
 
 ```sh
-make web-export                    # clean, audited local preview; never publishes
-make web-serve                     # localhost:8060
-python3 scripts/check_web_pack.py --godot /path/to/godot --pack /path/to/index.pck
+make web-export                     # audited local export only
+make web-serve                      # localhost:8060
 ```
 
-Export builds in a staging directory, audits actual bytes, then replaces only
-the generated local `exports/web/`. Failed builds/audits retain the previous
-local preview; successful builds discard stale workers/sidecars. Keep source
-files out of managed output. `build-info.json` includes runtime-input dirtiness
-and PCK SHA-256; unrelated editable/private art does not mark unchanged runtime
-bytes dirty. Build/export/test/art directories are excluded from Godot scanning.
-No step deploys Pages, creates tags or changes published Alpha 0.1 bytes.
+Export stages/audits actual PCK bytes before replacing local `exports/web/`;
+failure preserves the previous preview. `build-info.json` records runtime-input
+dirtiness and the pack checksum. Source/private art and archives are excluded.
+No validation command creates release tags, publishes a Release or deploys Pages.
+Timing/coverage audit: [testing optimization](testing-optimization.md).
 
 ## Git and autonomous development
 
@@ -90,8 +116,9 @@ public website, or declaring a version accepted for release. Published versions
 are immutable tags plus GitHub Releases; preserve their artifacts. Alpha 0.1
 remains `v0.1.0-alpha.1`. Routine main pushes authorize none of those actions.
 
-Godot/Web CI validates pushes to main; optional PR validation remains enabled.
-CI logs/build artifacts are validation outputs, not accepted public releases.
+Headless integration CI validates relevant pushes to main and optional PRs;
+release/browser validation is manually invoked.
+CI failure logs and on-demand build artifacts are validation outputs, not accepted public releases.
 Pages is manual-only, with publication/licensing acknowledgement inputs and a
 main-only guard. Ordinary pushes do not deploy. **Pages builds the main SHA at
 workflow dispatch, not the latest release tag.** Before an approved dispatch,
@@ -126,7 +153,7 @@ Runtime graphics/audio are centralized in `assets/art/` and `assets/audio/`;
 editable masters live in excluded `assets/art/source/`. Module JSON/maps/TileSets stay with their code.
 `make archived-godot-check` runs the complete original ten-level Godot suite from
 pinned historical `145771f` in a disposable tree; that commit must exist locally.
-The archived Python quality workflow remains intact; Windows archive packaging
+The archived Python quality workflow is manual-only; Windows archive packaging
 was already manual-only and remains so. No archive is removed in this milestone.
 
 [Art pipeline](art-pipeline.md) covers explicit Aseprite exports, original draft
@@ -148,7 +175,7 @@ unrelated user artwork, credentials, caches, generated previews or local tools.
 Landscape touch controls are enabled on touch devices. The terminal has no
 code directory: tap its real text field to open the browser/OS keyboard and
 enter a code, then Go/ENTER. `make fast-check CHECKS=mobile` checks input/routing without
-cameras; the full browser matrix includes mobile Chrome/WebKit emulation.
+cameras; optional compatibility checks include mobile Chromium/WebKit emulation.
 See [Alpha 0.2 mobile acceptance](releases/alpha-0.2-mobile-testing.md) for local
 iPhone hosting and the physical-device checklist. Emulation is not iOS approval.
 

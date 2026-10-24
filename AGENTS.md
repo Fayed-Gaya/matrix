@@ -40,9 +40,9 @@ YOU retains native camera behavior with platform/hardware limitations.
 - `legacy/.gdignore` excludes Python/assets from Godot imports. Copy required
   graphics/audio into assets/art/ or assets/audio/; keep the archive independent and intact.
 - Commit Godot `.uid` sidecars; ignore `.godot/` and generated exports.
-- `make check` validates exact engine version, imports, resource loads and startup.
-  It also verifies native map cells/regions, native edit/save/reload behavior,
-  terminal behavior, routing/return, and movement demos against source traces.
+- Default to `make fast-check CHECKS=<component>` during implementation.
+  `make smoke-check` / `make check` imports and checks startup/registered routes
+  before pushing integrated runtime work; docs-only edits need no gameplay tests.
   Godot scenes/TileSets are authoritative: open pegasus/world.tscn,
   levels/busboy/maps/{cabin,forest}.tscn, or levels/bubby/maps/*.tscn
   and paint TileMapLayers directly. Never regenerate maps from TMX/CSV/JSON.
@@ -102,19 +102,24 @@ release tags or deployments under the current authorization. The owner
 authorized merging the Alpha 0.2 PR stack and validating integrated main on
 2026-10-22; that does not authorize publication or imply manual acceptance.
 
-## Fast iteration and release validation
+## Testing tiers
 
-- `make fast-check CHECKS=machine` (or `CHECKS="pegasus bubby"`) always imports and
-  loads active resources, then runs selected behavior checks. Unknown names fail.
-- `make check` keeps the full active catalog/archive/tool checks. CI does not
-  use the reduced selection. `make release-check` adds fresh runtime, inventory,
-  clean audited web export and the complete configured browser matrix.
-- `make web-export` audits the staged PCK before replacing generated output;
-  failure keeps the prior local preview. No export command publishes anything.
-- `make art-export SOURCE=... OUTPUT=...` is explicit and single-frame only;
-  it isolates Aseprite batch preferences. Never auto-export unrelated user art.
+- Local default: `make fast-check CHECKS="pegasus mobile"` runs only selected
+  focused behavior/resources after import. Diagnose/retest affected failures;
+  do not repeat successful unrelated checks. `make tools-check` is for tooling.
+- Integration: `make smoke-check` (`make check`) is the small headless CI gate
+  for runtime pushes, not a gameplay walkthrough. Markdown/docs-only CI is skipped.
+- Release: explicitly run `make release-check`; add `make compatibility-check`
+  when relevant. Historical traces/maps/walkthroughs are optional via
+  `make regression-check`; archive checks are explicit only. Keep archives intact.
+- Report compact results; read full logs only on failures. No routine screenshots,
+  web exports or browser matrix. Manual gameplay/device acceptance belongs to
+  release readiness, never routine commits/pushes. Commands/details live in
+  `docs/development.md`. No test target publishes/deploys.
+- `make web-export` audits staged bytes before replacing the previous preview.
+  `make art-export SOURCE=... OUTPUT=...` is explicit/single-frame with isolated
+  Aseprite preferences. Never export unrelated art or delete in-use caches.
 - Keep build/.gdignore and exports/.gdignore tracked despite ignored outputs.
-  Do not delete caches while another editor/session uses them.
 
 ## Repository layout
 

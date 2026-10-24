@@ -37,7 +37,7 @@ provenance and notices; no new permission or license clearance is claimed.
 Original provisional environment/pigeon source: `art/bubby/`; runtime PNGs here.
 `assets/manifest.json` includes only active avatar frame dependencies.
 
-Targeted validation checks full delivery progression, code/alias policy,
+Optional `make regression-check` checks historical full delivery progression, code/alias policy,
 blocked pickup, shoo cooldown, contact/retry, dialogue and pegasus return, plus native
 scene edit/save/reload. Headless checks do not establish human gameplay feel,
 audio quality, personal meaning, art approval or mobile usability.

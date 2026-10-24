@@ -39,7 +39,7 @@ pegasus movement behavior remains at its previous speed, Machine uses 145 units/
 Sounds are short original generated tones; there is no new audio dependency.
 All child room/effects/audio trees are freed on pegasus return.
 
-Validation checks seven native scenes and portal arrivals, source editing/save/
+Optional `make regression-check` checks seven native scenes and portal arrivals, source editing/save/
 reload, room/home/town/three NPC progression, relay gating/no duplicates, boss
 attack windows/cooldown/dodge/brace/retry, completion/clock restart and return.
 These positioned automated fixtures do not replace a human full-path walkthrough,

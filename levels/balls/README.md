@@ -42,7 +42,7 @@ necessary. Godot documents runtime FPS limits in the official
 
 ## Validation
 
-`make check` includes a level suite with 400 variable-delta source movement
+Optional `make regression-check` includes a historical level suite with 400 variable-delta source movement
 updates and 13 original drawing cases, covering all four corners, exact edge
 contact and single-axis seams. The fixture is
 `scripts/validation/balls_reference.json`: movement rows were recorded by

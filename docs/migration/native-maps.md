@@ -6,6 +6,10 @@ Original checkout clean; cmux and its Codex process were still running. Neither 
 
 ## Current authoring workflow
 
+Routine `make check` now means minimal integration smoke. Detailed migration
+fixtures below are optional via `make regression-check`; actual editor probes
+remain available via `make editor-map-check`. See [testing tiers](../development.md).
+
 Native scenes and external TileSets are the sole map authority. Open the scene
 in Godot, select a TileMapLayer and paint using its palette, then save normally.
 No Tiled installation, Python map parser, CSV edit or generation command is needed.

@@ -32,7 +32,7 @@ replaces a separate fixed-size window. The level restores prior monitoring/feed
 activity on exit; no new device picker, recording, account or persistence exists.
 If no frames arrive after five seconds, it reports the permission/device check.
 
-Automated checks use only a synthetic CameraFeed and disable real-device startup
+Optional historical checks use only a synthetic CameraFeed and disable real-device startup
 with root metadata `matrix_test_mode`. They cover format selection, RGB output,
 vertical orientation, combined/separate YCbCr neutral-gray conversion, resize,
 disconnection and release on Escape. The actual Compatibility-window pixels

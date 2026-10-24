@@ -12,5 +12,5 @@ source window. No sound or gameplay objectives existed in the source.
 
 Asset source: `legacy/pygame/levels/the_bug/cat.png`, copied unchanged; no new
 licensing/authorship claim. Runtime is independent of the archive and Python.
-The behavior suite sends mouse movement and all three button events and checks
+The optional historical behavior suite sends mouse movement and all three button events and checks
 routing/return. Manual checking on other input devices/platforms remains needed.

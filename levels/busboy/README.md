@@ -45,6 +45,6 @@ provides dialogue and keyboard/mouse battle controls. No persistent progress.
 
 The original Untitled module/assets/native scene/checks remain intact under
 excluded `source/`; use the pinned `make archived-godot-check` for the original
-suite. Active checks exercise the complete draft introduction and resource
+suite. Optional `make regression-check` exercises the complete draft introduction and resource
 editing. Human full-path navigation, combat balance, audible ambience, creative
 acceptance and real-device usability remain unverified.

@@ -28,7 +28,7 @@ sources and export notes: `assets/art/source/pegasus/README.md`. The old spacesh
 fixture remain excluded under `archive/godot/`. This cabin is a first visual
 iteration for owner refinement, not a claim of approved final art direction.
 
-Validation covers movement normalization, boundaries, thin obstacles, input,
+Optional `make regression-check` covers movement normalization, boundaries, thin obstacles, input,
 landmarks, collision rectangles, computer reachability, terminal input, all
 active routes, Pegasus return and window/camera resizing. Native resource checks
 also edit/save/reload disposable scene copies. Human movement feel and artistic

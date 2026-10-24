@@ -1,0 +1,68 @@
+name: Release validation (no publication)
+on:
+  workflow_dispatch:
+    inputs:
+      compatibility:
+        description: 'Also run optional Firefox and mobile browser flows'
+        type: boolean
+        default: false
+  workflow_call:
+    inputs:
+      compatibility:
+        type: boolean
+        default: false
+permissions:
+  contents: read
+jobs:
+  validate:
+    name: Release validation
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    env:
+      LIBGL_ALWAYS_SOFTWARE: '1'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - uses: actions/cache@v4
+        id: toolchain
+        with:
+          path: build/toolchain/godot
+          key: godot-release-${{ runner.os }}-${{ hashFiles('scripts/release/godot-toolchain.json', 'scripts/setup_godot.py') }}
+      - if: steps.toolchain.outputs.cache-hit != 'true'
+        run: python3 scripts/setup_godot.py --editor --templates
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install one browser for release smoke
+        working-directory: tests/web
+        run: |
+          npm ci
+          npx playwright install --with-deps chromium
+      - name: Validate locally built release candidate (never deploys)
+        run: make release-check GODOT="$PWD/build/toolchain/godot/godot"
+      - name: Optional compatibility browsers
+        if: inputs.compatibility
+        working-directory: tests/web
+        run: |
+          npx playwright install --with-deps firefox webkit
+          npm run test:compat
+      - name: Package corresponding source snapshot
+        run: git archive --format=zip --output=exports/matrix-source-${{ github.sha }}.zip HEAD
+      - uses: actions/upload-artifact@v4
+        with:
+          name: matrix-web-${{ github.sha }}
+          path: exports/web/
+          if-no-files-found: error
+      - uses: actions/upload-artifact@v4
+        with:
+          name: matrix-source-${{ github.sha }}
+          path: exports/matrix-source-*.zip
+      - uses: actions/upload-artifact@v4
+        if: failure()
+        with:
+          name: release-failure-evidence
+          path: |
+            build/test-logs/
+            tests/web/test-results/

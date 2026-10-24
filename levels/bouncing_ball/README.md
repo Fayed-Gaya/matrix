@@ -35,7 +35,7 @@ Python, Pygame, or the archive.
 - Texture sampling at fractional scales can differ; manual visual/feel review
   and other-platform testing remain necessary.
 
-`make check` verifies a 5,000-tick trace produced by the original Pygame Rect
+Optional `make regression-check` verifies a historical 5,000-tick trace produced by the original Pygame Rect
 update sequence, image dimensions, contact/overshoot/corner behavior, fixed tick
 rate, live scene motion, resize fitting, `BOUNCE` routing, Escape cleanup, pegasus
 position preservation, and fresh state on reentry. These checks passed, along
