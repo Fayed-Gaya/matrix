@@ -76,4 +76,6 @@ See [development workflow](docs/development.md), [web build/hosting/CI](docs/rel
 [preliminary licensing blockers](docs/releases/licensing-audit.md), and
 [implementation status](docs/releases/alpha-0.1-status.md). Build with
 `make web-templates && make web-export`, then `make web-serve`. All ten levels
-remain included. Publication, tags and merges require explicit authorization.
+remain included. Release tags and publication require explicit authorization.
+Routine validated development may be committed/pushed directly to `main`; PRs
+are optional. See [development policy](docs/development.md).

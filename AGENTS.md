@@ -7,22 +7,30 @@ deferred manual testing while integrating this private alpha; see
 docs/releases/alpha-0.2-status.md.
 YOU retains native camera behavior with platform/hardware limitations.
 
-## GitHub Flow
+## Development and release authority
 
-- `main` is integrated, validated code; no permanent dev branch.
-- Use short-lived feature/fix branches and PRs targeting main for substantial work.
-- Codex may commit and push meaningful feature checkpoints autonomously.
-- Never merge into main without explicit authorization for that merge.
-- Published releases use immutable version tags; do not create/move release tags
-  or deploy/publish without authorization. See `docs/development.md`.
-- Alpha 0.1 technical preview is published as `v0.1.0-alpha.1` at `f614691`.
-  Use `docs/releases/alpha-0.2-status.md` for current implementation handoffs. Never move
-  that tag or replace published package bytes. On 2026-10-21 the owner explicitly
-  authorized merging,
-  tagging and publishing Alpha 0.1 as a technical preview with documented licensing
-  issues unresolved. Use the explicit preview acknowledgement; never claim legal
-  clearance. Future releases need fresh authorization. Alpha 0.2 archives four Godot
-  levels as requested; preserve their source and the independent Pygame archive.
+- `main` is the single permanent development branch; no permanent dev branch.
+  It may contain validated work beyond the latest published release.
+- Codex may autonomously implement, validate, commit and push routine work
+  directly to main. Make meaningful incremental commits; push at logical
+  checkpoints with ordinary fast-forward pushes. Fetch/reconcile concurrent
+  changes safely; never force-push or rewrite published history.
+- Feature branches/worktrees are optional. Use PRs when useful for major
+  architecture, risky experiments, concurrent integration or requested formal
+  review; do not create one automatically for every task/phase. Honor explicit
+  task-specific review gates, including pending creative reviews.
+- Run focused checks during iteration and comprehensive validation at suitable
+  milestones. Diagnose failures before calling work validated or pushing it as
+  such. Report unresolved blockers. Manual gameplay acceptance is for release
+  readiness, not routine commits/pushes. See `docs/development.md` for commands.
+- Release authority is separate: obtain explicit owner authorization before
+  creating/changing release tags, publishing a GitHub Release, deploying/updating
+  the public site, publishing distribution artifacts or declaring a release
+  accepted. Published tags and artifact bytes are immutable.
+- Alpha 0.1 `v0.1.0-alpha.1` at `f614691` remains the authorized technical preview
+  with documented licensing issues unresolved, not legal clearance. Preserve
+  its tag/artifacts, historical Godot sources and independent Pygame archive.
+  Use `docs/releases/alpha-0.2-status.md` for current handoffs.
 
 ## Project conventions
 

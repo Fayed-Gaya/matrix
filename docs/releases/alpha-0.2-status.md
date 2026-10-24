@@ -20,14 +20,20 @@ Pygame archive are preserved.
 
 ## Current phase / next concrete action
 
-All eight development/assessment phases have checkpoints below. Integrated main
-CI passed through `fee16d7`. The next authorized development cycle is the
-[spaceship hub refinement, round 2](alpha-0.2-hub-round2.md), on
-`feature/alpha-0.2-hub-refinement`; that record owns current implementation/checks.
-Do not merge or publish this refinement without fresh authorization.
-No manual gameplay work is requested at this juncture. The owner may use
-`alpha-0.2-mobile-testing.md` before sharing or refine testing later. Never claim
-physical iPhone/Android, audible-audio or full human gameplay verification.
+Updated 2026-10-24: PR #17 is integrated; the Pegasus/assets cleanup
+[PR #20](https://github.com/Fayed-Gaya/matrix/pull/20) is merged at `64675b4`
+with its three feature commits preserved. See [cleanup evidence](../repository-cleanup.md).
+Bubby #18 and Busboy #19 remain independent, awaiting their existing creative
+review/integration decisions; neither is merged or modified by this checkpoint.
+
+Standing policy: routine validated work may be committed/pushed directly to main;
+branches/worktrees and PRs are optional. [Development policy](../development.md)
+owns the loop and release safeguards. Do not publish, tag, deploy or declare
+release acceptance without explicit authorization. Physical-device, audible-audio
+and full human gameplay acceptance remain unverified release-readiness items,
+not prerequisites for routine development pushes. Archive retirement remains
+separately gated. Historical phase/branch entries below are records, not a
+requirement to recreate the old PR stack.
 
 | Phase | Result | Commit / branch suffix (`feature/alpha-0.2-…`) | PR/base |
 | --- | --- | --- | --- |

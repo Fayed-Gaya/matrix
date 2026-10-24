@@ -95,6 +95,9 @@ accidental browser packaging. Redistribution rights remain unverified.
   from historical evidence. No new CI workflow is needed: existing active CI
   runs the updated Makefile/tools; archived CI remains because legacy is retained.
 
-No human gameplay, audible-audio or physical-device acceptance claimed. No
-release, tag, main merge or deployment authorized/performed. After approval,
-merge this PR normally; reconcile the still-open creative branches separately.
+No human gameplay, audible-audio or physical-device acceptance claimed.
+Owner authorized PR #20 integration on 2026-10-24: merged at `64675b4` with
+all three commits preserved after successful PR CI. No release/tag/deployment.
+Reconcile the still-open creative branches separately. Routine development now
+uses the direct-main/optional-PR policy in `docs/development.md`; the original
+branch checkpoint above records this cleanup's historical execution.

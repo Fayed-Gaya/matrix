@@ -41,7 +41,8 @@ web export with staged PCK resource/checksum/retired-import auditing, and the
 complete configured desktop browser smoke matrix. CI retains full Godot/fresh
 runtime and Chrome/Firefox/Edge coverage. The pack audit is inside web export,
 so CI does not repeat it as a separate identical pass. Human full-path gameplay,
-audio/feel/art acceptance and real device tests remain separately required.
+audio/feel/art acceptance and real device tests remain release-readiness checks,
+not prerequisites for routine development pushes.
 See current acceptance gaps in `releases/alpha-0.2-status.md`.
 
 ```sh
@@ -58,25 +59,62 @@ and PCK SHA-256; unrelated editable/private art does not mark unchanged runtime
 bytes dirty. Build/export/test/art directories are excluded from Godot scanning.
 No step deploys Pages, creates tags or changes published Alpha 0.1 bytes.
 
-## GitHub Flow and release authority
+## Git and autonomous development
 
-`main` is integrated, validated code, with no permanent dev branch. Use short
-feature/fix branches and meaningful checkpoint commits/pushes. Open PRs; merges
-require explicit owner authorization. Use merge commits to preserve history;
-never force-push main. Alpha 0.2 uses stacked PRs: retarget descendants after
-approved base merges. CI also checks PRs targeting `feature/alpha-0.2-*`.
+`main` is the single permanent development branch, not a release channel. It
+may contain validated unreleased work. Codex is authorized to implement, run
+appropriate checks, commit meaningful checkpoints and push routine validated
+work directly to main without approval for every push. Push at logical
+checkpoints, not after every small edit. No permanent dev branch is needed.
 
-Published version tags are immutable. Alpha 0.1 remains `v0.1.0-alpha.1`.
-Tagging/publishing Alpha 0.2 needs separate explicit approval; do not infer it
-from permission to push feature branches. Pages remains manual and main-only.
-The historical `releases/web-release.md` describes Alpha 0.1 packaging/settings;
-current release gaps are in the Alpha 0.2 status file.
+Fetch before integrating/pushing. Preserve uncommitted user work; reconcile
+remote advances/conflicts safely and rerun affected checks. Use ordinary
+fast-forward pushes; never force-push or rewrite published history. Optional
+short-lived branches/worktrees help isolate concurrent work. PRs are optional
+for major architectural changes, risky experiments, concurrent integration or
+explicit formal review, not an automatic step for every task or phase. Honor
+any explicit task-specific review gate. Preserve commits when integrating PRs.
 
-GitHub Settings → Rulesets/Branches: require PRs, `Godot validation` and `Web
-export`, block force pushes/deletion, optionally require up-to-date branches.
-Set human review requirements to owner preference. Protect published tags from
-updates/deletion. These settings are documented, not automatically bypassed or
-changed by this work.
+Normal loop: understand the architecture → implement → focused validation →
+diagnose/iterate → commit → push validated work → report changes/checks/SHA.
+Use comprehensive checks at meaningful milestones; do not run the full release
+or browser matrix for every small edit. Do not push failing changes as validated;
+report blockers outside scope. Human gameplay/device acceptance belongs to
+release readiness and does not gate routine development commits or pushes.
+
+## Release authority and GitHub settings
+
+Explicit owner authorization is required before creating/changing release tags,
+publishing GitHub Releases or distribution artifacts, deploying/updating the
+public website, or declaring a version accepted for release. Published versions
+are immutable tags plus GitHub Releases; preserve their artifacts. Alpha 0.1
+remains `v0.1.0-alpha.1`. Routine main pushes authorize none of those actions.
+
+Godot/Web CI validates pushes to main; optional PR validation remains enabled.
+CI logs/build artifacts are validation outputs, not accepted public releases.
+Pages is manual-only, with publication/licensing acknowledgement inputs and a
+main-only guard. Ordinary pushes do not deploy. **Pages builds the main SHA at
+workflow dispatch, not the latest release tag.** Before an approved dispatch,
+verify its exact `github.sha` against the approved revision and review matching
+build-info/source artifacts; cancel if they differ. Before a future release,
+consider a pinned approved tag/SHA or validated-artifact input so deployment can
+select release bytes independently of ongoing main development. No deployment
+workflow or public site is changed by this documentation update.
+
+Repository inspection on 2026-10-24 found main unprotected and the Basic ruleset
+disabled, so direct pushes need no GitHub setting change. If enabling protection,
+allow the intended direct writer rather than requiring all changes through PRs;
+keep CI enabled and block force pushes/deletion. Protect published tags. Do not
+silently bypass or change repository rules/settings. Existing release settings
+and Alpha 0.1 evidence are in `releases/web-release.md`; that historical policy
+is superseded here for routine development.
+
+No repository-local Codex config/override was found. The only nested AGENTS is
+the preserved Python archive guide, with no conflicting Git policy. The inspected
+user config trusts this repo and has no explicit Git-policy/instruction override;
+it was not modified. Global/project/nested instructions can combine; see
+[Codex instruction scope](https://learn.chatgpt.com/docs/agent-configuration/agents-md).
+Report any future conflicting configuration instead of editing user-level settings.
 
 ## Catalog, archives and assets
 
