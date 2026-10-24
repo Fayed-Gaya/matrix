@@ -1,11 +1,21 @@
-.PHONY: check editor run legacy-check archive-check runtime-check
+.PHONY: check smoke-check tools-check regression-check editor run legacy-check archive-check runtime-check
 
 GODOT ?= /Applications/Godot.app/Contents/MacOS/Godot
 PYTHON ?= ../../.venv/bin/python
 
-check: archive-check
-	python3 -m unittest discover -s scripts/tests -v
+# Level 2: one import and minimal startup/registered-route smoke.
+check: smoke-check
+
+smoke-check:
 	python3 scripts/validate_godot.py --godot "$(GODOT)"
+
+# Run when changing tooling, not as part of routine game CI.
+tools-check:
+	python3 -m unittest discover -s scripts/tests -q
+
+# Historical map/trace/walkthrough evidence, explicitly opt-in.
+regression-check:
+	python3 scripts/validate_godot.py --godot "$(GODOT)" --regression
 
 editor:
 	"$(GODOT)" --path . --editor
@@ -44,19 +54,28 @@ web-serve:
 archived-godot-check:
 	python3 scripts/validate_archived_godot.py --godot "$(GODOT)"
 
-# Everyday targeted path; import/resource checks always remain enabled.
+# Level 1: import and only selected focused behavior/resources.
 CHECKS ?= pegasus
 .PHONY: fast-check release-check art-export
 fast-check:
 	python3 scripts/validate_godot.py --godot "$(GODOT)" --only $(CHECKS)
 
-# Comprehensive automated path; real-device/human acceptance stays manual.
+# Level 3: on-demand checks and local build; never publishes.
 release-check:
-	$(MAKE) check GODOT="$(GODOT)"
+	$(MAKE) tools-check
+	python3 scripts/validate_godot.py --godot "$(GODOT)" --only all resources
 	$(MAKE) runtime-check GODOT="$(GODOT)"
 	python3 scripts/audit_licenses.py --check
 	$(MAKE) web-export GODOT="$(GODOT)"
+	$(MAKE) browser-check
+
+.PHONY: browser-check compatibility-check
+browser-check:
 	cd tests/web && npm test
+
+# Optional Firefox and landscape Chromium/WebKit flows; one destination each.
+compatibility-check:
+	cd tests/web && npm run test:compat
 
 ASEPRITE ?= /Applications/Aseprite.app/Contents/MacOS/aseprite
 art-export:

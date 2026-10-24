@@ -16,9 +16,20 @@ def run(command):
         command, cwd=ROOT, text=True, capture_output=True, timeout=240
     )
     output = result.stdout + result.stderr
-    print(output, end="")
+    logs = ROOT / "build/test-logs"
+    logs.mkdir(parents=True, exist_ok=True)
+    name = (
+        Path(command[command.index("--script") + 1]).stem
+        if "--script" in command
+        else "export"
+        if "--export-release" in command
+        else "import"
+    )
+    (logs / ("web-" + name + ".log")).write_text(output)
     if result.returncode or "ERROR:" in output or "were leaked at exit" in output:
-        raise SystemExit("Godot web export failed; previous local build retained")
+        raise SystemExit(
+            "Godot web export failed; previous local build retained\n" + output
+        )
 
 
 def build(destination, engine, version):

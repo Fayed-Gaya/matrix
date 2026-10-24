@@ -1,16 +1,16 @@
 const { defineConfig } = require('@playwright/test');
-const chromiumArgs = process.env.CI ? ['--use-angle=swiftshader', '--enable-unsafe-swiftshader'] : [];
 module.exports = defineConfig({
-  testDir: '.', testMatch: /(?:smoke|mobile|mobile-layout)\.spec\.cjs/, timeout: 240000, workers: 1,
-  reporter: [['list'], ['html', { open: 'never' }]],
-  use: { headless: false, viewport: { width: 1280, height: 720 }, screenshot: 'only-on-failure', trace: { mode: 'retain-on-failure', screenshots: false, snapshots: true, sources: true } },
-  projects: [
-    { name: 'Chrome', testMatch: 'smoke.spec.cjs', use: { browserName: 'chromium', channel: 'chrome', launchOptions: { args: chromiumArgs } } },
-    { name: 'Firefox', testMatch: 'smoke.spec.cjs', use: { browserName: 'firefox' } },
-    { name: 'Edge', testMatch: 'smoke.spec.cjs', use: { browserName: 'chromium', channel: 'msedge', launchOptions: { args: chromiumArgs } } }
-    ,{ name: 'Mobile Chrome', testMatch: 'mobile.spec.cjs', use: { browserName: 'chromium', channel: 'chrome', viewport: {width:844,height:390}, deviceScaleFactor:process.env.CI ? 1 : 3, isMobile:true, hasTouch:true, launchOptions: {args:chromiumArgs} } },
-    { name: 'Mobile Chrome HiDPI', testMatch: 'mobile-layout.spec.cjs', use: { browserName: 'chromium', channel: 'chrome', viewport: {width:844,height:390}, deviceScaleFactor:3, isMobile:true, hasTouch:true, launchOptions: {args:chromiumArgs} } },
-    { name: 'Mobile WebKit', testMatch: 'mobile.spec.cjs', use: { browserName: 'webkit', viewport: {width:844,height:390}, deviceScaleFactor:3, isMobile:true, hasTouch:true } }
-  ],
-  webServer: { command: 'python3 -m http.server 8060 --bind 127.0.0.1 --directory ../../exports/web', url: 'http://127.0.0.1:8060', reuseExistingServer: !process.env.CI }
+  testDir: '.', testMatch: 'smoke.spec.cjs', timeout: 90000, workers: 1,
+  reporter: [['list']],
+  use: {
+    headless: true, viewport: { width: 1280, height: 720 },
+    screenshot: 'only-on-failure',
+    trace: { mode: 'retain-on-failure', screenshots: false, snapshots: true, sources: true },
+    launchOptions: { args: ['--use-angle=swiftshader', '--enable-unsafe-swiftshader'] }
+  },
+  projects: [{ name: 'Chromium', use: { browserName: 'chromium' } }],
+  webServer: {
+    command: 'mkdir -p ../../build/test-logs && python3 -m http.server 8060 --bind 127.0.0.1 --directory ../../exports/web 2>../../build/test-logs/http-server.log',
+    url: 'http://127.0.0.1:8060', reuseExistingServer: false
+  }
 });

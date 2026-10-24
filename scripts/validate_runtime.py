@@ -20,15 +20,15 @@ def main() -> None:
         for folder in ("app", "pegasus", "levels", "shared", "assets"):
             shutil.copytree(root / folder, project / folder)
         shutil.copy2(root / "project.godot", project / "project.godot")
-        script = "scripts/validation/runtime_check.gd"
+        script = "scripts/validation/smoke_check.gd"
         (project / script).parent.mkdir(parents=True)
         shutil.copy2(root / script, project / script)
         for stage, options, marker in (
             ("import", ["--editor", "--import"], None),
             (
                 "runtime",
-                ["--script", "res://" + script],
-                "Standalone runtime validation passed",
+                ["--script", "res://" + script, "--", "--archive-free"],
+                "Matrix integration smoke passed",
             ),
         ):
             result = subprocess.run(

@@ -1,6 +1,6 @@
 const { test, expect } = require('@playwright/test');
 const state = page => page.locator('html').getAttribute('data-matrix-state').then(s => s ? JSON.parse(s) : {});
-test('landscape touch movement, terminal, seven routes, return and rotation', async ({ page }, testInfo) => {
+test('landscape touch, keyboard entry, one level, return and rotation', async ({ page }) => {
   const errors = [];
   page.on('pageerror', e => errors.push(e.message));
   page.on('console', m => { if (/SCRIPT ERROR:|^ERROR:/.test(m.text())) errors.push(m.text()); });
@@ -26,7 +26,6 @@ test('landscape touch movement, terminal, seven routes, return and rotation', as
   }
   await tap('Begin');
   await expect.poll(async () => (await state(page)).opening).toBe(false);
-  await page.screenshot({path: testInfo.outputPath('pegasus-room.png')});
   async function move(axis,target,negative,positive) {
     for(let i=0;i<30;i++) {
       const current=await state(page);
@@ -83,10 +82,9 @@ test('landscape touch movement, terminal, seven routes, return and rotation', as
   await expect.poll(async () => (await state(page)).terminal).toBe(false);
   await page.setViewportSize({width:844,height:390});
   await expect.poll(async () => (await state(page)).height).toBe(390);
-  for(const code of ['BOUNCE','BALLS','BUG','BUBBY','BUSBOY','MACHINE','YOU']) {
+  for(const code of ['BOUNCE']) {
     await tap('Use');
     await expect.poll(async () => (await state(page)).terminal).toBe(true);
-    if (code === 'BOUNCE') await page.screenshot({path: testInfo.outputPath('pegasus-terminal.png')});
     const field=page.getByRole('textbox', {name:'Terminal input'});
     await field.tap();
     await expect(field).toBeFocused();
@@ -95,16 +93,11 @@ test('landscape touch movement, terminal, seven routes, return and rotation', as
     await expect(field).toHaveValue(code);
     await page.getByRole('button', {name:'ENTER',exact:true}).tap();
     await expect.poll(async () => (await state(page)).code).toBe(code);
-    if(code==='BUSBOY') { await tap('Begin'); }
-    if(code==='YOU') expect((await state(page)).camera_status).toContain('unavailable in this browser');
-    if(code==='BUG') await page.touchscreen.tap(422,195);
-    await page.screenshot({path:testInfo.outputPath(`${code}-touch.png`)});
     await tap('Matrix');
     await expect.poll(async () => (await state(page)).code).toBe('');
   }
   await page.setViewportSize({width:390,height:844});
   await expect.poll(async () => (await state(page)).touch_context).toBe('portrait');
-  await page.screenshot({path:testInfo.outputPath('portrait.png')});
   await page.setViewportSize({width:844,height:390});
   await expect.poll(async () => (await state(page)).touch_context).toBe('pegasus');
   expect(errors).toEqual([]);

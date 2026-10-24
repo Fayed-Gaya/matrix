@@ -1,5 +1,7 @@
 """Protect local preview replacement semantics without running another engine."""
 
+import contextlib
+import io
 import tempfile
 import unittest
 from pathlib import Path
@@ -36,7 +38,10 @@ class LocalPreviewReplacement(unittest.TestCase):
             (stage / "index.pck").write_bytes(b"partial build")
             raise SystemExit("engine failed")
 
-        with patch.object(web_export, "build", side_effect=failed):
+        with (
+            patch.object(web_export, "build", side_effect=failed),
+            contextlib.redirect_stdout(io.StringIO()),
+        ):
             with self.assertRaises(SystemExit):
                 web_export.main()
         self.assertEqual(
@@ -50,7 +55,10 @@ class LocalPreviewReplacement(unittest.TestCase):
             (stage / "index.pck").write_bytes(b"complete new preview")
             (stage / "index.html").write_text("new launcher")
 
-        with patch.object(web_export, "build", side_effect=complete):
+        with (
+            patch.object(web_export, "build", side_effect=complete),
+            contextlib.redirect_stdout(io.StringIO()),
+        ):
             web_export.main()
         self.assertEqual(
             (self.preview / "index.pck").read_bytes(), b"complete new preview"
