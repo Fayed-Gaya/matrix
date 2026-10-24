@@ -1,6 +1,6 @@
 # Editable art and runtime export
 
-Edit source under `art/`; runtime images belong to hub/levels/shared. Godot
+Edit source under `art/`; runtime images belong to pegasus/levels/shared. Godot
 `.import` settings and `.uid` sidecars are tracked, generated caches/builds are
 not. Native scenes/TileSets remain authoritative for map layout; exporting an
 image never regenerates scene cells, collisions, NPCs or portals.
@@ -23,9 +23,9 @@ Sources/SVGs/Aseprite copies do not auto-synchronize. Keep nearest filtering.
 
 | Editable source | Runtime target |
 | --- | --- |
-| art/hub/round2/*.aseprite (current hub) | hub/assets/round2/*.png |
-| art/hub/cabin-atlas.aseprite (original draft) | hub/assets/alpha02/cabin-atlas.png |
-| art/hub/cabin-player.aseprite | shared/actors/astronaut.png |
+| art/pegasus/round2/*.aseprite (current pegasus) | pegasus/assets/round2/*.png |
+| art/pegasus/cabin-atlas.aseprite (original draft) | pegasus/assets/alpha02/cabin-atlas.png |
+| art/pegasus/cabin-player.aseprite | shared/actors/astronaut.png |
 | art/bubby/{apartment-atlas,outside-atlas,pigeon}.aseprite | levels/bubby/assets/*.png |
 | art/busboy/{root,props}.aseprite | levels/busboy/assets/*.png |
 | art/machine/{town-atlas,governor}.aseprite | levels/machine/assets/*.png |
@@ -51,9 +51,9 @@ change credentials or external plugin configuration merely to silence an error.
 Creative content and unresolved asset permissions are recorded in
 `releases/alpha-0.2-licensing.md`; a successful export is not licensing clearance.
 
-## Detailed hub raster trial
+## Detailed pegasus raster trial
 
-[Round 2 findings](releases/alpha-0.2-hub-round2.md) record actual tools,
+[Round 2 findings](releases/alpha-0.2-pegasus-round2.md) record actual tools,
 PixelLab diagnostics, artistic limitations and recommended next steps. Eleven
 new single-frame Aseprite masters have four named raster layers each. A local
 original brush/polygon construction script seeded them; daily edits/export use

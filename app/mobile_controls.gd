@@ -30,8 +30,8 @@ func _process(_delta: float) -> void:
 			get_window().content_scale_aspect = Window.CONTENT_SCALE_ASPECT_IGNORE
 			get_window().content_scale_size = css_size
 	var next: String = app.active_code
-	var hub: MatrixHub = app.hub as MatrixHub
-	if next.is_empty(): next = "opening" if hub.overlay.opening else ("terminal" if hub.overlay.terminal_active else "hub")
+	var pegasus: Pegasus = app.pegasus as Pegasus
+	if next.is_empty(): next = "opening" if pegasus.overlay.opening else ("terminal" if pegasus.overlay.terminal_active else "pegasus")
 	elif next == "BUSBOY":
 		var level: BusboyLevel = app.active_level as BusboyLevel
 		if level.opening: next = "busboy_opening"
@@ -59,7 +59,7 @@ func layout_controls() -> void:
 	if context == "terminal":
 		# Web terminal owns real DOM input/buttons. Native touch uses LineEdit.
 		if not OS.has_feature("web"):
-			var panel: Rect2 = ((app.hub as MatrixHub).overlay as HubOverlay).terminal_panel()
+			var panel: Rect2 = ((app.pegasus as Pegasus).overlay as PegasusOverlay).terminal_panel()
 			regions["Back"] = Rect2(panel.end.x - 80, panel.position.y + 8, 68, 44)
 			regions["Enter"] = Rect2(panel.position + Vector2(24, 162), Vector2(92, 44))
 		return
@@ -108,9 +108,9 @@ func activate(command: String) -> void:
 	elif command == "Enter": send_key(KEY_ENTER)
 	elif command == "Matrix":
 		release_all()
-		app.return_to_hub()
+		app.return_to_pegasus()
 	elif command == "Back":
-		if context == "terminal": (app.hub as MatrixHub).close_terminal()
+		if context == "terminal": (app.pegasus as Pegasus).close_terminal()
 	elif command == "Begin": send_key(KEY_ENTER)
 	elif command == "Use": send_key(KEY_E)
 	elif command in ["Shoo", "Spark"]: send_key(KEY_SPACE)
@@ -126,7 +126,7 @@ func send_key(code: Key) -> void:
 
 func sync_movement() -> void:
 	for direction: String in ["Up", "Down", "Left", "Right"]:
-		for prefix: String in ["hub_", "balls_"]:
+		for prefix: String in ["pegasus_", "balls_"]:
 			var action: String = prefix + direction.to_lower()
 			if direction in fingers.values(): Input.action_press(action)
 			else: Input.action_release(action)
@@ -160,5 +160,5 @@ func _draw() -> void:
 				points.append(rect.get_center() + point.rotated(angle))
 			draw_colored_polygon(points, Color.WHITE)
 			continue
-		var font: Font = ((app.hub as MatrixHub).overlay as HubOverlay).terminal_font if context == "terminal" else ThemeDB.fallback_font
+		var font: Font = ((app.pegasus as Pegasus).overlay as PegasusOverlay).terminal_font if context == "terminal" else ThemeDB.fallback_font
 		draw_string(font, rect.position + Vector2(5, 31), command, HORIZONTAL_ALIGNMENT_CENTER, rect.size.x - 10, 18, Color.WHITE)

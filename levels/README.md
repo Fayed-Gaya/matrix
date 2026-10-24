@@ -7,7 +7,7 @@ Do not import Python levels or depend on assets under the removable archive.
 
 A migrated level scene root must extend `MatrixLevel` (`shared/level.gd`).
 Keep its nodes, audio and timers under that root. Emit `return_requested` to
-return; the router removes/frees the root and resumes the existing hub.
+return; the router removes/frees the root and resumes the existing pegasus.
 The base class handles unconsumed Escape. A level may consume Escape to close
 its own menu first. Never quit the application merely to leave a level.
 

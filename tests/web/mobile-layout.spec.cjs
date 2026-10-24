@@ -18,6 +18,6 @@ test('DPR-3 touch canvas retains CSS-sized controls and rotation',async({page},t
   await page.setViewportSize({width:390,height:844});
   await expect.poll(async()=> (await state(page)).touch_context).toBe('portrait');
   await page.setViewportSize({width:844,height:390});
-  await expect.poll(async()=> (await state(page)).touch_context).toBe('hub');
+  await expect.poll(async()=> (await state(page)).touch_context).toBe('pegasus');
   expect(errors).toEqual([]);
 });

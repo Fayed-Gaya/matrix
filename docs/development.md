@@ -12,7 +12,7 @@ package/browsers are needed only for browser checks.
 make editor
 make run
 make fast-check CHECKS=machine      # import/resources + one behavior suite
-make fast-check CHECKS="hub bubby" # focused suites; bounce is an alias
+make fast-check CHECKS="pegasus bubby" # focused suites; bounce is an alias
 make check                         # all seven behaviors/routes/maps + archive/tools
 ```
 

@@ -1,23 +1,23 @@
 class_name MatrixApp
 extends Control
-## Keeps the hub in memory; only the active level is replaced and freed.
+## Keeps the pegasus in memory; only the active level is replaced and freed.
 
-const HUB_SCENE: PackedScene = preload("res://hub/hub.tscn")
+const PEGASUS_SCENE: PackedScene = preload("res://pegasus/pegasus.tscn")
 const PENDING_SCENE: PackedScene = preload("res://app/pending_level.tscn")
 var mobile_controls: MatrixMobileControls
-var hub: Control
+var pegasus: Control
 var active_level: MatrixLevel
 var active_code: String = ""
 var transitioning: bool = false
 
 
 func _ready() -> void:
-	hub = HUB_SCENE.instantiate()
-	add_child(hub)
-	hub.level_requested.connect(launch_level)
+	pegasus = PEGASUS_SCENE.instantiate()
+	add_child(pegasus)
+	pegasus.level_requested.connect(launch_level)
 	mobile_controls = preload("res://app/mobile_controls.gd").new()
 	add_child(mobile_controls)
-	print("Matrix hub ready")
+	print("Matrix pegasus ready")
 	if OS.has_feature("web"):
 		add_child(preload("res://app/web_diagnostics.gd").new())
 
@@ -48,14 +48,14 @@ func _enter_level(code: String, entry: Dictionary) -> void:
 	if entry.scene.is_empty():
 		active_level.level_name = entry.name
 	active_code = code
-	hub.suspend()
-	active_level.return_requested.connect(return_to_hub)
+	pegasus.suspend()
+	active_level.return_requested.connect(return_to_pegasus)
 	add_child(active_level)
 	move_child(mobile_controls, -1)
 	transitioning = false
 
 
-func return_to_hub() -> void:
+func return_to_pegasus() -> void:
 	if active_level == null or transitioning:
 		return
 	transitioning = true
@@ -67,5 +67,5 @@ func _leave_level() -> void:
 	active_level.queue_free()
 	active_level = null
 	active_code = ""
-	hub.resume()
+	pegasus.resume()
 	transitioning = false

@@ -69,7 +69,7 @@ def inventory():
                 str(path.relative_to(ROOT))
             )
     rows = []
-    for folder in ("app", "hub", "levels", "shared"):
+    for folder in ("app", "pegasus", "levels", "shared"):
         for path in sorted((ROOT / folder).rglob("*")):
             if not path.is_file() or path.suffix.lower() not in EXTENSIONS:
                 continue

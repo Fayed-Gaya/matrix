@@ -17,9 +17,9 @@ func check(condition: bool, message: String) -> void:
 func run() -> void:
 	var app: MatrixApp = load("res://app/main.tscn").instantiate() as MatrixApp
 	root.add_child(app)
-	app.hub.overlay.opening = false
-	app.hub.player.position = Vector2(410, 436)
-	var hub_position: Vector2 = app.hub.player.position
+	app.pegasus.overlay.opening = false
+	app.pegasus.player.position = Vector2(410, 436)
+	var pegasus_position: Vector2 = app.pegasus.player.position
 	app.launch_level(" bounce ")
 	await process_frame
 	await process_frame
@@ -97,7 +97,7 @@ func run() -> void:
 	await process_frame
 	await process_frame
 	check(app.active_level == null and previous.get_ref() == null, "Escape frees level")
-	check(app.hub.visible and app.hub.player.position == hub_position, "Same hub position resumes")
+	check(app.pegasus.visible and app.pegasus.player.position == pegasus_position, "Same pegasus position resumes")
 	app.launch_level("BOUNCE")
 	await process_frame
 	await process_frame

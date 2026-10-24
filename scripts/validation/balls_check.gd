@@ -25,8 +25,8 @@ func run() -> void:
 	root.size = Vector2i(1280, 720)
 	var app: MatrixApp = load("res://app/main.tscn").instantiate() as MatrixApp
 	root.add_child(app)
-	app.hub.overlay.opening = false
-	var hub_position: Vector2 = app.hub.player.position
+	app.pegasus.overlay.opening = false
+	var pegasus_position: Vector2 = app.pegasus.player.position
 	app.launch_level("BALLS")
 	await settle()
 	var level: BallsLevel = app.active_level as BallsLevel
@@ -128,7 +128,7 @@ func run() -> void:
 	await settle()
 	check(app.active_level == null and previous.get_ref() == null, "Escape frees scene")
 	check(Engine.max_fps == 97, "Prior FPS setting restored")
-	check(app.hub.visible and app.hub.player.position == hub_position, "Hub resumes at same position")
+	check(app.pegasus.visible and app.pegasus.player.position == pegasus_position, "Pegasus resumes at same position")
 	app.launch_level("BALLS")
 	await settle()
 	level = app.active_level as BallsLevel

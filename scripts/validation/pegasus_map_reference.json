@@ -1,0 +1,199 @@
+{
+  "spawn": [
+    112,
+    224
+  ],
+  "bounds": [
+    512,
+    320
+  ],
+  "terminal": [
+    416,
+    176,
+    64,
+    32
+  ],
+  "collision": [
+    [
+      0,
+      0,
+      512,
+      64
+    ],
+    [
+      0,
+      288,
+      512,
+      32
+    ],
+    [
+      0,
+      64,
+      32,
+      224
+    ],
+    [
+      480,
+      64,
+      32,
+      224
+    ],
+    [
+      70,
+      88,
+      68,
+      96
+    ],
+    [
+      166,
+      88,
+      68,
+      96
+    ],
+    [
+      422,
+      112,
+      52,
+      64
+    ],
+    [
+      342,
+      134,
+      68,
+      40
+    ],
+    [
+      360,
+      164,
+      25,
+      20
+    ],
+    [
+      46,
+      248,
+      54,
+      34
+    ]
+  ],
+  "features": [
+    {
+      "layer": "Ground",
+      "cell": [
+        0,
+        0
+      ],
+      "atlas": [
+        0,
+        1
+      ]
+    },
+    {
+      "layer": "Ground",
+      "cell": [
+        4,
+        5
+      ],
+      "atlas": [
+        3,
+        0
+      ]
+    },
+    {
+      "layer": "Ground",
+      "cell": [
+        15,
+        5
+      ],
+      "atlas": [
+        5,
+        1
+      ]
+    }
+  ],
+  "objects": [
+    {
+      "node": "OpenChamber",
+      "position": [
+        64,
+        192
+      ],
+      "texture": "res://pegasus/assets/round2/pod-open.png",
+      "offset": [
+        0,
+        -112
+      ]
+    },
+    {
+      "node": "SealedChamber",
+      "position": [
+        160,
+        192
+      ],
+      "texture": "res://pegasus/assets/round2/pod-sealed.png",
+      "offset": [
+        0,
+        -112
+      ]
+    },
+    {
+      "node": "SpaceViewport",
+      "position": [
+        256,
+        8
+      ],
+      "texture": "res://pegasus/assets/round2/viewport.png",
+      "offset": [
+        0,
+        0
+      ]
+    },
+    {
+      "node": "Computer",
+      "position": [
+        416,
+        176
+      ],
+      "texture": "res://pegasus/assets/round2/terminal.png",
+      "offset": [
+        0,
+        -80
+      ]
+    },
+    {
+      "node": "ChamberServiceBay",
+      "position": [
+        48,
+        64
+      ],
+      "texture": "res://pegasus/assets/round2/chamber-bay.png",
+      "offset": [
+        0,
+        0
+      ]
+    },
+    {
+      "node": "Worktable",
+      "position": [
+        336,
+        192
+      ],
+      "texture": "res://pegasus/assets/round2/worktable.png",
+      "offset": [
+        0,
+        -80
+      ]
+    },
+    {
+      "node": "Storage",
+      "position": [
+        40,
+        288
+      ],
+      "texture": "res://pegasus/assets/round2/locker.png",
+      "offset": [
+        0,
+        -56
+      ]
+    }
+  ]
+}

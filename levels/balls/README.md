@@ -1,7 +1,7 @@
 # Balls — BALLS
 
 Launch Matrix with `make run` and enter `BALLS` at the terminal. WASD moves both
-circles; Escape returns to the same hub position. Closing the window quits the
+circles; Escape returns to the same pegasus position. Closing the window quits the
 application. There are no collisions between circles, score, sound, or game-over
 state in the source or this port.
 
@@ -27,7 +27,7 @@ and GDScript; there are no external assets or runtime Python dependencies.
 The source opens a fixed-size window. The Godot level instead scales its logical
 field uniformly to fit the existing resizable window, with black margins.
 An onscreen controls/return hint and Escape return are additions. A fresh launch
-resets both circles; hub position is retained in memory only.
+resets both circles; pegasus position is retained in memory only.
 
 Godot circle tessellation, subpixel drawing, and scaling can differ from Pygame's
 integer rasterization. Vector precision also differs: the 400-update trace
@@ -57,7 +57,7 @@ copies do not bleed into black letterbox margins.
 
 Additional checks cover live WASD processing, opposing keys, first-frame zero
 delta, draw-before-update, frame-vs-delta movement, modulo wrapping, resize fit,
-FPS restoration, routing, Escape cleanup, same-position hub return, and fresh
+FPS restoration, routing, Escape cleanup, same-position pegasus return, and fresh
 state on reentry.
 
 Manual review: enter `BALLS`, hold WASD through horizontal/vertical seams and

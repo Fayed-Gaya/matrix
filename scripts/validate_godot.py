@@ -14,12 +14,12 @@ def main() -> None:
         "--only",
         nargs="+",
         type=str.lower,
-        help="Targeted stages; imports/resources always run (e.g. hub, machine, bounce)",
+        help="Targeted stages; imports/resources always run (e.g. pegasus, machine, bounce)",
     )
     args = parser.parse_args()
     root = Path(__file__).resolve().parent.parent
     # Prevent reintroducing a second runtime map-authoring source.
-    for folder in ("app", "hub", "levels", "shared"):
+    for folder in ("app", "pegasus", "levels", "shared"):
         obsolete = [
             p
             for p in (root / folder).rglob("*")
@@ -31,7 +31,7 @@ def main() -> None:
     if not version.startswith("4.7.2.stable."):
         raise SystemExit(f"Expected Godot 4.7.2 stable; got {version}")
     with tempfile.TemporaryDirectory(prefix="matrix-godot-") as logs:
-        descriptor = root / "scripts/validation/hub_map_reference.json"
+        descriptor = root / "scripts/validation/pegasus_map_reference.json"
         stages = [
             ("import", ["--editor", "--import"], None),
             (
@@ -40,14 +40,14 @@ def main() -> None:
                 "Matrix project validation passed",
             ),
             (
-                "hub",
+                "pegasus",
                 [
                     "--script",
-                    "res://scripts/validation/hub_check.gd",
+                    "res://scripts/validation/pegasus_check.gd",
                     "--",
                     str(descriptor),
                 ],
-                "Matrix hub integration passed",
+                "Matrix pegasus integration passed",
             ),
             (
                 "mobile",
@@ -107,7 +107,7 @@ def main() -> None:
                 ["--script", "res://scripts/validation/machine_check.gd"],
                 "Machine validation passed",
             ),
-            ("startup", ["--quit-after", "5"], "Matrix hub ready"),
+            ("startup", ["--quit-after", "5"], "Matrix pegasus ready"),
         ]
         aliases = {"bounce": "bouncing_ball"}
         requested = {aliases.get(name, name) for name in (args.only or [])}

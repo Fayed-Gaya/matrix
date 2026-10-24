@@ -1,7 +1,7 @@
 # Bouncing Ball — BOUNCE
 
 Launch Matrix with `make run`, enter `BOUNCE` at the terminal, and watch the ball
-reflect off the edges. Escape returns to the same hub position. Closing the
+reflect off the edges. Escape returns to the same pegasus position. Closing the
 application window quits Matrix.
 
 This is a movement demo, with no score, player input, sound, or game-over state.
@@ -37,7 +37,7 @@ Python, Pygame, or the archive.
 
 `make check` verifies a 5,000-tick trace produced by the original Pygame Rect
 update sequence, image dimensions, contact/overshoot/corner behavior, fixed tick
-rate, live scene motion, resize fitting, `BOUNCE` routing, Escape cleanup, hub
+rate, live scene motion, resize fitting, `BOUNCE` routing, Escape cleanup, pegasus
 position preservation, and fresh state on reentry. These checks passed, along
 with imported transparency checks and a real OpenGL Compatibility-window run.
 The window capture was visually inspected. Manual review: launch `BOUNCE`,

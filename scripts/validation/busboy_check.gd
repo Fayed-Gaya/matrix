@@ -1,6 +1,6 @@
 extends SceneTree
 ## Intro slice: exploration/dialogue, gated turn encounter, defeat/retry/retreat,
-## victory/collision removal, shrine objective and hub return.
+## victory/collision removal, shrine objective and pegasus return.
 
 func _initialize() -> void:
 	root.set_meta("matrix_test_mode", true)
@@ -55,10 +55,10 @@ func run() -> void:
 	assert(level != null and level.opening and level.room_name == "cabin")
 	assert(level.get_node("Ambience").playing)
 	var start: Vector2 = level.player.position
-	Input.action_press("hub_right")
+	Input.action_press("pegasus_right")
 	await physics_frame
 	await physics_frame
-	Input.action_release("hub_right")
+	Input.action_release("pegasus_right")
 	assert(level.player.position == start)
 	key(KEY_SPACE)
 	assert(not level.opening)
@@ -97,9 +97,9 @@ func run() -> void:
 	key(KEY_E)
 	assert(level.advised and level.dialogue.contains("Earth") and level.dialogue.contains("Blood"))
 	start = level.player.position
-	Input.action_press("hub_right")
+	Input.action_press("pegasus_right")
 	level._physics_process(0.1)
-	Input.action_release("hub_right")
+	Input.action_release("pegasus_right")
 	assert(level.player.position == start, "Dialogue locks movement")
 	key(KEY_ESCAPE)
 	assert(level.dialogue.is_empty() and app.active_level == level)
@@ -143,7 +143,7 @@ func run() -> void:
 	key(KEY_ESCAPE)
 	await process_frame
 	await process_frame
-	assert(app.active_level == null and app.hub.visible)
+	assert(app.active_level == null and app.pegasus.visible)
 	app.free()
 	await process_frame
 	await create_timer(0.15).timeout

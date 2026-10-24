@@ -27,9 +27,9 @@ def main():
     if (
         not output.is_relative_to(ROOT)
         or output.suffix != ".png"
-        or output.relative_to(ROOT).parts[0] not in {"hub", "levels", "shared"}
+        or output.relative_to(ROOT).parts[0] not in {"pegasus", "levels", "shared"}
     ):
-        parser.error("Output must be a runtime PNG under hub/, levels/ or shared/")
+        parser.error("Output must be a runtime PNG under pegasus/, levels/ or shared/")
     header = source.read_bytes()[:128]
     if len(header) < 128 or struct.unpack_from("<H", header, 4)[0] != 0xA5E0:
         parser.error("Invalid Aseprite source")

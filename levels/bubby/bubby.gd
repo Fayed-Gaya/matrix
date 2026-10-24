@@ -106,7 +106,7 @@ func _physics_process(delta: float) -> void:
 	shoo_wait = maxf(0, shoo_wait - delta)
 	hurt_wait = maxf(0, hurt_wait - delta)
 	if dialogue.is_empty():
-		var direction: Vector2 = Input.get_vector("hub_left", "hub_right", "hub_up", "hub_down")
+		var direction: Vector2 = Input.get_vector("pegasus_left", "pegasus_right", "pegasus_up", "pegasus_down")
 		player.step(direction, delta, room.collision_rects, room.bounds)
 		if room_name == "outside" and pigeon_health > 0:
 			var offset: Vector2 = player.position - pigeon.position
@@ -142,8 +142,8 @@ func _unhandled_input(event: InputEvent) -> void:
 	if not event is InputEventKey or not event.pressed or event.echo: return
 	if not dialogue.is_empty():
 		if event.keycode in [KEY_ENTER, KEY_SPACE, KEY_ESCAPE, KEY_E]: dialogue = ""
-	elif event.is_action_pressed("return_to_hub"): return_requested.emit()
-	elif event.is_action_pressed("hub_interact"): interact()
+	elif event.is_action_pressed("return_to_pegasus"): return_requested.emit()
+	elif event.is_action_pressed("pegasus_interact"): interact()
 	elif event.keycode == KEY_SPACE: shoo()
 	else: return
 	get_viewport().set_input_as_handled()
