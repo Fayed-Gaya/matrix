@@ -1,20 +1,20 @@
-class_name MachineLevel
+class_name SimulationLevel
 extends MatrixLevel
 ## Provisional general-audience clockwork-town showcase; progress is session-only.
 
 const FIELD_SIZE: Vector2 = Vector2(640,352)
 const AVATAR: Texture2D = preload("res://assets/art/shared/actors/astronaut.png")
 const ROOMS: Dictionary = {
-	"bedroom":preload("res://levels/machine/maps/bedroom.tscn"),
-	"home":preload("res://levels/machine/maps/home.tscn"),
-	"town":preload("res://levels/machine/maps/town.tscn"),
-	"workshop":preload("res://levels/machine/maps/workshop.tscn"),
-	"library":preload("res://levels/machine/maps/library.tscn"),
-	"cafe":preload("res://levels/machine/maps/cafe.tscn"),
-	"outskirts":preload("res://levels/machine/maps/outskirts.tscn"),
+	"bedroom":preload("res://levels/simulation/maps/bedroom.tscn"),
+	"home":preload("res://levels/simulation/maps/home.tscn"),
+	"town":preload("res://levels/simulation/maps/town.tscn"),
+	"workshop":preload("res://levels/simulation/maps/workshop.tscn"),
+	"library":preload("res://levels/simulation/maps/library.tscn"),
+	"cafe":preload("res://levels/simulation/maps/cafe.tscn"),
+	"outskirts":preload("res://levels/simulation/maps/outskirts.tscn"),
 }
 enum BossPhase {DORMANT, WINDUP, RECOVER, COMPLETE}
-var room: MachineRoom
+var room: SimulationRoom
 var player: MatrixPixelPlayer
 var room_name: String = ""
 var visited: Array[String] = []
@@ -55,7 +55,7 @@ func show_room(title: String, arrival: Vector2 = Vector2.ZERO) -> void:
 		room.queue_free()
 	room_name = title
 	if not title in visited: visited.append(title)
-	room = (ROOMS[title] as PackedScene).instantiate() as MachineRoom
+	room = (ROOMS[title] as PackedScene).instantiate() as SimulationRoom
 	field.add_child(room)
 	player = MatrixPixelPlayer.new()
 	player.sprite_sheet = AVATAR
@@ -71,7 +71,7 @@ func show_room(title: String, arrival: Vector2 = Vector2.ZERO) -> void:
 		npc.z_index = 1
 		room.add_child(npc)
 	if title == "outskirts":
-		var effects: Node2D = load("res://levels/machine/effects.gd").new() as Node2D
+		var effects: Node2D = load("res://levels/simulation/effects.gd").new() as Node2D
 		effects.set("level",self)
 		effects.z_index = 3
 		room.add_child(effects)

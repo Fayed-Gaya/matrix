@@ -1,21 +1,21 @@
 extends Control
 
 func _draw() -> void:
-	var level: MachineLevel = get_parent() as MachineLevel
+	var level: SimulationLevel = get_parent() as SimulationLevel
 	if level.room == null: return
 	if MatrixMobileOverlay.active(self):
-		MatrixMobileOverlay.draw(self, "MACHINE · Draft", level.objective() + (" · You %d/5 · Governor %d/6" % [level.health, level.boss_health] if level.room_name == "outskirts" else ""), level.interaction_hint(), level.dialogue)
+		MatrixMobileOverlay.draw(self, "SIMULATION · Draft", level.objective() + (" · You %d/5 · Governor %d/6" % [level.health, level.boss_health] if level.room_name == "outskirts" else ""), level.interaction_hint(), level.dialogue)
 		return
 	var font: Font = ThemeDB.fallback_font
 	draw_rect(Rect2(0,0,size.x,128),Color(0.05,0.08,0.11,0.92))
-	draw_string(font,Vector2(18,26),"MACHINE · The quiet hour · Draft",HORIZONTAL_ALIGNMENT_LEFT,size.x-36,22,Color("edc58a"))
+	draw_string(font,Vector2(18,26),"SIMULATION · The quiet hour · Draft",HORIZONTAL_ALIGNMENT_LEFT,size.x-36,22,Color("edc58a"))
 	draw_multiline_string(font,Vector2(18,52),level.objective(),HORIZONTAL_ALIGNMENT_LEFT,size.x-36,18,2,Color.WHITE)
 	if level.notice_time > 0:
 		draw_string(font,Vector2(18,110),level.notice,HORIZONTAL_ALIGNMENT_LEFT,size.x-36,16,Color("c6d7d5"))
 	if level.room_name == "outskirts" and not level.complete:
 		var phase: String = "Press E near the governor"
-		if level.boss_phase == MachineLevel.BossPhase.WINDUP: phase = "Orange pulse: move away or brace"
-		elif level.boss_phase == MachineLevel.BossPhase.RECOVER: phase = "Green ring: get close and spark"
+		if level.boss_phase == SimulationLevel.BossPhase.WINDUP: phase = "Orange pulse: move away or brace"
+		elif level.boss_phase == SimulationLevel.BossPhase.RECOVER: phase = "Green ring: get close and spark"
 		draw_string(font,Vector2(18,82),"You: %d/5 · Governor: %d/6 · %s" % [level.health,level.boss_health,phase],HORIZONTAL_ALIGNMENT_LEFT,size.x-36,16,Color("edc58a"))
 	draw_rect(Rect2(0,size.y-42,size.x,42),Color(0.05,0.08,0.11,0.92))
 	draw_string(font,Vector2(18,size.y-15),"WASD/arrows: move · E: interact · Space: spark · Shift: brace · Escape: Matrix",HORIZONTAL_ALIGNMENT_LEFT,size.x-36,16,Color("c6d7d5"))

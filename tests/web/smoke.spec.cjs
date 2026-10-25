@@ -32,7 +32,7 @@ test('opening, terminal, one level and return', async ({ page }) => {
     await expect.poll(async () => (await state(page)).terminal).toBe(true);
     const input=page.getByRole('textbox',{name:'Terminal input'});
     await expect(input).toBeFocused();
-    await expect(page.locator('#matrix-terminal')).not.toContainText(/BOUNCE|BALLS|BUG|BUBBY|BUSBOY|MACHINE|YOU|WORLD|DESTINATION|SIMULATION/);
+    await expect(page.locator('#matrix-terminal')).not.toContainText(/BOUNCE|BALLS|BUG|BUBBY|BUSBOY|SIMULATION|YOU|WORLD|DESTINATION/);
     await page.keyboard.type(code);
     await page.keyboard.press('Enter');
     await expect.poll(async () => (await state(page)).code, {timeout: 60000}).toBe(code);

@@ -5,7 +5,7 @@ upper-right desk: stand in front and press E when prompted. Type a code and
 Enter; Backspace edits, Escape closes. Returning from a level preserves your
 Pegasus position and skips the opening. Codes ignore surrounding space and case.
 
-Current codes: BOUNCE, BALLS, BUG, YOU, BUBBY, BUSBOY, MACHINE. PONG/JUMP/MARIO/MONSTERS are archived, not public aliases.
+Current codes: BOUNCE, BALLS, BUG, YOU, BUBBY, BUSBOY, SIMULATION. PONG/JUMP/MARIO/MONSTERS are archived, not public aliases.
 
 ## Native editing
 

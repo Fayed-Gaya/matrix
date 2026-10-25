@@ -1,93 +1,88 @@
 [gd_scene format=4]
 
-[ext_resource type="Script" path="res://levels/machine/room.gd" id="1_tqydc"]
-[ext_resource type="TileSet" path="res://levels/machine/maps/town.tres" id="2_ic3p0"]
+[ext_resource type="Script" path="res://levels/simulation/room.gd" id="1_6337f"]
+[ext_resource type="TileSet" path="res://levels/simulation/maps/town.tres" id="2_m8jha"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_w5jyk"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fjtk5"]
 size = Vector2(640, 64)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_704st"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_25ui5"]
 size = Vector2(640, 32)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_n40k8"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_op2uv"]
 size = Vector2(32, 256)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_asjg2"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bt47r"]
 size = Vector2(32, 256)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_x1w87"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yu1jh"]
 size = Vector2(32, 32)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_7jj1k"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h00q5"]
 size = Vector2(32, 32)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ubll3"]
-size = Vector2(192, 32)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iygg5"]
+size = Vector2(32, 64)
 
-[node name="Workshop" type="Node2D" unique_id=235294320]
-script = ExtResource("1_tqydc")
+[node name="Bedroom" type="Node2D" unique_id=1180048008]
+script = ExtResource("1_6337f")
 
-[node name="Ground" type="TileMapLayer" parent="." unique_id=1855578591]
+[node name="Ground" type="TileMapLayer" parent="." unique_id=23721883]
 tile_map_data = PackedByteArray("AAAAAAAAAAACAAAAAAABAAAAAAACAAAAAAACAAAAAAACAAAAAAADAAAAAAACAAAAAAAEAAAAAAACAAAAAAAFAAAAAAACAAAAAAAGAAAAAAACAAAAAAAHAAAAAAACAAAAAAAIAAAAAAACAAAAAAAJAAAAAAACAAAAAAAKAAAAAAACAAAAAAALAAAAAAACAAAAAAAMAAAAAAACAAAAAAANAAAAAAACAAAAAAAOAAAAAAACAAAAAAAPAAAAAAACAAAAAAAQAAAAAAACAAAAAAARAAAAAAACAAAAAAASAAAAAAACAAAAAAATAAAAAAACAAAAAAAAAAEAAAACAAAAAAABAAEAAAACAAAAAAACAAEAAAACAAAAAAADAAEAAAACAAAAAAAEAAEAAAACAAAAAAAFAAEAAAACAAAAAAAGAAEAAAACAAAAAAAHAAEAAAACAAAAAAAIAAEAAAACAAAAAAAJAAEAAAACAAAAAAAKAAEAAAACAAAAAAALAAEAAAACAAAAAAAMAAEAAAACAAAAAAANAAEAAAACAAAAAAAOAAEAAAACAAAAAAAPAAEAAAACAAAAAAAQAAEAAAACAAAAAAARAAEAAAACAAAAAAASAAEAAAACAAAAAAATAAEAAAACAAAAAAAAAAIAAAADAAAAAAABAAIAAAAAAAAAAAACAAIAAAAAAAAAAAADAAIAAAAAAAAAAAAEAAIAAAAAAAAAAAAFAAIAAAAAAAAAAAAGAAIAAAAAAAAAAAAHAAIAAAAAAAAAAAAIAAIAAAAAAAAAAAAJAAIAAAAAAAAAAAAKAAIAAAAAAAAAAAALAAIAAAAAAAAAAAAMAAIAAAAAAAAAAAANAAIAAAAAAAAAAAAOAAIAAAAAAAAAAAAPAAIAAAAAAAAAAAAQAAIAAAAAAAAAAAARAAIAAAAAAAAAAAASAAIAAAAAAAAAAAATAAIAAAADAAAAAAAAAAMAAAADAAAAAAABAAMAAAAAAAAAAAACAAMAAAAAAAAAAAADAAMAAAAAAAAAAAAEAAMAAAAAAAAAAAAFAAMAAAAAAAAAAAAGAAMAAAAAAAAAAAAHAAMAAAAAAAAAAAAIAAMAAAAAAAAAAAAJAAMAAAAAAAAAAAAKAAMAAAAAAAAAAAALAAMAAAAAAAAAAAAMAAMAAAAAAAAAAAANAAMAAAAAAAAAAAAOAAMAAAAAAAAAAAAPAAMAAAAAAAAAAAAQAAMAAAAAAAAAAAARAAMAAAAAAAAAAAASAAMAAAAAAAAAAAATAAMAAAADAAAAAAAAAAQAAAADAAAAAAABAAQAAAAAAAAAAAACAAQAAAAAAAAAAAADAAQAAAAAAAAAAAAEAAQAAAAAAAAAAAAFAAQAAAAAAAAAAAAGAAQAAAAAAAAAAAAHAAQAAAAAAAAAAAAIAAQAAAAAAAAAAAAJAAQAAAAAAAAAAAAKAAQAAAAAAAAAAAALAAQAAAAAAAAAAAAMAAQAAAAAAAAAAAANAAQAAAAAAAAAAAAOAAQAAAAAAAAAAAAPAAQAAAAAAAAAAAAQAAQAAAAAAAAAAAARAAQAAAAAAAAAAAASAAQAAAAAAAAAAAATAAQAAAADAAAAAAAAAAUAAAADAAAAAAABAAUAAAAAAAAAAAACAAUAAAAAAAAAAAADAAUAAAAAAAAAAAAEAAUAAAAAAAAAAAAFAAUAAAAAAAAAAAAGAAUAAAAAAAAAAAAHAAUAAAAAAAAAAAAIAAUAAAAAAAAAAAAJAAUAAAAAAAAAAAAKAAUAAAAAAAAAAAALAAUAAAAAAAAAAAAMAAUAAAAAAAAAAAANAAUAAAAAAAAAAAAOAAUAAAAAAAAAAAAPAAUAAAAAAAAAAAAQAAUAAAAAAAAAAAARAAUAAAAAAAAAAAASAAUAAAAAAAAAAAATAAUAAAADAAAAAAAAAAYAAAADAAAAAAABAAYAAAAAAAAAAAACAAYAAAAAAAAAAAADAAYAAAAAAAAAAAAEAAYAAAAAAAAAAAAFAAYAAAAAAAAAAAAGAAYAAAAAAAAAAAAHAAYAAAAFAAEAAAAIAAYAAAAFAAEAAAAJAAYAAAAFAAEAAAAKAAYAAAAFAAEAAAALAAYAAAAFAAEAAAAMAAYAAAAFAAEAAAANAAYAAAAAAAAAAAAOAAYAAAAAAAAAAAAPAAYAAAAAAAAAAAAQAAYAAAAAAAAAAAARAAYAAAAAAAAAAAASAAYAAAAAAAAAAAATAAYAAAADAAAAAAAAAAcAAAADAAAAAAABAAcAAAAAAAAAAAACAAcAAAAAAAAAAAADAAcAAAAAAAAAAAAEAAcAAAAAAAAAAAAFAAcAAAAAAAAAAAAGAAcAAAAAAAAAAAAHAAcAAAAFAAEAAAAIAAcAAAAFAAEAAAAJAAcAAAAFAAEAAAAKAAcAAAAFAAEAAAALAAcAAAAFAAEAAAAMAAcAAAAFAAEAAAANAAcAAAAAAAAAAAAOAAcAAAAAAAAAAAAPAAcAAAAAAAAAAAAQAAcAAAAAAAAAAAARAAcAAAAAAAAAAAASAAcAAAAAAAAAAAATAAcAAAADAAAAAAAAAAgAAAADAAAAAAABAAgAAAAAAAAAAAACAAgAAAAAAAAAAAADAAgAAAAAAAAAAAAEAAgAAAAAAAAAAAAFAAgAAAAAAAAAAAAGAAgAAAAAAAAAAAAHAAgAAAAFAAEAAAAIAAgAAAAFAAEAAAAJAAgAAAAFAAEAAAAKAAgAAAAFAAEAAAALAAgAAAAFAAEAAAAMAAgAAAAFAAEAAAANAAgAAAAAAAAAAAAOAAgAAAAAAAAAAAAPAAgAAAAAAAAAAAAQAAgAAAAAAAAAAAARAAgAAAAAAAAAAAASAAgAAAAAAAAAAAATAAgAAAADAAAAAAAAAAkAAAADAAAAAAABAAkAAAAAAAAAAAACAAkAAAAAAAAAAAADAAkAAAAAAAAAAAAEAAkAAAAAAAAAAAAFAAkAAAAAAAAAAAAGAAkAAAAAAAAAAAAHAAkAAAAAAAAAAAAIAAkAAAAAAAAAAAAJAAkAAAAAAAAAAAAKAAkAAAAAAAAAAAALAAkAAAAAAAAAAAAMAAkAAAAAAAAAAAANAAkAAAAAAAAAAAAOAAkAAAAAAAAAAAAPAAkAAAAAAAAAAAAQAAkAAAAAAAAAAAARAAkAAAAAAAAAAAASAAkAAAAAAAAAAAATAAkAAAADAAAAAAAAAAoAAAACAAAAAAABAAoAAAACAAAAAAACAAoAAAACAAAAAAADAAoAAAACAAAAAAAEAAoAAAACAAAAAAAFAAoAAAACAAAAAAAGAAoAAAACAAAAAAAHAAoAAAACAAAAAAAIAAoAAAACAAAAAAAJAAoAAAACAAAAAAAKAAoAAAACAAAAAAALAAoAAAACAAAAAAAMAAoAAAACAAAAAAANAAoAAAACAAAAAAAOAAoAAAACAAAAAAAPAAoAAAACAAAAAAAQAAoAAAACAAAAAAARAAoAAAACAAAAAAASAAoAAAACAAAAAAATAAoAAAACAAAAAAA=")
-tile_set = ExtResource("2_ic3p0")
+tile_set = ExtResource("2_m8jha")
 
-[node name="Details" type="TileMapLayer" parent="." unique_id=985957335]
-tile_map_data = PackedByteArray("AAAIAAEAAAAAAAEAAAAJAAEAAAABAAEAAAARAAMAAAACAAEAAAAFAAMAAAADAAEAAAAPAAoAAAAGAAEAAAAHAAMAAAAGAAAAAAAIAAMAAAAGAAAAAAAJAAMAAAAGAAAAAAAKAAMAAAAGAAAAAAALAAMAAAAGAAAAAAAMAAMAAAAGAAAAAAAFAAYAAAAEAAEAAAAJAAYAAAAEAAEAAAAOAAYAAAAEAAEAAAA=")
-tile_set = ExtResource("2_ic3p0")
+[node name="Details" type="TileMapLayer" parent="." unique_id=109591585]
+tile_map_data = PackedByteArray("AAAIAAEAAAAAAAEAAAAJAAEAAAABAAEAAAARAAMAAAACAAEAAAAFAAMAAAADAAEAAAAPAAoAAAAGAAEAAAADAAQAAAAEAAAAAAADAAUAAAAFAAAAAAA=")
+tile_set = ExtResource("2_m8jha")
 
-[node name="Above" type="TileMapLayer" parent="." unique_id=1961681983]
+[node name="Above" type="TileMapLayer" parent="." unique_id=1382293275]
 z_index = 2
-tile_set = ExtResource("2_ic3p0")
+tile_set = ExtResource("2_m8jha")
 
-[node name="Collisions" type="Node2D" parent="." unique_id=525408141]
+[node name="Collisions" type="Node2D" parent="." unique_id=1888749626]
 
-[node name="@CollisionShape2D@28" type="CollisionShape2D" parent="Collisions" unique_id=956533909]
+[node name="@CollisionShape2D@2" type="CollisionShape2D" parent="Collisions" unique_id=1992231611]
 position = Vector2(320, 32)
-shape = SubResource("RectangleShape2D_w5jyk")
+shape = SubResource("RectangleShape2D_fjtk5")
 
-[node name="@CollisionShape2D@29" type="CollisionShape2D" parent="Collisions" unique_id=1522813156]
+[node name="@CollisionShape2D@3" type="CollisionShape2D" parent="Collisions" unique_id=1063673642]
 position = Vector2(320, 336)
-shape = SubResource("RectangleShape2D_704st")
+shape = SubResource("RectangleShape2D_25ui5")
 
-[node name="@CollisionShape2D@30" type="CollisionShape2D" parent="Collisions" unique_id=1586181127]
+[node name="@CollisionShape2D@4" type="CollisionShape2D" parent="Collisions" unique_id=932006305]
 position = Vector2(16, 192)
-shape = SubResource("RectangleShape2D_n40k8")
+shape = SubResource("RectangleShape2D_op2uv")
 
-[node name="@CollisionShape2D@31" type="CollisionShape2D" parent="Collisions" unique_id=352666277]
+[node name="@CollisionShape2D@5" type="CollisionShape2D" parent="Collisions" unique_id=1973958719]
 position = Vector2(624, 192)
-shape = SubResource("RectangleShape2D_asjg2")
+shape = SubResource("RectangleShape2D_bt47r")
 
-[node name="@CollisionShape2D@32" type="CollisionShape2D" parent="Collisions" unique_id=1751137501]
+[node name="@CollisionShape2D@6" type="CollisionShape2D" parent="Collisions" unique_id=227331835]
 position = Vector2(560, 112)
-shape = SubResource("RectangleShape2D_x1w87")
+shape = SubResource("RectangleShape2D_yu1jh")
 
-[node name="@CollisionShape2D@33" type="CollisionShape2D" parent="Collisions" unique_id=1766650758]
+[node name="@CollisionShape2D@7" type="CollisionShape2D" parent="Collisions" unique_id=476675573]
 position = Vector2(176, 112)
-shape = SubResource("RectangleShape2D_7jj1k")
+shape = SubResource("RectangleShape2D_h00q5")
 
-[node name="@CollisionShape2D@34" type="CollisionShape2D" parent="Collisions" unique_id=1734767461]
-position = Vector2(320, 112)
-shape = SubResource("RectangleShape2D_ubll3")
+[node name="@CollisionShape2D@8" type="CollisionShape2D" parent="Collisions" unique_id=694948915]
+position = Vector2(112, 160)
+shape = SubResource("RectangleShape2D_iygg5")
 
-[node name="Portals" type="Node2D" parent="." unique_id=1165963300]
+[node name="Portals" type="Node2D" parent="." unique_id=1485190222]
 
-[node name="Town" type="ReferenceRect" parent="Portals" unique_id=2074679049]
+[node name="Home" type="ReferenceRect" parent="Portals" unique_id=1597861288]
 offset_left = 464.0
 offset_top = 288.0
 offset_right = 512.0
 offset_bottom = 312.0
 mouse_filter = 2
-metadata/target = "town"
-metadata/arrival = Vector2(128, 224)
-metadata/label = "return to town"
+metadata/target = "home"
+metadata/arrival = Vector2(128, 240)
+metadata/label = "enter the rest of home"
 metadata/needs_relays = false
 
-[node name="NPCs" type="Node2D" parent="." unique_id=1187791907]
+[node name="NPCs" type="Node2D" parent="." unique_id=1477373310]
 
-[node name="Technician" type="Marker2D" parent="NPCs" unique_id=372889799]
-position = Vector2(336, 176)
-metadata/dialogue = "This copper relay is ready. The governor warns before every pulse: leave the orange ring, or brace just before it lands. Spark it when its ring turns green."
-metadata/relay = "copper"
-
-[node name="PlayerSpawn" type="Marker2D" parent="." unique_id=1241748391]
+[node name="PlayerSpawn" type="Marker2D" parent="." unique_id=1865027975]
 position = Vector2(192, 240)

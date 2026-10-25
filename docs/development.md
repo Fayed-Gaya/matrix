@@ -22,7 +22,7 @@ explicit review requests. Manual gameplay acceptance is for releases, not pushes
 | Integration | `make smoke-check` or `make check` | Before runtime pushes; CI imports once, starts Pegasus and launches/returns every registered level |
 | Release | `make release-check` | On demand: tooling/resources, focused regressions, fresh runtime, inventory, audited export and one Chromium terminal→BOUNCE→Pegasus flow |
 
-Selectors: `pegasus bounce balls bug bubby busboy machine you mobile`; combine
+Selectors: `pegasus bounce balls bug bubby busboy simulation you mobile`; combine
 with spaces. `all` selects focused checks; `resources` adds full resource loading.
 `bouncing_ball` aliases `bounce`; unknown/empty selectors fail. Godot import scans
 the project but only selected behavior runs. `make tools-check` covers Python

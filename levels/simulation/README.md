@@ -1,6 +1,6 @@
-# Machine — The quiet hour (provisional Alpha 0.2 showcase)
+# Simulation — The quiet hour (provisional Alpha 0.2 showcase)
 
-Terminal code **MACHINE**. WASD/arrows move, E talks/travels, Space sparks,
+Terminal code **SIMULATION**. WASD/arrows move, E talks/travels, Space sparks,
 Shift braces, Escape closes dialogue first or returns to Matrix.
 
 Start in your room, enter the rest of home and speak to the caretaker if desired.
@@ -31,11 +31,11 @@ outskirts. All use the external `town.tres` TileSet. Paint Ground/Details/Above;
 edit Collisions rectangles, PlayerSpawn, Portals ReferenceRects and NPC markers.
 Portal metadata owns target/arrival/label/three-relay gating. NPC metadata owns
 dialogue/relay. Keep Governor and ClockHand names for their runtime hooks.
-No runtime map conversion. Source art/export notes are in `art/machine/`.
+No runtime map conversion. Source art/export notes are in `assets/art/source/simulation/`.
 
-Machine owns its room/progression/realtime boss state. The generic pixel actor
+Simulation owns its room/progression/realtime boss state. The generic pixel actor
 and original astronaut sheet are shared with the pegasus under `shared/actors/`;
-pegasus movement behavior remains at its previous speed, Machine uses 145 units/s.
+pegasus movement behavior remains at its previous speed, Simulation uses 145 units/s.
 Sounds are short original generated tones; there is no new audio dependency.
 All child room/effects/audio trees are freed on pegasus return.
 

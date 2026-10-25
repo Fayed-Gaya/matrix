@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dcmyqdpibksrv"
-path="res://.godot/imported/governor.png-1ac9d08b2801673b724ceeb00d95dc99.ctex"
+uid="uid://bxwkts08l8h12"
+path="res://.godot/imported/town-atlas.png-0026a60299adf472bbb929dac4ac53ea.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/machine/governor.png"
-dest_files=["res://.godot/imported/governor.png-1ac9d08b2801673b724ceeb00d95dc99.ctex"]
+source_file="res://assets/art/simulation/town-atlas.png"
+dest_files=["res://.godot/imported/town-atlas.png-0026a60299adf472bbb929dac4ac53ea.ctex"]
 
 [params]
 

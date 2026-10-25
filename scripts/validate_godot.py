@@ -13,7 +13,7 @@ FOCUSED = {
     "bug",
     "bubby",
     "busboy",
-    "machine",
+    "simulation",
     "you",
     "mobile",
 }
@@ -92,9 +92,9 @@ def regression_stages(root):
             "Native map authoring validation passed",
         ),
         (
-            "machine",
-            ["--script", "res://scripts/validation/machine_check.gd"],
-            "Machine validation passed",
+            "simulation",
+            ["--script", "res://scripts/validation/simulation_check.gd"],
+            "Simulation validation passed",
         ),
     ]
     return stages

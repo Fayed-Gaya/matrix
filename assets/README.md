@@ -3,7 +3,7 @@
 - `art/source/<experience>/`: editable Aseprite/SVG sources and authoring notes;
   excluded from Godot imports and web exports by `.gdignore` and export rules.
 - `art/<experience>/`: runtime graphics, atlases and sprites, with tracked
-  `.import` sidecars. Pegasus, Bubby, Busboy, Machine, Bounce, Bug and shared
+  `.import` sidecars. Pegasus, Bubby, Busboy, Simulation, Bounce, Bug and shared
   graphics have independent subdivisions.
 - `audio/<experience>/`: runtime audio with import settings preserved.
 

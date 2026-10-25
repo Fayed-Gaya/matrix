@@ -1,93 +1,97 @@
 [gd_scene format=4]
 
-[ext_resource type="Script" path="res://levels/machine/room.gd" id="1_72i2i"]
-[ext_resource type="TileSet" path="res://levels/machine/maps/town.tres" id="2_n4tmd"]
+[ext_resource type="Script" path="res://levels/simulation/room.gd" id="1_odw3g"]
+[ext_resource type="TileSet" path="res://levels/simulation/maps/town.tres" id="2_1q263"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_uw1ac"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xgmuv"]
 size = Vector2(640, 64)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_y7042"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ckdup"]
 size = Vector2(640, 32)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_3rdnk"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_peld0"]
 size = Vector2(32, 256)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_kxogh"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f4pbk"]
 size = Vector2(32, 256)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_daeks"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i5ia6"]
 size = Vector2(32, 32)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_btlvu"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jka2w"]
 size = Vector2(32, 32)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ywbx2"]
-size = Vector2(192, 32)
+[node name="Home" type="Node2D" unique_id=587768268]
+script = ExtResource("1_odw3g")
 
-[node name="Library" type="Node2D" unique_id=290365831]
-script = ExtResource("1_72i2i")
-
-[node name="Ground" type="TileMapLayer" parent="." unique_id=491152922]
+[node name="Ground" type="TileMapLayer" parent="." unique_id=545745445]
 tile_map_data = PackedByteArray("AAAAAAAAAAACAAAAAAABAAAAAAACAAAAAAACAAAAAAACAAAAAAADAAAAAAACAAAAAAAEAAAAAAACAAAAAAAFAAAAAAACAAAAAAAGAAAAAAACAAAAAAAHAAAAAAACAAAAAAAIAAAAAAACAAAAAAAJAAAAAAACAAAAAAAKAAAAAAACAAAAAAALAAAAAAACAAAAAAAMAAAAAAACAAAAAAANAAAAAAACAAAAAAAOAAAAAAACAAAAAAAPAAAAAAACAAAAAAAQAAAAAAACAAAAAAARAAAAAAACAAAAAAASAAAAAAACAAAAAAATAAAAAAACAAAAAAAAAAEAAAACAAAAAAABAAEAAAACAAAAAAACAAEAAAACAAAAAAADAAEAAAACAAAAAAAEAAEAAAACAAAAAAAFAAEAAAACAAAAAAAGAAEAAAACAAAAAAAHAAEAAAACAAAAAAAIAAEAAAACAAAAAAAJAAEAAAACAAAAAAAKAAEAAAACAAAAAAALAAEAAAACAAAAAAAMAAEAAAACAAAAAAANAAEAAAACAAAAAAAOAAEAAAACAAAAAAAPAAEAAAACAAAAAAAQAAEAAAACAAAAAAARAAEAAAACAAAAAAASAAEAAAACAAAAAAATAAEAAAACAAAAAAAAAAIAAAADAAAAAAABAAIAAAAAAAAAAAACAAIAAAAAAAAAAAADAAIAAAAAAAAAAAAEAAIAAAAAAAAAAAAFAAIAAAAAAAAAAAAGAAIAAAAAAAAAAAAHAAIAAAAAAAAAAAAIAAIAAAAAAAAAAAAJAAIAAAAAAAAAAAAKAAIAAAAAAAAAAAALAAIAAAAAAAAAAAAMAAIAAAAAAAAAAAANAAIAAAAAAAAAAAAOAAIAAAAAAAAAAAAPAAIAAAAAAAAAAAAQAAIAAAAAAAAAAAARAAIAAAAAAAAAAAASAAIAAAAAAAAAAAATAAIAAAADAAAAAAAAAAMAAAADAAAAAAABAAMAAAAAAAAAAAACAAMAAAAAAAAAAAADAAMAAAAAAAAAAAAEAAMAAAAAAAAAAAAFAAMAAAAAAAAAAAAGAAMAAAAAAAAAAAAHAAMAAAAAAAAAAAAIAAMAAAAAAAAAAAAJAAMAAAAAAAAAAAAKAAMAAAAAAAAAAAALAAMAAAAAAAAAAAAMAAMAAAAAAAAAAAANAAMAAAAAAAAAAAAOAAMAAAAAAAAAAAAPAAMAAAAAAAAAAAAQAAMAAAAAAAAAAAARAAMAAAAAAAAAAAASAAMAAAAAAAAAAAATAAMAAAADAAAAAAAAAAQAAAADAAAAAAABAAQAAAAAAAAAAAACAAQAAAAAAAAAAAADAAQAAAAAAAAAAAAEAAQAAAAAAAAAAAAFAAQAAAAAAAAAAAAGAAQAAAAAAAAAAAAHAAQAAAAAAAAAAAAIAAQAAAAAAAAAAAAJAAQAAAAAAAAAAAAKAAQAAAAAAAAAAAALAAQAAAAAAAAAAAAMAAQAAAAAAAAAAAANAAQAAAAAAAAAAAAOAAQAAAAAAAAAAAAPAAQAAAAAAAAAAAAQAAQAAAAAAAAAAAARAAQAAAAAAAAAAAASAAQAAAAAAAAAAAATAAQAAAADAAAAAAAAAAUAAAADAAAAAAABAAUAAAAAAAAAAAACAAUAAAAAAAAAAAADAAUAAAAAAAAAAAAEAAUAAAAAAAAAAAAFAAUAAAAAAAAAAAAGAAUAAAAAAAAAAAAHAAUAAAAAAAAAAAAIAAUAAAAAAAAAAAAJAAUAAAAAAAAAAAAKAAUAAAAAAAAAAAALAAUAAAAAAAAAAAAMAAUAAAAAAAAAAAANAAUAAAAAAAAAAAAOAAUAAAAAAAAAAAAPAAUAAAAAAAAAAAAQAAUAAAAAAAAAAAARAAUAAAAAAAAAAAASAAUAAAAAAAAAAAATAAUAAAADAAAAAAAAAAYAAAADAAAAAAABAAYAAAAAAAAAAAACAAYAAAAAAAAAAAADAAYAAAAAAAAAAAAEAAYAAAAAAAAAAAAFAAYAAAAAAAAAAAAGAAYAAAAAAAAAAAAHAAYAAAAFAAEAAAAIAAYAAAAFAAEAAAAJAAYAAAAFAAEAAAAKAAYAAAAFAAEAAAALAAYAAAAFAAEAAAAMAAYAAAAFAAEAAAANAAYAAAAAAAAAAAAOAAYAAAAAAAAAAAAPAAYAAAAAAAAAAAAQAAYAAAAAAAAAAAARAAYAAAAAAAAAAAASAAYAAAAAAAAAAAATAAYAAAADAAAAAAAAAAcAAAADAAAAAAABAAcAAAAAAAAAAAACAAcAAAAAAAAAAAADAAcAAAAAAAAAAAAEAAcAAAAAAAAAAAAFAAcAAAAAAAAAAAAGAAcAAAAAAAAAAAAHAAcAAAAFAAEAAAAIAAcAAAAFAAEAAAAJAAcAAAAFAAEAAAAKAAcAAAAFAAEAAAALAAcAAAAFAAEAAAAMAAcAAAAFAAEAAAANAAcAAAAAAAAAAAAOAAcAAAAAAAAAAAAPAAcAAAAAAAAAAAAQAAcAAAAAAAAAAAARAAcAAAAAAAAAAAASAAcAAAAAAAAAAAATAAcAAAADAAAAAAAAAAgAAAADAAAAAAABAAgAAAAAAAAAAAACAAgAAAAAAAAAAAADAAgAAAAAAAAAAAAEAAgAAAAAAAAAAAAFAAgAAAAAAAAAAAAGAAgAAAAAAAAAAAAHAAgAAAAFAAEAAAAIAAgAAAAFAAEAAAAJAAgAAAAFAAEAAAAKAAgAAAAFAAEAAAALAAgAAAAFAAEAAAAMAAgAAAAFAAEAAAANAAgAAAAAAAAAAAAOAAgAAAAAAAAAAAAPAAgAAAAAAAAAAAAQAAgAAAAAAAAAAAARAAgAAAAAAAAAAAASAAgAAAAAAAAAAAATAAgAAAADAAAAAAAAAAkAAAADAAAAAAABAAkAAAAAAAAAAAACAAkAAAAAAAAAAAADAAkAAAAAAAAAAAAEAAkAAAAAAAAAAAAFAAkAAAAAAAAAAAAGAAkAAAAAAAAAAAAHAAkAAAAAAAAAAAAIAAkAAAAAAAAAAAAJAAkAAAAAAAAAAAAKAAkAAAAAAAAAAAALAAkAAAAAAAAAAAAMAAkAAAAAAAAAAAANAAkAAAAAAAAAAAAOAAkAAAAAAAAAAAAPAAkAAAAAAAAAAAAQAAkAAAAAAAAAAAARAAkAAAAAAAAAAAASAAkAAAAAAAAAAAATAAkAAAADAAAAAAAAAAoAAAACAAAAAAABAAoAAAACAAAAAAACAAoAAAACAAAAAAADAAoAAAACAAAAAAAEAAoAAAACAAAAAAAFAAoAAAACAAAAAAAGAAoAAAACAAAAAAAHAAoAAAACAAAAAAAIAAoAAAACAAAAAAAJAAoAAAACAAAAAAAKAAoAAAACAAAAAAALAAoAAAACAAAAAAAMAAoAAAACAAAAAAANAAoAAAACAAAAAAAOAAoAAAACAAAAAAAPAAoAAAACAAAAAAAQAAoAAAACAAAAAAARAAoAAAACAAAAAAASAAoAAAACAAAAAAATAAoAAAACAAAAAAA=")
-tile_set = ExtResource("2_n4tmd")
+tile_set = ExtResource("2_1q263")
 
-[node name="Details" type="TileMapLayer" parent="." unique_id=2082360152]
-tile_map_data = PackedByteArray("AAAIAAEAAAAAAAEAAAAJAAEAAAABAAEAAAARAAMAAAACAAEAAAAFAAMAAAADAAEAAAAPAAoAAAAGAAEAAAAHAAMAAAACAAEAAAAIAAMAAAACAAEAAAAJAAMAAAACAAEAAAAKAAMAAAACAAEAAAALAAMAAAACAAEAAAAMAAMAAAACAAEAAAAFAAYAAAAEAAEAAAAJAAYAAAAEAAEAAAAOAAYAAAAEAAEAAAA=")
-tile_set = ExtResource("2_n4tmd")
+[node name="Details" type="TileMapLayer" parent="." unique_id=802509447]
+tile_map_data = PackedByteArray("AAAIAAEAAAAAAAEAAAAJAAEAAAABAAEAAAARAAMAAAACAAEAAAAFAAMAAAADAAEAAAAPAAoAAAAGAAEAAAADAAoAAAAGAAEAAAAKAAMAAAAHAAEAAAA=")
+tile_set = ExtResource("2_1q263")
 
-[node name="Above" type="TileMapLayer" parent="." unique_id=1144636569]
+[node name="Above" type="TileMapLayer" parent="." unique_id=1169834994]
 z_index = 2
-tile_set = ExtResource("2_n4tmd")
+tile_set = ExtResource("2_1q263")
 
-[node name="Collisions" type="Node2D" parent="." unique_id=1586903743]
+[node name="Collisions" type="Node2D" parent="." unique_id=1027280977]
 
-[node name="@CollisionShape2D@35" type="CollisionShape2D" parent="Collisions" unique_id=14305399]
+[node name="@CollisionShape2D@9" type="CollisionShape2D" parent="Collisions" unique_id=545522897]
 position = Vector2(320, 32)
-shape = SubResource("RectangleShape2D_uw1ac")
+shape = SubResource("RectangleShape2D_xgmuv")
 
-[node name="@CollisionShape2D@36" type="CollisionShape2D" parent="Collisions" unique_id=633999314]
+[node name="@CollisionShape2D@10" type="CollisionShape2D" parent="Collisions" unique_id=1135561986]
 position = Vector2(320, 336)
-shape = SubResource("RectangleShape2D_y7042")
+shape = SubResource("RectangleShape2D_ckdup")
 
-[node name="@CollisionShape2D@37" type="CollisionShape2D" parent="Collisions" unique_id=1815937810]
+[node name="@CollisionShape2D@11" type="CollisionShape2D" parent="Collisions" unique_id=1930548049]
 position = Vector2(16, 192)
-shape = SubResource("RectangleShape2D_3rdnk")
+shape = SubResource("RectangleShape2D_peld0")
 
-[node name="@CollisionShape2D@38" type="CollisionShape2D" parent="Collisions" unique_id=477163960]
+[node name="@CollisionShape2D@12" type="CollisionShape2D" parent="Collisions" unique_id=1694812592]
 position = Vector2(624, 192)
-shape = SubResource("RectangleShape2D_kxogh")
+shape = SubResource("RectangleShape2D_f4pbk")
 
-[node name="@CollisionShape2D@39" type="CollisionShape2D" parent="Collisions" unique_id=1608172745]
+[node name="@CollisionShape2D@13" type="CollisionShape2D" parent="Collisions" unique_id=1304177982]
 position = Vector2(560, 112)
-shape = SubResource("RectangleShape2D_daeks")
+shape = SubResource("RectangleShape2D_i5ia6")
 
-[node name="@CollisionShape2D@40" type="CollisionShape2D" parent="Collisions" unique_id=250680872]
+[node name="@CollisionShape2D@14" type="CollisionShape2D" parent="Collisions" unique_id=204816542]
 position = Vector2(176, 112)
-shape = SubResource("RectangleShape2D_btlvu")
+shape = SubResource("RectangleShape2D_jka2w")
 
-[node name="@CollisionShape2D@41" type="CollisionShape2D" parent="Collisions" unique_id=1511594520]
-position = Vector2(320, 112)
-shape = SubResource("RectangleShape2D_ywbx2")
+[node name="Portals" type="Node2D" parent="." unique_id=841566618]
 
-[node name="Portals" type="Node2D" parent="." unique_id=286788733]
+[node name="Bedroom" type="ReferenceRect" parent="Portals" unique_id=1261210935]
+offset_left = 80.0
+offset_top = 288.0
+offset_right = 128.0
+offset_bottom = 312.0
+mouse_filter = 2
+metadata/target = "bedroom"
+metadata/arrival = Vector2(480, 256)
+metadata/label = "return to your room"
+metadata/needs_relays = false
 
-[node name="Town" type="ReferenceRect" parent="Portals" unique_id=262025761]
+[node name="Town" type="ReferenceRect" parent="Portals" unique_id=1962155151]
 offset_left = 464.0
 offset_top = 288.0
 offset_right = 512.0
 offset_bottom = 312.0
 mouse_filter = 2
 metadata/target = "town"
-metadata/arrival = Vector2(448, 224)
-metadata/label = "return to town"
+metadata/arrival = Vector2(128, 464)
+metadata/label = "leave home for town"
 metadata/needs_relays = false
 
-[node name="NPCs" type="Node2D" parent="." unique_id=119001543]
+[node name="NPCs" type="Node2D" parent="." unique_id=1037467223]
 
-[node name="Archivist" type="Marker2D" parent="NPCs" unique_id=582486880]
-position = Vector2(336, 176)
-metadata/dialogue = "The old maintenance notes are simple: the machine is stalled, not evil. Six careful sparks during recovery should bring it back into rhythm. Take the glass relay."
-metadata/relay = "glass"
+[node name="Caretaker" type="Marker2D" parent="NPCs" unique_id=1999456674]
+position = Vector2(304, 160)
+metadata/dialogue = "The clock has stopped at noon. Our workshop, library and cafe each hold a relay. Collect all three, then open the east gate and steady the governor outside town."
+metadata/relay = ""
 
-[node name="PlayerSpawn" type="Marker2D" parent="." unique_id=1098469912]
+[node name="PlayerSpawn" type="Marker2D" parent="." unique_id=1594314598]
 position = Vector2(192, 240)

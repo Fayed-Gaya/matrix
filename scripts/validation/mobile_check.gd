@@ -62,15 +62,15 @@ func run() -> void:
 			bubby.dialogue = "Fixture conversation"
 			controls.activate("Use")
 			check(bubby.dialogue.is_empty(), "Use closes narrative dialogue")
-		if code == "MACHINE":
-			var machine: MachineLevel = app.active_level as MachineLevel
-			machine.show_room("outskirts")
-			machine.player.position = machine.room.get_node("Governor").position
-			machine.boss_phase = MachineLevel.BossPhase.RECOVER
+		if code == "SIMULATION":
+			var simulation: SimulationLevel = app.active_level as SimulationLevel
+			simulation.show_room("outskirts")
+			simulation.player.position = simulation.room.get_node("Governor").position
+			simulation.boss_phase = SimulationLevel.BossPhase.RECOVER
 			controls.activate("Spark")
-			check(machine.boss_health == 5, "Spark touch button reaches combat input")
+			check(simulation.boss_health == 5, "Spark touch button reaches combat input")
 			controls.activate("Brace")
-			check(machine.guard_left > 0, "Brace touch button reaches combat input")
+			check(simulation.guard_left > 0, "Brace touch button reaches combat input")
 		if code == "BUSBOY":
 			controls.activate("Begin")
 			check(not (app.active_level as BusboyLevel).opening, "Touch begins Busboy opening")

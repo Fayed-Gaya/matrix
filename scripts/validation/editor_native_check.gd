@@ -19,7 +19,7 @@ func run() -> void:
 	for room: String in ["cabin", "forest"]:
 		paths.append("res://levels/busboy/maps/" + room + ".tscn")
 	for room: String in ["bedroom", "home", "town", "workshop", "library", "cafe", "outskirts"]:
-		paths.append("res://levels/machine/maps/" + room + ".tscn")
+		paths.append("res://levels/simulation/maps/" + room + ".tscn")
 	var editor: EditorInterface = get_editor_interface()
 	for i: int in range(paths.size()):
 		editor.open_scene_from_path(paths[i])

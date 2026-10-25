@@ -1,7 +1,7 @@
 [gd_scene format=4]
 
-[ext_resource type="Script" path="res://levels/machine/room.gd" id="1_x8e0a"]
-[ext_resource type="TileSet" path="res://levels/machine/maps/town.tres" id="2_12cnl"]
+[ext_resource type="Script" path="res://levels/simulation/room.gd" id="1_x8e0a"]
+[ext_resource type="TileSet" path="res://levels/simulation/maps/town.tres" id="2_12cnl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dg8oo"]
 size = Vector2(640, 64)

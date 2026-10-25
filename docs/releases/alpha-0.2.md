@@ -1,7 +1,28 @@
-# Alpha 0.2 release readiness
+# Rebirth (Alpha 0.2)
 
 Unpublished development, not accepted for release. Publication/tagging/deployment
-needs explicit owner approval. The existing Alpha 0.1 tag/artifacts remain intact.
+needs explicit owner approval. No release date or tag has been finalized.
+The existing Alpha 0.1 tag/artifacts remain intact.
+
+## Development roadmap
+
+1. **Bubby:** improve the art pipeline while refining the apartment, balcony,
+   characters and environment using authentic real-life references. Evaluate
+   SpriteLab, PixelLab, Ludo.ai and Aseprite. Reference gathering and tool evaluation
+   precede new artwork; this roadmap update does not authorize generation or
+   creative changes.
+2. **Busboy:** refine its visual identity using Fayed and Kobe's discussions, the
+   [Busboy planning document](https://docs.google.com/document/d/183hSTmkQ3NHhDRTlgq8zJkLPunC7iQTP3-npaEApzno/edit)
+   and Kobe's supplied assets. Do not invent his preferences or claim approval.
+3. **Simulation:** develop the original showcase previously called Machine.
+   The rename changes neither its gameplay nor its story; its terminal code is
+   `SIMULATION`, with no `MACHINE` alias.
+
+After these three levels, prepare Rebirth subject to final acceptance, licensing
+decisions and explicit publication approval. Balls, Bouncing Ball, Bug and You
+remain included, with no substantial development planned this cycle. Pegasus is
+ready for Rebirth in its current form; further spaceship development is deferred
+to the release following Rebirth.
 
 ## Outstanding decisions
 
@@ -13,7 +34,7 @@ needs explicit owner approval. The existing Alpha 0.1 tag/artifacts remain intac
   merge those existing formal-review PRs without approval. Their pre-cleanup paths
   and app/input names need reconciliation with centralized assets and Pegasus.
 - Kate apartment/likeness/personal story references are pending. Current Bubby
-  furnishings/story and Machine premise/art/balance remain provisional. Kobe
+  furnishings/story and Simulation premise/art/balance remain provisional. Kobe
   authorship/approval and asset provenance must not be invented.
 - Native iOS is optional future work, not a browser-alpha requirement;
   [feasibility notes](../ios.md) describe what must be rechecked.

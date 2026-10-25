@@ -7,7 +7,7 @@ nearest filtering, atlas cell positions and transparency. Scene/TileSet editing
 owns maps, collision and depth anchors; image export never regenerates them.
 
 ```sh
-make art-export SOURCE=assets/art/source/machine/governor.aseprite OUTPUT=assets/art/machine/governor.png
+make art-export SOURCE=assets/art/source/simulation/governor.aseprite OUTPUT=assets/art/simulation/governor.png
 ```
 
 The helper accepts one explicit single-frame Aseprite source, preserves dimensions

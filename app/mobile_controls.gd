@@ -73,9 +73,9 @@ func layout_controls() -> void:
 	regions["Down"] = Rect2(origin + Vector2(unit, unit * 2), Vector2(unit, unit))
 	if app.active_code == "BALLS": return
 	regions["Use"] = Rect2(size.x - 108, size.y - 74, 90, 52)
-	if app.active_code in ["BUBBY", "MACHINE"]:
+	if app.active_code in ["BUBBY", "SIMULATION"]:
 		regions["Shoo" if app.active_code == "BUBBY" else "Spark"] = Rect2(size.x - 210, size.y - 74, 90, 52)
-	if app.active_code == "MACHINE": regions["Brace"] = Rect2(size.x - 108, size.y - 136, 90, 52)
+	if app.active_code == "SIMULATION": regions["Brace"] = Rect2(size.x - 108, size.y - 136, 90, 52)
 
 func command_at(point: Vector2) -> String:
 	for command: String in regions:

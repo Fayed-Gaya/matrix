@@ -88,7 +88,7 @@ test('landscape touch, keyboard entry, one level, return and rotation', async ({
     const field=page.getByRole('textbox', {name:'Terminal input'});
     await field.tap();
     await expect(field).toBeFocused();
-    await expect(page.locator('#matrix-terminal')).not.toContainText(/BOUNCE|BALLS|BUG|BUBBY|BUSBOY|MACHINE|YOU|WORLD|DESTINATION|SIMULATION/);
+    await expect(page.locator('#matrix-terminal')).not.toContainText(/BOUNCE|BALLS|BUG|BUBBY|BUSBOY|SIMULATION|YOU|WORLD|DESTINATION/);
     await page.keyboard.insertText(code.toLowerCase());
     await expect(field).toHaveValue(code);
     await page.getByRole('button', {name:'ENTER',exact:true}).tap();

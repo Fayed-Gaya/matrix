@@ -26,7 +26,7 @@ func run() -> void:
 				"bug": check_bug(game as BugLevel)
 				"busboy": check_turns()
 				"bubby": check_bubby(game as BubbyLevel)
-				"machine": check_machine(game as MachineLevel)
+				"simulation": check_simulation(game as SimulationLevel)
 				"you": assert((game as YouLevel).feed == null, "Test mode must not start a camera")
 			game.free()
 		await process_frame
@@ -135,7 +135,9 @@ func check_bubby(game: BubbyLevel) -> void:
 	game.retry()
 	assert(game.health > 0 and game.pigeon_health > 0 and game.room_name == initial_room)
 
-func check_machine(game: MachineLevel) -> void:
+func check_simulation(game: SimulationLevel) -> void:
+	assert(LevelRegistry.lookup("MACHINE").is_empty(), "The retired code must not remain an alias")
+	assert(LevelRegistry.lookup(" simulation ").name == "Simulation")
 	game.show_room("outskirts")
 	game.player.position = game.room.get_node("Governor").position
 	game.start_boss()
@@ -146,14 +148,14 @@ func check_machine(game: MachineLevel) -> void:
 	game.brace()
 	var health_before: int = game.health
 	game.update_boss(game.boss_wait + 1.0)
-	assert(game.health == health_before and game.boss_phase == MachineLevel.BossPhase.RECOVER)
+	assert(game.health == health_before and game.boss_phase == SimulationLevel.BossPhase.RECOVER)
 	game.attack()
 	assert(game.boss_health < before)
 	var after: int = game.boss_health
 	game.attack()
 	assert(game.boss_health == after, "Cooldown prevents duplicate attack")
 	game.reset_boss()
-	assert(game.boss_phase == MachineLevel.BossPhase.DORMANT and game.health > 0)
+	assert(game.boss_phase == SimulationLevel.BossPhase.DORMANT and game.health > 0)
 
 func check_mobile() -> void:
 	root.set_meta("matrix_force_touch", true)

@@ -1,4 +1,4 @@
-class_name MachineRoom
+class_name SimulationRoom
 extends Node2D
 ## Native scenes own all geometry, portal wiring, NPC dialogue and spawn points.
 

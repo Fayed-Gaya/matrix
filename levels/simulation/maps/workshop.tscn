@@ -1,97 +1,93 @@
 [gd_scene format=4]
 
-[ext_resource type="Script" path="res://levels/machine/room.gd" id="1_odw3g"]
-[ext_resource type="TileSet" path="res://levels/machine/maps/town.tres" id="2_1q263"]
+[ext_resource type="Script" path="res://levels/simulation/room.gd" id="1_tqydc"]
+[ext_resource type="TileSet" path="res://levels/simulation/maps/town.tres" id="2_ic3p0"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_xgmuv"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w5jyk"]
 size = Vector2(640, 64)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ckdup"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_704st"]
 size = Vector2(640, 32)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_peld0"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n40k8"]
 size = Vector2(32, 256)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_f4pbk"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_asjg2"]
 size = Vector2(32, 256)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_i5ia6"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x1w87"]
 size = Vector2(32, 32)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_jka2w"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7jj1k"]
 size = Vector2(32, 32)
 
-[node name="Home" type="Node2D" unique_id=587768268]
-script = ExtResource("1_odw3g")
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ubll3"]
+size = Vector2(192, 32)
 
-[node name="Ground" type="TileMapLayer" parent="." unique_id=545745445]
+[node name="Workshop" type="Node2D" unique_id=235294320]
+script = ExtResource("1_tqydc")
+
+[node name="Ground" type="TileMapLayer" parent="." unique_id=1855578591]
 tile_map_data = PackedByteArray("AAAAAAAAAAACAAAAAAABAAAAAAACAAAAAAACAAAAAAACAAAAAAADAAAAAAACAAAAAAAEAAAAAAACAAAAAAAFAAAAAAACAAAAAAAGAAAAAAACAAAAAAAHAAAAAAACAAAAAAAIAAAAAAACAAAAAAAJAAAAAAACAAAAAAAKAAAAAAACAAAAAAALAAAAAAACAAAAAAAMAAAAAAACAAAAAAANAAAAAAACAAAAAAAOAAAAAAACAAAAAAAPAAAAAAACAAAAAAAQAAAAAAACAAAAAAARAAAAAAACAAAAAAASAAAAAAACAAAAAAATAAAAAAACAAAAAAAAAAEAAAACAAAAAAABAAEAAAACAAAAAAACAAEAAAACAAAAAAADAAEAAAACAAAAAAAEAAEAAAACAAAAAAAFAAEAAAACAAAAAAAGAAEAAAACAAAAAAAHAAEAAAACAAAAAAAIAAEAAAACAAAAAAAJAAEAAAACAAAAAAAKAAEAAAACAAAAAAALAAEAAAACAAAAAAAMAAEAAAACAAAAAAANAAEAAAACAAAAAAAOAAEAAAACAAAAAAAPAAEAAAACAAAAAAAQAAEAAAACAAAAAAARAAEAAAACAAAAAAASAAEAAAACAAAAAAATAAEAAAACAAAAAAAAAAIAAAADAAAAAAABAAIAAAAAAAAAAAACAAIAAAAAAAAAAAADAAIAAAAAAAAAAAAEAAIAAAAAAAAAAAAFAAIAAAAAAAAAAAAGAAIAAAAAAAAAAAAHAAIAAAAAAAAAAAAIAAIAAAAAAAAAAAAJAAIAAAAAAAAAAAAKAAIAAAAAAAAAAAALAAIAAAAAAAAAAAAMAAIAAAAAAAAAAAANAAIAAAAAAAAAAAAOAAIAAAAAAAAAAAAPAAIAAAAAAAAAAAAQAAIAAAAAAAAAAAARAAIAAAAAAAAAAAASAAIAAAAAAAAAAAATAAIAAAADAAAAAAAAAAMAAAADAAAAAAABAAMAAAAAAAAAAAACAAMAAAAAAAAAAAADAAMAAAAAAAAAAAAEAAMAAAAAAAAAAAAFAAMAAAAAAAAAAAAGAAMAAAAAAAAAAAAHAAMAAAAAAAAAAAAIAAMAAAAAAAAAAAAJAAMAAAAAAAAAAAAKAAMAAAAAAAAAAAALAAMAAAAAAAAAAAAMAAMAAAAAAAAAAAANAAMAAAAAAAAAAAAOAAMAAAAAAAAAAAAPAAMAAAAAAAAAAAAQAAMAAAAAAAAAAAARAAMAAAAAAAAAAAASAAMAAAAAAAAAAAATAAMAAAADAAAAAAAAAAQAAAADAAAAAAABAAQAAAAAAAAAAAACAAQAAAAAAAAAAAADAAQAAAAAAAAAAAAEAAQAAAAAAAAAAAAFAAQAAAAAAAAAAAAGAAQAAAAAAAAAAAAHAAQAAAAAAAAAAAAIAAQAAAAAAAAAAAAJAAQAAAAAAAAAAAAKAAQAAAAAAAAAAAALAAQAAAAAAAAAAAAMAAQAAAAAAAAAAAANAAQAAAAAAAAAAAAOAAQAAAAAAAAAAAAPAAQAAAAAAAAAAAAQAAQAAAAAAAAAAAARAAQAAAAAAAAAAAASAAQAAAAAAAAAAAATAAQAAAADAAAAAAAAAAUAAAADAAAAAAABAAUAAAAAAAAAAAACAAUAAAAAAAAAAAADAAUAAAAAAAAAAAAEAAUAAAAAAAAAAAAFAAUAAAAAAAAAAAAGAAUAAAAAAAAAAAAHAAUAAAAAAAAAAAAIAAUAAAAAAAAAAAAJAAUAAAAAAAAAAAAKAAUAAAAAAAAAAAALAAUAAAAAAAAAAAAMAAUAAAAAAAAAAAANAAUAAAAAAAAAAAAOAAUAAAAAAAAAAAAPAAUAAAAAAAAAAAAQAAUAAAAAAAAAAAARAAUAAAAAAAAAAAASAAUAAAAAAAAAAAATAAUAAAADAAAAAAAAAAYAAAADAAAAAAABAAYAAAAAAAAAAAACAAYAAAAAAAAAAAADAAYAAAAAAAAAAAAEAAYAAAAAAAAAAAAFAAYAAAAAAAAAAAAGAAYAAAAAAAAAAAAHAAYAAAAFAAEAAAAIAAYAAAAFAAEAAAAJAAYAAAAFAAEAAAAKAAYAAAAFAAEAAAALAAYAAAAFAAEAAAAMAAYAAAAFAAEAAAANAAYAAAAAAAAAAAAOAAYAAAAAAAAAAAAPAAYAAAAAAAAAAAAQAAYAAAAAAAAAAAARAAYAAAAAAAAAAAASAAYAAAAAAAAAAAATAAYAAAADAAAAAAAAAAcAAAADAAAAAAABAAcAAAAAAAAAAAACAAcAAAAAAAAAAAADAAcAAAAAAAAAAAAEAAcAAAAAAAAAAAAFAAcAAAAAAAAAAAAGAAcAAAAAAAAAAAAHAAcAAAAFAAEAAAAIAAcAAAAFAAEAAAAJAAcAAAAFAAEAAAAKAAcAAAAFAAEAAAALAAcAAAAFAAEAAAAMAAcAAAAFAAEAAAANAAcAAAAAAAAAAAAOAAcAAAAAAAAAAAAPAAcAAAAAAAAAAAAQAAcAAAAAAAAAAAARAAcAAAAAAAAAAAASAAcAAAAAAAAAAAATAAcAAAADAAAAAAAAAAgAAAADAAAAAAABAAgAAAAAAAAAAAACAAgAAAAAAAAAAAADAAgAAAAAAAAAAAAEAAgAAAAAAAAAAAAFAAgAAAAAAAAAAAAGAAgAAAAAAAAAAAAHAAgAAAAFAAEAAAAIAAgAAAAFAAEAAAAJAAgAAAAFAAEAAAAKAAgAAAAFAAEAAAALAAgAAAAFAAEAAAAMAAgAAAAFAAEAAAANAAgAAAAAAAAAAAAOAAgAAAAAAAAAAAAPAAgAAAAAAAAAAAAQAAgAAAAAAAAAAAARAAgAAAAAAAAAAAASAAgAAAAAAAAAAAATAAgAAAADAAAAAAAAAAkAAAADAAAAAAABAAkAAAAAAAAAAAACAAkAAAAAAAAAAAADAAkAAAAAAAAAAAAEAAkAAAAAAAAAAAAFAAkAAAAAAAAAAAAGAAkAAAAAAAAAAAAHAAkAAAAAAAAAAAAIAAkAAAAAAAAAAAAJAAkAAAAAAAAAAAAKAAkAAAAAAAAAAAALAAkAAAAAAAAAAAAMAAkAAAAAAAAAAAANAAkAAAAAAAAAAAAOAAkAAAAAAAAAAAAPAAkAAAAAAAAAAAAQAAkAAAAAAAAAAAARAAkAAAAAAAAAAAASAAkAAAAAAAAAAAATAAkAAAADAAAAAAAAAAoAAAACAAAAAAABAAoAAAACAAAAAAACAAoAAAACAAAAAAADAAoAAAACAAAAAAAEAAoAAAACAAAAAAAFAAoAAAACAAAAAAAGAAoAAAACAAAAAAAHAAoAAAACAAAAAAAIAAoAAAACAAAAAAAJAAoAAAACAAAAAAAKAAoAAAACAAAAAAALAAoAAAACAAAAAAAMAAoAAAACAAAAAAANAAoAAAACAAAAAAAOAAoAAAACAAAAAAAPAAoAAAACAAAAAAAQAAoAAAACAAAAAAARAAoAAAACAAAAAAASAAoAAAACAAAAAAATAAoAAAACAAAAAAA=")
-tile_set = ExtResource("2_1q263")
+tile_set = ExtResource("2_ic3p0")
 
-[node name="Details" type="TileMapLayer" parent="." unique_id=802509447]
-tile_map_data = PackedByteArray("AAAIAAEAAAAAAAEAAAAJAAEAAAABAAEAAAARAAMAAAACAAEAAAAFAAMAAAADAAEAAAAPAAoAAAAGAAEAAAADAAoAAAAGAAEAAAAKAAMAAAAHAAEAAAA=")
-tile_set = ExtResource("2_1q263")
+[node name="Details" type="TileMapLayer" parent="." unique_id=985957335]
+tile_map_data = PackedByteArray("AAAIAAEAAAAAAAEAAAAJAAEAAAABAAEAAAARAAMAAAACAAEAAAAFAAMAAAADAAEAAAAPAAoAAAAGAAEAAAAHAAMAAAAGAAAAAAAIAAMAAAAGAAAAAAAJAAMAAAAGAAAAAAAKAAMAAAAGAAAAAAALAAMAAAAGAAAAAAAMAAMAAAAGAAAAAAAFAAYAAAAEAAEAAAAJAAYAAAAEAAEAAAAOAAYAAAAEAAEAAAA=")
+tile_set = ExtResource("2_ic3p0")
 
-[node name="Above" type="TileMapLayer" parent="." unique_id=1169834994]
+[node name="Above" type="TileMapLayer" parent="." unique_id=1961681983]
 z_index = 2
-tile_set = ExtResource("2_1q263")
+tile_set = ExtResource("2_ic3p0")
 
-[node name="Collisions" type="Node2D" parent="." unique_id=1027280977]
+[node name="Collisions" type="Node2D" parent="." unique_id=525408141]
 
-[node name="@CollisionShape2D@9" type="CollisionShape2D" parent="Collisions" unique_id=545522897]
+[node name="@CollisionShape2D@28" type="CollisionShape2D" parent="Collisions" unique_id=956533909]
 position = Vector2(320, 32)
-shape = SubResource("RectangleShape2D_xgmuv")
+shape = SubResource("RectangleShape2D_w5jyk")
 
-[node name="@CollisionShape2D@10" type="CollisionShape2D" parent="Collisions" unique_id=1135561986]
+[node name="@CollisionShape2D@29" type="CollisionShape2D" parent="Collisions" unique_id=1522813156]
 position = Vector2(320, 336)
-shape = SubResource("RectangleShape2D_ckdup")
+shape = SubResource("RectangleShape2D_704st")
 
-[node name="@CollisionShape2D@11" type="CollisionShape2D" parent="Collisions" unique_id=1930548049]
+[node name="@CollisionShape2D@30" type="CollisionShape2D" parent="Collisions" unique_id=1586181127]
 position = Vector2(16, 192)
-shape = SubResource("RectangleShape2D_peld0")
+shape = SubResource("RectangleShape2D_n40k8")
 
-[node name="@CollisionShape2D@12" type="CollisionShape2D" parent="Collisions" unique_id=1694812592]
+[node name="@CollisionShape2D@31" type="CollisionShape2D" parent="Collisions" unique_id=352666277]
 position = Vector2(624, 192)
-shape = SubResource("RectangleShape2D_f4pbk")
+shape = SubResource("RectangleShape2D_asjg2")
 
-[node name="@CollisionShape2D@13" type="CollisionShape2D" parent="Collisions" unique_id=1304177982]
+[node name="@CollisionShape2D@32" type="CollisionShape2D" parent="Collisions" unique_id=1751137501]
 position = Vector2(560, 112)
-shape = SubResource("RectangleShape2D_i5ia6")
+shape = SubResource("RectangleShape2D_x1w87")
 
-[node name="@CollisionShape2D@14" type="CollisionShape2D" parent="Collisions" unique_id=204816542]
+[node name="@CollisionShape2D@33" type="CollisionShape2D" parent="Collisions" unique_id=1766650758]
 position = Vector2(176, 112)
-shape = SubResource("RectangleShape2D_jka2w")
+shape = SubResource("RectangleShape2D_7jj1k")
 
-[node name="Portals" type="Node2D" parent="." unique_id=841566618]
+[node name="@CollisionShape2D@34" type="CollisionShape2D" parent="Collisions" unique_id=1734767461]
+position = Vector2(320, 112)
+shape = SubResource("RectangleShape2D_ubll3")
 
-[node name="Bedroom" type="ReferenceRect" parent="Portals" unique_id=1261210935]
-offset_left = 80.0
-offset_top = 288.0
-offset_right = 128.0
-offset_bottom = 312.0
-mouse_filter = 2
-metadata/target = "bedroom"
-metadata/arrival = Vector2(480, 256)
-metadata/label = "return to your room"
-metadata/needs_relays = false
+[node name="Portals" type="Node2D" parent="." unique_id=1165963300]
 
-[node name="Town" type="ReferenceRect" parent="Portals" unique_id=1962155151]
+[node name="Town" type="ReferenceRect" parent="Portals" unique_id=2074679049]
 offset_left = 464.0
 offset_top = 288.0
 offset_right = 512.0
 offset_bottom = 312.0
 mouse_filter = 2
 metadata/target = "town"
-metadata/arrival = Vector2(128, 464)
-metadata/label = "leave home for town"
+metadata/arrival = Vector2(128, 224)
+metadata/label = "return to town"
 metadata/needs_relays = false
 
-[node name="NPCs" type="Node2D" parent="." unique_id=1037467223]
+[node name="NPCs" type="Node2D" parent="." unique_id=1187791907]
 
-[node name="Caretaker" type="Marker2D" parent="NPCs" unique_id=1999456674]
-position = Vector2(304, 160)
-metadata/dialogue = "The clock has stopped at noon. Our workshop, library and cafe each hold a relay. Collect all three, then open the east gate and steady the governor outside town."
-metadata/relay = ""
+[node name="Technician" type="Marker2D" parent="NPCs" unique_id=372889799]
+position = Vector2(336, 176)
+metadata/dialogue = "This copper relay is ready. The governor warns before every pulse: leave the orange ring, or brace just before it lands. Spark it when its ring turns green."
+metadata/relay = "copper"
 
-[node name="PlayerSpawn" type="Marker2D" parent="." unique_id=1594314598]
+[node name="PlayerSpawn" type="Marker2D" parent="." unique_id=1241748391]
 position = Vector2(192, 240)

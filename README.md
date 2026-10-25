@@ -3,6 +3,7 @@
 A Godot 4.7.2 / GDScript / Compatibility game anthology. **Pegasus** is the opening
 spaceship; its terminal launches independent experiences inside one application.
 Move with WASD/arrows, interact with E, and use Escape for local menus/return.
+**Rebirth (Alpha 0.2)** is in development; no release date or tag is finalized.
 Landscape touch controls are available. See [level codes](app/level_registry.gd)
 and each [module README](levels/README.md) for gameplay.
 
@@ -15,7 +16,7 @@ make smoke-check
 
 - [Development and testing](docs/development.md)
 - [Art workflow](docs/art-pipeline.md) · [Pegasus visual reference](docs/reviews/hub-round2/README.md)
-- [Alpha 0.2 release requirements](docs/releases/alpha-0.2.md)
+- [Rebirth (Alpha 0.2) roadmap and release requirements](docs/releases/alpha-0.2.md)
 - [Publishing](docs/releases/publishing.md) · [Licensing](docs/releases/alpha-0.2-licensing.md)
 
 `app/` routes, `pegasus/` starts the game, `levels/` owns independent gameplay,
