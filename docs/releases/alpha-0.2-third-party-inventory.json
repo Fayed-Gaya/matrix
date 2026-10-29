@@ -5,10 +5,10 @@
     ".gd": 44,
     ".gdshader": 1,
     ".gif": 1,
-    ".json": 7,
+    ".json": 9,
     ".mp3": 2,
     ".ogg": 2,
-    ".png": 391,
+    ".png": 411,
     ".tres": 12,
     ".tscn": 26,
     ".ttf": 1,
@@ -232,8 +232,8 @@
       "path": "levels/bubby/assets/manifest.json",
       "module": "bubby",
       "type": ".json",
-      "size": 1922,
-      "sha256": "6e0cfc5a2de88426379112bcc9a9f69fcbe1787962277dd2bf7aa8023fb2d748",
+      "size": 1589,
+      "sha256": "22969a32b47be7de9260b87bc13f844babfba41dd9f0bbbaad0765c1bc32e3c5",
       "exact_archived_matches": [],
       "source_reference": false,
       "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
@@ -312,8 +312,8 @@
       "path": "levels/bubby/player.gd",
       "module": "bubby",
       "type": ".gd",
-      "size": 2429,
-      "sha256": "7a9f6b08e2aeaec0a3927ff6da512a4db0be42b8219935daa6cdf8abcd4ddae6",
+      "size": 2755,
+      "sha256": "b71d910b1d48592b48e93ae3dfb421d51a65778dc7d76f9873ea0096957d7648",
       "exact_archived_matches": [],
       "source_reference": false,
       "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
@@ -4995,6 +4995,66 @@
       "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
     },
     {
+      "path": "assets/art/source/bubby/kate/walk_east/frame_00_reference.png",
+      "module": "source",
+      "type": ".png",
+      "size": 743,
+      "sha256": "b31044174bbce91f77c913c72a05583b9439460d178f15fc4ab3ba5170cbcb48",
+      "exact_archived_matches": [],
+      "source_reference": true,
+      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
+    },
+    {
+      "path": "assets/art/source/bubby/kate/walk_east/frame_01.png",
+      "module": "source",
+      "type": ".png",
+      "size": 771,
+      "sha256": "f361ed2672cbc58bbd508f5657e6924f7436f4231c1ebb05c6bececf50f1260b",
+      "exact_archived_matches": [],
+      "source_reference": true,
+      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
+    },
+    {
+      "path": "assets/art/source/bubby/kate/walk_east/frame_02.png",
+      "module": "source",
+      "type": ".png",
+      "size": 831,
+      "sha256": "50b776b40d1685ed78a3c69efc86b87695854a78c0ccfccf024d1cbe74f015a8",
+      "exact_archived_matches": [],
+      "source_reference": true,
+      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
+    },
+    {
+      "path": "assets/art/source/bubby/kate/walk_east/frame_03.png",
+      "module": "source",
+      "type": ".png",
+      "size": 778,
+      "sha256": "7517e445334b1504e626a6c769d53a7e3fae63f74926c06fb37f7db90dcb3549",
+      "exact_archived_matches": [],
+      "source_reference": true,
+      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
+    },
+    {
+      "path": "assets/art/source/bubby/kate/walk_east/frame_04.png",
+      "module": "source",
+      "type": ".png",
+      "size": 808,
+      "sha256": "35e3ee6e4dea5c5fa201d54edc4b7025a15358cc20a93c657caf91a4c5bca2a1",
+      "exact_archived_matches": [],
+      "source_reference": true,
+      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
+    },
+    {
+      "path": "assets/art/source/bubby/kate/walk_east/generation.json",
+      "module": "source",
+      "type": ".json",
+      "size": 1413,
+      "sha256": "97774cb9f446fa556ad893c62e016097e45eec218bf1ca51a13dbb805fe0b27b",
+      "exact_archived_matches": [],
+      "source_reference": true,
+      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
+    },
+    {
       "path": "assets/art/source/bubby/kate/walk_north/frame_00_reference.png",
       "module": "source",
       "type": ".png",
@@ -5110,6 +5170,66 @@
       "type": ".json",
       "size": 827,
       "sha256": "495f2075962caf97d1f478730156e75cee2964700d0f3fa5c7746b2bcc7b3ed9",
+      "exact_archived_matches": [],
+      "source_reference": true,
+      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
+    },
+    {
+      "path": "assets/art/source/bubby/kate/walk_west/frame_00_reference.png",
+      "module": "source",
+      "type": ".png",
+      "size": 806,
+      "sha256": "441f18505cf52ece0494123dcc10b49bc73a55cadd4ab0fd3e46be44fcb42461",
+      "exact_archived_matches": [],
+      "source_reference": true,
+      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
+    },
+    {
+      "path": "assets/art/source/bubby/kate/walk_west/frame_01.png",
+      "module": "source",
+      "type": ".png",
+      "size": 827,
+      "sha256": "eee98f25fd453a5d04c2c06d6e94d374c6404fe2bc6590b260ef92665dbd298a",
+      "exact_archived_matches": [],
+      "source_reference": true,
+      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
+    },
+    {
+      "path": "assets/art/source/bubby/kate/walk_west/frame_02.png",
+      "module": "source",
+      "type": ".png",
+      "size": 814,
+      "sha256": "ee73979b994e3a2eee27b790042db8a99f4f1cc72ca0688e62d7ffe1e39b127a",
+      "exact_archived_matches": [],
+      "source_reference": true,
+      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
+    },
+    {
+      "path": "assets/art/source/bubby/kate/walk_west/frame_03.png",
+      "module": "source",
+      "type": ".png",
+      "size": 846,
+      "sha256": "b698a2a630ef8bbc0bf23b3ce9c08ac2f950b4da23ac76109e481e1977ab2d9f",
+      "exact_archived_matches": [],
+      "source_reference": true,
+      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
+    },
+    {
+      "path": "assets/art/source/bubby/kate/walk_west/frame_04.png",
+      "module": "source",
+      "type": ".png",
+      "size": 781,
+      "sha256": "4ae1507d24add77e3c518e9f0ee421edd3bd44d4e018cf746b72d92b4c6c8f5f",
+      "exact_archived_matches": [],
+      "source_reference": true,
+      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
+    },
+    {
+      "path": "assets/art/source/bubby/kate/walk_west/generation.json",
+      "module": "source",
+      "type": ".json",
+      "size": 1412,
+      "sha256": "34d5748e3c3be0ca5b106f7bffbe4c70580a08d2e103a983ecdc38ec62db26e1",
       "exact_archived_matches": [],
       "source_reference": true,
       "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
@@ -5502,6 +5622,56 @@
       "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
     },
     {
+      "path": "assets/art/sprites/bubby/kate/walk_east/frame_00.png",
+      "module": "sprites",
+      "type": ".png",
+      "size": 771,
+      "sha256": "f361ed2672cbc58bbd508f5657e6924f7436f4231c1ebb05c6bececf50f1260b",
+      "exact_archived_matches": [],
+      "source_reference": false,
+      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
+    },
+    {
+      "path": "assets/art/sprites/bubby/kate/walk_east/frame_01.png",
+      "module": "sprites",
+      "type": ".png",
+      "size": 831,
+      "sha256": "50b776b40d1685ed78a3c69efc86b87695854a78c0ccfccf024d1cbe74f015a8",
+      "exact_archived_matches": [],
+      "source_reference": false,
+      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
+    },
+    {
+      "path": "assets/art/sprites/bubby/kate/walk_east/frame_02.png",
+      "module": "sprites",
+      "type": ".png",
+      "size": 778,
+      "sha256": "7517e445334b1504e626a6c769d53a7e3fae63f74926c06fb37f7db90dcb3549",
+      "exact_archived_matches": [],
+      "source_reference": false,
+      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
+    },
+    {
+      "path": "assets/art/sprites/bubby/kate/walk_east/frame_03.png",
+      "module": "sprites",
+      "type": ".png",
+      "size": 808,
+      "sha256": "35e3ee6e4dea5c5fa201d54edc4b7025a15358cc20a93c657caf91a4c5bca2a1",
+      "exact_archived_matches": [],
+      "source_reference": false,
+      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
+    },
+    {
+      "path": "assets/art/sprites/bubby/kate/walk_east/walk_east.png",
+      "module": "sprites",
+      "type": ".png",
+      "size": 1823,
+      "sha256": "0f17687d4f33ab6b9df2459c0389e57d7a3322d76b85004d45c8a58e89bca9ee",
+      "exact_archived_matches": [],
+      "source_reference": false,
+      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
+    },
+    {
       "path": "assets/art/sprites/bubby/kate/walk_north/frame_00.png",
       "module": "sprites",
       "type": ".png",
@@ -5597,6 +5767,56 @@
       "type": ".png",
       "size": 1701,
       "sha256": "cfb0697843fb884ac6047aa7f01600a60f9e2a9d9bd734ef8fa585279f3ed6a2",
+      "exact_archived_matches": [],
+      "source_reference": false,
+      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
+    },
+    {
+      "path": "assets/art/sprites/bubby/kate/walk_west/frame_00.png",
+      "module": "sprites",
+      "type": ".png",
+      "size": 827,
+      "sha256": "eee98f25fd453a5d04c2c06d6e94d374c6404fe2bc6590b260ef92665dbd298a",
+      "exact_archived_matches": [],
+      "source_reference": false,
+      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
+    },
+    {
+      "path": "assets/art/sprites/bubby/kate/walk_west/frame_01.png",
+      "module": "sprites",
+      "type": ".png",
+      "size": 814,
+      "sha256": "ee73979b994e3a2eee27b790042db8a99f4f1cc72ca0688e62d7ffe1e39b127a",
+      "exact_archived_matches": [],
+      "source_reference": false,
+      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
+    },
+    {
+      "path": "assets/art/sprites/bubby/kate/walk_west/frame_02.png",
+      "module": "sprites",
+      "type": ".png",
+      "size": 846,
+      "sha256": "b698a2a630ef8bbc0bf23b3ce9c08ac2f950b4da23ac76109e481e1977ab2d9f",
+      "exact_archived_matches": [],
+      "source_reference": false,
+      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
+    },
+    {
+      "path": "assets/art/sprites/bubby/kate/walk_west/frame_03.png",
+      "module": "sprites",
+      "type": ".png",
+      "size": 781,
+      "sha256": "4ae1507d24add77e3c518e9f0ee421edd3bd44d4e018cf746b72d92b4c6c8f5f",
+      "exact_archived_matches": [],
+      "source_reference": false,
+      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
+    },
+    {
+      "path": "assets/art/sprites/bubby/kate/walk_west/walk_west.png",
+      "module": "sprites",
+      "type": ".png",
+      "size": 1823,
+      "sha256": "07ba097b40d41a7f1537d196b72f6fa0c9a9ed33efede4edf7d251a7583ad5e7",
       "exact_archived_matches": [],
       "source_reference": false,
       "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"

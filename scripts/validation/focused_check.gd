@@ -120,7 +120,37 @@ func check_turns() -> void:
 	resolve(loss)
 	assert(loss.phase == BusboyEncounter.Phase.DEFEAT and loss.health == 0)
 
+func check_kate(player: BubbyPlayer) -> void:
+	var directions: Dictionary = {"down": Vector2.DOWN, "up": Vector2.UP, "right": Vector2.RIGHT, "left": Vector2.LEFT}
+	var names: Dictionary = {"down": "south", "up": "north", "right": "east", "left": "west"}
+	assert(player.texture_filter == CanvasItem.TEXTURE_FILTER_NEAREST)
+	var foot_line: float = -INF
+	for facing: String in directions:
+		var direction: String = names[facing]
+		var walks: Array = player.frames["player/" + facing]
+		assert(walks.size() == 4)
+		assert(player.frames["player/" + facing + "_idle"].size() == 1)
+		for picture: Texture2D in walks + player.frames["player/" + facing + "_idle"]:
+			assert(picture.get_size() == Vector2(32, 32))
+			var baseline: float = player.frame_origins[picture].y + picture.get_image().get_used_rect().end.y
+			if foot_line == -INF: foot_line = baseline
+			assert(baseline == foot_line, "Idle and walking feet share one anchor")
+		player.position = Vector2(200, 200)
+		player.frame_index = 0
+		for i: int in range(5):
+			player.step(directions[facing], 1.0 / 9.0, [], Vector2(640, 352))
+			assert(player.facing == facing and player.moving)
+			assert(player.current_texture() == walks[(i + 1) % 4], "Walking selects and loops the directional frames")
+		player.step(Vector2.ZERO, 0, [], Vector2(640, 352))
+		assert(not player.moving and player.facing == facing)
+		assert(player.current_texture().resource_path.ends_with("idle_" + direction + ".png"))
+	player.position = Vector2(200, 160)
+	var wall: Rect2 = Rect2(240, 120, 20, 160)
+	player.step(Vector2.RIGHT, 1.0, [wall], Vector2(640, 352))
+	assert(not player.hitbox().intersects(wall), "Visual replacement preserves collision blocking")
+
 func check_bubby(game: BubbyLevel) -> void:
+	check_kate(game.player)
 	game.show_room("outside")
 	game.close_dialogue()
 	game.pigeon_health = 1000 # Keep the encounter alive while exercising cooldown.

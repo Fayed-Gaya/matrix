@@ -1,0 +1,28 @@
+{
+  "tool": "PixelLab MCP animate_image",
+  "model": "standard; no model override exposed",
+  "job_id": "4af4c622-d617-4abc-a298-61fa9c282f07",
+  "asset_id": "9d23b628-3997-583f-8320-c0946e8fb69e",
+  "requested_generated_frames": 4,
+  "returned_frames": 5,
+  "reference_frame_index": 0,
+  "generated_frame_indices": [
+    1,
+    2,
+    3,
+    4
+  ],
+  "size": [
+    32,
+    32
+  ],
+  "transparent": true,
+  "charged_generations": 1,
+  "credits_charged_usd": 0,
+  "attempts": 1,
+  "reference_sha256": "441f18505cf52ece0494123dcc10b49bc73a55cadd4ab0fd3e46be44fcb42461",
+  "playback_duration_ms": 160,
+  "playback_note": "Provisional review timing; game retains its existing 9fps animation rate. APNG packages the five original returned frames losslessly; individual source PNGs are unchanged downloads.",
+  "status": "Provisional animation accepted for initial playable integration; no polishing generations.",
+  "action": "Walk in place facing WEST (left-facing profile) throughout. A clear four-frame alternating-leg walking cycle: left foot forward then right foot forward, with subtle opposite arm swings. Keep head and torso steady, feet close to a fixed ground line, no turning, running, jumping or camera movement. Preserve the supplied 32x32 sprite's dark brown hair, pink Hawaiian hibiscus flower, navy-blue dress with white polka dots, proportions, colors and pixel art style. Transparent background."
+}

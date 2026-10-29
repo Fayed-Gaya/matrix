@@ -13,7 +13,8 @@ archive/source exclusions and retired import-cache fingerprints.
 | --- | --- | --- |
 | Pong/Jump/Mario/Monsters | Source/art/checks preserved under excluded archive/godot | Existing licensing questions remain; retirement is not a clearance finding |
 | Original hub | Preserved as excluded reference; replaced with original local pixel art | Original notices retained; artistic acceptance of replacement pending |
-| Bubby avatar/music and Zelda-derived exploration | Copied active assets; full original Zelda retained in excluded module source | Existing tutorial/code/art/audio permission questions unresolved |
+| Bubby music and Zelda-derived exploration | Retained; full original Zelda and prior avatar preserved as references | Existing tutorial/code/audio permission questions unresolved |
+| Kate idle rotations and walking animations | Selected PixelLab images and included-trial standard animations; exact downloads/job metadata under `assets/art/source/bubby/kate/` | Provisional appearance; generation/import does not establish rights clearance |
 | Busboy forest tiles, avatar/NPC, opening, ambience and Untitled exploration | Existing assets/code reused; full original module retained in excluded source | No evidence establishes Kobe ownership/approval; original grants remain unresolved |
 | Busboy turn model | Small new model informed by archived Monsters action flow; no archived runtime/party/assets loaded | Retain provenance; do not infer tutorial-derived code clearance |
 | New cabin, provisional Bubby environments/pigeon, provisional Busboy root/props, Simulation settlement/governor | Locally authored SVG/raster/Aseprite source and PNG exports; no paid generation or external art input | Draft creative work; no Kate biography or Kobe direction implied |

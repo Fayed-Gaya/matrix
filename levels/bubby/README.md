@@ -20,9 +20,11 @@ inventory, equipment or shared RPG framework.
 
 ## Provisional personal references
 
-Apartment layout, furnishings, balcony architecture, dialogue and reused tutorial
-avatar are **stand-ins**, not a claim about Kate's home, likeness or possessions.
-The player role is Kate; the visible avatar awaits real likeness references.
+Apartment layout, furnishings, balcony architecture and dialogue are **stand-ins**,
+not a claim about Kate's home or possessions. Kate now uses the selected PixelLab
+32×32 idle rotations and four-frame directional walking loops. Appearance and
+animation quality remain provisional. Frames use nearest filtering and share a
+foot anchor; movement, collision, shoo and interaction rules are unchanged.
 Ending language is generic, not attributed to her or the relationship.
 
 ## Native authoring
@@ -41,8 +43,9 @@ using idle/walking frames for unarmed shooing rather than a sword attack sprite.
 
 Current art: `assets/art/source/bubby/refinement/README.md`; Aseprite masters → explicit PNG
 exports → native props/TileSets. One PixelLab included trial created the pigeon;
-local original raster studies created the environment. Avatar/music retain
-existing unresolved tutorial provenance. Original Zelda source remains excluded
+local original raster studies created the environment. Music/exploration retain
+unresolved tutorial provenance. Kate's selected PixelLab art replaces the tutorial
+avatar; previous art remains preserved, not relicensed. Original Zelda source remains excluded
 under `source/`, unchanged. Existing draft art is retained, not silently deleted.
 
 ## Validation

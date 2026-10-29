@@ -1,7 +1,6 @@
 class_name BubbyPlayer
 extends Node2D
-## Zelda-derived axis-separated exploration, with substeps and scaled source frames.
-## Existing tutorial avatar is provisional, not a depiction of Kate.
+## Zelda-derived axis-separated exploration with Kate's native 32px directional art.
 
 const SPEED: float = 135.0
 const HALF_SIZE: Vector2 = Vector2(14.5, 9.5)
@@ -10,12 +9,19 @@ var frame_index: float = 0.0
 var moving: bool = false
 var action_time: float = 0.0
 var frames: Dictionary = {}
+var frame_origins: Dictionary = {}
 
 func _ready() -> void:
+	texture_filter = CanvasItem.TEXTURE_FILTER_NEAREST
 	var data: Dictionary = JSON.parse_string(FileAccess.get_file_as_string("res://levels/bubby/assets/manifest.json"))
 	for key: String in data.frames:
 		var textures: Array[Texture2D] = []
-		for path: String in data.frames[key]: textures.append(load(path))
+		for path: String in data.frames[key]:
+			var picture: Texture2D = load(path) as Texture2D
+			textures.append(picture)
+			# Anchor the lowest visible pixel at the existing foot/shadow line.
+			var visible: Rect2i = picture.get_image().get_used_rect()
+			frame_origins[picture] = Vector2(-16, 9 - visible.end.y)
 		frames[key] = textures
 
 func hitbox() -> Rect2:
@@ -46,12 +52,15 @@ func move_axis(amount: Vector2, obstacles: Array[Rect2], bounds: Vector2) -> voi
 		elif amount.y > 0: position.y = obstacle.position.y - HALF_SIZE.y
 		elif amount.y < 0: position.y = obstacle.end.y + HALF_SIZE.y
 
-func _draw() -> void:
-	if frames.is_empty(): return
+func current_texture() -> Texture2D:
 	var state: String = facing + ("" if moving else "_idle")
 	var images: Array = frames["player/" + state]
-	var picture: Texture2D = images[int(frame_index) % images.size()]
+	return images[int(frame_index) % images.size()] as Texture2D
+
+func _draw() -> void:
+	if frames.is_empty(): return
+	var picture: Texture2D = current_texture()
 	draw_set_transform(Vector2(0, 6), 0, Vector2(1, 0.5))
 	draw_circle(Vector2.ZERO, 10, Color(0.1, 0.1, 0.1, 0.3))
 	draw_set_transform(Vector2.ZERO)
-	draw_texture_rect(picture, Rect2(-16, -23, 32, 32), false)
+	draw_texture(picture, frame_origins[picture])

@@ -1,52 +1,40 @@
 {
   "frames": {
     "player/down": [
-      "res://assets/art/sprites/bubby/kate/down/down_0.png",
-      "res://assets/art/sprites/bubby/kate/down/down_1.png",
-      "res://assets/art/sprites/bubby/kate/down/down_2.png",
-      "res://assets/art/sprites/bubby/kate/down/down_3.png"
-    ],
-    "player/down_attack": [
-      "res://assets/art/sprites/bubby/kate/down_attack/attack_down.png"
+      "res://assets/art/sprites/bubby/kate/walk_south/frame_00.png",
+      "res://assets/art/sprites/bubby/kate/walk_south/frame_01.png",
+      "res://assets/art/sprites/bubby/kate/walk_south/frame_02.png",
+      "res://assets/art/sprites/bubby/kate/walk_south/frame_03.png"
     ],
     "player/down_idle": [
-      "res://assets/art/sprites/bubby/kate/down_idle/idle_down.png"
-    ],
-    "player/left": [
-      "res://assets/art/sprites/bubby/kate/left/left_0.png",
-      "res://assets/art/sprites/bubby/kate/left/left_1.png",
-      "res://assets/art/sprites/bubby/kate/left/left_2.png",
-      "res://assets/art/sprites/bubby/kate/left/left_3.png"
-    ],
-    "player/left_attack": [
-      "res://assets/art/sprites/bubby/kate/left_attack/attack_left.png"
-    ],
-    "player/left_idle": [
-      "res://assets/art/sprites/bubby/kate/left_idle/idle_left.png"
-    ],
-    "player/right": [
-      "res://assets/art/sprites/bubby/kate/right/right_0.png",
-      "res://assets/art/sprites/bubby/kate/right/right_1.png",
-      "res://assets/art/sprites/bubby/kate/right/right_2.png",
-      "res://assets/art/sprites/bubby/kate/right/right_3.png"
-    ],
-    "player/right_attack": [
-      "res://assets/art/sprites/bubby/kate/right_attack/attack_right.png"
-    ],
-    "player/right_idle": [
-      "res://assets/art/sprites/bubby/kate/right_idle/idle_right.png"
+      "res://assets/art/sprites/bubby/kate/idle_south.png"
     ],
     "player/up": [
-      "res://assets/art/sprites/bubby/kate/up/up_0.png",
-      "res://assets/art/sprites/bubby/kate/up/up_1.png",
-      "res://assets/art/sprites/bubby/kate/up/up_2.png",
-      "res://assets/art/sprites/bubby/kate/up/up_3.png"
-    ],
-    "player/up_attack": [
-      "res://assets/art/sprites/bubby/kate/up_attack/attack_up.png"
+      "res://assets/art/sprites/bubby/kate/walk_north/frame_00.png",
+      "res://assets/art/sprites/bubby/kate/walk_north/frame_01.png",
+      "res://assets/art/sprites/bubby/kate/walk_north/frame_02.png",
+      "res://assets/art/sprites/bubby/kate/walk_north/frame_03.png"
     ],
     "player/up_idle": [
-      "res://assets/art/sprites/bubby/kate/up_idle/idle_up.png"
+      "res://assets/art/sprites/bubby/kate/idle_north.png"
+    ],
+    "player/right": [
+      "res://assets/art/sprites/bubby/kate/walk_east/frame_00.png",
+      "res://assets/art/sprites/bubby/kate/walk_east/frame_01.png",
+      "res://assets/art/sprites/bubby/kate/walk_east/frame_02.png",
+      "res://assets/art/sprites/bubby/kate/walk_east/frame_03.png"
+    ],
+    "player/right_idle": [
+      "res://assets/art/sprites/bubby/kate/idle_east.png"
+    ],
+    "player/left": [
+      "res://assets/art/sprites/bubby/kate/walk_west/frame_00.png",
+      "res://assets/art/sprites/bubby/kate/walk_west/frame_01.png",
+      "res://assets/art/sprites/bubby/kate/walk_west/frame_02.png",
+      "res://assets/art/sprites/bubby/kate/walk_west/frame_03.png"
+    ],
+    "player/left_idle": [
+      "res://assets/art/sprites/bubby/kate/idle_west.png"
     ]
   }
 }

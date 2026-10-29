@@ -15,5 +15,6 @@ cell positions and nearest filtering when exporting matching PNGs to
 `levels/bubby/assets/`. Editable Aseprite copies are provided for that workflow;
 edit either source format deliberately, since they do not auto-synchronize.
 Native scene composition and collision stay in Godot. No paid generation used.
-The playable avatar/music are retained Zelda tutorial assets, not this original
-art; unresolved attribution/permission issues remain in the licensing audit.
+The music remains Zelda tutorial material; the playable avatar now uses the
+selected PixelLab Kate sprites under `assets/art/sprites/bubby/kate/`. Legacy
+avatar references remain preserved; unresolved licensing questions still apply.
