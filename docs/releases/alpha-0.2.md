@@ -30,7 +30,8 @@ to the release following Rebirth.
   and required notices/source, or explicit authorization for a documented technical
   preview; neither implies legal clearance.
 - Bubby refinement #18 is integrated; authentic apartment/likeness references and
-  owner creative acceptance remain pending. Busboy #19 still awaits integration.
+  owner creative acceptance remain pending. Busboy refinement #19 is integrated;
+  its art direction and provenance remain provisional.
 - Kate apartment/likeness/personal story references are pending. Current Bubby
   furnishings/story and Simulation premise/art/balance remain provisional. Kobe
   authorship/approval and asset provenance must not be invented.

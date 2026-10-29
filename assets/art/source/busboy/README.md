@@ -1,8 +1,13 @@
+# Busboy editable art
+
+Current sources/trial findings: [refinement/README.md](refinement/README.md).
+Older geometric drafts below are preserved as references, not current scenery.
+
 # Provisional Busboy props
 
 Original local geometric SVG/Aseprite sources: 32px corrupted root and 128×32
 prop sheet (bedroll, table, shrine, door). Runtime PNGs live in
-`assets/art/busboy/` (props) and `assets/art/sprites/busboy/corrupted_roots/` (root). Keep dimensions and cell locations when exporting PNG;
+`levels/busboy/assets/`. Keep dimensions and cell locations when exporting PNG;
 SVG and Aseprite edits do not auto-synchronize. No paid generation was used.
 
 These are implementation stand-ins, not claims about Kobe's preferences or

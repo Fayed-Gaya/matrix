@@ -39,3 +39,7 @@ local branch has unverified redistribution rights and is excluded from web expor
 Bubby refinement preserves its original local layered Aseprite environment masters
 and one PixelLab included-generation Grand Coo under `assets/art/source/bubby/refinement/`.
 No Kate likeness, personal-reference authenticity or rights clearance is implied.
+
+Busboy refinement retains locally authored layered masters and two included-generation
+PixelLab tree/root trials in `assets/art/source/busboy/refinement/`. Existing assets
+remain subject to unresolved provenance; no Kobe authorship or approval is claimed.

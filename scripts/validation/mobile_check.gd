@@ -92,7 +92,30 @@ func run() -> void:
 			check(simulation.guard_left > 0, "Brace touch button reaches combat input")
 		if code == "BUSBOY":
 			controls.activate("Begin")
-			check(not (app.active_level as BusboyLevel).opening, "Touch begins Busboy opening")
+			var busboy: BusboyLevel = app.active_level as BusboyLevel
+			check(not busboy.opening, "Touch begins Busboy opening")
+			busboy.show_room("forest")
+			busboy.advised = true
+			busboy.player.position = Vector2(704,240)
+			controls.activate("Use")
+			await settle()
+			check(controls.context == "battle" and not controls.regions.has("Right"), "Combat removes exploration controls")
+			var buttons: Array = busboy.overlay.get("actions")
+			(buttons[2] as Button).pressed.emit()
+			check(busboy.encounter.mana == 2 and busboy.encounter.corruption == 1 and busboy.encounter.enemy_health == 21, "Cleanse button reaches turn model")
+			busboy.encounter.tick(1)
+			(buttons[1] as Button).pressed.emit()
+			busboy.encounter.tick(1)
+			check(busboy.encounter.health == 21 and busboy.encounter.mana == 3 and busboy.encounter.corruption == 0, "Guard button shows meaningful magic grounding")
+			busboy.encounter.health = 1
+			busboy.encounter.turn = 1
+			(buttons[0] as Button).pressed.emit()
+			busboy.encounter.tick(1)
+			(busboy.overlay.get("leave") as Button).pressed.emit()
+			check(busboy.encounter.health == 24 and busboy.encounter.mana == 4, "Continue button immediately retries defeat")
+			controls.send_key(KEY_ESCAPE)
+			await settle()
+			check(busboy.encounter == null and controls.regions.has("Right"), "Retreat restores exploration controls")
 		if code == "BUG":
 			var bug: BugLevel = app.active_level as BugLevel
 			var point: Vector2 = bug.field_offset + Vector2(123, 234) * bug.field_scale

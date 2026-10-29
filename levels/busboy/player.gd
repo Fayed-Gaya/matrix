@@ -2,7 +2,7 @@ class_name BusboyPlayer
 extends Node2D
 ## Reference 16x16 hitbox and axis-separated rectangle movement.
 
-const SHEET: Texture2D = preload("res://assets/art/sprites/busboy/player/player_snoblin.png")
+const SHEET: Texture2D = preload("res://assets/art/sprites/busboy/player/traveller.png")
 const SPEED: float = 160.0
 const HALF_SIZE: Vector2 = Vector2(8, 8)
 var facing: String = "down"
@@ -52,7 +52,7 @@ func _move_axis(amount: Vector2, obstacles: Array[Rect2], bounds: Vector2) -> vo
 func _draw() -> void:
 	var row: int = 3 if facing == "down" else (5 if facing == "up" else 4)
 	var column: int = int(frame_index) if moving else 1
-	draw_set_transform(Vector2(0, 6), 0, Vector2(1, 0.5))
+	draw_set_transform(Vector2(0, 2), 0, Vector2(1, 0.5))
 	draw_circle(Vector2.ZERO, 8, Color(0.03, 0.05, 0.04, 0.7))
 	draw_set_transform(Vector2.ZERO, 0, Vector2(-1 if facing == "left" else 1, 1))
-	draw_texture_rect_region(SHEET, Rect2(-16, -20, 32, 32), Rect2(column * 32, row * 32, 32, 32))
+	draw_texture_rect_region(SHEET, Rect2(-16, -28, 32, 32), Rect2(column * 32, row * 32, 32, 32))
