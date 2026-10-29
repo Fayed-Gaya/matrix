@@ -8,7 +8,7 @@
     ".json": 4,
     ".mp3": 2,
     ".ogg": 2,
-    ".png": 337,
+    ".png": 340,
     ".tres": 11,
     ".tscn": 26,
     ".ttf": 1,
@@ -4735,6 +4735,26 @@
       "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
     },
     {
+      "path": "assets/art/source/bubby/kate/candidates_32x32.png",
+      "module": "source",
+      "type": ".png",
+      "size": 39546,
+      "sha256": "1a835167fcd691919f0ea7b568be54db488ff94b0ef24e0627f5586e666d496b",
+      "exact_archived_matches": [],
+      "source_reference": true,
+      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
+    },
+    {
+      "path": "assets/art/source/bubby/kate/candidates_32x48.png",
+      "module": "source",
+      "type": ".png",
+      "size": 30493,
+      "sha256": "dbb35eb3e480653a283dcfcaf7383993e1b80f4871ae6db2d7ec13ff9198cc40",
+      "exact_archived_matches": [],
+      "source_reference": true,
+      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
+    },
+    {
       "path": "assets/art/sprites/bubby/kate/down/down_0.png",
       "module": "sprites",
       "type": ".png",
@@ -4812,6 +4832,16 @@
         "legacy/pygame/levels/zelda/graphics/player/down_idle/idle_down.png",
         "legacy/pygame/levels/zelda/graphics/test/player.png"
       ],
+      "source_reference": false,
+      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
+    },
+    {
+      "path": "assets/art/sprites/bubby/kate/idle_south.png",
+      "module": "sprites",
+      "type": ".png",
+      "size": 942,
+      "sha256": "784fc84146635ed49ad92be8b7bd4357c28560530ec6c901ba9f2e662b619609",
+      "exact_archived_matches": [],
       "source_reference": false,
       "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
     },
