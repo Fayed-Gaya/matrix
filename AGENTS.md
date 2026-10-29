@@ -12,7 +12,10 @@ Pegasus is its opening spaceship, not a terminal-launched level.
   Runtime art/audio: `assets/art/<experience>/`, `assets/audio/<experience>/`.
   Editable originals: excluded `assets/art/source/`. Keep `.import` and `.uid`
   sidecars; do not commit caches, exports, credentials or local tools.
-- Work directly on `main` when practical. Codex may commit/push validated work
+- Default to the primary local checkout `~/git/matrix` on `main`: implement and
+  validate locally, then commit/push so this checkout stays in sync with remote.
+  Use another worktree only when isolation is needed, and report where work lives.
+  Codex may commit/push validated work
   at meaningful checkpoints. Fetch/reconcile safely; never force-push, overwrite
   user edits or rewrite published history. Branches/PRs are optional; honor
   explicit review gates. Preserve other worktrees and private artwork.
