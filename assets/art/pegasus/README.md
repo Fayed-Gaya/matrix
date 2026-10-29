@@ -1,7 +1,8 @@
 # Pegasus runtime artwork
 
 `round2/` is the current original illustrated cabin: deck atlas, open/closed
-cryopods, viewport, computer, furnishings, player and lighting sprites.
+cryopods, viewport, computer, furnishings and lighting sprites. The active player
+is under `assets/art/sprites/pegasus/player/`.
 `alpha02/` and `refinement/` retain earlier original drafts.
 Editable masters and export notes are in `assets/art/source/pegasus/`.
 

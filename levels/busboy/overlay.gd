@@ -1,8 +1,8 @@
 extends Control
 
 const BACKGROUND: Texture2D = preload("res://assets/art/busboy/backgrounds/environment_forestbackground.png")
-const ROOT_IMAGE: Texture2D = preload("res://assets/art/busboy/root.png")
-const PLAYER_SHEET: Texture2D = preload("res://assets/art/busboy/sprites/player_snoblin.png")
+const ROOT_IMAGE: Texture2D = preload("res://assets/art/sprites/busboy/corrupted_roots/root.png")
+const PLAYER_SHEET: Texture2D = preload("res://assets/art/sprites/busboy/player/player_snoblin.png")
 var actions: Array[Button] = []
 var leave: Button
 

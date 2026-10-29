@@ -6,7 +6,7 @@ available. These are fictional placeholders, not an approved depiction.
 
 The atlases are 128×128 (sixteen 32px tiles); pigeon is 32×32. Preserve dimensions,
 cell positions and nearest filtering when exporting matching PNGs to
-`assets/art/bubby/`. Editable Aseprite copies are provided for that workflow;
+`assets/art/bubby/` (atlases) or `assets/art/sprites/bubby/pigeon/` (pigeon). Editable Aseprite copies are provided for that workflow;
 edit either source format deliberately, since they do not auto-synchronize.
 Native scene composition and collision stay in Godot. No paid generation used.
 The playable avatar/music are retained Zelda tutorial assets, not this original

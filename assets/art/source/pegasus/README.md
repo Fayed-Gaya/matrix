@@ -14,7 +14,7 @@ and coral. No Kate/Kobe personal references or artistic approvals are implied.
 
 Export each Aseprite sheet as PNG, at its original size, to
 `assets/art/pegasus/alpha02/` for the atlas; the player sheet is shared at
-`assets/art/shared/actors/astronaut.png`. Do not trim, resize, rotate or
+`assets/art/sprites/shared/astronaut/astronaut.png`. Do not trim, resize, rotate or
 repack cells; nearest filtering preserves pixels. Commit the PNG `.import`
 settings. Room composition is edited in Godot, not baked into the image.
 `assets/art/source/.gdignore` and export exclusions keep editable sources out of the game.

@@ -119,8 +119,8 @@
       "path": "pegasus/player.gd",
       "module": "pegasus",
       "type": ".gd",
-      "size": 297,
-      "sha256": "6366feae58e9195ee9a23f13307ac5c053982964f648be197ac170c68fec93a2",
+      "size": 305,
+      "sha256": "6dd7d70d5b5ad340c211f1521238dbba08299221ab4490e9a4e4da2f8e4fe30b",
       "exact_archived_matches": [],
       "source_reference": false,
       "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
@@ -232,8 +232,8 @@
       "path": "levels/bubby/assets/manifest.json",
       "module": "bubby",
       "type": ".json",
-      "size": 1778,
-      "sha256": "8717f40770c55b2bd9ebefdd1f96e0b77e75490b2412a8a9c17463d2e38f7736",
+      "size": 1922,
+      "sha256": "6e0cfc5a2de88426379112bcc9a9f69fcbe1787962277dd2bf7aa8023fb2d748",
       "exact_archived_matches": [],
       "source_reference": false,
       "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
@@ -242,8 +242,8 @@
       "path": "levels/bubby/bubby.gd",
       "module": "bubby",
       "type": ".gd",
-      "size": 6102,
-      "sha256": "3ab0c8991ed92f21904fc086ae7e653547557ab027a477c8f6ff1d717850b5ed",
+      "size": 6117,
+      "sha256": "22cebfc94de8ee88b50dbc0a45af6a988308ac68374648c6c98e5de61fa8c178",
       "exact_archived_matches": [],
       "source_reference": false,
       "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
@@ -4009,8 +4009,8 @@
       "path": "levels/busboy/maps/forest.tscn",
       "module": "busboy",
       "type": ".tscn",
-      "size": 17374,
-      "sha256": "62eae60f57ecb4c2d09944d3687365326e1dff369d544d9a2a1d6d01d18864b1",
+      "size": 17398,
+      "sha256": "4d9bb5b2062c110db98718ff87f11780855f64d3978c3fd849e86f53875e2265",
       "exact_archived_matches": [],
       "source_reference": false,
       "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
@@ -4019,8 +4019,8 @@
       "path": "levels/busboy/npc.gd",
       "module": "busboy",
       "type": ".gd",
-      "size": 359,
-      "sha256": "3e4d8d69321f1b72a601eb815a902b7e1d1dd2438261dd0befc08e7caaa819dc",
+      "size": 369,
+      "sha256": "fa9a62054c603f7fefa9a34aa65654b539cd0b80cde18ee3f309f00646224db4",
       "exact_archived_matches": [],
       "source_reference": false,
       "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
@@ -4029,8 +4029,8 @@
       "path": "levels/busboy/overlay.gd",
       "module": "busboy",
       "type": ".gd",
-      "size": 5255,
-      "sha256": "6d3ec4ab5b10d2b3c311e7e1976d99c1aca66cc09121f32e7b35b3f5b099e43b",
+      "size": 5286,
+      "sha256": "fab74d757d2ad902f9c347f5814aa04b261f20274dc637dd49a580847bc623de",
       "exact_archived_matches": [],
       "source_reference": false,
       "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
@@ -4039,8 +4039,8 @@
       "path": "levels/busboy/player.gd",
       "module": "busboy",
       "type": ".gd",
-      "size": 2189,
-      "sha256": "8ee6dbd73cdcd045383dc40658e5f35b5c91f8079d82ef586cd9bf53af957c71",
+      "size": 2196,
+      "sha256": "cfcb1fa403c6d29c547cc9210b93d63e581f59a42f2c402d6ebfa4c11eed382f",
       "exact_archived_matches": [],
       "source_reference": false,
       "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
@@ -4292,8 +4292,8 @@
       "path": "levels/simulation/maps/outskirts.tscn",
       "module": "simulation",
       "type": ".tscn",
-      "size": 12342,
-      "sha256": "56d42d127d340d0f81a3d2ce598dafee5fbea02909a2ac6254dd1b6c42e99dc4",
+      "size": 12359,
+      "sha256": "121a6b77b8e451d13a3df7163421ed97f8eccff76bfcd6fa19cac00e8f5f243e",
       "exact_archived_matches": [],
       "source_reference": false,
       "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
@@ -4352,8 +4352,8 @@
       "path": "levels/simulation/simulation.gd",
       "module": "simulation",
       "type": ".gd",
-      "size": 8412,
-      "sha256": "27632a64fb064c0a8fdc2682e662e54253d65307e04b155fd499166871865795",
+      "size": 8423,
+      "sha256": "b40456d8ba789c13725998646d9e7077e5b0b482c9bf781ae6f9321396f674c6",
       "exact_archived_matches": [],
       "source_reference": false,
       "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
@@ -4382,8 +4382,8 @@
       "path": "levels/the_bug/the_bug.gd",
       "module": "the_bug",
       "type": ".gd",
-      "size": 1785,
-      "sha256": "bc0528e5aea785fd1e92187ab1fe9f797325b4b51c4d855a9a7472e6d2a08b55",
+      "size": 1797,
+      "sha256": "0d3e430efdb8096866e00bffdd2e846eda8da2098a8bf1b05585b87308c2e6a1",
       "exact_archived_matches": [],
       "source_reference": false,
       "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
@@ -4509,335 +4509,6 @@
       "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
     },
     {
-      "path": "assets/art/bubby/pigeon.png",
-      "module": "bubby",
-      "type": ".png",
-      "size": 276,
-      "sha256": "aa0ca222535ed62021ac6fc6625f0764f52d29ad023712ea4876e3040d1827be",
-      "exact_archived_matches": [],
-      "source_reference": false,
-      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
-    },
-    {
-      "path": "assets/art/bubby/player/down/down_0.png",
-      "module": "bubby",
-      "type": ".png",
-      "size": 591,
-      "sha256": "385ec20e005572a6254a5aa53b0b7cd820ed98b834850422c901f60766e4df3e",
-      "exact_archived_matches": [
-        "legacy/pygame/levels/zelda/graphics/player/down/down_0.png",
-        "legacy/pygame/levels/zelda/graphics/player/down/down_2.png",
-        "legacy/pygame/levels/zelda/graphics/player/down_idle/idle_down.png",
-        "legacy/pygame/levels/zelda/graphics/test/player.png"
-      ],
-      "source_reference": false,
-      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
-    },
-    {
-      "path": "assets/art/bubby/player/down/down_1.png",
-      "module": "bubby",
-      "type": ".png",
-      "size": 585,
-      "sha256": "47016342f5a06f3d792b144b4680319a5439add6446053207de0e9a765479901",
-      "exact_archived_matches": [
-        "legacy/pygame/levels/zelda/graphics/player/down/down_1.png"
-      ],
-      "source_reference": false,
-      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
-    },
-    {
-      "path": "assets/art/bubby/player/down/down_2.png",
-      "module": "bubby",
-      "type": ".png",
-      "size": 591,
-      "sha256": "385ec20e005572a6254a5aa53b0b7cd820ed98b834850422c901f60766e4df3e",
-      "exact_archived_matches": [
-        "legacy/pygame/levels/zelda/graphics/player/down/down_0.png",
-        "legacy/pygame/levels/zelda/graphics/player/down/down_2.png",
-        "legacy/pygame/levels/zelda/graphics/player/down_idle/idle_down.png",
-        "legacy/pygame/levels/zelda/graphics/test/player.png"
-      ],
-      "source_reference": false,
-      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
-    },
-    {
-      "path": "assets/art/bubby/player/down/down_3.png",
-      "module": "bubby",
-      "type": ".png",
-      "size": 589,
-      "sha256": "0239b22c1882185f16c95da735b34cdab7831a5c3561647e4c41c3d4febb32e6",
-      "exact_archived_matches": [
-        "legacy/pygame/levels/zelda/graphics/player/down/down_3.png"
-      ],
-      "source_reference": false,
-      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
-    },
-    {
-      "path": "assets/art/bubby/player/down_attack/attack_down.png",
-      "module": "bubby",
-      "type": ".png",
-      "size": 552,
-      "sha256": "3ad1bf151176011d2becf481fc2920d43906af1a8fa6e760661e1b805917ab57",
-      "exact_archived_matches": [
-        "legacy/pygame/levels/zelda/graphics/player/down_attack/attack_down.png"
-      ],
-      "source_reference": false,
-      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
-    },
-    {
-      "path": "assets/art/bubby/player/down_idle/idle_down.png",
-      "module": "bubby",
-      "type": ".png",
-      "size": 591,
-      "sha256": "385ec20e005572a6254a5aa53b0b7cd820ed98b834850422c901f60766e4df3e",
-      "exact_archived_matches": [
-        "legacy/pygame/levels/zelda/graphics/player/down/down_0.png",
-        "legacy/pygame/levels/zelda/graphics/player/down/down_2.png",
-        "legacy/pygame/levels/zelda/graphics/player/down_idle/idle_down.png",
-        "legacy/pygame/levels/zelda/graphics/test/player.png"
-      ],
-      "source_reference": false,
-      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
-    },
-    {
-      "path": "assets/art/bubby/player/left/left_0.png",
-      "module": "bubby",
-      "type": ".png",
-      "size": 609,
-      "sha256": "21daadbdd7943681b98e6418ff4c5941b1a0b682003cdfc96e2dd342b432d9e1",
-      "exact_archived_matches": [
-        "legacy/pygame/levels/zelda/graphics/player/left/left_0.png",
-        "legacy/pygame/levels/zelda/graphics/player/left_idle/idle_left.png"
-      ],
-      "source_reference": false,
-      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
-    },
-    {
-      "path": "assets/art/bubby/player/left/left_1.png",
-      "module": "bubby",
-      "type": ".png",
-      "size": 563,
-      "sha256": "daec598d0d04370c02473d3087af1be3158caa7a663d57dcaca475af45eaceac",
-      "exact_archived_matches": [
-        "legacy/pygame/levels/zelda/graphics/player/left/left_1.png"
-      ],
-      "source_reference": false,
-      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
-    },
-    {
-      "path": "assets/art/bubby/player/left/left_2.png",
-      "module": "bubby",
-      "type": ".png",
-      "size": 621,
-      "sha256": "7b7d436904234270eaa39bfa0af290216a6282b94c904dff8dd3cd01073e6977",
-      "exact_archived_matches": [
-        "legacy/pygame/levels/zelda/graphics/player/left/left_2.png"
-      ],
-      "source_reference": false,
-      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
-    },
-    {
-      "path": "assets/art/bubby/player/left/left_3.png",
-      "module": "bubby",
-      "type": ".png",
-      "size": 586,
-      "sha256": "1e815c3fd56d076a713ef5f5e2f94bc22cbfe905b01bb4f1734ad550baee5b0b",
-      "exact_archived_matches": [
-        "legacy/pygame/levels/zelda/graphics/player/left/left_3.png"
-      ],
-      "source_reference": false,
-      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
-    },
-    {
-      "path": "assets/art/bubby/player/left_attack/attack_left.png",
-      "module": "bubby",
-      "type": ".png",
-      "size": 563,
-      "sha256": "3ae212fadca181b1c3b1724c17a8abbc34ff659d789ec8ec122ba86c190c1895",
-      "exact_archived_matches": [
-        "legacy/pygame/levels/zelda/graphics/player/left_attack/attack_left.png"
-      ],
-      "source_reference": false,
-      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
-    },
-    {
-      "path": "assets/art/bubby/player/left_idle/idle_left.png",
-      "module": "bubby",
-      "type": ".png",
-      "size": 609,
-      "sha256": "21daadbdd7943681b98e6418ff4c5941b1a0b682003cdfc96e2dd342b432d9e1",
-      "exact_archived_matches": [
-        "legacy/pygame/levels/zelda/graphics/player/left/left_0.png",
-        "legacy/pygame/levels/zelda/graphics/player/left_idle/idle_left.png"
-      ],
-      "source_reference": false,
-      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
-    },
-    {
-      "path": "assets/art/bubby/player/right/right_0.png",
-      "module": "bubby",
-      "type": ".png",
-      "size": 568,
-      "sha256": "4bdd5d90a8e75f50f8591a543ce8a7bd491fe239987963985efe8340166ffd49",
-      "exact_archived_matches": [
-        "legacy/pygame/levels/zelda/graphics/player/right/right_0.png",
-        "legacy/pygame/levels/zelda/graphics/player/right_idle/idle_right.png"
-      ],
-      "source_reference": false,
-      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
-    },
-    {
-      "path": "assets/art/bubby/player/right/right_1.png",
-      "module": "bubby",
-      "type": ".png",
-      "size": 521,
-      "sha256": "f2a2cced485ccfdd5e9f5d9a9f2b7ce9bf97d3de0aeb7844d276525b792a6947",
-      "exact_archived_matches": [
-        "legacy/pygame/levels/zelda/graphics/player/right/right_1.png"
-      ],
-      "source_reference": false,
-      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
-    },
-    {
-      "path": "assets/art/bubby/player/right/right_2.png",
-      "module": "bubby",
-      "type": ".png",
-      "size": 578,
-      "sha256": "f6f62749f6d6bec29cdb64cf30ff16a8148b98af3334e995d3e7ef4ca7b5e360",
-      "exact_archived_matches": [
-        "legacy/pygame/levels/zelda/graphics/player/right/right_2.png"
-      ],
-      "source_reference": false,
-      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
-    },
-    {
-      "path": "assets/art/bubby/player/right/right_3.png",
-      "module": "bubby",
-      "type": ".png",
-      "size": 551,
-      "sha256": "096fc26280d702ba3df29d839a3db1f54c16e68c5f49424e58881098f1615871",
-      "exact_archived_matches": [
-        "legacy/pygame/levels/zelda/graphics/player/right/right_3.png"
-      ],
-      "source_reference": false,
-      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
-    },
-    {
-      "path": "assets/art/bubby/player/right_attack/attack_right.png",
-      "module": "bubby",
-      "type": ".png",
-      "size": 505,
-      "sha256": "d8c58cd1da25561831b435bf1caeea90e5dea9f99f5b63bc829dba8a0b3077a8",
-      "exact_archived_matches": [
-        "legacy/pygame/levels/zelda/graphics/player/right_attack/attack_right.png"
-      ],
-      "source_reference": false,
-      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
-    },
-    {
-      "path": "assets/art/bubby/player/right_idle/idle_right.png",
-      "module": "bubby",
-      "type": ".png",
-      "size": 568,
-      "sha256": "4bdd5d90a8e75f50f8591a543ce8a7bd491fe239987963985efe8340166ffd49",
-      "exact_archived_matches": [
-        "legacy/pygame/levels/zelda/graphics/player/right/right_0.png",
-        "legacy/pygame/levels/zelda/graphics/player/right_idle/idle_right.png"
-      ],
-      "source_reference": false,
-      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
-    },
-    {
-      "path": "assets/art/bubby/player/up/up_0.png",
-      "module": "bubby",
-      "type": ".png",
-      "size": 469,
-      "sha256": "eaab4bc6a9088435b91e4adc2762971ffe379dc01f21d57c8cff64fe703077d7",
-      "exact_archived_matches": [
-        "legacy/pygame/levels/zelda/graphics/player/up/up_0.png",
-        "legacy/pygame/levels/zelda/graphics/player/up/up_2.png",
-        "legacy/pygame/levels/zelda/graphics/player/up_idle/idle_up.png"
-      ],
-      "source_reference": false,
-      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
-    },
-    {
-      "path": "assets/art/bubby/player/up/up_1.png",
-      "module": "bubby",
-      "type": ".png",
-      "size": 489,
-      "sha256": "4ec54c2f14cf8c86da340c65ee391bf7d0121cb9b59451d6cdf4afd2e1735d23",
-      "exact_archived_matches": [
-        "legacy/pygame/levels/zelda/graphics/player/up/up_1.png"
-      ],
-      "source_reference": false,
-      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
-    },
-    {
-      "path": "assets/art/bubby/player/up/up_2.png",
-      "module": "bubby",
-      "type": ".png",
-      "size": 469,
-      "sha256": "eaab4bc6a9088435b91e4adc2762971ffe379dc01f21d57c8cff64fe703077d7",
-      "exact_archived_matches": [
-        "legacy/pygame/levels/zelda/graphics/player/up/up_0.png",
-        "legacy/pygame/levels/zelda/graphics/player/up/up_2.png",
-        "legacy/pygame/levels/zelda/graphics/player/up_idle/idle_up.png"
-      ],
-      "source_reference": false,
-      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
-    },
-    {
-      "path": "assets/art/bubby/player/up/up_3.png",
-      "module": "bubby",
-      "type": ".png",
-      "size": 507,
-      "sha256": "d0fb25a0ec53b0ad537232a4b6f3e1292688377470493d2858cecfc430960206",
-      "exact_archived_matches": [
-        "legacy/pygame/levels/zelda/graphics/player/up/up_3.png"
-      ],
-      "source_reference": false,
-      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
-    },
-    {
-      "path": "assets/art/bubby/player/up_attack/attack_up.png",
-      "module": "bubby",
-      "type": ".png",
-      "size": 502,
-      "sha256": "1c670a7e5b4c7ccf3368845e15264c8b835bd8c695cf967e6397f70d28b3b8b1",
-      "exact_archived_matches": [
-        "legacy/pygame/levels/zelda/graphics/player/up_attack/attack_up.png"
-      ],
-      "source_reference": false,
-      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
-    },
-    {
-      "path": "assets/art/bubby/player/up_idle/idle_up.png",
-      "module": "bubby",
-      "type": ".png",
-      "size": 469,
-      "sha256": "eaab4bc6a9088435b91e4adc2762971ffe379dc01f21d57c8cff64fe703077d7",
-      "exact_archived_matches": [
-        "legacy/pygame/levels/zelda/graphics/player/up/up_0.png",
-        "legacy/pygame/levels/zelda/graphics/player/up/up_2.png",
-        "legacy/pygame/levels/zelda/graphics/player/up_idle/idle_up.png"
-      ],
-      "source_reference": false,
-      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
-    },
-    {
-      "path": "assets/art/bug/cat.png",
-      "module": "bug",
-      "type": ".png",
-      "size": 291408,
-      "sha256": "e42dbc430c91b23ba58a11d379acc9b5c8b720007449eb5dabcc74fcb63f5fde",
-      "exact_archived_matches": [
-        "legacy/pygame/levels/the_bug/cat.png"
-      ],
-      "source_reference": false,
-      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
-    },
-    {
       "path": "assets/art/busboy/backgrounds/environment_forestbackground.png",
       "module": "busboy",
       "type": ".png",
@@ -4856,41 +4527,6 @@
       "size": 494,
       "sha256": "0ff58c876bcf29170963d4c90e3c53d0eccb85a3258cbc3be45812191c995e99",
       "exact_archived_matches": [],
-      "source_reference": false,
-      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
-    },
-    {
-      "path": "assets/art/busboy/root.png",
-      "module": "busboy",
-      "type": ".png",
-      "size": 357,
-      "sha256": "34af46e3da65b03be4f27c24570253f8a97bd204f7f2d47c7dc0a3cd6d8d225b",
-      "exact_archived_matches": [],
-      "source_reference": false,
-      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
-    },
-    {
-      "path": "assets/art/busboy/sprites/npc_snoblin_blue.png",
-      "module": "busboy",
-      "type": ".png",
-      "size": 3345,
-      "sha256": "26df25396415b34028086bb67096afd2cd4eaeee483e7edc922bada3d0af0540",
-      "exact_archived_matches": [
-        "legacy/pygame/levels/untitled/assets/sprites/npc_snoblin_blue.png"
-      ],
-      "source_reference": false,
-      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
-    },
-    {
-      "path": "assets/art/busboy/sprites/player_snoblin.png",
-      "module": "busboy",
-      "type": ".png",
-      "size": 3266,
-      "sha256": "776760ec65248dfde3fceb0a7ae4ca460bb2df784565453f49d42483285f4a97",
-      "exact_archived_matches": [
-        "legacy/pygame/levels/untitled/assets/sprites/player_snoblin.png",
-        "legacy/pygame/matrix/assets/sprites/player_snoblin.png"
-      ],
       "source_reference": false,
       "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
     },
@@ -5029,16 +4665,6 @@
       "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
     },
     {
-      "path": "assets/art/pegasus/round2/player.png",
-      "module": "pegasus",
-      "type": ".png",
-      "size": 1032,
-      "sha256": "17b27e320e697f5ff4c6d602df7b89bb84c688087fddd85e078a60adf4b8b755",
-      "exact_archived_matches": [],
-      "source_reference": false,
-      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
-    },
-    {
       "path": "assets/art/pegasus/round2/pod-open.png",
       "module": "pegasus",
       "type": ".png",
@@ -5099,8 +4725,392 @@
       "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
     },
     {
-      "path": "assets/art/shared/actors/astronaut.png",
-      "module": "shared",
+      "path": "assets/art/simulation/town-atlas.png",
+      "module": "simulation",
+      "type": ".png",
+      "size": 2616,
+      "sha256": "d7474bbf0e4a5f4d443cabe5dac9891e03efba7925da164bfc7ab0f6d9851faa",
+      "exact_archived_matches": [],
+      "source_reference": false,
+      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
+    },
+    {
+      "path": "assets/art/sprites/bubby/kate/down/down_0.png",
+      "module": "sprites",
+      "type": ".png",
+      "size": 591,
+      "sha256": "385ec20e005572a6254a5aa53b0b7cd820ed98b834850422c901f60766e4df3e",
+      "exact_archived_matches": [
+        "legacy/pygame/levels/zelda/graphics/player/down/down_0.png",
+        "legacy/pygame/levels/zelda/graphics/player/down/down_2.png",
+        "legacy/pygame/levels/zelda/graphics/player/down_idle/idle_down.png",
+        "legacy/pygame/levels/zelda/graphics/test/player.png"
+      ],
+      "source_reference": false,
+      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
+    },
+    {
+      "path": "assets/art/sprites/bubby/kate/down/down_1.png",
+      "module": "sprites",
+      "type": ".png",
+      "size": 585,
+      "sha256": "47016342f5a06f3d792b144b4680319a5439add6446053207de0e9a765479901",
+      "exact_archived_matches": [
+        "legacy/pygame/levels/zelda/graphics/player/down/down_1.png"
+      ],
+      "source_reference": false,
+      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
+    },
+    {
+      "path": "assets/art/sprites/bubby/kate/down/down_2.png",
+      "module": "sprites",
+      "type": ".png",
+      "size": 591,
+      "sha256": "385ec20e005572a6254a5aa53b0b7cd820ed98b834850422c901f60766e4df3e",
+      "exact_archived_matches": [
+        "legacy/pygame/levels/zelda/graphics/player/down/down_0.png",
+        "legacy/pygame/levels/zelda/graphics/player/down/down_2.png",
+        "legacy/pygame/levels/zelda/graphics/player/down_idle/idle_down.png",
+        "legacy/pygame/levels/zelda/graphics/test/player.png"
+      ],
+      "source_reference": false,
+      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
+    },
+    {
+      "path": "assets/art/sprites/bubby/kate/down/down_3.png",
+      "module": "sprites",
+      "type": ".png",
+      "size": 589,
+      "sha256": "0239b22c1882185f16c95da735b34cdab7831a5c3561647e4c41c3d4febb32e6",
+      "exact_archived_matches": [
+        "legacy/pygame/levels/zelda/graphics/player/down/down_3.png"
+      ],
+      "source_reference": false,
+      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
+    },
+    {
+      "path": "assets/art/sprites/bubby/kate/down_attack/attack_down.png",
+      "module": "sprites",
+      "type": ".png",
+      "size": 552,
+      "sha256": "3ad1bf151176011d2becf481fc2920d43906af1a8fa6e760661e1b805917ab57",
+      "exact_archived_matches": [
+        "legacy/pygame/levels/zelda/graphics/player/down_attack/attack_down.png"
+      ],
+      "source_reference": false,
+      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
+    },
+    {
+      "path": "assets/art/sprites/bubby/kate/down_idle/idle_down.png",
+      "module": "sprites",
+      "type": ".png",
+      "size": 591,
+      "sha256": "385ec20e005572a6254a5aa53b0b7cd820ed98b834850422c901f60766e4df3e",
+      "exact_archived_matches": [
+        "legacy/pygame/levels/zelda/graphics/player/down/down_0.png",
+        "legacy/pygame/levels/zelda/graphics/player/down/down_2.png",
+        "legacy/pygame/levels/zelda/graphics/player/down_idle/idle_down.png",
+        "legacy/pygame/levels/zelda/graphics/test/player.png"
+      ],
+      "source_reference": false,
+      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
+    },
+    {
+      "path": "assets/art/sprites/bubby/kate/left/left_0.png",
+      "module": "sprites",
+      "type": ".png",
+      "size": 609,
+      "sha256": "21daadbdd7943681b98e6418ff4c5941b1a0b682003cdfc96e2dd342b432d9e1",
+      "exact_archived_matches": [
+        "legacy/pygame/levels/zelda/graphics/player/left/left_0.png",
+        "legacy/pygame/levels/zelda/graphics/player/left_idle/idle_left.png"
+      ],
+      "source_reference": false,
+      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
+    },
+    {
+      "path": "assets/art/sprites/bubby/kate/left/left_1.png",
+      "module": "sprites",
+      "type": ".png",
+      "size": 563,
+      "sha256": "daec598d0d04370c02473d3087af1be3158caa7a663d57dcaca475af45eaceac",
+      "exact_archived_matches": [
+        "legacy/pygame/levels/zelda/graphics/player/left/left_1.png"
+      ],
+      "source_reference": false,
+      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
+    },
+    {
+      "path": "assets/art/sprites/bubby/kate/left/left_2.png",
+      "module": "sprites",
+      "type": ".png",
+      "size": 621,
+      "sha256": "7b7d436904234270eaa39bfa0af290216a6282b94c904dff8dd3cd01073e6977",
+      "exact_archived_matches": [
+        "legacy/pygame/levels/zelda/graphics/player/left/left_2.png"
+      ],
+      "source_reference": false,
+      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
+    },
+    {
+      "path": "assets/art/sprites/bubby/kate/left/left_3.png",
+      "module": "sprites",
+      "type": ".png",
+      "size": 586,
+      "sha256": "1e815c3fd56d076a713ef5f5e2f94bc22cbfe905b01bb4f1734ad550baee5b0b",
+      "exact_archived_matches": [
+        "legacy/pygame/levels/zelda/graphics/player/left/left_3.png"
+      ],
+      "source_reference": false,
+      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
+    },
+    {
+      "path": "assets/art/sprites/bubby/kate/left_attack/attack_left.png",
+      "module": "sprites",
+      "type": ".png",
+      "size": 563,
+      "sha256": "3ae212fadca181b1c3b1724c17a8abbc34ff659d789ec8ec122ba86c190c1895",
+      "exact_archived_matches": [
+        "legacy/pygame/levels/zelda/graphics/player/left_attack/attack_left.png"
+      ],
+      "source_reference": false,
+      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
+    },
+    {
+      "path": "assets/art/sprites/bubby/kate/left_idle/idle_left.png",
+      "module": "sprites",
+      "type": ".png",
+      "size": 609,
+      "sha256": "21daadbdd7943681b98e6418ff4c5941b1a0b682003cdfc96e2dd342b432d9e1",
+      "exact_archived_matches": [
+        "legacy/pygame/levels/zelda/graphics/player/left/left_0.png",
+        "legacy/pygame/levels/zelda/graphics/player/left_idle/idle_left.png"
+      ],
+      "source_reference": false,
+      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
+    },
+    {
+      "path": "assets/art/sprites/bubby/kate/right/right_0.png",
+      "module": "sprites",
+      "type": ".png",
+      "size": 568,
+      "sha256": "4bdd5d90a8e75f50f8591a543ce8a7bd491fe239987963985efe8340166ffd49",
+      "exact_archived_matches": [
+        "legacy/pygame/levels/zelda/graphics/player/right/right_0.png",
+        "legacy/pygame/levels/zelda/graphics/player/right_idle/idle_right.png"
+      ],
+      "source_reference": false,
+      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
+    },
+    {
+      "path": "assets/art/sprites/bubby/kate/right/right_1.png",
+      "module": "sprites",
+      "type": ".png",
+      "size": 521,
+      "sha256": "f2a2cced485ccfdd5e9f5d9a9f2b7ce9bf97d3de0aeb7844d276525b792a6947",
+      "exact_archived_matches": [
+        "legacy/pygame/levels/zelda/graphics/player/right/right_1.png"
+      ],
+      "source_reference": false,
+      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
+    },
+    {
+      "path": "assets/art/sprites/bubby/kate/right/right_2.png",
+      "module": "sprites",
+      "type": ".png",
+      "size": 578,
+      "sha256": "f6f62749f6d6bec29cdb64cf30ff16a8148b98af3334e995d3e7ef4ca7b5e360",
+      "exact_archived_matches": [
+        "legacy/pygame/levels/zelda/graphics/player/right/right_2.png"
+      ],
+      "source_reference": false,
+      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
+    },
+    {
+      "path": "assets/art/sprites/bubby/kate/right/right_3.png",
+      "module": "sprites",
+      "type": ".png",
+      "size": 551,
+      "sha256": "096fc26280d702ba3df29d839a3db1f54c16e68c5f49424e58881098f1615871",
+      "exact_archived_matches": [
+        "legacy/pygame/levels/zelda/graphics/player/right/right_3.png"
+      ],
+      "source_reference": false,
+      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
+    },
+    {
+      "path": "assets/art/sprites/bubby/kate/right_attack/attack_right.png",
+      "module": "sprites",
+      "type": ".png",
+      "size": 505,
+      "sha256": "d8c58cd1da25561831b435bf1caeea90e5dea9f99f5b63bc829dba8a0b3077a8",
+      "exact_archived_matches": [
+        "legacy/pygame/levels/zelda/graphics/player/right_attack/attack_right.png"
+      ],
+      "source_reference": false,
+      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
+    },
+    {
+      "path": "assets/art/sprites/bubby/kate/right_idle/idle_right.png",
+      "module": "sprites",
+      "type": ".png",
+      "size": 568,
+      "sha256": "4bdd5d90a8e75f50f8591a543ce8a7bd491fe239987963985efe8340166ffd49",
+      "exact_archived_matches": [
+        "legacy/pygame/levels/zelda/graphics/player/right/right_0.png",
+        "legacy/pygame/levels/zelda/graphics/player/right_idle/idle_right.png"
+      ],
+      "source_reference": false,
+      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
+    },
+    {
+      "path": "assets/art/sprites/bubby/kate/up/up_0.png",
+      "module": "sprites",
+      "type": ".png",
+      "size": 469,
+      "sha256": "eaab4bc6a9088435b91e4adc2762971ffe379dc01f21d57c8cff64fe703077d7",
+      "exact_archived_matches": [
+        "legacy/pygame/levels/zelda/graphics/player/up/up_0.png",
+        "legacy/pygame/levels/zelda/graphics/player/up/up_2.png",
+        "legacy/pygame/levels/zelda/graphics/player/up_idle/idle_up.png"
+      ],
+      "source_reference": false,
+      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
+    },
+    {
+      "path": "assets/art/sprites/bubby/kate/up/up_1.png",
+      "module": "sprites",
+      "type": ".png",
+      "size": 489,
+      "sha256": "4ec54c2f14cf8c86da340c65ee391bf7d0121cb9b59451d6cdf4afd2e1735d23",
+      "exact_archived_matches": [
+        "legacy/pygame/levels/zelda/graphics/player/up/up_1.png"
+      ],
+      "source_reference": false,
+      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
+    },
+    {
+      "path": "assets/art/sprites/bubby/kate/up/up_2.png",
+      "module": "sprites",
+      "type": ".png",
+      "size": 469,
+      "sha256": "eaab4bc6a9088435b91e4adc2762971ffe379dc01f21d57c8cff64fe703077d7",
+      "exact_archived_matches": [
+        "legacy/pygame/levels/zelda/graphics/player/up/up_0.png",
+        "legacy/pygame/levels/zelda/graphics/player/up/up_2.png",
+        "legacy/pygame/levels/zelda/graphics/player/up_idle/idle_up.png"
+      ],
+      "source_reference": false,
+      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
+    },
+    {
+      "path": "assets/art/sprites/bubby/kate/up/up_3.png",
+      "module": "sprites",
+      "type": ".png",
+      "size": 507,
+      "sha256": "d0fb25a0ec53b0ad537232a4b6f3e1292688377470493d2858cecfc430960206",
+      "exact_archived_matches": [
+        "legacy/pygame/levels/zelda/graphics/player/up/up_3.png"
+      ],
+      "source_reference": false,
+      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
+    },
+    {
+      "path": "assets/art/sprites/bubby/kate/up_attack/attack_up.png",
+      "module": "sprites",
+      "type": ".png",
+      "size": 502,
+      "sha256": "1c670a7e5b4c7ccf3368845e15264c8b835bd8c695cf967e6397f70d28b3b8b1",
+      "exact_archived_matches": [
+        "legacy/pygame/levels/zelda/graphics/player/up_attack/attack_up.png"
+      ],
+      "source_reference": false,
+      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
+    },
+    {
+      "path": "assets/art/sprites/bubby/kate/up_idle/idle_up.png",
+      "module": "sprites",
+      "type": ".png",
+      "size": 469,
+      "sha256": "eaab4bc6a9088435b91e4adc2762971ffe379dc01f21d57c8cff64fe703077d7",
+      "exact_archived_matches": [
+        "legacy/pygame/levels/zelda/graphics/player/up/up_0.png",
+        "legacy/pygame/levels/zelda/graphics/player/up/up_2.png",
+        "legacy/pygame/levels/zelda/graphics/player/up_idle/idle_up.png"
+      ],
+      "source_reference": false,
+      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
+    },
+    {
+      "path": "assets/art/sprites/bubby/pigeon/pigeon.png",
+      "module": "sprites",
+      "type": ".png",
+      "size": 276,
+      "sha256": "aa0ca222535ed62021ac6fc6625f0764f52d29ad023712ea4876e3040d1827be",
+      "exact_archived_matches": [],
+      "source_reference": false,
+      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
+    },
+    {
+      "path": "assets/art/sprites/bug/cat/cat.png",
+      "module": "sprites",
+      "type": ".png",
+      "size": 291408,
+      "sha256": "e42dbc430c91b23ba58a11d379acc9b5c8b720007449eb5dabcc74fcb63f5fde",
+      "exact_archived_matches": [
+        "legacy/pygame/levels/the_bug/cat.png"
+      ],
+      "source_reference": false,
+      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
+    },
+    {
+      "path": "assets/art/sprites/busboy/corrupted_roots/root.png",
+      "module": "sprites",
+      "type": ".png",
+      "size": 357,
+      "sha256": "34af46e3da65b03be4f27c24570253f8a97bd204f7f2d47c7dc0a3cd6d8d225b",
+      "exact_archived_matches": [],
+      "source_reference": false,
+      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
+    },
+    {
+      "path": "assets/art/sprites/busboy/player/player_snoblin.png",
+      "module": "sprites",
+      "type": ".png",
+      "size": 3266,
+      "sha256": "776760ec65248dfde3fceb0a7ae4ca460bb2df784565453f49d42483285f4a97",
+      "exact_archived_matches": [
+        "legacy/pygame/levels/untitled/assets/sprites/player_snoblin.png",
+        "legacy/pygame/matrix/assets/sprites/player_snoblin.png"
+      ],
+      "source_reference": false,
+      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
+    },
+    {
+      "path": "assets/art/sprites/busboy/waykeeper/npc_snoblin_blue.png",
+      "module": "sprites",
+      "type": ".png",
+      "size": 3345,
+      "sha256": "26df25396415b34028086bb67096afd2cd4eaeee483e7edc922bada3d0af0540",
+      "exact_archived_matches": [
+        "legacy/pygame/levels/untitled/assets/sprites/npc_snoblin_blue.png"
+      ],
+      "source_reference": false,
+      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
+    },
+    {
+      "path": "assets/art/sprites/pegasus/player/player.png",
+      "module": "sprites",
+      "type": ".png",
+      "size": 1032,
+      "sha256": "17b27e320e697f5ff4c6d602df7b89bb84c688087fddd85e078a60adf4b8b755",
+      "exact_archived_matches": [],
+      "source_reference": false,
+      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
+    },
+    {
+      "path": "assets/art/sprites/shared/astronaut/astronaut.png",
+      "module": "sprites",
       "type": ".png",
       "size": 774,
       "sha256": "ff7a683ddd7fe288523ad67f5c3d9545c8d5656a6aa7e53bf458e19fd4fad9ad",
@@ -5109,21 +5119,11 @@
       "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
     },
     {
-      "path": "assets/art/simulation/governor.png",
-      "module": "simulation",
+      "path": "assets/art/sprites/simulation/governor/governor.png",
+      "module": "sprites",
       "type": ".png",
       "size": 294,
       "sha256": "046197537ffbb0d9f22f643eef752fb7c93d99208156284d1038c216c6521086",
-      "exact_archived_matches": [],
-      "source_reference": false,
-      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
-    },
-    {
-      "path": "assets/art/simulation/town-atlas.png",
-      "module": "simulation",
-      "type": ".png",
-      "size": 2616,
-      "sha256": "d7474bbf0e4a5f4d443cabe5dac9891e03efba7925da164bfc7ab0f6d9851faa",
       "exact_archived_matches": [],
       "source_reference": false,
       "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"

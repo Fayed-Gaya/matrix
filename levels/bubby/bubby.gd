@@ -4,7 +4,7 @@ extends MatrixLevel
 
 const PlayerScript: GDScript = preload("res://levels/bubby/player.gd")
 const ROOMS: Dictionary = {"apartment": preload("res://levels/bubby/maps/apartment.tscn"), "outside": preload("res://levels/bubby/maps/outside.tscn")}
-const PIGEON: Texture2D = preload("res://assets/art/bubby/pigeon.png")
+const PIGEON: Texture2D = preload("res://assets/art/sprites/bubby/pigeon/pigeon.png")
 var room: BubbyRoom
 var player: BubbyPlayer
 var room_name: String = ""

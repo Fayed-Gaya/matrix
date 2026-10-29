@@ -1,7 +1,7 @@
 class_name BugLevel
 extends MatrixLevel
 
-const CAT: Texture2D = preload("res://assets/art/bug/cat.png")
+const CAT: Texture2D = preload("res://assets/art/sprites/bug/cat/cat.png")
 const FIELD_SIZE: Vector2 = Vector2(600, 600)
 var touch_index: int = -1
 var mouse_position: Vector2 = Vector2.ZERO

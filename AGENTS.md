@@ -8,7 +8,8 @@ Pegasus is its opening spaceship, not a terminal-launched level.
   `return_requested`; consume Escape locally before returning to Pegasus.
 - Native scenes/TileSets/collision markers are authoritative. Never regenerate
   maps from TMX/CSV/JSON. Preserve each game's movement and collision rules.
-- Runtime art/audio: `assets/art/<experience>/`, `assets/audio/<experience>/`.
+- Character sprites: `assets/art/sprites/<level>/<character>/` (or `shared/`).
+  Runtime art/audio: `assets/art/<experience>/`, `assets/audio/<experience>/`.
   Editable originals: excluded `assets/art/source/`. Keep `.import` and `.uid`
   sidecars; do not commit caches, exports, credentials or local tools.
 - Work directly on `main` when practical. Codex may commit/push validated work

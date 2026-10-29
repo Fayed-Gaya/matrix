@@ -3,7 +3,7 @@ extends MatrixLevel
 ## Provisional general-audience clockwork-town showcase; progress is session-only.
 
 const FIELD_SIZE: Vector2 = Vector2(640,352)
-const AVATAR: Texture2D = preload("res://assets/art/shared/actors/astronaut.png")
+const AVATAR: Texture2D = preload("res://assets/art/sprites/shared/astronaut/astronaut.png")
 const ROOMS: Dictionary = {
 	"bedroom":preload("res://levels/simulation/maps/bedroom.tscn"),
 	"home":preload("res://levels/simulation/maps/home.tscn"),

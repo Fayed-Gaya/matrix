@@ -2,7 +2,9 @@
 
 - `art/source/<experience>/`: editable Aseprite/SVG sources and authoring notes;
   excluded from Godot imports and web exports by `.gdignore` and export rules.
-- `art/<experience>/`: runtime graphics, atlases and sprites, with tracked
+- `art/sprites/<level>/<character>/`: runtime character sprites; shared actors
+  live under `art/sprites/shared/<character>/`. Keep experiments/unused variants out.
+- `art/<experience>/`: other runtime graphics and atlases, with tracked
   `.import` sidecars. Pegasus, Bubby, Busboy, Simulation, Bounce, Bug and shared
   graphics have independent subdivisions.
 - `audio/<experience>/`: runtime audio with import settings preserved.
