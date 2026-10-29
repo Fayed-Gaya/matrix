@@ -35,3 +35,7 @@ current auditing uses the frozen Alpha 0.1 inventory, not a missing source tree.
 The refreshed current inventory records new paths and preserved content hashes;
 relocation establishes no new permissions. Unassigned RedGIFs audio on a separate
 local branch has unverified redistribution rights and is excluded from web export.
+
+Bubby refinement preserves its original local layered Aseprite environment masters
+and one PixelLab included-generation Grand Coo under `assets/art/source/bubby/refinement/`.
+No Kate likeness, personal-reference authenticity or rights clearance is implied.

@@ -121,9 +121,9 @@ func check_turns() -> void:
 	assert(loss.phase == BusboyEncounter.Phase.DEFEAT and loss.health == 0)
 
 func check_bubby(game: BubbyLevel) -> void:
-	var initial_room: String = game.room_name
-	game.pigeon_health = 1000 # Exercise cooldown even if authored encounters become one-hit.
 	game.show_room("outside")
+	game.close_dialogue()
+	game.pigeon_health = 1000 # Keep the encounter alive while exercising cooldown.
 	game.player.position = game.pigeon.position
 	var before: int = game.pigeon_health
 	game.shoo()
@@ -133,7 +133,7 @@ func check_bubby(game: BubbyLevel) -> void:
 	assert(game.pigeon_health == after, "Cooldown prevents repeated immediate hits")
 	game.health = 0
 	game.retry()
-	assert(game.health > 0 and game.pigeon_health > 0 and game.room_name == initial_room)
+	assert(game.health > 0 and game.pigeon_health > 0 and game.room_name == "outside" and game.boss_state == "rest")
 
 func check_simulation(game: SimulationLevel) -> void:
 	assert(LevelRegistry.lookup("MACHINE").is_empty(), "The retired code must not remain an alias")

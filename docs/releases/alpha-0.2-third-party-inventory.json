@@ -8,7 +8,7 @@
     ".json": 5,
     ".mp3": 2,
     ".ogg": 2,
-    ".png": 350,
+    ".png": 364,
     ".tres": 11,
     ".tscn": 26,
     ".ttf": 1,
@@ -79,8 +79,8 @@
       "path": "app/web_diagnostics.gd",
       "module": "app",
       "type": ".gd",
-      "size": 1567,
-      "sha256": "7e715425c609bb429aa18b0b92156394e12091c37be00cd0293636b647e86415",
+      "size": 2088,
+      "sha256": "11be3b824c492514fc26355a1f2f5a64b978feb29c59c9b9ca7a64b94d14da0d",
       "exact_archived_matches": [],
       "source_reference": false,
       "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
@@ -242,8 +242,8 @@
       "path": "levels/bubby/bubby.gd",
       "module": "bubby",
       "type": ".gd",
-      "size": 6117,
-      "sha256": "22cebfc94de8ee88b50dbc0a45af6a988308ac68374648c6c98e5de61fa8c178",
+      "size": 8908,
+      "sha256": "20ecdc69a887ee474279e52004a93d53055da7b7134f005edc32c64cd2989be7",
       "exact_archived_matches": [],
       "source_reference": false,
       "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
@@ -262,8 +262,8 @@
       "path": "levels/bubby/maps/apartment.tres",
       "module": "bubby",
       "type": ".tres",
-      "size": 531,
-      "sha256": "716b0d1a2523e2d871ffc76fc24245f5b9febbb7038adb49051e561023d375b2",
+      "size": 500,
+      "sha256": "74ed3e86f5cb04bc34067c00781a079a53b3941d8d7cd856d32e6e5f1a39bdbb",
       "exact_archived_matches": [],
       "source_reference": false,
       "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
@@ -272,8 +272,8 @@
       "path": "levels/bubby/maps/apartment.tscn",
       "module": "bubby",
       "type": ".tscn",
-      "size": 7146,
-      "sha256": "29c44953026ebe3ce261ec356378168ea62f8b1a640f1d0ea223964dccaa72e2",
+      "size": 8085,
+      "sha256": "27949d401bf463eaade42b29bf854bda23c9fc36fd5942fbdf1bc00021f32fbe",
       "exact_archived_matches": [],
       "source_reference": false,
       "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
@@ -282,8 +282,8 @@
       "path": "levels/bubby/maps/outside.tres",
       "module": "bubby",
       "type": ".tres",
-      "size": 529,
-      "sha256": "2b405594ecbb11f88032e88a830a1c0a95f201fbb23f94e322a1910918a515de",
+      "size": 500,
+      "sha256": "74ed3e86f5cb04bc34067c00781a079a53b3941d8d7cd856d32e6e5f1a39bdbb",
       "exact_archived_matches": [],
       "source_reference": false,
       "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
@@ -292,8 +292,8 @@
       "path": "levels/bubby/maps/outside.tscn",
       "module": "bubby",
       "type": ".tscn",
-      "size": 7751,
-      "sha256": "c87a3829ab8fdb77651a710df9e68a786210e52c7933a5f74b7482e15a242fbb",
+      "size": 12476,
+      "sha256": "9103ff5a32fb78c0498703f0be877177ca1afccc8bd566736e55f3ce8598d000",
       "exact_archived_matches": [],
       "source_reference": false,
       "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
@@ -302,8 +302,8 @@
       "path": "levels/bubby/overlay.gd",
       "module": "bubby",
       "type": ".gd",
-      "size": 2054,
-      "sha256": "fa2f25ac3d9d5b5485616d4cd3bdcb135a1500c8144fee136ed91dfcc1c3f85c",
+      "size": 3501,
+      "sha256": "cad8212737b6305e214da063b0948de5ffba3563d77be72ad50490fe3d0b2b71",
       "exact_archived_matches": [],
       "source_reference": false,
       "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
@@ -312,8 +312,8 @@
       "path": "levels/bubby/player.gd",
       "module": "bubby",
       "type": ".gd",
-      "size": 2465,
-      "sha256": "20efbbecdc7d83fa4dca10e69d028d99355d71414776f37b9835c70ea5556083",
+      "size": 2429,
+      "sha256": "7a9f6b08e2aeaec0a3927ff6da512a4db0be42b8219935daa6cdf8abcd4ddae6",
       "exact_archived_matches": [],
       "source_reference": false,
       "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
@@ -4509,6 +4509,126 @@
       "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
     },
     {
+      "path": "assets/art/bubby/refinement/bed.png",
+      "module": "bubby",
+      "type": ".png",
+      "size": 836,
+      "sha256": "28a1f9e23373897ba2e1b035eacaec1b5eb9f7760746483c6f4b4ef7dfd7b774",
+      "exact_archived_matches": [],
+      "source_reference": false,
+      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
+    },
+    {
+      "path": "assets/art/bubby/refinement/desk.png",
+      "module": "bubby",
+      "type": ".png",
+      "size": 765,
+      "sha256": "df9383ec77115520abb43a667843818b931ba2235ff4fbebea60e0a6f8af09e6",
+      "exact_archived_matches": [],
+      "source_reference": false,
+      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
+    },
+    {
+      "path": "assets/art/bubby/refinement/doors.png",
+      "module": "bubby",
+      "type": ".png",
+      "size": 678,
+      "sha256": "9849c1c61a03d68d4399c1b723d6da1daeb6d9dab78f26ef9a6569384aacbc1e",
+      "exact_archived_matches": [],
+      "source_reference": false,
+      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
+    },
+    {
+      "path": "assets/art/bubby/refinement/kitchen.png",
+      "module": "bubby",
+      "type": ".png",
+      "size": 883,
+      "sha256": "957abdcf81512b191133e6a4c3c9200a979cde9e40c469848e26080b839dc2e3",
+      "exact_archived_matches": [],
+      "source_reference": false,
+      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
+    },
+    {
+      "path": "assets/art/bubby/refinement/mess.png",
+      "module": "bubby",
+      "type": ".png",
+      "size": 344,
+      "sha256": "f49f21d6f96a63fa3fe19026d5cd0b279ec5432e68b355ffa1390f43ed6ff0ac",
+      "exact_archived_matches": [],
+      "source_reference": false,
+      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
+    },
+    {
+      "path": "assets/art/bubby/refinement/planter.png",
+      "module": "bubby",
+      "type": ".png",
+      "size": 640,
+      "sha256": "39fcd374e25ecfd53c9476c4fb887640b8d55bd58764788bab6be8284515fbb5",
+      "exact_archived_matches": [],
+      "source_reference": false,
+      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
+    },
+    {
+      "path": "assets/art/bubby/refinement/rail.png",
+      "module": "bubby",
+      "type": ".png",
+      "size": 235,
+      "sha256": "58346e1c14c9cdf4df399e9e572a1ae75f1738180ff631be3d724bb52f64e09e",
+      "exact_archived_matches": [],
+      "source_reference": false,
+      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
+    },
+    {
+      "path": "assets/art/bubby/refinement/room-atlas.png",
+      "module": "bubby",
+      "type": ".png",
+      "size": 947,
+      "sha256": "24f749812443e659446e5158ff20ac916f481092cd911440e2689e1f1daf113f",
+      "exact_archived_matches": [],
+      "source_reference": false,
+      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
+    },
+    {
+      "path": "assets/art/bubby/refinement/rug.png",
+      "module": "bubby",
+      "type": ".png",
+      "size": 581,
+      "sha256": "02087ca8d4f91b424005b8ffc35e0e5d8a1542d8eed4ce74ed20539581cfbcf4",
+      "exact_archived_matches": [],
+      "source_reference": false,
+      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
+    },
+    {
+      "path": "assets/art/bubby/refinement/skyline.png",
+      "module": "bubby",
+      "type": ".png",
+      "size": 1316,
+      "sha256": "4af8e8414dd35ba3307ea66f1d68f311b68d19e05afbffb8302f2bf5b9d03a9c",
+      "exact_archived_matches": [],
+      "source_reference": false,
+      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
+    },
+    {
+      "path": "assets/art/bubby/refinement/sofa.png",
+      "module": "bubby",
+      "type": ".png",
+      "size": 911,
+      "sha256": "7603ffa081288cb664175914f5a9b566197154c11065c4d2b57b0fe5efbffcc2",
+      "exact_archived_matches": [],
+      "source_reference": false,
+      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
+    },
+    {
+      "path": "assets/art/bubby/refinement/window.png",
+      "module": "bubby",
+      "type": ".png",
+      "size": 518,
+      "sha256": "42ded37f3fc7ca7ffe60c4dca009df8324df28e521e058d207595f6fc200991e",
+      "exact_archived_matches": [],
+      "source_reference": false,
+      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
+    },
+    {
       "path": "assets/art/busboy/backgrounds/environment_forestbackground.png",
       "module": "busboy",
       "type": ".png",
@@ -4812,6 +4932,26 @@
       "sha256": "495f2075962caf97d1f478730156e75cee2964700d0f3fa5c7746b2bcc7b3ed9",
       "exact_archived_matches": [],
       "source_reference": true,
+      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
+    },
+    {
+      "path": "assets/art/source/bubby/refinement/pixellab-grand-coo-original.png",
+      "module": "source",
+      "type": ".png",
+      "size": 2633,
+      "sha256": "fedb5d13b54058a6d37a7f6b9fec29f86c4f64f40a7272942adad544c9b990e6",
+      "exact_archived_matches": [],
+      "source_reference": true,
+      "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
+    },
+    {
+      "path": "assets/art/sprites/bubby/grand_coo/grand-coo.png",
+      "module": "sprites",
+      "type": ".png",
+      "size": 2625,
+      "sha256": "307b9ca7f9c23f1c74f77ab45d85b1f91a653bab6138f04afc182c674d231d46",
+      "exact_archived_matches": [],
+      "source_reference": false,
       "assessment": "See alpha-0.2-licensing.md and licensing-audit.md; inventory is not license clearance"
     },
     {

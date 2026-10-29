@@ -29,10 +29,8 @@ to the release following Rebirth.
 - [Licensing blockers](alpha-0.2-licensing.md) remain unresolved. Obtain permissions
   and required notices/source, or explicit authorization for a documented technical
   preview; neither implies legal clearance.
-- Bubby [#18](https://github.com/Fayed-Gaya/matrix/pull/18) and Busboy
-  [#19](https://github.com/Fayed-Gaya/matrix/pull/19) await creative review. Do not
-  merge those existing formal-review PRs without approval. Their pre-cleanup paths
-  and app/input names need reconciliation with centralized assets and Pegasus.
+- Bubby refinement #18 is integrated; authentic apartment/likeness references and
+  owner creative acceptance remain pending. Busboy #19 still awaits integration.
 - Kate apartment/likeness/personal story references are pending. Current Bubby
   furnishings/story and Simulation premise/art/balance remain provisional. Kobe
   authorship/approval and asset provenance must not be invented.
