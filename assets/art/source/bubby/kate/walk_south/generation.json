@@ -1,0 +1,27 @@
+{
+  "tool": "PixelLab MCP animate_image",
+  "job_id": "901c1e23-ee71-4147-93d0-855f3274785c",
+  "asset_id": "55d41412-47ab-5953-9e5f-f8cb496a1592",
+  "model": "standard animate_image; no model override exposed",
+  "requested_generated_frames": 4,
+  "returned_frames": 5,
+  "reference_frame_index": 0,
+  "generated_frame_indices": [
+    1,
+    2,
+    3,
+    4
+  ],
+  "size": [
+    32,
+    32
+  ],
+  "transparent": true,
+  "charged_generations": 1,
+  "credits_charged_usd": 0,
+  "attempts": 1,
+  "reference_sha256": "784fc84146635ed49ad92be8b7bd4357c28560530ec6c901ba9f2e662b619609",
+  "playback_duration_ms": 160,
+  "playback_note": "Provisional packaging timing; originals are the five unchanged downloaded PNGs. APNG is a lossless local package of all five.",
+  "status": "Owner review pending; not referenced by gameplay."
+}
