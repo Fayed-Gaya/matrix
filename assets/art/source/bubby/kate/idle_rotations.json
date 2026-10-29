@@ -1,0 +1,35 @@
+{
+  "provider": "PixelLab",
+  "gallery_id": "1793249902801",
+  "original_file": "pixellab-cute-wizard-1793249902801.png",
+  "sheet_size": [
+    96,
+    96
+  ],
+  "frame_size": [
+    32,
+    32
+  ],
+  "frame_count": 8,
+  "grid": [
+    3,
+    3
+  ],
+  "row_major_directions": [
+    "south",
+    "southeast",
+    "east",
+    "northeast",
+    "north",
+    "northwest",
+    "west",
+    "southwest"
+  ],
+  "extracted_cardinal_indices": {
+    "north": 4,
+    "east": 2,
+    "west": 6
+  },
+  "source_sha256": "737bad0398c6ed885a08fb98d5a95fe5f6a27419b1270d1cf33f5ca3368e4465",
+  "note": "Exact crops; existing idle_south.png retained unchanged."
+}

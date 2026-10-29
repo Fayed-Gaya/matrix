@@ -1,0 +1,27 @@
+{
+  "tool": "PixelLab MCP animate_image",
+  "model": "standard; no model override exposed",
+  "job_id": "b2262e69-a210-4fa5-8f6c-fff4ee2410ac",
+  "asset_id": "1968a14d-68c4-5df0-b577-ebf8fe7193d6",
+  "requested_generated_frames": 4,
+  "returned_frames": 5,
+  "reference_frame_index": 0,
+  "generated_frame_indices": [
+    1,
+    2,
+    3,
+    4
+  ],
+  "size": [
+    32,
+    32
+  ],
+  "transparent": true,
+  "charged_generations": 1,
+  "credits_charged_usd": 0,
+  "attempts": 1,
+  "reference_sha256": "69d924a681115b89d607de2612f6188d446633a03ddf63af97866e0a3656d2b0",
+  "playback_duration_ms": 160,
+  "playback_note": "Provisional packaging timing; originals are unchanged downloaded PNGs. APNG packages original compressed full-frame pixels without recompression.",
+  "status": "Not integrated. East request rejected by one-active-job trial rate limit; further submissions stopped per owner failure/no-retry constraint."
+}
